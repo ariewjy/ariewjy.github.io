@@ -75,7 +75,21 @@ The good thing about quarto (simplicity) can be a cons for some people. When com
 You can use their website repo as inspiration, on how they change the font theme, size, page layout, blog setting, color theme. Pay attention to their `_quarto.yml` and `theme.scss`!
 :::
 
-Last but not least, the quarto project is still in develop
+Last but not least, the quarto project is still under heavy development. Quarto extension, some pre-release build version adding more capability [^3], etc.
+
+[^3]: [Quarto 1.2](https://quarto.org/docs/download/prerelease.html) pre-released version supports embedding video from Youtube. 
+
+# Hiccups and Hopes for Future Development
+I still have some issues when rendering a quarto markdown file (.qmd) with both `R` and `python` code. 
+
+Another error I have is when rendering to pdf due to `tinytex` installation issue [^4]. Which was apparently solved just by installing new pre-released version. 
+
+[^4]: Issue in Quarto 1.1
+
+::: {.callout}
+To recap, I extremely happy how my personal website turns out to be, and knowing that the project was supported by one of the most respected company in data-tech industry, I am hopeful about the future. Do try it out when you can! 
+:::
 
 
-
+Till next time~
+Arie
