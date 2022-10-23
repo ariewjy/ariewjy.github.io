@@ -1,0 +1,79 @@
+project:
+  type: website
+  output-dir: docs
+  preview:
+    port: 3600
+
+website:
+  title: "Geoscientist Who Codes"
+  description: "Personal Website"
+  site-url: ariewjy.github.io
+  # reader-mode: true
+  # cookie-consent:
+  #   type: express
+  #   style: headline
+  #   palette: light
+  search:
+    location: navbar
+    type: overlay
+  favicon: img/logo_rounded.png
+  twitter-card:
+    image: img/profile.jpg
+    creator: "@Adtarie"
+    card-style: summary_large_image
+  # site-url:
+  open-graph: true
+  sidebar:
+    style: docked
+  navbar:
+    type: light
+    # logo: logo_rounded.png
+    background: "#F6F0ED"
+    foreground: "#0B2027"
+    pinned: true
+    right:
+      - text: "About"
+        file: about.qmd
+      - text: "Blog"
+        file: index.qmd
+      - text: "Publications"
+        file: publications.qmd
+      # - icon: github
+      #   href: https://github.com/ariewjy
+      # - icon: twitter
+      #   href: https://twitter.com/Adtarie
+      # - icon: linkedin
+      #   href: https://www.linkedin.com/in/adityaariewijaya/
+  page-footer:
+    right:
+      - text: "Copyright, Aditya Arie Wijaya"
+    left:
+      - href: https://www.quarto.org
+        text: Built with Quarto
+  page-navigation: true
+format:
+  html:
+    theme:
+      [styles.scss]
+      # light: litera
+      # dark: darkly
+    css: styles.scss
+    highlight-style: eiffel
+    # toc: true
+    # toc-location: right
+    # fontsize: 1em
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: bottom
+    reference-location: document
+    # mainfont: "system-ui"
+    # monofont: "system-ui"
+    footnotes-hover: true
+    citation: true
+    appendix-style: default
+    citation-location: margin
+    comments:
+      utterances:
+        repo: ariewjy/quarto-blog
+execute:
+  freeze: auto

@@ -1,0 +1,108 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Inter&display=swap");
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Inter" !default;
+$font-family-serif: "Inter" !default;
+
+// use Atkinson Hyperlegible font if available
+// $font-family-sans-serif: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$font-size-base: 0.9rem !default;
+
+// Nav bar
+
+.navbar-title {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.li.a.dropdown-item {
+  color: "#2B2423";
+}
+
+.dropdown-text {
+  color: "#FFFFFF";
+}
+
+// Typography
+
+h1.title {
+  font-family: "Inter";
+  font-size: 26px;
+}
+
+// h1 {
+//   font-size: 32px;
+// }
+
+h1.title.display-7 {
+  font-family: "Inter";
+}
+
+h3.no-anchor.listing-title {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+h3.anchored {
+  font-weight: 400;
+}
+
+h2.anchored {
+  font-weight: 400;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+a {
+  font-weight: 400;
+}
+p.subtitle.lead {
+  text-align: center;
+}
+
+a:href {
+  color: #00ab6b;
+}
+
+a:hover {
+  color: #038252;
+  text-decoration: none;
+}
+
+//** Global textual link color.
+$link-color: #e2402e !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color: darken($link-color, 80%) !default;
+//** Link decoration.
+$link-decoration: none;
+$link-hover-decoration: none;
+
+// .navbar {
+//   color: #ffffff;
+// }
+
+.navbar-title {
+  font-family: "Inter";
+  font-weight: bold;
+}
+
+// a.sidebar-item-text.sidebar-link {
+//   color: #ffffff;
+// }
+
+.navbar li.dropdown-header {
+  text-transform: none;
+}
+
+.quarto-listing-category {
+  font-family: "Inter";
+}
+
+.quarto-listing-category-title {
+  font-family: "Inter";
+}

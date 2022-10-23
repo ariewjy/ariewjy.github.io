@@ -1,0 +1,39 @@
+# options specified here will apply to all posts in this folder
+
+# Freeze computed outputs
+freeze: true
+
+# Enable banner style title blocks
+title-block-banner: "#F6F0ED"
+
+# Enable CC licence appendix
+# license: "CC BY"
+
+# Default for table of contents
+toc: true
+toc-title: Table of contents
+toc-location: right
+
+# Default knitr options
+execute:
+  echo: true
+  message: true
+  warning: true
+
+# Default author
+author:
+  - name: Aditya Arie Wijaya
+    url: ariewjy.github.io/quarto-blog
+    # affiliation:
+    # affiliation-url:
+
+# Default fields for citation
+# citation: false
+
+# set up code folds as true
+code-fold: true
+code-line-numbers: true
+
+#setting up page layout
+page-layout: article
+page-width: 100
