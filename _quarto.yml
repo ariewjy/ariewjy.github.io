@@ -74,6 +74,6 @@ format:
     citation-location: margin
     comments:
       utterances:
-        repo: ariewjy/quarto-blog
+        repo: ariewjy/ariewjy.github.io
 execute:
   freeze: auto
