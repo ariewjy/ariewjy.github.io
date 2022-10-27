@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/03-project-insurance-cost-part-1/index.html",
       "/posts/02-migrating-to-quarto/index.html",
       "/posts/01-my-first-gig/index.html"
     ]
