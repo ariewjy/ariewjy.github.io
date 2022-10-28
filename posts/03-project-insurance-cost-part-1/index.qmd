@@ -447,7 +447,7 @@ If we look at the above @fig-outlier, in the non-smoker group, there is a cloud 
 The `higher the number of children/dependent, the lower the medical charge`. Meaning that part of Group I with lower number of children/ dependent would falls into `Group II` (higher medical charges) even though they are part of the non-smoker group.
 
 ::: {.callout-important}
-The logic behind this finding could be many. One interpretation might be the higher the number of children means that the parent may have a better health condition, take care of their health because they wanted to make sure they can support their children. This is of course needs further investigation.
+There are several logics that may cause people with non-smoker profile would have higher medical charges when having less children. One of which is a high number of children is an indirect indication of one's health, be it female/ male. Meaning that a person with low number of children (0-2 children) may have another health issue, not related to smoking and bmi. However, in many countries like Indonesia, number of children may not necessarily related to one's healthiness. Author thinks that this is may be unique to data's location (US). 
 :::
 
 ```{python}
