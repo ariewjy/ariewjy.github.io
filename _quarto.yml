@@ -61,13 +61,26 @@ format:
       # dark: darkly
     css: styles.scss
     highlight-style: eiffel
+
     # toc: true
     # toc-location: right
     # fontsize: 1em
     code-link: true
     anchor-sections: true
-    fig-cap-location: bottom
+
+    #table and figure setting
+    tbl-cap-location: top
+    fig-cap-location: top
+    fig-align: center
+    # fig-responsive: true
+    # fig-height: 2
+    # fig-asp: 1
+    # fig-dpi: 96
     reference-location: document
+    code-line-numbers: true
+    code-copy: true
+    code-summary: Click to Show Code
+    # max-width: 2em
     # mainfont: "system-ui"
     # monofont: "system-ui"
     footnotes-hover: true

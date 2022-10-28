@@ -12,7 +12,7 @@ title-block-banner: "#F6F0ED"
 # Default for table of contents
 toc: true
 toc-title: Table of contents
-toc-location: right
+toc-location: left
 
 # Default knitr options
 execute:
@@ -37,7 +37,3 @@ code-line-numbers: true
 #setting up page layout
 page-layout: article
 page-width: 100
-
-#image
-image-height: 400px
-image-width: 600px
