@@ -1,0 +1,11 @@
+---
+title: "License"
+citation: false
+comments: false
+page-layout: article
+title-block-banner: false
+---
+
+© Copyright Aditya Arie Wijaya
+
+This is my personal website. Nothing here is endorsed by my employer or any organizations of which I am become a part of. Every content in this website can be used without restriction as long as you provide a citation back to the original material. The website is provided under a [Creative Commons (CC-BY) 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode) and source code of the site is provided under the [MIT license](https://opensource.org/licenses/MIT) and may be reused without restriction.

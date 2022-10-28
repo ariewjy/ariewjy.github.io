@@ -1,7 +1,7 @@
 ---
-title: 'Medical Insurance Cost Part-1 '
+title: 'Medical Insurance Cost [Part-1] '
 description: |
-  Understanding what drives the medical charges based on numeric information (age, number of children, and bmi) and categorical variable (region, sex, smoker)
+  Understanding what drives the medical charges through data. Answering if smoking, sex, body mass index (BMI) affects the medical charges of a person. 
 author: Aditya Arie Wijaya
 title-block-banner: true
 date: '2022-10-27'
