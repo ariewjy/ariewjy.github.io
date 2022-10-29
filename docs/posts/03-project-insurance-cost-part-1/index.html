@@ -186,7 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title d-none d-lg-block">Medical Insurance Cost [Part-1]</h1>
@@ -227,10 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -251,6 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#conclusions-and-outcomes" id="toc-conclusions-and-outcomes" class="nav-link" data-scroll-target="#conclusions-and-outcomes">Conclusions and Outcomes</a></li>
   </ul>
 </nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -305,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>insurance <span class="op">=</span> pd.read_csv(<span class="st">'insurance.zip'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>insurance.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="449">
+<div class="cell-output cell-output-display" data-execution_count="446">
 
 <div>
 
@@ -446,8 +446,9 @@ For more granular grouping, the [classification](https://www.calculator.net/bmi-
 <span id="cb3-20"><a href="#cb3-20"></a> .agg([<span class="st">'min'</span>, <span class="st">'max'</span>, <span class="st">'count'</span>])</span>
 <span id="cb3-21"><a href="#cb3-21"></a> <span class="co"># .style.background_gradient()</span></span>
 <span id="cb3-22"><a href="#cb3-22"></a> <span class="co"># .style.text_gradient()</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="450">
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#  .T</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="447">
 <div id="tbl-bmi-class" class="anchored">
 
 <div>
@@ -551,7 +552,7 @@ memory usage: 74.8+ KB</code></pre>
 <span id="cb6-2"><a href="#cb6-2"></a> .select_dtypes(include<span class="op">=</span><span class="bu">object</span>) <span class="co">#includes all column with object dtypes</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a> .value_counts() <span class="co">#counting unique value</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="452">
+<div class="cell-output cell-output-display" data-execution_count="449">
 <pre><code>sex     smoker  region   
 female  no      southwest    141
                 southeast    139
@@ -600,21 +601,23 @@ Important
 <h3 class="anchored" data-anchor-id="overall-mean-age-of-insurance-member">Overall Mean age of insurance member</h3>
 <div class="cell" data-execution_count="6">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>(sns</span>
 <span id="cb8-2"><a href="#cb8-2"></a> .displot(</span>
 <span id="cb8-3"><a href="#cb8-3"></a>     data<span class="op">=</span>insurance, </span>
 <span id="cb8-4"><a href="#cb8-4"></a>     x<span class="op">=</span><span class="st">'age'</span>, </span>
 <span id="cb8-5"><a href="#cb8-5"></a>     hue<span class="op">=</span><span class="st">'smoker'</span>,</span>
 <span id="cb8-6"><a href="#cb8-6"></a>     kind<span class="op">=</span><span class="st">'hist'</span>,</span>
-<span id="cb8-7"><a href="#cb8-7"></a> )</span>
-<span id="cb8-8"><a href="#cb8-8"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-7"><a href="#cb8-7"></a>     height<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb8-8"><a href="#cb8-8"></a>     aspect<span class="op">=</span><span class="fl">1.2</span>,</span>
+<span id="cb8-9"><a href="#cb8-9"></a> )</span>
+<span id="cb8-10"><a href="#cb8-10"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-mean-age" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Overall Mean Age</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-mean-age-output-1.png" width="550" height="464" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-mean-age-output-1.png" width="416" height="272" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -625,7 +628,7 @@ Important
 <h3 class="anchored" data-anchor-id="mean-age-bmi-and-charges-of-smoker-at-different-sex">Mean <code>age</code>, <code>bmi</code> and <code>charges</code> of <code>smoker</code> at different <code>sex</code></h3>
 <div class="cell" data-execution_count="7">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>(insurance</span>
 <span id="cb9-2"><a href="#cb9-2"></a> .groupby([</span>
 <span id="cb9-3"><a href="#cb9-3"></a>     <span class="st">'smoker'</span>,</span>
@@ -647,7 +650,7 @@ Important
 <span id="cb9-19"><a href="#cb9-19"></a><span class="co">#  )</span></span>
 <span id="cb9-20"><a href="#cb9-20"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="454">
+<div class="cell-output cell-output-display" data-execution_count="451">
 <div id="tbl-smoker-based-on-sex" class="anchored">
 
 <div>
@@ -712,14 +715,14 @@ Important
 <p>Calculating the <strong>ratio</strong> of smoker to non-smoker group</p>
 <div class="cell" data-execution_count="8">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>(insurance</span>
 <span id="cb10-2"><a href="#cb10-2"></a> .groupby(<span class="st">'smoker'</span>)</span>
 <span id="cb10-3"><a href="#cb10-3"></a> [[<span class="st">'charges'</span>]]</span>
 <span id="cb10-4"><a href="#cb10-4"></a> .agg([np.mean])<span class="op">/</span><span class="fl">8434.268298</span> <span class="co">#to calculate how high the smoker medical charges</span></span>
 <span id="cb10-5"><a href="#cb10-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="455">
+<div class="cell-output cell-output-display" data-execution_count="452">
 <div id="tbl-ratio-smoker" class="anchored">
 
 <div>
@@ -759,14 +762,14 @@ Important
 <p>As indicated by <a href="#tbl-ratio-smoker">Table&nbsp;3</a>, the medical charges for is much higher in the smoker member, compared to non-smoker member, with up to <code>4 times higher for smoker</code></p>
 <div class="cell" data-execution_count="9">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>(insurance</span>
 <span id="cb11-2"><a href="#cb11-2"></a> .groupby(<span class="st">'sex'</span>)</span>
 <span id="cb11-3"><a href="#cb11-3"></a> [[<span class="st">'charges'</span>]]</span>
 <span id="cb11-4"><a href="#cb11-4"></a> .agg([np.mean])<span class="op">/</span><span class="fl">12569.578844</span> <span class="co">#to calculate how high the smoker medical charges</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="456">
+<div class="cell-output cell-output-display" data-execution_count="453">
 <div id="tbl-ratio-sex" class="anchored">
 
 <div>
@@ -806,7 +809,7 @@ Important
 <h4 class="anchored" data-anchor-id="distribution-of-age-categorized-based-on-sex-smoker-and-bmi_class">Distribution of <code>age</code> categorized based on <code>sex</code>, <code>smoker</code>, and <code>bmi_class</code></h4>
 <div class="cell" data-execution_count="10">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>(sns</span>
 <span id="cb12-2"><a href="#cb12-2"></a> .catplot</span>
 <span id="cb12-3"><a href="#cb12-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -816,9 +819,9 @@ Important
 <span id="cb12-7"><a href="#cb12-7"></a>  hue<span class="op">=</span><span class="st">'bmi_class'</span>,</span>
 <span id="cb12-8"><a href="#cb12-8"></a>  col<span class="op">=</span><span class="st">'sex'</span>,</span>
 <span id="cb12-9"><a href="#cb12-9"></a>  <span class="co"># col_wrap=1,</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a>  height<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb12-10"><a href="#cb12-10"></a>  height<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb12-11"><a href="#cb12-11"></a>  aspect<span class="op">=</span><span class="fl">0.7</span>,</span>
-<span id="cb12-12"><a href="#cb12-12"></a>  showmeans<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb12-12"><a href="#cb12-12"></a>  <span class="co"># showmeans=True,</span></span>
 <span id="cb12-13"><a href="#cb12-13"></a>  palette<span class="op">=</span><span class="st">'Blues'</span>,</span>
 <span id="cb12-14"><a href="#cb12-14"></a> )</span>
 <span id="cb12-15"><a href="#cb12-15"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -827,7 +830,7 @@ Important
 <div id="fig-boxplot-age" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;2: Age distribution based on Categorical values</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-boxplot-age-output-1.png" width="785" height="464" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-boxplot-age-output-1.png" width="647" height="368" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -840,7 +843,7 @@ Important
 <h3 class="anchored" data-anchor-id="does-region-affecting-the-age-distribution">Does <code>region</code> affecting the <code>age</code> distribution?</h3>
 <div class="cell" data-execution_count="11">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>(sns</span>
 <span id="cb13-2"><a href="#cb13-2"></a> .catplot</span>
 <span id="cb13-3"><a href="#cb13-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -850,7 +853,7 @@ Important
 <span id="cb13-7"><a href="#cb13-7"></a>  hue<span class="op">=</span><span class="st">'bmi_class'</span>,</span>
 <span id="cb13-8"><a href="#cb13-8"></a>  col<span class="op">=</span><span class="st">'region'</span>,</span>
 <span id="cb13-9"><a href="#cb13-9"></a>  col_wrap<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb13-10"><a href="#cb13-10"></a>  height<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb13-10"><a href="#cb13-10"></a>  height<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb13-11"><a href="#cb13-11"></a>  aspect<span class="op">=</span><span class="fl">0.7</span>,</span>
 <span id="cb13-12"><a href="#cb13-12"></a>  showmeans<span class="op">=</span><span class="va">True</span>,</span>
 <span id="cb13-13"><a href="#cb13-13"></a>  palette<span class="op">=</span><span class="st">'Blues'</span>,</span>
@@ -861,7 +864,7 @@ Important
 <div id="fig-boxplot-region" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;3: Age distribution based on region</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-boxplot-region-output-1.png" width="785" height="944" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-boxplot-region-output-1.png" width="647" height="752" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -871,7 +874,7 @@ Important
 <h4 class="anchored" data-anchor-id="inspecting-the-age-vs-charges-based-on-smoker-sex-and-bmi_class-profile">Inspecting the <code>age</code> vs <code>charges</code> based on <code>smoker</code>, <code>sex</code>, and <code>bmi_class</code> profile</h4>
 <div class="cell" data-execution_count="12">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>g<span class="op">=</span>(sns</span>
 <span id="cb14-2"><a href="#cb14-2"></a>.relplot</span>
 <span id="cb14-3"><a href="#cb14-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -883,8 +886,8 @@ Important
 <span id="cb14-9"><a href="#cb14-9"></a>  <span class="co"># legend='full',</span></span>
 <span id="cb14-10"><a href="#cb14-10"></a>  <span class="co"># col='bmi_class',</span></span>
 <span id="cb14-11"><a href="#cb14-11"></a>  <span class="co"># col_wrap=1,</span></span>
-<span id="cb14-12"><a href="#cb14-12"></a>  <span class="co"># height=5, </span></span>
-<span id="cb14-13"><a href="#cb14-13"></a>  <span class="co"># aspect=1.4,</span></span>
+<span id="cb14-12"><a href="#cb14-12"></a>  height<span class="op">=</span><span class="fl">3.5</span>, </span>
+<span id="cb14-13"><a href="#cb14-13"></a>  aspect<span class="op">=</span><span class="fl">1.2</span>,</span>
 <span id="cb14-14"><a href="#cb14-14"></a>  markers<span class="op">=</span>[<span class="st">"8"</span>,<span class="st">"P"</span>],</span>
 <span id="cb14-15"><a href="#cb14-15"></a>  palette<span class="op">=</span><span class="st">'tab10'</span>,</span>
 <span id="cb14-16"><a href="#cb14-16"></a>  size_order<span class="op">=</span>[<span class="st">'obese'</span>, <span class="st">'overweight'</span>, <span class="st">'healthy'</span>, <span class="st">'underweight'</span>]</span>
@@ -911,7 +914,7 @@ Important
 <div id="fig-age-charges-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;4: Age vs Charges</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-age-charges-1-output-1.png" width="582" height="505" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-age-charges-1-output-1.png" width="501" height="354" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -930,7 +933,7 @@ Important
 <h3 class="anchored" data-anchor-id="does-sex-affects-age-vs-charges-distributiontrend">Does <code>sex</code> affects <code>age</code> vs <code>charges</code> distribution/trend?</h3>
 <div class="cell" data-execution_count="13">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>(sns</span>
 <span id="cb15-2"><a href="#cb15-2"></a>.relplot</span>
 <span id="cb15-3"><a href="#cb15-3"></a> (data<span class="op">=</span>insurance</span>
@@ -945,8 +948,8 @@ Important
 <span id="cb15-12"><a href="#cb15-12"></a>  col<span class="op">=</span><span class="st">'sex'</span>,</span>
 <span id="cb15-13"><a href="#cb15-13"></a><span class="co">#   col_wrap=1,</span></span>
 <span id="cb15-14"><a href="#cb15-14"></a>  <span class="co"># row='smoker',</span></span>
-<span id="cb15-15"><a href="#cb15-15"></a><span class="co">#   height=4.7, </span></span>
-<span id="cb15-16"><a href="#cb15-16"></a><span class="co">#   aspect=0.9,</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>  height<span class="op">=</span><span class="dv">4</span>, </span>
+<span id="cb15-16"><a href="#cb15-16"></a>  aspect<span class="op">=</span><span class="fl">0.7</span>,</span>
 <span id="cb15-17"><a href="#cb15-17"></a>  markers<span class="op">=</span>[<span class="st">"8"</span>,<span class="st">"P"</span>],</span>
 <span id="cb15-18"><a href="#cb15-18"></a>  s<span class="op">=</span><span class="dv">300</span>,</span>
 <span id="cb15-19"><a href="#cb15-19"></a>  palette<span class="op">=</span><span class="st">'tab10'</span>,</span>
@@ -962,7 +965,7 @@ Important
 <div id="fig-age-charges-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;5: Age vs Charges based on Sex</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-age-charges-2-output-1.png" width="1075" height="505" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-age-charges-2-output-1.png" width="643" height="405" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -983,7 +986,7 @@ Important
 <h3 class="anchored" data-anchor-id="some-observed-outlier-group-i-a-between-group-i-and-ii">Some observed <code>outlier (group I-a)</code> between group I and II?</h3>
 <div class="cell" data-execution_count="14">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>g <span class="op">=</span> (sns</span>
 <span id="cb16-2"><a href="#cb16-2"></a>.relplot</span>
 <span id="cb16-3"><a href="#cb16-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -996,8 +999,8 @@ Important
 <span id="cb16-10"><a href="#cb16-10"></a>  col<span class="op">=</span><span class="st">'smoker'</span>,</span>
 <span id="cb16-11"><a href="#cb16-11"></a>  <span class="co"># col_wrap=1,</span></span>
 <span id="cb16-12"><a href="#cb16-12"></a>  <span class="co"># row='smoker',</span></span>
-<span id="cb16-13"><a href="#cb16-13"></a>  height<span class="op">=</span><span class="fl">4.7</span>, </span>
-<span id="cb16-14"><a href="#cb16-14"></a>  aspect<span class="op">=</span><span class="fl">0.9</span>,</span>
+<span id="cb16-13"><a href="#cb16-13"></a>  height<span class="op">=</span><span class="dv">4</span>, </span>
+<span id="cb16-14"><a href="#cb16-14"></a>  aspect<span class="op">=</span><span class="fl">0.7</span>,</span>
 <span id="cb16-15"><a href="#cb16-15"></a>  markers<span class="op">=</span>[<span class="st">"8"</span>,<span class="st">"P"</span>],</span>
 <span id="cb16-16"><a href="#cb16-16"></a>  s<span class="op">=</span><span class="dv">300</span>,</span>
 <span id="cb16-17"><a href="#cb16-17"></a>  palette<span class="op">=</span><span class="st">'tab10'</span>,</span>
@@ -1008,7 +1011,7 @@ Important
 <span id="cb16-22"><a href="#cb16-22"></a></span>
 <span id="cb16-23"><a href="#cb16-23"></a><span class="co">#annotations</span></span>
 <span id="cb16-24"><a href="#cb16-24"></a></span>
-<span id="cb16-25"><a href="#cb16-25"></a>g.fig.text(<span class="fl">0.7</span>, <span class="fl">0.22</span>, <span class="st">"I"</span>,</span>
+<span id="cb16-25"><a href="#cb16-25"></a>g.fig.text(<span class="fl">0.6</span>, <span class="fl">0.22</span>, <span class="st">"I"</span>,</span>
 <span id="cb16-26"><a href="#cb16-26"></a>   color<span class="op">=</span><span class="st">"black"</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">20</span>), fontweight<span class="op">=</span><span class="st">'bold'</span></span>
 <span id="cb16-27"><a href="#cb16-27"></a>          )</span>
 <span id="cb16-28"><a href="#cb16-28"></a></span>
@@ -1031,7 +1034,7 @@ Important
 <div id="fig-outlier" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;6: Outliers?</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-outlier-output-1.png" width="925" height="475" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-outlier-output-1.png" width="643" height="405" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1042,7 +1045,7 @@ Important
 <h3 class="anchored" data-anchor-id="what-affects-the-outlier-i-a-group">What affects the <code>outlier/ I-a</code> group?</h3>
 <div class="cell" data-execution_count="15">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>(sns</span>
 <span id="cb17-2"><a href="#cb17-2"></a>.relplot</span>
 <span id="cb17-3"><a href="#cb17-3"></a> (data<span class="op">=</span>insurance.query(<span class="st">'smoker == "no"'</span>),</span>
@@ -1055,7 +1058,7 @@ Important
 <span id="cb17-10"><a href="#cb17-10"></a>  col<span class="op">=</span><span class="st">'children'</span>,</span>
 <span id="cb17-11"><a href="#cb17-11"></a>  col_wrap<span class="op">=</span><span class="dv">2</span>,</span>
 <span id="cb17-12"><a href="#cb17-12"></a>  <span class="co"># row='region',</span></span>
-<span id="cb17-13"><a href="#cb17-13"></a>  height<span class="op">=</span><span class="dv">4</span>, </span>
+<span id="cb17-13"><a href="#cb17-13"></a>  height<span class="op">=</span><span class="dv">3</span>, </span>
 <span id="cb17-14"><a href="#cb17-14"></a>  aspect<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb17-15"><a href="#cb17-15"></a><span class="co">#   markers=["8","P"],</span></span>
 <span id="cb17-16"><a href="#cb17-16"></a>  <span class="co"># s=400,</span></span>
@@ -1069,7 +1072,7 @@ Important
 <div id="fig-outlier-eda" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;7: Outliers vs number of Children</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-outlier-eda-output-1.png" width="880" height="1136" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-outlier-eda-output-1.png" width="682" height="848" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1090,7 +1093,7 @@ Important
 </div>
 <div class="cell" data-execution_count="16">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>g <span class="op">=</span> (sns</span>
 <span id="cb18-2"><a href="#cb18-2"></a>.relplot</span>
 <span id="cb18-3"><a href="#cb18-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -1102,8 +1105,8 @@ Important
 <span id="cb18-9"><a href="#cb18-9"></a>  <span class="co"># legend='full',</span></span>
 <span id="cb18-10"><a href="#cb18-10"></a>  <span class="co"># col='bmi_class',</span></span>
 <span id="cb18-11"><a href="#cb18-11"></a>  <span class="co"># col_wrap=1,</span></span>
-<span id="cb18-12"><a href="#cb18-12"></a><span class="co">#   height=5, </span></span>
-<span id="cb18-13"><a href="#cb18-13"></a><span class="co">#   aspect=1.2,</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a>  height<span class="op">=</span><span class="fl">3.5</span>, </span>
+<span id="cb18-13"><a href="#cb18-13"></a>  aspect<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb18-14"><a href="#cb18-14"></a>  markers<span class="op">=</span>[<span class="st">"8"</span>,<span class="st">"P"</span>],</span>
 <span id="cb18-15"><a href="#cb18-15"></a>  palette<span class="op">=</span><span class="st">'tab10'</span>,</span>
 <span id="cb18-16"><a href="#cb18-16"></a>  size_order<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]</span>
@@ -1133,7 +1136,7 @@ Important
 <div id="fig-bmi-charges" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Figure&nbsp;8: BMI vs Charges</figcaption><p></p>
-<p><img src="index_files/figure-html/fig-bmi-charges-output-1.png" width="539" height="505" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-bmi-charges-output-1.png" width="388" height="354" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1153,15 +1156,13 @@ Important
 <li>Group II: medical <strong>charges between 16k-30k</strong>, <code>smoker</code> and <code>overweight</code>.</li>
 <li>Group III: medical <strong>charges above 30k</strong>, <code>smoker</code> and <code>obese</code>.</li>
 </ul></li>
+<li><p>There is also one <code>outlier</code> or group <code>I-a</code>, where it is <code>unclear as to what affects the medical charges increase</code> to be between group I and II.</p></li>
 </ol>
-<ol type="1">
-<li>There is also one <code>outlier</code> or group <code>I-a</code>, where it is <code>unclear as to what affects the medical charges increase</code> to be between group I and II.</li>
-</ol>
-<p>The above groups (<code>I, II, III</code>) can be used for <strong><code>risk profiling</code></strong>, where based on its profile, the associated risk related to medical charges can be determined.</p>
-<p>Since each group forms a trendline (simple linear regression), and can be categorized based on its smoker, and bmi profile, then the flowchart can be illustrated in the flowchart below.</p>
+<p>The above groups (<code>I, II, III</code>) can be used for <strong><code>risk profiling</code></strong>, where based on its profile, the associated risk related to medical charges can be determined. Since each group forms a trendline (simple linear regression), and can be categorized based on its smoker, and bmi profile. Based on this approach, one can estimate the optimum pricing for each risk profile (based on its medical charges).</p>
+<p>See below flowchart for simple ilustration.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="flowchart-risk-profile">
+<div>
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
     A[Member] --&gt; B{Smoking}
@@ -1169,17 +1170,14 @@ Important
     B --&gt; |Yes| D{BMI Class}
     D --&gt; |Overweight| E[Group II]
     D --&gt; |Obese| F[Group III]
-
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
 </div>
 <p></p>
-<p>Risk Profling Flowchart</p>
 </div>
 </div>
 </div>
-<p>Based on this approach, one can estimate the optimum pricing for each risk profile (based on its medical charges).</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

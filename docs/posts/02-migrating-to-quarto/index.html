@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title d-none d-lg-block">Migrating My Personal Blog to Quarto</h1>
@@ -224,10 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -237,6 +234,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#hiccups-and-hopes-for-future-development" id="toc-hiccups-and-hopes-for-future-development" class="nav-link" data-scroll-target="#hiccups-and-hopes-for-future-development">Hiccups and Hopes for Future Development</a></li>
   </ul>
 </nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -300,7 +300,7 @@ Note
 <p>Not only that, quarto allows use to generate multiple format from presentation (<code>revealjs</code>, <code>pptx</code>), article, report in <code>pdf</code> or <code>docx</code>, easily from a single markdown <code>.qmd</code> file. I’d probably write a post explaining about that in the future. Perhaps diagram below would simplify why I liked Quarto flexibility.</p>
 <div class="cell">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1"></a>flowchart LR</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  A[.ipynb] --&gt; B(.qmd)</span>
 <span id="cb2-3"><a href="#cb2-3"></a>  B --&gt; C{quarto render}</span>

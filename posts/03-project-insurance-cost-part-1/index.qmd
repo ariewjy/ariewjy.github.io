@@ -119,6 +119,7 @@ insurance['bmi_class']= pd.cut(
  .agg(['min', 'max', 'count'])
  # .style.background_gradient()
  # .style.text_gradient()
+#  .T
 )
 ```
 @tbl-bmi-class shows a new column `bmi_class` as the result of grouping the bmi data into different categories.
@@ -168,6 +169,8 @@ As many people know, smoking is highly linked to clinical disease such as *TBC, 
      x='age', 
      hue='smoker',
      kind='hist',
+     height=3,
+     aspect=1.2,
  )
 );
 ```
@@ -248,9 +251,9 @@ Furthermore, @tbl-ratio-sex shows that male has 10% higher medical charges compa
   hue='bmi_class',
   col='sex',
   # col_wrap=1,
-  height=5,
+  height=4,
   aspect=0.7,
-  showmeans=True,
+  # showmeans=True,
   palette='Blues',
  )
 );
@@ -275,7 +278,7 @@ Whereas in the `smoker group, there is no clear trend of age vs bmi`. This can b
   hue='bmi_class',
   col='region',
   col_wrap=2,
-  height=5,
+  height=4,
   aspect=0.7,
   showmeans=True,
   palette='Blues',
@@ -302,8 +305,8 @@ g=(sns
   # legend='full',
   # col='bmi_class',
   # col_wrap=1,
-  # height=5, 
-  # aspect=1.4,
+  height=3.5, 
+  aspect=1.2,
   markers=["8","P"],
   palette='tab10',
   size_order=['obese', 'overweight', 'healthy', 'underweight']
@@ -357,8 +360,8 @@ The three group of `trends` were heavily `affected` by the smoker/ non-smoker gr
   col='sex',
 #   col_wrap=1,
   # row='smoker',
-#   height=4.7, 
-#   aspect=0.9,
+  height=4, 
+  aspect=0.7,
   markers=["8","P"],
   s=300,
   palette='tab10',
@@ -398,8 +401,8 @@ g = (sns
   col='smoker',
   # col_wrap=1,
   # row='smoker',
-  height=4.7, 
-  aspect=0.9,
+  height=4, 
+  aspect=0.7,
   markers=["8","P"],
   s=300,
   palette='tab10',
@@ -410,7 +413,7 @@ g = (sns
 
 #annotations
 
-g.fig.text(0.7, 0.22, "I",
+g.fig.text(0.6, 0.22, "I",
    color="black", fontdict=dict(size=20), fontweight='bold'
           )
 
@@ -450,7 +453,7 @@ If we look at the above @fig-outlier, in the non-smoker group, there is a cloud 
   col='children',
   col_wrap=2,
   # row='region',
-  height=4, 
+  height=3, 
   aspect=1,
 #   markers=["8","P"],
   # s=400,
@@ -482,8 +485,8 @@ g = (sns
   # legend='full',
   # col='bmi_class',
   # col_wrap=1,
-#   height=5, 
-#   aspect=1.2,
+  height=3.5, 
+  aspect=1,
   markers=["8","P"],
   palette='tab10',
   size_order=[1,2,3,4,5,6]
@@ -529,28 +532,23 @@ Similar to the previous @fig-age-charges-2, in @fig-bmi-charges we can see that 
     + Group II: medical **charges between 16k-30k**, `smoker` and `overweight`.
     + Group III: medical **charges above 30k**, `smoker` and `obese`.
 
-[^4]: the BMI class shows a mix of all classes (from underweight to obese)
-
 1. There is also one `outlier` or group `I-a`, where it is `unclear as to what affects the medical charges increase` to be between group I and II.
 
-The above groups (`I, II, III`) can be used for **`risk profiling`**, where based on its profile, the associated risk related to medical charges can be determined. 
+[^4]: the BMI class shows a mix of all classes (from underweight to obese)
 
-Since each group forms a trendline (simple linear regression), and can be categorized based on its smoker, and bmi profile, then the flowchart can be illustrated in the flowchart below.
+The above groups (`I, II, III`) can be used for **`risk profiling`**, where based on its profile, the associated risk related to medical charges can be determined. Since each group forms a trendline (simple linear regression), and can be categorized based on its smoker, and bmi profile. Based on this approach, one can estimate the optimum pricing for each risk profile (based on its medical charges). 
+
+See below flowchart for simple ilustration.
 
 ```{mermaid}
 %%| echo: false
-%%| label: flowchart-risk-profile
-%%| fig-cap: Risk Profling Flowchart
 flowchart LR
     A[Member] --> B{Smoking}
     B --> |No| C[Group I]
     B --> |Yes| D{BMI Class}
     D --> |Overweight| E[Group II]
     D --> |Obese| F[Group III]
-
 ```
-
-Based on this approach, one can estimate the optimum pricing for each risk profile (based on its medical charges). 
 
 ::: {.callout-note}
 The next step would be using some of these knowledge to further investigate the likelihood (probability) of each risk profile based on its numeric (age-bmi) and categorical variable (smoker-bmi-region-sex). 

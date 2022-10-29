@@ -79,7 +79,7 @@ format:
     reference-location: document
     code-line-numbers: true
     code-copy: true
-    code-summary: Click to Show Code
+    code-summary: Show Code
     # max-width: 2em
     # mainfont: "system-ui"
     # monofont: "system-ui"
