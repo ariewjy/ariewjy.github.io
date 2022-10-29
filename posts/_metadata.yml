@@ -11,9 +11,8 @@ title-block-banner: "#F6F0ED"
 
 # Default for table of contents
 toc: true
-toc-title: On This Page
+toc-title: Table of contents
 toc-location: left
-# toc-depth: 2
 
 # Default knitr options
 execute:
