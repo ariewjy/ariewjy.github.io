@@ -71,7 +71,7 @@ format:
     #table and figure setting
     tbl-cap-location: top
     fig-cap-location: top
-    fig-align: center
+    fig-align: left
     # fig-responsive: true
     # fig-height: 2
     # fig-asp: 1
