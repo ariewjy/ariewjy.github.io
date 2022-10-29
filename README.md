@@ -1,2 +1,2 @@
-# quarto-blog
-Personal Blog in Quarto
+# Personal Website Built with Quarto
+
