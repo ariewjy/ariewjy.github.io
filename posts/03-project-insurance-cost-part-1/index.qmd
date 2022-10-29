@@ -373,7 +373,7 @@ plt.suptitle('age vs charges | separated by male vs female', y = 1.05);
 
 **Couple conclusions can be drawn from these @fig-age-charges-1 and @fig-age-charges-2:**
 
-1. That the `female is likely to have higher medical charges` compared to male, albeit relatively small difference (10% difference).
+1. That the `male is likely to have higher medical charges` compared to female, albeit relatively small difference (10% difference).
 1. There are three groups of strong trend between age vs charges, where as the age increases in all trends, the medical charges is likely to increases as well.
 1. The three groups can be characterized from low-high charges as follows:
     1. Group `I`: medical charges between `0-16,000`, predominantly `non-smoker`,and a mix between all bmi_class.
