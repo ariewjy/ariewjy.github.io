@@ -206,6 +206,7 @@ Based on distribution at @fig-mean-age, the mean age for all insurance members i
 ```
 
 Calculating the **ratio** of smoker to non-smoker group
+
 ```{python}
 #| label: tbl-ratio-smoker
 #| tbl-cap: Ratio of Charges based on Smoker profile
@@ -376,7 +377,7 @@ plt.suptitle('age vs charges | separated by male vs female', y = 1.05);
 
 **Couple conclusions can be drawn from these @fig-age-charges-1 and @fig-age-charges-2:**
 
-1. That the `female is likely to have higher medical charges` compared to male, albeit relatively small difference (10% difference).
+1. That the `male is likely to have higher medical charges` compared to female, with relatively small difference (@tbl-ratio-sex).
 1. There are three groups of strong trend between age vs charges, where as the age increases in all trends, the medical charges is likely to increases as well.
 1. The three groups can be characterized from low-high charges as follows:
     1. Group `I`: medical charges between `0-16,000`, predominantly `non-smoker`,and a mix between all bmi_class.
@@ -525,7 +526,7 @@ Similar to the previous @fig-age-charges-2, in @fig-bmi-charges we can see that 
 
 1. Other variable such as the `number of children`/ dependant is not playing a role, whereas `sex` profile `affect the charges slightly`[^3]. 
 
-      [^3]: around 10% higher in female, compared to male counterpart (see @fig-age-charges-2)
+      [^3]: around 10% higher in male, compared to female counterpart (see @tbl-ratio-sex)
 
 1. There is a `strong relationship between age and medical charges`, with `3` strong group categorized by `smoker` and `bmi` profile. The big three groups are:
     + Group I: medical **charges below 16k**,`non-smoker`[^4].
