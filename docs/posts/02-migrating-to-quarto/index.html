@@ -8,7 +8,7 @@
 
 <meta name="author" content="Aditya Arie Wijaya">
 <meta name="dcterms.date" content="2022-10-21">
-<meta name="description" content="Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.">
+<meta name="description" content="Somethings I learnt when I moved my personal website to Quarto from Jekyll-based theme.">
 
 <title>Geoscientist Who Codes - Migrating My Personal Blog to Quarto</title>
 <style>
@@ -90,7 +90,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -132,10 +131,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Geoscientist Who Codes - Migrating My Personal Blog to Quarto">
-<meta property="og:description" content="Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.">
+<meta property="og:description" content="Somethings I learnt when I moved my personal website to Quarto from Jekyll-based theme.">
 <meta property="og:site-name" content="Geoscientist Who Codes">
 <meta name="twitter:title" content="Geoscientist Who Codes - Migrating My Personal Blog to Quarto">
-<meta name="twitter:description" content="Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.">
+<meta name="twitter:description" content="Somethings I learnt when I moved my personal website to Quarto from Jekyll-based theme.">
 <meta name="twitter:image" content="ariewjy.github.io/img/profile.jpg">
 <meta name="twitter:creator" content="@Adtarie">
 <meta name="twitter:card" content="summary_large_image">
@@ -184,17 +183,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title d-none d-lg-block">Migrating My Personal Blog to Quarto</h1>
                   <div>
         <div class="description">
-          <p>Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.</p>
+          <p>Somethings I learnt when I moved my personal website to Quarto from Jekyll-based theme.</p>
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">blog</div>
+                <div class="quarto-category">jekyll</div>
                 <div class="quarto-category">quarto</div>
               </div>
                   </div>
@@ -224,7 +224,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -234,9 +237,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#hiccups-and-hopes-for-future-development" id="toc-hiccups-and-hopes-for-future-development" class="nav-link" data-scroll-target="#hiccups-and-hopes-for-future-development">Hiccups and Hopes for Future Development</a></li>
   </ul>
 </nav>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -246,8 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/s/photos/paper?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption><p></p>
 <p><img src="image.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/s/photos/paper?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption><p></p>
 </figure>
 </div>
 <section id="static-website-triumph" class="level1">
@@ -292,15 +292,15 @@ Note
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Jupyter lab Example</figcaption><p></p>
 <p><img src="../../posts/02-migrating-to-quarto/jupyter-lab.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Jupyter lab Example</figcaption><p></p>
 </figure>
 </div>
 <p>If you prefer a tutorial video, I highly recommend Isabella’s video, in which she show some practical step-by-step when making a blog using quarto. </p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/CVcvXfRyfE0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
 <p>Not only that, quarto allows use to generate multiple format from presentation (<code>revealjs</code>, <code>pptx</code>), article, report in <code>pdf</code> or <code>docx</code>, easily from a single markdown <code>.qmd</code> file. I’d probably write a post explaining about that in the future. Perhaps diagram below would simplify why I liked Quarto flexibility.</p>
 <div class="cell">
 <details>
-<summary>Click to Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1"></a>flowchart LR</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  A[.ipynb] --&gt; B(.qmd)</span>
 <span id="cb2-3"><a href="#cb2-3"></a>  B --&gt; C{quarto render}</span>
@@ -524,7 +524,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+<script src="https://utteranc.es/client.js" repo="ariewjy/quarto-blog" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">
@@ -532,14 +532,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="https://www.quarto.org">Built w/ Quarto</a>
+    <a class="nav-link" href="https://www.quarto.org">Built with Quarto</a>
   </li>  
 </ul>
     </div>   
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../license.html">License</a>
+ Copyright, Aditya Arie Wijaya
   </li>  
 </ul>
     </div>

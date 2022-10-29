@@ -1,6 +1,6 @@
 ---
 title: "My First Interview in 500 Fortune Company"
-description: During the interview, the user asked me a question that was attempted to test my honesty. I said I don't know, so I got the job.
+description: I Got the Job Because I Said I Don't Know
 date: "2022-08-29"
 categories: [career]
 draft: false

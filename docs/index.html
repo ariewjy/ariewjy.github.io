@@ -25,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-title','listing-description','listing-date','listing-reading-time','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -176,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="career">career <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data-science">data-science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="project">project <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="career">career <span class="quarto-category-count">(1)</span></div><div class="category" data-category="jekyll">jekyll <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -187,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
@@ -206,105 +205,82 @@ ul.task-list li input[type="checkbox"] {
      </select>
   </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="project,data-science,python" data-listing-date-sort="1666800000000" data-listing-file-modified-sort="1666976461568" data-listing-reading-time-sort="13.18">
-<a href="./posts/03-project-insurance-cost-part-1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/03-project-insurance-cost-part-1/image.jpeg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Medical Insurance Cost [Part-1]
-</h5>
-<div class="listing-reading-time card-text text-muted">
-13 min
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="blog,jekyll,quarto" data-listing-date-sort="1666281600000" data-listing-file-modified-sort="1666545873071" data-listing-reading-time-sort="4.605">
+<div class="thumbnail">
+<p><a href="./posts/02-migrating-to-quarto/index.html"> <img src="./posts/02-migrating-to-quarto/image.jpeg" class="thumnail-image" style="height: 240px;"> </a></p>
 </div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
-project
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('data-science'); return false;">
-data-science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-</div>
-<div class="card-text listing-description">
-<p>Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.</p>
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 27, 2022
-</div>
-</div>
-</div>
+<div class="body">
+<a href="./posts/02-migrating-to-quarto/index.html">
+<h3 class="no-anchor listing-title">
+Migrating My Personal Blog to Quarto
+</h3>
+<div class="listing-subtitle">
+
 </div>
 </a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="blog,quarto" data-listing-date-sort="1666281600000" data-listing-file-modified-sort="1666958988397" data-listing-reading-time-sort="4.605">
-<a href="./posts/02-migrating-to-quarto/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/02-migrating-to-quarto/image.jpeg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Migrating My Personal Blog to Quarto
-</h5>
-<div class="listing-reading-time card-text text-muted">
-4 min
-</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('jekyll'); return false;">
+jekyll
 </div>
 <div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
 quarto
 </div>
 </div>
-<div class="card-text listing-description">
-<p>Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.</p>
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 21, 2022
-</div>
-</div>
-</div>
+<a href="./posts/02-migrating-to-quarto/index.html">
+<div class="listing-description">
+<p>Somethings I learnt when I moved my personal website to Quarto from Jekyll-based theme.</p>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="career" data-listing-date-sort="1661702400000" data-listing-file-modified-sort="1666958850646" data-listing-reading-time-sort="2.5">
-<a href="./posts/01-my-first-gig/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/01-my-first-gig/preview.jpeg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-My First Interview in 500 Fortune Company
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
+<div class="metadata">
+<a href="./posts/02-migrating-to-quarto/index.html">
+<div class="listing-date">
+Oct 21, 2022
 </div>
+<div class="listing-reading-time">
+4 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="career" data-listing-date-sort="1661702400000" data-listing-file-modified-sort="1666544301523" data-listing-reading-time-sort="2.5">
+<div class="thumbnail">
+<p><a href="./posts/01-my-first-gig/index.html"> <img src="./posts/01-my-first-gig/preview.jpeg" class="thumnail-image" style="height: 240px;"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/01-my-first-gig/index.html">
+<h3 class="no-anchor listing-title">
+My First Interview in 500 Fortune Company
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('career'); return false;">
 career
 </div>
 </div>
-<div class="card-text listing-description">
-During the interview, the user asked me a question that was attempted to test my honesty. I said I don’t know, so I got the job.
+<a href="./posts/01-my-first-gig/index.html">
+<div class="listing-description">
+<p>I Got the Job Because I Said I Don’t Know</p>
 </div>
-<div class="card-attribution card-text-small end">
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/01-my-first-gig/index.html">
 <div class="listing-date">
 Aug 29, 2022
 </div>
-</div>
-</div>
+<div class="listing-reading-time">
+2 min
 </div>
 </a>
+</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
@@ -450,14 +426,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="https://www.quarto.org">Built w/ Quarto</a>
+    <a class="nav-link" href="https://www.quarto.org">Built with Quarto</a>
   </li>  
 </ul>
     </div>   
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./license.html">License</a>
+ Copyright, Aditya Arie Wijaya
   </li>  
 </ul>
     </div>

@@ -21,6 +21,7 @@ website:
     image: img/profile.jpg
     creator: "@Adtarie"
     card-style: summary_large_image
+  # site-url:
   open-graph: true
   sidebar:
     style: docked
@@ -29,7 +30,7 @@ website:
     # logo: logo_rounded.png
     background: "#F6F0ED"
     foreground: "#0B2027"
-    pinned: false
+    pinned: true
     right:
       - text: "About"
         file: about.qmd
@@ -45,13 +46,10 @@ website:
       #   href: https://www.linkedin.com/in/adityaariewijaya/
   page-footer:
     right:
-      # - text: "Copyright, Aditya Arie Wijaya"
-      - href: license.qmd
-        text: License
+      - text: "Copyright, Aditya Arie Wijaya"
     left:
       - href: https://www.quarto.org
-        text: Built w/ Quarto
-
+        text: Built with Quarto
   page-navigation: true
 format:
   html:
@@ -61,26 +59,13 @@ format:
       # dark: darkly
     css: styles.scss
     highlight-style: eiffel
-
     # toc: true
     # toc-location: right
     # fontsize: 1em
     code-link: true
     anchor-sections: true
-
-    #table and figure setting
-    tbl-cap-location: top
-    fig-cap-location: top
-    fig-align: center
-    # fig-responsive: true
-    # fig-height: 2
-    # fig-asp: 1
-    # fig-dpi: 96
+    fig-cap-location: bottom
     reference-location: document
-    code-line-numbers: true
-    code-copy: true
-    code-summary: Click to Show Code
-    # max-width: 2em
     # mainfont: "system-ui"
     # monofont: "system-ui"
     footnotes-hover: true
