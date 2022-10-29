@@ -2,22 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>ariewjy.github.io/posts/01-my-first-gig/index.html</loc>
-    <lastmod>2022-10-23T17:11:17.141Z</lastmod>
+    <lastmod>2022-10-28T17:01:39.530Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/posts/03-project-insurance-cost-part-1/index.html</loc>
+    <lastmod>2022-10-28T17:01:40.669Z</lastmod>
   </url>
   <url>
     <loc>ariewjy.github.io/posts/02-migrating-to-quarto/index.html</loc>
-    <lastmod>2022-10-23T17:24:33.933Z</lastmod>
+    <lastmod>2022-10-28T17:01:41.309Z</lastmod>
   </url>
   <url>
     <loc>ariewjy.github.io/index.html</loc>
-    <lastmod>2022-10-23T17:24:34.248Z</lastmod>
+    <lastmod>2022-10-28T17:01:41.650Z</lastmod>
   </url>
   <url>
     <loc>ariewjy.github.io/publications.html</loc>
-    <lastmod>2022-10-23T17:00:07.334Z</lastmod>
+    <lastmod>2022-10-28T17:01:41.949Z</lastmod>
   </url>
   <url>
     <loc>ariewjy.github.io/about.html</loc>
-    <lastmod>2022-10-23T17:00:09.220Z</lastmod>
+    <lastmod>2022-10-28T17:01:42.262Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/license.html</loc>
+    <lastmod>2022-10-28T17:01:42.546Z</lastmod>
   </url>
 </urlset>

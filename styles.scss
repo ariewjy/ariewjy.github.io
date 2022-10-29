@@ -9,7 +9,7 @@ $font-family-serif: "Inter" !default;
 // use Atkinson Hyperlegible font if available
 // $font-family-sans-serif: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
-$font-size-base: 0.9rem !default;
+$font-size-base: 0.85rem !default;
 
 // Nav bar
 
@@ -24,6 +24,18 @@ $font-size-base: 0.9rem !default;
 
 .dropdown-text {
   color: "#FFFFFF";
+}
+
+// a.navbar-brand {
+//   font-size: 20px;
+// }
+
+span.navbar-title {
+  font-size: 16px;
+}
+
+h1.quarto-secondary-nav-title {
+  font-size: 18px;
 }
 
 // Typography
@@ -48,6 +60,7 @@ h3.no-anchor.listing-title {
 
 h3.anchored {
   font-weight: 400;
+  font-size: 24px;
 }
 
 h2.anchored {

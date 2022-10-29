@@ -1,34 +1,34 @@
 ---
 title: "Publications"
-description: "sorted from most recent"
-title-block-banner: true
+# description: "sorted from most recent"
+title-block-banner: false
 page-layout: article
 comments: false
 citation: false
 ---
 
 ### 2022
-1. **Critical Porosity in Understanding Acoustic Porosity Anomalies. A Case Study in Complex Carbonate Reservoir in Indonesia**. Wijaya, Aditya Arie, Kunaifi, Sunawar,  Laya, Krishna Pratama, Luqman, Ramadhan, Dimmas. Proceedings, Indonesia Petroleum Association. 46th Annual Convention & Exhibition Sep 2022. [PDF](papers/IPA22-G-23.pdf)
+1. **Critical Porosity in Understanding Acoustic Porosity Anomalies. A Case Study in Complex Carbonate Reservoir in Indonesia**. Wijaya, Aditya Arie, Kunaifi, Sunawar,  Laya, Krishna Pratama, Luqman, Ramadhan, Dimmas. Proceedings, Indonesia Petroleum Association. 46th Annual Convention & Exhibition Sep 2022. [Paper](papers/IPA22-G-23.pdf)
 
 ### 2021
 1. **Thru-Tubing Integrity Assurance in CO2-Injection Well Using Electromagnetic Corrosion Logging Tool: A Case Study in Far East Test Field, Japan**. Aditya Arie Wijaya and Akira Endo and Sarvagya Parashar. SPWLA Japan JFES 26th, Virtual Event, 2021. [https://doi.org/10.30632/SPWLA-2021-0043](https://onepetro.org/SPWLAALS/proceedings-abstract/SPWLA21/2-SPWLA21/D021S014R002/463011)
 
-1. **Integrated Evaluation of Laminated Sand-Shale Gas-Bearing Reservoir Using Tensor Model: A Case Study Combining Data from Triaxial Resistivity, Image, Sonic, and Reservoir Testing in B-Field, Malaysia**. Aditya Arie Wijaya, Ivan Zhia Ming Wu, Sarvagya Parashar, Mohammad Iffwad, Amirul Afiq B Yaakob, William Amelio Tolioe, Adib Akmal Che Sidid and Nadhirah Bt. Ahmad. SPWLA 62nd Annual Logging Symposium, Virtual Event. [https://doi.org/10.30632/SPWLA-2021-0043](https://onepetro.org/SPWLAALS/proceedings-abstract/SPWLA21/2-SPWLA21/D021S014R002/463011)
+1. **Integrated Evaluation of Laminated Sand-Shale Gas-Bearing Reservoir Using Tensor Model: A Case Study Combining Data from Triaxial Resistivity, Image, Sonic, and Reservoir Testing in B-Field, Malaysia**. Aditya Arie Wijaya, Ivan Zhia Ming Wu, Sarvagya Parashar, Mohammad Iffwad, Amirul Afiq B Yaakob, William Amelio Tolioe, Adib Akmal Che Sidid and Nadhirah Bt. Ahmad. SPWLA 62nd Annual Logging Symposium, Virtual Event. [https://doi.org/10.30632/SPWLA-2021-0043](https://onepetro.org/SPWLAALS/proceedings-abstract/SPWLA21/2-SPWLA21/D021S014R002/463011), [Paper](papers/spwla-2021-0043.pdf).
 
-1. **Full Well Corrosion Insight – Case Studies in the Added Value of Electromagnetic Thickness Measurements During Well Interventions**. Andrew Imrie, Maciej Kozlowski, Omar Torky, and Aditya Arie Wijaya. SPE/ICoTA Well Intervention Conference and Exhibition, Virtual. 2021. [https://doi.org/10.2118/204431-MS](https://onepetro.org/SPECTWI/proceedings-abstract/21CTWI/3-21CTWI/D031S005R002/460489#.YE9-oUb5AAQ)
+1. **Full Well Corrosion Insight – Case Studies in the Added Value of Electromagnetic Thickness Measurements During Well Interventions**. Andrew Imrie, Maciej Kozlowski, Omar Torky, and Aditya Arie Wijaya. SPE/ICoTA Well Intervention Conference and Exhibition, Virtual. 2021. [https://doi.org/10.2118/204431-MS](https://onepetro.org/SPECTWI/proceedings-abstract/21CTWI/3-21CTWI/D031S005R002/460489#.YE9-oUb5AAQ), [Paper](papers/spe-204431-ms.pdf).
 
 ### 2020
-1. **Multi-Detector Pulsed Neutron Tool Application in Low Porosity Reservoir — A Case Study in Mutiara Field, Indonesia**. Aditya Arie Wijaya, Rama Aulianagara, Weijun Guo, Fetty Maria Naibaho, Fransiscus Xaverius Asriwan and Usman Amirudin. SPWLA 61st Annual Logging Symposium, Virtual Online Webinar and    Featured in the SPWLA Journal Dec 2020. [https://doi.org/10.30632/SPWLA-5082](https://onepetro.org/SPWLAALS/proceedings-abstract/SPWLA20/15-SPWLA20/D153S011R002/445732)
+1. **Multi-Detector Pulsed Neutron Tool Application in Low Porosity Reservoir — A Case Study in Mutiara Field, Indonesia**. Aditya Arie Wijaya, Rama Aulianagara, Weijun Guo, Fetty Maria Naibaho, Fransiscus Xaverius Asriwan and Usman Amirudin. SPWLA 61st Annual Logging Symposium, Virtual Online Webinar and    Featured in the SPWLA Journal Dec 2020. [https://doi.org/10.30632/SPWLA-5082](https://onepetro.org/SPWLAALS/proceedings-abstract/SPWLA20/15-SPWLA20/D153S011R002/445732), [Paper](papers/spwla-5082.pdf), [SPWLA Journal Article](papers/Wijaya_et_al_SPWLA_Dec_Journal.pdf).
 
 ### 2019
-1. **Practical Application of Tensor Model in Laminated Sand Shale Analysis**. Aditya Arie Wijaya. Abu Dhabi International Petroleum Exhibition & Conference, Abu Dhabi, UAE, 2019. [https://doi.org/10.2118/197208-MS](https://onepetro.org/SPEADIP/proceedings-abstract/19ADIP/4-19ADIP/D041S111R004/216765?redirectedFrom=PDF)
+1. **Practical Application of Tensor Model in Laminated Sand Shale Analysis**. Aditya Arie Wijaya. Abu Dhabi International Petroleum Exhibition & Conference, Abu Dhabi, UAE, 2019. [https://doi.org/10.2118/197208-MS](https://onepetro.org/SPEADIP/proceedings-abstract/19ADIP/4-19ADIP/D041S111R004/216765?redirectedFrom=PDF), [Paper](papers/SPE-197208-MS.pdf).
 
-1. **Behind Casing Gas Identification Using Ultrasonic Wireline Logs: An Overview of Multiwell Field Plug and Abandonment Study, Offshore Malaysia.** Andrew Imrie, Mohd Hazwan Zainal Abidin, Aditya Arie Wijaya, Ping Ting, Ulimaz Dhania, Ekky Nugroho Mahardika, Li Juan Saw, Siti Najmi Farhan Bt Zulkipli. SPE Symposium: Decommissioning and Abandonment, Malaysia, 2019. [https://doi.org/10.2118/199180-MS](https://onepetro.org/SPESM02/proceedings-abstract/20SM02/2-20SM02/D021S004R004/219482?redirectedFrom=PDF)
+1. **Behind Casing Gas Identification Using Ultrasonic Wireline Logs: An Overview of Multiwell Field Plug and Abandonment Study, Offshore Malaysia.** Andrew Imrie, Mohd Hazwan Zainal Abidin, Aditya Arie Wijaya, Ping Ting, Ulimaz Dhania, Ekky Nugroho Mahardika, Li Juan Saw, Siti Najmi Farhan Bt Zulkipli. SPE Symposium: Decommissioning and Abandonment, Malaysia, 2019. [https://doi.org/10.2118/199180-MS](https://onepetro.org/SPESM02/proceedings-abstract/20SM02/2-20SM02/D021S004R004/219482?redirectedFrom=PDF), [Paper](papers/SPE-199180-MS.pdf).
 
-1. **Where’s the Water Coming from? — A Combined Formation Saturation, Production Logging, Water Flow, and Leak Detection Diagnosis Deployed on Coiled Tubing**. Andrew Imrie, Muhammad Bagir, Glen Ricky Himawan, Mahadevan S Iyer and Aditya Arie Wijaya. SPE/IATMI Asia Pacific Oil & Gas Conference and Exhibition, Bali, Indonesia, 2019. [https://doi.org/10.2118/196544-MS](https://onepetro.org/SPEAPOG/proceedings-abstract/19APOG/1-19APOG/D011S006R001/217327?redirectedFrom=PDF)
+1. **Where’s the Water Coming from? — A Combined Formation Saturation, Production Logging, Water Flow, and Leak Detection Diagnosis Deployed on Coiled Tubing**. Andrew Imrie, Muhammad Bagir, Glen Ricky Himawan, Mahadevan S Iyer and Aditya Arie Wijaya. SPE/IATMI Asia Pacific Oil & Gas Conference and Exhibition, Bali, Indonesia, 2019. [https://doi.org/10.2118/196544-MS](https://onepetro.org/SPEAPOG/proceedings-abstract/19APOG/1-19APOG/D011S006R001/217327?redirectedFrom=PDF), [Paper](papers/SPE-196544-MS.pdf).
 
 ### 2018
-1. **Success Novel of Integrating Pulsed Neutron and Comprehensive Production Data Analysis to Optimize Well Production, Indonesia.** Aditya Arie Wijaya and Muhammad Bagir. SPWLA Asia Pacific Symposium Bogor, Indonesia, 2018. [SPWLA-2018-1841](https://onepetro.org/SPWLAAPTS/proceedings-abstract/APTS18/All-APTS18/SPWLA-2018-1841/28836)
+1. **Success Novel of Integrating Pulsed Neutron and Comprehensive Production Data Analysis to Optimize Well Production, Indonesia.** Aditya Arie Wijaya and Muhammad Bagir. SPWLA Asia Pacific Symposium Bogor, Indonesia, 2018. [SPWLA-2018-1841](https://onepetro.org/SPWLAAPTS/proceedings-abstract/APTS18/All-APTS18/SPWLA-2018-1841/28836), [Paper](papers/SPWLA-2018-1841.pdf).
 
 
 
