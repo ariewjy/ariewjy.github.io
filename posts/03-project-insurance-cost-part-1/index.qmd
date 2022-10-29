@@ -11,6 +11,7 @@ categories:
   - python
 jupyter: python3
 draft: false
+fig-align: left
 ---
 
 ![Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -168,6 +169,8 @@ As many people know, smoking is highly linked to clinical disease such as *TBC, 
      x='age', 
      hue='smoker',
      kind='hist',
+     height=4,
+     aspect=1.4
  )
 );
 ```
@@ -248,8 +251,8 @@ Furthermore, @tbl-ratio-sex shows that male has 10% higher medical charges compa
   hue='bmi_class',
   col='sex',
   # col_wrap=1,
-  height=5,
-  aspect=0.7,
+  height=4,
+  aspect=0.75,
   showmeans=True,
   palette='Blues',
  )
@@ -275,8 +278,8 @@ Whereas in the `smoker group, there is no clear trend of age vs bmi`. This can b
   hue='bmi_class',
   col='region',
   col_wrap=2,
-  height=5,
-  aspect=0.7,
+  height=4,
+  aspect=0.75,
   showmeans=True,
   palette='Blues',
  )
@@ -302,8 +305,8 @@ g=(sns
   # legend='full',
   # col='bmi_class',
   # col_wrap=1,
-  # height=5, 
-  # aspect=1.4,
+  height=4, 
+  aspect=1.4,
   markers=["8","P"],
   palette='tab10',
   size_order=['obese', 'overweight', 'healthy', 'underweight']
@@ -357,8 +360,8 @@ The three group of `trends` were heavily `affected` by the smoker/ non-smoker gr
   col='sex',
 #   col_wrap=1,
   # row='smoker',
-#   height=4.7, 
-#   aspect=0.9,
+  height=4, 
+  aspect=0.75,
   markers=["8","P"],
   s=300,
   palette='tab10',
@@ -398,8 +401,8 @@ g = (sns
   col='smoker',
   # col_wrap=1,
   # row='smoker',
-  height=4.7, 
-  aspect=0.9,
+  height=4, 
+  aspect=0.75,
   markers=["8","P"],
   s=300,
   palette='tab10',
@@ -410,7 +413,7 @@ g = (sns
 
 #annotations
 
-g.fig.text(0.7, 0.22, "I",
+g.fig.text(0.65, 0.22, "I",
    color="black", fontdict=dict(size=20), fontweight='bold'
           )
 
@@ -451,7 +454,7 @@ If we look at the above @fig-outlier, in the non-smoker group, there is a cloud 
   col_wrap=2,
   # row='region',
   height=4, 
-  aspect=1,
+  aspect=0.75,
 #   markers=["8","P"],
   # s=400,
   palette='tab10',
@@ -482,8 +485,8 @@ g = (sns
   # legend='full',
   # col='bmi_class',
   # col_wrap=1,
-#   height=5, 
-#   aspect=1.2,
+  height=4, 
+  aspect=1.4,
   markers=["8","P"],
   palette='tab10',
   size_order=[1,2,3,4,5,6]
