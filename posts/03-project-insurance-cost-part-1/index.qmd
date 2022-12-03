@@ -552,5 +552,7 @@ flowchart LR
 ```
 
 ::: {.callout-note}
-The next step would be using some of these knowledge to further investigate the likelihood (probability) of each risk profile based on its numeric (age-bmi) and categorical variable (smoker-bmi-region-sex). 
+The next step would be using some of these knowledge to further investigate the likelihood (probability) of each risk profile based on its numeric (age-bmi) and categorical variable (smoker-bmi-region-sex).
+
+All data is available under my [Github](https://github.com/ariewjy/ariewjy.github.io/tree/main/posts/03-project-insurance-cost-part-1)
 :::
