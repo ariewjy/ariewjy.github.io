@@ -553,6 +553,10 @@ flowchart LR
 
 ::: {.callout-note}
 The next step would be using some of these knowledge to further investigate the likelihood (probability) of each risk profile based on its numeric (age-bmi) and categorical variable (smoker-bmi-region-sex).
+:::
 
-All data is available under my [Github](https://github.com/ariewjy/ariewjy.github.io/tree/main/posts/03-project-insurance-cost-part-1)
+## Tugas PACMANN
+
+::: {.callout-important}
+Untuk Pacmann: short report ini dibuat sebagai pengganti artikel medium, file pengerjaan notebook terdapat di [notebook](./eda/aditya-66kK_capstone.ipynb) ini. Di dalamnya terdapat link [Youtube](https://youtu.be/Zdtwk_hAqIg) juga. 
 :::
