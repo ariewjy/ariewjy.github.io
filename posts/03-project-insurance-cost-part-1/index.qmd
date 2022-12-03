@@ -558,5 +558,5 @@ The next step would be using some of these knowledge to further investigate the 
 ## Tugas PACMANN
 
 ::: {.callout-important}
-Untuk Pacmann: short report ini dibuat sebagai pengganti artikel medium, file pengerjaan notebook terdapat di [notebook](./eda/aditya-66kK_capstone.ipynb) ini. Di dalamnya terdapat link [Youtube](https://youtu.be/Zdtwk_hAqIg) juga. 
+Untuk Pacmann: short report ini dibuat sebagai pengganti artikel medium, file pengerjaan notebook terdapat di [notebook](https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/03-project-insurance-cost-part-1/eda/aditya-66kK_capstone.ipynb) ini. Di dalamnya terdapat link [Youtube](https://youtu.be/Zdtwk_hAqIg) juga. 
 :::
