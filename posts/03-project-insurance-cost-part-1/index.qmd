@@ -533,6 +533,8 @@ Similar to the previous @fig-age-charges-2, in @fig-bmi-charges we can see that 
     + Group II: medical **charges between 16k-30k**, `smoker` and `overweight`.
     + Group III: medical **charges above 30k**, `smoker` and `obese`.
 
+    These three groups have its own trendline which can be later determined (trendline).
+
 1. There is also one `outlier` or group `I-a`, where it is `unclear as to what affects the medical charges increase` to be between group I and II.
 
 [^4]: the BMI class shows a mix of all classes (from underweight to obese)
@@ -545,18 +547,19 @@ See below flowchart for simple ilustration.
 %%| echo: false
 flowchart LR
     A[Member] --> B{Smoking}
-    B --> |No| C[Group I]
+    B --> |No| C[trendline Group I]
     B --> |Yes| D{BMI Class}
-    D --> |Overweight| E[Group II]
-    D --> |Obese| F[Group III]
+    D --> |Overweight| E[trendline Group II]
+    D --> |Obese| F[trendline Group III]
 ```
 
 ::: {.callout-note}
 The next step would be using some of these knowledge to further investigate the likelihood (probability) of each risk profile based on its numeric (age-bmi) and categorical variable (smoker-bmi-region-sex).
 :::
 
-## Tugas PACMANN
+
+-------
 
 ::: {.callout-important}
-Untuk Pacmann: short report ini dibuat sebagai pengganti artikel medium, file pengerjaan notebook terdapat di [notebook](https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/03-project-insurance-cost-part-1/eda/aditya-66kK_capstone.ipynb) ini. Di dalamnya terdapat link [Youtube](https://youtu.be/Zdtwk_hAqIg) juga. 
+This article was made as a replacement for medium article as part of Pacmann Data Science bootcamp assignment for Linear Algebra batch 8. The EDA notebook can be found in this [notebook](https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/03-project-insurance-cost-part-1/eda/aditya-66kK_capstone.ipynb). Inside there will be a [Youtube](https://youtu.be/Zdtwk_hAqIg) link as part of the assignment also. 
 :::

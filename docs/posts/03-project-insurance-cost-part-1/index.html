@@ -246,7 +246,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#what-affects-the-outlier-i-a-group" id="toc-what-affects-the-outlier-i-a-group" class="nav-link" data-scroll-target="#what-affects-the-outlier-i-a-group">What affects the <code>outlier/ I-a</code> group?</a></li>
   </ul></li>
   <li><a href="#conclusions-and-outcomes" id="toc-conclusions-and-outcomes" class="nav-link" data-scroll-target="#conclusions-and-outcomes">Conclusions and Outcomes</a></li>
-  <li><a href="#tugas-pacmann" id="toc-tugas-pacmann" class="nav-link" data-scroll-target="#tugas-pacmann">Tugas PACMANN</a></li>
   </ul>
 </nav>
 </nav>
@@ -306,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>insurance <span class="op">=</span> pd.read_csv(<span class="st">'insurance.zip'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>insurance.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="98">
 
 <div>
 
@@ -449,7 +448,7 @@ For more granular grouping, the [classification](https://www.calculator.net/bmi-
 <span id="cb3-22"><a href="#cb3-22"></a> <span class="co"># .style.text_gradient()</span></span>
 <span id="cb3-23"><a href="#cb3-23"></a><span class="co">#  .T</span></span>
 <span id="cb3-24"><a href="#cb3-24"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="99">
 <div id="tbl-bmi-class" class="anchored">
 
 <div>
@@ -553,7 +552,7 @@ memory usage: 74.8+ KB</code></pre>
 <span id="cb6-2"><a href="#cb6-2"></a> .select_dtypes(include<span class="op">=</span><span class="bu">object</span>) <span class="co">#includes all column with object dtypes</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a> .value_counts() <span class="co">#counting unique value</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="101">
 <pre><code>sex     smoker  region   
 female  no      southwest    141
                 southeast    139
@@ -651,7 +650,7 @@ Important
 <span id="cb9-19"><a href="#cb9-19"></a><span class="co">#  )</span></span>
 <span id="cb9-20"><a href="#cb9-20"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="103">
 <div id="tbl-smoker-based-on-sex" class="anchored">
 
 <div>
@@ -723,7 +722,7 @@ Important
 <span id="cb10-4"><a href="#cb10-4"></a> .agg([np.mean])<span class="op">/</span><span class="fl">8434.268298</span> <span class="co">#to calculate how high the smoker medical charges</span></span>
 <span id="cb10-5"><a href="#cb10-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="104">
 <div id="tbl-ratio-smoker" class="anchored">
 
 <div>
@@ -770,7 +769,7 @@ Important
 <span id="cb11-4"><a href="#cb11-4"></a> .agg([np.mean])<span class="op">/</span><span class="fl">12569.578844</span> <span class="co">#to calculate how high the smoker medical charges</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="105">
 <div id="tbl-ratio-sex" class="anchored">
 
 <div>
@@ -1156,7 +1155,8 @@ Important
 <li>Group I: medical <strong>charges below 16k</strong>,<code>non-smoker</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</li>
 <li>Group II: medical <strong>charges between 16k-30k</strong>, <code>smoker</code> and <code>overweight</code>.</li>
 <li>Group III: medical <strong>charges above 30k</strong>, <code>smoker</code> and <code>obese</code>.</li>
-</ul></li>
+</ul>
+<p>These three groups have its own trendline which can be later determined (trendline).</p></li>
 <li><p>There is also one <code>outlier</code> or group <code>I-a</code>, where it is <code>unclear as to what affects the medical charges increase</code> to be between group I and II.</p></li>
 </ol>
 <p>The above groups (<code>I, II, III</code>) can be used for <strong><code>risk profiling</code></strong>, where based on its profile, the associated risk related to medical charges can be determined. Since each group forms a trendline (simple linear regression), and can be categorized based on its smoker, and bmi profile. Based on this approach, one can estimate the optimum pricing for each risk profile (based on its medical charges).</p>
@@ -1167,10 +1167,10 @@ Important
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
     A[Member] --&gt; B{Smoking}
-    B --&gt; |No| C[Group I]
+    B --&gt; |No| C[trendline Group I]
     B --&gt; |Yes| D{BMI Class}
-    D --&gt; |Overweight| E[Group II]
-    D --&gt; |Obese| F[Group III]
+    D --&gt; |Overweight| E[trendline Group II]
+    D --&gt; |Obese| F[trendline Group III]
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -1192,9 +1192,7 @@ Note
 <p>The next step would be using some of these knowledge to further investigate the likelihood (probability) of each risk profile based on its numeric (age-bmi) and categorical variable (smoker-bmi-region-sex).</p>
 </div>
 </div>
-</section>
-<section id="tugas-pacmann" class="level2">
-<h2 class="anchored" data-anchor-id="tugas-pacmann">Tugas PACMANN</h2>
+<hr>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1205,7 +1203,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Untuk Pacmann: short report ini dibuat sebagai pengganti artikel medium, file pengerjaan notebook terdapat di <a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/03-project-insurance-cost-part-1/eda/aditya-66kK_capstone.ipynb">notebook</a> ini. Di dalamnya terdapat link <a href="https://youtu.be/Zdtwk_hAqIg">Youtube</a> juga.</p>
+<p>This article was made as a replacement for medium article as part of Pacmann Data Science bootcamp assignment for Linear Algebra batch 8. The EDA notebook can be found in this <a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/03-project-insurance-cost-part-1/eda/aditya-66kK_capstone.ipynb">notebook</a>. Inside there will be a <a href="https://youtu.be/Zdtwk_hAqIg">Youtube</a> link as part of the assignment also.</p>
 </div>
 </div>
 
