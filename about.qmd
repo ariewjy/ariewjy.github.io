@@ -28,7 +28,7 @@ Hi there 👋 I am Arie!
 
 I have a Geological Engineering background, and worked as a Geoscientist/ Petrophysicists with about ten years of experience in the energy industry. I am interested in subsurface data and its intersection with the sustainability to ensure the inclusiveness of energy security for everyone.
 
-Recently, I made a web application to load a LAS file (a well-log data format), plotting, do some basic petrophysical analysis at [**plotpetrophysics.xyz**](https://plotpetrophysics.xyz/).
+Recently, I made a web application to load a LAS file (a well-log data format), plotting, do some basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/).
 
 My free time spent between cooking, reading, or exploring the world of coding.
 

@@ -88,7 +88,7 @@
     "href": "about.html",
     "title": "Aditya Arie Wijaya",
     "section": "",
-    "text": "Hi there 👋 I am Arie!\nI have a Geological Engineering background, and worked as a Geoscientist/ Petrophysicists with about ten years of experience in the energy industry. I am interested in subsurface data and its intersection with the sustainability to ensure the inclusiveness of energy security for everyone.\nRecently, I made a web application to load a LAS file (a well-log data format), plotting, do some basic petrophysical analysis at plotpetrophysics.xyz.\nMy free time spent between cooking, reading, or exploring the world of coding.\nThanks for dropping by!"
+    "text": "Hi there 👋 I am Arie!\nI have a Geological Engineering background, and worked as a Geoscientist/ Petrophysicists with about ten years of experience in the energy industry. I am interested in subsurface data and its intersection with the sustainability to ensure the inclusiveness of energy security for everyone.\nRecently, I made a web application to load a LAS file (a well-log data format), plotting, do some basic petrophysical analysis at plotpetrophysics.streamlit.app.\nMy free time spent between cooking, reading, or exploring the world of coding.\nThanks for dropping by!"
   },
   {
     "objectID": "license.html",

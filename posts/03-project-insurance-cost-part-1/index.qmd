@@ -529,9 +529,9 @@ Similar to the previous @fig-age-charges-2, in @fig-bmi-charges we can see that 
       [^3]: around 10% higher in male, compared to female counterpart (see @tbl-ratio-sex)
 
 1. There is a `strong relationship between age and medical charges`, with `3` strong group categorized by `smoker` and `bmi` profile. The big three groups are:
-    + Group I: medical **charges below 16k**,`non-smoker`[^4].
-    + Group II: medical **charges between 16k-30k**, `smoker` and `overweight`.
-    + Group III: medical **charges above 30k**, `smoker` and `obese`.
+    + Group I: medical **charges below 16k**, related to a group of `non-smoker`[^4].
+    + Group II: medical **charges between 16k-30k**, related to a group of `smoker` **and** `overweight`.
+    + Group III: medical **charges above 30k**, related to a group of `smoker` **and** `obese`.
 
     These three groups have its own trendline which can be later determined (trendline).
 
