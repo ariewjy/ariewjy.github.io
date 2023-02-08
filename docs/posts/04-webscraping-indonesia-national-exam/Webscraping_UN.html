@@ -266,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="apakah-kualitas-pendidikan-indonesia-tingkat-smp-sma-masih-terpusat-hanya-di-jawa-dan-sekitarnya" class="level2">
 <h2 class="anchored" data-anchor-id="apakah-kualitas-pendidikan-indonesia-tingkat-smp-sma-masih-terpusat-hanya-di-jawa-dan-sekitarnya">Apakah kualitas pendidikan Indonesia tingkat SMP-SMA masih terpusat hanya di Jawa dan Sekitarnya?</h2>
 <div class="cell" data-execution_count="1">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -274,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <div class="cell" data-execution_count="2">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>un_2019<span class="op">=</span> <span class="op">\</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>(pd</span>
@@ -515,7 +515,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell" data-execution_count="3">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>un_2019.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -528,7 +528,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell" data-execution_count="4">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>un_2019 <span class="op">=</span> un_2019[[<span class="st">'Nama Wilayah'</span>, <span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>,<span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]]</span>
 <span id="cb5-2"><a href="#cb5-2"></a>un_2019</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -644,7 +644,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell" data-execution_count="5">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>un_2019.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -664,7 +664,7 @@ memory usage: 21.5+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="6">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>un_2019 <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>un_2019.astype({</span>
@@ -785,7 +785,7 @@ memory usage: 21.5+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="7">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>un_2019 <span class="op">=</span> un_2019.rename(columns<span class="op">=</span>{</span>
 <span id="cb9-2"><a href="#cb9-2"></a>    <span class="st">'Nama Wilayah'</span>: <span class="st">'Wilayah'</span>})</span>
@@ -902,7 +902,7 @@ memory usage: 21.5+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="8">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>un_2019.nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -916,14 +916,14 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="9">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>un_2019[<span class="st">'Propinsi'</span>] <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>un_2019[<span class="st">'Propinsi'</span>].<span class="bu">str</span>.replace(<span class="st">'Prov. '</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="10">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>un_2019</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1038,7 +1038,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="11">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">#making the barchart</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
@@ -1068,7 +1068,7 @@ dtype: int64</code></pre>
 <section id="buat-fungsi-untuk-webscraping-per-tahun-nya" class="level3">
 <h3 class="anchored" data-anchor-id="buat-fungsi-untuk-webscraping-per-tahun-nya">Buat Fungsi untuk Webscraping per tahun-nya</h3>
 <div class="cell" data-execution_count="12">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">def</span> webscrap(tahun):</span>
 <span id="cb15-2"><a href="#cb15-2"></a>    df <span class="op">=</span> pd.read_html(<span class="ss">f'https://npd.kemdikbud.go.id/?appid=hasilun&amp;tahun=</span><span class="sc">{</span>tahun<span class="sc">}</span><span class="ss">'</span>)[<span class="dv">1</span>][<span class="dv">0</span>:<span class="dv">547</span>] <span class="co">#ambil data dari web</span></span>
@@ -1081,7 +1081,7 @@ dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="13">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>un_2015 <span class="op">=</span> webscrap(<span class="dv">2015</span>)</span>
 <span id="cb16-2"><a href="#cb16-2"></a>un_2016 <span class="op">=</span> webscrap(<span class="dv">2016</span>)</span>
@@ -1092,7 +1092,7 @@ dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="14">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>un_2015.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1164,7 +1164,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="15">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1236,7 +1236,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="16">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">#gabungkan setiap dataframe secara vertikal</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a></span>
@@ -1263,7 +1263,7 @@ memory usage: 149.6+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="17">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>un_2015_2019.nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1278,7 +1278,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="18">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>un_2015_2019.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1287,7 +1287,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="19">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>order_new <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>(un_2015_2019</span>
@@ -1369,7 +1369,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="20">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
@@ -1407,7 +1407,7 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 </div>
 </div>
 <div class="cell" data-execution_count="21">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>(un_2015_2019</span>
 <span id="cb28-2"><a href="#cb28-2"></a> .query(<span class="st">"Propinsi == 'Kalimantan Timur'"</span>)</span>
@@ -1620,7 +1620,7 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 </div>
 </div>
 <div class="cell" data-execution_count="22">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>(un_2015_2019</span>
 <span id="cb29-2"><a href="#cb29-2"></a> .query(<span class="st">"Propinsi == 'Kalimantan Timur'"</span>)</span>
@@ -1643,7 +1643,7 @@ The default value of numeric_only in DataFrame.mean is deprecated. In a future v
 </div>
 </div>
 <div class="cell" data-execution_count="23">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>un_2018.drop(columns<span class="op">=</span><span class="st">'Tahun'</span>).groupby([<span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>, <span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]).median().sort_values(by<span class="op">=</span><span class="st">'UN SMA IPA'</span>, ascending<span class="op">=</span><span class="va">False</span>).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1708,7 +1708,7 @@ The default value of numeric_only in DataFrameGroupBy.median is deprecated. In a
 </div>
 </div>
 <div class="cell" data-execution_count="24">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># fig, axs = plt.subplots(figsize=(20,12))</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a></span>
@@ -1737,7 +1737,7 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 </div>
 </div>
 <div class="cell" data-execution_count="25">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>(un_2015</span>
 <span id="cb35-2"><a href="#cb35-2"></a> .groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMP'</span>]</span>
@@ -1751,7 +1751,7 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 </div>
 </div>
 <div class="cell" data-execution_count="26">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">def</span> get_max_prop(df):</span>
 <span id="cb37-2"><a href="#cb37-2"></a>    max_un_smp <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMP'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
@@ -1761,7 +1761,7 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 </details>
 </div>
 <div class="cell" data-execution_count="27">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>get_max_prop(un_2019)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1770,7 +1770,7 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 </div>
 </div>
 <div class="cell" data-execution_count="28">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>years <span class="op">=</span> [un_2015, un_2016, un_2017, un_2018, un_2019]</span>
 <span id="cb40-2"><a href="#cb40-2"></a><span class="cf">for</span> year <span class="kw">in</span> years:</span>
@@ -1785,7 +1785,7 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 </div>
 </div>
 <div class="cell" data-execution_count="29">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>akreditasi_2019 <span class="op">=</span> pd.read_html(<span class="st">'https://npd.kemdikbud.go.id/?appid=akreditasi&amp;tahun=2020'</span>)[<span class="dv">1</span>][:<span class="dv">548</span>]</span>
 <span id="cb42-2"><a href="#cb42-2"></a>akreditasi_2019.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1858,7 +1858,7 @@ memory usage: 244.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="30">
-<details>
+<details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>(akreditasi_2019</span>
 <span id="cb44-2"><a href="#cb44-2"></a> .query(<span class="st">" Propinsi == 'Prov. D.K.I. Jakarta' "</span>)</span>
