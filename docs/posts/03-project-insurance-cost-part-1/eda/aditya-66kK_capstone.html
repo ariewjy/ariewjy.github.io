@@ -296,7 +296,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="importing-library" class="level2">
 <h2 class="anchored" data-anchor-id="importing-library">Importing Library</h2>
-<div class="cell">
+<div class="cell" data-execution_count="185">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -312,13 +312,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="importing-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="importing-dataset">Importing Dataset</h2>
-<div class="cell">
+<div class="cell" data-execution_count="72">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>insurance <span class="op">=</span> pd.read_csv(<span class="st">'insurance.zip'</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>insurance <span class="op">=</span> pd.read_csv(<span class="st">'./insurance.zip'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>insurance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="72">
 
 <div>
 
@@ -457,14 +457,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="analisa-descriptive-statistics">1. Analisa Descriptive Statistics</h2>
 <section id="rata-rata-umur-pengguna" class="level3">
 <h3 class="anchored" data-anchor-id="rata-rata-umur-pengguna">1.1 Rata-rata umur pengguna</h3>
-<div class="cell">
+<div class="cell" data-execution_count="73">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>insurance.age.plot(kind<span class="op">=</span><span class="st">'box'</span>)<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a>insurance.age.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="73">
 <pre><code>39.20702541106129</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -477,12 +477,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="rata-rata-nilai-bmi-dari-pengguna-yang-merokok" class="level3">
 <h3 class="anchored" data-anchor-id="rata-rata-nilai-bmi-dari-pengguna-yang-merokok">1.2. Rata-rata nilai BMI dari pengguna yang merokok</h3>
-<div class="cell">
+<div class="cell" data-execution_count="74">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>insurance.groupby(<span class="st">'smoker'</span>).bmi.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="74">
 <pre><code>smoker
 no     30.651795
 yes    30.708449
@@ -495,12 +495,12 @@ Name: bmi, dtype: float64</code></pre>
 </section>
 <section id="berapa-rata-rata-umur-perokok" class="level3">
 <h3 class="anchored" data-anchor-id="berapa-rata-rata-umur-perokok">1.3. Berapa Rata-rata umur perokok</h3>
-<div class="cell">
+<div class="cell" data-execution_count="75">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>insurance.groupby(<span class="st">'smoker'</span>).age.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="75">
 <pre><code>smoker
 no     39.385338
 yes    38.514599
@@ -513,12 +513,12 @@ Name: age, dtype: float64</code></pre>
 </section>
 <section id="berapa-rata-rata-nilai-bmi-dari-yang-merokok" class="level3">
 <h3 class="anchored" data-anchor-id="berapa-rata-rata-nilai-bmi-dari-yang-merokok">1.4. Berapa rata-rata nilai BMI dari yang Merokok?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="76">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>insurance.groupby(<span class="st">'smoker'</span>).bmi.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="76">
 <pre><code>smoker
 no     30.651795
 yes    30.708449
@@ -531,7 +531,7 @@ Name: bmi, dtype: float64</code></pre>
 </section>
 <section id="apakah-variansi-dari-data-charges-perokok-dan-non-perokok-sama" class="level3">
 <h3 class="anchored" data-anchor-id="apakah-variansi-dari-data-charges-perokok-dan-non-perokok-sama">1.5 Apakah variansi dari data charges perokok dan non-perokok sama?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="77">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>(insurance</span>
@@ -541,7 +541,7 @@ Name: bmi, dtype: float64</code></pre>
 <span id="cb11-5"><a href="#cb11-5"></a> .<span class="bu">round</span>()</span>
 <span id="cb11-6"><a href="#cb11-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="77">
 
 <div>
 
@@ -570,12 +570,12 @@ Name: bmi, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="78">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>insurance.groupby(<span class="st">'smoker'</span>).charges.var()<span class="op">/</span><span class="fl">35925420.0</span><span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="78">
 <pre><code>smoker
 no     100.000001
 yes    370.788459
@@ -588,7 +588,7 @@ Name: charges, dtype: float64</code></pre>
 </section>
 <section id="rata-rata-umur-perempuan-dan-laki-laki-yang-merokok" class="level3">
 <h3 class="anchored" data-anchor-id="rata-rata-umur-perempuan-dan-laki-laki-yang-merokok">1.6. Rata-rata umur perempuan dan laki-laki yang merokok</h3>
-<div class="cell">
+<div class="cell" data-execution_count="79">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>(insurance</span>
@@ -598,7 +598,7 @@ Name: charges, dtype: float64</code></pre>
 <span id="cb14-5"><a href="#cb14-5"></a> .mean()</span>
 <span id="cb14-6"><a href="#cb14-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="79">
 <pre><code>sex
 female    38.608696
 male      38.446541
@@ -612,7 +612,7 @@ Name: age, dtype: float64</code></pre>
 </section>
 <section id="mana-yang-lebih-tinggi-rata-rata-tagihan-kesehatan-charges-perokok-atau-non-perokok" class="level3">
 <h3 class="anchored" data-anchor-id="mana-yang-lebih-tinggi-rata-rata-tagihan-kesehatan-charges-perokok-atau-non-perokok">1.7. Mana yang lebih tinggi, rata-rata tagihan kesehatan <code>charges</code> perokok atau non-perokok?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="80">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>(insurance</span>
@@ -621,14 +621,14 @@ Name: age, dtype: float64</code></pre>
 <span id="cb16-4"><a href="#cb16-4"></a> .mean()</span>
 <span id="cb16-5"><a href="#cb16-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="80">
 <pre><code>smoker
 no      8434.268298
 yes    32050.231832
 Name: charges, dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="81">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>(insurance</span>
@@ -639,7 +639,7 @@ Name: charges, dtype: float64</code></pre>
 <span id="cb18-6"><a href="#cb18-6"></a> <span class="op">*</span><span class="dv">100</span></span>
 <span id="cb18-7"><a href="#cb18-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="81">
 <pre><code>smoker
 no     100.000000
 yes    380.000146
@@ -652,7 +652,7 @@ Name: charges, dtype: float64</code></pre>
 </section>
 <section id="mana-yang-lebih-tinggi-rata-rata-tagihan-kesehatan-charges-perokok-yang-bmi-nya-di-atas-25-atau-non-perokok-yang-bmi-nya-di-atas-25" class="level3">
 <h3 class="anchored" data-anchor-id="mana-yang-lebih-tinggi-rata-rata-tagihan-kesehatan-charges-perokok-yang-bmi-nya-di-atas-25-atau-non-perokok-yang-bmi-nya-di-atas-25">1.8. Mana yang lebih tinggi, rata-rata tagihan kesehatan <code>charges</code> perokok yang BMI-nya di atas 25 atau non-perokok yang BMI-nya di atas 25?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="82">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>(insurance</span>
@@ -662,7 +662,7 @@ Name: charges, dtype: float64</code></pre>
 <span id="cb20-5"><a href="#cb20-5"></a> .mean()</span>
 <span id="cb20-6"><a href="#cb20-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="82">
 <pre><code>smoker
 no      8629.589610
 yes    35116.909657
@@ -674,7 +674,7 @@ Name: charges, dtype: float64</code></pre>
 </ul>
 <section id="bmi-mana-yang-lebih-tinggi-seorang-laki-laki-atau-perempuan" class="level4">
 <h4 class="anchored" data-anchor-id="bmi-mana-yang-lebih-tinggi-seorang-laki-laki-atau-perempuan">1.9. BMI mana yang lebih tinggi, seorang laki-laki atau perempuan?</h4>
-<div class="cell">
+<div class="cell" data-execution_count="83">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>(insurance</span>
@@ -683,7 +683,7 @@ Name: charges, dtype: float64</code></pre>
 <span id="cb22-4"><a href="#cb22-4"></a> .mean()</span>
 <span id="cb22-5"><a href="#cb22-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="83">
 <pre><code>sex
 female    30.377749
 male      30.943129
@@ -697,7 +697,7 @@ Name: bmi, dtype: float64</code></pre>
 </section>
 <section id="bmi-mana-yang-lebih-tinggi-seorang-perokok-atau-non-perokok" class="level3">
 <h3 class="anchored" data-anchor-id="bmi-mana-yang-lebih-tinggi-seorang-perokok-atau-non-perokok">1.10. BMI mana yang lebih tinggi, seorang perokok atau non-perokok?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="84">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>(insurance</span>
@@ -706,7 +706,7 @@ Name: bmi, dtype: float64</code></pre>
 <span id="cb24-4"><a href="#cb24-4"></a> .mean()</span>
 <span id="cb24-5"><a href="#cb24-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="84">
 <pre><code>smoker
 no     30.651795
 yes    30.708449
@@ -722,7 +722,7 @@ Name: bmi, dtype: float64</code></pre>
 <h2 class="anchored" data-anchor-id="analisa-variable-kategorik-pmf">2. Analisa Variable Kategorik (PMF)</h2>
 <section id="gender-mana-yang-memiliki-tagihan-paling-tinggi-female-male" class="level3">
 <h3 class="anchored" data-anchor-id="gender-mana-yang-memiliki-tagihan-paling-tinggi-female-male">2.1. Gender mana yang memiliki tagihan paling tinggi? Female / Male?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="85">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>(insurance</span>
@@ -731,7 +731,7 @@ Name: bmi, dtype: float64</code></pre>
 <span id="cb26-4"><a href="#cb26-4"></a> .mean()</span>
 <span id="cb26-5"><a href="#cb26-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="85">
 <pre><code>sex
 female    12569.578844
 male      13956.751178
@@ -744,12 +744,12 @@ Name: charges, dtype: float64</code></pre>
 </section>
 <section id="distribusi-peluang-tagihan-di-tiap-tiap-region" class="level3">
 <h3 class="anchored" data-anchor-id="distribusi-peluang-tagihan-di-tiap-tiap-region">2.2. Distribusi peluang tagihan di tiap-tiap region</h3>
-<div class="cell">
+<div class="cell" data-execution_count="86">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>insurance.groupby(<span class="st">'region'</span>).charges.count()<span class="op">/</span><span class="bu">len</span>(insurance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="86">
 <pre><code>region
 northeast    0.242152
 northwest    0.242900
@@ -764,12 +764,12 @@ Name: charges, dtype: float64</code></pre>
 </section>
 <section id="apakah-setiap-region-memiliki-proporsi-data-banyak-orang-yang-sama" class="level3">
 <h3 class="anchored" data-anchor-id="apakah-setiap-region-memiliki-proporsi-data-banyak-orang-yang-sama">2.3. Apakah setiap region memiliki proporsi data banyak orang yang sama?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="87">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>insurance.groupby(<span class="st">'region'</span>).charges.count()<span class="op">/</span><span class="bu">len</span>(insurance)<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="87">
 <pre><code>region
 northeast    24.215247
 northwest    24.289985
@@ -784,24 +784,24 @@ Name: charges, dtype: float64</code></pre>
 </section>
 <section id="mana-yang-lebih-tinggi-proporsi-perokok-non-perokok" class="level3">
 <h3 class="anchored" data-anchor-id="mana-yang-lebih-tinggi-proporsi-perokok-non-perokok">2.4. Mana yang lebih tinggi, proporsi perokok/ non-perokok?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="88">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>insurance.groupby(<span class="st">'smoker'</span>).smoker.count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="88">
 <pre><code>smoker
 no     1064
 yes     274
 Name: smoker, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="89">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>insurance.query(<span class="st">"smoker == 'yes'"</span>).smoker.count()<span class="op">/</span><span class="bu">len</span>(insurance)<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="89">
 <pre><code>20.47832585949178</code></pre>
 </div>
 </div>
@@ -813,7 +813,7 @@ Name: smoker, dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="berapa-peluang-seseorang-tersebut-adalah-perempuan-bila-diketahui-dia-adalah-perokok">2.5. Berapa peluang seseorang tersebut adalah perempuan bila diketahui dia adalah perokok?</h3>
 <p>Peluang seseorang adalah <code>perempuan</code> bila diketahui dia adalah <code>perokok</code>, berarti menggunakan ruang sample semua pengguna yang merokok, kemudian dicari peluang perempuan.</p>
 <p><span class="math display">\[ P(perempuan|perokok)=\frac {n(perempuan \cap perokok)} {n(perokok)} \]</span></p>
-<div class="cell">
+<div class="cell" data-execution_count="90">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>n_perokok <span class="op">=</span> <span class="op">\</span></span>
@@ -821,11 +821,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb36-3"><a href="#cb36-3"></a></span>
 <span id="cb36-4"><a href="#cb36-4"></a>n_perokok</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="90">
 <pre><code>274</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="91">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>n_perempuan_dan_perokok <span class="op">=</span> <span class="op">\</span></span>
@@ -833,18 +833,18 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb38-3"><a href="#cb38-3"></a></span>
 <span id="cb38-4"><a href="#cb38-4"></a>n_perempuan_dan_perokok</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="91">
 <pre><code>115</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="92">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>peluang_perempuan_bila_perokok <span class="op">=</span> n_perempuan_dan_perokok<span class="op">/</span>n_perokok</span>
 <span id="cb40-2"><a href="#cb40-2"></a></span>
 <span id="cb40-3"><a href="#cb40-3"></a>peluang_perempuan_bila_perokok.<span class="bu">round</span>(<span class="dv">2</span>)<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="92">
 <pre><code>42.0</code></pre>
 </div>
 </div>
@@ -856,7 +856,7 @@ Name: smoker, dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="berapa-peluang-seseorang-tersebut-adalah-laki-laki-bila-diketahui-dia-adalah-perokok">2.6. Berapa peluang seseorang tersebut adalah laki-laki, bila diketahui dia adalah perokok?</h3>
 <p>Menggunakan prinsip yang sama, maka peluang seseorang tersebut laki-laki bila diketahui dia adalah perokok, adalah 1- peluang_perempuan_bila_perokok. 1-0.42 = 0.58 atau 58%.</p>
 <p>Dapat dibuktikan sebagai berikut</p>
-<div class="cell">
+<div class="cell" data-execution_count="93">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>n_laki2_dan_perokok <span class="op">=</span> <span class="op">\</span></span>
@@ -864,25 +864,25 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb42-3"><a href="#cb42-3"></a></span>
 <span id="cb42-4"><a href="#cb42-4"></a>n_laki2_dan_perokok</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="93">
 <pre><code>159</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="94">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>peluang_laki2_bila_perokok <span class="op">=</span> n_laki2_dan_perokok<span class="op">/</span>n_perokok</span>
 <span id="cb44-2"><a href="#cb44-2"></a></span>
 <span id="cb44-3"><a href="#cb44-3"></a>peluang_laki2_bila_perokok.<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="94">
 <pre><code>0.58</code></pre>
 </div>
 </div>
 </section>
 <section id="bagaimana-bentuk-distribusi-peluang-besar-tagihan-dari-tiap-tiap-region" class="level3">
 <h3 class="anchored" data-anchor-id="bagaimana-bentuk-distribusi-peluang-besar-tagihan-dari-tiap-tiap-region">2.7. Bagaimana bentuk distribusi peluang besar tagihan dari tiap-tiap region?</h3>
-<div class="cell">
+<div class="cell" data-execution_count="95">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>(sns</span>
@@ -917,7 +917,7 @@ Name: smoker, dtype: int64</code></pre>
 </ol>
 <p>Ada dua kondisi berdasarkan kejadian a, yakni: - Seseorang dengan BMI&gt;25 - Seseorang dengan charges &gt; 16.7k</p>
 <p>Maka, peluang seseorang dengan kondisi BMI &gt; 25 mendapatkan tagihan di atas 16.7K adalah:</p>
-<div class="cell">
+<div class="cell" data-execution_count="96">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>n_bmi_lebih25 <span class="op">=</span> <span class="op">\</span></span>
@@ -929,11 +929,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb47-7"><a href="#cb47-7"></a></span>
 <span id="cb47-8"><a href="#cb47-8"></a>n_bmi_lebih25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="96">
 <pre><code>1091</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="97">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>n_charges_diatas167k_bila_bmilebih25 <span class="op">=</span> <span class="op">\</span></span>
@@ -945,11 +945,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb49-7"><a href="#cb49-7"></a></span>
 <span id="cb49-8"><a href="#cb49-8"></a>n_charges_diatas167k_bila_bmilebih25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="97">
 <pre><code>283</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="98">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>peluang_bmilebih25_charges167k <span class="op">=</span> <span class="op">\</span></span>
@@ -960,16 +960,14 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb51-6"><a href="#cb51-6"></a><span class="ss">    di atas 16.7k adalah sebesar </span><span class="sc">{</span>peluang_bmilebih25_charges167k<span class="sc">.</span><span class="bu">round</span>(<span class="dv">2</span>)<span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%"""</span></span>
 <span id="cb51-7"><a href="#cb51-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Peluang seseorang dengan BMI di atas 25 mendapatkan tagihan
-    di atas 16.7k adalah sebesar 26.0%</code></pre>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'n_charges_diatas167k_bila_bmidiatas25' is not defined</code></pre>
 </div>
 </div>
 <ol start="2" type="a">
 <li>Seseorang dengan BMI di bawah 25 mendapatkan tagihan kesehatan di atas 16.7k?</li>
 </ol>
-<div class="cell">
+<div class="cell" data-execution_count="99">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>n_bmi_kurang25 <span class="op">=</span> <span class="op">\</span></span>
@@ -981,11 +979,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb53-7"><a href="#cb53-7"></a></span>
 <span id="cb53-8"><a href="#cb53-8"></a>n_bmi_kurang25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="99">
 <pre><code>245</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="100">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>n_charges_diatas167k_bila_bmikurang25 <span class="op">=</span> <span class="op">\</span></span>
@@ -997,11 +995,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb55-7"><a href="#cb55-7"></a></span>
 <span id="cb55-8"><a href="#cb55-8"></a>n_charges_diatas167k_bila_bmikurang25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="100">
 <pre><code>51</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="101">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a>peluang_bmikurang25_charges167k <span class="op">=</span> <span class="op">\</span></span>
@@ -1029,7 +1027,7 @@ Name: smoker, dtype: int64</code></pre>
 </ol>
 <p>Terdapat tiga kondisi, yakni: - Perokok dan BMI di atas 25 - Tagihan kesehatan 16.7k</p>
 <p>Sehingga perhitungan peluang dapat dilakukan sebagai berikut:</p>
-<div class="cell">
+<div class="cell" data-execution_count="102">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>n_perokok_bmilebih25 <span class="op">=</span> <span class="op">\</span></span>
@@ -1041,11 +1039,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb59-7"><a href="#cb59-7"></a></span>
 <span id="cb59-8"><a href="#cb59-8"></a>n_perokok_bmilebih25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="102">
 <pre><code>219</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="103">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>n_perokok_bmilebih25_charges167k <span class="op">=</span> <span class="op">\</span></span>
@@ -1057,11 +1055,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb61-7"><a href="#cb61-7"></a></span>
 <span id="cb61-8"><a href="#cb61-8"></a>n_perokok_bmilebih25_charges167k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="103">
 <pre><code>215</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="104">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>peluang_perokok_bmilebih25_charges167k <span class="op">=</span> <span class="op">\</span></span>
@@ -1082,7 +1080,7 @@ Name: smoker, dtype: int64</code></pre>
 <ol start="2" type="a">
 <li>Seseorang non-perokok dengan BMI di atas 25 mendapatkan tagihan kesehatan di atas 16.7k?</li>
 </ol>
-<div class="cell">
+<div class="cell" data-execution_count="105">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a>n_nonperokok_bmilebih25 <span class="op">=</span> <span class="op">\</span></span>
@@ -1094,11 +1092,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb65-7"><a href="#cb65-7"></a></span>
 <span id="cb65-8"><a href="#cb65-8"></a>n_nonperokok_bmilebih25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="105">
 <pre><code>872</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="106">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>n_nonperokok_bmilebih25_charges167k <span class="op">=</span> <span class="op">\</span></span>
@@ -1110,11 +1108,11 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb67-7"><a href="#cb67-7"></a></span>
 <span id="cb67-8"><a href="#cb67-8"></a>n_nonperokok_bmilebih25_charges167k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="106">
 <pre><code>68</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="107">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a>peluang_nonperokok_bmilebih25_charges167k <span class="op">=</span> <span class="op">\</span></span>
@@ -1173,7 +1171,7 @@ Name: smoker, dtype: int64</code></pre>
 </tr>
 </tbody>
 </table>
-<div class="cell">
+<div class="cell" data-execution_count="108">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="co">#membuat kelas BMI dari data</span></span>
@@ -1185,7 +1183,7 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb71-7"><a href="#cb71-7"></a></span>
 <span id="cb71-8"><a href="#cb71-8"></a>insurance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="108">
 
 <div>
 
@@ -1331,7 +1329,7 @@ Name: smoker, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="109">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a><span class="co">#sanity check on bmi_class</span></span>
@@ -1344,57 +1342,57 @@ Name: smoker, dtype: int64</code></pre>
 <span id="cb72-8"><a href="#cb72-8"></a> <span class="co"># .style.text_gradient()</span></span>
 <span id="cb72-9"><a href="#cb72-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="109">
 
 <style type="text/css">
-#T_537f2_row0_col0, #T_537f2_row0_col1, #T_537f2_row0_col2, #T_537f2_row0_col5 {
+#T_80c41_row0_col0, #T_80c41_row0_col1, #T_80c41_row0_col2, #T_80c41_row0_col5 {
   background-color: #fff7fb;
   color: #000000;
 }
-#T_537f2_row1_col0 {
+#T_80c41_row1_col0 {
   background-color: #e0dded;
   color: #000000;
 }
-#T_537f2_row1_col1 {
+#T_80c41_row1_col1 {
   background-color: #dedcec;
   color: #000000;
 }
-#T_537f2_row1_col2, #T_537f2_row1_col5 {
+#T_80c41_row1_col2, #T_80c41_row1_col5 {
   background-color: #c1cae2;
   color: #000000;
 }
-#T_537f2_row2_col0 {
+#T_80c41_row2_col0 {
   background-color: #2f8bbe;
   color: #f1f1f1;
 }
-#T_537f2_row2_col1 {
+#T_80c41_row2_col1 {
   background-color: #b4c4df;
   color: #000000;
 }
-#T_537f2_row2_col2, #T_537f2_row2_col5 {
+#T_80c41_row2_col2, #T_80c41_row2_col5 {
   background-color: #60a1ca;
   color: #f1f1f1;
 }
-#T_537f2_row3_col0, #T_537f2_row3_col1, #T_537f2_row3_col2, #T_537f2_row3_col5 {
+#T_80c41_row3_col0, #T_80c41_row3_col1, #T_80c41_row3_col2, #T_80c41_row3_col5 {
   background-color: #023858;
   color: #f1f1f1;
 }
 </style>
-<table id="T_537f2">
+<table id="T_80c41">
   <thead>
     <tr>
       <th class="blank level0">&nbsp;</th>
-      <th id="T_537f2_level0_col0" class="col_heading level0 col0" colspan="3">bmi</th>
-      <th id="T_537f2_level0_col3" class="col_heading level0 col3" colspan="3">bmi_class</th>
+      <th id="T_80c41_level0_col0" class="col_heading level0 col0" colspan="3">bmi</th>
+      <th id="T_80c41_level0_col3" class="col_heading level0 col3" colspan="3">bmi_class</th>
     </tr>
     <tr>
       <th class="blank level1">&nbsp;</th>
-      <th id="T_537f2_level1_col0" class="col_heading level1 col0">min</th>
-      <th id="T_537f2_level1_col1" class="col_heading level1 col1">max</th>
-      <th id="T_537f2_level1_col2" class="col_heading level1 col2">count</th>
-      <th id="T_537f2_level1_col3" class="col_heading level1 col3">min</th>
-      <th id="T_537f2_level1_col4" class="col_heading level1 col4">max</th>
-      <th id="T_537f2_level1_col5" class="col_heading level1 col5">count</th>
+      <th id="T_80c41_level1_col0" class="col_heading level1 col0">min</th>
+      <th id="T_80c41_level1_col1" class="col_heading level1 col1">max</th>
+      <th id="T_80c41_level1_col2" class="col_heading level1 col2">count</th>
+      <th id="T_80c41_level1_col3" class="col_heading level1 col3">min</th>
+      <th id="T_80c41_level1_col4" class="col_heading level1 col4">max</th>
+      <th id="T_80c41_level1_col5" class="col_heading level1 col5">count</th>
     </tr>
     <tr>
       <th class="index_name level0">bmi_class</th>
@@ -1408,46 +1406,46 @@ Name: smoker, dtype: int64</code></pre>
   </thead>
   <tbody>
     <tr>
-      <th id="T_537f2_level0_row0" class="row_heading level0 row0">underweight</th>
-      <td id="T_537f2_row0_col0" class="data row0 col0">15.960000</td>
-      <td id="T_537f2_row0_col1" class="data row0 col1">18.335000</td>
-      <td id="T_537f2_row0_col2" class="data row0 col2">20</td>
-      <td id="T_537f2_row0_col3" class="data row0 col3">underweight</td>
-      <td id="T_537f2_row0_col4" class="data row0 col4">underweight</td>
-      <td id="T_537f2_row0_col5" class="data row0 col5">20</td>
+      <th id="T_80c41_level0_row0" class="row_heading level0 row0">underweight</th>
+      <td id="T_80c41_row0_col0" class="data row0 col0">15.960000</td>
+      <td id="T_80c41_row0_col1" class="data row0 col1">18.335000</td>
+      <td id="T_80c41_row0_col2" class="data row0 col2">20</td>
+      <td id="T_80c41_row0_col3" class="data row0 col3">underweight</td>
+      <td id="T_80c41_row0_col4" class="data row0 col4">underweight</td>
+      <td id="T_80c41_row0_col5" class="data row0 col5">20</td>
     </tr>
     <tr>
-      <th id="T_537f2_level0_row1" class="row_heading level0 row1">healthy</th>
-      <td id="T_537f2_row1_col0" class="data row1 col0">18.500000</td>
-      <td id="T_537f2_row1_col1" class="data row1 col1">24.890000</td>
-      <td id="T_537f2_row1_col2" class="data row1 col2">222</td>
-      <td id="T_537f2_row1_col3" class="data row1 col3">healthy</td>
-      <td id="T_537f2_row1_col4" class="data row1 col4">healthy</td>
-      <td id="T_537f2_row1_col5" class="data row1 col5">222</td>
+      <th id="T_80c41_level0_row1" class="row_heading level0 row1">healthy</th>
+      <td id="T_80c41_row1_col0" class="data row1 col0">18.500000</td>
+      <td id="T_80c41_row1_col1" class="data row1 col1">24.890000</td>
+      <td id="T_80c41_row1_col2" class="data row1 col2">222</td>
+      <td id="T_80c41_row1_col3" class="data row1 col3">healthy</td>
+      <td id="T_80c41_row1_col4" class="data row1 col4">healthy</td>
+      <td id="T_80c41_row1_col5" class="data row1 col5">222</td>
     </tr>
     <tr>
-      <th id="T_537f2_level0_row2" class="row_heading level0 row2">overweight</th>
-      <td id="T_537f2_row2_col0" class="data row2 col0">24.970000</td>
-      <td id="T_537f2_row2_col1" class="data row2 col1">30.000000</td>
-      <td id="T_537f2_row2_col2" class="data row2 col2">391</td>
-      <td id="T_537f2_row2_col3" class="data row2 col3">overweight</td>
-      <td id="T_537f2_row2_col4" class="data row2 col4">overweight</td>
-      <td id="T_537f2_row2_col5" class="data row2 col5">391</td>
+      <th id="T_80c41_level0_row2" class="row_heading level0 row2">overweight</th>
+      <td id="T_80c41_row2_col0" class="data row2 col0">24.970000</td>
+      <td id="T_80c41_row2_col1" class="data row2 col1">30.000000</td>
+      <td id="T_80c41_row2_col2" class="data row2 col2">391</td>
+      <td id="T_80c41_row2_col3" class="data row2 col3">overweight</td>
+      <td id="T_80c41_row2_col4" class="data row2 col4">overweight</td>
+      <td id="T_80c41_row2_col5" class="data row2 col5">391</td>
     </tr>
     <tr>
-      <th id="T_537f2_level0_row3" class="row_heading level0 row3">obese</th>
-      <td id="T_537f2_row3_col0" class="data row3 col0">30.020000</td>
-      <td id="T_537f2_row3_col1" class="data row3 col1">53.130000</td>
-      <td id="T_537f2_row3_col2" class="data row3 col2">705</td>
-      <td id="T_537f2_row3_col3" class="data row3 col3">obese</td>
-      <td id="T_537f2_row3_col4" class="data row3 col4">obese</td>
-      <td id="T_537f2_row3_col5" class="data row3 col5">705</td>
+      <th id="T_80c41_level0_row3" class="row_heading level0 row3">obese</th>
+      <td id="T_80c41_row3_col0" class="data row3 col0">30.020000</td>
+      <td id="T_80c41_row3_col1" class="data row3 col1">53.130000</td>
+      <td id="T_80c41_row3_col2" class="data row3 col2">705</td>
+      <td id="T_80c41_row3_col3" class="data row3 col3">obese</td>
+      <td id="T_80c41_row3_col4" class="data row3 col4">obese</td>
+      <td id="T_80c41_row3_col5" class="data row3 col5">705</td>
     </tr>
   </tbody>
 </table>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="110">
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a>g <span class="op">=</span> (sns</span>
@@ -1495,6 +1493,117 @@ Name: smoker, dtype: int64</code></pre>
 <p><img src="aditya-66kK_capstone_files/figure-html/cell-41-output-1.png" class="img-fluid"></p>
 </div>
 </div>
+<div class="cell">
+<details>
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>(insurance</span>
+<span id="cb74-2"><a href="#cb74-2"></a> .query(<span class="st">"smoker=='yes' and bmi_class=='obese'"</span>)</span>
+<span id="cb74-3"><a href="#cb74-3"></a> .corr()</span>
+<span id="cb74-4"><a href="#cb74-4"></a> .age</span>
+<span id="cb74-5"><a href="#cb74-5"></a> .charges</span>
+<span id="cb74-6"><a href="#cb74-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="114">
+<details>
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>(sns</span>
+<span id="cb75-2"><a href="#cb75-2"></a>.relplot</span>
+<span id="cb75-3"><a href="#cb75-3"></a> (data<span class="op">=</span>insurance,</span>
+<span id="cb75-4"><a href="#cb75-4"></a>  x<span class="op">=</span><span class="st">'bmi'</span>,</span>
+<span id="cb75-5"><a href="#cb75-5"></a>  y<span class="op">=</span><span class="st">'charges'</span>,</span>
+<span id="cb75-6"><a href="#cb75-6"></a>  hue<span class="op">=</span><span class="st">'smoker'</span>,</span>
+<span id="cb75-7"><a href="#cb75-7"></a>  size<span class="op">=</span><span class="st">'children'</span>,</span>
+<span id="cb75-8"><a href="#cb75-8"></a>  <span class="co"># style='sex',</span></span>
+<span id="cb75-9"><a href="#cb75-9"></a>  <span class="co"># legend='full',</span></span>
+<span id="cb75-10"><a href="#cb75-10"></a>  <span class="co"># col='bmi_class',</span></span>
+<span id="cb75-11"><a href="#cb75-11"></a>  <span class="co"># col_wrap=1,</span></span>
+<span id="cb75-12"><a href="#cb75-12"></a>  <span class="co"># height=3.5, </span></span>
+<span id="cb75-13"><a href="#cb75-13"></a>  <span class="co"># aspect=1,</span></span>
+<span id="cb75-14"><a href="#cb75-14"></a>  markers<span class="op">=</span>[<span class="st">"8"</span>,<span class="st">"P"</span>],</span>
+<span id="cb75-15"><a href="#cb75-15"></a>  palette<span class="op">=</span><span class="st">'tab10'</span>,</span>
+<span id="cb75-16"><a href="#cb75-16"></a>  size_order<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]</span>
+<span id="cb75-17"><a href="#cb75-17"></a> )</span>
+<span id="cb75-18"><a href="#cb75-18"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="aditya-66kK_capstone_files/figure-html/cell-44-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="135">
+<details>
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a>sns.lmplot(data<span class="op">=</span>insurance, x<span class="op">=</span><span class="st">'bmi'</span>, y<span class="op">=</span><span class="st">'charges'</span>, hue<span class="op">=</span><span class="st">'smoker'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="aditya-66kK_capstone_files/figure-html/cell-45-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="140">
+<details>
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a>(insurance</span>
+<span id="cb77-2"><a href="#cb77-2"></a> .query(<span class="st">"smoker=='yes'"</span>)</span>
+<span id="cb77-3"><a href="#cb77-3"></a> .corr()</span>
+<span id="cb77-4"><a href="#cb77-4"></a> .charges</span>
+<span id="cb77-5"><a href="#cb77-5"></a> .bmi</span>
+<span id="cb77-6"><a href="#cb77-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_51534/846027201.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  (insurance</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="140">
+<pre><code>0.8064806070155407</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="188">
+<details>
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a><span class="co">#calculating the correlation coefficient</span></span>
+<span id="cb80-2"><a href="#cb80-2"></a>corr <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb80-3"><a href="#cb80-3"></a>(insurance</span>
+<span id="cb80-4"><a href="#cb80-4"></a> .corr()</span>
+<span id="cb80-5"><a href="#cb80-5"></a> .charges</span>
+<span id="cb80-6"><a href="#cb80-6"></a> .bmi</span>
+<span id="cb80-7"><a href="#cb80-7"></a>)</span>
+<span id="cb80-8"><a href="#cb80-8"></a></span>
+<span id="cb80-9"><a href="#cb80-9"></a><span class="co">#plotting linear regression</span></span>
+<span id="cb80-10"><a href="#cb80-10"></a>(sns.</span>
+<span id="cb80-11"><a href="#cb80-11"></a> lmplot(</span>
+<span id="cb80-12"><a href="#cb80-12"></a>     data<span class="op">=</span>insurance, </span>
+<span id="cb80-13"><a href="#cb80-13"></a>     x<span class="op">=</span><span class="st">'bmi'</span>, </span>
+<span id="cb80-14"><a href="#cb80-14"></a>     y<span class="op">=</span><span class="st">'charges'</span>,</span>
+<span id="cb80-15"><a href="#cb80-15"></a> )</span>
+<span id="cb80-16"><a href="#cb80-16"></a>)</span>
+<span id="cb80-17"><a href="#cb80-17"></a></span>
+<span id="cb80-18"><a href="#cb80-18"></a>plt.title(<span class="ss">f"BMI vs Charges</span><span class="ch">\n</span><span class="ss">Correlation: </span><span class="sc">{</span>corr<span class="sc">:.2f}</span><span class="ss">"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_51534/3997426850.py:3: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  (insurance</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="aditya-66kK_capstone_files/figure-html/cell-47-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="163">
+<details>
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a>(insurance</span>
+<span id="cb82-2"><a href="#cb82-2"></a> .corr()</span>
+<span id="cb82-3"><a href="#cb82-3"></a> .charges</span>
+<span id="cb82-4"><a href="#cb82-4"></a> .bmi</span>
+<span id="cb82-5"><a href="#cb82-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_51534/433143945.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  (insurance</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="163">
+<pre><code>0.19834096883362903</code></pre>
+</div>
+</div>
 <p>Berdasarkan grafik di atas, dapat dengan jelas ditarik kesimpulan sebagai berikut:</p>
 <ol type="1">
 <li><p>Terdapat korelasi yang kuat antara umur dan tagihan kesehatan seseorang. Semakin tua seseorang, akan semakin besar tagihan kesehatannya.</p></li>
@@ -1530,14 +1639,14 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>tagihan_perokok <span class="op">=</span> insurance.query(<span class="st">"smoker =='yes'"</span>).charges</span>
-<span id="cb74-2"><a href="#cb74-2"></a>tagihan_nonperokok <span class="op">=</span> insurance.query(<span class="st">"smoker =='no'"</span>).charges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1"></a>tagihan_perokok <span class="op">=</span> insurance.query(<span class="st">"smoker =='yes'"</span>).charges</span>
+<span id="cb85-2"><a href="#cb85-2"></a>tagihan_nonperokok <span class="op">=</span> insurance.query(<span class="st">"smoker =='no'"</span>).charges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>tagihan_perokok.var() <span class="op">==</span> tagihan_nonperokok.var() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1"></a>tagihan_perokok.var() <span class="op">==</span> tagihan_nonperokok.var() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>False</code></pre>
@@ -1546,19 +1655,19 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
-<span id="cb77-2"><a href="#cb77-2"></a></span>
-<span id="cb77-3"><a href="#cb77-3"></a>alpha<span class="op">=</span><span class="fl">0.05</span></span>
-<span id="cb77-4"><a href="#cb77-4"></a></span>
-<span id="cb77-5"><a href="#cb77-5"></a>stat, p <span class="op">=</span> ttest_ind(</span>
-<span id="cb77-6"><a href="#cb77-6"></a>    a <span class="op">=</span> tagihan_perokok, </span>
-<span id="cb77-7"><a href="#cb77-7"></a>    b <span class="op">=</span> tagihan_nonperokok, </span>
-<span id="cb77-8"><a href="#cb77-8"></a>    equal_var<span class="op">=</span><span class="va">False</span>, </span>
-<span id="cb77-9"><a href="#cb77-9"></a>    alternative<span class="op">=</span><span class="st">'greater'</span></span>
-<span id="cb77-10"><a href="#cb77-10"></a>) <span class="co"># eaual_var= False karena varians kedua populasi berbeda</span></span>
-<span id="cb77-11"><a href="#cb77-11"></a></span>
-<span id="cb77-12"><a href="#cb77-12"></a><span class="co"># Interpretasi Hasil</span></span>
-<span id="cb77-13"><a href="#cb77-13"></a><span class="bu">print</span>(<span class="st">'Statistics = </span><span class="sc">%.4f</span><span class="st">, p-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (stat, p)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
+<span id="cb88-2"><a href="#cb88-2"></a></span>
+<span id="cb88-3"><a href="#cb88-3"></a>alpha<span class="op">=</span><span class="fl">0.05</span></span>
+<span id="cb88-4"><a href="#cb88-4"></a></span>
+<span id="cb88-5"><a href="#cb88-5"></a>stat, p <span class="op">=</span> ttest_ind(</span>
+<span id="cb88-6"><a href="#cb88-6"></a>    a <span class="op">=</span> tagihan_perokok, </span>
+<span id="cb88-7"><a href="#cb88-7"></a>    b <span class="op">=</span> tagihan_nonperokok, </span>
+<span id="cb88-8"><a href="#cb88-8"></a>    equal_var<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb88-9"><a href="#cb88-9"></a>    alternative<span class="op">=</span><span class="st">'greater'</span></span>
+<span id="cb88-10"><a href="#cb88-10"></a>) <span class="co"># eaual_var= False karena varians kedua populasi berbeda</span></span>
+<span id="cb88-11"><a href="#cb88-11"></a></span>
+<span id="cb88-12"><a href="#cb88-12"></a><span class="co"># Interpretasi Hasil</span></span>
+<span id="cb88-13"><a href="#cb88-13"></a><span class="bu">print</span>(<span class="st">'Statistics = </span><span class="sc">%.4f</span><span class="st">, p-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (stat, p)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Statistics = 32.7519, p-value = 0.0000</code></pre>
@@ -1567,11 +1676,11 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1"></a><span class="co"># Pengambilan Keputusan</span></span>
-<span id="cb79-2"><a href="#cb79-2"></a><span class="cf">if</span> p <span class="op">&gt;</span> alpha:</span>
-<span id="cb79-3"><a href="#cb79-3"></a>    <span class="bu">print</span>(<span class="st">'Terima H0: Tagihan Perokok lebih kecil/sama dengan Non-Perokok'</span>) </span>
-<span id="cb79-4"><a href="#cb79-4"></a><span class="cf">else</span>:</span>
-<span id="cb79-5"><a href="#cb79-5"></a>    <span class="bu">print</span>(<span class="st">'Tolak H0: Tagihan Perokok lebih besar daripada Non-Perokok'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1"></a><span class="co"># Pengambilan Keputusan</span></span>
+<span id="cb90-2"><a href="#cb90-2"></a><span class="cf">if</span> p <span class="op">&gt;</span> alpha:</span>
+<span id="cb90-3"><a href="#cb90-3"></a>    <span class="bu">print</span>(<span class="st">'Terima H0: Tagihan Perokok lebih kecil/sama dengan Non-Perokok'</span>) </span>
+<span id="cb90-4"><a href="#cb90-4"></a><span class="cf">else</span>:</span>
+<span id="cb90-5"><a href="#cb90-5"></a>    <span class="bu">print</span>(<span class="st">'Tolak H0: Tagihan Perokok lebih besar daripada Non-Perokok'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tolak H0: Tagihan Perokok lebih besar daripada Non-Perokok</code></pre>
@@ -1593,8 +1702,8 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1"></a>jumlah_perokok <span class="op">=</span> insurance.query(<span class="st">"smoker == 'yes'"</span>)</span>
-<span id="cb81-2"><a href="#cb81-2"></a>jumlah_perokok</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a>jumlah_perokok <span class="op">=</span> insurance.query(<span class="st">"smoker == 'yes'"</span>)</span>
+<span id="cb92-2"><a href="#cb92-2"></a>jumlah_perokok</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -1745,8 +1854,8 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a>jumlah_perokok_laki2 <span class="op">=</span> jumlah_perokok.query(<span class="st">"sex == 'male'"</span>)</span>
-<span id="cb82-2"><a href="#cb82-2"></a>jumlah_perokok_laki2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1"></a>jumlah_perokok_laki2 <span class="op">=</span> jumlah_perokok.query(<span class="st">"sex == 'male'"</span>)</span>
+<span id="cb93-2"><a href="#cb93-2"></a>jumlah_perokok_laki2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -1897,8 +2006,8 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a>proporsi_perokok_laki2 <span class="op">=</span> <span class="bu">len</span>(jumlah_perokok_laki2)<span class="op">/</span><span class="bu">len</span>(jumlah_perokok)</span>
-<span id="cb83-2"><a href="#cb83-2"></a>proporsi_perokok_laki2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1"></a>proporsi_perokok_laki2 <span class="op">=</span> <span class="bu">len</span>(jumlah_perokok_laki2)<span class="op">/</span><span class="bu">len</span>(jumlah_perokok)</span>
+<span id="cb94-2"><a href="#cb94-2"></a>proporsi_perokok_laki2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>0.5802919708029197</code></pre>
@@ -1907,8 +2016,8 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1"></a>proporsi_perokok_perempuan <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>proporsi_perokok_laki2</span>
-<span id="cb85-2"><a href="#cb85-2"></a>proporsi_perokok_perempuan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1"></a>proporsi_perokok_perempuan <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>proporsi_perokok_laki2</span>
+<span id="cb96-2"><a href="#cb96-2"></a>proporsi_perokok_perempuan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>0.4197080291970803</code></pre>
@@ -1917,22 +2026,22 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb87-2"><a href="#cb87-2"></a><span class="im">import</span> math</span>
-<span id="cb87-3"><a href="#cb87-3"></a></span>
-<span id="cb87-4"><a href="#cb87-4"></a><span class="co"># Menentukan jumlah kejadian ukuran sampel (n), </span></span>
-<span id="cb87-5"><a href="#cb87-5"></a><span class="co"># proporsi pada null hypothesis, dan proporsi sample</span></span>
-<span id="cb87-6"><a href="#cb87-6"></a>n <span class="op">=</span> <span class="bu">len</span>(insurance)</span>
-<span id="cb87-7"><a href="#cb87-7"></a>p <span class="op">=</span> proporsi_perokok_laki2</span>
-<span id="cb87-8"><a href="#cb87-8"></a>p_hat <span class="op">=</span> proporsi_perokok_laki2<span class="op">+</span><span class="fl">0.01</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb98-2"><a href="#cb98-2"></a><span class="im">import</span> math</span>
+<span id="cb98-3"><a href="#cb98-3"></a></span>
+<span id="cb98-4"><a href="#cb98-4"></a><span class="co"># Menentukan jumlah kejadian ukuran sampel (n), </span></span>
+<span id="cb98-5"><a href="#cb98-5"></a><span class="co"># proporsi pada null hypothesis, dan proporsi sample</span></span>
+<span id="cb98-6"><a href="#cb98-6"></a>n <span class="op">=</span> <span class="bu">len</span>(insurance)</span>
+<span id="cb98-7"><a href="#cb98-7"></a>p <span class="op">=</span> proporsi_perokok_laki2</span>
+<span id="cb98-8"><a href="#cb98-8"></a>p_hat <span class="op">=</span> proporsi_perokok_laki2<span class="op">+</span><span class="fl">0.01</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a><span class="co"># Hitung uji statistik</span></span>
-<span id="cb88-2"><a href="#cb88-2"></a>test_stat<span class="op">=</span>(p_hat<span class="op">-</span>p)<span class="op">/</span>(math.sqrt((p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p))<span class="op">/</span>(n)))</span>
-<span id="cb88-3"><a href="#cb88-3"></a><span class="bu">print</span>(test_stat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1"></a><span class="co"># Hitung uji statistik</span></span>
+<span id="cb99-2"><a href="#cb99-2"></a>test_stat<span class="op">=</span>(p_hat<span class="op">-</span>p)<span class="op">/</span>(math.sqrt((p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p))<span class="op">/</span>(n)))</span>
+<span id="cb99-3"><a href="#cb99-3"></a><span class="bu">print</span>(test_stat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.7411927066451223</code></pre>
@@ -1941,11 +2050,11 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1"></a><span class="co"># Nilai Critical Value berdasarkan critical Z-value dari Z-table dengan nilai alpha 0.05</span></span>
-<span id="cb90-2"><a href="#cb90-2"></a><span class="co">#Import package</span></span>
-<span id="cb90-3"><a href="#cb90-3"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb90-4"><a href="#cb90-4"></a>z_crit<span class="op">=</span>stats.norm.ppf(<span class="dv">1</span><span class="op">-</span><span class="fl">0.05</span>)  <span class="co"># right-tailed test</span></span>
-<span id="cb90-5"><a href="#cb90-5"></a><span class="bu">print</span>(z_crit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1"></a><span class="co"># Nilai Critical Value berdasarkan critical Z-value dari Z-table dengan nilai alpha 0.05</span></span>
+<span id="cb101-2"><a href="#cb101-2"></a><span class="co">#Import package</span></span>
+<span id="cb101-3"><a href="#cb101-3"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb101-4"><a href="#cb101-4"></a>z_crit<span class="op">=</span>stats.norm.ppf(<span class="dv">1</span><span class="op">-</span><span class="fl">0.05</span>)  <span class="co"># right-tailed test</span></span>
+<span id="cb101-5"><a href="#cb101-5"></a><span class="bu">print</span>(z_crit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>1.6448536269514722</code></pre>
@@ -1954,11 +2063,11 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a><span class="co"># Menentukan aturan keputusan</span></span>
-<span id="cb92-2"><a href="#cb92-2"></a><span class="cf">if</span> test_stat<span class="op">&gt;</span>z_crit:</span>
-<span id="cb92-3"><a href="#cb92-3"></a>    <span class="bu">print</span>(<span class="st">"Tolak null hypothesis"</span>)</span>
-<span id="cb92-4"><a href="#cb92-4"></a><span class="cf">else</span>:</span>
-<span id="cb92-5"><a href="#cb92-5"></a>    <span class="bu">print</span>(<span class="st">"Gagal tolak null hypothesis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1"></a><span class="co"># Menentukan aturan keputusan</span></span>
+<span id="cb103-2"><a href="#cb103-2"></a><span class="cf">if</span> test_stat<span class="op">&gt;</span>z_crit:</span>
+<span id="cb103-3"><a href="#cb103-3"></a>    <span class="bu">print</span>(<span class="st">"Tolak null hypothesis"</span>)</span>
+<span id="cb103-4"><a href="#cb103-4"></a><span class="cf">else</span>:</span>
+<span id="cb103-5"><a href="#cb103-5"></a>    <span class="bu">print</span>(<span class="st">"Gagal tolak null hypothesis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Gagal tolak null hypothesis</code></pre>
@@ -1971,7 +2080,7 @@ Name: smoker, dtype: int64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1"></a>insurance.groupby(<span class="st">'smoker'</span>).charges.var().<span class="bu">round</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1"></a>insurance.groupby(<span class="st">'smoker'</span>).charges.var().<span class="bu">round</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>smoker
@@ -1984,17 +2093,17 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb96-2"><a href="#cb96-2"></a><span class="im">import</span> math</span>
-<span id="cb96-3"><a href="#cb96-3"></a></span>
-<span id="cb96-4"><a href="#cb96-4"></a><span class="co"># Menentukan sampel terbesar dan sampel terkecil</span></span>
-<span id="cb96-5"><a href="#cb96-5"></a>n <span class="op">=</span> insurance.charges.count()</span>
-<span id="cb96-6"><a href="#cb96-6"></a>s <span class="op">=</span> insurance.query(<span class="st">"smoker=='yes'"</span>).charges.std()</span>
-<span id="cb96-7"><a href="#cb96-7"></a>sd <span class="op">=</span> insurance.query(<span class="st">"smoker=='no'"</span>).charges.std()</span>
-<span id="cb96-8"><a href="#cb96-8"></a></span>
-<span id="cb96-9"><a href="#cb96-9"></a><span class="co"># Hitung uji statistik</span></span>
-<span id="cb96-10"><a href="#cb96-10"></a>chi_square <span class="op">=</span> ((n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(sd<span class="op">**</span><span class="dv">2</span>))<span class="op">/</span>(s<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb96-11"><a href="#cb96-11"></a><span class="bu">print</span>(chi_square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb107-1"><a href="#cb107-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb107-2"><a href="#cb107-2"></a><span class="im">import</span> math</span>
+<span id="cb107-3"><a href="#cb107-3"></a></span>
+<span id="cb107-4"><a href="#cb107-4"></a><span class="co"># Menentukan sampel terbesar dan sampel terkecil</span></span>
+<span id="cb107-5"><a href="#cb107-5"></a>n <span class="op">=</span> insurance.charges.count()</span>
+<span id="cb107-6"><a href="#cb107-6"></a>s <span class="op">=</span> insurance.query(<span class="st">"smoker=='yes'"</span>).charges.std()</span>
+<span id="cb107-7"><a href="#cb107-7"></a>sd <span class="op">=</span> insurance.query(<span class="st">"smoker=='no'"</span>).charges.std()</span>
+<span id="cb107-8"><a href="#cb107-8"></a></span>
+<span id="cb107-9"><a href="#cb107-9"></a><span class="co"># Hitung uji statistik</span></span>
+<span id="cb107-10"><a href="#cb107-10"></a>chi_square <span class="op">=</span> ((n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(sd<span class="op">**</span><span class="dv">2</span>))<span class="op">/</span>(s<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb107-11"><a href="#cb107-11"></a><span class="bu">print</span>(chi_square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>360.5829647660657</code></pre>
@@ -2003,10 +2112,10 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1"></a><span class="co"># Nilai Critical Value berdasarkan critical f-value dari f-table dengan nilai alpha 0.05</span></span>
-<span id="cb98-2"><a href="#cb98-2"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb98-3"><a href="#cb98-3"></a>chi2_crit<span class="op">=</span>stats.chi2.ppf(<span class="fl">0.05</span>, n<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb98-4"><a href="#cb98-4"></a><span class="bu">print</span>(chi2_crit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1"></a><span class="co"># Nilai Critical Value berdasarkan critical f-value dari f-table dengan nilai alpha 0.05</span></span>
+<span id="cb109-2"><a href="#cb109-2"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb109-3"><a href="#cb109-3"></a>chi2_crit<span class="op">=</span>stats.chi2.ppf(<span class="fl">0.05</span>, n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb109-4"><a href="#cb109-4"></a><span class="bu">print</span>(chi2_crit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>1253.0955250731236</code></pre>
@@ -2015,11 +2124,11 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1"></a><span class="co"># Menyatakan rejection decision</span></span>
-<span id="cb100-2"><a href="#cb100-2"></a><span class="cf">if</span> chi_square<span class="op">&lt;</span>chi2_crit:</span>
-<span id="cb100-3"><a href="#cb100-3"></a>    <span class="bu">print</span>(<span class="st">"Tolak null hypothesis"</span>)</span>
-<span id="cb100-4"><a href="#cb100-4"></a><span class="cf">else</span>:</span>
-<span id="cb100-5"><a href="#cb100-5"></a>    <span class="bu">print</span>(<span class="st">"Terima null hypothesis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1"></a><span class="co"># Menyatakan rejection decision</span></span>
+<span id="cb111-2"><a href="#cb111-2"></a><span class="cf">if</span> chi_square<span class="op">&lt;</span>chi2_crit:</span>
+<span id="cb111-3"><a href="#cb111-3"></a>    <span class="bu">print</span>(<span class="st">"Tolak null hypothesis"</span>)</span>
+<span id="cb111-4"><a href="#cb111-4"></a><span class="cf">else</span>:</span>
+<span id="cb111-5"><a href="#cb111-5"></a>    <span class="bu">print</span>(<span class="st">"Terima null hypothesis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tolak null hypothesis</code></pre>
@@ -2038,14 +2147,14 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1"></a>tagihan_bmilebih25 <span class="op">=</span> insurance.query(<span class="st">"bmi&gt;25"</span>).charges</span>
-<span id="cb102-2"><a href="#cb102-2"></a>tagihan_bmikurang25 <span class="op">=</span> insurance.query(<span class="st">"bmi&lt;25"</span>).charges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1"></a>tagihan_bmilebih25 <span class="op">=</span> insurance.query(<span class="st">"bmi&gt;25"</span>).charges</span>
+<span id="cb113-2"><a href="#cb113-2"></a>tagihan_bmikurang25 <span class="op">=</span> insurance.query(<span class="st">"bmi&lt;25"</span>).charges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1"></a>tagihan_bmikurang25.var() <span class="op">==</span> tagihan_bmilebih25.var()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1"></a>tagihan_bmikurang25.var() <span class="op">==</span> tagihan_bmilebih25.var()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>False</code></pre>
@@ -2054,19 +2163,19 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
-<span id="cb105-2"><a href="#cb105-2"></a></span>
-<span id="cb105-3"><a href="#cb105-3"></a>alpha<span class="op">=</span><span class="fl">0.05</span></span>
-<span id="cb105-4"><a href="#cb105-4"></a></span>
-<span id="cb105-5"><a href="#cb105-5"></a>stat, p <span class="op">=</span> ttest_ind(</span>
-<span id="cb105-6"><a href="#cb105-6"></a>    a <span class="op">=</span> tagihan_bmilebih25,</span>
-<span id="cb105-7"><a href="#cb105-7"></a>    b <span class="op">=</span> tagihan_bmikurang25, </span>
-<span id="cb105-8"><a href="#cb105-8"></a>    equal_var<span class="op">=</span><span class="va">False</span>, </span>
-<span id="cb105-9"><a href="#cb105-9"></a>    alternative<span class="op">=</span><span class="st">'greater'</span></span>
-<span id="cb105-10"><a href="#cb105-10"></a>) <span class="co"># eaual_var= False karena varians kedua populasi berbeda</span></span>
-<span id="cb105-11"><a href="#cb105-11"></a></span>
-<span id="cb105-12"><a href="#cb105-12"></a><span class="co"># Interpretasi Hasil</span></span>
-<span id="cb105-13"><a href="#cb105-13"></a><span class="bu">print</span>(<span class="st">'Statistics = </span><span class="sc">%.4f</span><span class="st">, p-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (stat, p)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
+<span id="cb116-2"><a href="#cb116-2"></a></span>
+<span id="cb116-3"><a href="#cb116-3"></a>alpha<span class="op">=</span><span class="fl">0.05</span></span>
+<span id="cb116-4"><a href="#cb116-4"></a></span>
+<span id="cb116-5"><a href="#cb116-5"></a>stat, p <span class="op">=</span> ttest_ind(</span>
+<span id="cb116-6"><a href="#cb116-6"></a>    a <span class="op">=</span> tagihan_bmilebih25,</span>
+<span id="cb116-7"><a href="#cb116-7"></a>    b <span class="op">=</span> tagihan_bmikurang25, </span>
+<span id="cb116-8"><a href="#cb116-8"></a>    equal_var<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb116-9"><a href="#cb116-9"></a>    alternative<span class="op">=</span><span class="st">'greater'</span></span>
+<span id="cb116-10"><a href="#cb116-10"></a>) <span class="co"># eaual_var= False karena varians kedua populasi berbeda</span></span>
+<span id="cb116-11"><a href="#cb116-11"></a></span>
+<span id="cb116-12"><a href="#cb116-12"></a><span class="co"># Interpretasi Hasil</span></span>
+<span id="cb116-13"><a href="#cb116-13"></a><span class="bu">print</span>(<span class="st">'Statistics = </span><span class="sc">%.4f</span><span class="st">, p-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (stat, p)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Statistics = 5.9299, p-value = 0.0000</code></pre>
@@ -2075,11 +2184,11 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb107-1"><a href="#cb107-1"></a><span class="co"># Pengambilan Keputusan</span></span>
-<span id="cb107-2"><a href="#cb107-2"></a><span class="cf">if</span> p <span class="op">&gt;</span> alpha:</span>
-<span id="cb107-3"><a href="#cb107-3"></a>    <span class="bu">print</span>(<span class="st">'Terima H0: tagihan BMI di atas 25 &lt;= tagihan BMI di bawah 25'</span>) </span>
-<span id="cb107-4"><a href="#cb107-4"></a><span class="cf">else</span>:</span>
-<span id="cb107-5"><a href="#cb107-5"></a>    <span class="bu">print</span>(<span class="st">'Tolak H0: tagihan BMI di atas 25 &gt; tagihan BMI di bawah 25'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1"></a><span class="co"># Pengambilan Keputusan</span></span>
+<span id="cb118-2"><a href="#cb118-2"></a><span class="cf">if</span> p <span class="op">&gt;</span> alpha:</span>
+<span id="cb118-3"><a href="#cb118-3"></a>    <span class="bu">print</span>(<span class="st">'Terima H0: tagihan BMI di atas 25 &lt;= tagihan BMI di bawah 25'</span>) </span>
+<span id="cb118-4"><a href="#cb118-4"></a><span class="cf">else</span>:</span>
+<span id="cb118-5"><a href="#cb118-5"></a>    <span class="bu">print</span>(<span class="st">'Tolak H0: tagihan BMI di atas 25 &gt; tagihan BMI di bawah 25'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tolak H0: tagihan BMI di atas 25 &gt; tagihan BMI di bawah 25</code></pre>
@@ -2095,14 +2204,14 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1"></a>tagihan_laki2 <span class="op">=</span> insurance.query(<span class="st">"sex == 'male'"</span>).charges</span>
-<span id="cb109-2"><a href="#cb109-2"></a>tagihan_perempuan <span class="op">=</span> insurance.query(<span class="st">"sex == 'female'"</span>).charges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1"></a>tagihan_laki2 <span class="op">=</span> insurance.query(<span class="st">"sex == 'male'"</span>).charges</span>
+<span id="cb120-2"><a href="#cb120-2"></a>tagihan_perempuan <span class="op">=</span> insurance.query(<span class="st">"sex == 'female'"</span>).charges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1"></a>tagihan_laki2.var() <span class="op">==</span> tagihan_perempuan.var()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href="#cb121-1"></a>tagihan_laki2.var() <span class="op">==</span> tagihan_perempuan.var()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>False</code></pre>
@@ -2111,19 +2220,19 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
-<span id="cb112-2"><a href="#cb112-2"></a></span>
-<span id="cb112-3"><a href="#cb112-3"></a>alpha<span class="op">=</span><span class="fl">0.05</span></span>
-<span id="cb112-4"><a href="#cb112-4"></a></span>
-<span id="cb112-5"><a href="#cb112-5"></a>stat, p <span class="op">=</span> ttest_ind(</span>
-<span id="cb112-6"><a href="#cb112-6"></a>    a <span class="op">=</span> tagihan_laki2, </span>
-<span id="cb112-7"><a href="#cb112-7"></a>    b <span class="op">=</span> tagihan_perempuan, </span>
-<span id="cb112-8"><a href="#cb112-8"></a>    equal_var<span class="op">=</span><span class="va">False</span>, </span>
-<span id="cb112-9"><a href="#cb112-9"></a>    alternative<span class="op">=</span><span class="st">'greater'</span></span>
-<span id="cb112-10"><a href="#cb112-10"></a>) <span class="co"># eaual_var= False karena varians kedua populasi berbeda</span></span>
-<span id="cb112-11"><a href="#cb112-11"></a></span>
-<span id="cb112-12"><a href="#cb112-12"></a><span class="co"># Interpretasi Hasil</span></span>
-<span id="cb112-13"><a href="#cb112-13"></a><span class="bu">print</span>(<span class="st">'Statistics = </span><span class="sc">%.4f</span><span class="st">, p-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (stat, p)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
+<span id="cb123-2"><a href="#cb123-2"></a></span>
+<span id="cb123-3"><a href="#cb123-3"></a>alpha<span class="op">=</span><span class="fl">0.05</span></span>
+<span id="cb123-4"><a href="#cb123-4"></a></span>
+<span id="cb123-5"><a href="#cb123-5"></a>stat, p <span class="op">=</span> ttest_ind(</span>
+<span id="cb123-6"><a href="#cb123-6"></a>    a <span class="op">=</span> tagihan_laki2, </span>
+<span id="cb123-7"><a href="#cb123-7"></a>    b <span class="op">=</span> tagihan_perempuan, </span>
+<span id="cb123-8"><a href="#cb123-8"></a>    equal_var<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb123-9"><a href="#cb123-9"></a>    alternative<span class="op">=</span><span class="st">'greater'</span></span>
+<span id="cb123-10"><a href="#cb123-10"></a>) <span class="co"># eaual_var= False karena varians kedua populasi berbeda</span></span>
+<span id="cb123-11"><a href="#cb123-11"></a></span>
+<span id="cb123-12"><a href="#cb123-12"></a><span class="co"># Interpretasi Hasil</span></span>
+<span id="cb123-13"><a href="#cb123-13"></a><span class="bu">print</span>(<span class="st">'Statistics = </span><span class="sc">%.4f</span><span class="st">, p-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (stat, p)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Statistics = 2.1009, p-value = 0.0179</code></pre>
@@ -2132,11 +2241,11 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1"></a><span class="co"># Pengambilan Keputusan</span></span>
-<span id="cb114-2"><a href="#cb114-2"></a><span class="cf">if</span> p <span class="op">&gt;</span> alpha:</span>
-<span id="cb114-3"><a href="#cb114-3"></a>    <span class="bu">print</span>(<span class="st">'Terima H0: tagihan laki-laki &lt;= tagihan perempuan'</span>) </span>
-<span id="cb114-4"><a href="#cb114-4"></a><span class="cf">else</span>:</span>
-<span id="cb114-5"><a href="#cb114-5"></a>    <span class="bu">print</span>(<span class="st">'Tolak H0: tagihan laki-laki &gt; tagihan perempuan'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb125-1"><a href="#cb125-1"></a><span class="co"># Pengambilan Keputusan</span></span>
+<span id="cb125-2"><a href="#cb125-2"></a><span class="cf">if</span> p <span class="op">&gt;</span> alpha:</span>
+<span id="cb125-3"><a href="#cb125-3"></a>    <span class="bu">print</span>(<span class="st">'Terima H0: tagihan laki-laki &lt;= tagihan perempuan'</span>) </span>
+<span id="cb125-4"><a href="#cb125-4"></a><span class="cf">else</span>:</span>
+<span id="cb125-5"><a href="#cb125-5"></a>    <span class="bu">print</span>(<span class="st">'Tolak H0: tagihan laki-laki &gt; tagihan perempuan'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tolak H0: tagihan laki-laki &gt; tagihan perempuan</code></pre>
@@ -2145,7 +2254,7 @@ Name: charges, dtype: float64</code></pre>
 <div class="cell">
 <details>
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1"></a>insurance.groupby(<span class="st">'sex'</span>).charges.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb127-1"><a href="#cb127-1"></a>insurance.groupby(<span class="st">'sex'</span>).charges.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>sex

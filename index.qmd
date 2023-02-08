@@ -6,7 +6,7 @@ listing:
   contents: posts
   sort: "date desc"
   type: grid
-  grid-columns: 3
+  grid-columns: 2
   image-height: 240px
   page-size: 100
   categories: true

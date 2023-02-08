@@ -1,0 +1,294 @@
+---
+title: 'Webscraping National Exams of Indonesia '
+description: |
+  Extracting National Exams from each province in Indonesia from 2015-2019 to See If Education still decentralized in Java island and its surroundings.
+author: Aditya Arie Wijaya
+title-block-banner: true
+date: '2023-01-31'
+categories:
+  - project
+  - webscraping
+  - data-science
+  - python
+draft: false
+jupyter: minids
+---
+
+![Photo by <a href="https://unsplash.com/@isengrapher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ed Us</a> on <a href="https://unsplash.com/photos/td71Lq7uAhA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](./publications.jpeg)
+
+## The Role of National Exam
+For the longest time, national exam, like many other countries in the world is used as one of the metric to measure how well our future would be (re: childrens). The concept is simple, each and every children in the country will be given a set of questions/ tasks, that has to be completed for a given time, on different subjects (likely to be Math, Language, Science). 
+
+![Indonesia Minister of Education](./Nadiem_Makarim.jpg){width=50%}
+
+In Indonesia, this was used to be the sole metric to say if one student passed the exam or not. This has been changed ever since the newly appointed education minister of Indonesia, [Nadiem Makarim](https://en.wikipedia.org/wiki/Nadiem_Makarim) (also the co-founder of SE Asia [Decacorn](https://www.bloomberg.com/news/articles/2019-04-06/indonesia-s-go-jek-joins-decacorn-ranks-with-10b-valuation)- [Gojek](https://www.gojek.com/en-id/), Now [GoTo](https://www.gotocompany.com/en)).
+
+## Apakah kualitas pendidikan Indonesia tingkat SMP-SMA masih terpusat hanya di Jawa dan Sekitarnya?
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+```{python}
+un_2019= \
+(pd
+ .read_html('https://npd.kemdikbud.go.id/?appid=hasilun&tahun=2019')
+ [1][0:547]
+)
+
+un_2019
+```
+
+```{python}
+un_2019.columns
+```
+
+```{python}
+un_2019 = un_2019[['Nama Wilayah', 'Propinsi', 'UN SMP','UN SMA IPA', 'UN SMA IPS']]
+un_2019
+```
+
+```{python}
+un_2019.info()
+```
+
+```{python}
+un_2019 = \
+un_2019.astype({
+    'UN SMP': float,
+    'UN SMA IPA': float,
+    'UN SMA IPS': float,
+})
+un_2019
+```
+
+```{python}
+un_2019 = un_2019.rename(columns={
+    'Nama Wilayah': 'Wilayah'})
+un_2019
+```
+
+```{python}
+un_2019.nunique()
+```
+
+```{python}
+un_2019['Propinsi'] = \
+un_2019['Propinsi'].str.replace('Prov. ', '', regex=False)
+```
+
+```{python}
+un_2019
+```
+
+```{python}
+#making the barchart
+plt.style.use('ggplot')
+
+
+(un_2019.groupby('Propinsi')
+ [[
+     # 'UN SMP',
+     'UN SMA IPA', 
+     'UN SMA IPS'
+ ]]
+ .median()
+ .sort_values(
+     by='UN SMA IPA',
+     ascending=True,
+ )
+ .plot(
+     kind='barh',
+     # ax=axs[0],
+     figsize=(6,10),
+ ));
+```
+
+### Buat Fungsi untuk Webscraping per tahun-nya
+
+```{python}
+def webscrap(tahun):
+    df = pd.read_html(f'https://npd.kemdikbud.go.id/?appid=hasilun&tahun={tahun}')[1][0:547] #ambil data dari web
+    df = df[['Nama Wilayah', 'Propinsi', 'UN SMP','UN SMA IPA', 'UN SMA IPS']] #extract kolom
+    df = df.astype({'UN SMP': float, 'UN SMA IPA': float, 'UN SMA IPS': float}) #ubah dtypes
+    df = df.rename(columns={'Nama Wilayah': 'Wilayah'}) #rename kolom 'Nama Wilayah' jadi 'Wilayah'
+    df['Propinsi'] = df['Propinsi'].str.replace('Prov. ', '', regex=False) #menghapus 'Prov.' 
+    df['Tahun'] = tahun #menambahkan kolom tahun
+    return df
+```
+
+```{python}
+un_2015 = webscrap(2015)
+un_2016 = webscrap(2016)
+un_2017 = webscrap(2017)
+un_2018 = webscrap(2018)
+un_2019 = webscrap(2019)
+# un_2020 = webscrap(2020)
+```
+
+```{python}
+un_2015.head()
+```
+
+```{python}
+un_2019.head()
+```
+
+```{python}
+#gabungkan setiap dataframe secara vertikal
+
+list_df = [un_2015, un_2016, un_2017, un_2018, un_2019]
+
+un_2015_2019 = pd.concat(list_df, axis='rows')
+
+un_2015_2019.info()
+```
+
+```{python}
+un_2015_2019.nunique()
+```
+
+```{python}
+un_2015_2019.columns
+```
+
+```{python}
+order_new = \
+(un_2015_2019
+ [['Propinsi', 'UN SMA IPA']]
+ .groupby("Propinsi")
+ .mean()
+ .sort_values(by='UN SMA IPA', ascending=False)
+ .reset_index()
+)
+
+order_new.head(10)
+```
+
+```{python}
+fig, axs = plt.subplots(figsize=(10,10))
+
+order_propinsi = \
+(un_2015_2019
+ .query(" Tahun==2019 ")
+ .groupby('Propinsi')
+ .mean()
+ .sort_values(by='UN SMA IPA', ascending=False)
+ .reset_index()
+)
+
+
+(sns
+ .barplot(
+     data=un_2015_2019.query(" Tahun>2014 "), 
+     x='UN SMA IPA', 
+     y='Propinsi', 
+     hue='Tahun',
+     ax=axs, 
+     errorbar=('ci', False),
+     palette='viridis_r',
+     order=order_new['Propinsi']
+ )
+);
+```
+
+```{python}
+(un_2015_2019
+ .query("Propinsi == 'Kalimantan Timur'")
+ .sort_values(by='UN SMA IPA', ascending=False, ignore_index=True)
+ # [['Wilayah', 'UN SMA IPA']]
+ .head(20)
+
+)
+```
+
+```{python}
+(un_2015_2019
+ .query("Propinsi == 'Kalimantan Timur'")
+ # .groupby(['Propinsi', 'Tahun'])
+ .agg('mean')
+ .plot(
+     kind='barh',
+     color={'grey', 'green', 'orange'}
+ )
+);
+```
+
+```{python}
+un_2018.drop(columns='Tahun').groupby(['Propinsi', 'UN SMP', 'UN SMA IPA', 'UN SMA IPS']).median().sort_values(by='UN SMA IPA', ascending=False).head()
+```
+
+```{python}
+# fig, axs = plt.subplots(figsize=(20,12))
+
+(sns.catplot(
+    kind='bar',
+    data=un_2015_2019.query(" Tahun > 2016 ").groupby(['Propinsi', 'Tahun']).mean().sort_values(by='UN SMA IPA', ascending=False).reset_index(),
+    x='UN SMA IPA',
+    y='Propinsi', 
+    hue='Tahun',
+    # col='Tahun',
+    # col_wrap=3,
+    palette='viridis_r',
+    height=12,
+    aspect=1,
+)
+);
+```
+
+```{python}
+(un_2015
+ .groupby(['Propinsi'])['UN SMP']
+ .mean()
+ .nlargest(keep='first', n=1)
+ .index[0]
+)
+```
+
+```{python}
+def get_max_prop(df):
+    max_un_smp = df.groupby(['Propinsi'])['UN SMP'].mean().nlargest(1).index[0]
+    max_un_sma_ipa = df.groupby(['Propinsi'])['UN SMA IPA'].mean().nlargest(1).index[0]
+    max_un_sma_ips = df.groupby(['Propinsi'])['UN SMA IPS'].mean().nlargest(1).index[0]
+    return [max_un_smp, max_un_sma_ipa, max_un_sma_ips]
+```
+
+```{python}
+get_max_prop(un_2019)
+```
+
+```{python}
+years = [un_2015, un_2016, un_2017, un_2018, un_2019]
+for year in years:
+    print(get_max_prop(year))
+```
+
+
+
+
+
+
+
+
+```{python}
+akreditasi_2019 = pd.read_html('https://npd.kemdikbud.go.id/?appid=akreditasi&tahun=2020')[1][:548]
+akreditasi_2019.info()
+```
+
+```{python}
+(akreditasi_2019
+ .query(" Propinsi == 'Prov. D.K.I. Jakarta' ")
+ [[
+     'Propinsi',
+     # 'SD (Tidak Terakreditasi)',
+     'SMP (A)', 'SMP (B)','SMP (C)','SMP (Tidak Terakreditasi)',
+     'SMA (A)', 'SMA (B)', 'SMA (C)', 'SMA (Tidak Terakreditasi)'
+  ]]
+ 
+ 
+)
+```
+
+
