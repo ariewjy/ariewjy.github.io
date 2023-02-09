@@ -43,6 +43,7 @@ Objectives:
 
 ```{python}
 #| code-fold: false
+#| label: test
 
 #importing libraries
 import pandas as pd

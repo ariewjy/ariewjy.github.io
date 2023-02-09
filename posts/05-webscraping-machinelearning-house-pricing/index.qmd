@@ -1,7 +1,7 @@
 ---
 title: ' Malaysia Property Pricing - Webscraping & Machine Learning Model'
 description: |
-  Web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price. 
+  Web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.
 author: Aditya Arie Wijaya
 title-block-banner: true
 date: '2023-02-10'
@@ -10,10 +10,11 @@ categories:
   - data-science
   - python
   - webscraping
-jupyter: minids
 code-fold: show
 draft: false
+citation-location: document
 bibliography: references.bib
+jupyter: minids
 ---
 
 ## Machine Learning Project
@@ -32,7 +33,7 @@ Previous work by [@madhuri2019], [@xu2022], [@zhao2022] highlight the importance
 
 ### Data Gathering
 
-The data will use a scraped data from the website mentioned before, focusing on property-to-rent surrounding Kuala Lumpur, Malaysia. ![Website](mudah_my.png){width="840"}
+The data will use a scraped data from the website mentioned before, focusing on property-to-rent surrounding Kuala Lumpur, Malaysia. ![Website](mudah_my.png)
 
 ```{python}
 #importing libraries
@@ -54,16 +55,50 @@ import time    # to be used in loop iterations
 !jupyter nbextension enable --py widgetsnbextension #enabling progress bar
 ```
 
-#### Web-Scraping
+#### Web-Scraping Process
 
-The process started out by gathering data from the website. We are using python library for web-scraping: BeautifulSoup as depicted below. The first step is to make a @func-get-page to generate each page from the first to the last page in the queries, which can be up to 350 pages.
+The process started out by gathering data from the website. We are using python library for web-scraping: BeautifulSoup as depicted below. 
+The first process is generating a list of webpage address for a given page number.
 
 ```{python}
-#| label: func-get-page
-#| fig-cap: Function to Generate Each Page
+#generate list address of n_page
+def page_number(start, end):
+    """
+    Description:
+        Function to generate a list of webpage address for a given page number
 
-#getting listing property in one page
+    Parameters:
+        start (int) : starting page number
+        end (int)   : ending page number
+    Returns:
+        a list of listing web address 
+    
+    """
+    
+    page_url = 'https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?o='
+    list_page = []
+    for i in range(start,end+1):
+        list_page.append(page_url+str(i))
+    return list_page
+page_number(2,4)
+```
+
+Then generate a list of ads listing on a single page.
+
+```{python}
+#setting up list of page from 
 def get_list_html(page_url):
+    """
+    Description:
+        Function to get every listing ads in a given url (page_url)
+
+    Parameters:
+        page_url (str): website url
+        
+    Returns:
+        a list of listing ads
+    
+    """
     headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"}
     page = requests.get(url=page_url, headers=headers)
     soup = bs(page.text, "html.parser")
@@ -86,20 +121,22 @@ def get_list_html(page_url):
 get_list_html('https://www.mudah.my/neighbouring-kuala-lumpur/apartment-for-rent?o=2')[0:5]
 ```
 
-```{python}
-#generate list address of n_page
-def page_number(start, end):
-    page_url = 'https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?o='
-    list_page = []
-    for i in range(start,end+1):
-        list_page.append(page_url+str(i))
-    return list_page
-page_number(2,4)
-```
+Combining the previous two functions, generate a list of url for all pages.
 
 ```{python}
 #generate listing property from each page of n_page
 def get_list_url(n_page):
+    """
+    Description:
+        Function to get every listing ads in every page (n_page)
+
+    Parameters:
+        n_page (int): number of page
+        
+    Returns:
+        a list of listing ads
+    
+    """
     list_html=[]
     for i in tqdm(range(n_page)):
         list_html.extend(get_list_html(page_number(1, n_page)[i]))
@@ -108,9 +145,22 @@ def get_list_url(n_page):
 get_list_url(2)[:10]
 ```
 
+Then extract the attributes inside the listing ads in a form of nested dictionary.
+
 ```{python}
 #extract data from url
 def get_list_dict(n_page):
+    """
+    Description:
+        Function to get dataset (atribut of units) in a form of dictionary. 
+
+    Parameters:
+        n_page (int): number of page
+        
+    Returns:
+        a dictionaries of attributes inside a list
+    
+    """
     headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"}
     list_html = get_list_url(n_page)
     list_dict = []
@@ -141,9 +191,22 @@ def get_list_dict(n_page):
     return list_dict
 ```
 
+Extracting the values inside the dictionary for each attributes.
+
 ```{python}
 #getting values out of dictionary
 def get_values(list_dict):
+    """
+    Description:
+        Function to values of the previous dictionary.
+
+    Parameters:
+        list_dict (list): list of dictionary where attributes stored
+        
+    Returns:
+        a list of values (unit/property) attributes
+    
+    """
     keys = [
         'ads_id',
         'prop_name',
@@ -178,6 +241,17 @@ def get_values(list_dict):
 ```{python}
 #get df from list
 def get_df_final(n_page):
+    """
+    Description:
+        Function to generate dataframe from the list.
+
+    Parameters:
+        n_page (int): number of page
+        
+    Returns:
+        a dataframe of the list of attributes on each listings.
+    
+    """
     list_data = get_list_dict(n_page)
     list_new = []
     for i in range(0,len(list_data)):
@@ -187,6 +261,8 @@ def get_df_final(n_page):
     df = pd.DataFrame(list_new)
     return df
 ```
+
+Extract dataset from 250 pages. File is then saved into a csv, to be reloaded again.
 
 ```{python}
 # df_=get_df_final(250)
@@ -198,7 +274,7 @@ def get_df_final(n_page):
 
 ### Data Understanding
 
-Reload the Data
+Reload the original dataset. 
 
 ```{python}
 #read it back
@@ -238,6 +314,8 @@ df.duplicated().sum()
 df1 = df.drop_duplicates()
 ```
 
+Saving the file to csv after remove duplicated values.
+
 ```{python}
 # #saving to csv
 # df1.to_csv("mudah-apartment-clean.csv", index=False)
@@ -274,7 +352,7 @@ df.head(4).T
 
 #### Extracting Near KTM/LRT
 
--   Hypotheses: closer access to KTM/LRT = higher monthly rent
+Hypotheses: closer access to KTM/LRT = higher monthly rent
 
 ```{python}
 #extracting near KTM/LRT from the additional facilities
@@ -287,16 +365,21 @@ def extract_near_ktm_lrt(text):
         return 'no'
     except TypeError:
         return text
-        
-    
 ```
+
+Extracting "near KTM/LRT" into its own column.
 
 ```{python}
 df['nearby_railways'] = df.additional_facilities.apply(lambda x: extract_near_ktm_lrt(x))
 df.head(4).T
 ```
 
+Plotting the difference between nearby KTM/LRT or not:
+
 ```{python}
+#| label: fig-nearbyktm
+#| fig-cap: Boxplot between Nearby KTM/LRT or Not
+
 sns.boxplot(data=df, x='monthly_rent_rm', y='nearby_railways')
 plt.xlim(0,4000);
 
@@ -310,13 +393,13 @@ Not nearby KTM/LRT: {not_near_ktmlrt.monthly_rent_rm.median():.0f}RM
       """)
 ```
 
--   As seen above, nearby KTM/LRT is sligthly increases the median monthly rent by 50RM, **However**
+Sanity check:
 
 ```{python}
 df[df['prop_name'] == 'Majestic Maxim'][['nearby_railways']].value_counts()
 ```
 
--   As can be seen from one example above, near KTM/LRT is not appearing in all row even though the property is the same
+As seen above, @fig-nearbyktm shows that it sligthly increases the median monthly rent by 50RM. However, near KTM/LRT is not appearing in all row even though the property is the same
 
 **Conclusion: Near KTM/LRT may be used, but it can be improved as the listing is inconsistent**
 
@@ -352,19 +435,24 @@ df.info()
 
 #### Outlier Removal
 
-To remove some unexplainable data such as 0 monthly rent, 0 size, the rent that is way too old (1970), including the monthly rent that is way too high (astronomical), and size too big.
+To remove some unexplainable data such as 0 monthly rent, 0 size, the rent that is way too old (1970), including the monthly rent that is way too high and/or size too big. 
 
 ```{python}
-#EDA to get the outliers 
+#| label: fig-size-rent
+#| fig-cap: "Monthly Rent"
 
-df[['size_sqft', 'monthly_rent_rm']].plot(kind='scatter', x='size_sqft', y='monthly_rent_rm')
+df[['size_sqft', 'monthly_rent_rm']].plot(kind='scatter', x='size_sqft', y='monthly_rent_rm');
 plt.ylim(100,5500) #batas harga rent
 plt.xlim(50,3000)  #batas size
+plt.show()
 ```
 
 ##### Monthly Rent
 
 ```{python}
+#| label: fig-compare-rent
+#| fig-cap: "Comparison between Different Scale"
+
 fig, axs = plt.subplots(1,2)
 axs[0].boxplot(data=df, x='monthly_rent_rm')
 axs[0].set_ylim(0,20000)
@@ -378,19 +466,30 @@ plt.tight_layout()
 plt.show()
 ```
 
+Based on EDA on @fig-size-rent and @fig-compare-rent, author decided to filter the data between 100-5500 RM as follows:
+
 ```{python}
 #removing all rows with monthly rent above 5500 RM and below 100RM
 dfx = df.query(" monthly_rent_rm > 100 & monthly_rent_rm < 5500 ")
 dfx.describe()
 ```
 
+Sanity check after removal as shown in @fig-rent-final belo:
+
 ```{python}
+#| label: fig-rent-final
+#| fig-cap: "Data after Outlier Removal"
+
 dfx.monthly_rent_rm.plot(kind='box', x='monthly_rent_rm');
 ```
 
 #### Size
 
+Checking the dataset in terms of size.
 ```{python}
+#| label: fig-size-comparison
+#| fig-cap: "Raw Data Size sq.ft"
+
 fig, axs = plt.subplots(1,2)
 axs[0].boxplot(data=dfx, x='size_sqft')
 axs[0].set_ylim(0,20000)
@@ -404,6 +503,7 @@ plt.tight_layout()
 plt.show()
 ```
 
+Still based on @fig-size-rent, outliers are removed.
 ```{python}
 #removing outliers below 500, and higher than 3000 sqft and below 50 sqft
 dfx = \
@@ -414,11 +514,15 @@ dfx = \
 dfx
 ```
 
+Sanity check:
 ```{python}
 dfx.size_sqft.plot(kind='box');
 ```
 
 ```{python}
+#| label: fig-complete-outliers
+#| fig-cap: "Final Data after Outlier Removal"
+
 fig, axs = plt.subplots(1,5, figsize=(12,4))
 axs[0].boxplot(data=dfx.dropna(), x='size_sqft')
 axs[1].boxplot(data=dfx.dropna(), x='rooms')
@@ -1244,3 +1348,4 @@ df.sort_values(by='importance_value', ascending=False).head(10)
 ### Discussions
 
 1.  One of the feature that author thinks is significant but not appearing on the 10-best important feature is nearby_railways. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author belives, the proximity to nearby railways line can be approximated using manhanttan distance of railways line to each property unit.
+
