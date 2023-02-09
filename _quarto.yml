@@ -64,7 +64,7 @@ format:
 
     # toc: true
     # toc-location: right
-    # fontsize: 1em
+    fontsize: 1.2em
     code-link: true
     anchor-sections: true
 
@@ -72,7 +72,7 @@ format:
     tbl-cap-location: top
     fig-cap-location: top
     fig-align: center
-    # fig-responsive: true
+    fig-responsive: true
     # fig-height: 2
     # fig-asp: 1
     # fig-dpi: 96

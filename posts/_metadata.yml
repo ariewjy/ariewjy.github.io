@@ -33,7 +33,6 @@ author:
 # set up code folds as true
 code-fold: true
 code-line-numbers: true
-
 #setting up page layout
 page-layout: article
-page-width: 100
+# page-width: 100

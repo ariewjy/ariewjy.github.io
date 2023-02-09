@@ -266,13 +266,6 @@ for year in years:
     print(get_max_prop(year))
 ```
 
-
-
-
-
-
-
-
 ```{python}
 akreditasi_2019 = pd.read_html('https://npd.kemdikbud.go.id/?appid=akreditasi&tahun=2020')[1][:548]
 akreditasi_2019.info()
@@ -291,5 +284,4 @@ akreditasi_2019.info()
  
 )
 ```
-
 

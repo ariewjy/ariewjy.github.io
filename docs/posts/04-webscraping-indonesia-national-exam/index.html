@@ -1062,7 +1062,7 @@ dtype: int64</code></pre>
 <span id="cb14-20"><a href="#cb14-20"></a> ))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="Webscraping_UN_files/figure-html/cell-12-output-1.png" width="637" height="781"></p>
+<p><img src="index_files/figure-html/cell-12-output-1.png" width="637" height="781"></p>
 </div>
 </div>
 <section id="buat-fungsi-untuk-webscraping-per-tahun-nya" class="level3">
@@ -1397,13 +1397,13 @@ dtype: int64</code></pre>
 <span id="cb26-24"><a href="#cb26-24"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_33188/4257083329.py:4: FutureWarning:
+<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_27081/4257083329.py:4: FutureWarning:
 
 The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="Webscraping_UN_files/figure-html/cell-21-output-2.png" width="935" height="802"></p>
+<p><img src="index_files/figure-html/cell-21-output-2.png" width="935" height="802"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="21">
@@ -1633,13 +1633,13 @@ The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a f
 <span id="cb29-9"><a href="#cb29-9"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_33188/3454896381.py:1: FutureWarning:
+<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_27081/3454896381.py:1: FutureWarning:
 
 The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying 'numeric_only=None' is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="Webscraping_UN_files/figure-html/cell-23-output-2.png" width="627" height="411"></p>
+<p><img src="index_files/figure-html/cell-23-output-2.png" width="627" height="411"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="23">
@@ -1648,7 +1648,7 @@ The default value of numeric_only in DataFrame.mean is deprecated. In a future v
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>un_2018.drop(columns<span class="op">=</span><span class="st">'Tahun'</span>).groupby([<span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>, <span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]).median().sort_values(by<span class="op">=</span><span class="st">'UN SMA IPA'</span>, ascending<span class="op">=</span><span class="va">False</span>).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_33188/303958745.py:1: FutureWarning:
+<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_27081/303958745.py:1: FutureWarning:
 
 The default value of numeric_only in DataFrameGroupBy.median is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
 </code></pre>
@@ -1727,13 +1727,13 @@ The default value of numeric_only in DataFrameGroupBy.median is deprecated. In a
 <span id="cb33-15"><a href="#cb33-15"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_33188/3840264641.py:5: FutureWarning:
+<pre><code>/var/folders/k3/rq3y45b92kbf6vtf128q_99r0000gn/T/ipykernel_27081/3840264641.py:5: FutureWarning:
 
 The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="Webscraping_UN_files/figure-html/cell-25-output-2.png" width="1219" height="1142"></p>
+<p><img src="index_files/figure-html/cell-25-output-2.png" width="1219" height="1142"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="25">
@@ -1990,12 +1990,12 @@ memory usage: 244.2+ KB</code></pre>
   author = {Aditya Arie Wijaya and Aditya Arie Wijaya},
   title = {Webscraping {National} {Exams} of {Indonesia}},
   date = {2023-01-31},
-  url = {ariewjy.github.io/Webscraping_UN.html},
+  url = {ariewjy.github.io/posts/04-webscraping-indonesia-national-exam},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ariewijaya2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 Aditya Arie Wijaya, and Aditya Arie Wijaya. 2023. <span>“Webscraping
-National Exams of Indonesia .”</span> January 31, 2023. <a href="https://ariewjy.github.io/Webscraping_UN.html">ariewjy.github.io/Webscraping_UN.html</a>.
+National Exams of Indonesia .”</span> January 31, 2023. <a href="https://ariewjy.github.io/posts/04-webscraping-indonesia-national-exam">ariewjy.github.io/posts/04-webscraping-indonesia-national-exam</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

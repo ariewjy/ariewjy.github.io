@@ -13,33 +13,26 @@ categories:
 jupyter: minids
 code-fold: show
 draft: false
+bibliography: references.bib
 ---
 
 ## Machine Learning Project
+
 Pacmann Batch 8 Capstone by Aditya Arie Wijaya (aditya-66kK)
 
 ### Introduction
-This project is made as a mandatory capstone for Data Science bootcamp. The project uses a new dataset from web-scraping an online ads listing for property to rent in Kuala Lumpur, Malaysia.[mudah.my](https://www.mudah.my/). The project explains the process of web-scraping, implementing a library such as beautifulsoup.
 
-This project serves two important objectives:
-1. To give a sensible pricing range, given a location, number of bathrooms and bedrooms, area, parking, etc.
-1. The predicted price range may help potential tenant in getting a best price, similarly ads lister/agent/owner to get the best price for their units.
+This is a machine learning project to predict unit/property monthly rent price in Kuala Lumpur region, Malaysia. The project uses a dataset from an online ads listing for property [mudah.my](https://www.mudah.my/). This project outlines the process of web-scraping/ data gathering, data cleaning-wrangling, and machine learning modeling.
 
-Some related works with similar project are listed below:
+This project aims to answers question about how much a unit monthly rent would be if given information such as location, number of bedrooms, parking, furnished, etc? This would help potential tenant and also the owner to get the best price of their rental unit, comparable to the market value.
 
-- https://sci-hub.ru/10.1109/ICSSS.2019.8882834
-- https://arxiv.org/pdf/2210.06261.pdf
-- https://arxiv.org/pdf/2209.05471.pdf
-- https://arxiv.org/pdf/2301.01222.pdf
-- https://towardsdatascience.com/predicting-airbnb-prices-with-machine-learning-and-deep-learning-f46d44afb8a6
+Some previous work about house pricing was listed below, however most of them are targeting a dataset of house pricing or an Airbnb pricing. There are difference such as in Airbnb, the booking rarely took more than 2 weeks, let alone a year. Therefore the pricing may be different. Additionally, in Airbnb, there is text feature coming from the review given by the tenant and the owner.The better the review, the higher the rent prices -- which was not available in this current project dataset.
 
-Some are familiar with the boston house pricing dataset, which was not listed above. However, some papers listed are mentioning the use of Gradient boosting model or similar to that, to be the most reliable model. Other paper discussed about feature selections in predicting the house pricing. 
-
-Author believes, even though the above work are all about house pricing, similar method can be applied to property rent pricing. 
+Previous work by [@madhuri2019], [@xu2022], [@zhao2022] highlight the importance feature selection, and the choice of machine learning model. Based on the previous works, the most consistently performed machine learning model are Random Forest and Gradient boosting, and the MAE and R2 score usually used in evaluating the performance of the model. Although the above work are all not about apartment rent pricing, similar method can be applied to this project.
 
 ### Data Gathering
-The data will use a scraped data from the website mentioned before, focusing on property-to-rent surrounding Kuala Lumpur, Malaysia.
-![Website](mudah_my.png)
+
+The data will use a scraped data from the website mentioned before, focusing on property-to-rent surrounding Kuala Lumpur, Malaysia. ![Website](mudah_my.png){width="840"}
 
 ```{python}
 #importing libraries
@@ -62,7 +55,13 @@ import time    # to be used in loop iterations
 ```
 
 #### Web-Scraping
+
+The process started out by gathering data from the website. We are using python library for web-scraping: BeautifulSoup as depicted below. The first step is to make a @func-get-page to generate each page from the first to the last page in the queries, which can be up to 350 pages.
+
 ```{python}
+#| label: func-get-page
+#| fig-cap: Function to Generate Each Page
+
 #getting listing property in one page
 def get_list_html(page_url):
     headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"}
@@ -194,11 +193,13 @@ def get_df_final(n_page):
 # df_.to_csv('mudah-apartment-raw.csv', index=False)
 ## already run, and file is saved
 ```
----
+
+------------------------------------------------------------------------
 
 ### Data Understanding
 
 Reload the Data
+
 ```{python}
 #read it back
 df = pd.read_csv('./mudah-apartment-raw.csv')
@@ -210,21 +211,22 @@ df.head(3).T
 ```{python}
 df.info()
 ```
+
 The following feature is available in the dataset:
 
-- `ads_id`: ads listing ID, unique to each ads
-- `prop_name`: the building name of the property
-- `completion_year`: year of the building/property completed
-- `monthly_rent`: monthly rent price in Malaysian Ringgit (RM)
-- `location`: the location (region) of the property
-- `property_type`: property type, such as flat, apartment, etc
-- `rooms`: number of rooms
-- `parking`: number of parking spot
-- `bathroom`: number of bathroom
-- `size`: total area of the unit in sq.ft
-- `furnished`: furnishin status of the unit, fully-partial-non
-- `facilities`: main facilities within the unit
-- `additional_facilities`: additional facilities
+-   `ads_id`: ads listing ID, unique to each ads
+-   `prop_name`: the building name of the property
+-   `completion_year`: year of the building/property completed
+-   `monthly_rent`: monthly rent price in Malaysian Ringgit (RM)
+-   `location`: the location (region) of the property
+-   `property_type`: property type, such as flat, apartment, etc
+-   `rooms`: number of rooms
+-   `parking`: number of parking spot
+-   `bathroom`: number of bathroom
+-   `size`: total area of the unit in sq.ft
+-   `furnished`: furnishin status of the unit, fully-partial-non
+-   `facilities`: main facilities within the unit
+-   `additional_facilities`: additional facilities
 
 #### Drop Duplicate
 
@@ -272,7 +274,7 @@ df.head(4).T
 
 #### Extracting Near KTM/LRT
 
-+ Hypotheses: closer access to KTM/LRT = higher monthly rent
+-   Hypotheses: closer access to KTM/LRT = higher monthly rent
 
 ```{python}
 #extracting near KTM/LRT from the additional facilities
@@ -308,17 +310,17 @@ Not nearby KTM/LRT: {not_near_ktmlrt.monthly_rent_rm.median():.0f}RM
       """)
 ```
 
-+ As seen above, nearby KTM/LRT is sligthly increases the median monthly rent by 50RM, **However**
+-   As seen above, nearby KTM/LRT is sligthly increases the median monthly rent by 50RM, **However**
 
 ```{python}
 df[df['prop_name'] == 'Majestic Maxim'][['nearby_railways']].value_counts()
 ```
 
-+ As can be seen from one example above, near KTM/LRT is not appearing in all row even though the property is the same
+-   As can be seen from one example above, near KTM/LRT is not appearing in all row even though the property is the same
 
 **Conclusion: Near KTM/LRT may be used, but it can be improved as the listing is inconsistent**
 
-#### Drop Missing Values in Facilities and Additional Facilities 
+#### Drop Missing Values in Facilities and Additional Facilities
 
 ```{python}
 df.isna().sum()
@@ -493,8 +495,7 @@ X_train
 
 **Preprocessing Original Data for Categorical Dtypes**
 
-One must paying attention to the number of categorical observation in the original data, with respect to the sampling train-test value.
-If, the test_size = 0.3, that means any categorical observation with a total of 3 and less, would not be distributed evenly among train and test data. 
+One must paying attention to the number of categorical observation in the original data, with respect to the sampling train-test value. If, the test_size = 0.3, that means any categorical observation with a total of 3 and less, would not be distributed evenly among train and test data.
 
 ```{python}
 print(dfx.location.nunique())
@@ -623,7 +624,7 @@ X_train_num
 X_train_num.isna().sum()
 ```
 
-+ We can fill completion year, rooms, parking and bathroom with mode
+-   We can fill completion year, rooms, parking and bathroom with mode
 
 ```{python}
 from sklearn.impute import SimpleImputer
@@ -673,7 +674,7 @@ X_train_cat
 X_train_cat.isna().sum()
 ```
 
-+ Impute with mode
+-   Impute with mode
 
 ```{python}
 X_train_cat, imputer_num = numericalImputation(X_train_cat, strategy='most_frequent')
@@ -998,9 +999,10 @@ summary_df = pd.DataFrame({
 summary_df.sort_values(by='R2-Score', ascending=False)
 ```
 
-From the above table, it can be seen that Random Forest model performs the best, and Gradient Boosting at the second place. This is similar to the previous work done by others, on house pricing. 
+From the above table, it can be seen that Random Forest model performs the best, and Gradient Boosting at the second place. This is similar to the previous work done by others, on house pricing.
 
 ### Best Model
+
 ```{python}
 # libraries
 from sklearn.ensemble import RandomForestRegressor
@@ -1040,6 +1042,7 @@ plt.show()
 ## Data Prediction
 
 ### Test Data Preprocessing
+
 Simlar process done in train dataset need to be repeated on test dataset.
 
 ```{python}
@@ -1226,19 +1229,18 @@ df.columns = ['feature', 'importance_value']
 df.sort_values(by='importance_value', ascending=False).head(10)
 ```
 
-### Results 
+### Results
 
-1. Result indicates that the best model for prediction is Random Forest with hyperparameter tuning, scoring 95% on R2-score, and a shy 100 RM on MAE. This proves to be a good model since the test dataset gives a scoring of 80% on R2, and 240 RM on MAE. 
+1.  Result indicates that the best model for prediction is Random Forest with hyperparameter tuning, scoring 95% on R2-score, and a shy 100 RM on MAE. This proves to be a good model since the test dataset gives a scoring of 80% on R2, and 240 RM on MAE.
 
-1. There are some factors that author believed to be affecting the result/ performance of the model:
-    1. Dropping missing value reduces the performance! Initial model uses half of the data (4-5k rows) and gives poorer performance on R2 and MAE. Imputation and keeping the number of rows close to the original dataset (9k rows) proves to be improving the model. Especially on test dataset.
-    1. Feature selection importance can be seen on the last table, but initially the selection was based on paper and intuition of the author (author lives and work in KL, Malaysia for 5 years). Feature such as `completion_year` and `nearby_railways` are important in improving the model.
-    1. Last but not least is the outlier identification. The best practice for me is using jointplot to see not only the distribution of the data in 2-dimension, but also in the third dimension (the density) of the data.
+2.  There are some factors that author believed to be affecting the result/ performance of the model:
 
-1. Some of the feature that were believed to be quite important even before doing the modeling is size, furnished and location. All three is available within the 10-most features affecting the modeling. As a context, location in KLCC is like Pondok Indah in South Jakarta. Location in Kiara is like BSD in South Tangerang.
+    1.  Dropping missing value reduces the performance! Initial model uses half of the data (4-5k rows) and gives poorer performance on R2 and MAE. Imputation and keeping the number of rows close to the original dataset (9k rows) proves to be improving the model. Especially on test dataset.
+    2.  Feature selection importance can be seen on the last table, but initially the selection was based on paper and intuition of the author (author lives and work in KL, Malaysia for 5 years). Feature such as `completion_year` and `nearby_railways` are important in improving the model.
+    3.  Last but not least is the outlier identification. The best practice for me is using jointplot to see not only the distribution of the data in 2-dimension, but also in the third dimension (the density) of the data.
+
+3.  Some of the feature that were believed to be quite important even before doing the modeling is size, furnished and location. All three is available within the 10-most features affecting the modeling. As a context, location in KLCC is like Pondok Indah in South Jakarta. Location in Kiara is like BSD in South Tangerang.
 
 ### Discussions
 
-1. One of the feature that author thinks is significant but not appearing on the 10-best important feature is nearby_railways. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author belives, the proximity to nearby railways line can be approximated using manhanttan distance of railways line to each property unit. 
-
-
+1.  One of the feature that author thinks is significant but not appearing on the 10-best important feature is nearby_railways. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author belives, the proximity to nearby railways line can be approximated using manhanttan distance of railways line to each property unit.

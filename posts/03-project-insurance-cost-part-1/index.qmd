@@ -13,8 +13,7 @@ jupyter: python3
 draft: false
 ---
 
-![Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  ](image.jpeg)
+![Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](image.jpeg)
 
 ## Introduction & Objectives
 
@@ -24,21 +23,21 @@ In this project, the author wanted to do an exploratory analysis based on known 
 
 [^1]: also available at [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance).
 
-1. `age`: age of primary beneficiary
-1. `sex`: insurance contractor gender, female, male
-1. `bmi`: body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight (`kg/m2`) using the ratio of height to weight, ideally `18.5` to `24.9`
-1. `children`: number of children covered by health insurance / number of dependents
-1. `smoker`: smoking
-1. `region`: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.
-1. `charges`: individual medical costs billed by health insurance
+1.  `age`: age of primary beneficiary
+2.  `sex`: insurance contractor gender, female, male
+3.  `bmi`: body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight (`kg/m2`) using the ratio of height to weight, ideally `18.5` to `24.9`
+4.  `children`: number of children covered by health insurance / number of dependents
+5.  `smoker`: smoking
+6.  `region`: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.
+7.  `charges`: individual medical costs billed by health insurance
 
-At glance, bmi and smoker would likely to induce a high medical cost of a person, while age, sex, children and region may contribute in some senses or the others. 
+At glance, bmi and smoker would likely to induce a high medical cost of a person, while age, sex, children and region may contribute in some senses or the others.
 
 Objectives:
 
-- Analyze the **relationship** between multiple `variables` to `medical charges`
-- Characterize the **risk profile** of members, based on the said analysis
-- Determine if the **insurance rate** can be optimized for each `risk profile`
+-   Analyze the **relationship** between multiple `variables` to `medical charges`
+-   Characterize the **risk profile** of members, based on the said analysis
+-   Determine if the **insurance rate** can be optimized for each `risk profile`
 
 ## Setting-up
 
@@ -72,10 +71,11 @@ In this dataset, the BMI is a numeric data. In order to better analyze the datas
 | BMI            | Weight Status  |
 |----------------|----------------|
 | Below 18.5     | Underweight    |
-| 18.5 – 24.9    | Healthy Weight |
-| 25.0 – 29.9    | Overweight     |
+| 18.5 -- 24.9   | Healthy Weight |
+| 25.0 -- 29.9   | Overweight     |
 | 30.0 and Above | Obesity        |
 
+```{=html}
 <!-- :::{.callout-note}
 For more granular grouping, the [classification](https://www.calculator.net/bmi-calculator) below may be used.
 
@@ -90,8 +90,9 @@ For more granular grouping, the [classification](https://www.calculator.net/bmi-
 | Obese Class II    | 35 - 40           |
 | Obese Class III   | > 40              |
 ::: -->
-
+```
 We can use `pandas.cut` method to create a quick binning over `bmi` column.
+
 ```{python}
 #| code-fold: false
 #| label: tbl-bmi-class
@@ -122,6 +123,7 @@ insurance['bmi_class']= pd.cut(
 #  .T
 )
 ```
+
 @tbl-bmi-class shows a new column `bmi_class` as the result of grouping the bmi data into different categories.
 
 ## Quicklook
@@ -131,7 +133,7 @@ insurance['bmi_class']= pd.cut(
 insurance.info()
 ```
 
-The data appears to be clean, with no null row, and dftypes appear to be correct. However, the format appears to be a non-tidy format. 
+The data appears to be clean, with no null row, and dftypes appear to be correct. However, the format appears to be a non-tidy format.
 
 ```{python}
 #| code-fold: false
@@ -143,19 +145,19 @@ The data appears to be clean, with no null row, and dftypes appear to be correct
 
 **Some observations:**
 
-+ `2` categorical data in `sex` column: `female` and `male`
-+ `2` categorical data in the `smoker` column, `yes` or `no`
-+ `4` categorical data in the `region` column: `southwest`, `northwest`, `southeast`, and `northeast`
+-   `2` categorical data in `sex` column: `female` and `male`
+-   `2` categorical data in the `smoker` column, `yes` or `no`
+-   `4` categorical data in the `region` column: `southwest`, `northwest`, `southeast`, and `northeast`
 
-::: {.callout-important}
-The first attempt is to see the distribution on each variable relative to each other, depending on different categories. For example, comparing mean `age` between smoker and non-smoker group, `age` between low and high `bmi` class, etc. 
+::: callout-important
+The first attempt is to see the distribution on each variable relative to each other, depending on different categories. For example, comparing mean `age` between smoker and non-smoker group, `age` between low and high `bmi` class, etc.
 
 Then trying to understand the `relationship` of each variable with respect to the `medical charges`
 :::
 
 ## Exploratory Data Analysis
 
-As many people know, smoking is highly linked to clinical disease such as *TBC, lung cancer, hypertension*, etc. People with `smoking` history, may be considered a **high risk profile**, and as the likely outcome the **medical charges may be higher** than a non-smoker people. 
+As many people know, smoking is highly linked to clinical disease such as *TBC, lung cancer, hypertension*, etc. People with `smoking` history, may be considered a **high risk profile**, and as the likely outcome the **medical charges may be higher** than a non-smoker people.
 
 ### Overall Mean age of insurance member
 
@@ -175,7 +177,7 @@ As many people know, smoking is highly linked to clinical disease such as *TBC, 
 );
 ```
 
-Based on distribution at @fig-mean-age, the mean age for all insurance members is around `39` years old. There is also higher number of non-smoker compared to the total data (`2 times higher`) compared to smoker. There is an `anomaly frequency around age of 20` that has up to 4 times higher counts. **May need further check**. 
+Based on distribution at @fig-mean-age, the mean age for all insurance members is around `39` years old. There is also higher number of non-smoker compared to the total data (`2 times higher`) compared to smoker. There is an `anomaly frequency around age of 20` that has up to 4 times higher counts. **May need further check**.
 
 ### Mean `age`, `bmi` and `charges` of `smoker` at different `sex`
 
@@ -218,7 +220,7 @@ Calculating the **ratio** of smoker to non-smoker group
 )
 ```
 
-Based on the above @tbl-smoker-based-on-sex, the `male bmi is always higher` than the female counterpart, irrespective of its sex. Furthermore, the `average bmi for smoker is slightly higher than non-smoker group`. 
+Based on the above @tbl-smoker-based-on-sex, the `male bmi is always higher` than the female counterpart, irrespective of its sex. Furthermore, the `average bmi for smoker is slightly higher than non-smoker group`.
 
 On the other hand, `the average age for female is always higher` than its male counterpart, regardless of smoker or non-smoker.
 
@@ -331,13 +333,13 @@ g.fig.text(0.6, 0.7, "III",
 plt.suptitle('age vs charges', y = 1.05);
 ```
 
-@fig-age-charges-1 shows at least three groups of trend with a strong relationship between medical `charges` and `age`. As the age increases, the medical charges increases. 
+@fig-age-charges-1 shows at least three groups of trend with a strong relationship between medical `charges` and `age`. As the age increases, the medical charges increases.
 
 **The three group of medical charges are as follows:**
 
-+ group I: `16000` and below
-+ group II: `16000-30000`
-+ group III: above `30000`
+-   group I: `16000` and below
+-   group II: `16000-30000`
+-   group III: above `30000`
 
 The three group of `trends` were heavily `affected` by the smoker/ non-smoker group, as the highest group III appears to have more points with `obese` bmi_class. This can be further checked if we exclude non-smoker group and hue it by bmi_class, and we can put sex as the column category.
 
@@ -377,12 +379,12 @@ plt.suptitle('age vs charges | separated by male vs female', y = 1.05);
 
 **Couple conclusions can be drawn from these @fig-age-charges-1 and @fig-age-charges-2:**
 
-1. That the `male is likely to have higher medical charges` compared to female, with relatively small difference (@tbl-ratio-sex).
-1. There are three groups of strong trend between age vs charges, where as the age increases in all trends, the medical charges is likely to increases as well.
-1. The three groups can be characterized from low-high charges as follows:
-    1. Group `I`: medical charges between `0-16,000`, predominantly `non-smoker`,and a mix between all bmi_class.
-    1. Group `II`: medical charges between `12,000-30,000`, a mix between `smoker and non-smoker group`, and bmi_class of healthy and `overweight`.
-    1. Group `III`: medical charges above `30,000`, predominantly `obese` bmi_class and `smoker`. 
+1.  That the `male is likely to have higher medical charges` compared to female, with relatively small difference (@tbl-ratio-sex).
+2.  There are three groups of strong trend between age vs charges, where as the age increases in all trends, the medical charges is likely to increases as well.
+3.  The three groups can be characterized from low-high charges as follows:
+    1.  Group `I`: medical charges between `0-16,000`, predominantly `non-smoker`,and a mix between all bmi_class.
+    2.  Group `II`: medical charges between `12,000-30,000`, a mix between `smoker and non-smoker group`, and bmi_class of healthy and `overweight`.
+    3.  Group `III`: medical charges above `30,000`, predominantly `obese` bmi_class and `smoker`.
 
 ### Some observed `outlier (group I-a)` between group I and II?
 
@@ -465,9 +467,9 @@ If we look at the above @fig-outlier, in the non-smoker group, there is a cloud 
 );
 ```
 
-@fig-outlier-eda shows just group I and I-a where we see through zero to six number of `childrens`, colored by `bmi_class` and styled by `sex`. As can be seen, **`there is no clear differentiator between group I and I-a`**, as the number of children increases, it affects both group I and I-a also. 
+@fig-outlier-eda shows just group I and I-a where we see through zero to six number of `childrens`, colored by `bmi_class` and styled by `sex`. As can be seen, **`there is no clear differentiator between group I and I-a`**, as the number of children increases, it affects both group I and I-a also.
 
-::: {.callout-important}
+::: callout-important
 It is unclear as to why this is happening. Perhaps other factors plays a role. At the time of this writing, author decided to categorized the group `I-a` as the outlier.
 :::
 
@@ -514,32 +516,33 @@ g.fig.text(0.5, 0.45, "I-a",
 plt.suptitle('bmi vs charges', y = 1.05);
 ```
 
-Similar to the previous @fig-age-charges-2, in @fig-bmi-charges we can see that the non-smoker group overlaps with the smoker group at around `16,000-30,000` medical charge range. 
+Similar to the previous @fig-age-charges-2, in @fig-bmi-charges we can see that the non-smoker group overlaps with the smoker group at around `16,000-30,000` medical charge range.
 
 ## Conclusions and Outcomes
 
-1. The insurance member can be characterzed based on the `smoker` profile, `age`, `bmi`/ `bmi_class`, and `sex` profile.
+1.  The insurance member can be characterzed based on the `smoker` profile, `age`, `bmi`/ `bmi_class`, and `sex` profile.
 
-1. The `critical` factor for a high medical charges is whether member is a `smoker` or not, followed by `age` and then `bmi`[^2]. 
+2.  The `critical` factor for a high medical charges is whether member is a `smoker` or not, followed by `age` and then `bmi`[^2].
 
-      [^2]: the lowest medical charges (group I) may have obese in their profile, but since it is a non-smoker profile, the medical charges is lower.
+3.  Other variable such as the `number of children`/ dependant is not playing a role, whereas `sex` profile `affect the charges slightly`[^3].
 
-1. Other variable such as the `number of children`/ dependant is not playing a role, whereas `sex` profile `affect the charges slightly`[^3]. 
+4.  There is a `strong relationship between age and medical charges`, with `3` strong group categorized by `smoker` and `bmi` profile. The big three groups are:
 
-      [^3]: around 10% higher in male, compared to female counterpart (see @tbl-ratio-sex)
-
-1. There is a `strong relationship between age and medical charges`, with `3` strong group categorized by `smoker` and `bmi` profile. The big three groups are:
-    + Group I: medical **charges below 16k**, related to a group of `non-smoker`[^4].
-    + Group II: medical **charges between 16k-30k**, related to a group of `smoker` **and** `overweight`.
-    + Group III: medical **charges above 30k**, related to a group of `smoker` **and** `obese`.
+    -   Group I: medical **charges below 16k**, related to a group of `non-smoker`[^4].
+    -   Group II: medical **charges between 16k-30k**, related to a group of `smoker` **and** `overweight`.
+    -   Group III: medical **charges above 30k**, related to a group of `smoker` **and** `obese`.
 
     These three groups have its own trendline which can be later determined (trendline).
 
-1. There is also one `outlier` or group `I-a`, where it is `unclear as to what affects the medical charges increase` to be between group I and II.
+5.  There is also one `outlier` or group `I-a`, where it is `unclear as to what affects the medical charges increase` to be between group I and II.
+
+[^2]: the lowest medical charges (group I) may have obese in their profile, but since it is a non-smoker profile, the medical charges is lower.
+
+[^3]: around 10% higher in male, compared to female counterpart (see @tbl-ratio-sex)
 
 [^4]: the BMI class shows a mix of all classes (from underweight to obese)
 
-The above groups (`I, II, III`) can be used for **`risk profiling`**, where based on its profile, the associated risk related to medical charges can be determined. Since each group forms a trendline (simple linear regression), and can be categorized based on its smoker, and bmi profile. Based on this approach, one can estimate the optimum pricing for each risk profile (based on its medical charges). 
+The above groups (`I, II, III`) can be used for **`risk profiling`**, where based on its profile, the associated risk related to medical charges can be determined. Since each group forms a trendline (simple linear regression), and can be categorized based on its smoker, and bmi profile. Based on this approach, one can estimate the optimum pricing for each risk profile (based on its medical charges).
 
 See below flowchart for simple ilustration.
 
@@ -553,13 +556,12 @@ flowchart LR
     D --> |Obese| F[trendline Group III]
 ```
 
-::: {.callout-note}
+::: callout-note
 The next step would be using some of these knowledge to further investigate the likelihood (probability) of each risk profile based on its numeric (age-bmi) and categorical variable (smoker-bmi-region-sex).
 :::
 
+------------------------------------------------------------------------
 
--------
-
-::: {.callout-important}
-This article was made as a replacement for medium article as part of Pacmann Data Science bootcamp assignment for Linear Algebra batch 8. The EDA notebook can be found in this [notebook](https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/03-project-insurance-cost-part-1/eda/aditya-66kK_capstone.ipynb). Inside there will be a [Youtube](https://youtu.be/Zdtwk_hAqIg) link as part of the assignment also. 
+::: callout-important
+This article was made as a replacement for medium article as part of Pacmann Data Science bootcamp assignment for Linear Algebra batch 8. The EDA notebook can be found in this [notebook](https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/03-project-insurance-cost-part-1/eda/aditya-66kK_capstone.ipynb). Inside there will be a [Youtube](https://youtu.be/Zdtwk_hAqIg) link as part of the assignment also.
 :::
