@@ -30,7 +30,7 @@ Some previous work about house pricing was listed below, however most of them ar
 ## Who is this for?
 
 ::: callout-note
-This project was the TLDR-version of the [complete article](https://ariewjy.github.io/posts/05-webscraping-machinelearning-house-pricing/ "EDA and more details") where author explained in much more details about the process of webscraping-data cleaning-data wrangling-feature engineering, etc. This was made also as a mandatory terms for me to pass the Pacmann bootcamp intro to machine learning class. Video of me explaining the whole project is also available under this l[link](https://youtu.be/T8D2afmxuOY).
+This project was the TLDR-version of the [complete article](https://ariewjy.github.io/posts/05-webscraping-machinelearning-house-pricing/ "EDA and more details") where author explained in much more details about the process of webscraping-data cleaning-data wrangling-feature engineering, etc. This was made also as a mandatory terms for me to pass the Pacmann bootcamp intro to machine learning class. Video of me explaining the whole project is also available under this l[link](https://youtu.be/uoFtf7aFZJE).
 :::
 
 ## Related work
