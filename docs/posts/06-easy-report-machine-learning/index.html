@@ -269,12 +269,9 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#best-model-from-train-dataset" id="toc-best-model-from-train-dataset" class="nav-link" data-scroll-target="#best-model-from-train-dataset">Best Model from Train Dataset</a></li>
   <li><a href="#applied-model-on-test-dataset" id="toc-applied-model-on-test-dataset" class="nav-link" data-scroll-target="#applied-model-on-test-dataset">Applied Model on Test Dataset</a></li>
-  </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
-  <ul class="collapse">
   <li><a href="#feature-importance" id="toc-feature-importance" class="nav-link" data-scroll-target="#feature-importance">Feature Importance</a></li>
   </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   <li><a href="#future-works" id="toc-future-works" class="nav-link" data-scroll-target="#future-works">Future works</a></li>
   </ul>
 </nav>
@@ -341,7 +338,6 @@ Why Webscraping?
 <p><img src="mudah_my.png" width="100%"></p>
 <section id="data-description" class="level3">
 <h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
-<p>There are 13 features with one unique ids (<code>ads_id</code>) and one target feature (<code>monthly_rent</code>)</p>
 <div class="cell" data-execution_count="1">
 <details open="">
 <summary>Show Code</summary>
@@ -355,9 +351,9 @@ Why Webscraping?
 <span id="cb1-8"><a href="#cb1-8"></a></span>
 <span id="cb1-9"><a href="#cb1-9"></a><span class="co">#reload the data</span></span>
 <span id="cb1-10"><a href="#cb1-10"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./mudah-apartment-clean.csv"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11"></a>df.head(<span class="dv">3</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11"></a>df.head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div class="cell-output cell-output-display" data-execution_count="41">
 
 <div>
 
@@ -367,7 +363,6 @@ Why Webscraping?
       <th></th>
       <th>0</th>
       <th>1</th>
-      <th>2</th>
     </tr>
   </thead>
   <tbody>
@@ -375,85 +370,73 @@ Why Webscraping?
       <th>ads_id</th>
       <td>100323185</td>
       <td>100203973</td>
-      <td>100323128</td>
     </tr>
     <tr>
       <th>prop_name</th>
       <td>The Hipster @ Taman Desa</td>
       <td>Segar Courts</td>
-      <td>Pangsapuri Teratak Muhibbah 2</td>
     </tr>
     <tr>
       <th>completion_year</th>
       <td>2022.0</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>monthly_rent</th>
       <td>RM 4 200 per month</td>
       <td>RM 2 300 per month</td>
-      <td>RM 1 000 per month</td>
     </tr>
     <tr>
       <th>location</th>
       <td>Kuala Lumpur - Taman Desa</td>
       <td>Kuala Lumpur - Cheras</td>
-      <td>Kuala Lumpur - Taman Desa</td>
     </tr>
     <tr>
       <th>property_type</th>
       <td>Condominium</td>
       <td>Condominium</td>
-      <td>Apartment</td>
     </tr>
     <tr>
       <th>rooms</th>
       <td>5</td>
-      <td>3</td>
       <td>3</td>
     </tr>
     <tr>
       <th>parking</th>
       <td>2.0</td>
       <td>1.0</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>bathroom</th>
       <td>6.0</td>
-      <td>2.0</td>
       <td>2.0</td>
     </tr>
     <tr>
       <th>size</th>
       <td>1842 sq.ft.</td>
       <td>1170 sq.ft.</td>
-      <td>650 sq.ft.</td>
     </tr>
     <tr>
       <th>furnished</th>
       <td>Fully Furnished</td>
       <td>Partially Furnished</td>
-      <td>Fully Furnished</td>
     </tr>
     <tr>
       <th>facilities</th>
       <td>Minimart, Gymnasium, Security, Playground, Swimming Pool, Parking, Lift, Barbeque area, Multipurpose hall, Jogging Track</td>
       <td>Playground, Parking, Barbeque area, Security, Jogging Track, Swimming Pool, Gymnasium, Lift, Sauna</td>
-      <td>Minimart, Jogging Track, Lift, Swimming Pool</td>
     </tr>
     <tr>
       <th>additional_facilities</th>
       <td>Air-Cond, Cooking Allowed, Washing Machine</td>
       <td>Air-Cond, Cooking Allowed, Near KTM/LRT</td>
-      <td>NaN</td>
     </tr>
   </tbody>
 </table>
 </div>
 </div>
 </div>
+<p>There are 13 features with one unique ids (<code>ads_id</code>) and one target feature (<code>monthly_rent</code>)</p>
 <ul>
 <li><code>ads_id</code>: the listing ids (unique)</li>
 <li><code>prop_name</code>: name of the building/ property</li>
@@ -486,9 +469,9 @@ Why Webscraping?
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="co">#dropping kuala lumpur from the location</span></span>
 <span id="cb2-10"><a href="#cb2-10"></a>df[<span class="st">'location'</span>] <span class="op">=</span> df[<span class="st">'location'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: re.findall(<span class="st">"\w+$"</span>, x)[<span class="dv">0</span>])</span>
-<span id="cb2-11"><a href="#cb2-11"></a>df.head(<span class="dv">4</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-11"><a href="#cb2-11"></a>df.head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="42">
 
 <div>
 
@@ -498,8 +481,6 @@ Why Webscraping?
       <th></th>
       <th>0</th>
       <th>1</th>
-      <th>2</th>
-      <th>3</th>
     </tr>
   </thead>
   <tbody>
@@ -507,76 +488,54 @@ Why Webscraping?
       <th>ads_id</th>
       <td>100323185</td>
       <td>100203973</td>
-      <td>100323128</td>
-      <td>100191767</td>
     </tr>
     <tr>
       <th>prop_name</th>
       <td>The Hipster @ Taman Desa</td>
       <td>Segar Courts</td>
-      <td>Pangsapuri Teratak Muhibbah 2</td>
-      <td>Sentul Point Suite Apartment</td>
     </tr>
     <tr>
       <th>completion_year</th>
       <td>2022.0</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2020.0</td>
     </tr>
     <tr>
       <th>monthly_rent_rm</th>
       <td>4200</td>
       <td>2300</td>
-      <td>1000</td>
-      <td>1700</td>
     </tr>
     <tr>
       <th>location</th>
       <td>Desa</td>
       <td>Cheras</td>
-      <td>Desa</td>
-      <td>Sentul</td>
     </tr>
     <tr>
       <th>property_type</th>
       <td>Condominium</td>
       <td>Condominium</td>
-      <td>Apartment</td>
-      <td>Apartment</td>
     </tr>
     <tr>
       <th>rooms</th>
       <td>5</td>
       <td>3</td>
-      <td>3</td>
-      <td>2</td>
     </tr>
     <tr>
       <th>parking</th>
       <td>2.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
       <td>1.0</td>
     </tr>
     <tr>
       <th>bathroom</th>
       <td>6.0</td>
       <td>2.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
     </tr>
     <tr>
       <th>size_sqft</th>
       <td>1842</td>
       <td>1170</td>
-      <td>650</td>
-      <td>743</td>
     </tr>
     <tr>
       <th>furnished</th>
-      <td>Fully Furnished</td>
-      <td>Partially Furnished</td>
       <td>Fully Furnished</td>
       <td>Partially Furnished</td>
     </tr>
@@ -584,15 +543,11 @@ Why Webscraping?
       <th>facilities</th>
       <td>Minimart, Gymnasium, Security, Playground, Swimming Pool, Parking, Lift, Barbeque area, Multipurpose hall, Jogging Track</td>
       <td>Playground, Parking, Barbeque area, Security, Jogging Track, Swimming Pool, Gymnasium, Lift, Sauna</td>
-      <td>Minimart, Jogging Track, Lift, Swimming Pool</td>
-      <td>Parking, Playground, Swimming Pool, Squash Court, Security, Minimart, Gymnasium, Lift</td>
     </tr>
     <tr>
       <th>additional_facilities</th>
       <td>Air-Cond, Cooking Allowed, Washing Machine</td>
       <td>Air-Cond, Cooking Allowed, Near KTM/LRT</td>
-      <td>NaN</td>
-      <td>Cooking Allowed, Near KTM/LRT, Washing Machine</td>
     </tr>
   </tbody>
 </table>
@@ -665,7 +620,7 @@ Not nearby KTM/LRT: 1600RM
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>df[df[<span class="st">'prop_name'</span>] <span class="op">==</span> <span class="st">'Majestic Maxim'</span>][[<span class="st">'nearby_railways'</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="45">
 <pre><code>nearby_railways
 yes                166
 no                  24
@@ -688,9 +643,9 @@ dtype: int64</code></pre>
 <span id="cb8-6"><a href="#cb8-6"></a>    <span class="co"># 'nearby_railways',</span></span>
 <span id="cb8-7"><a href="#cb8-7"></a>    <span class="co"># 'completion_year'</span></span>
 <span id="cb8-8"><a href="#cb8-8"></a>])</span>
-<span id="cb8-9"><a href="#cb8-9"></a>df.head(<span class="dv">3</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-9"><a href="#cb8-9"></a>df.head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="46">
 
 <div>
 
@@ -700,7 +655,6 @@ dtype: int64</code></pre>
       <th></th>
       <th>0</th>
       <th>1</th>
-      <th>2</th>
     </tr>
   </thead>
   <tbody>
@@ -708,61 +662,51 @@ dtype: int64</code></pre>
       <th>completion_year</th>
       <td>2022.0</td>
       <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>monthly_rent_rm</th>
       <td>4200</td>
       <td>2300</td>
-      <td>1000</td>
     </tr>
     <tr>
       <th>location</th>
       <td>Desa</td>
       <td>Cheras</td>
-      <td>Desa</td>
     </tr>
     <tr>
       <th>property_type</th>
       <td>Condominium</td>
       <td>Condominium</td>
-      <td>Apartment</td>
     </tr>
     <tr>
       <th>rooms</th>
       <td>5</td>
-      <td>3</td>
       <td>3</td>
     </tr>
     <tr>
       <th>parking</th>
       <td>2.0</td>
       <td>1.0</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>bathroom</th>
       <td>6.0</td>
-      <td>2.0</td>
       <td>2.0</td>
     </tr>
     <tr>
       <th>size_sqft</th>
       <td>1842</td>
       <td>1170</td>
-      <td>650</td>
     </tr>
     <tr>
       <th>furnished</th>
       <td>Fully Furnished</td>
       <td>Partially Furnished</td>
-      <td>Fully Furnished</td>
     </tr>
     <tr>
       <th>nearby_railways</th>
       <td>no</td>
       <td>yes</td>
-      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -804,10 +748,13 @@ memory usage: 780.7+ KB</code></pre>
 <details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>f, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
-<span id="cb11-2"><a href="#cb11-2"></a>df[[<span class="st">'size_sqft'</span>, <span class="st">'monthly_rent_rm'</span>]].plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'size_sqft'</span>, y<span class="op">=</span><span class="st">'monthly_rent_rm'</span>, ax<span class="op">=</span>axs)<span class="op">;</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>plt.ylim(<span class="dv">100</span>,<span class="dv">5500</span>) <span class="co">#batas harga rent</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>plt.xlim(<span class="dv">50</span>,<span class="dv">3000</span>)  <span class="co">#batas size</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2"></a>df[[<span class="st">'size_sqft'</span>, <span class="st">'monthly_rent_rm'</span>]].plot(kind<span class="op">=</span><span class="st">'scatter'</span>, </span>
+<span id="cb11-3"><a href="#cb11-3"></a>                                          x<span class="op">=</span><span class="st">'size_sqft'</span>, </span>
+<span id="cb11-4"><a href="#cb11-4"></a>                                          y<span class="op">=</span><span class="st">'monthly_rent_rm'</span>, </span>
+<span id="cb11-5"><a href="#cb11-5"></a>                                          ax<span class="op">=</span>axs)<span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>plt.ylim(<span class="dv">100</span>,<span class="dv">5500</span>) <span class="co">#batas harga rent</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>plt.xlim(<span class="dv">50</span>,<span class="dv">3000</span>)  <span class="co">#batas size</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-9-output-1.png" width="544" height="356"></p>
@@ -819,16 +766,18 @@ memory usage: 780.7+ KB</code></pre>
 <details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
-<span id="cb12-2"><a href="#cb12-2"></a>axs[<span class="dv">0</span>].boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a>axs[<span class="dv">0</span>].set_ylim(<span class="dv">0</span>,<span class="dv">20000</span>)</span>
-<span id="cb12-4"><a href="#cb12-4"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'all data'</span>)</span>
-<span id="cb12-5"><a href="#cb12-5"></a></span>
-<span id="cb12-6"><a href="#cb12-6"></a>axs[<span class="dv">1</span>].boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span>
-<span id="cb12-7"><a href="#cb12-7"></a>axs[<span class="dv">1</span>].set_ylim(<span class="dv">100</span>,<span class="dv">5500</span>)</span>
-<span id="cb12-8"><a href="#cb12-8"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'100-5,500 RM'</span>)</span>
-<span id="cb12-9"><a href="#cb12-9"></a></span>
-<span id="cb12-10"><a href="#cb12-10"></a>plt.tight_layout()</span>
-<span id="cb12-11"><a href="#cb12-11"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2"></a>axs[<span class="dv">0</span>].boxplot(data<span class="op">=</span>df, </span>
+<span id="cb12-3"><a href="#cb12-3"></a>               x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span>
+<span id="cb12-4"><a href="#cb12-4"></a>axs[<span class="dv">0</span>].set_ylim(<span class="dv">0</span>,<span class="dv">20000</span>)</span>
+<span id="cb12-5"><a href="#cb12-5"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'all data'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6"></a></span>
+<span id="cb12-7"><a href="#cb12-7"></a>axs[<span class="dv">1</span>].boxplot(data<span class="op">=</span>df, </span>
+<span id="cb12-8"><a href="#cb12-8"></a>               x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a>axs[<span class="dv">1</span>].set_ylim(<span class="dv">100</span>,<span class="dv">5500</span>)</span>
+<span id="cb12-10"><a href="#cb12-10"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'100-5,500 RM'</span>)</span>
+<span id="cb12-11"><a href="#cb12-11"></a></span>
+<span id="cb12-12"><a href="#cb12-12"></a>plt.tight_layout()</span>
+<span id="cb12-13"><a href="#cb12-13"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-10-output-1.png" width="566" height="373"></p>
@@ -919,7 +868,8 @@ memory usage: 780.7+ KB</code></pre>
 <div class="cell" data-execution_count="15">
 <details open="">
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>X, y <span class="op">=</span> extractInputOutput(data<span class="op">=</span>dfx_new, output_column_name<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>X, y <span class="op">=</span> extractInputOutput(data<span class="op">=</span>dfx_new, </span>
+<span id="cb18-2"><a href="#cb18-2"></a>                          output_column_name<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -947,36 +897,39 @@ memory usage: 780.7+ KB</code></pre>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
 <span id="cb20-2"><a href="#cb20-2"></a></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="kw">def</span> numericalImputation(X_train_num, strategy <span class="op">=</span> <span class="st">'most_frequent'</span>):</span>
-<span id="cb20-4"><a href="#cb20-4"></a>    <span class="co">"""</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="co">    Fungsi untuk melakukan imputasi data numerik NaN</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a><span class="co">    :param data: &lt;pandas dataframe&gt; sample data input</span></span>
-<span id="cb20-7"><a href="#cb20-7"></a></span>
-<span id="cb20-8"><a href="#cb20-8"></a><span class="co">    :return X_train_numerical: &lt;pandas dataframe&gt; data numerik</span></span>
-<span id="cb20-9"><a href="#cb20-9"></a><span class="co">    :return imputer_numerical: numerical imputer method</span></span>
-<span id="cb20-10"><a href="#cb20-10"></a><span class="co">    """</span></span>
-<span id="cb20-11"><a href="#cb20-11"></a>    <span class="co">#buat imputer</span></span>
-<span id="cb20-12"><a href="#cb20-12"></a>    imputer_num <span class="op">=</span> SimpleImputer(missing_values <span class="op">=</span> np.nan, strategy <span class="op">=</span> strategy)</span>
-<span id="cb20-13"><a href="#cb20-13"></a>    </span>
-<span id="cb20-14"><a href="#cb20-14"></a>    <span class="co">#fitting</span></span>
-<span id="cb20-15"><a href="#cb20-15"></a>    imputer_num.fit(X_train_num)</span>
-<span id="cb20-16"><a href="#cb20-16"></a></span>
-<span id="cb20-17"><a href="#cb20-17"></a>    <span class="co"># transform</span></span>
-<span id="cb20-18"><a href="#cb20-18"></a>    imputed_data <span class="op">=</span> imputer_num.transform(X_train_num)</span>
-<span id="cb20-19"><a href="#cb20-19"></a>    X_train_num_imputed <span class="op">=</span> pd.DataFrame(imputed_data)</span>
-<span id="cb20-20"><a href="#cb20-20"></a></span>
-<span id="cb20-21"><a href="#cb20-21"></a>    <span class="co">#pastikan index dan nama kolom antara imputed dan non-imputed SAMA</span></span>
-<span id="cb20-22"><a href="#cb20-22"></a>    X_train_num_imputed.columns <span class="op">=</span> X_train_num.columns</span>
-<span id="cb20-23"><a href="#cb20-23"></a>    X_train_num_imputed.index <span class="op">=</span> X_train_num.index</span>
-<span id="cb20-24"><a href="#cb20-24"></a></span>
-<span id="cb20-25"><a href="#cb20-25"></a>    <span class="cf">return</span> X_train_num_imputed, imputer_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="kw">def</span> numericalImputation(X_train_num, </span>
+<span id="cb20-4"><a href="#cb20-4"></a>                        strategy <span class="op">=</span> <span class="st">'most_frequent'</span>):</span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="co">"""</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="co">    Fungsi untuk melakukan imputasi data numerik NaN</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="co">    :param data: &lt;pandas dataframe&gt; sample data input</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a></span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="co">    :return X_train_numerical: &lt;pandas dataframe&gt; data numerik</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a><span class="co">    :return imputer_numerical: numerical imputer method</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a><span class="co">    """</span></span>
+<span id="cb20-12"><a href="#cb20-12"></a>    <span class="co">#buat imputer</span></span>
+<span id="cb20-13"><a href="#cb20-13"></a>    imputer_num <span class="op">=</span> SimpleImputer(missing_values <span class="op">=</span> np.nan, </span>
+<span id="cb20-14"><a href="#cb20-14"></a>                                strategy <span class="op">=</span> strategy)</span>
+<span id="cb20-15"><a href="#cb20-15"></a>    </span>
+<span id="cb20-16"><a href="#cb20-16"></a>    <span class="co">#fitting</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a>    imputer_num.fit(X_train_num)</span>
+<span id="cb20-18"><a href="#cb20-18"></a></span>
+<span id="cb20-19"><a href="#cb20-19"></a>    <span class="co"># transform</span></span>
+<span id="cb20-20"><a href="#cb20-20"></a>    imputed_data <span class="op">=</span> imputer_num.transform(X_train_num)</span>
+<span id="cb20-21"><a href="#cb20-21"></a>    X_train_num_imputed <span class="op">=</span> pd.DataFrame(imputed_data)</span>
+<span id="cb20-22"><a href="#cb20-22"></a></span>
+<span id="cb20-23"><a href="#cb20-23"></a>    <span class="co">#pastikan index dan nama kolom antara imputed dan non-imputed SAMA</span></span>
+<span id="cb20-24"><a href="#cb20-24"></a>    X_train_num_imputed.columns <span class="op">=</span> X_train_num.columns</span>
+<span id="cb20-25"><a href="#cb20-25"></a>    X_train_num_imputed.index <span class="op">=</span> X_train_num.index</span>
+<span id="cb20-26"><a href="#cb20-26"></a></span>
+<span id="cb20-27"><a href="#cb20-27"></a>    <span class="cf">return</span> X_train_num_imputed, imputer_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="18">
 <details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>X_train_num <span class="op">=</span>  X_train.select_dtypes(exclude<span class="op">=</span><span class="st">'object'</span>)</span>
-<span id="cb21-2"><a href="#cb21-2"></a>X_train_num, imputer_num <span class="op">=</span> numericalImputation(X_train_num, strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2"></a>X_train_num, imputer_num <span class="op">=</span> numericalImputation(X_train_num, </span>
+<span id="cb21-3"><a href="#cb21-3"></a>                                               strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -986,7 +939,8 @@ memory usage: 780.7+ KB</code></pre>
 <details open="">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>X_train_cat <span class="op">=</span> X_train.select_dtypes(include<span class="op">=</span><span class="st">'object'</span>)</span>
-<span id="cb22-2"><a href="#cb22-2"></a>X_train_cat, imputer_num <span class="op">=</span> numericalImputation(X_train_cat, strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-2"><a href="#cb22-2"></a>X_train_cat, imputer_num <span class="op">=</span> numericalImputation(X_train_cat, </span>
+<span id="cb22-3"><a href="#cb22-3"></a>                                               strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1006,7 +960,8 @@ memory usage: 780.7+ KB</code></pre>
 <div class="cell" data-execution_count="21">
 <details open="">
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>ohe_col, X_train_concat <span class="op">=</span> get_dum_n_concat(X_train_num, X_train_cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>ohe_col, X_train_concat <span class="op">=</span> get_dum_n_concat(X_train_num, </span>
+<span id="cb24-2"><a href="#cb24-2"></a>                                           X_train_cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of Cols: 63,
@@ -1081,10 +1036,12 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb28-8"><a href="#cb28-8"></a>y_pred_train_mean <span class="op">=</span> y_baseline</span>
 <span id="cb28-9"><a href="#cb28-9"></a></span>
 <span id="cb28-10"><a href="#cb28-10"></a><span class="co"># Calculate R-squared</span></span>
-<span id="cb28-11"><a href="#cb28-11"></a>r2_baseline <span class="op">=</span> r2_score(y_train, y_pred_train_mean)</span>
-<span id="cb28-12"><a href="#cb28-12"></a></span>
-<span id="cb28-13"><a href="#cb28-13"></a><span class="co">#calculate MAE</span></span>
-<span id="cb28-14"><a href="#cb28-14"></a>mae_baseline <span class="op">=</span> mean_absolute_error(y_train, y_pred_train_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-11"><a href="#cb28-11"></a>r2_baseline <span class="op">=</span> r2_score(y_train, </span>
+<span id="cb28-12"><a href="#cb28-12"></a>                       y_pred_train_mean)</span>
+<span id="cb28-13"><a href="#cb28-13"></a></span>
+<span id="cb28-14"><a href="#cb28-14"></a><span class="co">#calculate MAE</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a>mae_baseline <span class="op">=</span> mean_absolute_error(y_train, </span>
+<span id="cb28-16"><a href="#cb28-16"></a>                                   y_pred_train_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1097,16 +1054,19 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb29-2"><a href="#cb29-2"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
 <span id="cb29-3"><a href="#cb29-3"></a></span>
 <span id="cb29-4"><a href="#cb29-4"></a><span class="co"># Train the linear regression model</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a>lin_reg <span class="op">=</span> LinearRegression().fit(X_train_clean, y_train)</span>
-<span id="cb29-6"><a href="#cb29-6"></a></span>
-<span id="cb29-7"><a href="#cb29-7"></a><span class="co"># Predict using the train data</span></span>
-<span id="cb29-8"><a href="#cb29-8"></a>y_pred_train_linreg <span class="op">=</span> lin_reg.predict(X_train_clean)</span>
-<span id="cb29-9"><a href="#cb29-9"></a></span>
-<span id="cb29-10"><a href="#cb29-10"></a><span class="co"># Calculate mean absolute error</span></span>
-<span id="cb29-11"><a href="#cb29-11"></a>mae_linreg <span class="op">=</span> mean_absolute_error(y_train, y_pred_train_linreg)</span>
-<span id="cb29-12"><a href="#cb29-12"></a></span>
-<span id="cb29-13"><a href="#cb29-13"></a><span class="co"># Calculate R-squared</span></span>
-<span id="cb29-14"><a href="#cb29-14"></a>r2_linreg <span class="op">=</span> r2_score(y_train, y_pred_train_linreg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-5"><a href="#cb29-5"></a>lin_reg <span class="op">=</span> LinearRegression().fit(X_train_clean, </span>
+<span id="cb29-6"><a href="#cb29-6"></a>                                 y_train)</span>
+<span id="cb29-7"><a href="#cb29-7"></a></span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="co"># Predict using the train data</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>y_pred_train_linreg <span class="op">=</span> lin_reg.predict(X_train_clean)</span>
+<span id="cb29-10"><a href="#cb29-10"></a></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="co"># Calculate mean absolute error</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a>mae_linreg <span class="op">=</span> mean_absolute_error(y_train, </span>
+<span id="cb29-13"><a href="#cb29-13"></a>                                 y_pred_train_linreg)</span>
+<span id="cb29-14"><a href="#cb29-14"></a></span>
+<span id="cb29-15"><a href="#cb29-15"></a><span class="co"># Calculate R-squared</span></span>
+<span id="cb29-16"><a href="#cb29-16"></a>r2_linreg <span class="op">=</span> r2_score(y_train, </span>
+<span id="cb29-17"><a href="#cb29-17"></a>                     y_pred_train_linreg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1126,10 +1086,12 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb30-9"><a href="#cb30-9"></a>y_pred_train_gb <span class="op">=</span> grad_tree.predict(X_train_clean)</span>
 <span id="cb30-10"><a href="#cb30-10"></a></span>
 <span id="cb30-11"><a href="#cb30-11"></a><span class="co"># Calculate mean absolute error</span></span>
-<span id="cb30-12"><a href="#cb30-12"></a>mae_gb <span class="op">=</span> mean_absolute_error(y_train, y_pred_train_gb)</span>
-<span id="cb30-13"><a href="#cb30-13"></a></span>
-<span id="cb30-14"><a href="#cb30-14"></a><span class="co"># Calculate R-squared</span></span>
-<span id="cb30-15"><a href="#cb30-15"></a>r2_gb <span class="op">=</span> r2_score(y_train, y_pred_train_gb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-12"><a href="#cb30-12"></a>mae_gb <span class="op">=</span> mean_absolute_error(y_train, </span>
+<span id="cb30-13"><a href="#cb30-13"></a>                             y_pred_train_gb)</span>
+<span id="cb30-14"><a href="#cb30-14"></a></span>
+<span id="cb30-15"><a href="#cb30-15"></a><span class="co"># Calculate R-squared</span></span>
+<span id="cb30-16"><a href="#cb30-16"></a>r2_gb <span class="op">=</span> r2_score(y_train, </span>
+<span id="cb30-17"><a href="#cb30-17"></a>                 y_pred_train_gb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="27">
@@ -1149,12 +1111,13 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb31-12"><a href="#cb31-12"></a>                           cv <span class="op">=</span> <span class="dv">5</span>,</span>
 <span id="cb31-13"><a href="#cb31-13"></a>                           scoring <span class="op">=</span> <span class="st">"neg_mean_absolute_error"</span>)</span>
 <span id="cb31-14"><a href="#cb31-14"></a><span class="co"># Fit grid search cv</span></span>
-<span id="cb31-15"><a href="#cb31-15"></a>grad_tree_cv.fit(X_train_clean, y_train)</span>
-<span id="cb31-16"><a href="#cb31-16"></a></span>
-<span id="cb31-17"><a href="#cb31-17"></a><span class="co"># Best params</span></span>
-<span id="cb31-18"><a href="#cb31-18"></a>grad_tree_cv.best_params_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-15"><a href="#cb31-15"></a>grad_tree_cv.fit(X_train_clean, </span>
+<span id="cb31-16"><a href="#cb31-16"></a>                 y_train)</span>
+<span id="cb31-17"><a href="#cb31-17"></a></span>
+<span id="cb31-18"><a href="#cb31-18"></a><span class="co"># Best params</span></span>
+<span id="cb31-19"><a href="#cb31-19"></a>grad_tree_cv.best_params_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div class="cell-output cell-output-display" data-execution_count="67">
 <pre><code>{'learning_rate': 0.1, 'n_estimators': 500}</code></pre>
 </div>
 </div>
@@ -1166,9 +1129,10 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb33-3"><a href="#cb33-3"></a>                                      learning_rate<span class="op">=</span><span class="fl">0.1</span>,</span>
 <span id="cb33-4"><a href="#cb33-4"></a>                                      random_state <span class="op">=</span> <span class="dv">123</span>)</span>
 <span id="cb33-5"><a href="#cb33-5"></a></span>
-<span id="cb33-6"><a href="#cb33-6"></a>grad_tree.fit(X_train_clean, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-6"><a href="#cb33-6"></a>grad_tree.fit(X_train_clean, </span>
+<span id="cb33-7"><a href="#cb33-7"></a>              y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div class="cell-output cell-output-display" data-execution_count="68">
 <style>#sk-container-id-4 {color: black;background-color: white;}#sk-container-id-4 pre{padding: 0;}#sk-container-id-4 div.sk-toggleable {background-color: white;}#sk-container-id-4 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-4 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-4 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-4 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-4 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-4 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-4 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-4 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-4 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-4 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-4 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-4 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-4 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-4 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-4 div.sk-item {position: relative;z-index: 1;}#sk-container-id-4 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-4 div.sk-item::before, #sk-container-id-4 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-4 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-4 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-4 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-4 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-4 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-4 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-4 div.sk-label-container {text-align: center;}#sk-container-id-4 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-4 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-4" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GradientBoostingRegressor(n_estimators=500, random_state=123)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" checked=""><label for="sk-estimator-id-4" class="sk-toggleable__label sk-toggleable__label-arrow">GradientBoostingRegressor</label><div class="sk-toggleable__content"><pre>GradientBoostingRegressor(n_estimators=500, random_state=123)</pre></div></div></div></div></div>
 </div>
 </div>
@@ -1179,10 +1143,12 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb34-2"><a href="#cb34-2"></a>y_pred_train_gbcv <span class="op">=</span> grad_tree.predict(X_train_clean)</span>
 <span id="cb34-3"><a href="#cb34-3"></a></span>
 <span id="cb34-4"><a href="#cb34-4"></a><span class="co"># Calculate mean absolute error</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a>mae_gb_cv <span class="op">=</span> mean_absolute_error(y_train, y_pred_train_gbcv)</span>
-<span id="cb34-6"><a href="#cb34-6"></a></span>
-<span id="cb34-7"><a href="#cb34-7"></a><span class="co"># Calculate R-squared</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>r2_gb_cv <span class="op">=</span> r2_score(y_train, y_pred_train_gbcv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-5"><a href="#cb34-5"></a>mae_gb_cv <span class="op">=</span> mean_absolute_error(y_train, </span>
+<span id="cb34-6"><a href="#cb34-6"></a>                                y_pred_train_gbcv)</span>
+<span id="cb34-7"><a href="#cb34-7"></a></span>
+<span id="cb34-8"><a href="#cb34-8"></a><span class="co"># Calculate R-squared</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a>r2_gb_cv <span class="op">=</span> r2_score(y_train, </span>
+<span id="cb34-10"><a href="#cb34-10"></a>                    y_pred_train_gbcv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1199,9 +1165,10 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb35-6"><a href="#cb35-6"></a>                                random_state <span class="op">=</span> <span class="dv">123</span>)</span>
 <span id="cb35-7"><a href="#cb35-7"></a></span>
 <span id="cb35-8"><a href="#cb35-8"></a><span class="co"># Fit random forest</span></span>
-<span id="cb35-9"><a href="#cb35-9"></a>rf_tree.fit(X_train_clean, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-9"><a href="#cb35-9"></a>rf_tree.fit(X_train_clean, </span>
+<span id="cb35-10"><a href="#cb35-10"></a>            y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<div class="cell-output cell-output-display" data-execution_count="70">
 <style>#sk-container-id-5 {color: black;background-color: white;}#sk-container-id-5 pre{padding: 0;}#sk-container-id-5 div.sk-toggleable {background-color: white;}#sk-container-id-5 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-5 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-5 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-5 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-5 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-5 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-5 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-5 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-5 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-5 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-5 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-5 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-5 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-5 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-5 div.sk-item {position: relative;z-index: 1;}#sk-container-id-5 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-5 div.sk-item::before, #sk-container-id-5 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-5 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-5 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-5 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-5 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-5 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-5 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-5 div.sk-label-container {text-align: center;}#sk-container-id-5 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-5 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-5" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestRegressor(max_features='sqrt', random_state=123)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" checked=""><label for="sk-estimator-id-5" class="sk-toggleable__label sk-toggleable__label-arrow">RandomForestRegressor</label><div class="sk-toggleable__content"><pre>RandomForestRegressor(max_features='sqrt', random_state=123)</pre></div></div></div></div></div>
 </div>
 </div>
@@ -1212,11 +1179,14 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb36-2"><a href="#cb36-2"></a>y_pred_train_rf <span class="op">=</span> rf_tree.predict(X_train_clean)</span>
 <span id="cb36-3"><a href="#cb36-3"></a></span>
 <span id="cb36-4"><a href="#cb36-4"></a><span class="co"># Calculate mean absolute error</span></span>
-<span id="cb36-5"><a href="#cb36-5"></a>mae_rf <span class="op">=</span> mean_absolute_error(y_train, y_pred_train_rf)</span>
-<span id="cb36-6"><a href="#cb36-6"></a></span>
-<span id="cb36-7"><a href="#cb36-7"></a><span class="co"># Calculate R-squared</span></span>
-<span id="cb36-8"><a href="#cb36-8"></a>r2_rf <span class="op">=</span> r2_score(y_train, y_pred_train_rf)</span>
-<span id="cb36-9"><a href="#cb36-9"></a><span class="bu">print</span>(<span class="ss">f"R2-score: </span><span class="sc">{</span>r2_rf<span class="sc">:.4f}</span><span class="ss"> and MAE score: </span><span class="sc">{</span>mae_rf<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-5"><a href="#cb36-5"></a>mae_rf <span class="op">=</span> mean_absolute_error(y_train, </span>
+<span id="cb36-6"><a href="#cb36-6"></a>                             y_pred_train_rf)</span>
+<span id="cb36-7"><a href="#cb36-7"></a></span>
+<span id="cb36-8"><a href="#cb36-8"></a><span class="co"># Calculate R-squared</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a>r2_rf <span class="op">=</span> r2_score(y_train, </span>
+<span id="cb36-10"><a href="#cb36-10"></a>                 y_pred_train_rf)</span>
+<span id="cb36-11"><a href="#cb36-11"></a></span>
+<span id="cb36-12"><a href="#cb36-12"></a><span class="bu">print</span>(<span class="ss">f"R2-score: </span><span class="sc">{</span>r2_rf<span class="sc">:.4f}</span><span class="ss"> and MAE score: </span><span class="sc">{</span>mae_rf<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>R2-score: 0.9577 and MAE score: 100.8408</code></pre>
@@ -1238,12 +1208,13 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb38-11"><a href="#cb38-11"></a>                          cv <span class="op">=</span> <span class="dv">5</span>,</span>
 <span id="cb38-12"><a href="#cb38-12"></a>                          scoring <span class="op">=</span> <span class="st">"neg_mean_absolute_error"</span>)</span>
 <span id="cb38-13"><a href="#cb38-13"></a><span class="co"># Fit grid search cv</span></span>
-<span id="cb38-14"><a href="#cb38-14"></a>rf_tree_cv.fit(X_train_clean, y_train)</span>
-<span id="cb38-15"><a href="#cb38-15"></a></span>
-<span id="cb38-16"><a href="#cb38-16"></a><span class="co"># Best params</span></span>
-<span id="cb38-17"><a href="#cb38-17"></a>rf_tree_cv.best_params_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-14"><a href="#cb38-14"></a>rf_tree_cv.fit(X_train_clean, </span>
+<span id="cb38-15"><a href="#cb38-15"></a>               y_train)</span>
+<span id="cb38-16"><a href="#cb38-16"></a></span>
+<span id="cb38-17"><a href="#cb38-17"></a><span class="co"># Best params</span></span>
+<span id="cb38-18"><a href="#cb38-18"></a>rf_tree_cv.best_params_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="71">
+<div class="cell-output cell-output-display" data-execution_count="72">
 <pre><code>{'max_features': 'sqrt', 'n_estimators': 500}</code></pre>
 </div>
 </div>
@@ -1257,9 +1228,10 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb40-5"><a href="#cb40-5"></a>                                random_state <span class="op">=</span> <span class="dv">123</span>)</span>
 <span id="cb40-6"><a href="#cb40-6"></a></span>
 <span id="cb40-7"><a href="#cb40-7"></a><span class="co">#refit</span></span>
-<span id="cb40-8"><a href="#cb40-8"></a>rf_tree.fit(X_train_clean, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-8"><a href="#cb40-8"></a>rf_tree.fit(X_train_clean, </span>
+<span id="cb40-9"><a href="#cb40-9"></a>            y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div class="cell-output cell-output-display" data-execution_count="73">
 <style>#sk-container-id-6 {color: black;background-color: white;}#sk-container-id-6 pre{padding: 0;}#sk-container-id-6 div.sk-toggleable {background-color: white;}#sk-container-id-6 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-6 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-6 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-6 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-6 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-6 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-6 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-6 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-6 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-6 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-6 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-6 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-6 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-6 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-6 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-6 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-6 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-6 div.sk-item {position: relative;z-index: 1;}#sk-container-id-6 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-6 div.sk-item::before, #sk-container-id-6 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-6 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-6 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-6 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-6 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-6 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-6 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-6 div.sk-label-container {text-align: center;}#sk-container-id-6 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-6 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-6" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestRegressor(max_features='sqrt', n_estimators=500, random_state=123)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" checked=""><label for="sk-estimator-id-6" class="sk-toggleable__label sk-toggleable__label-arrow">RandomForestRegressor</label><div class="sk-toggleable__content"><pre>RandomForestRegressor(max_features='sqrt', n_estimators=500, random_state=123)</pre></div></div></div></div></div>
 </div>
 </div>
@@ -1270,10 +1242,12 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb41-2"><a href="#cb41-2"></a>y_pred_train_rfcv <span class="op">=</span> rf_tree.predict(X_train_clean)</span>
 <span id="cb41-3"><a href="#cb41-3"></a></span>
 <span id="cb41-4"><a href="#cb41-4"></a><span class="co"># Calculate mean absolute error</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a>mae_rf_cv <span class="op">=</span> mean_absolute_error(y_train, y_pred_train_rfcv)</span>
-<span id="cb41-6"><a href="#cb41-6"></a></span>
-<span id="cb41-7"><a href="#cb41-7"></a><span class="co"># # Calculate R-squared</span></span>
-<span id="cb41-8"><a href="#cb41-8"></a>r2_rf_cv <span class="op">=</span> r2_score(y_train, y_pred_train_rfcv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-5"><a href="#cb41-5"></a>mae_rf_cv <span class="op">=</span> mean_absolute_error(y_train, </span>
+<span id="cb41-6"><a href="#cb41-6"></a>                                y_pred_train_rfcv)</span>
+<span id="cb41-7"><a href="#cb41-7"></a></span>
+<span id="cb41-8"><a href="#cb41-8"></a><span class="co"># # Calculate R-squared</span></span>
+<span id="cb41-9"><a href="#cb41-9"></a>r2_rf_cv <span class="op">=</span> r2_score(y_train, </span>
+<span id="cb41-10"><a href="#cb41-10"></a>                    y_pred_train_rfcv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1286,18 +1260,24 @@ Length: 63, dtype: int64</code></pre>
 <div>
 <details open="">
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>sns.scatterplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train_mean)</span>
-<span id="cb42-2"><a href="#cb42-2"></a>plt.show()</span>
-<span id="cb42-3"><a href="#cb42-3"></a>sns.scatterplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train_linreg)</span>
-<span id="cb42-4"><a href="#cb42-4"></a>plt.show()</span>
-<span id="cb42-5"><a href="#cb42-5"></a>sns.scatterplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train_gb)</span>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
+<span id="cb42-2"><a href="#cb42-2"></a>                y<span class="op">=</span>y_pred_train_mean)</span>
+<span id="cb42-3"><a href="#cb42-3"></a>plt.show()</span>
+<span id="cb42-4"><a href="#cb42-4"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
+<span id="cb42-5"><a href="#cb42-5"></a>                y<span class="op">=</span>y_pred_train_linreg)</span>
 <span id="cb42-6"><a href="#cb42-6"></a>plt.show()</span>
-<span id="cb42-7"><a href="#cb42-7"></a>sns.scatterplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train_gbcv)</span>
-<span id="cb42-8"><a href="#cb42-8"></a>plt.show()</span>
-<span id="cb42-9"><a href="#cb42-9"></a>sns.scatterplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train_rf)</span>
-<span id="cb42-10"><a href="#cb42-10"></a>plt.show()</span>
-<span id="cb42-11"><a href="#cb42-11"></a>sns.scatterplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train_rfcv)</span>
-<span id="cb42-12"><a href="#cb42-12"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-7"><a href="#cb42-7"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
+<span id="cb42-8"><a href="#cb42-8"></a>                y<span class="op">=</span>y_pred_train_gb)</span>
+<span id="cb42-9"><a href="#cb42-9"></a>plt.show()</span>
+<span id="cb42-10"><a href="#cb42-10"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
+<span id="cb42-11"><a href="#cb42-11"></a>                y<span class="op">=</span>y_pred_train_gbcv)</span>
+<span id="cb42-12"><a href="#cb42-12"></a>plt.show()</span>
+<span id="cb42-13"><a href="#cb42-13"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
+<span id="cb42-14"><a href="#cb42-14"></a>                y<span class="op">=</span>y_pred_train_rf)</span>
+<span id="cb42-15"><a href="#cb42-15"></a>plt.show()</span>
+<span id="cb42-16"><a href="#cb42-16"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
+<span id="cb42-17"><a href="#cb42-17"></a>                y<span class="op">=</span>y_pred_train_rfcv)</span>
+<span id="cb42-18"><a href="#cb42-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel" data-execution_count="35">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -1361,20 +1341,39 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell" data-execution_count="36">
 <details open="">
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>mae_score <span class="op">=</span> [mae_baseline, mae_linreg, mae_gb, mae_gb_cv, mae_rf, mae_rf_cv]</span>
-<span id="cb43-2"><a href="#cb43-2"></a>r2_score <span class="op">=</span> [r2_baseline, r2_linreg, r2_gb, r2_gb_cv, r2_rf, r2_rf_cv]</span>
-<span id="cb43-3"><a href="#cb43-3"></a>indexes <span class="op">=</span> [<span class="st">"baseline"</span>, <span class="st">"linear regression"</span>, <span class="st">"gradient boosting"</span>, <span class="st">"gradient boosting with CV"</span>, <span class="st">"random forest"</span>,  <span class="st">"random forest with CV"</span>]</span>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>mae_score <span class="op">=</span> [mae_baseline, mae_linreg, </span>
+<span id="cb43-2"><a href="#cb43-2"></a>             mae_gb, mae_gb_cv,</span>
+<span id="cb43-3"><a href="#cb43-3"></a>             mae_rf, mae_rf_cv]</span>
 <span id="cb43-4"><a href="#cb43-4"></a></span>
-<span id="cb43-5"><a href="#cb43-5"></a>summary_df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb43-6"><a href="#cb43-6"></a>    <span class="st">"MAE Train"</span>: mae_score,</span>
-<span id="cb43-7"><a href="#cb43-7"></a>    <span class="st">"R2-Score"</span>: r2_score,</span>
-<span id="cb43-8"><a href="#cb43-8"></a>},index <span class="op">=</span> indexes)</span>
-<span id="cb43-9"><a href="#cb43-9"></a></span>
-<span id="cb43-10"><a href="#cb43-10"></a><span class="co">#plotting</span></span>
-<span id="cb43-11"><a href="#cb43-11"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, nrows<span class="op">=</span><span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb43-12"><a href="#cb43-12"></a>summary_df.sort_values(by<span class="op">=</span><span class="st">'R2-Score'</span>, ascending<span class="op">=</span><span class="va">False</span>).plot(kind<span class="op">=</span><span class="st">'barh'</span>, y<span class="op">=</span><span class="st">'R2-Score'</span>, ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
-<span id="cb43-13"><a href="#cb43-13"></a>summary_df.sort_values(by<span class="op">=</span><span class="st">'R2-Score'</span>, ascending<span class="op">=</span><span class="va">False</span>).plot(kind<span class="op">=</span><span class="st">'barh'</span>, y<span class="op">=</span><span class="st">'MAE Train'</span>, ax<span class="op">=</span>axs[<span class="dv">1</span>])</span>
-<span id="cb43-14"><a href="#cb43-14"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-5"><a href="#cb43-5"></a>r2_score <span class="op">=</span> [r2_baseline, r2_linreg, </span>
+<span id="cb43-6"><a href="#cb43-6"></a>            r2_gb, r2_gb_cv, </span>
+<span id="cb43-7"><a href="#cb43-7"></a>            r2_rf, r2_rf_cv]</span>
+<span id="cb43-8"><a href="#cb43-8"></a></span>
+<span id="cb43-9"><a href="#cb43-9"></a>indexes <span class="op">=</span> [<span class="st">"baseline"</span>, <span class="st">"linear regression"</span>, </span>
+<span id="cb43-10"><a href="#cb43-10"></a>           <span class="st">"gradient boosting"</span>, <span class="st">"gradient boosting with CV"</span>,</span>
+<span id="cb43-11"><a href="#cb43-11"></a>           <span class="st">"random forest"</span>,  <span class="st">"random forest with CV"</span>]</span>
+<span id="cb43-12"><a href="#cb43-12"></a></span>
+<span id="cb43-13"><a href="#cb43-13"></a>summary_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb43-14"><a href="#cb43-14"></a>    <span class="st">"MAE Train"</span>: mae_score,</span>
+<span id="cb43-15"><a href="#cb43-15"></a>    <span class="st">"R2-Score"</span>: r2_score,</span>
+<span id="cb43-16"><a href="#cb43-16"></a>},index <span class="op">=</span> indexes)</span>
+<span id="cb43-17"><a href="#cb43-17"></a></span>
+<span id="cb43-18"><a href="#cb43-18"></a><span class="co">#plotting</span></span>
+<span id="cb43-19"><a href="#cb43-19"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, </span>
+<span id="cb43-20"><a href="#cb43-20"></a>                        nrows<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb43-21"><a href="#cb43-21"></a>                        figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>), </span>
+<span id="cb43-22"><a href="#cb43-22"></a>                        sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb43-23"><a href="#cb43-23"></a></span>
+<span id="cb43-24"><a href="#cb43-24"></a>summary_df.sort_values(by<span class="op">=</span><span class="st">'R2-Score'</span>, </span>
+<span id="cb43-25"><a href="#cb43-25"></a>                       ascending<span class="op">=</span><span class="va">False</span>).plot(kind<span class="op">=</span><span class="st">'barh'</span>, </span>
+<span id="cb43-26"><a href="#cb43-26"></a>                                             y<span class="op">=</span><span class="st">'R2-Score'</span>, </span>
+<span id="cb43-27"><a href="#cb43-27"></a>                                             ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb43-28"><a href="#cb43-28"></a></span>
+<span id="cb43-29"><a href="#cb43-29"></a>summary_df.sort_values(by<span class="op">=</span><span class="st">'R2-Score'</span>, </span>
+<span id="cb43-30"><a href="#cb43-30"></a>                       ascending<span class="op">=</span><span class="va">False</span>).plot(kind<span class="op">=</span><span class="st">'barh'</span>, </span>
+<span id="cb43-31"><a href="#cb43-31"></a>                                             y<span class="op">=</span><span class="st">'MAE Train'</span>, </span>
+<span id="cb43-32"><a href="#cb43-32"></a>                                             ax<span class="op">=</span>axs[<span class="dv">1</span>])</span>
+<span id="cb43-33"><a href="#cb43-33"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-r2-mae" class="quarto-figure quarto-figure-center anchored">
@@ -1385,76 +1384,10 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>After several model tested on the train dataset, Random Forest with Hyperparameter tuning has the best R2-score and MAE value as shown in the <a href="#fig-r2-mae">Figure&nbsp;7</a>. The best model plotted below as reference:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Best Model - RF with CV</figcaption><p></p>
-<p><img src="best_model.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="applied-model-on-test-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="applied-model-on-test-dataset">Applied Model on Test Dataset</h3>
 <div class="cell" data-execution_count="37">
 <details open="">
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># libraries</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
-<span id="cb44-3"><a href="#cb44-3"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
-<span id="cb44-4"><a href="#cb44-4"></a></span>
-<span id="cb44-5"><a href="#cb44-5"></a></span>
-<span id="cb44-6"><a href="#cb44-6"></a><span class="co">#setting up</span></span>
-<span id="cb44-7"><a href="#cb44-7"></a>rf_tree <span class="op">=</span> RandomForestRegressor(n_estimators <span class="op">=</span> <span class="dv">500</span>,</span>
-<span id="cb44-8"><a href="#cb44-8"></a>                                criterion <span class="op">=</span> <span class="st">"squared_error"</span>,</span>
-<span id="cb44-9"><a href="#cb44-9"></a>                                max_features <span class="op">=</span> <span class="st">"sqrt"</span>,</span>
-<span id="cb44-10"><a href="#cb44-10"></a>                                random_state <span class="op">=</span> <span class="dv">123</span>)</span>
-<span id="cb44-11"><a href="#cb44-11"></a></span>
-<span id="cb44-12"><a href="#cb44-12"></a><span class="co">#read cleaned test data</span></span>
-<span id="cb44-13"><a href="#cb44-13"></a>X_test_clean <span class="op">=</span> pd.read_csv(<span class="st">"./X_test_clean.csv"</span>)</span>
-<span id="cb44-14"><a href="#cb44-14"></a></span>
-<span id="cb44-15"><a href="#cb44-15"></a><span class="co">#fit model train</span></span>
-<span id="cb44-16"><a href="#cb44-16"></a>rf_tree.fit(X_train_clean, y_train)</span>
-<span id="cb44-17"><a href="#cb44-17"></a></span>
-<span id="cb44-18"><a href="#cb44-18"></a><span class="co"># Predict model </span><span class="al">TEST</span></span>
-<span id="cb44-19"><a href="#cb44-19"></a>y_pred_test <span class="op">=</span> rf_tree.predict(X_test_clean)</span>
-<span id="cb44-20"><a href="#cb44-20"></a></span>
-<span id="cb44-21"><a href="#cb44-21"></a><span class="co"># Calculate mean absolute error</span></span>
-<span id="cb44-22"><a href="#cb44-22"></a>mae_rf_cv_test <span class="op">=</span> mean_absolute_error(y_test, y_pred_test)</span>
-<span id="cb44-23"><a href="#cb44-23"></a></span>
-<span id="cb44-24"><a href="#cb44-24"></a><span class="co"># # Calculate R-squared</span></span>
-<span id="cb44-25"><a href="#cb44-25"></a>r2_rf_cv_test <span class="op">=</span> r2_score(y_test, y_pred_test)</span>
-<span id="cb44-26"><a href="#cb44-26"></a></span>
-<span id="cb44-27"><a href="#cb44-27"></a><span class="bu">print</span>(<span class="ss">f"R2-score: </span><span class="sc">{</span>r2_rf_cv_test<span class="sc">:.3f}</span><span class="ss"> and MAE score: +/-</span><span class="sc">{</span>mae_rf_cv_test<span class="sc">:.2f}</span><span class="ss"> RM"</span>)</span>
-<span id="cb44-28"><a href="#cb44-28"></a></span>
-<span id="cb44-29"><a href="#cb44-29"></a>sns.scatterplot(x<span class="op">=</span>y_test, y<span class="op">=</span>y_pred_test )</span>
-<span id="cb44-30"><a href="#cb44-30"></a>plt.plot([<span class="dv">0</span>, <span class="dv">5500</span>], [<span class="dv">0</span>,<span class="dv">5500</span>], <span class="st">"--r"</span>)</span>
-<span id="cb44-31"><a href="#cb44-31"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">5500</span>)</span>
-<span id="cb44-32"><a href="#cb44-32"></a>plt.xlabel(<span class="st">"Actual Monthly Rent"</span>)</span>
-<span id="cb44-33"><a href="#cb44-33"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">5500</span>)</span>
-<span id="cb44-34"><a href="#cb44-34"></a>plt.ylabel(<span class="st">"Predicted Monthly Rent"</span>)</span>
-<span id="cb44-35"><a href="#cb44-35"></a>plt.suptitle(<span class="st">"Random Forest - Test Dataset"</span>)</span>
-<span id="cb44-36"><a href="#cb44-36"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>R2-score: 0.803 and MAE score: +/-214.08 RM</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-38-output-2.png" width="602" height="477"></p>
-</div>
-</div>
-<div class="cell" data-execution_count="38">
-<details open="">
-<summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>mae_score <span class="op">=</span> [mae_rf_cv, mae_rf_cv_test]</span>
-<span id="cb46-2"><a href="#cb46-2"></a>r2_score <span class="op">=</span> [r2_rf_cv, r2_rf_cv_test]</span>
-<span id="cb46-3"><a href="#cb46-3"></a>indexes <span class="op">=</span> [<span class="st">"train"</span>, <span class="st">"test"</span>]</span>
-<span id="cb46-4"><a href="#cb46-4"></a></span>
-<span id="cb46-5"><a href="#cb46-5"></a>summary_df_train_test <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb46-6"><a href="#cb46-6"></a>    <span class="st">"MAE Train"</span>: mae_score,</span>
-<span id="cb46-7"><a href="#cb46-7"></a>    <span class="st">"R2-Score"</span>: r2_score,</span>
-<span id="cb46-8"><a href="#cb46-8"></a>},index <span class="op">=</span> indexes)</span>
-<span id="cb46-9"><a href="#cb46-9"></a></span>
-<span id="cb46-10"><a href="#cb46-10"></a>summary_df_train_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>summary_df.applymap(<span class="kw">lambda</span> x: <span class="bu">round</span>(x, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="77">
 
@@ -1470,18 +1403,187 @@ Length: 63, dtype: int64</code></pre>
   </thead>
   <tbody>
     <tr>
-      <th>train</th>
-      <td>99.798879</td>
-      <td>0.958519</td>
+      <th>baseline</th>
+      <td>562.37</td>
+      <td>0.00</td>
     </tr>
     <tr>
-      <th>test</th>
-      <td>214.084111</td>
-      <td>0.802556</td>
+      <th>linear regression</th>
+      <td>319.22</td>
+      <td>0.65</td>
+    </tr>
+    <tr>
+      <th>gradient boosting</th>
+      <td>281.68</td>
+      <td>0.72</td>
+    </tr>
+    <tr>
+      <th>gradient boosting with CV</th>
+      <td>228.02</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <th>random forest</th>
+      <td>100.84</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>random forest with CV</th>
+      <td>99.80</td>
+      <td>0.96</td>
     </tr>
   </tbody>
 </table>
 </div>
+</div>
+</div>
+<p>After several model tested on the train dataset, Random Forest with Hyperparameter tuning has the best R2-score and MAE value as shown in the <a href="#fig-r2-mae">Figure&nbsp;7</a>. The best model plotted below as reference:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption">Best Model - RF with CV</figcaption><p></p>
+<p><img src="best_model.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</section>
+<section id="applied-model-on-test-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="applied-model-on-test-dataset">Applied Model on Test Dataset</h3>
+<div class="cell" data-execution_count="38">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># libraries</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
+<span id="cb45-4"><a href="#cb45-4"></a></span>
+<span id="cb45-5"><a href="#cb45-5"></a></span>
+<span id="cb45-6"><a href="#cb45-6"></a><span class="co">#setting up</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a>rf_tree <span class="op">=</span> RandomForestRegressor(n_estimators <span class="op">=</span> <span class="dv">500</span>,</span>
+<span id="cb45-8"><a href="#cb45-8"></a>                                criterion <span class="op">=</span> <span class="st">"squared_error"</span>,</span>
+<span id="cb45-9"><a href="#cb45-9"></a>                                max_features <span class="op">=</span> <span class="st">"sqrt"</span>,</span>
+<span id="cb45-10"><a href="#cb45-10"></a>                                random_state <span class="op">=</span> <span class="dv">123</span>)</span>
+<span id="cb45-11"><a href="#cb45-11"></a></span>
+<span id="cb45-12"><a href="#cb45-12"></a><span class="co">#read cleaned test data</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a>X_test_clean <span class="op">=</span> pd.read_csv(<span class="st">"./X_test_clean.csv"</span>)</span>
+<span id="cb45-14"><a href="#cb45-14"></a></span>
+<span id="cb45-15"><a href="#cb45-15"></a><span class="co">#fit model train</span></span>
+<span id="cb45-16"><a href="#cb45-16"></a>rf_tree.fit(X_train_clean, </span>
+<span id="cb45-17"><a href="#cb45-17"></a>            y_train)</span>
+<span id="cb45-18"><a href="#cb45-18"></a></span>
+<span id="cb45-19"><a href="#cb45-19"></a><span class="co"># Predict model test</span></span>
+<span id="cb45-20"><a href="#cb45-20"></a>y_pred_test <span class="op">=</span> rf_tree.predict(X_test_clean)</span>
+<span id="cb45-21"><a href="#cb45-21"></a></span>
+<span id="cb45-22"><a href="#cb45-22"></a><span class="co"># Calculate mean absolute error</span></span>
+<span id="cb45-23"><a href="#cb45-23"></a>mae_rf_cv_test <span class="op">=</span> mean_absolute_error(y_test, </span>
+<span id="cb45-24"><a href="#cb45-24"></a>                                     y_pred_test)</span>
+<span id="cb45-25"><a href="#cb45-25"></a></span>
+<span id="cb45-26"><a href="#cb45-26"></a><span class="co"># # Calculate R-squared</span></span>
+<span id="cb45-27"><a href="#cb45-27"></a>r2_rf_cv_test <span class="op">=</span> r2_score(y_test, </span>
+<span id="cb45-28"><a href="#cb45-28"></a>                         y_pred_test)</span>
+<span id="cb45-29"><a href="#cb45-29"></a></span>
+<span id="cb45-30"><a href="#cb45-30"></a><span class="bu">print</span>(<span class="ss">f"R2-score: </span><span class="sc">{</span>r2_rf_cv_test<span class="sc">:.3f}</span><span class="ss"> and MAE score: +/-</span><span class="sc">{</span>mae_rf_cv_test<span class="sc">:.2f}</span><span class="ss"> RM"</span>)</span>
+<span id="cb45-31"><a href="#cb45-31"></a></span>
+<span id="cb45-32"><a href="#cb45-32"></a>sns.scatterplot(x<span class="op">=</span>y_test, y<span class="op">=</span>y_pred_test )</span>
+<span id="cb45-33"><a href="#cb45-33"></a>plt.plot([<span class="dv">0</span>, <span class="dv">5500</span>], [<span class="dv">0</span>,<span class="dv">5500</span>], <span class="st">"--r"</span>)</span>
+<span id="cb45-34"><a href="#cb45-34"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">5500</span>)</span>
+<span id="cb45-35"><a href="#cb45-35"></a>plt.xlabel(<span class="st">"Actual Monthly Rent"</span>)</span>
+<span id="cb45-36"><a href="#cb45-36"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">5500</span>)</span>
+<span id="cb45-37"><a href="#cb45-37"></a>plt.ylabel(<span class="st">"Predicted Monthly Rent"</span>)</span>
+<span id="cb45-38"><a href="#cb45-38"></a>plt.suptitle(<span class="st">"Random Forest - Test Dataset"</span>)</span>
+<span id="cb45-39"><a href="#cb45-39"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>R2-score: 0.803 and MAE score: +/-214.08 RM</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-39-output-2.png" width="602" height="477"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="39">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>mae_score <span class="op">=</span> [mae_rf_cv,</span>
+<span id="cb47-2"><a href="#cb47-2"></a>             mae_rf_cv_test]</span>
+<span id="cb47-3"><a href="#cb47-3"></a></span>
+<span id="cb47-4"><a href="#cb47-4"></a>r2_score <span class="op">=</span> [r2_rf_cv, </span>
+<span id="cb47-5"><a href="#cb47-5"></a>            r2_rf_cv_test]</span>
+<span id="cb47-6"><a href="#cb47-6"></a></span>
+<span id="cb47-7"><a href="#cb47-7"></a>indexes <span class="op">=</span> [<span class="st">"train"</span>, <span class="st">"test"</span>]</span>
+<span id="cb47-8"><a href="#cb47-8"></a></span>
+<span id="cb47-9"><a href="#cb47-9"></a>summary_df_train_test <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb47-10"><a href="#cb47-10"></a>    <span class="st">"MAE Train"</span>: mae_score,</span>
+<span id="cb47-11"><a href="#cb47-11"></a>    <span class="st">"R2-Score"</span>: r2_score,</span>
+<span id="cb47-12"><a href="#cb47-12"></a>},index <span class="op">=</span> indexes)</span>
+<span id="cb47-13"><a href="#cb47-13"></a></span>
+<span id="cb47-14"><a href="#cb47-14"></a>summary_df_train_test.applymap(<span class="kw">lambda</span> x: <span class="bu">round</span>(x, <span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="79">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>MAE Train</th>
+      <th>R2-Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>train</th>
+      <td>99.80</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>214.08</td>
+      <td>0.80</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="feature-importance" class="level3">
+<h3 class="anchored" data-anchor-id="feature-importance">Feature Importance</h3>
+<div class="cell" data-execution_count="40">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># calculate the feature importances</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>importances <span class="op">=</span> rf_tree.feature_importances_</span>
+<span id="cb48-3"><a href="#cb48-3"></a></span>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="co"># rescale the importances back to the original scale of the features</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a>importances <span class="op">=</span> importances <span class="op">*</span> X_train_clean.std()</span>
+<span id="cb48-6"><a href="#cb48-6"></a></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="co"># sort the feature importances in descending order</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a>sorted_index <span class="op">=</span> importances.argsort()[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb48-9"><a href="#cb48-9"></a></span>
+<span id="cb48-10"><a href="#cb48-10"></a><span class="co"># print the feature importances</span></span>
+<span id="cb48-11"><a href="#cb48-11"></a>dict_feature_importance <span class="op">=</span> {}</span>
+<span id="cb48-12"><a href="#cb48-12"></a><span class="cf">for</span> i <span class="kw">in</span> sorted_index:</span>
+<span id="cb48-13"><a href="#cb48-13"></a>    <span class="co"># print("{}: {}".format(X_train_clean.columns[i], importances[i]))</span></span>
+<span id="cb48-14"><a href="#cb48-14"></a>    dict_feature_importance.update({X_train_clean.columns[i]: importances[i]})</span>
+<span id="cb48-15"><a href="#cb48-15"></a>    </span>
+<span id="cb48-16"><a href="#cb48-16"></a><span class="co"># Create a DataFrame from the dictionary</span></span>
+<span id="cb48-17"><a href="#cb48-17"></a>df <span class="op">=</span> pd.DataFrame.from_dict(dict_feature_importance, orient<span class="op">=</span><span class="st">'index'</span>, columns<span class="op">=</span>[<span class="st">'values'</span>])</span>
+<span id="cb48-18"><a href="#cb48-18"></a></span>
+<span id="cb48-19"><a href="#cb48-19"></a><span class="co"># Reset the index to become a column</span></span>
+<span id="cb48-20"><a href="#cb48-20"></a>df <span class="op">=</span> df.reset_index()</span>
+<span id="cb48-21"><a href="#cb48-21"></a></span>
+<span id="cb48-22"><a href="#cb48-22"></a><span class="co"># Rename the columns</span></span>
+<span id="cb48-23"><a href="#cb48-23"></a>df.columns <span class="op">=</span> [<span class="st">'feature'</span>, <span class="st">'importance_value'</span>]</span>
+<span id="cb48-24"><a href="#cb48-24"></a></span>
+<span id="cb48-25"><a href="#cb48-25"></a><span class="co">#plot</span></span>
+<span id="cb48-26"><a href="#cb48-26"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
+<span id="cb48-27"><a href="#cb48-27"></a>(df</span>
+<span id="cb48-28"><a href="#cb48-28"></a> .sort_values(by<span class="op">=</span><span class="st">'importance_value'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb48-29"><a href="#cb48-29"></a> .head(<span class="dv">10</span>)</span>
+<span id="cb48-30"><a href="#cb48-30"></a> .sort_index(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb48-31"><a href="#cb48-31"></a> .plot(kind<span class="op">=</span><span class="st">'barh'</span>, x<span class="op">=</span><span class="st">'feature'</span>, ax<span class="op">=</span>axs)</span>
+<span id="cb48-32"><a href="#cb48-32"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-41-output-1.png" width="685" height="337"></p>
 </div>
 </div>
 </section>
@@ -1496,59 +1598,14 @@ Length: 63, dtype: int64</code></pre>
 <li>Feature selection importance can be seen on the last table, but initially the selection was based on paper and intuition of the author (author lives and work in KL, Malaysia for 5 years). Feature such as <code>completion_year</code> and <code>nearby_railways</code> are important in improving the model.</li>
 <li>Last but not least is the outlier identification. The best practice for me is using jointplot to see not only the distribution of the data in 2-dimension, but also in the third dimension (the density) of the data.</li>
 </ol></li>
+<li><p>Some insights after feature importance are the size plays a big role in determining the unit price, following size, the furniture availability apparently makes a big impact on the price. This gives an insight to owner of a unit to equip their unit with furniture to <code>fully_furnished</code> should they want to increase their unit market value.</p></li>
 <li><p>Some of the feature that were believed to be quite important even before doing the modeling is <code>size_sqft</code>, <code>furnished</code> and <code>location</code>. All three is available within the 10-most features affecting the modeling. As a context, location in KLCC is like Pondok Indah in South Jakarta and location in Kiara is like BSD in South Tangerang, therefore it makes senses to see those locations increasing the price of a rent.</p></li>
 </ol>
-</section>
-<section id="discussion" class="level2">
-<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<section id="feature-importance" class="level3">
-<h3 class="anchored" data-anchor-id="feature-importance">Feature Importance</h3>
-<div class="cell" data-execution_count="39">
-<details open="">
-<summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># calculate the feature importances</span></span>
-<span id="cb47-2"><a href="#cb47-2"></a>importances <span class="op">=</span> rf_tree.feature_importances_</span>
-<span id="cb47-3"><a href="#cb47-3"></a></span>
-<span id="cb47-4"><a href="#cb47-4"></a><span class="co"># rescale the importances back to the original scale of the features</span></span>
-<span id="cb47-5"><a href="#cb47-5"></a>importances <span class="op">=</span> importances <span class="op">*</span> X_train_clean.std()</span>
-<span id="cb47-6"><a href="#cb47-6"></a></span>
-<span id="cb47-7"><a href="#cb47-7"></a><span class="co"># sort the feature importances in descending order</span></span>
-<span id="cb47-8"><a href="#cb47-8"></a>sorted_index <span class="op">=</span> importances.argsort()[::<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb47-9"><a href="#cb47-9"></a></span>
-<span id="cb47-10"><a href="#cb47-10"></a><span class="co"># print the feature importances</span></span>
-<span id="cb47-11"><a href="#cb47-11"></a>dict_feature_importance <span class="op">=</span> {}</span>
-<span id="cb47-12"><a href="#cb47-12"></a><span class="cf">for</span> i <span class="kw">in</span> sorted_index:</span>
-<span id="cb47-13"><a href="#cb47-13"></a>    <span class="co"># print("{}: {}".format(X_train_clean.columns[i], importances[i]))</span></span>
-<span id="cb47-14"><a href="#cb47-14"></a>    dict_feature_importance.update({X_train_clean.columns[i]: importances[i]})</span>
-<span id="cb47-15"><a href="#cb47-15"></a>    </span>
-<span id="cb47-16"><a href="#cb47-16"></a><span class="co"># Create a DataFrame from the dictionary</span></span>
-<span id="cb47-17"><a href="#cb47-17"></a>df <span class="op">=</span> pd.DataFrame.from_dict(dict_feature_importance, orient<span class="op">=</span><span class="st">'index'</span>, columns<span class="op">=</span>[<span class="st">'values'</span>])</span>
-<span id="cb47-18"><a href="#cb47-18"></a></span>
-<span id="cb47-19"><a href="#cb47-19"></a><span class="co"># Reset the index to become a column</span></span>
-<span id="cb47-20"><a href="#cb47-20"></a>df <span class="op">=</span> df.reset_index()</span>
-<span id="cb47-21"><a href="#cb47-21"></a></span>
-<span id="cb47-22"><a href="#cb47-22"></a><span class="co"># Rename the columns</span></span>
-<span id="cb47-23"><a href="#cb47-23"></a>df.columns <span class="op">=</span> [<span class="st">'feature'</span>, <span class="st">'importance_value'</span>]</span>
-<span id="cb47-24"><a href="#cb47-24"></a></span>
-<span id="cb47-25"><a href="#cb47-25"></a><span class="co">#plot</span></span>
-<span id="cb47-26"><a href="#cb47-26"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
-<span id="cb47-27"><a href="#cb47-27"></a>(df</span>
-<span id="cb47-28"><a href="#cb47-28"></a> .sort_values(by<span class="op">=</span><span class="st">'importance_value'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb47-29"><a href="#cb47-29"></a> .head(<span class="dv">10</span>)</span>
-<span id="cb47-30"><a href="#cb47-30"></a> .sort_index(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb47-31"><a href="#cb47-31"></a> .plot(kind<span class="op">=</span><span class="st">'barh'</span>, x<span class="op">=</span><span class="st">'feature'</span>, ax<span class="op">=</span>axs)</span>
-<span id="cb47-32"><a href="#cb47-32"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-40-output-1.png" width="685" height="337"></p>
-</div>
-</div>
-</section>
 </section>
 <section id="future-works" class="level2">
 <h2 class="anchored" data-anchor-id="future-works">Future works</h2>
 <ol type="1">
-<li>One of the feature that author thinks is significant but not appearing on the 10-best important feature is nearby_railways. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author believes, the proximity to nearby railways line can be approximated using Manhanttan distance of railways line to each property unit.</li>
+<li>One of the feature that author thinks is significant but not appearing on the 10-best important feature is <code>nearby_railways</code>. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author believes, the proximity to nearby railways line can be approximated using Manhanttan distance of railways line to each property unit.</li>
 </ol>
 
 

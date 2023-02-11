@@ -55,8 +55,6 @@ There are over 10k ads listed at the time of this project as can be seen below:
 
 ### Data Description
 
-There are 13 features with one unique ids (`ads_id`) and one target feature (`monthly_rent`)
-
 ```{python}
 #importing libraries
 import pandas as pd
@@ -68,8 +66,10 @@ import re
 
 #reload the data
 df = pd.read_csv("./mudah-apartment-clean.csv")
-df.head(3).T
+df.head(2).T
 ```
+
+There are 13 features with one unique ids (`ads_id`) and one target feature (`monthly_rent`)
 
 -   `ads_id`: the listing ids (unique)
 -   `prop_name`: name of the building/ property
@@ -100,7 +100,7 @@ df = df.rename(columns={'size': 'size_sqft'})
 
 #dropping kuala lumpur from the location
 df['location'] = df['location'].apply(lambda x: re.findall("\w+$", x)[0])
-df.head(4).T
+df.head(2).T
 ```
 
 ## Methods
@@ -170,7 +170,7 @@ df = df.drop(columns=[
     # 'nearby_railways',
     # 'completion_year'
 ])
-df.head(3).T
+df.head(2).T
 ```
 
 ```{python}
@@ -185,7 +185,10 @@ Removing the outlier is extremely important, as some of these observation e.g. m
 
 ```{python}
 f, axs = plt.subplots(1,1, figsize=(6,4))
-df[['size_sqft', 'monthly_rent_rm']].plot(kind='scatter', x='size_sqft', y='monthly_rent_rm', ax=axs);
+df[['size_sqft', 'monthly_rent_rm']].plot(kind='scatter', 
+                                          x='size_sqft', 
+                                          y='monthly_rent_rm', 
+                                          ax=axs);
 plt.ylim(100,5500) #batas harga rent
 plt.xlim(50,3000)  #batas size
 plt.show()
@@ -195,11 +198,13 @@ plt.show()
 
 ```{python}
 fig, axs = plt.subplots(1,2, figsize=(6,4))
-axs[0].boxplot(data=df, x='monthly_rent_rm')
+axs[0].boxplot(data=df, 
+               x='monthly_rent_rm')
 axs[0].set_ylim(0,20000)
 axs[0].set_title('all data')
 
-axs[1].boxplot(data=df, x='monthly_rent_rm')
+axs[1].boxplot(data=df, 
+               x='monthly_rent_rm')
 axs[1].set_ylim(100,5500)
 axs[1].set_title('100-5,500 RM')
 
@@ -274,7 +279,8 @@ def extractInputOutput(data,
 ```
 
 ```{python}
-X, y = extractInputOutput(data=dfx_new, output_column_name='monthly_rent_rm')
+X, y = extractInputOutput(data=dfx_new, 
+                          output_column_name='monthly_rent_rm')
 ```
 
 #### Train-Test Split Data
@@ -296,7 +302,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,
 ```{python}
 from sklearn.impute import SimpleImputer
 
-def numericalImputation(X_train_num, strategy = 'most_frequent'):
+def numericalImputation(X_train_num, 
+                        strategy = 'most_frequent'):
     """
     Fungsi untuk melakukan imputasi data numerik NaN
     :param data: <pandas dataframe> sample data input
@@ -305,7 +312,8 @@ def numericalImputation(X_train_num, strategy = 'most_frequent'):
     :return imputer_numerical: numerical imputer method
     """
     #buat imputer
-    imputer_num = SimpleImputer(missing_values = np.nan, strategy = strategy)
+    imputer_num = SimpleImputer(missing_values = np.nan, 
+                                strategy = strategy)
     
     #fitting
     imputer_num.fit(X_train_num)
@@ -323,14 +331,16 @@ def numericalImputation(X_train_num, strategy = 'most_frequent'):
 
 ```{python}
 X_train_num =  X_train.select_dtypes(exclude='object')
-X_train_num, imputer_num = numericalImputation(X_train_num, strategy='most_frequent')
+X_train_num, imputer_num = numericalImputation(X_train_num, 
+                                               strategy='most_frequent')
 ```
 
 ##### Categorical Data
 
 ```{python}
 X_train_cat = X_train.select_dtypes(include='object')
-X_train_cat, imputer_num = numericalImputation(X_train_cat, strategy='most_frequent')
+X_train_cat, imputer_num = numericalImputation(X_train_cat, 
+                                               strategy='most_frequent')
 ```
 
 ##### OHE Categorical Data
@@ -345,7 +355,8 @@ def get_dum_n_concat(df_num, df_cat):
 ```
 
 ```{python}
-ohe_col, X_train_concat = get_dum_n_concat(X_train_num, X_train_cat)
+ohe_col, X_train_concat = get_dum_n_concat(X_train_num, 
+                                           X_train_cat)
 ```
 
 ##### Standarisasi
@@ -396,10 +407,12 @@ y_baseline = np.ones(len(y_train)) * y_train.mean()
 y_pred_train_mean = y_baseline
 
 # Calculate R-squared
-r2_baseline = r2_score(y_train, y_pred_train_mean)
+r2_baseline = r2_score(y_train, 
+                       y_pred_train_mean)
 
 #calculate MAE
-mae_baseline = mean_absolute_error(y_train, y_pred_train_mean)
+mae_baseline = mean_absolute_error(y_train, 
+                                   y_pred_train_mean)
 ```
 
 ##### Linear Regression
@@ -409,16 +422,19 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Train the linear regression model
-lin_reg = LinearRegression().fit(X_train_clean, y_train)
+lin_reg = LinearRegression().fit(X_train_clean, 
+                                 y_train)
 
 # Predict using the train data
 y_pred_train_linreg = lin_reg.predict(X_train_clean)
 
 # Calculate mean absolute error
-mae_linreg = mean_absolute_error(y_train, y_pred_train_linreg)
+mae_linreg = mean_absolute_error(y_train, 
+                                 y_pred_train_linreg)
 
 # Calculate R-squared
-r2_linreg = r2_score(y_train, y_pred_train_linreg)
+r2_linreg = r2_score(y_train, 
+                     y_pred_train_linreg)
 ```
 
 ##### GradientBoosting
@@ -435,10 +451,12 @@ grad_tree.fit(X_train_clean, y_train)
 y_pred_train_gb = grad_tree.predict(X_train_clean)
 
 # Calculate mean absolute error
-mae_gb = mean_absolute_error(y_train, y_pred_train_gb)
+mae_gb = mean_absolute_error(y_train, 
+                             y_pred_train_gb)
 
 # Calculate R-squared
-r2_gb = r2_score(y_train, y_pred_train_gb)
+r2_gb = r2_score(y_train, 
+                 y_pred_train_gb)
 ```
 
 ```{python}
@@ -456,7 +474,8 @@ grad_tree_cv = GridSearchCV(estimator = grad_tree,
                            cv = 5,
                            scoring = "neg_mean_absolute_error")
 # Fit grid search cv
-grad_tree_cv.fit(X_train_clean, y_train)
+grad_tree_cv.fit(X_train_clean, 
+                 y_train)
 
 # Best params
 grad_tree_cv.best_params_
@@ -468,7 +487,8 @@ grad_tree = GradientBoostingRegressor(n_estimators = 500,
                                       learning_rate=0.1,
                                       random_state = 123)
 
-grad_tree.fit(X_train_clean, y_train)
+grad_tree.fit(X_train_clean, 
+              y_train)
 ```
 
 ```{python}
@@ -476,10 +496,12 @@ grad_tree.fit(X_train_clean, y_train)
 y_pred_train_gbcv = grad_tree.predict(X_train_clean)
 
 # Calculate mean absolute error
-mae_gb_cv = mean_absolute_error(y_train, y_pred_train_gbcv)
+mae_gb_cv = mean_absolute_error(y_train, 
+                                y_pred_train_gbcv)
 
 # Calculate R-squared
-r2_gb_cv = r2_score(y_train, y_pred_train_gbcv)
+r2_gb_cv = r2_score(y_train, 
+                    y_pred_train_gbcv)
 ```
 
 ##### Random Forest
@@ -493,7 +515,8 @@ rf_tree = RandomForestRegressor(n_estimators = 100,
                                 random_state = 123)
 
 # Fit random forest
-rf_tree.fit(X_train_clean, y_train)
+rf_tree.fit(X_train_clean, 
+            y_train)
 ```
 
 ```{python}
@@ -501,10 +524,13 @@ rf_tree.fit(X_train_clean, y_train)
 y_pred_train_rf = rf_tree.predict(X_train_clean)
 
 # Calculate mean absolute error
-mae_rf = mean_absolute_error(y_train, y_pred_train_rf)
+mae_rf = mean_absolute_error(y_train, 
+                             y_pred_train_rf)
 
 # Calculate R-squared
-r2_rf = r2_score(y_train, y_pred_train_rf)
+r2_rf = r2_score(y_train, 
+                 y_pred_train_rf)
+
 print(f"R2-score: {r2_rf:.4f} and MAE score: {mae_rf:.4f}")
 ```
 
@@ -522,7 +548,8 @@ rf_tree_cv = GridSearchCV(estimator = rf_tree,
                           cv = 5,
                           scoring = "neg_mean_absolute_error")
 # Fit grid search cv
-rf_tree_cv.fit(X_train_clean, y_train)
+rf_tree_cv.fit(X_train_clean, 
+               y_train)
 
 # Best params
 rf_tree_cv.best_params_
@@ -536,7 +563,8 @@ rf_tree = RandomForestRegressor(criterion = "squared_error",
                                 random_state = 123)
 
 #refit
-rf_tree.fit(X_train_clean, y_train)
+rf_tree.fit(X_train_clean, 
+            y_train)
 ```
 
 ```{python}
@@ -544,10 +572,12 @@ rf_tree.fit(X_train_clean, y_train)
 y_pred_train_rfcv = rf_tree.predict(X_train_clean)
 
 # Calculate mean absolute error
-mae_rf_cv = mean_absolute_error(y_train, y_pred_train_rfcv)
+mae_rf_cv = mean_absolute_error(y_train, 
+                                y_pred_train_rfcv)
 
 # # Calculate R-squared
-r2_rf_cv = r2_score(y_train, y_pred_train_rfcv)
+r2_rf_cv = r2_score(y_train, 
+                    y_pred_train_rfcv)
 ```
 
 ## Results
@@ -565,17 +595,23 @@ r2_rf_cv = r2_score(y_train, y_pred_train_rfcv)
 #|   - "Random Forest"
 #|   - "Random Forest with CV"
 
-sns.scatterplot(x=y_train, y=y_pred_train_mean)
+sns.scatterplot(x=y_train, 
+                y=y_pred_train_mean)
 plt.show()
-sns.scatterplot(x=y_train, y=y_pred_train_linreg)
+sns.scatterplot(x=y_train, 
+                y=y_pred_train_linreg)
 plt.show()
-sns.scatterplot(x=y_train, y=y_pred_train_gb)
+sns.scatterplot(x=y_train, 
+                y=y_pred_train_gb)
 plt.show()
-sns.scatterplot(x=y_train, y=y_pred_train_gbcv)
+sns.scatterplot(x=y_train, 
+                y=y_pred_train_gbcv)
 plt.show()
-sns.scatterplot(x=y_train, y=y_pred_train_rf)
+sns.scatterplot(x=y_train, 
+                y=y_pred_train_rf)
 plt.show()
-sns.scatterplot(x=y_train, y=y_pred_train_rfcv)
+sns.scatterplot(x=y_train, 
+                y=y_pred_train_rfcv)
 plt.show()
 
 ```
@@ -587,9 +623,17 @@ plt.show()
 #| label: fig-r2-mae
 #| fig-cap: "Comparison Chart of R2 and MAE for all Models"
 
-mae_score = [mae_baseline, mae_linreg, mae_gb, mae_gb_cv, mae_rf, mae_rf_cv]
-r2_score = [r2_baseline, r2_linreg, r2_gb, r2_gb_cv, r2_rf, r2_rf_cv]
-indexes = ["baseline", "linear regression", "gradient boosting", "gradient boosting with CV", "random forest",  "random forest with CV"]
+mae_score = [mae_baseline, mae_linreg, 
+             mae_gb, mae_gb_cv,
+             mae_rf, mae_rf_cv]
+
+r2_score = [r2_baseline, r2_linreg, 
+            r2_gb, r2_gb_cv, 
+            r2_rf, r2_rf_cv]
+
+indexes = ["baseline", "linear regression", 
+           "gradient boosting", "gradient boosting with CV",
+           "random forest",  "random forest with CV"]
 
 summary_df = pd.DataFrame({
     "MAE Train": mae_score,
@@ -597,15 +641,30 @@ summary_df = pd.DataFrame({
 },index = indexes)
 
 #plotting
-fig, axs = plt.subplots(ncols=2, nrows=1, figsize=(6,4), sharey=True)
-summary_df.sort_values(by='R2-Score', ascending=False).plot(kind='barh', y='R2-Score', ax=axs[0])
-summary_df.sort_values(by='R2-Score', ascending=False).plot(kind='barh', y='MAE Train', ax=axs[1])
+fig, axs = plt.subplots(ncols=2, 
+                        nrows=1, 
+                        figsize=(6,4), 
+                        sharey=True)
+
+summary_df.sort_values(by='R2-Score', 
+                       ascending=False).plot(kind='barh', 
+                                             y='R2-Score', 
+                                             ax=axs[0])
+
+summary_df.sort_values(by='R2-Score', 
+                       ascending=False).plot(kind='barh', 
+                                             y='MAE Train', 
+                                             ax=axs[1])
 plt.show()
+```
+
+```{python}
+summary_df.applymap(lambda x: round(x, 2))
 ```
 
 After several model tested on the train dataset, Random Forest with Hyperparameter tuning has the best R2-score and MAE value as shown in the @fig-r2-mae. The best model plotted below as reference:
 
-![Best Model - RF with CV](best_model.png)
+![Best Model - RF with CV](best_model.png){width="80%"}
 
 ### Applied Model on Test Dataset
 
@@ -625,16 +684,19 @@ rf_tree = RandomForestRegressor(n_estimators = 500,
 X_test_clean = pd.read_csv("./X_test_clean.csv")
 
 #fit model train
-rf_tree.fit(X_train_clean, y_train)
+rf_tree.fit(X_train_clean, 
+            y_train)
 
-# Predict model TEST
+# Predict model test
 y_pred_test = rf_tree.predict(X_test_clean)
 
 # Calculate mean absolute error
-mae_rf_cv_test = mean_absolute_error(y_test, y_pred_test)
+mae_rf_cv_test = mean_absolute_error(y_test, 
+                                     y_pred_test)
 
 # # Calculate R-squared
-r2_rf_cv_test = r2_score(y_test, y_pred_test)
+r2_rf_cv_test = r2_score(y_test, 
+                         y_pred_test)
 
 print(f"R2-score: {r2_rf_cv_test:.3f} and MAE score: +/-{mae_rf_cv_test:.2f} RM")
 
@@ -649,8 +711,12 @@ plt.show()
 ```
 
 ```{python}
-mae_score = [mae_rf_cv, mae_rf_cv_test]
-r2_score = [r2_rf_cv, r2_rf_cv_test]
+mae_score = [mae_rf_cv,
+             mae_rf_cv_test]
+
+r2_score = [r2_rf_cv, 
+            r2_rf_cv_test]
+
 indexes = ["train", "test"]
 
 summary_df_train_test = pd.DataFrame({
@@ -658,22 +724,8 @@ summary_df_train_test = pd.DataFrame({
     "R2-Score": r2_score,
 },index = indexes)
 
-summary_df_train_test
+summary_df_train_test.applymap(lambda x: round(x, 2)) 
 ```
-
-## Conclusions
-
-1.  Result indicates that the best model for prediction is Random Forest with hyperparameter tuning, scoring 95% on R2-score, and a shy 100 RM on MAE. This proves to be a good model since the test dataset gives a scoring of 80% on R2, and 240 RM on MAE.
-
-2.  There are some factors that author believed to be affecting the result/ performance of the model:
-
-    1.  Dropping missing value reduces the performance! Initial model uses half of the data (4-5k rows) and gives poorer performance on R2 and MAE. Imputation and keeping the number of rows close to the original dataset (9k rows) proves to be improving the model. Especially on test dataset.
-    2.  Feature selection importance can be seen on the last table, but initially the selection was based on paper and intuition of the author (author lives and work in KL, Malaysia for 5 years). Feature such as `completion_year` and `nearby_railways` are important in improving the model.
-    3.  Last but not least is the outlier identification. The best practice for me is using jointplot to see not only the distribution of the data in 2-dimension, but also in the third dimension (the density) of the data.
-
-3.  Some of the feature that were believed to be quite important even before doing the modeling is `size_sqft`, `furnished` and `location`. All three is available within the 10-most features affecting the modeling. As a context, location in KLCC is like Pondok Indah in South Jakarta and location in Kiara is like BSD in South Tangerang, therefore it makes senses to see those locations increasing the price of a rent.
-
-## Discussion
 
 ### Feature Importance
 
@@ -712,6 +764,20 @@ fig, axs = plt.subplots(figsize=(6,4))
 );
 ```
 
+## Conclusions
+
+1.  Result indicates that the best model for prediction is Random Forest with hyperparameter tuning, scoring 95% on R2-score, and a shy 100 RM on MAE. This proves to be a good model since the test dataset gives a scoring of 80% on R2, and 240 RM on MAE.
+
+2.  There are some factors that author believed to be affecting the result/ performance of the model:
+
+    1.  Dropping missing value reduces the performance! Initial model uses half of the data (4-5k rows) and gives poorer performance on R2 and MAE. Imputation and keeping the number of rows close to the original dataset (9k rows) proves to be improving the model. Especially on test dataset.
+    2.  Feature selection importance can be seen on the last table, but initially the selection was based on paper and intuition of the author (author lives and work in KL, Malaysia for 5 years). Feature such as `completion_year` and `nearby_railways` are important in improving the model.
+    3.  Last but not least is the outlier identification. The best practice for me is using jointplot to see not only the distribution of the data in 2-dimension, but also in the third dimension (the density) of the data.
+
+3.  Some insights after feature importance are the size plays a big role in determining the unit price, following size, the furniture availability apparently makes a big impact on the price. This gives an insight to owner of a unit to equip their unit with furniture to `fully_furnished` should they want to increase their unit market value.
+
+4.  Some of the feature that were believed to be quite important even before doing the modeling is `size_sqft`, `furnished` and `location`. All three is available within the 10-most features affecting the modeling. As a context, location in KLCC is like Pondok Indah in South Jakarta and location in Kiara is like BSD in South Tangerang, therefore it makes senses to see those locations increasing the price of a rent.
+
 ## Future works
 
-1.  One of the feature that author thinks is significant but not appearing on the 10-best important feature is nearby_railways. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author believes, the proximity to nearby railways line can be approximated using Manhanttan distance of railways line to each property unit.
+1.  One of the feature that author thinks is significant but not appearing on the 10-best important feature is `nearby_railways`. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author believes, the proximity to nearby railways line can be approximated using Manhanttan distance of railways line to each property unit.
