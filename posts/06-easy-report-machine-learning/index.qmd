@@ -3,7 +3,7 @@ title: ' Easy Report: Malaysia Property Pricing'
 description: |
   TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.
 title-block-banner: true
-date: '2023-02-10'
+date: '2023-02-12'
 categories:
   - project
   - data-science

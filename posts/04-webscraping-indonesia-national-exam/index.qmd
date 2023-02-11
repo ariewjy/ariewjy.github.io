@@ -1,8 +1,7 @@
 ---
 title: 'Webscraping National Exams of Indonesia '
 description: |
-  Extracting National Exams from each province in Indonesia from 2015-2019 to See If Education still decentralized in Java island and its surroundings.
-author: Aditya Arie Wijaya
+  National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?
 title-block-banner: true
 date: '2023-01-31'
 code-fold: show
@@ -11,26 +10,36 @@ categories:
   - webscraping
   - data-science
   - python
-draft: true
+draft: false
 jupyter: minids
 ---
 
-![Photo by <a href="https://unsplash.com/@isengrapher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ed Us</a> on <a href="https://unsplash.com/photos/td71Lq7uAhA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](./publications.jpeg)
+![Photo by <a href="https://unsplash.com/@isengrapher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ed Us</a> on <a href="https://unsplash.com/photos/td71Lq7uAhA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](./publications.jpeg){width="100%"}
 
 ## The Role of National Exam
-For the longest time, national exam, like many other countries in the world is used as one of the metric to measure how well our future would be (re: childrens). The concept is simple, each and every children in the country will be given a set of questions/ tasks, that has to be completed for a given time, on different subjects (likely to be Math, Language, Science). 
 
-![Indonesia Minister of Education](./Nadiem_Makarim.jpg){width=50%}
+For the longest time, national exam, like many other countries in the world is used as one of the metric to measure how well our future would be (re: children). The concept is simple, each and every children in the country will be given a set of questions/ tasks, that has to be completed for a given time, on different subjects (likely to be Math, Language, Science).
 
-In Indonesia, this was used to be the sole metric to say if one student passed the exam or not. This has been changed ever since the newly appointed education minister of Indonesia, [Nadiem Makarim](https://en.wikipedia.org/wiki/Nadiem_Makarim) (also the co-founder of SE Asia [Decacorn](https://www.bloomberg.com/news/articles/2019-04-06/indonesia-s-go-jek-joins-decacorn-ranks-with-10b-valuation)- [Gojek](https://www.gojek.com/en-id/), Now [GoTo](https://www.gotocompany.com/en)).
+![Indonesia Minister of Education](./Nadiem_Makarim.jpg){width="40%"}
 
-## Apakah kualitas pendidikan Indonesia tingkat SMP-SMA masih terpusat hanya di Jawa dan Sekitarnya?
+In Indonesia, this was used to be the sole metric to say if one student passed the exam or not. This has been changed ever since the newly appointed education minister of Indonesia, [Nadiem Makarim](https://en.wikipedia.org/wiki/Nadiem_Makarim) (also the co-founder of SE Asia [Decacorn](https://www.bloomberg.com/news/articles/2019-04-06/indonesia-s-go-jek-joins-decacorn-ranks-with-10b-valuation)- [Gojek](https://www.gojek.com/en-id/), Now [GoTo](https://www.gotocompany.com/en)). Nevertheless, it is interesting to see how this metric pan out over the course of 2015-2019, to see if the decentralized quality of education still persist in Java, Bali and its surrounding only. Leaving out Kalimantan, Sulawesi, Sumatra, NTT, and Papua.
+
+## Data Gathering
+
+### Webscraping using Pandas
+
+We're taking a look on the data from Ministry of Education (Kemendikbud), from 2019 on national exams as follows.
+
+For this use we will need to scrape the data from the website, but the catch is--we are using just pandas library!
 
 ```{python}
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 ```
+
+Enter pandas.read_html()
 
 ```{python}
 un_2019= \
@@ -39,21 +48,29 @@ un_2019= \
  [1][0:547]
 )
 
-un_2019
+un_2019.head()
 ```
+
+Let's see what features do we have, and which one do we really **care** about in this project.
 
 ```{python}
 un_2019.columns
 ```
 
+We will leave some columns and just using region information ('Nama Wilayah', 'Propinsi'), and national exams score ('UN SMP','UN SMA IPA', 'UN SMA IPS')
+
 ```{python}
 un_2019 = un_2019[['Nama Wilayah', 'Propinsi', 'UN SMP','UN SMA IPA', 'UN SMA IPS']]
-un_2019
+un_2019.head()
 ```
+
+Let's also check if the dtypes is already correct e.g. digit would be float64 or int64 dtype.
 
 ```{python}
 un_2019.info()
 ```
+
+Let's make some amendments on dtypes, to allow plotting.
 
 ```{python}
 un_2019 = \
@@ -62,27 +79,29 @@ un_2019.astype({
     'UN SMA IPA': float,
     'UN SMA IPS': float,
 })
-un_2019
+un_2019.dtypes
 ```
+
+Just me, but I dont like redundant information, so let's remove some of the words in the column.
 
 ```{python}
 un_2019 = un_2019.rename(columns={
     'Nama Wilayah': 'Wilayah'})
-un_2019
+un_2019.head()
 ```
 
-```{python}
-un_2019.nunique()
-```
+Similarly, let's remove 'Prov' from each data in 'Propinsi' column.
 
 ```{python}
 un_2019['Propinsi'] = \
 un_2019['Propinsi'].str.replace('Prov. ', '', regex=False)
+
+un_2019.head()
 ```
 
-```{python}
-un_2019
-```
+### Quick DataViz...
+
+Let's plot senior high school (SMA) data:
 
 ```{python}
 #making the barchart
@@ -107,7 +126,15 @@ plt.style.use('ggplot')
  ));
 ```
 
-### Buat Fungsi untuk Webscraping per tahun-nya
+So, from the look of it, 2019 seems to be the year of our capital city: D.K.I. Jakarta, followed by Yogyakarta, Jawa Tengah, Timur, Bali etc. Excluding Bangka Belitung, the big five is all from Java and Bali.
+
+Decentralized? From 2019- YES.
+
+But of course this won't do it justice, we need more data right?
+
+### Scrape More Data
+
+Let's all be human, not abusive towards our notebook, and create a function to scrape our data-change the dtypes-change the column name etc.
 
 ```{python}
 def webscrap(tahun):
@@ -120,14 +147,17 @@ def webscrap(tahun):
     return df
 ```
 
+Then let's scrap all years data from 2015-2019.
+
 ```{python}
 un_2015 = webscrap(2015)
 un_2016 = webscrap(2016)
 un_2017 = webscrap(2017)
 un_2018 = webscrap(2018)
 un_2019 = webscrap(2019)
-# un_2020 = webscrap(2020)
 ```
+
+Let's do quick sanity check:
 
 ```{python}
 un_2015.head()
@@ -137,27 +167,30 @@ un_2015.head()
 un_2019.head()
 ```
 
+Even better, let's combine all of the data into one big data:
+
 ```{python}
-#gabungkan setiap dataframe secara vertikal
-
+#merge data
 list_df = [un_2015, un_2016, un_2017, un_2018, un_2019]
-
 un_2015_2019 = pd.concat(list_df, axis='rows')
 
-un_2015_2019.info()
+#sanity check
+un_2015_2019.Tahun.value_counts()
 ```
 
-```{python}
-un_2015_2019.nunique()
-```
+Data looks good, but just to be safe, let's save it before we do anything stupid.
 
 ```{python}
-un_2015_2019.columns
+un_2015_2019.to_csv("un_2015_2019.csv", index=False)
 ```
+
+### More DataViz...
+
+Let's see which 10 regions have the highest mean national exams.
 
 ```{python}
 order_new = \
-(un_2015_2019
+(un_2019
  [['Propinsi', 'UN SMA IPA']]
  .groupby("Propinsi")
  .mean()
@@ -168,18 +201,10 @@ order_new = \
 order_new.head(10)
 ```
 
+Let's do some plotting for all years.
+
 ```{python}
-fig, axs = plt.subplots(figsize=(10,10))
-
-order_propinsi = \
-(un_2015_2019
- .query(" Tahun==2019 ")
- .groupby('Propinsi')
- .mean()
- .sort_values(by='UN SMA IPA', ascending=False)
- .reset_index()
-)
-
+fig, axs = plt.subplots(figsize=(10,12))
 
 (sns
  .barplot(
@@ -195,58 +220,30 @@ order_propinsi = \
 );
 ```
 
-```{python}
-(un_2015_2019
- .query("Propinsi == 'Kalimantan Timur'")
- .sort_values(by='UN SMA IPA', ascending=False, ignore_index=True)
- # [['Wilayah', 'UN SMA IPA']]
- .head(20)
+From the above figure, it looks like the Bali, D.I. Yogyakarta, similar to 2019 dataset is indeed appearing at the top-5.
 
-)
-```
+But, let's exclude year 2015 and 2016, as I think it is a bit an outlier in terms of value here.
 
 ```{python}
-(un_2015_2019
- .query("Propinsi == 'Kalimantan Timur'")
- # .groupby(['Propinsi', 'Tahun'])
- .agg('mean')
- .plot(
-     kind='barh',
-     color={'grey', 'green', 'orange'}
+fig, axs = plt.subplots(figsize=(10,12))
+
+(sns
+ .barplot(
+     data=un_2015_2019.query(" Tahun>2016 "), 
+     x='UN SMA IPA', 
+     y='Propinsi', 
+     hue='Tahun',
+     ax=axs, 
+     errorbar=('ci', False),
+     palette='viridis_r',
+     order=order_new['Propinsi']
  )
 );
 ```
 
-```{python}
-un_2018.drop(columns='Tahun').groupby(['Propinsi', 'UN SMP', 'UN SMA IPA', 'UN SMA IPS']).median().sort_values(by='UN SMA IPA', ascending=False).head()
-```
+Just by looking at it, the big-five are from Java and Bali. Not until we reach rank 6 and below we see Bangka Belitung, Sumatera, and Kalimantan. Region outside Java and Bali.
 
-```{python}
-# fig, axs = plt.subplots(figsize=(20,12))
-
-(sns.catplot(
-    kind='bar',
-    data=un_2015_2019.query(" Tahun > 2016 ").groupby(['Propinsi', 'Tahun']).mean().sort_values(by='UN SMA IPA', ascending=False).reset_index(),
-    x='UN SMA IPA',
-    y='Propinsi', 
-    hue='Tahun',
-    # col='Tahun',
-    # col_wrap=3,
-    palette='viridis_r',
-    height=12,
-    aspect=1,
-)
-);
-```
-
-```{python}
-(un_2015
- .groupby(['Propinsi'])['UN SMP']
- .mean()
- .nlargest(keep='first', n=1)
- .index[0]
-)
-```
+Now let's see if our thinking is right, by getting a top region on each national exams from junior to senior high schools.
 
 ```{python}
 def get_max_prop(df):
@@ -256,9 +253,7 @@ def get_max_prop(df):
     return [max_un_smp, max_un_sma_ipa, max_un_sma_ips]
 ```
 
-```{python}
-get_max_prop(un_2019)
-```
+Let's do a loop over years;
 
 ```{python}
 years = [un_2015, un_2016, un_2017, un_2018, un_2019]
@@ -266,22 +261,30 @@ for year in years:
     print(get_max_prop(year))
 ```
 
-```{python}
-akreditasi_2019 = pd.read_html('https://npd.kemdikbud.go.id/?appid=akreditasi&tahun=2020')[1][:548]
-akreditasi_2019.info()
-```
+From the above result, it was clear that excluding Sulawesi Tenggara, all of provinces here is coming from Java and Bali. Most notably D.I. Yogyakarta, D.K.I. Jakarta and Bali.
+
+## Let's Talk about Kalimantan Timur
+
+Why? Cause I was raised in Tenggarong, Kutai Kartanegara region, Kalimantan Timur Province. I spent my senior high school here, so I have my own thinking here.
+
+My theory is even if Kalimantan Timur was up there at rank 8, it was not from Tenggarong.
 
 ```{python}
-(akreditasi_2019
- .query(" Propinsi == 'Prov. D.K.I. Jakarta' ")
- [[
-     'Propinsi',
-     # 'SD (Tidak Terakreditasi)',
-     'SMP (A)', 'SMP (B)','SMP (C)','SMP (Tidak Terakreditasi)',
-     'SMA (A)', 'SMA (B)', 'SMA (C)', 'SMA (Tidak Terakreditasi)'
-  ]]
- 
- 
+(un_2015_2019.query("Propinsi == 'Kalimantan Timur'")
+ .sort_values(by='UN SMA IPA', ascending=False, ignore_index=True)
+ .head(10)
+
 )
 ```
 
+::: callout-note
+## Why Bontang and Balikpapan?
+
+Welp, no surprise there, I was right. My hometown (Kab. Kutai Kartanegara) did a good one in 2015, but that was it. The rest is Bontang, Balikpapan. Bontang, has a big industry from Pupuk Kaltim (PKT), and Balikpapan is a big Oil City with Airport, etc.
+:::
+
+## What do We Get?
+
+I think it was clear now that education still very much an exclusive trait, owned by province, and place where there is an industry like Pupuk Kaltim Bontang, and Oil companies in Balikpapan. Places where not so much happening like Tenggarong, is very much stay behind the rest of Kalimantan Timur, and further behind the rest of the big cities in Java and Bali.
+
+With the exclusion of National Exams as the only metric for student passing the bar, I wonder how could we as a nation measure the level of education on every province of Indonesia. For that, I wish my country the best - TIme will tell..I guess.
