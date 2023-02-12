@@ -188,6 +188,9 @@ def get_list_dict(n_page):
         list_dict.append(dict_unit)
         
     return list_dict
+
+#sanity check
+get_list_dict(1)[1]
 ```
 
 Extracting the values inside the dictionary for each attributes.
@@ -235,6 +238,9 @@ def get_values(list_dict):
         except StopIteration:
             values[key] = None
     return values
+
+#sanity check
+get_values(get_list_dict(1)[1])
 ```
 
 ```{python}
@@ -261,7 +267,13 @@ def get_df_final(n_page):
     return df
 ```
 
-Extract dataset from 250 pages. File is then saved into a csv, to be reloaded again.
+Of course we won't scrape 250 pages at first, let's extract 1 page only:
+```{python}
+#sanity check
+get_df_final(1).head(2).T
+```
+
+Finally, let's extract dataset from 250 pages. File is then saved into a csv, to be reloaded again.
 
 ```{python}
 # df_=get_df_final(250)
