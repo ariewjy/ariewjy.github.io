@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Aditya Arie Wijaya">
+<meta name="dcterms.date" content="2023-01-31">
+<meta name="description" content="National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?">
+
+<title>Geoscientist Who Codes - Webscraping National Exams of Indonesia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/logo_rounded.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.scss">
+<meta property="og:title" content="Geoscientist Who Codes - Webscraping National Exams of Indonesia">
+<meta property="og:description" content="National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?">
+<meta property="og:site-name" content="Geoscientist Who Codes">
+<meta name="twitter:title" content="Geoscientist Who Codes - Webscraping National Exams of Indonesia">
+<meta name="twitter:description" content="National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?">
+<meta name="twitter:image" content="ariewjy.github.io/img/profile.jpg">
+<meta name="twitter:creator" content="@Adtarie">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Geoscientist Who Codes</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Webscraping National Exams of Indonesia</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">Webscraping National Exams of Indonesia</h1>
+                  <div>
+        <div class="description">
+          <p>National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">project</div>
+                <div class="quarto-category">webscraping</div>
+                <div class="quarto-category">data-science</div>
+                <div class="quarto-category">python</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Aditya Arie Wijaya </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 31, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-role-of-national-exam" id="toc-the-role-of-national-exam" class="nav-link active" data-scroll-target="#the-role-of-national-exam">The Role of National Exam</a></li>
+  <li><a href="#data-gathering" id="toc-data-gathering" class="nav-link" data-scroll-target="#data-gathering">Data Gathering</a>
+  <ul class="collapse">
+  <li><a href="#webscraping-using-pandas" id="toc-webscraping-using-pandas" class="nav-link" data-scroll-target="#webscraping-using-pandas">Webscraping using Pandas</a></li>
+  <li><a href="#quick-dataviz" id="toc-quick-dataviz" class="nav-link" data-scroll-target="#quick-dataviz">Quick DataViz…</a></li>
+  <li><a href="#scrape-more-data" id="toc-scrape-more-data" class="nav-link" data-scroll-target="#scrape-more-data">Scrape More Data</a></li>
+  <li><a href="#more-dataviz" id="toc-more-dataviz" class="nav-link" data-scroll-target="#more-dataviz">More DataViz…</a></li>
+  </ul></li>
+  <li><a href="#lets-talk-about-kalimantan-timur" id="toc-lets-talk-about-kalimantan-timur" class="nav-link" data-scroll-target="#lets-talk-about-kalimantan-timur">Let’s Talk about Kalimantan Timur</a></li>
+  <li><a href="#what-do-we-get" id="toc-what-do-we-get" class="nav-link" data-scroll-target="#what-do-we-get">What do We Get?</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@isengrapher?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ed Us</a> on <a href="https://unsplash.com/photos/td71Lq7uAhA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption><p></p>
+<p><img src="./publications.jpeg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<section id="the-role-of-national-exam" class="level2">
+<h2 class="anchored" data-anchor-id="the-role-of-national-exam">The Role of National Exam</h2>
+<p>For the longest time, national exam, like many other countries in the world is used as one of the metric to measure how well our future would be (re: children). The concept is simple, each and every children in the country will be given a set of questions/ tasks, that has to be completed for a given time, on different subjects (likely to be Math, Language, Science).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption">Indonesia Minister of Education</figcaption><p></p>
+<p><img src="./Nadiem_Makarim.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+<p>In Indonesia, this was used to be the sole metric to say if one student passed the exam or not. This has been changed ever since the newly appointed education minister of Indonesia, <a href="https://en.wikipedia.org/wiki/Nadiem_Makarim">Nadiem Makarim</a> (also the co-founder of SE Asia <a href="https://www.bloomberg.com/news/articles/2019-04-06/indonesia-s-go-jek-joins-decacorn-ranks-with-10b-valuation">Decacorn</a>- <a href="https://www.gojek.com/en-id/">Gojek</a>, Now <a href="https://www.gotocompany.com/en">GoTo</a>). Nevertheless, it is interesting to see how this metric pan out over the course of 2015-2019, to see if the decentralized quality of education still persist in Java, Bali and its surrounding only. Leaving out Kalimantan, Sulawesi, Sumatra, NTT, and Papua.</p>
+</section>
+<section id="data-gathering" class="level2">
+<h2 class="anchored" data-anchor-id="data-gathering">Data Gathering</h2>
+<section id="webscraping-using-pandas" class="level3">
+<h3 class="anchored" data-anchor-id="webscraping-using-pandas">Webscraping using Pandas</h3>
+<p>We’re taking a look on the data from Ministry of Education (Kemendikbud), from 2019 on national exams as follows.</p>
+<p>For this use we will need to scrape the data from the website, but the catch is–we are using just pandas library!</p>
+<div class="cell" data-execution_count="1">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Enter pandas.read_html()</p>
+<div class="cell" data-execution_count="2">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>un_2019<span class="op">=</span> <span class="op">\</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>(pd</span>
+<span id="cb2-3"><a href="#cb2-3"></a> .read_html(<span class="st">'https://npd.kemdikbud.go.id/?appid=hasilun&amp;tahun=2019'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a> [<span class="dv">1</span>][<span class="dv">0</span>:<span class="dv">547</span>]</span>
+<span id="cb2-5"><a href="#cb2-5"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>No.</th>
+      <th>Kode Wilayah</th>
+      <th>Nama Wilayah</th>
+      <th>Propinsi</th>
+      <th>Persentase Anggaran Pendidikan tanpa Transfer Daerah (%)</th>
+      <th>UN SMP</th>
+      <th>UN SMA IPA</th>
+      <th>UN SMA IPS</th>
+      <th>UN SMA BAHASA</th>
+      <th>UN SMK</th>
+      <th>IIUN SMP</th>
+      <th>IIUN SMA IPA</th>
+      <th>IIUN SMA IPS</th>
+      <th>IIUN SMA BAHASA</th>
+      <th>IIUN SMK</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>010000</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>18.96</td>
+      <td>62.17</td>
+      <td>67.99</td>
+      <td>63.75</td>
+      <td>0</td>
+      <td>51.41</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>010100</td>
+      <td>Kab. Kepulauan Seribu</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>0.00</td>
+      <td>45.26</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>016000</td>
+      <td>Kota Jakarta Pusat</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>0.00</td>
+      <td>60.97</td>
+      <td>69.43</td>
+      <td>64.01</td>
+      <td>0</td>
+      <td>55.13</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>016100</td>
+      <td>Kota Jakarta Utara</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>0.00</td>
+      <td>60.09</td>
+      <td>66.59</td>
+      <td>61.53</td>
+      <td>0</td>
+      <td>48.85</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>016200</td>
+      <td>Kota Jakarta Barat</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>0.00</td>
+      <td>60.42</td>
+      <td>69.31</td>
+      <td>63.85</td>
+      <td>0</td>
+      <td>49.65</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>0</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Let’s see what features do we have, and which one do we really <strong>care</strong> about in this project.</p>
+<div class="cell" data-execution_count="3">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>un_2019.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>Index(['No.', 'Kode Wilayah', 'Nama Wilayah', 'Propinsi',
+       'Persentase Anggaran Pendidikan tanpa Transfer Daerah (%)', 'UN SMP',
+       'UN SMA IPA', 'UN SMA IPS', 'UN SMA BAHASA', 'UN SMK', 'IIUN SMP',
+       'IIUN SMA IPA', 'IIUN SMA IPS', 'IIUN SMA BAHASA', 'IIUN SMK'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<p>We will leave some columns and just using region information (‘Nama Wilayah’, ‘Propinsi’), and national exams score (‘UN SMP’,‘UN SMA IPA’, ‘UN SMA IPS’)</p>
+<div class="cell" data-execution_count="4">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>un_2019 <span class="op">=</span> un_2019[[<span class="st">'Nama Wilayah'</span>, <span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>,<span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]]</span>
+<span id="cb5-2"><a href="#cb5-2"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nama Wilayah</th>
+      <th>Propinsi</th>
+      <th>UN SMP</th>
+      <th>UN SMA IPA</th>
+      <th>UN SMA IPS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>62.17</td>
+      <td>67.99</td>
+      <td>63.75</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Kab. Kepulauan Seribu</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>45.26</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kota Jakarta Pusat</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>60.97</td>
+      <td>69.43</td>
+      <td>64.01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kota Jakarta Utara</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>60.09</td>
+      <td>66.59</td>
+      <td>61.53</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kota Jakarta Barat</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>60.42</td>
+      <td>69.31</td>
+      <td>63.85</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Let’s also check if the dtypes is already correct e.g.&nbsp;digit would be float64 or int64 dtype.</p>
+<div class="cell" data-execution_count="5">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>un_2019.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 547 entries, 0 to 546
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   Nama Wilayah  547 non-null    object
+ 1   Propinsi      547 non-null    object
+ 2   UN SMP        547 non-null    object
+ 3   UN SMA IPA    547 non-null    object
+ 4   UN SMA IPS    547 non-null    object
+dtypes: object(5)
+memory usage: 21.5+ KB</code></pre>
+</div>
+</div>
+<p>Let’s make some amendments on dtypes, to allow plotting.</p>
+<div class="cell" data-execution_count="6">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>un_2019 <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>un_2019.astype({</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="st">'UN SMP'</span>: <span class="bu">float</span>,</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="st">'UN SMA IPA'</span>: <span class="bu">float</span>,</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="st">'UN SMA IPS'</span>: <span class="bu">float</span>,</span>
+<span id="cb8-6"><a href="#cb8-6"></a>})</span>
+<span id="cb8-7"><a href="#cb8-7"></a>un_2019.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>Nama Wilayah     object
+Propinsi         object
+UN SMP          float64
+UN SMA IPA      float64
+UN SMA IPS      float64
+dtype: object</code></pre>
+</div>
+</div>
+<p>Just me, but I dont like redundant information, so let’s remove some of the words in the column.</p>
+<div class="cell" data-execution_count="7">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>un_2019 <span class="op">=</span> un_2019.rename(columns<span class="op">=</span>{</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="st">'Nama Wilayah'</span>: <span class="st">'Wilayah'</span>})</span>
+<span id="cb10-3"><a href="#cb10-3"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Wilayah</th>
+      <th>Propinsi</th>
+      <th>UN SMP</th>
+      <th>UN SMA IPA</th>
+      <th>UN SMA IPS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>62.17</td>
+      <td>67.99</td>
+      <td>63.75</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Kab. Kepulauan Seribu</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>45.26</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kota Jakarta Pusat</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>60.97</td>
+      <td>69.43</td>
+      <td>64.01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kota Jakarta Utara</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>60.09</td>
+      <td>66.59</td>
+      <td>61.53</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kota Jakarta Barat</td>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>60.42</td>
+      <td>69.31</td>
+      <td>63.85</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Similarly, let’s remove ‘Prov’ from each data in ‘Propinsi’ column.</p>
+<div class="cell" data-execution_count="8">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>un_2019[<span class="st">'Propinsi'</span>] <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>un_2019[<span class="st">'Propinsi'</span>].<span class="bu">str</span>.replace(<span class="st">'Prov. '</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="8">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Wilayah</th>
+      <th>Propinsi</th>
+      <th>UN SMP</th>
+      <th>UN SMA IPA</th>
+      <th>UN SMA IPS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>D.K.I. Jakarta</td>
+      <td>62.17</td>
+      <td>67.99</td>
+      <td>63.75</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Kab. Kepulauan Seribu</td>
+      <td>D.K.I. Jakarta</td>
+      <td>45.26</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kota Jakarta Pusat</td>
+      <td>D.K.I. Jakarta</td>
+      <td>60.97</td>
+      <td>69.43</td>
+      <td>64.01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kota Jakarta Utara</td>
+      <td>D.K.I. Jakarta</td>
+      <td>60.09</td>
+      <td>66.59</td>
+      <td>61.53</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kota Jakarta Barat</td>
+      <td>D.K.I. Jakarta</td>
+      <td>60.42</td>
+      <td>69.31</td>
+      <td>63.85</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="quick-dataviz" class="level3">
+<h3 class="anchored" data-anchor-id="quick-dataviz">Quick DataViz…</h3>
+<p>Let’s plot senior high school (SMA) data:</p>
+<div class="cell" data-execution_count="9">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#making the barchart</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a>(un_2019.groupby(<span class="st">'Propinsi'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6"></a> [[</span>
+<span id="cb12-7"><a href="#cb12-7"></a>     <span class="co"># 'UN SMP',</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>     <span class="st">'UN SMA IPA'</span>, </span>
+<span id="cb12-9"><a href="#cb12-9"></a>     <span class="st">'UN SMA IPS'</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a> ]]</span>
+<span id="cb12-11"><a href="#cb12-11"></a> .median()</span>
+<span id="cb12-12"><a href="#cb12-12"></a> .sort_values(</span>
+<span id="cb12-13"><a href="#cb12-13"></a>     by<span class="op">=</span><span class="st">'UN SMA IPA'</span>,</span>
+<span id="cb12-14"><a href="#cb12-14"></a>     ascending<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb12-15"><a href="#cb12-15"></a> )</span>
+<span id="cb12-16"><a href="#cb12-16"></a> .plot(</span>
+<span id="cb12-17"><a href="#cb12-17"></a>     kind<span class="op">=</span><span class="st">'barh'</span>,</span>
+<span id="cb12-18"><a href="#cb12-18"></a>     <span class="co"># ax=axs[0],</span></span>
+<span id="cb12-19"><a href="#cb12-19"></a>     figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">10</span>),</span>
+<span id="cb12-20"><a href="#cb12-20"></a> ))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="637" height="781"></p>
+</div>
+</div>
+<p>So, from the look of it, 2019 seems to be the year of our capital city: D.K.I. Jakarta, followed by Yogyakarta, Jawa Tengah, Timur, Bali etc. Excluding Bangka Belitung, the big five is all from Java and Bali.</p>
+<p>Decentralized? From 2019- YES.</p>
+<p>But of course this won’t do it justice, we need more data right?</p>
+</section>
+<section id="scrape-more-data" class="level3">
+<h3 class="anchored" data-anchor-id="scrape-more-data">Scrape More Data</h3>
+<p>Let’s all be human, not abusive towards our notebook, and create a function to scrape our data-change the dtypes-change the column name etc.</p>
+<div class="cell" data-execution_count="10">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">def</span> webscrap(tahun):</span>
+<span id="cb13-2"><a href="#cb13-2"></a>    df <span class="op">=</span> pd.read_html(<span class="ss">f'https://npd.kemdikbud.go.id/?appid=hasilun&amp;tahun=</span><span class="sc">{</span>tahun<span class="sc">}</span><span class="ss">'</span>)[<span class="dv">1</span>][<span class="dv">0</span>:<span class="dv">547</span>] <span class="co">#ambil data dari web</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>    df <span class="op">=</span> df[[<span class="st">'Nama Wilayah'</span>, <span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>,<span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]] <span class="co">#extract kolom</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>    df <span class="op">=</span> df.astype({<span class="st">'UN SMP'</span>: <span class="bu">float</span>, <span class="st">'UN SMA IPA'</span>: <span class="bu">float</span>, <span class="st">'UN SMA IPS'</span>: <span class="bu">float</span>}) <span class="co">#ubah dtypes</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>    df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'Nama Wilayah'</span>: <span class="st">'Wilayah'</span>}) <span class="co">#rename kolom 'Nama Wilayah' jadi 'Wilayah'</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>    df[<span class="st">'Propinsi'</span>] <span class="op">=</span> df[<span class="st">'Propinsi'</span>].<span class="bu">str</span>.replace(<span class="st">'Prov. '</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">False</span>) <span class="co">#menghapus 'Prov.' </span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>    df[<span class="st">'Tahun'</span>] <span class="op">=</span> tahun <span class="co">#menambahkan kolom tahun</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>    <span class="cf">return</span> df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Then let’s scrap all years data from 2015-2019.</p>
+<div class="cell" data-execution_count="11">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>un_2015 <span class="op">=</span> webscrap(<span class="dv">2015</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>un_2016 <span class="op">=</span> webscrap(<span class="dv">2016</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a>un_2017 <span class="op">=</span> webscrap(<span class="dv">2017</span>)</span>
+<span id="cb14-4"><a href="#cb14-4"></a>un_2018 <span class="op">=</span> webscrap(<span class="dv">2018</span>)</span>
+<span id="cb14-5"><a href="#cb14-5"></a>un_2019 <span class="op">=</span> webscrap(<span class="dv">2019</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Let’s do quick sanity check:</p>
+<div class="cell" data-execution_count="12">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>un_2015.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="12">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Wilayah</th>
+      <th>Propinsi</th>
+      <th>UN SMP</th>
+      <th>UN SMA IPA</th>
+      <th>UN SMA IPS</th>
+      <th>Tahun</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>D.K.I. Jakarta</td>
+      <td>73.96</td>
+      <td>72.99</td>
+      <td>66.05</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Kab. Kepulauan Seribu</td>
+      <td>D.K.I. Jakarta</td>
+      <td>62.80</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kota Jakarta Pusat</td>
+      <td>D.K.I. Jakarta</td>
+      <td>74.02</td>
+      <td>72.82</td>
+      <td>63.99</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kota Jakarta Utara</td>
+      <td>D.K.I. Jakarta</td>
+      <td>71.22</td>
+      <td>69.54</td>
+      <td>63.31</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kota Jakarta Barat</td>
+      <td>D.K.I. Jakarta</td>
+      <td>71.86</td>
+      <td>71.79</td>
+      <td>63.71</td>
+      <td>2015</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="13">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Wilayah</th>
+      <th>Propinsi</th>
+      <th>UN SMP</th>
+      <th>UN SMA IPA</th>
+      <th>UN SMA IPS</th>
+      <th>Tahun</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Prov. D.K.I. Jakarta</td>
+      <td>D.K.I. Jakarta</td>
+      <td>62.17</td>
+      <td>67.99</td>
+      <td>63.75</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Kab. Kepulauan Seribu</td>
+      <td>D.K.I. Jakarta</td>
+      <td>45.26</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kota Jakarta Pusat</td>
+      <td>D.K.I. Jakarta</td>
+      <td>60.97</td>
+      <td>69.43</td>
+      <td>64.01</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kota Jakarta Utara</td>
+      <td>D.K.I. Jakarta</td>
+      <td>60.09</td>
+      <td>66.59</td>
+      <td>61.53</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kota Jakarta Barat</td>
+      <td>D.K.I. Jakarta</td>
+      <td>60.42</td>
+      <td>69.31</td>
+      <td>63.85</td>
+      <td>2019</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Even better, let’s combine all of the data into one big data:</p>
+<div class="cell" data-execution_count="14">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">#merge data</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>list_df <span class="op">=</span> [un_2015, un_2016, un_2017, un_2018, un_2019]</span>
+<span id="cb17-3"><a href="#cb17-3"></a>un_2015_2019 <span class="op">=</span> pd.concat(list_df, axis<span class="op">=</span><span class="st">'rows'</span>)</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="co">#sanity check</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>un_2015_2019.Tahun.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>2015    547
+2016    547
+2017    547
+2018    547
+2019    547
+Name: Tahun, dtype: int64</code></pre>
+</div>
+</div>
+<p>Data looks good, but just to be safe, let’s save it before we do anything stupid.</p>
+<div class="cell" data-execution_count="15">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>un_2015_2019.to_csv(<span class="st">"un_2015_2019.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="more-dataviz" class="level3">
+<h3 class="anchored" data-anchor-id="more-dataviz">More DataViz…</h3>
+<p>Let’s see which 10 regions have the highest mean national exams.</p>
+<div class="cell" data-execution_count="16">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>order_new <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>(un_2019</span>
+<span id="cb20-3"><a href="#cb20-3"></a> [[<span class="st">'Propinsi'</span>, <span class="st">'UN SMA IPA'</span>]]</span>
+<span id="cb20-4"><a href="#cb20-4"></a> .groupby(<span class="st">"Propinsi"</span>)</span>
+<span id="cb20-5"><a href="#cb20-5"></a> .mean()</span>
+<span id="cb20-6"><a href="#cb20-6"></a> .sort_values(by<span class="op">=</span><span class="st">'UN SMA IPA'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb20-7"><a href="#cb20-7"></a> .reset_index()</span>
+<span id="cb20-8"><a href="#cb20-8"></a>)</span>
+<span id="cb20-9"><a href="#cb20-9"></a></span>
+<span id="cb20-10"><a href="#cb20-10"></a>order_new.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Propinsi</th>
+      <th>UN SMA IPA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>D.I. Yogyakarta</td>
+      <td>65.650000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jawa Tengah</td>
+      <td>61.510000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>D.K.I. Jakarta</td>
+      <td>58.410000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jawa Timur</td>
+      <td>57.377949</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bali</td>
+      <td>55.901000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Bangka Belitung</td>
+      <td>55.407500</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Sumatera Barat</td>
+      <td>54.978500</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Kalimantan Timur</td>
+      <td>54.211818</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Jawa Barat</td>
+      <td>53.813929</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Banten</td>
+      <td>53.695556</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Let’s do some plotting for all years.</p>
+<div class="cell" data-execution_count="17">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">12</span>))</span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a>(sns</span>
+<span id="cb21-4"><a href="#cb21-4"></a> .barplot(</span>
+<span id="cb21-5"><a href="#cb21-5"></a>     data<span class="op">=</span>un_2015_2019.query(<span class="st">" Tahun&gt;2014 "</span>), </span>
+<span id="cb21-6"><a href="#cb21-6"></a>     x<span class="op">=</span><span class="st">'UN SMA IPA'</span>, </span>
+<span id="cb21-7"><a href="#cb21-7"></a>     y<span class="op">=</span><span class="st">'Propinsi'</span>, </span>
+<span id="cb21-8"><a href="#cb21-8"></a>     hue<span class="op">=</span><span class="st">'Tahun'</span>,</span>
+<span id="cb21-9"><a href="#cb21-9"></a>     ax<span class="op">=</span>axs, </span>
+<span id="cb21-10"><a href="#cb21-10"></a>     errorbar<span class="op">=</span>(<span class="st">'ci'</span>, <span class="va">False</span>),</span>
+<span id="cb21-11"><a href="#cb21-11"></a>     palette<span class="op">=</span><span class="st">'viridis_r'</span>,</span>
+<span id="cb21-12"><a href="#cb21-12"></a>     order<span class="op">=</span>order_new[<span class="st">'Propinsi'</span>]</span>
+<span id="cb21-13"><a href="#cb21-13"></a> )</span>
+<span id="cb21-14"><a href="#cb21-14"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-18-output-1.png" width="935" height="949"></p>
+</div>
+</div>
+<p>From the above figure, it looks like the Bali, D.I. Yogyakarta, similar to 2019 dataset is indeed appearing at the top-5.</p>
+<p>But, let’s exclude year 2015 and 2016, as I think it is a bit an outlier in terms of value here.</p>
+<div class="cell" data-execution_count="18">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">12</span>))</span>
+<span id="cb22-2"><a href="#cb22-2"></a></span>
+<span id="cb22-3"><a href="#cb22-3"></a>(sns</span>
+<span id="cb22-4"><a href="#cb22-4"></a> .barplot(</span>
+<span id="cb22-5"><a href="#cb22-5"></a>     data<span class="op">=</span>un_2015_2019.query(<span class="st">" Tahun&gt;2016 "</span>), </span>
+<span id="cb22-6"><a href="#cb22-6"></a>     x<span class="op">=</span><span class="st">'UN SMA IPA'</span>, </span>
+<span id="cb22-7"><a href="#cb22-7"></a>     y<span class="op">=</span><span class="st">'Propinsi'</span>, </span>
+<span id="cb22-8"><a href="#cb22-8"></a>     hue<span class="op">=</span><span class="st">'Tahun'</span>,</span>
+<span id="cb22-9"><a href="#cb22-9"></a>     ax<span class="op">=</span>axs, </span>
+<span id="cb22-10"><a href="#cb22-10"></a>     errorbar<span class="op">=</span>(<span class="st">'ci'</span>, <span class="va">False</span>),</span>
+<span id="cb22-11"><a href="#cb22-11"></a>     palette<span class="op">=</span><span class="st">'viridis_r'</span>,</span>
+<span id="cb22-12"><a href="#cb22-12"></a>     order<span class="op">=</span>order_new[<span class="st">'Propinsi'</span>]</span>
+<span id="cb22-13"><a href="#cb22-13"></a> )</span>
+<span id="cb22-14"><a href="#cb22-14"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-19-output-1.png" width="935" height="949"></p>
+</div>
+</div>
+<p>Just by looking at it, the big-five are from Java and Bali. Not until we reach rank 6 and below we see Bangka Belitung, Sumatera, and Kalimantan. Region outside Java and Bali.</p>
+<p>Now let’s see if our thinking is right, by getting a top region on each national exams from junior to senior high schools.</p>
+<div class="cell" data-execution_count="19">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">def</span> get_max_prop(df):</span>
+<span id="cb23-2"><a href="#cb23-2"></a>    max_un_smp <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMP'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
+<span id="cb23-3"><a href="#cb23-3"></a>    max_un_sma_ipa <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMA IPA'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
+<span id="cb23-4"><a href="#cb23-4"></a>    max_un_sma_ips <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMA IPS'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="cf">return</span> [max_un_smp, max_un_sma_ipa, max_un_sma_ips]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Let’s do a loop over years;</p>
+<div class="cell" data-execution_count="20">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>years <span class="op">=</span> [un_2015, un_2016, un_2017, un_2018, un_2019]</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="cf">for</span> year <span class="kw">in</span> years:</span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="bu">print</span>(get_max_prop(year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>['D.K.I. Jakarta', 'Bali', 'Bali']
+['D.I. Yogyakarta', 'Bali', 'Sumatera Utara']
+['D.I. Yogyakarta', 'Sulawesi Tenggara', 'D.I. Yogyakarta']
+['D.I. Yogyakarta', 'D.I. Yogyakarta', 'D.I. Yogyakarta']
+['D.I. Yogyakarta', 'D.I. Yogyakarta', 'D.I. Yogyakarta']</code></pre>
+</div>
+</div>
+<p>From the above result, it was clear that excluding Sulawesi Tenggara, all of provinces here is coming from Java and Bali. Most notably D.I. Yogyakarta, D.K.I. Jakarta and Bali.</p>
+</section>
+</section>
+<section id="lets-talk-about-kalimantan-timur" class="level2">
+<h2 class="anchored" data-anchor-id="lets-talk-about-kalimantan-timur">Let’s Talk about Kalimantan Timur</h2>
+<p>Why? Cause I was raised in Tenggarong, Kutai Kartanegara region, Kalimantan Timur Province. I spent my senior high school here, so I have my own thinking here.</p>
+<p>My theory is even if Kalimantan Timur was up there at rank 8, it was not from Tenggarong.</p>
+<div class="cell" data-execution_count="21">
+<details open="">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>(un_2015_2019.query(<span class="st">"Propinsi == 'Kalimantan Timur'"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2"></a> .sort_values(by<span class="op">=</span><span class="st">'UN SMA IPA'</span>, ascending<span class="op">=</span><span class="va">False</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a> .head(<span class="dv">10</span>)</span>
+<span id="cb26-4"><a href="#cb26-4"></a></span>
+<span id="cb26-5"><a href="#cb26-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="21">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Wilayah</th>
+      <th>Propinsi</th>
+      <th>UN SMP</th>
+      <th>UN SMA IPA</th>
+      <th>UN SMA IPS</th>
+      <th>Tahun</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kab. Kutai Barat</td>
+      <td>Kalimantan Timur</td>
+      <td>67.48</td>
+      <td>67.03</td>
+      <td>66.30</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Kota Bontang</td>
+      <td>Kalimantan Timur</td>
+      <td>61.46</td>
+      <td>66.26</td>
+      <td>58.32</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kota Bontang</td>
+      <td>Kalimantan Timur</td>
+      <td>57.47</td>
+      <td>63.93</td>
+      <td>61.97</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kota Bontang</td>
+      <td>Kalimantan Timur</td>
+      <td>58.06</td>
+      <td>63.40</td>
+      <td>58.75</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kab. Kutai Kartanegara</td>
+      <td>Kalimantan Timur</td>
+      <td>55.74</td>
+      <td>62.27</td>
+      <td>61.03</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Kota Balikpapan</td>
+      <td>Kalimantan Timur</td>
+      <td>59.49</td>
+      <td>61.71</td>
+      <td>53.79</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Kota Balikpapan</td>
+      <td>Kalimantan Timur</td>
+      <td>57.87</td>
+      <td>61.30</td>
+      <td>51.25</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Kota Bontang</td>
+      <td>Kalimantan Timur</td>
+      <td>60.51</td>
+      <td>61.16</td>
+      <td>56.19</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Kota Balikpapan</td>
+      <td>Kalimantan Timur</td>
+      <td>55.50</td>
+      <td>60.94</td>
+      <td>53.81</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Kota Balikpapan</td>
+      <td>Kalimantan Timur</td>
+      <td>56.65</td>
+      <td>60.51</td>
+      <td>51.45</td>
+      <td>2018</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Why Bontang and Balikpapan?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Welp, no surprise there, I was right. My hometown (Kab. Kutai Kartanegara) did a good one in 2015, but that was it. The rest is Bontang, Balikpapan. Bontang, has a big industry from Pupuk Kaltim (PKT), and Balikpapan is a big Oil City with Airport, etc.</p>
+</div>
+</div>
+</section>
+<section id="what-do-we-get" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-we-get">What do We Get?</h2>
+<p>I think it was clear now that education still very much an exclusive trait, owned by province, and place where there is an industry like Pupuk Kaltim Bontang, and Oil companies in Balikpapan. Places where not so much happening like Tenggarong, is very much stay behind the rest of Kalimantan Timur, and further behind the rest of the big cities in Java and Bali.</p>
+<p>With the exclusion of National Exams as the only metric for student passing the bar, I wonder how could we as a nation measure the level of education on every province of Indonesia. For that, I wish my country the best - TIme will tell..I guess.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ariewijaya2023,
+  author = {Aditya Arie Wijaya},
+  title = {Webscraping {National} {Exams} of {Indonesia}},
+  date = {2023-01-31},
+  url = {ariewjy.github.io/posts/004-webscraping-indonesia-national-exam},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ariewijaya2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Aditya Arie Wijaya. 2023. <span>“Webscraping National Exams of Indonesia
+.”</span> January 31, 2023. <a href="https://ariewjy.github.io/posts/004-webscraping-indonesia-national-exam">ariewjy.github.io/posts/004-webscraping-indonesia-national-exam</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.quarto.org">Built w/ Quarto</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">License</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
