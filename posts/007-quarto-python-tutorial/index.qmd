@@ -1,0 +1,32 @@
+---
+title: 'Personal Website using Jupyter Notebook + Quarto'
+description: |
+  Tutorial on creating a personal website using just a jupyter notebook and quarto.
+title-block-banner: true
+date: '2023-02-20'
+categories:
+  - tutorial
+  - quarto
+  - python
+  - vscode
+code-fold: show
+draft: false
+citation-location: margin
+jupyter: minids
+---
+
+## Introduction
+
+Quarto to me is one of the best thing ever from Rstudioconf 2022 last year, POSIT (previously Rstudio) marketed it as an open source tool to create documents, presentation, books, website easy and inclusive for python users. This is huge, cause for the longest time, there is not an easy way to create website out of a notebook, nbdev might be one of those people to facilitate this, but not at the support and scale of which R-people get (Xaringan, Blogdown for Hugo, or Distill for Rmarkdown, etc).
+
+
+## Why Creating Personal Website
+
+A personal website is a great way to showcase our project to the world. Sure there is a platform like medium that you can use, but there are couple things I think it fall shorts on:
+
+```{python}
+#importing libraries
+import pandas as pd
+
+pd.read_csv('https://www.kaggle.com/datasets/ariewijaya/rent-pricing-kuala-lumpur-malaysi?select=mudah-apartment-clean.csv')
+```

@@ -1,0 +1,11 @@
+{
+  "hash": "e34b06de9aed38724e63c127f7f098f3",
+  "result": {
+    "markdown": "---\ntitle: Personal Website using Jupyter Notebook + Quarto\ndescription: |\n  Tutorial on creating a personal website using just a jupyter notebook and quarto.\ntitle-block-banner: true\ndate: '2023-02-20'\ncategories:\n  - tutorial\n  - quarto\n  - data-science\n  - python\ncode-fold: show\ndraft: true\ncitation-location: margin\nbibliography: references.bib\n---\n\n## Why Creating Personal Website\nPersonal website is a great way to showcase our project to the world. Sure there is a platform like medium that you can use, but there are couple things I think it fall shorts on:\n\n1. \n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

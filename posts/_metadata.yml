@@ -16,6 +16,7 @@ toc-location: left
 
 # Default knitr options
 execute:
+  # cache: true
   echo: true
   message: true
   warning: true
