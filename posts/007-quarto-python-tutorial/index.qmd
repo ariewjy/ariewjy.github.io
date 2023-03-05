@@ -10,7 +10,7 @@ categories:
   - python
   - vscode
 code-fold: show
-draft: false
+draft: true
 citation-location: margin
 jupyter: minids
 ---
