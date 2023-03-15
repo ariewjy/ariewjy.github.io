@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-description: "personal thoughts, TIL, & whatnot"
+description: "thoughts, TIL, & whatnot"
 listing:
   fields: [image, title, description, date, reading-time, categories]
   contents: posts

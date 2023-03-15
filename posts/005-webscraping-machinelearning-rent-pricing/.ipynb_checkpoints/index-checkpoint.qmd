@@ -1,0 +1,1372 @@
+---
+title: ' Malaysia Property Pricing - Webscraping & Machine Learning Model'
+description: |
+  Full details on creating property dataset using webscraping, and building machine learning model to predict the rent price
+title-block-banner: true
+date: '2023-02-10'
+categories:
+  - project
+  - data-science
+  - python
+  - webscraping
+code-fold: show
+draft: false
+citation-location: document
+bibliography: references.bib
+jupyter: minids
+---
+
+## Machine Learning Project
+
+Pacmann Batch 8 Capstone by Aditya Arie Wijaya (aditya-66kK)
+
+### Introduction
+
+This is a machine learning project to predict unit/property monthly rent price in Kuala Lumpur region, Malaysia. The project uses a dataset from an online ads listing for property [mudah.my](https://www.mudah.my/). This project outlines the process of web-scraping/ data gathering, data cleaning-wrangling, and machine learning modeling.
+
+This project aims to answers question about how much a unit monthly rent would be if given information such as location, number of bedrooms, parking, furnished, etc? This would help potential tenant and also the owner to get the best price of their rental unit, comparable to the market value.
+
+Some previous work about house pricing was listed below, however most of them are targeting a dataset of house pricing or an Airbnb pricing. There are difference such as in Airbnb, the booking rarely took more than 2 weeks, let alone a year. Therefore the pricing may be different. Additionally, in Airbnb, there is text feature coming from the review given by the tenant and the owner.The better the review, the higher the rent prices -- which was not available in this current project dataset.
+
+Previous work by [@madhuri2019], [@xu2022], [@zhao2022] highlight the importance feature selection, and the choice of machine learning model. Based on the previous works, the most consistently performed machine learning model are Random Forest and Gradient boosting, and the MAE and R2 score usually used in evaluating the performance of the model. Although the above work are all not about apartment rent pricing, similar method can be applied to this project.
+
+### Data Gathering
+
+The data will use a scraped data from the website mentioned before, focusing on property-to-rent surrounding Kuala Lumpur, Malaysia. ![Website](mudah_my.png)
+
+```{python}
+#importing libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+pd.set_option('max_colwidth', 200)
+from bs4 import BeautifulSoup as bs
+import requests
+import re
+import time
+import datetime
+import smtplib
+import json
+from tqdm.notebook import tqdm, trange
+import time    # to be used in loop iterations
+
+!jupyter nbextension enable --py widgetsnbextension #enabling progress bar
+```
+
+#### Web-Scraping Process
+
+The process started out by gathering data from the website. We are using python library for web-scraping: BeautifulSoup as depicted below. 
+The first process is generating a list of webpage address for a given page number.
+
+```{python}
+#generate list address of n_page
+def page_number(start, end):
+    """
+    Description:
+        Function to generate a list of webpage address for a given page number
+
+    Parameters:
+        start (int) : starting page number
+        end (int)   : ending page number
+    Returns:
+        a list of listing web address 
+    
+    """
+    
+    page_url = 'https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?o='
+    list_page = []
+    for i in range(start,end+1):
+        list_page.append(page_url+str(i))
+    return list_page
+page_number(2,4)
+```
+
+Then generate a list of ads listing on a single page.
+
+```{python}
+#setting up list of page from 
+def get_list_html(page_url):
+    """
+    Description:
+        Function to get every listing ads in a given url (page_url)
+
+    Parameters:
+        page_url (str): website url
+        
+    Returns:
+        a list of listing ads
+    
+    """
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"}
+    page = requests.get(url=page_url, headers=headers)
+    soup = bs(page.text, "html.parser")
+
+    script_tag = soup.find('script', type='application/ld+json')
+    data = json.loads(script_tag.text)
+    dict_query = data[2]['itemListElement']
+
+    n_query = data[2]['numberOfItems']
+    list_html = []
+
+    for i in range(n_query):
+        link = data[2]['itemListElement'][i]['item']['url']
+        list_html.append(link)
+        
+    return list_html
+
+
+#getting listing property from the 1st-5th in the list
+get_list_html('https://www.mudah.my/neighbouring-kuala-lumpur/apartment-for-rent?o=2')[0:5]
+```
+
+Combining the previous two functions, generate a list of url for all pages.
+
+```{python}
+#generate listing property from each page of n_page
+def get_list_url(n_page):
+    """
+    Description:
+        Function to get every listing ads in every page (n_page)
+
+    Parameters:
+        n_page (int): number of page
+        
+    Returns:
+        a list of listing ads
+    
+    """
+    list_html=[]
+    for i in tqdm(range(n_page)):
+        list_html.extend(get_list_html(page_number(1, n_page)[i]))
+    return list_html
+
+get_list_url(2)[:10]
+```
+
+Then extract the attributes inside the listing ads in a form of nested dictionary.
+
+```{python}
+#extract data from url
+def get_list_dict(n_page):
+    """
+    Description:
+        Function to get dataset (atribut of units) in a form of dictionary. 
+
+    Parameters:
+        n_page (int): number of page
+        
+    Returns:
+        a dictionaries of attributes inside a list
+    
+    """
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"}
+    list_html = get_list_url(n_page)
+    list_dict = []
+    for url in tqdm(list_html):
+        try:
+            page = requests.get(url=url, headers=headers)
+            soup1 = bs(page.text, "html.parser")
+            soup2 = bs(soup1.prettify(), 'html.parser')
+
+            id_html = re.search(r'(\d+).htm', url).group(1)
+            title = soup2.find(itemprop='name').text.strip()
+
+            script_tag = soup2.find("script", id="__NEXT_DATA__")
+            script_content = script_tag.text
+            data = json.loads(script_content)
+            props = data.get("props", {})
+            id_listing = re.search(r'-(\d+)\.htm', url).group(1)
+
+            dict_id = [{'realValue': '', 'id': 'ads_id', 'value': id_listing, 'label': 'id ads'}]
+            dict_building = props["initialState"]["adDetails"]["byID"][id_listing]["attributes"]['propertyParams'][2]['params']
+            dict_prop = props["initialState"]["adDetails"]["byID"][id_listing]["attributes"]['categoryParams']
+            dict_unit = dict_id + dict_building + dict_prop
+        except:
+            None
+        
+        list_dict.append(dict_unit)
+        
+    return list_dict
+
+#sanity check
+get_list_dict(1)[1]
+```
+
+Extracting the values inside the dictionary for each attributes.
+
+```{python}
+#getting values out of dictionary
+def get_values(list_dict):
+    """
+    Description:
+        Function to values of the previous dictionary.
+
+    Parameters:
+        list_dict (list): list of dictionary where attributes stored
+        
+    Returns:
+        a list of values (unit/property) attributes
+    
+    """
+    keys = [
+        'ads_id',
+        'prop_name',
+        # 'developer_name', 
+        # 'address', 
+        'completion_year', 
+        # 'num_floors', 
+        # 'num_units',
+        'monthly_rent', 
+        # 'category_id', 
+        'location', 
+        'property_type', 
+        # 'floor_range', 
+        'rooms', 
+        'parking',
+        'bathroom', 
+        'size', 
+        'furnished',
+        'facilities', 
+        'additional_facilities', 
+       ]
+
+    values = {}
+    for key in keys:
+        try:
+            values[key] = next(item['value'] for item in list_dict if item["id"] == key)
+        except StopIteration:
+            values[key] = None
+    return values
+
+#sanity check
+get_values(get_list_dict(1)[1])
+```
+
+```{python}
+#get df from list
+def get_df_final(n_page):
+    """
+    Description:
+        Function to generate dataframe from the list.
+
+    Parameters:
+        n_page (int): number of page
+        
+    Returns:
+        a dataframe of the list of attributes on each listings.
+    
+    """
+    list_data = get_list_dict(n_page)
+    list_new = []
+    for i in range(0,len(list_data)):
+            dic = get_values(list_data[i])
+            list_new.append(dic)
+    
+    df = pd.DataFrame(list_new)
+    return df
+```
+
+Of course we won't scrape 250 pages at first, let's extract 1 page only:
+```{python}
+#sanity check
+get_df_final(1).head(2).T
+```
+
+Finally, let's extract dataset from 250 pages. File is then saved into a csv, to be reloaded again.
+
+```{python}
+# df_=get_df_final(250)
+# df_.to_csv('mudah-apartment-raw.csv', index=False)
+## already run, and file is saved
+```
+
+------------------------------------------------------------------------
+
+### Data Understanding
+
+Reload the original dataset. 
+
+```{python}
+#read it back
+df = pd.read_csv('./mudah-apartment-raw.csv')
+df.head(3).T
+```
+
+### Data Description
+
+```{python}
+df.info()
+```
+
+The following feature is available in the dataset:
+
+-   `ads_id`: ads listing ID, unique to each ads
+-   `prop_name`: the building name of the property
+-   `completion_year`: year of the building/property completed
+-   `monthly_rent`: monthly rent price in Malaysian Ringgit (RM)
+-   `location`: the location (region) of the property
+-   `property_type`: property type, such as flat, apartment, etc
+-   `rooms`: number of rooms
+-   `parking`: number of parking spot
+-   `bathroom`: number of bathroom
+-   `size`: total area of the unit in sq.ft
+-   `furnished`: furnishin status of the unit, fully-partial-non
+-   `facilities`: main facilities within the unit
+-   `additional_facilities`: additional facilities
+
+#### Drop Duplicate
+
+```{python}
+#cek duplikat
+df.duplicated().sum()
+
+#drop duplikat
+df1 = df.drop_duplicates()
+```
+
+Saving the file to csv after remove duplicated values.
+
+```{python}
+# #saving to csv
+# df1.to_csv("mudah-apartment-clean.csv", index=False)
+# #saved already
+```
+
+Reload the data after drop duplicates
+
+```{python}
+#reload the data
+df = pd.read_csv("./mudah-apartment-clean.csv")
+```
+
+```{python}
+#sanity check
+df.duplicated().sum()
+```
+
+#### Extracting Number and Keyword
+
+```{python}
+#removing RM from monthly rent
+df['monthly_rent'] = df['monthly_rent'].apply(lambda x: int(re.search(r'RM (.*?) per', x).group(1).replace(' ', '')))
+df = df.rename(columns={'monthly_rent': 'monthly_rent_rm'})
+
+#dropping sq.ft from size
+df['size'] = df['size'].apply(lambda x: int(re.search(r'(.*?) sq', x).group(1).replace(' ', '')))
+df = df.rename(columns={'size': 'size_sqft'})
+
+#dropping kuala lumpur from the location
+df['location'] = df['location'].apply(lambda x: re.findall("\w+$", x)[0])
+df.head(4).T
+```
+
+#### Extracting Near KTM/LRT
+
+Hypotheses: closer access to KTM/LRT = higher monthly rent
+
+```{python}
+#extracting near KTM/LRT from the additional facilities
+def extract_near_ktm_lrt(text):
+    pattern = re.compile(r'\bNear KTM/LRT\b')
+    try:
+        match = pattern.search(text)
+        if match:
+            return 'yes'
+        return 'no'
+    except TypeError:
+        return text
+```
+
+Extracting "near KTM/LRT" into its own column.
+
+```{python}
+df['nearby_railways'] = df.additional_facilities.apply(lambda x: extract_near_ktm_lrt(x))
+df.head(4).T
+```
+
+Plotting the difference between nearby KTM/LRT or not:
+
+```{python}
+#| label: fig-nearbyktm
+#| fig-cap: Boxplot between Nearby KTM/LRT or Not
+
+sns.boxplot(data=df, x='monthly_rent_rm', y='nearby_railways')
+plt.xlim(0,4000);
+
+near_ktmlrt = df.query(" nearby_railways == 'yes' ")
+not_near_ktmlrt = df.query(" nearby_railways == 'no' ")
+
+print(f""" 
+Median:
+Nearby KTM/LRT: {near_ktmlrt.monthly_rent_rm.median():.0f}RM
+Not nearby KTM/LRT: {not_near_ktmlrt.monthly_rent_rm.median():.0f}RM
+      """)
+```
+
+Sanity check:
+
+```{python}
+df[df['prop_name'] == 'Majestic Maxim'][['nearby_railways']].value_counts()
+```
+
+As seen above, @fig-nearbyktm shows that it sligthly increases the median monthly rent by 50RM. However, near KTM/LRT is not appearing in all row even though the property is the same
+
+**Conclusion: Near KTM/LRT may be used, but it can be improved as the listing is inconsistent**
+
+#### Drop Missing Values in Facilities and Additional Facilities
+
+```{python}
+df.isna().sum()
+```
+
+```{python}
+#dropping some columns
+df = df.drop(columns=[
+    'ads_id', 
+    'prop_name', 
+    'facilities', 
+    'additional_facilities',
+    # 'nearby_railways',
+    # 'completion_year'
+])
+df
+```
+
+```{python}
+#checking dtypes from all columns
+df.info()
+```
+
+```{python}
+#converting rooms from object to int64
+df['rooms'] = pd.to_numeric(df['rooms'], downcast='integer', errors='coerce')
+df.info()
+```
+
+#### Outlier Removal
+
+To remove some unexplainable data such as 0 monthly rent, 0 size, the rent that is way too old (1970), including the monthly rent that is way too high and/or size too big. 
+
+```{python}
+#| label: fig-size-rent
+#| fig-cap: "Monthly Rent"
+
+df[['size_sqft', 'monthly_rent_rm']].plot(kind='scatter', x='size_sqft', y='monthly_rent_rm');
+plt.ylim(100,5500) #batas harga rent
+plt.xlim(50,3000)  #batas size
+plt.show()
+```
+
+##### Monthly Rent
+
+```{python}
+#| label: fig-compare-rent
+#| fig-cap: "Comparison between Different Scale"
+
+fig, axs = plt.subplots(1,2)
+axs[0].boxplot(data=df, x='monthly_rent_rm')
+axs[0].set_ylim(0,20000)
+axs[0].set_title('all data')
+
+axs[1].boxplot(data=df, x='monthly_rent_rm')
+axs[1].set_ylim(0,5000)
+axs[1].set_title('croped at 5,000 RM')
+
+plt.tight_layout()
+plt.show()
+```
+
+Based on EDA on @fig-size-rent and @fig-compare-rent, author decided to filter the data between 100-5500 RM as follows:
+
+```{python}
+#removing all rows with monthly rent above 5500 RM and below 100RM
+dfx = df.query(" monthly_rent_rm > 100 & monthly_rent_rm < 5500 ")
+dfx.describe()
+```
+
+Sanity check after removal as shown in @fig-rent-final belo:
+
+```{python}
+#| label: fig-rent-final
+#| fig-cap: "Data after Outlier Removal"
+
+dfx.monthly_rent_rm.plot(kind='box', x='monthly_rent_rm');
+```
+
+#### Size
+
+Checking the dataset in terms of size.
+```{python}
+#| label: fig-size-comparison
+#| fig-cap: "Raw Data Size sq.ft"
+
+fig, axs = plt.subplots(1,2)
+axs[0].boxplot(data=dfx, x='size_sqft')
+axs[0].set_ylim(0,20000)
+axs[0].set_title('all data')
+
+axs[1].boxplot(data=dfx, x='size_sqft')
+axs[1].set_ylim(0,2000)
+axs[1].set_title('croped at 0-2,000 square feet')
+
+plt.tight_layout()
+plt.show()
+```
+
+Still based on @fig-size-rent, outliers are removed.
+```{python}
+#removing outliers below 500, and higher than 3000 sqft and below 50 sqft
+dfx = \
+(dfx.query(" size_sqft > 50 & size_sqft < 3000 ")
+ # .size_sqft
+ # .plot(kind='box')
+)
+dfx
+```
+
+Sanity check:
+```{python}
+dfx.size_sqft.plot(kind='box');
+```
+
+```{python}
+#| label: fig-complete-outliers
+#| fig-cap: "Final Data after Outlier Removal"
+
+fig, axs = plt.subplots(1,5, figsize=(12,4))
+axs[0].boxplot(data=dfx.dropna(), x='size_sqft')
+axs[1].boxplot(data=dfx.dropna(), x='rooms')
+axs[2].boxplot(data=dfx.dropna(), x='parking')
+axs[3].boxplot(data=dfx.dropna(), x='bathroom')
+# axs[4].boxplot(data=dfx.dropna(), x='completion_year')
+
+axs[0].set_title('Size')
+axs[1].set_title('Rooms')
+axs[2].set_title('Parking')
+axs[3].set_title('Bathrooms')
+# axs[4].set_title('Completion Year')
+
+plt.tight_layout()
+plt.show()
+```
+
+### Data Preprocessing
+
+#### Input-Output
+
+```{python}
+def extractInputOutput(data,
+                       output_column_name):
+    """
+    Fungsi untuk memisahkan data input dan output
+    :param data: <pandas dataframe> data seluruh sample
+    :param output_column_name: <string> nama kolom output
+    :return input_data: <pandas dataframe> data input
+    :return output_data: <pandas series> data output
+    """
+    output_data = data[output_column_name]
+    input_data = data.drop(output_column_name,
+                           axis = 1)
+    
+    return input_data, output_data
+```
+
+```{python}
+X, y = extractInputOutput(data=dfx, output_column_name='monthly_rent_rm')
+```
+
+```{python}
+X
+```
+
+```{python}
+y
+```
+
+#### Train-Test Split Data
+
+```{python}
+#import libraries
+from sklearn.model_selection import train_test_split
+```
+
+```{python}
+# Train test split
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size = 0.2,
+                                                    random_state = 123)
+```
+
+```{python}
+#sanity check
+len(X_test)/len(X)
+```
+
+```{python}
+#sanity check
+X_train
+```
+
+**Preprocessing Original Data for Categorical Dtypes**
+
+One must paying attention to the number of categorical observation in the original data, with respect to the sampling train-test value. If, the test_size = 0.3, that means any categorical observation with a total of 3 and less, would not be distributed evenly among train and test data.
+
+```{python}
+print(dfx.location.nunique())
+print(X_train.location.nunique())
+print(X_test.location.nunique())
+```
+
+```{python}
+print(dfx.property_type.nunique())
+print(X_train.property_type.nunique())
+print(X_test.property_type.nunique())
+```
+
+```{python}
+print(set(X_train.furnished.to_list()) - set(X_test.furnished.to_list()))
+print(set(X_train.location.to_list()) - set(X_test.location.to_list()))
+print(set(X_train.property_type.to_list()) - set(X_test.property_type.to_list()))
+print(set(X_train.nearby_railways.to_list()) - set(X_test.nearby_railways.to_list()))
+```
+
+> Dropping Data
+
+```{python}
+dfx
+```
+
+```{python}
+dfx.location.value_counts()
+```
+
+```{python}
+dfx.property_type.value_counts()
+```
+
+```{python}
+dfx_new = dfx[
+    (dfx.location != 'Jinjang') 
+    & (dfx.location != 'Serdang') & 
+    (dfx.location != 'Sentral') & 
+    (dfx.location != 'Others') & 
+    (dfx.location != 'Tunku') & 
+    (dfx.location != 'Penchala') & 
+    (dfx.location != 'Lin') &
+    # (dfx.property_type != 'Others') &
+    (dfx.property_type != 'Condo / Services residence / Penthouse / Townhouse') &
+    (dfx.property_type != 'Townhouse Condo')
+]
+```
+
+```{python}
+dfx_new.property_type.value_counts()
+```
+
+> Re-split Training-Test
+
+```{python}
+X, y = extractInputOutput(data=dfx_new, output_column_name='monthly_rent_rm')
+```
+
+```{python}
+#import libraries
+from sklearn.model_selection import train_test_split
+```
+
+```{python}
+# Train test split
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size = 0.2,
+                                                    random_state = 123)
+```
+
+```{python}
+#sanity check
+len(X_test)/len(X)
+```
+
+```{python}
+X_train
+```
+
+```{python}
+print(set(X_train.furnished.to_list()) - set(X_test.furnished.to_list()))
+print(set(X_train.location.to_list()) - set(X_test.location.to_list()))
+print(set(X_train.property_type.to_list()) - set(X_test.property_type.to_list()))
+# print(set(X_train.nearby_railways.to_list()) - set(X_test.nearby_railways.to_list()))
+```
+
+```{python}
+print(dfx_new.location.nunique())
+print(X_train.location.nunique())
+print(X_test.location.nunique())
+```
+
+```{python}
+#sanity check
+X_train
+```
+
+```{python}
+#export data training
+X_train.to_csv('X_train.csv', index=False)
+y_train.to_csv('y_train.csv', index=False)
+```
+
+```{python}
+#export data testing
+X_test.to_csv('X_test.csv', index=False)
+y_test.to_csv('y_test.csv', index=False)
+```
+
+### Training Data Imputation
+
+```{python}
+#checking null data
+X_train.isna().sum()
+```
+
+#### Numerical Data
+
+```{python}
+X_train_num =  X_train.select_dtypes(exclude='object')
+X_train_num
+```
+
+```{python}
+X_train_num.isna().sum()
+```
+
+-   We can fill completion year, rooms, parking and bathroom with mode
+
+```{python}
+from sklearn.impute import SimpleImputer
+
+def numericalImputation(X_train_num, strategy = 'most_frequent'):
+    """
+    Fungsi untuk melakukan imputasi data numerik NaN
+    :param data: <pandas dataframe> sample data input
+
+    :return X_train_numerical: <pandas dataframe> data numerik
+    :return imputer_numerical: numerical imputer method
+    """
+    #buat imputer
+    imputer_num = SimpleImputer(missing_values = np.nan, strategy = strategy)
+    
+    #fitting
+    imputer_num.fit(X_train_num)
+
+    # transform
+    imputed_data = imputer_num.transform(X_train_num)
+    X_train_num_imputed = pd.DataFrame(imputed_data)
+
+    #pastikan index dan nama kolom antara imputed dan non-imputed SAMA
+    X_train_num_imputed.columns = X_train_num.columns
+    X_train_num_imputed.index = X_train_num.index
+
+    return X_train_num_imputed, imputer_num
+```
+
+```{python}
+X_train_num, imputer_num = numericalImputation(X_train_num, strategy='most_frequent')
+X_train_num.isna().sum()
+```
+
+```{python}
+imputer_num
+```
+
+#### Categorical Data
+
+```{python}
+X_train_cat = X_train.select_dtypes(include='object')
+X_train_cat
+```
+
+```{python}
+X_train_cat.isna().sum()
+```
+
+-   Impute with mode
+
+```{python}
+X_train_cat, imputer_num = numericalImputation(X_train_cat, strategy='most_frequent')
+X_train_cat.isna().sum()
+```
+
+#### Preprocessing Categorical Variable
+
+```{python}
+X_train_cat_ohe =  pd.get_dummies(X_train_cat)
+X_train_cat_ohe.head(2)
+```
+
+```{python}
+ohe_columns = X_train_cat_ohe.columns
+ohe_columns
+```
+
+```{python}
+X_train_cat_ohe.isna().sum()
+```
+
+```{python}
+X_train_num.isna().sum()
+```
+
+#### Penggabungan Numerical dan Categorical data
+
+```{python}
+X_train_concat = pd.concat([X_train_num,
+                            X_train_cat_ohe],
+                           axis = 1)
+```
+
+```{python}
+X_train_concat.head(2)
+```
+
+```{python}
+#sanity check
+X_train_concat.isnull().sum()
+```
+
+#### Standarisasi
+
+```{python}
+from sklearn.preprocessing import StandardScaler
+
+# Buat fungsi
+def standardizerData(data):
+    """
+    Fungsi untuk melakukan standarisasi data
+    :param data: <pandas dataframe> sampel data
+    :return standardized_data: <pandas dataframe> sampel data standard
+    :return standardizer: method untuk standardisasi data
+    """
+    data_columns = data.columns  # agar nama kolom tidak hilang
+    data_index = data.index  # agar index tidak hilang
+
+    # buat (fit) standardizer
+    standardizer = StandardScaler()
+    standardizer.fit(data)
+
+    # transform data
+    standardized_data_raw = standardizer.transform(data)
+    standardized_data = pd.DataFrame(standardized_data_raw)
+    standardized_data.columns = data_columns
+    standardized_data.index = data_index
+
+    return standardized_data, standardizer
+```
+
+```{python}
+X_train_clean, standardizer = standardizerData(data = X_train_concat)
+```
+
+```{python}
+X_train_clean.head()
+```
+
+### Training Machine Learning
+
+Since this is a regression model, R2 score and mean absolute error (MAE) will be used as a performance metrics.
+
+The machine learning model will use baseline from average value of the target columns (monthly rent) and also result from linear regression model. After that, author used some of the recommended model based on previous works, which are random forest and gradient boosting to better improve the performance of the model.
+
+#### Baseline-Average Value
+
+The concept here is to use average value of the target as the easiest way to predict the monhtly rent of a unit.
+
+```{python}
+y_baseline = np.ones(len(y_train)) * y_train.mean()
+y_baseline
+```
+
+```{python}
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+
+# Train the linear regression model
+lin_reg = LinearRegression().fit(X_train_clean, y_train)
+
+# Predict using the train data
+y_pred_train = y_baseline
+
+# Calculate R-squared
+r2_baseline = r2_score(y_train, y_pred_train)
+
+#calculate MAE
+mae_baseline = mean_absolute_error(y_train, y_pred_train)
+
+print(f"R2-score: {r2_baseline:.4f} and MAE score: {mae_baseline:.4f}")
+```
+
+```{python}
+plt.scatter(x=y_train, y=y_pred_train);
+```
+
+#### Baseline-Linear Regression
+
+The second method is using linear regression, which simply put is finding the minum total error (distance) between predicted value and the target value, using linear equation. 
+
+```{python}
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Train the linear regression model
+lin_reg = LinearRegression().fit(X_train_clean, y_train)
+
+# Predict using the train data
+# y_pred = y_baseline
+y_pred_train = lin_reg.predict(X_train_clean)
+
+# Calculate mean absolute error
+mae_linreg = mean_absolute_error(y_train, y_pred_train)
+
+# Calculate R-squared
+r2_linreg = r2_score(y_train, y_pred_train)
+
+print(f"R2-score: {r2_linreg:.4f} and MAE score: {mae_linreg:.4f}")
+```
+
+```{python}
+sns.jointplot(x=y_train, y=y_pred_train);
+```
+
+#### GradientBoosting
+
+The gradient boosting, is one of the recommendation from previous works, is a model where each sample would be given a different weights (boosts) depending on its performance in predicting the value/ target. 
+
+```{python}
+from sklearn.ensemble import GradientBoostingRegressor
+# Build random forest
+grad_tree = GradientBoostingRegressor(random_state = 123)
+```
+
+```{python}
+# Fit random forest
+grad_tree.fit(X_train_clean, y_train)
+```
+
+```{python}
+# Predict
+y_pred_train = grad_tree.predict(X_train_clean)
+# y_pred_test = grad_tree.predict(X_test_clean)
+
+# Calculate mean absolute error
+mae_gb = mean_absolute_error(y_train, y_pred_train)
+
+# Calculate R-squared
+r2_gb = r2_score(y_train, y_pred_train)
+
+print(f"R2-score: {r2_gb:.4f} and MAE score: {mae_gb:.4f}")
+```
+
+```{python}
+sns.jointplot(x=y_train, y=y_pred_train);
+```
+
+```{python}
+#gridsearch
+
+from sklearn.model_selection import GridSearchCV 
+
+
+params = {'n_estimators': [100, 200, 300, 400, 500],
+              'learning_rate': [0.1, 0.05, 0.01]}
+
+# Buat gridsearch
+grad_tree = GradientBoostingRegressor(random_state = 123)
+
+grad_tree_cv = GridSearchCV(estimator = grad_tree,
+                           param_grid = params,
+                           cv = 5,
+                           scoring = "neg_mean_absolute_error")
+```
+
+```{python}
+# Fit grid search cv
+grad_tree_cv.fit(X_train_clean, y_train)
+```
+
+```{python}
+# Best params
+grad_tree_cv.best_params_
+```
+
+```{python}
+# Refit the Adaboost
+grad_tree = GradientBoostingRegressor(n_estimators = grad_tree_cv.best_params_["n_estimators"],
+                                      random_state = 123)
+
+grad_tree.fit(X_train_clean, y_train)
+```
+
+```{python}
+# Predict
+y_pred_train = grad_tree.predict(X_train_clean)
+
+# Calculate mean absolute error
+mae_gb_cv = mean_absolute_error(y_train, y_pred_train)
+
+# Calculate R-squared
+r2_gb_cv = r2_score(y_train, y_pred_train)
+
+print(f"R2-score: {r2_gb_cv:.4f} and MAE score: {mae_gb_cv:.4f}")
+```
+
+```{python}
+sns.jointplot(x=y_train, y=y_pred_train);
+```
+
+#### Random Forest
+
+The last model, which was also recommended by previous works, is a model where not only it has weights based on its performance, but the feature selection in which the sample is measured was done at **random**. Therefore, reduces not only the variance, but also the bias. 
+
+```{python}
+from sklearn.ensemble import RandomForestRegressor
+```
+
+```{python}
+# Build random forest
+rf_tree = RandomForestRegressor(n_estimators = 100,
+                                criterion = "squared_error",
+                                max_features = "sqrt",
+                                random_state = 123)
+```
+
+```{python}
+# Fit random forest
+rf_tree.fit(X_train_clean, y_train)
+```
+
+```{python}
+# Predict
+y_pred_train = rf_tree.predict(X_train_clean)
+
+# Calculate mean absolute error
+mae_rf = mean_absolute_error(y_train, y_pred_train)
+
+# Calculate R-squared
+r2_rf = r2_score(y_train, y_pred_train)
+
+print(f"R2-score: {r2_rf:.4f} and MAE score: {mae_rf:.4f}")
+```
+
+```{python}
+sns.jointplot(x=y_train, y=y_pred_train);
+```
+
+```{python}
+params = {"n_estimators": [100, 200, 300, 500 ],
+          "max_features": ["sqrt", "log2"]}
+
+# Buat gridsearch
+rf_tree = RandomForestRegressor(criterion = "squared_error",
+                                random_state = 123)
+
+rf_tree_cv = GridSearchCV(estimator = rf_tree,
+                          param_grid = params,
+                          cv = 5,
+                          scoring = "neg_mean_absolute_error")
+```
+
+```{python}
+# Fit grid search cv
+rf_tree_cv.fit(X_train_clean, y_train)
+```
+
+```{python}
+# Best params
+rf_tree_cv.best_params_
+```
+
+```{python}
+# Refit the Random Forest
+rf_tree = RandomForestRegressor(criterion = "squared_error",
+                                max_features = rf_tree_cv.best_params_["max_features"],
+                                n_estimators = rf_tree_cv.best_params_["n_estimators"],
+                                random_state = 123)
+
+rf_tree.fit(X_train_clean, y_train)
+```
+
+```{python}
+# Predict
+y_pred_train = rf_tree.predict(X_train_clean)
+
+# Calculate mean absolute error
+mae_rf_cv = mean_absolute_error(y_train, y_pred_train)
+
+# # Calculate R-squared
+r2_rf_cv = r2_score(y_train, y_pred_train)
+
+print(f"R2-score: {r2_rf_cv:.4f} and MAE score: {mae_rf_cv:.4f}")
+```
+
+```{python}
+sns.jointplot(x=y_train, y=y_pred_train);
+```
+
+```{python}
+mae_score = [mae_baseline, mae_linreg, mae_gb, mae_gb_cv, mae_rf, mae_rf_cv]
+r2_score = [r2_baseline, r2_linreg, r2_gb, r2_gb_cv, r2_rf, r2_rf_cv]
+indexes = ["baseline", "linear regression", "gradient boosting", "gradient boosting with CV", "random forest",  "random forest with CV"]
+
+summary_df = pd.DataFrame({
+    "MAE Train": mae_score,
+    "R2-Score": r2_score,
+},index = indexes)
+
+summary_df.sort_values(by='R2-Score', ascending=False)
+```
+
+From the above table, it can be seen that Random Forest model performs the best, and Gradient Boosting at the second place. This is similar to the previous work done by others, on house pricing.
+
+### Best Model
+
+```{python}
+# libraries
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+
+
+#setting up
+rf_tree = RandomForestRegressor(n_estimators = 500,
+                                criterion = "squared_error",
+                                max_features = "sqrt",
+                                random_state = 123)
+
+#fit model train
+rf_tree.fit(X_train_clean, y_train)
+
+# Predict model train
+y_pred_train = rf_tree.predict(X_train_clean)
+
+# Calculate mean absolute error
+mae_rf_cv_train = mean_absolute_error(y_train, y_pred_train)
+
+# # Calculate R-squared
+r2_rf_cv_train = r2_score(y_train, y_pred_train)
+
+print(f"R2-score: {r2_rf_cv_train:.3f} and MAE score: +/-{mae_rf_cv_train:.2f} RM")
+
+sns.scatterplot(x=y_train, y=y_pred_train )
+plt.plot([0, 5500], [0,5500], "--r")
+plt.xlim(0, 5500)
+plt.xlabel("Actual Monthly Rent")
+plt.ylim(0,5500)
+plt.ylabel("Predicted Monthly Rent")
+plt.suptitle("Random Forest - Best Regression Model")
+plt.show()
+```
+
+## Data Prediction
+
+### Test Data Preprocessing
+
+Simlar process done in train dataset need to be repeated on test dataset.
+
+```{python}
+#checking null data
+X_test.isna().sum()
+```
+
+#### Numerical Data
+
+```{python}
+X_test_num =  X_test.select_dtypes(exclude='object')
+X_test_num
+```
+
+```{python}
+X_test_num.isna().sum()
+```
+
+```{python}
+X_test_num, imputer_num = numericalImputation(X_test_num, strategy='most_frequent')
+X_test_num.isna().sum()
+```
+
+#### Categorical Data
+
+```{python}
+X_test_cat = X_test.select_dtypes(include='object')
+X_test_cat
+```
+
+```{python}
+X_test_cat.isna().sum()
+```
+
+```{python}
+X_test_cat, imputer_num = numericalImputation(X_test_cat, strategy='most_frequent')
+X_test_cat.isna().sum()
+```
+
+#### Categorical OHE
+
+```{python}
+X_test_cat_ohe =  pd.get_dummies(X_test_cat)
+X_test_cat_ohe.head(2)
+```
+
+```{python}
+ohe_columns = X_test_cat_ohe.columns
+ohe_columns
+```
+
+### Penggabungan Numerical dan Categorical data
+
+```{python}
+X_test_concat = pd.concat([X_test_num,
+                            X_test_cat_ohe],
+                           axis = 1)
+```
+
+```{python}
+X_test_concat.head(2)
+```
+
+```{python}
+#sanity check
+X_test_concat.isnull().sum()
+```
+
+#### Standarisasi
+
+```{python}
+from sklearn.preprocessing import StandardScaler
+
+# Buat fungsi
+def standardizerData(data):
+    """
+    Fungsi untuk melakukan standarisasi data
+    :param data: <pandas dataframe> sampel data
+    :return standardized_data: <pandas dataframe> sampel data standard
+    :return standardizer: method untuk standardisasi data
+    """
+    data_columns = data.columns  # agar nama kolom tidak hilang
+    data_index = data.index  # agar index tidak hilang
+
+    # buat (fit) standardizer
+    standardizer = StandardScaler()
+    standardizer.fit(data)
+
+    # transform data
+    standardized_data_raw = standardizer.transform(data)
+    standardized_data = pd.DataFrame(standardized_data_raw)
+    standardized_data.columns = data_columns
+    standardized_data.index = data_index
+
+    return standardized_data, standardizer
+```
+
+```{python}
+X_test_clean, standardizer = standardizerData(data = X_test_concat)
+```
+
+```{python}
+X_test_clean.head()
+```
+
+### Test Data Result
+
+```{python}
+# libraries
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+
+
+#setting up
+rf_tree = RandomForestRegressor(n_estimators = 500,
+                                criterion = "squared_error",
+                                max_features = "sqrt",
+                                random_state = 123)
+
+#fit model train
+rf_tree.fit(X_train_clean, y_train)
+
+# Predict model
+y_pred_test = rf_tree.predict(X_test_clean)
+
+# Calculate mean absolute error
+mae_rf_cv_test = mean_absolute_error(y_test, y_pred_test)
+
+# # Calculate R-squared
+r2_rf_cv_test = r2_score(y_test, y_pred_test)
+
+print(f"R2-score: {r2_rf_cv_test:.3f} and MAE score: +/-{mae_rf_cv_test:.2f} RM")
+
+sns.scatterplot(x=y_test, y=y_pred_test )
+plt.plot([0, 5500], [0,5500], "--r")
+plt.xlim(0, 5500)
+plt.xlabel("Actual Monthly Rent")
+plt.ylim(0,5500)
+plt.ylabel("Predicted Monthly Rent")
+plt.suptitle("Random Forest - Best Regression Model")
+plt.show()
+```
+
+```{python}
+mae_score = [mae_rf_cv_train, mae_rf_cv_test]
+r2_score = [r2_rf_cv_train, r2_rf_cv_test]
+indexes = ["train", "test"]
+
+summary_df_train_test = pd.DataFrame({
+    "MAE Train": mae_score,
+    "R2-Score": r2_score,
+},index = indexes)
+
+summary_df_train_test
+```
+
+#### Feature Importance
+
+```{python}
+# calculate the feature importances
+importances = rf_tree.feature_importances_
+
+# rescale the importances back to the original scale of the features
+importances = importances * X_train_clean.std()
+
+# sort the feature importances in descending order
+sorted_index = importances.argsort()[::-1]
+
+# print the feature importances
+dict_feature_importance = {}
+for i in sorted_index:
+    # print("{}: {}".format(X_train_clean.columns[i], importances[i]))
+    dict_feature_importance.update({X_train_clean.columns[i]: importances[i]})
+    
+# Create a DataFrame from the dictionary
+df = pd.DataFrame.from_dict(dict_feature_importance, orient='index', columns=['values'])
+
+# Reset the index to become a column
+df = df.reset_index()
+
+# Rename the columns
+df.columns = ['feature', 'importance_value']
+
+df.sort_values(by='importance_value', ascending=False).head(10)
+```
+
+### Results
+
+1.  Result indicates that the best model for prediction is Random Forest with hyperparameter tuning, scoring 95% on R2-score, and a shy 100 RM on MAE. This proves to be a good model since the test dataset gives a scoring of 80% on R2, and 240 RM on MAE.
+
+2.  There are some factors that author believed to be affecting the result/ performance of the model:
+
+    1.  Dropping missing value reduces the performance! Initial model uses half of the data (4-5k rows) and gives poorer performance on R2 and MAE. Imputation and keeping the number of rows close to the original dataset (9k rows) proves to be improving the model. Especially on test dataset.
+    2.  Feature selection importance can be seen on the last table, but initially the selection was based on paper and intuition of the author (author lives and work in KL, Malaysia for 5 years). Feature such as `completion_year` and `nearby_railways` are important in improving the model.
+    3.  Last but not least is the outlier identification. The best practice for me is using jointplot to see not only the distribution of the data in 2-dimension, but also in the third dimension (the density) of the data.
+
+3.  Some of the feature that were believed to be quite important even before doing the modeling is size, furnished and location. All three is available within the 10-most features affecting the modeling. As a context, location in KLCC is like Pondok Indah in South Jakarta. Location in Kiara is like BSD in South Tangerang.
+
+### Discussions
+
+1.  One of the feature that author thinks is significant but not appearing on the 10-best important feature is nearby_railways. This column is showing if a certain property has a close proximity to a railways (KTM/LRT). The issue is, half of the data is missing, hence the imputation. Author belives, the proximity to nearby railways line can be approximated using manhanttan distance of railways line to each property unit.
+

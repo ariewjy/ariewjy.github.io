@@ -5,7 +5,7 @@ project:
     port: 3600
 
 website:
-  title: "Geoscientist Who Codes"
+  title: "Geoscientist Codes"
   description: "Personal Website"
   site-url: ariewjy.github.io
   # reader-mode: true

@@ -24,7 +24,7 @@ comments: false
 citation: false
 ---
 
-Hi there 👋 I am Arie!
+Hi there 👋 I am **Arie**!
 
 I have a Geological Engineering background, and worked as a Geoscientist/ Petrophysicists with about ten years of experience in the energy industry. I am interested in subsurface data and its intersection with the sustainability to ensure the inclusiveness of energy security for everyone.
 
