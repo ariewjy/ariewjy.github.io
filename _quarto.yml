@@ -6,7 +6,7 @@ project:
 
 website:
   title: "Geoscientist Codes"
-  description: "Personal Website"
+  # description: "Personal Website"
   site-url: ariewjy.github.io
   # reader-mode: true
   # cookie-consent:
@@ -28,7 +28,7 @@ website:
     type: light
     # logo: logo_rounded.png
     background: "#F6F0ED"
-    foreground: "#0B2027"
+    # foreground: "#0B2027"
     pinned: false
     right:
       - text: "About"
