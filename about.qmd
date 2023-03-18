@@ -7,8 +7,7 @@ about:
   links:
     - icon: file-text-fill
       text: CV
-      href: assets/data_scientist_resume.pdf
-      # href: https://docs.google.com/document/d/1sFA9gE1q_tyZYNHuV9NagjT0Bu9iJpsHGJKCd7h0hR0/edit?usp=sharing
+      href: https://docs.google.com/document/d/1sFA9gE1q_tyZYNHuV9NagjT0Bu9iJpsHGJKCd7h0hR0/edit?usp=sharing
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/adityaariewijaya/
