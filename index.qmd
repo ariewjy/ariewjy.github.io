@@ -1,14 +1,14 @@
 ---
-title: "Blog"
-description: "thoughts, TIL, & whatnot"
+# title: "Blog"
+# description: "thoughts, TIL, & whatnot"
 listing:
   fields: [image, title, description, date, reading-time, categories]
   contents: posts
   sort: "date desc"
   type: grid
   grid-columns: 2
-  image-height: 240px
-  page-size: 100
+  # image-height: 240px
+  # page-size: 100
   categories: true
   sort-ui: true
   # filter-ui: true

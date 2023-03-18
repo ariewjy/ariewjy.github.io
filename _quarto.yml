@@ -9,10 +9,10 @@ website:
   description: "Personal Website"
   site-url: ariewjy.github.io
   # reader-mode: true
-  cookie-consent:
-    type: express
-    style: headline
-    palette: light
+  # cookie-consent:
+  # type: express
+  # style: headline
+  # palette: light
   search:
     location: navbar
     type: overlay
