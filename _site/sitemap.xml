@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ariewjy.github.io/index.html</loc>
-    <lastmod>2022-10-09T20:33:38.370Z</lastmod>
+    <loc>ariewjy.github.io/posts/005-webscraping-machinelearning-rent-pricing/index.html</loc>
+    <lastmod>2023-03-19T08:43:44.419Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/posts/002-migrating-to-quarto/index.html</loc>
+    <lastmod>2023-03-19T08:43:45.088Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/posts/004-webscraping-indonesia-national-exam/index.html</loc>
+    <lastmod>2023-03-19T08:43:45.827Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/posts/003-project-insurance-cost-part-1/index.html</loc>
+    <lastmod>2023-03-19T08:43:47.427Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/posts/001-my-first-gig/index.html</loc>
+    <lastmod>2023-03-19T08:43:47.869Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/posts/006-easy-report-machine-learning/index.html</loc>
+    <lastmod>2023-03-19T08:43:49.381Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/index.html</loc>
+    <lastmod>2023-03-19T08:43:49.734Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/publications.html</loc>
+    <lastmod>2023-03-19T08:43:50.037Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/about.html</loc>
+    <lastmod>2023-03-19T08:43:50.343Z</lastmod>
+  </url>
+  <url>
+    <loc>ariewjy.github.io/license.html</loc>
+    <lastmod>2023-03-19T08:43:50.615Z</lastmod>
   </url>
 </urlset>

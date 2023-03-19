@@ -6,7 +6,7 @@ image: img/profile.jpg
 about:
   id: edu-exp
   template: jolla
-  image-shape: round
+  image-shape: rectangle
   links:
     # - icon: file-text-fill
     #   text: CV

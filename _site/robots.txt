@@ -1,1 +1,1 @@
-Sitemap: https://ariewjy.github.io/sitemap.xml
+Sitemap: ariewjy.github.io/sitemap.xml
