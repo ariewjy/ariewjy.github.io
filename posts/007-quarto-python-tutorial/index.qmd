@@ -15,6 +15,8 @@ citation-location: margin
 jupyter: minids
 ---
 
+![Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](./images/image0.jpg)
+
 # Introduction
 
 Quarto to me is one of the best thing ever from Rstudioconf 2022 last year, POSIT (previously Rstudio) marketed it as an open source tool to create documents, presentation, books, website easy and inclusive for python users. This is huge, cause for the longest time, there is not an easy way to create website out of a notebook, nbdev might be one of those people to facilitate this, but not at the support and scale of which R-people get (Xaringan, Blogdown for Hugo, or Distill for Rmarkdown, etc).
