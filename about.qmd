@@ -1,37 +1,66 @@
 ---
 title: "Aditya Arie Wijaya"
+subtitle: |
+  Petrophysicist, Geoscientist, and Coding in between.
 image: img/profile.jpg
 about:
-  # template: trestles
+  id: edu-exp
   template: jolla
+  image-shape: round
   links:
-    - icon: file-text-fill
-      text: CV
-      href: https://docs.google.com/document/d/1sFA9gE1q_tyZYNHuV9NagjT0Bu9iJpsHGJKCd7h0hR0/edit?usp=sharing
+    # - icon: file-text-fill
+    #   text: CV
+    #   href: https://docs.google.com/document/d/1sFA9gE1q_tyZYNHuV9NagjT0Bu9iJpsHGJKCd7h0hR0/edit?usp=sharing
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/adityaariewijaya/
     - icon: github
-      text: git
+      text: Github
       href: https://github.com/ariewjy
     - icon: twitter
-      text: tweet
+      text: Twitter
       href: https://twitter.com/Adtarie
-page-layout: article
-# title-block-banner: true
-page-progression-direction: ltr
+# page-progression-direction: ltr
 comments: false
 citation: false
 ---
 
+::: {#edu-exp}
+:::
+
 Hi there 👋 I am **Arie**!
 
-I have a Geological Engineering background, and worked as a Geoscientist/ Petrophysicists with about ten years of experience in the energy industry. I am interested in subsurface data and its intersection with the sustainability to ensure the inclusiveness of energy security for everyone.
+I am currently working as a Geoscientist in the Multi-national Service company in the field of Energy, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Kuala Lumpur, Malaysia.  
 
-I made a web application to load a LAS file (a well-log data format), plotting, do some basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/).
+I have developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/), and particularly interested in finding an **intersection between geoscience/ subsurface with data analytics/ science**. 
 
-My free time spent between cooking, reading, or exploring the world of coding.
+In my spare time, I also enjoy sitting in silence, reading a book, or just let my mind wandering around the universe of thoughts.
 
-Thanks for dropping by!
+Have a look at my [data science resume](./assets/data_scientist_resume.pdf).
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-8 style="text-align: left;"}
+
+## Education
+
+- **_B.Eng._ in Geological Engineering** (*Specialised in Energy, and Reservoir Analysis*), **2012**  
+  *University Gadjah Mada, Indonesia*
+:::
+
+::: {.g-col-12 .g-col-md-4 style="text-align: left;"}
+## Interests
+
+- Cooking
+- Rudimental Drums
+- Data Visualisation
+- Hiking
+- Fishing
+:::
+
+::::
+
+
+
 
 

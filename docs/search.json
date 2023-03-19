@@ -200,7 +200,21 @@
     "href": "about.html",
     "title": "Aditya Arie Wijaya",
     "section": "",
-    "text": "Hi there 👋 I am Arie!\nI have a Geological Engineering background, and worked as a Geoscientist/ Petrophysicists with about ten years of experience in the energy industry. I am interested in subsurface data and its intersection with the sustainability to ensure the inclusiveness of energy security for everyone.\nI made a web application to load a LAS file (a well-log data format), plotting, do some basic petrophysical analysis at plotpetrophysics.streamlit.app.\nMy free time spent between cooking, reading, or exploring the world of coding.\nThanks for dropping by!"
+    "text": "LinkedIn\n  \n  \n    \n     Github\n  \n  \n    \n     Twitter\nHi there 👋 I am Arie!\nI am currently working as a Geoscientist in the Multi-national Service company in the field of Energy, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Kuala Lumpur, Malaysia.\nI have developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at plotpetrophysics.streamlit.app, and particularly interested in finding an intersection between geoscience/ subsurface with data analytics/ science.\nIn my spare time, I also enjoy sitting in silence, reading a book, or just let my mind wandering around the universe of thoughts.\nHave a look at my data science resume."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Aditya Arie Wijaya",
+    "section": "Education",
+    "text": "Education\n\nB.Eng. in Geological Engineering (Specialised in Energy, and Reservoir Analysis), 2012\nUniversity Gadjah Mada, Indonesia"
+  },
+  {
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
+    "title": "Aditya Arie Wijaya",
+    "section": "Interests",
+    "text": "Interests\n\nCooking\nRudimental Drums\nData Visualisation\nHiking\nFishing"
   },
   {
     "objectID": "license.html",
