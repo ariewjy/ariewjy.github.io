@@ -1,7 +1,7 @@
 ---
 title: 'Personal Website using Jupyter Notebook and Quarto'
 description: |
-  A quick tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto. 
+  A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto. 
 title-block-banner: true
 date: '2023-03-20'
 categories:
@@ -15,21 +15,21 @@ citation-location: margin
 jupyter: minids
 ---
 
-## Introduction
+# Introduction
 
 Quarto to me is one of the best thing ever from Rstudioconf 2022 last year, POSIT (previously Rstudio) marketed it as an open source tool to create documents, presentation, books, website easy and inclusive for python users. This is huge, cause for the longest time, there is not an easy way to create website out of a notebook, nbdev might be one of those people to facilitate this, but not at the support and scale of which R-people get (Xaringan, Blogdown for Hugo, or Distill for Rmarkdown, etc).
 
-## Why Creating Personal Website
+# Why Creating Personal Website
 
 A personal website is a great way to showcase our project to the world. Sure there is even a no-code platform like medium that you can use, but there are couple things I think it fall shorts on:
 
-### 1. Pay Gate Wall
+## 1. Pay Gate Wall
 
 It is good if you are getting paid for what you were sharing on, but if your main purpose is for branding yourself (like me), then a pay gate wall would not do you any good (@fig-paygate). Especially, when you have just started on. Though it is fairly cheap, it is just another stopper for your first audience. Worse, the paid-subscription is only available for certain countries, Indonesia for example is not supported.
 
 ![Pay Gate in medium.com](images/image1.png){#fig-paygate}
 
-### 2. Reproducibility
+## 2. Reproducibility
 
 When I do my first data-science project, I wanted to make sure that someone can just follow along and then get the same result as I was. Using platform like medium, I could not really do that, and I believe it was not meant for tutorial in details. Rather it was for an explanatory writing, rather than exploratory writing. Quarto with its rendered codes as an output, makes it easier to do just that. The below code cell is me importing libraries, importing a dataset, and displaying the table.
 
@@ -55,7 +55,7 @@ from bokeh.sampledata.penguins import data as penguins
 penguins.tail(6)
 ```
 
-### 3. Contents Ownership
+## 3. Contents Ownership
 
 If one day the platform (medium) goes bankrupt, I have no worry because I kept all my posts in a github, and my local folder. If the domain is somehow being hacked, I can just changed it. I own the content, and nobody else.
 
@@ -69,7 +69,7 @@ This gives you not only a total control, but also a freedom to experiment to you
 
 > Of course there are benefits of using low-code platform, but for my use case, I much prefer to have my own personal website.
 
-## The How
+# The How
 
 Now if you are convinced, let's get to the core of this post, How Do I make one?
 
@@ -89,7 +89,7 @@ Now I should assume that you know what a github is, know what a terminal is, and
 
 With that out of the way, here are the following steps to create your first personal website:
 
-### Creating a repo
+## Creating a repo
 
 Make a new repository with the same name as your github account. For example, if your github account is *johndoe*, then make a new repository named john.github.io (see @fig-newrepo).
 
@@ -97,7 +97,7 @@ Make a new repository with the same name as your github account. For example, if
 
 What's cool about this repo is it will be accessible later on as a domain for your personal website, completely free, and secure (https). This of course can be customized with a domain of your choice, but for now, we want to make this as easy as possible.
 
-### Starting from a notebook
+## Starting from a notebook
 
 Let's make a content, using jupyter notebook, with a combination of code cells and markdown cells. I am gonna use the content in this post, where I load a libraries, dataset from palmerpenguins, and then I will do some plotting using altair to spice things up, cause why not. See below @fig-notebook for example.
 
@@ -136,9 +136,7 @@ points & bars
 
 ![Example Notebook](images/image4.png){#fig-notebook}
 
-### Building the website
-
-#### Create a Project
+## Create a Project
 
 The first step is to create a set of folders for website project, using quarto by executing the following command inside the project folder:
 
@@ -151,7 +149,7 @@ which will output the following @fig-output-project, essentially the `post` fold
 
 ![Output Projects](images/image5.png){#fig-output-project}
 
-#### Convert Notebook to Quarto Markdown
+## Convert Notebook to Quarto Markdown
 
 The second step is to convert the jupyter notebook file (example.ipynb) to quarto markdown file (example.qmd) by running the following command:
 
@@ -167,13 +165,13 @@ quarto render
 
 ![Output Render](./images/image6.png){#fig-output-render}
 
-#### Setting the Website
+## Setting the Website
 
 YAML file is basically where we fine tune our website settings. For this case, we need to move the `example.qmd` file to `post` folder, and *add* the qmd file inside the navbar, below the `about.qmd` as shown in @fig-yaml
 
 ![YAML setting](./images/image7.png){#fig-yaml}
 
-### Previewing The Website
+## Previewing The Website
 
 All things set, now all we need to do is preview our website by running the following command:
 
@@ -181,25 +179,25 @@ All things set, now all we need to do is preview our website by running the foll
 quarto preview
 ```
 
-which will output our new website inside a browser as shown in the following @fig-preview. This is a preview mode which means, any changes made to the website, it will be rendered and displayed real-time. 
+which will output our new website inside a browser as shown in the following @fig-preview. This is a preview mode which means, any changes made to the website, it will be rendered and displayed real-time.
 
 ![Website Preview](./images/image8.png){#fig-preview}
 
 Voila! You got it done! Congrats!
 
-### Deploying the Website
+## Deploying the Website
 
 There is a documentation on [Quarto](https://quarto.org/docs/publishing/github-pages.html) to do this, but in layman terms, there are essentially three things to do:
 
-+ Create a `docs` folder and set the output to be that folder in _quarto.yml file as shown in @fig-docs below
+-   Create a `docs` folder and set the output to be that folder in \_quarto.yml file as shown in @fig-docs below
 
 ![docs settting](./images/image9.png){#fig-docs}
 
-+ Set the website repo setting to use the docs folder as the branch source as shown in @fig-reposettting below
+-   Set the website repo setting to use the docs folder as the branch source as shown in @fig-reposettting below
 
 ![repo settting](./images/image10.png){#fig-reposettting}
 
-+ Push your local Repo to the Github!
+-   Push your local Repo to the Github!
 
 ```{bash}
 git add .
@@ -207,5 +205,48 @@ git commit -m "my first website"
 git push
 ```
 
-and you should see your website is up and running!
+and you should see your website is up and running after the builds and deployment as shown in @fig-builds finished!
+
+![Builds Up and Deployment](./images/image11.png){#fig-builds}
+
+:::{.callout-important}
+Since this is a static pages, we will have to run `quarto-render` everytime before pushing it to the github. Otherwise, it may appear in our preview-mode, but will not show up in the website online.
+:::
+
+
+# Pro Tips
+
+## 1. Make A Homepage
+
+If you have your website deployed, congrats! However, if you stay, I can assure you that it will make your website much better.
+
+Some nicer things to do for your website is to render the index.qmd in the root folder as a listing, so any post in your post folder will be listed as a content, as shown in @fig-listing below:
+
+![Setting Up the Website](./images/image12.png){#fig-listing}
+
+Here is what I did to the initial website:
+
+1.  Make a folder inside `posts`, create a `001-first-post` folder, and change the filename to `index.qmd`
+2.  Edit the `index.qmd` in the `root` folder to list the contents
+3.  Edit the `_quarto.yml` file back to its original setting.
+
+With this setting, you will have a nicer homepage like @fig-homepage below:
+
+![Homepage](./images/image13.png){#fig-homepage}
+
+## 2. Use Quarto in VSCode
+
+Although so far we can get by just by using jupyter notebook, we were missing out (big time) in quarto extension capabilities. Autocompletion, autosuggestions, which are available in VSCode but not the jupyter notebook.
+
+Using VSCode and Quarto, we can easily shift between visual-mode and source-mode, for a nicer GUI. You can just right-click and select `edit in visual-mode` and it will automatically brings you to a GUI version of the markdown. 
+
+> From there, we can change the heading-style, bold, italic, add numbers, lists, picture, callnote, a very powerful GUI for markdown! Loved it!
+
+Here is the comparison side-by-side in @fig-comparison:
+
+![Source-mode vs Visual-mode](./images/image14.png){#fig-comparison}
+
+:::{.callout-tip}
+One of the nicest things that I used *A LOT* is the ability to just copy-paste an image from clipboard to a qmd file via visual-mode, and it will automatically create a folder named images, save the image we pasted into the folder, and displayed it (by referencing) into the qmd file. All happen instaneously!
+:::
 
