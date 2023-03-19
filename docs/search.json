@@ -119,6 +119,97 @@
     "text": "Image by Unsplash\n\n\n\nIn the early 2013, around March, I was getting an interview on the 500 Fortune company, where my interviewer asked me a difficult question and I said I don’t know, but somehow I got the Job.\nMy career started even before that. In 2011-2012, during my last year of studies and close to graduation day I spent around a year to do side projects with my lecturers, from geological mapping, seismic interpretation, joint-study field evaluation, basin modeling, to petrophysical analysis.\nNot until 2013-2014, where I got my first industrial role in Jakarta, the capital city of Indonesia, moving away from freelance project in Yogyakarta. Here I mostly worked on petrophysical analysis, evaluating more than 100 wells in clastics and carbonate reefal reservoir, helping the team to update their static model. We planned to do EOR (waterflooding) at the time, so simulation is very critical before economical decision was made.\nFast forward to March 2014, through some luck and intentional effort, I managed to secure an interview with my current employer for an entry level position as petrophysicist/ geoscientist. The interview was a bit “drama” at first, cause the interviewer was changed at the last minute. Nerveousness was at its peak.\nHowever, somehow I got to meet the interviewer, answer few tehnical questions and non-technical questions. Right before we end the interview, she asked me the final technical questions. The question is about intutitive meaning of when density and neutron log is overlayed each other. She said she just need a straightforward answer, two words not more.\nI knew at that time that I have no idea what was supposed to be the answer to the question, but I was too afraid that I would mess my chance to get the gig. I was not esactly remembered how long I take the time to answer, but eventually I come to a conclusion – I should be honest.\nI said:\n\n“I Do Not Know”.\n\nIt took her 5 seconds, and as she smiled she said:\n\n“Well, I Do Not Expect you to be able to Answer the question given the limited experience you have with well logs”\n\nShe explained to me that the question is to test me. She knew that I would probably did not know the answer to the question, her target was to know whether I will spit out my honest truth (that I dont know), or try to be smart by spitting some BS. I was glad I choose the first.\nTo me this was one of the biggest moment in my career, where you should always try to be honest with yourself in an interview. At the end of the day, you would not want to be in the same team with a person who you cannot trust.\nCredibility, given how “small” the world of energy industry, should not be treated lightly. Furthermore, connection, was built upon trusts. You will be surprised, how many times I have seen “a guy/girl” got the gig just by “knowing someone”.\n\n\n\nCitationBibTeX citation:@online{ariewijaya2022,\n  author = {Aditya Arie Wijaya},\n  title = {My {First} {Interview} in 500 {Fortune} {Company}},\n  date = {2022-08-29},\n  url = {ariewjy.github.io/posts/001-my-first-gig},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAditya Arie Wijaya. 2022. “My First Interview in 500 Fortune\nCompany.” August 29, 2022. ariewjy.github.io/posts/001-my-first-gig."
   },
   {
+    "objectID": "posts/007-quarto-python-tutorial/index.html",
+    "href": "posts/007-quarto-python-tutorial/index.html",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "",
+    "text": "Quarto to me is one of the best thing ever from Rstudioconf 2022 last year, POSIT (previously Rstudio) marketed it as an open source tool to create documents, presentation, books, website easy and inclusive for python users. This is huge, cause for the longest time, there is not an easy way to create website out of a notebook, nbdev might be one of those people to facilitate this, but not at the support and scale of which R-people get (Xaringan, Blogdown for Hugo, or Distill for Rmarkdown, etc)."
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#pay-gate-wall",
+    "href": "posts/007-quarto-python-tutorial/index.html#pay-gate-wall",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "1. Pay Gate Wall",
+    "text": "1. Pay Gate Wall\nIt is good if you are getting paid for what you were sharing on, but if your main purpose is for branding yourself (like me), then a pay gate wall would not do you any good (Figure 1). Especially, when you have just started on. Though it is fairly cheap, it is just another stopper for your first audience. Worse, the paid-subscription is only available for certain countries, Indonesia for example is not supported.\n\n\nFigure 1: Pay Gate in medium.com"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#reproducibility",
+    "href": "posts/007-quarto-python-tutorial/index.html#reproducibility",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "2. Reproducibility",
+    "text": "2. Reproducibility\nWhen I do my first data-science project, I wanted to make sure that someone can just follow along and then get the same result as I was. Using platform like medium, I could not really do that, and I believe it was not meant for tutorial in details. Rather it was for an explanatory writing, rather than exploratory writing. Quarto with its rendered codes as an output, makes it easier to do just that. The below code cell is me importing libraries, importing a dataset, and displaying the table.\n\n\nShow Code\n#importing libraries\nimport pandas as pd\nimport hvplot.pandas\nfrom bokeh.sampledata.penguins import data as penguins\n\n#displaying first 5 rows\npenguins.head()\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n    \n  \n\n\n\n\nWhat if I want to show the last 6 rows? I can just change the code.\n\n\nShow Code\n#importing libraries\nimport pandas as pd\nimport hvplot.pandas\nfrom bokeh.sampledata.penguins import data as penguins\n\n#displaying first 5 rows\npenguins.tail(6)\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n    \n  \n  \n    \n      338\n      Gentoo\n      Biscoe\n      47.2\n      13.7\n      214.0\n      4925.0\n      FEMALE\n    \n    \n      339\n      Gentoo\n      Biscoe\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n    \n    \n      340\n      Gentoo\n      Biscoe\n      46.8\n      14.3\n      215.0\n      4850.0\n      FEMALE\n    \n    \n      341\n      Gentoo\n      Biscoe\n      50.4\n      15.7\n      222.0\n      5750.0\n      MALE\n    \n    \n      342\n      Gentoo\n      Biscoe\n      45.2\n      14.8\n      212.0\n      5200.0\n      FEMALE\n    \n    \n      343\n      Gentoo\n      Biscoe\n      49.9\n      16.1\n      213.0\n      5400.0\n      MALE"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#contents-ownership",
+    "href": "posts/007-quarto-python-tutorial/index.html#contents-ownership",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "3. Contents Ownership",
+    "text": "3. Contents Ownership\nIf one day the platform (medium) goes bankrupt, I have no worry because I kept all my posts in a github, and my local folder. If the domain is somehow being hacked, I can just changed it. I own the content, and nobody else.\nThis gives you not only a total control, but also a freedom to experiment to your heart desires.\n\n\n\nvia GIPHY\n\n\nOf course there are benefits of using low-code platform, but for my use case, I much prefer to have my own personal website."
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#creating-a-repo",
+    "href": "posts/007-quarto-python-tutorial/index.html#creating-a-repo",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "Creating a repo",
+    "text": "Creating a repo\nMake a new repository with the same name as your github account. For example, if your github account is johndoe, then make a new repository named john.github.io (see Figure 2).\n\n\nFigure 2: Creating a New Repo\n\n\n\nWhat’s cool about this repo is it will be accessible later on as a domain for your personal website, completely free, and secure (https). This of course can be customized with a domain of your choice, but for now, we want to make this as easy as possible."
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#starting-from-a-notebook",
+    "href": "posts/007-quarto-python-tutorial/index.html#starting-from-a-notebook",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "Starting from a notebook",
+    "text": "Starting from a notebook\nLet’s make a content, using jupyter notebook, with a combination of code cells and markdown cells. I am gonna use the content in this post, where I load a libraries, dataset from palmerpenguins, and then I will do some plotting using altair to spice things up, cause why not. See below Figure 3 for example.\n\n\nShow Code\n#importing libraries\nimport altair as alt\nfrom bokeh.sampledata.penguins import data as penguins\n\nimport warnings\nwarnings.simplefilter(action='ignore', category=FutureWarning)\n\n#plotting\nbrush = alt.selection(type='interval')\n\npoints = alt.Chart(\n  data=penguins, \n  title=\"Palmer Penguins Dataset\",\n  ).mark_circle(size=60).encode(\n  alt.X('bill_length_mm', scale=alt.Scale(domain=[30,60])),\n  alt.Y('bill_depth_mm', scale=alt.Scale(domain=[12,22])),\n  color='species',\n  ).add_selection(\n    brush\n)\n\nbars = alt.Chart(penguins).mark_bar().encode(\n    y='island',\n    color='island',\n    x='count(island)'\n).transform_filter(\n    brush\n)\n\npoints & bars\n\n\n\n\n\n\n\n\n\nFigure 3: Example Notebook"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#create-a-project",
+    "href": "posts/007-quarto-python-tutorial/index.html#create-a-project",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "Create a Project",
+    "text": "Create a Project\nThe first step is to create a set of folders for website project, using quarto by executing the following command inside the project folder:\nmkdir posts\nquarto create-project . --type website\nwhich will output the following Figure 4, essentially the post folder would be where we keep our blogpost files.\n\n\nFigure 4: Output Projects"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#convert-notebook-to-quarto-markdown",
+    "href": "posts/007-quarto-python-tutorial/index.html#convert-notebook-to-quarto-markdown",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "Convert Notebook to Quarto Markdown",
+    "text": "Convert Notebook to Quarto Markdown\nThe second step is to convert the jupyter notebook file (example.ipynb) to quarto markdown file (example.qmd) by running the following command:\nquarto convert ./example.ipynb\nwhich will create an output of qmd file which is important, because this would then be rendered to html (as shown in Figure 5) by running the following command:\nquarto render\n\n\nFigure 5: Output Render"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#setting-the-website",
+    "href": "posts/007-quarto-python-tutorial/index.html#setting-the-website",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "Setting the Website",
+    "text": "Setting the Website\nYAML file is basically where we fine tune our website settings. For this case, we need to move the example.qmd file to post folder, and add the qmd file inside the navbar, below the about.qmd as shown in Figure 6\n\n\nFigure 6: YAML setting"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#previewing-the-website",
+    "href": "posts/007-quarto-python-tutorial/index.html#previewing-the-website",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "Previewing The Website",
+    "text": "Previewing The Website\nAll things set, now all we need to do is preview our website by running the following command:\nquarto preview\nwhich will output our new website inside a browser as shown in the following Figure 7. This is a preview mode which means, any changes made to the website, it will be rendered and displayed real-time.\n\n\nFigure 7: Website Preview\n\n\n\nVoila! You got it done! Congrats!"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#deploying-the-website",
+    "href": "posts/007-quarto-python-tutorial/index.html#deploying-the-website",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "Deploying the Website",
+    "text": "Deploying the Website\nThere is a documentation on Quarto to do this, but in layman terms, there are essentially three things to do:\n\nCreate a docs folder and set the output to be that folder in _quarto.yml file as shown in Figure 8 below\n\n\n\nFigure 8: docs settting\n\n\n\n\nSet the website repo setting to use the docs folder as the branch source as shown in Figure 9 below\n\n\n\nFigure 9: repo settting\n\n\n\n\nPush your local Repo to the Github!\n\ngit add .\ngit commit -m \"my first website\"\ngit push\nand you should see your website is up and running after the builds and deployment as shown in Figure 10 finished!\n\n\nFigure 10: Builds Up and Deployment\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nSince this is a static pages, we will have to run quarto-render everytime before pushing it to the github. Otherwise, it may appear in our preview-mode, but will not show up in the website online."
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#make-a-homepage",
+    "href": "posts/007-quarto-python-tutorial/index.html#make-a-homepage",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "1. Make A Homepage",
+    "text": "1. Make A Homepage\nIf you have your website deployed, congrats! However, if you stay, I can assure you that it will make your website much better.\nSome nicer things to do for your website is to render the index.qmd in the root folder as a listing, so any post in your post folder will be listed as a content, as shown in Figure 11 below:\n\n\nFigure 11: Setting Up the Website\n\n\n\nHere is what I did to the initial website:\n\nMake a folder inside posts, create a 001-first-post folder, and change the filename to index.qmd\nEdit the index.qmd in the root folder to list the contents\nEdit the _quarto.yml file back to its original setting.\n\nWith this setting, you will have a nicer homepage like Figure 12 below:\n\n\nFigure 12: Homepage"
+  },
+  {
+    "objectID": "posts/007-quarto-python-tutorial/index.html#use-quarto-in-vscode",
+    "href": "posts/007-quarto-python-tutorial/index.html#use-quarto-in-vscode",
+    "title": "Personal Website using Jupyter Notebook and Quarto",
+    "section": "2. Use Quarto in VSCode",
+    "text": "2. Use Quarto in VSCode\nAlthough so far we can get by just by using jupyter notebook, we were missing out (big time) in quarto extension capabilities. Autocompletion, autosuggestions, which are available in VSCode but not the jupyter notebook.\nUsing VSCode and Quarto, we can easily shift between visual-mode and source-mode, for a nicer GUI. You can just right-click and select edit in visual-mode and it will automatically brings you to a GUI version of the markdown.\n\nFrom there, we can change the heading-style, bold, italic, add numbers, lists, picture, callnote, a very powerful GUI for markdown! Loved it!\n\nHere is the comparison side-by-side in Figure 13:\n\n\nFigure 13: Source-mode vs Visual-mode\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nOne of the nicest things that I used A LOT is the ability to just copy-paste an image from clipboard to a qmd file via visual-mode, and it will automatically create a folder named images, save the image we pasted into the folder, and displayed it (by referencing) into the qmd file. All happen instaneously!"
+  },
+  {
     "objectID": "posts/006-easy-report-machine-learning/index.html",
     "href": "posts/006-easy-report-machine-learning/index.html",
     "title": "Easy Report: Malaysia Property Pricing",
@@ -186,7 +277,7 @@
     "href": "index.html",
     "title": "Geoscientist Codes",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nEasy Report: Malaysia Property Pricing\n\n\n24 min\n\n\n\nproject\n\n\ndata-science\n\n\npython\n\n\nwebscraping\n\n\nreport\n\n\n\nTLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.\n\n\n\nFeb 12, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMalaysia Property Pricing - Webscraping & Machine Learning Model\n\n\n26 min\n\n\n\nproject\n\n\ndata-science\n\n\npython\n\n\nwebscraping\n\n\n\nFull details on creating property dataset using webscraping, and building machine learning model to predict the rent price\n\n\n\nFeb 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWebscraping National Exams of Indonesia\n\n\n5 min\n\n\n\nproject\n\n\nwebscraping\n\n\ndata-science\n\n\npython\n\n\n\nNational Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?\n\n\n\nJan 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMedical Insurance Cost [Part-1]\n\n\n13 min\n\n\n\nproject\n\n\ndata-science\n\n\npython\n\n\n\nUnderstanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.\n\n\n\nOct 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMigrating My Personal Blog to Quarto\n\n\n4 min\n\n\n\nblog\n\n\nquarto\n\n\n\nSome pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.\n\n\n\nOct 21, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Interview in 500 Fortune Company\n\n\n2 min\n\n\n\ncareer\n\n\n\nDuring the interview, the user asked me a question that was attempted to test my honesty. I said I don’t know, so I got the job.\n\n\n\nAug 29, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nPersonal Website using Jupyter Notebook and Quarto\n\n\n6 min\n\n\n\ntutorial\n\n\nquarto\n\n\npython\n\n\nvscode\n\n\n\nA Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.\n\n\n\nMar 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEasy Report: Malaysia Property Pricing\n\n\n24 min\n\n\n\nproject\n\n\ndata-science\n\n\npython\n\n\nwebscraping\n\n\nreport\n\n\n\nTLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.\n\n\n\nFeb 12, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMalaysia Property Pricing - Webscraping & Machine Learning Model\n\n\n26 min\n\n\n\nproject\n\n\ndata-science\n\n\npython\n\n\nwebscraping\n\n\n\nFull details on creating property dataset using webscraping, and building machine learning model to predict the rent price\n\n\n\nFeb 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWebscraping National Exams of Indonesia\n\n\n5 min\n\n\n\nproject\n\n\nwebscraping\n\n\ndata-science\n\n\npython\n\n\n\nNational Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?\n\n\n\nJan 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMedical Insurance Cost [Part-1]\n\n\n13 min\n\n\n\nproject\n\n\ndata-science\n\n\npython\n\n\n\nUnderstanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.\n\n\n\nOct 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMigrating My Personal Blog to Quarto\n\n\n4 min\n\n\n\nblog\n\n\nquarto\n\n\n\nSome pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.\n\n\n\nOct 21, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Interview in 500 Fortune Company\n\n\n2 min\n\n\n\ncareer\n\n\n\nDuring the interview, the user asked me a question that was attempted to test my honesty. I said I don’t know, so I got the job.\n\n\n\nAug 29, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publications.html",

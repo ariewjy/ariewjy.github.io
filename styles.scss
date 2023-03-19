@@ -34,20 +34,47 @@ $font-size-base: 0.85rem !default;
 //   font-size: 16px;
 // }
 
-h1.quarto-secondary-nav-title {
-  font-size: 18px;
-}
+// h1.quarto-secondary-nav-title {
+//   font-size: 18px;
+// }
 
-// Typography
+// // Typography
 
 h1.title {
   font-family: "Inter";
-  font-size: 26px;
+  font-size: 32px;
 }
 
-// h1 {
-//   font-size: 32px;
-// }
+h1 {
+  font-size: 30px;
+  font-family: "Inter";
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 26px;
+  font-family: "Inter";
+}
+
+h3 {
+  font-size: 22px;
+  font-family: "Inter";
+}
+
+h4 {
+  font-size: 18px;
+  font-family: "Inter";
+}
+
+h5 {
+  font-size: 14px;
+  font-family: "Inter";
+}
+
+h6 {
+  font-size: 10px;
+  font-family: "Inter";
+}
 
 h1.title.display-7 {
   font-family: "Inter";
