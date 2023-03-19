@@ -21,17 +21,17 @@ jupyter: minids
 
 Quarto to me is one of the best thing ever from Rstudioconf 2022 last year, POSIT (previously Rstudio) marketed it as an open source tool to create documents, presentation, books, website easy and inclusive for python users. This is huge, cause for the longest time, there is not an easy way to create website out of a notebook, nbdev might be one of those people to facilitate this, but not at the support and scale of which R-people get (Xaringan, Blogdown for Hugo, or Distill for Rmarkdown, etc).
 
-# Why Creating Personal Website
+# Why Creating A Personal Website
 
 A personal website is a great way to showcase our project to the world. Sure there is even a no-code platform like medium that you can use, but there are couple things I think it fall shorts on:
 
-## 1. Pay Gate Wall
+## Pay Gate Wall
 
 It is good if you are getting paid for what you were sharing on, but if your main purpose is for branding yourself (like me), then a pay gate wall would not do you any good (@fig-paygate). Especially, when you have just started on. Though it is fairly cheap, it is just another stopper for your first audience. Worse, the paid-subscription is only available for certain countries, Indonesia for example is not supported.
 
 ![Pay Gate in medium.com](images/image1.png){#fig-paygate}
 
-## 2. Reproducibility
+## Reproducibility
 
 When I do my first data-science project, I wanted to make sure that someone can just follow along and then get the same result as I was. Using platform like medium, I could not really do that, and I believe it was not meant for tutorial in details. Rather it was for an explanatory writing, rather than exploratory writing. Quarto with its rendered codes as an output, makes it easier to do just that. The below code cell is me importing libraries, importing a dataset, and displaying the table.
 
@@ -71,7 +71,7 @@ This gives you not only a total control, but also a freedom to experiment to you
 
 > Of course there are benefits of using low-code platform, but for my use case, I much prefer to have my own personal website.
 
-# The How
+# Building The Website
 
 Now if you are convinced, let's get to the core of this post, How Do I make one?
 
@@ -91,7 +91,7 @@ Now I should assume that you know what a github is, know what a terminal is, and
 
 With that out of the way, here are the following steps to create your first personal website:
 
-## Creating a repo
+## Creating a Repo
 
 Make a new repository with the same name as your github account. For example, if your github account is *johndoe*, then make a new repository named john.github.io (see @fig-newrepo).
 
@@ -99,7 +99,7 @@ Make a new repository with the same name as your github account. For example, if
 
 What's cool about this repo is it will be accessible later on as a domain for your personal website, completely free, and secure (https). This of course can be customized with a domain of your choice, but for now, we want to make this as easy as possible.
 
-## Starting from a notebook
+## Starting from a Notebook
 
 Let's make a content, using jupyter notebook, with a combination of code cells and markdown cells. I am gonna use the content in this post, where I load a libraries, dataset from palmerpenguins, and then I will do some plotting using altair to spice things up, cause why not. See below @fig-notebook for example.
 
@@ -167,13 +167,13 @@ quarto render
 
 ![Output Render](./images/image6.png){#fig-output-render}
 
-## Setting the Website
+## Setting-up the Website
 
 YAML file is basically where we fine tune our website settings. For this case, we need to move the `example.qmd` file to `post` folder, and *add* the qmd file inside the navbar, below the `about.qmd` as shown in @fig-yaml
 
 ![YAML setting](./images/image7.png){#fig-yaml}
 
-## Previewing The Website
+## Previewing the Website
 
 All things set, now all we need to do is preview our website by running the following command:
 
@@ -215,7 +215,6 @@ and you should see your website is up and running after the builds and deploymen
 Since this is a static pages, we will have to run `quarto-render` everytime before pushing it to the github. Otherwise, it may appear in our preview-mode, but will not show up in the website online.
 :::
 
-
 # Pro Tips
 
 ## 1. Make A Homepage
@@ -252,3 +251,8 @@ Here is the comparison side-by-side in @fig-comparison:
 One of the nicest things that I used *A LOT* is the ability to just copy-paste an image from clipboard to a qmd file via visual-mode, and it will automatically create a folder named images, save the image we pasted into the folder, and displayed it (by referencing) into the qmd file. All happen instaneously!
 :::
 
+## 3. Craving for More?
+
+There is a good chance that this blogpost would not be enough for you after you add some more contents, and wanted to change some views/ aesthetics of the websites. My suggestion has always been to the excellent Quarto [documentations for website](https://quarto.org/docs/websites/), Mickael make a repo dedicated just for Quarto (extensions, slides, tutorial and alike) make sure to check his [repo](https://github.com/mcanouil/mickael.canouil.fr), follow him also in twitter, as I always find the latest new things from him from there like this one:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🤖 From <a href="https://twitter.com/hashtag/AwesomeQuarto?src=hash&amp;ref_src=twsrc%5Etfw">#AwesomeQuarto</a>: &#39;How to add some personality to your Quarto Blog&#39; (<a href="https://t.co/nK3j7rPty1">https://t.co/nK3j7rPty1</a>)<br>A blog post sharing some of the added features and tweaks users can make on top of the standard blog templates to inject some personality into their blog.<a href="https://twitter.com/hashtag/QuartoPub?src=hash&amp;ref_src=twsrc%5Etfw">#QuartoPub</a></p>&mdash; Mickaël CANOUIL (@MickaelCanouil@fosstodon.org) (@MickaelCanouil) <a href="https://twitter.com/MickaelCanouil/status/1637424613654413315?ref_src=twsrc%5Etfw">March 19, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
