@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,43 +50,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -135,10 +106,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Geoscientist Codes - Medical Insurance Cost [Part-1]">
 <meta property="og:description" content="Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.">
+<meta property="og:image" content="ariewjy.github.io/posts/003-project-insurance-cost-part-1/image.jpeg">
 <meta property="og:site-name" content="Geoscientist Codes">
 <meta name="twitter:title" content="Geoscientist Codes - Medical Insurance Cost [Part-1]">
 <meta name="twitter:description" content="Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.">
-<meta name="twitter:image" content="ariewjy.github.io/img/profile.jpg">
+<meta name="twitter:image" content="ariewjy.github.io/posts/003-project-insurance-cost-part-1/img/profile.jpg">
 <meta name="twitter:creator" content="@Adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -154,34 +126,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">Geoscientist Codes</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Medical Insurance Cost [Part-1]</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Medical Insurance Cost [Part-1]</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
@@ -189,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Medical Insurance Cost [Part-1]</h1>
+      <h1 class="title">Medical Insurance Cost [Part-1]</h1>
                   <div>
         <div class="description">
           <p>Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.</p>
@@ -226,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -249,6 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -260,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption><p></p>
+<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 <p><img src="image.jpeg" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -306,75 +283,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>insurance <span class="op">=</span> pd.read_csv(<span class="st">'insurance.zip'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>insurance.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>age</th>
-      <th>sex</th>
-      <th>bmi</th>
-      <th>children</th>
-      <th>smoker</th>
-      <th>region</th>
-      <th>charges</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>19</td>
-      <td>female</td>
-      <td>27.900</td>
-      <td>0</td>
-      <td>yes</td>
-      <td>southwest</td>
-      <td>16884.92400</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>18</td>
-      <td>male</td>
-      <td>33.770</td>
-      <td>1</td>
-      <td>no</td>
-      <td>southeast</td>
-      <td>1725.55230</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>28</td>
-      <td>male</td>
-      <td>33.000</td>
-      <td>3</td>
-      <td>no</td>
-      <td>southeast</td>
-      <td>4449.46200</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>33</td>
-      <td>male</td>
-      <td>22.705</td>
-      <td>0</td>
-      <td>no</td>
-      <td>northwest</td>
-      <td>21984.47061</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>32</td>
-      <td>male</td>
-      <td>28.880</td>
-      <td>0</td>
-      <td>no</td>
-      <td>northwest</td>
-      <td>3866.85520</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">bmi</th>
+<th data-quarto-table-cell-role="th">children</th>
+<th data-quarto-table-cell-role="th">smoker</th>
+<th data-quarto-table-cell-role="th">region</th>
+<th data-quarto-table-cell-role="th">charges</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>19</td>
+<td>female</td>
+<td>27.900</td>
+<td>0</td>
+<td>yes</td>
+<td>southwest</td>
+<td>16884.92400</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>18</td>
+<td>male</td>
+<td>33.770</td>
+<td>1</td>
+<td>no</td>
+<td>southeast</td>
+<td>1725.55230</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>28</td>
+<td>male</td>
+<td>33.000</td>
+<td>3</td>
+<td>no</td>
+<td>southeast</td>
+<td>4449.46200</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>33</td>
+<td>male</td>
+<td>22.705</td>
+<td>0</td>
+<td>no</td>
+<td>northwest</td>
+<td>21984.47061</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>32</td>
+<td>male</td>
+<td>28.880</td>
+<td>0</td>
+<td>no</td>
+<td>northwest</td>
+<td>3866.85520</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -449,76 +427,94 @@ For more granular grouping, the [classification](https://www.calculator.net/bmi-
 <span id="cb3-23"><a href="#cb3-23"></a><span class="co">#  .T</span></span>
 <span id="cb3-24"><a href="#cb3-24"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<div id="tbl-bmi-class" class="anchored">
-
 <div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<table class="dataframe table table-sm table-striped"><caption>Table&nbsp;1:  BMI Class </caption>
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="3" halign="left">bmi</th>
-      <th colspan="3" halign="left">bmi_class</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>min</th>
-      <th>max</th>
-      <th>count</th>
-      <th>min</th>
-      <th>max</th>
-      <th>count</th>
-    </tr>
-    <tr>
-      <th>bmi_class</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>underweight</th>
-      <td>15.96</td>
-      <td>18.335</td>
-      <td>20</td>
-      <td>underweight</td>
-      <td>underweight</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>healthy</th>
-      <td>18.50</td>
-      <td>24.890</td>
-      <td>222</td>
-      <td>healthy</td>
-      <td>healthy</td>
-      <td>222</td>
-    </tr>
-    <tr>
-      <th>overweight</th>
-      <td>24.97</td>
-      <td>30.000</td>
-      <td>391</td>
-      <td>overweight</td>
-      <td>overweight</td>
-      <td>391</td>
-    </tr>
-    <tr>
-      <th>obese</th>
-      <td>30.02</td>
-      <td>53.130</td>
-      <td>705</td>
-      <td>obese</td>
-      <td>obese</td>
-      <td>705</td>
-    </tr>
-  </tbody>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+
+<div id="tbl-bmi-class" class="anchored">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<caption>Table&nbsp;1: BMI Class</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th colspan="3" data-quarto-table-cell-role="th" data-halign="left">bmi</th>
+<th colspan="3" data-quarto-table-cell-role="th" data-halign="left">bmi_class</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="header">
+<th data-quarto-table-cell-role="th">bmi_class</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">underweight</td>
+<td>15.96</td>
+<td>18.335</td>
+<td>20</td>
+<td>underweight</td>
+<td>underweight</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">healthy</td>
+<td>18.50</td>
+<td>24.890</td>
+<td>222</td>
+<td>healthy</td>
+<td>healthy</td>
+<td>222</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">overweight</td>
+<td>24.97</td>
+<td>30.000</td>
+<td>391</td>
+<td>overweight</td>
+<td>overweight</td>
+<td>391</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">obese</td>
+<td>30.02</td>
+<td>53.130</td>
+<td>705</td>
+<td>obese</td>
+<td>obese</td>
+<td>705</td>
+</tr>
+</tbody>
 </table>
 </div>
+
 </div>
 </div>
 </div>
@@ -579,12 +575,12 @@ dtype: int64</code></pre>
 <li><code>2</code> categorical data in the <code>smoker</code> column, <code>yes</code> or <code>no</code></li>
 <li><code>4</code> categorical data in the <code>region</code> column: <code>southwest</code>, <code>northwest</code>, <code>southeast</code>, and <code>northeast</code></li>
 </ul>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -616,7 +612,7 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-mean-age" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Overall Mean Age</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Overall Mean Age</figcaption>
 <p><img src="index_files/figure-html/fig-mean-age-output-1.png" width="416" height="272" class="figure-img"></p>
 </figure>
 </div>
@@ -651,64 +647,82 @@ Important
 <span id="cb9-20"><a href="#cb9-20"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<div id="tbl-smoker-based-on-sex" class="anchored">
-
 <div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<table class="dataframe table table-sm table-striped"><caption>Table&nbsp;2:  Statistic of Age, BMI, and Charges by Smoker and Sex </caption>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>age</th>
-      <th>bmi</th>
-      <th>charges</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>mean</th>
-      <th>mean</th>
-      <th>mean</th>
-    </tr>
-    <tr>
-      <th>smoker</th>
-      <th>sex</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">no</th>
-      <th>female</th>
-      <td>39.691042</td>
-      <td>30.539525</td>
-      <td>8762.297300</td>
-    </tr>
-    <tr>
-      <th>male</th>
-      <td>39.061896</td>
-      <td>30.770580</td>
-      <td>8087.204731</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">yes</th>
-      <th>female</th>
-      <td>38.608696</td>
-      <td>29.608261</td>
-      <td>30678.996276</td>
-    </tr>
-    <tr>
-      <th>male</th>
-      <td>38.446541</td>
-      <td>31.504182</td>
-      <td>33042.005975</td>
-    </tr>
-  </tbody>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+
+<div id="tbl-smoker-based-on-sex" class="anchored">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<caption>Table&nbsp;2: Statistic of Age, BMI, and Charges by Smoker and Sex</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">bmi</th>
+<th data-quarto-table-cell-role="th">charges</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">mean</th>
+</tr>
+<tr class="header">
+<th data-quarto-table-cell-role="th">smoker</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">no</td>
+<td data-quarto-table-cell-role="th">female</td>
+<td>39.691042</td>
+<td>30.539525</td>
+<td>8762.297300</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">male</td>
+<td>39.061896</td>
+<td>30.770580</td>
+<td>8087.204731</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">yes</td>
+<td data-quarto-table-cell-role="th">female</td>
+<td>38.608696</td>
+<td>29.608261</td>
+<td>30678.996276</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">male</td>
+<td>38.446541</td>
+<td>31.504182</td>
+<td>33042.005975</td>
+</tr>
+</tbody>
 </table>
 </div>
+
 </div>
 </div>
 </div>
@@ -723,37 +737,55 @@ Important
 <span id="cb10-5"><a href="#cb10-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<div id="tbl-ratio-smoker" class="anchored">
-
 <div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<table class="dataframe table table-sm table-striped"><caption>Table&nbsp;3:  Ratio of Charges based on Smoker profile </caption>
-  <thead>
-    <tr>
-      <th></th>
-      <th>charges</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>mean</th>
-    </tr>
-    <tr>
-      <th>smoker</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>no</th>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>yes</th>
-      <td>3.800001</td>
-    </tr>
-  </tbody>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+
+<div id="tbl-ratio-smoker" class="anchored">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<caption>Table&nbsp;3: Ratio of Charges based on Smoker profile</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">charges</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean</th>
+</tr>
+<tr class="header">
+<th data-quarto-table-cell-role="th">smoker</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">no</td>
+<td>1.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">yes</td>
+<td>3.800001</td>
+</tr>
+</tbody>
 </table>
 </div>
+
 </div>
 </div>
 </div>
@@ -770,37 +802,55 @@ Important
 <span id="cb11-5"><a href="#cb11-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<div id="tbl-ratio-sex" class="anchored">
-
 <div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<table class="dataframe table table-sm table-striped"><caption>Table&nbsp;4:  Ratio of Charges based on Sex profile </caption>
-  <thead>
-    <tr>
-      <th></th>
-      <th>charges</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>mean</th>
-    </tr>
-    <tr>
-      <th>sex</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>female</th>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>male</th>
-      <td>1.110359</td>
-    </tr>
-  </tbody>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+
+<div id="tbl-ratio-sex" class="anchored">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<caption>Table&nbsp;4: Ratio of Charges based on Sex profile</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">charges</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean</th>
+</tr>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">female</td>
+<td>1.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">male</td>
+<td>1.110359</td>
+</tr>
+</tbody>
 </table>
 </div>
+
 </div>
 </div>
 </div>
@@ -829,7 +879,7 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-boxplot-age" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Age distribution based on Categorical values</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Age distribution based on Categorical values</figcaption>
 <p><img src="index_files/figure-html/fig-boxplot-age-output-1.png" width="647" height="368" class="figure-img"></p>
 </figure>
 </div>
@@ -863,7 +913,7 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-boxplot-region" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Age distribution based on region</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Age distribution based on region</figcaption>
 <p><img src="index_files/figure-html/fig-boxplot-region-output-1.png" width="647" height="752" class="figure-img"></p>
 </figure>
 </div>
@@ -913,7 +963,7 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-age-charges-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Age vs Charges</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Age vs Charges</figcaption>
 <p><img src="index_files/figure-html/fig-age-charges-1-output-1.png" width="501" height="354" class="figure-img"></p>
 </figure>
 </div>
@@ -964,7 +1014,7 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-age-charges-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Age vs Charges based on Sex</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Age vs Charges based on Sex</figcaption>
 <p><img src="index_files/figure-html/fig-age-charges-2-output-1.png" width="643" height="405" class="figure-img"></p>
 </figure>
 </div>
@@ -1033,7 +1083,7 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-outlier" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Outliers?</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Outliers?</figcaption>
 <p><img src="index_files/figure-html/fig-outlier-output-1.png" width="643" height="405" class="figure-img"></p>
 </figure>
 </div>
@@ -1071,19 +1121,19 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-outlier-eda" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Outliers vs number of Children</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Outliers vs number of Children</figcaption>
 <p><img src="index_files/figure-html/fig-outlier-eda-output-1.png" width="682" height="848" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><a href="#fig-outlier-eda">Figure&nbsp;7</a> shows just group I and I-a where we see through zero to six number of <code>childrens</code>, colored by <code>bmi_class</code> and styled by <code>sex</code>. As can be seen, <strong><code>there is no clear differentiator between group I and I-a</code></strong>, as the number of children increases, it affects both group I and I-a also.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -1135,7 +1185,7 @@ Important
 <div class="cell-output cell-output-display">
 <div id="fig-bmi-charges" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;8: BMI vs Charges</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;8: BMI vs Charges</figcaption>
 <p><img src="index_files/figure-html/fig-bmi-charges-output-1.png" width="388" height="354" class="figure-img"></p>
 </figure>
 </div>
@@ -1164,27 +1214,24 @@ Important
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
     A[Member] --&gt; B{Smoking}
     B --&gt; |No| C[trendline Group I]
     B --&gt; |Yes| D{BMI Class}
     D --&gt; |Overweight| E[trendline Group II]
     D --&gt; |Obese| F[trendline Group III]
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -1193,12 +1240,12 @@ Note
 </div>
 </div>
 <hr>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -1219,15 +1266,15 @@ Important
 <li id="fn3"><p>around 10% higher in male, compared to female counterpart (see <a href="#tbl-ratio-sex">Table&nbsp;4</a>)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>the BMI class shows a mix of all classes (from underweight to obese)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ariewijaya2022,
-  author = {Aditya Arie Wijaya and Aditya Arie Wijaya},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2022,
+  author = {Arie Wijaya, Aditya and Arie Wijaya, Aditya},
   title = {Medical {Insurance} {Cost} {{[}Part-1{]}}},
   date = {2022-10-27},
   url = {ariewjy.github.io/posts/003-project-insurance-cost-part-1},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ariewijaya2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Aditya Arie Wijaya, and Aditya Arie Wijaya. 2022. <span>“Medical
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Arie Wijaya, Aditya, and Aditya Arie Wijaya. 2022. <span>“Medical
 Insurance Cost [Part-1] .”</span> October 27, 2022. <a href="https://ariewjy.github.io/posts/003-project-insurance-cost-part-1">ariewjy.github.io/posts/003-project-insurance-cost-part-1</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1257,9 +1304,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1324,6 +1385,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1375,6 +1522,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

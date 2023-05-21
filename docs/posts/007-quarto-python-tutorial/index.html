@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,43 +50,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -132,10 +103,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Geoscientist Codes - Personal Website using Jupyter Notebook and Quarto">
 <meta property="og:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
+<meta property="og:image" content="ariewjy.github.io/posts/007-quarto-python-tutorial/images/image0.jpg">
 <meta property="og:site-name" content="Geoscientist Codes">
 <meta name="twitter:title" content="Geoscientist Codes - Personal Website using Jupyter Notebook and Quarto">
 <meta name="twitter:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
-<meta name="twitter:image" content="ariewjy.github.io/img/profile.jpg">
+<meta name="twitter:image" content="ariewjy.github.io/posts/007-quarto-python-tutorial/img/profile.jpg">
 <meta name="twitter:creator" content="@Adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -151,34 +123,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">Geoscientist Codes</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Personal Website using Jupyter Notebook and Quarto</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Personal Website using Jupyter Notebook and Quarto</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
@@ -186,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Personal Website using Jupyter Notebook and Quarto</h1>
+      <h1 class="title">Personal Website using Jupyter Notebook and Quarto</h1>
                   <div>
         <div class="description">
           <p>A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.</p>
@@ -207,7 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Aditya Arie Wijaya </p>
+               <p><a href="ariewjy.github.io">Aditya Arie Wijaya</a> </p>
             </div>
     </div>
       
@@ -224,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -255,6 +231,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -266,7 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption><p></p>
+<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 <p><img src="./images/image0.jpg" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -282,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It is good if you are getting paid for what you were sharing on, but if your main purpose is for branding yourself (like me), then a pay gate wall would not do you any good (<a href="#fig-paygate">Figure&nbsp;1</a>). Especially, when you have just started on. Though it is fairly cheap, it is just another stopper for your first audience. Worse, the paid-subscription is only available for certain countries, Indonesia for example is not supported.</p>
 <div id="fig-paygate" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Pay Gate in medium.com</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Pay Gate in medium.com</figcaption>
 <p><img src="images/image1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -302,75 +279,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-7"><a href="#cb1-7"></a>penguins.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="7">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>species</th>
-      <th>island</th>
-      <th>bill_length_mm</th>
-      <th>bill_depth_mm</th>
-      <th>flipper_length_mm</th>
-      <th>body_mass_g</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.1</td>
-      <td>18.7</td>
-      <td>181.0</td>
-      <td>3750.0</td>
-      <td>MALE</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.5</td>
-      <td>17.4</td>
-      <td>186.0</td>
-      <td>3800.0</td>
-      <td>FEMALE</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>40.3</td>
-      <td>18.0</td>
-      <td>195.0</td>
-      <td>3250.0</td>
-      <td>FEMALE</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>36.7</td>
-      <td>19.3</td>
-      <td>193.0</td>
-      <td>3450.0</td>
-      <td>FEMALE</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">species</th>
+<th data-quarto-table-cell-role="th">island</th>
+<th data-quarto-table-cell-role="th">bill_length_mm</th>
+<th data-quarto-table-cell-role="th">bill_depth_mm</th>
+<th data-quarto-table-cell-role="th">flipper_length_mm</th>
+<th data-quarto-table-cell-role="th">body_mass_g</th>
+<th data-quarto-table-cell-role="th">sex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>39.1</td>
+<td>18.7</td>
+<td>181.0</td>
+<td>3750.0</td>
+<td>MALE</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>39.5</td>
+<td>17.4</td>
+<td>186.0</td>
+<td>3800.0</td>
+<td>FEMALE</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>40.3</td>
+<td>18.0</td>
+<td>195.0</td>
+<td>3250.0</td>
+<td>FEMALE</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>36.7</td>
+<td>19.3</td>
+<td>193.0</td>
+<td>3450.0</td>
+<td>FEMALE</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -387,85 +365,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-7"><a href="#cb2-7"></a>penguins.tail(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>species</th>
-      <th>island</th>
-      <th>bill_length_mm</th>
-      <th>bill_depth_mm</th>
-      <th>flipper_length_mm</th>
-      <th>body_mass_g</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>338</th>
-      <td>Gentoo</td>
-      <td>Biscoe</td>
-      <td>47.2</td>
-      <td>13.7</td>
-      <td>214.0</td>
-      <td>4925.0</td>
-      <td>FEMALE</td>
-    </tr>
-    <tr>
-      <th>339</th>
-      <td>Gentoo</td>
-      <td>Biscoe</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>340</th>
-      <td>Gentoo</td>
-      <td>Biscoe</td>
-      <td>46.8</td>
-      <td>14.3</td>
-      <td>215.0</td>
-      <td>4850.0</td>
-      <td>FEMALE</td>
-    </tr>
-    <tr>
-      <th>341</th>
-      <td>Gentoo</td>
-      <td>Biscoe</td>
-      <td>50.4</td>
-      <td>15.7</td>
-      <td>222.0</td>
-      <td>5750.0</td>
-      <td>MALE</td>
-    </tr>
-    <tr>
-      <th>342</th>
-      <td>Gentoo</td>
-      <td>Biscoe</td>
-      <td>45.2</td>
-      <td>14.8</td>
-      <td>212.0</td>
-      <td>5200.0</td>
-      <td>FEMALE</td>
-    </tr>
-    <tr>
-      <th>343</th>
-      <td>Gentoo</td>
-      <td>Biscoe</td>
-      <td>49.9</td>
-      <td>16.1</td>
-      <td>213.0</td>
-      <td>5400.0</td>
-      <td>MALE</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">species</th>
+<th data-quarto-table-cell-role="th">island</th>
+<th data-quarto-table-cell-role="th">bill_length_mm</th>
+<th data-quarto-table-cell-role="th">bill_depth_mm</th>
+<th data-quarto-table-cell-role="th">flipper_length_mm</th>
+<th data-quarto-table-cell-role="th">body_mass_g</th>
+<th data-quarto-table-cell-role="th">sex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">338</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>47.2</td>
+<td>13.7</td>
+<td>214.0</td>
+<td>4925.0</td>
+<td>FEMALE</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">339</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">340</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>46.8</td>
+<td>14.3</td>
+<td>215.0</td>
+<td>4850.0</td>
+<td>FEMALE</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">341</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>50.4</td>
+<td>15.7</td>
+<td>222.0</td>
+<td>5750.0</td>
+<td>MALE</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">342</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>45.2</td>
+<td>14.8</td>
+<td>212.0</td>
+<td>5200.0</td>
+<td>FEMALE</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">343</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>49.9</td>
+<td>16.1</td>
+<td>213.0</td>
+<td>5400.0</td>
+<td>MALE</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -504,7 +483,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Make a new repository with the same name as your github account. For example, if your github account is <em>johndoe</em>, then make a new repository named john.github.io (see <a href="#fig-newrepo">Figure&nbsp;2</a>).</p>
 <div id="fig-newrepo" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Creating a New Repo</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Creating a New Repo</figcaption>
 <p><img src="images/image2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -602,7 +581,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="fig-notebook" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Example Notebook</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Example Notebook</figcaption>
 <p><img src="images/image4.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -615,7 +594,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>which will output the following <a href="#fig-output-project">Figure&nbsp;4</a>, essentially the <code>post</code> folder would be where we keep our blogpost files.</p>
 <div id="fig-output-project" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Output Projects</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Output Projects</figcaption>
 <p><img src="images/image5.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -628,7 +607,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>quarto render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-output-render" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Output Render</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Output Render</figcaption>
 <p><img src="./images/image6.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -638,7 +617,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>YAML file is basically where we fine tune our website settings. For this case, we need to move the <code>example.qmd</code> file to <code>post</code> folder, and <em>add</em> the qmd file inside the navbar, below the <code>about.qmd</code> as shown in <a href="#fig-yaml">Figure&nbsp;6</a></p>
 <div id="fig-yaml" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: YAML setting</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: YAML setting</figcaption>
 <p><img src="./images/image7.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -650,7 +629,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>which will output our new website inside a browser as shown in the following <a href="#fig-preview">Figure&nbsp;7</a>. This is a preview mode which means, any changes made to the website, it will be rendered and displayed real-time.</p>
 <div id="fig-preview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Website Preview</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Website Preview</figcaption>
 <p><img src="./images/image8.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -664,7 +643,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="fig-docs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;8: docs settting</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;8: docs settting</figcaption>
 <p><img src="./images/image9.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -673,7 +652,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="fig-reposettting" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;9: repo settting</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;9: repo settting</figcaption>
 <p><img src="./images/image10.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -686,16 +665,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>and you should see your website is up and running after the builds and deployment as shown in <a href="#fig-builds">Figure&nbsp;10</a> finished!</p>
 <div id="fig-builds" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;10: Builds Up and Deployment</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;10: Builds Up and Deployment</figcaption>
 <p><img src="./images/image11.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -713,7 +692,7 @@ Important
 <p>Some nicer things to do for your website is to render the index.qmd in the root folder as a listing, so any post in your post folder will be listed as a content, as shown in <a href="#fig-listing">Figure&nbsp;11</a> below:</p>
 <div id="fig-listing" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;11: Setting Up the Website</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;11: Setting Up the Website</figcaption>
 <p><img src="./images/image12.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -726,7 +705,7 @@ Important
 <p>With this setting, you will have a nicer homepage like <a href="#fig-homepage">Figure&nbsp;12</a> below:</p>
 <div id="fig-homepage" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;12: Homepage</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;12: Homepage</figcaption>
 <p><img src="./images/image13.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -741,16 +720,16 @@ Important
 <p>Here is the comparison side-by-side in <a href="#fig-comparison">Figure&nbsp;13</a>:</p>
 <div id="fig-comparison" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;13: Source-mode vs Visual-mode</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;13: Source-mode vs Visual-mode</figcaption>
 <p><img src="./images/image14.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 </div>
@@ -780,16 +759,16 @@ Tip
 <ol>
 <li id="fn1"><p>you <em>can</em> just use a notebook, but some of the autocompletion, visual-mode (a powerful mode to make blogging easier) won’t work.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ariewijaya2023,
-  author = {Aditya Arie Wijaya},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+  author = {Arie Wijaya, Aditya},
   title = {Personal {Website} Using {Jupyter} {Notebook} and {Quarto}},
   date = {2023-03-20},
   url = {ariewjy.github.io/posts/007-quarto-python-tutorial},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ariewijaya2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Aditya Arie Wijaya. 2023. <span>“Personal Website Using Jupyter Notebook
-and Quarto.”</span> March 20, 2023. <a href="https://ariewjy.github.io/posts/007-quarto-python-tutorial">ariewjy.github.io/posts/007-quarto-python-tutorial</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Arie Wijaya, Aditya. 2023. <span>“Personal Website Using Jupyter
+Notebook and Quarto.”</span> March 20, 2023. <a href="https://ariewjy.github.io/posts/007-quarto-python-tutorial">ariewjy.github.io/posts/007-quarto-python-tutorial</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -818,9 +797,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -885,6 +878,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -936,6 +1015,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

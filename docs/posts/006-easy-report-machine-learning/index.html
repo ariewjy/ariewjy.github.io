@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,48 +50,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -104,8 +76,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -151,10 +122,11 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Geoscientist Codes - Easy Report: Malaysia Property Pricing">
 <meta property="og:description" content="TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.">
+<meta property="og:image" content="ariewjy.github.io/posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg">
 <meta property="og:site-name" content="Geoscientist Codes">
 <meta name="twitter:title" content="Geoscientist Codes - Easy Report: Malaysia Property Pricing">
 <meta name="twitter:description" content="TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.">
-<meta name="twitter:image" content="ariewjy.github.io/img/profile.jpg">
+<meta name="twitter:image" content="ariewjy.github.io/posts/006-easy-report-machine-learning/img/profile.jpg">
 <meta name="twitter:creator" content="@Adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -170,34 +142,38 @@ div.csl-indent {
     <span class="navbar-title">Geoscientist Codes</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Easy Report: Malaysia Property Pricing</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Easy Report: Malaysia Property Pricing</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
@@ -205,7 +181,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Easy Report: Malaysia Property Pricing</h1>
+      <h1 class="title">Easy Report: Malaysia Property Pricing</h1>
                   <div>
         <div class="description">
           <p>TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.</p>
@@ -227,7 +203,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Aditya Arie Wijaya </p>
+               <p><a href="ariewjy.github.io">Aditya Arie Wijaya</a> </p>
             </div>
     </div>
       
@@ -244,7 +220,7 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -276,6 +252,7 @@ div.csl-indent {
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -289,7 +266,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="background">Background</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@esmonde?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Esmonde Yong</a> on <a href="https://unsplash.com/photos/-9B08uduMyY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption><p></p>
+<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@esmonde?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Esmonde Yong</a> on <a href="https://unsplash.com/photos/-9B08uduMyY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 <p><img src="kuala_lumpur_twin_owers.jpg" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -299,12 +276,12 @@ div.csl-indent {
 </section>
 <section id="who-is-this-for" class="level2">
 <h2 class="anchored" data-anchor-id="who-is-this-for">Who is this for?</h2>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -312,7 +289,7 @@ Note
 <p>This project was the TLDR-version of the <a href="https://ariewjy.github.io/posts/05-webscraping-machinelearning-house-pricing/" title="EDA and more details">complete article</a> where author explained in much more details about the process of webscraping-data cleaning-data wrangling-feature engineering, etc. This was made also as a mandatory terms for me to pass the Pacmann bootcamp intro to machine learning class. Video of me explaining the whole project is also available <a href="https://youtu.be/uoFtf7aFZJE">here</a> or in the video below</p>
 </div>
 </div>
-<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/uoFtf7aFZJE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/uoFtf7aFZJE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="related-work" class="level2">
 <h2 class="anchored" data-anchor-id="related-work">Related work</h2>
@@ -321,12 +298,12 @@ Note
 <section id="dataset-features" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-features">Dataset &amp; features</h2>
 <p>The dataset is using the scraped dataset from ads listing website, particularly property-to-rent surrounding Kuala Lumpur, Malaysia.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Why Webscraping?
 </div>
 </div>
@@ -355,85 +332,86 @@ Why Webscraping?
 <span id="cb1-11"><a href="#cb1-11"></a>df.head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="1">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>ads_id</th>
-      <td>100323185</td>
-      <td>100203973</td>
-    </tr>
-    <tr>
-      <th>prop_name</th>
-      <td>The Hipster @ Taman Desa</td>
-      <td>Segar Courts</td>
-    </tr>
-    <tr>
-      <th>completion_year</th>
-      <td>2022.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>monthly_rent</th>
-      <td>RM 4 200 per month</td>
-      <td>RM 2 300 per month</td>
-    </tr>
-    <tr>
-      <th>location</th>
-      <td>Kuala Lumpur - Taman Desa</td>
-      <td>Kuala Lumpur - Cheras</td>
-    </tr>
-    <tr>
-      <th>property_type</th>
-      <td>Condominium</td>
-      <td>Condominium</td>
-    </tr>
-    <tr>
-      <th>rooms</th>
-      <td>5</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>parking</th>
-      <td>2.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>bathroom</th>
-      <td>6.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>size</th>
-      <td>1842 sq.ft.</td>
-      <td>1170 sq.ft.</td>
-    </tr>
-    <tr>
-      <th>furnished</th>
-      <td>Fully Furnished</td>
-      <td>Partially Furnished</td>
-    </tr>
-    <tr>
-      <th>facilities</th>
-      <td>Minimart, Gymnasium, Security, Playground, Swimming Pool, Parking, Lift, Barbeque area, Multipurpose hall, Jogging Track</td>
-      <td>Playground, Parking, Barbeque area, Security, Jogging Track, Swimming Pool, Gymnasium, Lift, Sauna</td>
-    </tr>
-    <tr>
-      <th>additional_facilities</th>
-      <td>Air-Cond, Cooking Allowed, Washing Machine</td>
-      <td>Air-Cond, Cooking Allowed, Near KTM/LRT</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">ads_id</td>
+<td>100323185</td>
+<td>100203973</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">prop_name</td>
+<td>The Hipster @ Taman Desa</td>
+<td>Segar Courts</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">completion_year</td>
+<td>2022.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">monthly_rent</td>
+<td>RM 4 200 per month</td>
+<td>RM 2 300 per month</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">location</td>
+<td>Kuala Lumpur - Taman Desa</td>
+<td>Kuala Lumpur - Cheras</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">property_type</td>
+<td>Condominium</td>
+<td>Condominium</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">rooms</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">parking</td>
+<td>2.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bathroom</td>
+<td>6.0</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">size</td>
+<td>1842 sq.ft.</td>
+<td>1170 sq.ft.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">furnished</td>
+<td>Fully Furnished</td>
+<td>Partially Furnished</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">facilities</td>
+<td>Minimart, Gymnasium, Security, Playground, Swimming Pool, Parking, Lift, Barbeque area, Multipurpose hall, Jogging Track</td>
+<td>Playground, Parking, Barbeque area, Security, Jogging Track, Swimming Pool, Gymnasium, Lift, Sauna</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">additional_facilities</td>
+<td>Air-Cond, Cooking Allowed, Washing Machine</td>
+<td>Air-Cond, Cooking Allowed, Near KTM/LRT</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -473,85 +451,86 @@ Why Webscraping?
 <span id="cb2-11"><a href="#cb2-11"></a>df.head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>ads_id</th>
-      <td>100323185</td>
-      <td>100203973</td>
-    </tr>
-    <tr>
-      <th>prop_name</th>
-      <td>The Hipster @ Taman Desa</td>
-      <td>Segar Courts</td>
-    </tr>
-    <tr>
-      <th>completion_year</th>
-      <td>2022.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>monthly_rent_rm</th>
-      <td>4200</td>
-      <td>2300</td>
-    </tr>
-    <tr>
-      <th>location</th>
-      <td>Desa</td>
-      <td>Cheras</td>
-    </tr>
-    <tr>
-      <th>property_type</th>
-      <td>Condominium</td>
-      <td>Condominium</td>
-    </tr>
-    <tr>
-      <th>rooms</th>
-      <td>5</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>parking</th>
-      <td>2.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>bathroom</th>
-      <td>6.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>size_sqft</th>
-      <td>1842</td>
-      <td>1170</td>
-    </tr>
-    <tr>
-      <th>furnished</th>
-      <td>Fully Furnished</td>
-      <td>Partially Furnished</td>
-    </tr>
-    <tr>
-      <th>facilities</th>
-      <td>Minimart, Gymnasium, Security, Playground, Swimming Pool, Parking, Lift, Barbeque area, Multipurpose hall, Jogging Track</td>
-      <td>Playground, Parking, Barbeque area, Security, Jogging Track, Swimming Pool, Gymnasium, Lift, Sauna</td>
-    </tr>
-    <tr>
-      <th>additional_facilities</th>
-      <td>Air-Cond, Cooking Allowed, Washing Machine</td>
-      <td>Air-Cond, Cooking Allowed, Near KTM/LRT</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">ads_id</td>
+<td>100323185</td>
+<td>100203973</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">prop_name</td>
+<td>The Hipster @ Taman Desa</td>
+<td>Segar Courts</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">completion_year</td>
+<td>2022.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">monthly_rent_rm</td>
+<td>4200</td>
+<td>2300</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">location</td>
+<td>Desa</td>
+<td>Cheras</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">property_type</td>
+<td>Condominium</td>
+<td>Condominium</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">rooms</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">parking</td>
+<td>2.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bathroom</td>
+<td>6.0</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">size_sqft</td>
+<td>1842</td>
+<td>1170</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">furnished</td>
+<td>Fully Furnished</td>
+<td>Partially Furnished</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">facilities</td>
+<td>Minimart, Gymnasium, Security, Playground, Swimming Pool, Parking, Lift, Barbeque area, Multipurpose hall, Jogging Track</td>
+<td>Playground, Parking, Barbeque area, Security, Jogging Track, Swimming Pool, Gymnasium, Lift, Sauna</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">additional_facilities</td>
+<td>Air-Cond, Cooking Allowed, Washing Machine</td>
+<td>Air-Cond, Cooking Allowed, Near KTM/LRT</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -647,70 +626,71 @@ dtype: int64</code></pre>
 <span id="cb8-9"><a href="#cb8-9"></a>df.head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>completion_year</th>
-      <td>2022.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>monthly_rent_rm</th>
-      <td>4200</td>
-      <td>2300</td>
-    </tr>
-    <tr>
-      <th>location</th>
-      <td>Desa</td>
-      <td>Cheras</td>
-    </tr>
-    <tr>
-      <th>property_type</th>
-      <td>Condominium</td>
-      <td>Condominium</td>
-    </tr>
-    <tr>
-      <th>rooms</th>
-      <td>5</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>parking</th>
-      <td>2.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>bathroom</th>
-      <td>6.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>size_sqft</th>
-      <td>1842</td>
-      <td>1170</td>
-    </tr>
-    <tr>
-      <th>furnished</th>
-      <td>Fully Furnished</td>
-      <td>Partially Furnished</td>
-    </tr>
-    <tr>
-      <th>nearby_railways</th>
-      <td>no</td>
-      <td>yes</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">completion_year</td>
+<td>2022.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">monthly_rent_rm</td>
+<td>4200</td>
+<td>2300</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">location</td>
+<td>Desa</td>
+<td>Cheras</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">property_type</td>
+<td>Condominium</td>
+<td>Condominium</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">rooms</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">parking</td>
+<td>2.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bathroom</td>
+<td>6.0</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">size_sqft</td>
+<td>1842</td>
+<td>1170</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">furnished</td>
+<td>Fully Furnished</td>
+<td>Partially Furnished</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">nearby_railways</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1285,7 +1265,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Mean</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Mean</figcaption>
 <p><img src="index_files/figure-html/fig-model-comparison-output-1.png" class="img-fluid figure-img" width="583"></p>
 </figure>
 </div>
@@ -1293,7 +1273,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Linear Regression</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Linear Regression</figcaption>
 <p><img src="index_files/figure-html/fig-model-comparison-output-2.png" class="img-fluid figure-img" width="583"></p>
 </figure>
 </div>
@@ -1303,7 +1283,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Gradient Boosting</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Gradient Boosting</figcaption>
 <p><img src="index_files/figure-html/fig-model-comparison-output-3.png" class="img-fluid figure-img" width="583"></p>
 </figure>
 </div>
@@ -1311,7 +1291,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Gradient Boosting with CV</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Gradient Boosting with CV</figcaption>
 <p><img src="index_files/figure-html/fig-model-comparison-output-4.png" class="img-fluid figure-img" width="583"></p>
 </figure>
 </div>
@@ -1321,7 +1301,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Random Forest</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Random Forest</figcaption>
 <p><img src="index_files/figure-html/fig-model-comparison-output-5.png" class="img-fluid figure-img" width="583"></p>
 </figure>
 </div>
@@ -1329,7 +1309,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Random Forest with CV</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Random Forest with CV</figcaption>
 <p><img src="index_files/figure-html/fig-model-comparison-output-6.png" class="img-fluid figure-img" width="583"></p>
 </figure>
 </div>
@@ -1379,7 +1359,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="cell-output cell-output-display">
 <div id="fig-r2-mae" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models</figcaption>
 <p><img src="index_files/figure-html/fig-r2-mae-output-1.png" width="648" height="337" class="figure-img"></p>
 </figure>
 </div>
@@ -1391,57 +1371,58 @@ Length: 63, dtype: int64</code></pre>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>summary_df.applymap(<span class="kw">lambda</span> x: <span class="bu">round</span>(x, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="37">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>MAE Train</th>
-      <th>R2-Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>baseline</th>
-      <td>562.37</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>linear regression</th>
-      <td>319.22</td>
-      <td>0.65</td>
-    </tr>
-    <tr>
-      <th>gradient boosting</th>
-      <td>281.68</td>
-      <td>0.72</td>
-    </tr>
-    <tr>
-      <th>gradient boosting with CV</th>
-      <td>228.02</td>
-      <td>0.82</td>
-    </tr>
-    <tr>
-      <th>random forest</th>
-      <td>100.84</td>
-      <td>0.96</td>
-    </tr>
-    <tr>
-      <th>random forest with CV</th>
-      <td>99.80</td>
-      <td>0.96</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">MAE Train</th>
+<th data-quarto-table-cell-role="th">R2-Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">baseline</td>
+<td>562.37</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">linear regression</td>
+<td>319.22</td>
+<td>0.65</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">gradient boosting</td>
+<td>281.68</td>
+<td>0.72</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">gradient boosting with CV</td>
+<td>228.02</td>
+<td>0.82</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">random forest</td>
+<td>100.84</td>
+<td>0.96</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">random forest with CV</td>
+<td>99.80</td>
+<td>0.96</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>After several model tested on the train dataset, Random Forest with Hyperparameter tuning has the best R2-score and MAE value as shown in the <a href="#fig-r2-mae">Figure&nbsp;7</a>. The best model plotted below as reference:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Best Model - RF with CV</figcaption><p></p>
+<figcaption class="figure-caption">Best Model - RF with CV</figcaption>
 <p><img src="best_model.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
@@ -1517,30 +1498,31 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb47-14"><a href="#cb47-14"></a>summary_df_train_test.applymap(<span class="kw">lambda</span> x: <span class="bu">round</span>(x, <span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="39">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>MAE Train</th>
-      <th>R2-Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>train</th>
-      <td>99.80</td>
-      <td>0.96</td>
-    </tr>
-    <tr>
-      <th>test</th>
-      <td>214.08</td>
-      <td>0.80</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">MAE Train</th>
+<th data-quarto-table-cell-role="th">R2-Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">train</td>
+<td>99.80</td>
+<td>0.96</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">test</td>
+<td>214.08</td>
+<td>0.80</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1613,25 +1595,25 @@ Length: 63, dtype: int64</code></pre>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-madhuri2019" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-madhuri2019" class="csl-entry" role="listitem">
 Madhuri, CH. Raga, G. Anuradha, and M. Vani Pujitha. 2019. <span>“House Price Prediction Using Regression Techniques: A Comparative Study.”</span> <em>2019 International Conference on Smart Structures and Systems (ICSSS)</em>, March. <a href="https://doi.org/10.1109/icsss.2019.8882834">https://doi.org/10.1109/icsss.2019.8882834</a>.
 </div>
-<div id="ref-xu2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-xu2022" class="csl-entry" role="listitem">
 Xu, Kevin, and Hieu Nguyen. 2022. <span>“Predicting Housing Prices and Analyzing Real Estate Market in the Chicago Suburbs Using Machine Learning.”</span> <a href="https://doi.org/10.48550/ARXIV.2210.06261">https://doi.org/10.48550/ARXIV.2210.06261</a>.
 </div>
-<div id="ref-zhao2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-zhao2022" class="csl-entry" role="listitem">
 Zhao, Yaping, Ramgopal Ravi, Shuhui Shi, Zhongrui Wang, Edmund Y. Lam, and Jichang Zhao. 2022. <span>“PATE: Property, Amenities, Traffic and Emotions Coming Together for Real Estate Price Prediction.”</span> <a href="https://doi.org/10.48550/ARXIV.2209.05471">https://doi.org/10.48550/ARXIV.2209.05471</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ariewijaya2023,
-  author = {Aditya Arie Wijaya},
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+  author = {Arie Wijaya, Aditya},
   title = {{Easy} {Report:} {Malaysia} {Property} {Pricing}},
   date = {2023-02-12},
   url = {ariewjy.github.io/posts/006-easy-report-machine-learning},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ariewijaya2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Aditya Arie Wijaya. 2023.<span>“ Easy Report: Malaysia Property
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Arie Wijaya, Aditya. 2023.<span>“ Easy Report: Malaysia Property
 Pricing.”</span> February 12, 2023. <a href="https://ariewjy.github.io/posts/006-easy-report-machine-learning">ariewjy.github.io/posts/006-easy-report-machine-learning</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1661,9 +1643,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1728,6 +1724,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1779,6 +1861,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

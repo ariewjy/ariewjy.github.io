@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.scss">
 <meta property="og:title" content="">
-<meta property="og:image" content="ariewjy.github.io/posts/001-my-first-gig/preview.jpeg">
 <meta property="og:site-name" content="Geoscientist Codes">
 <meta name="twitter:title" content="">
 <meta name="twitter:image" content="ariewjy.github.io/img/profile.jpg">
@@ -113,42 +113,47 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Geoscientist Codes</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html">
+    <a class="nav-link" href="./publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -182,18 +187,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </div>
 <div class="list grid quarto-listing-cols-2">
-<div class="g-col-1" data-index="0" data-categories="tutorial,quarto,python,vscode" data-listing-date-sort="1679241600000" data-listing-file-modified-sort="1679245777568" data-listing-reading-time-sort="7.59">
+<div class="g-col-1" data-index="0" data-categories="tutorial,quarto,python,vscode" data-listing-date-sort="1679266800000" data-listing-file-modified-sort="1679245777568" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <a href="./posts/007-quarto-python-tutorial/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/007-quarto-python-tutorial/images/image0.jpg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
+<p class="card-img-top"><img src="posts/007-quarto-python-tutorial/images/image0.jpg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Personal Website using Jupyter Notebook and Quarto
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+8 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
@@ -221,18 +224,16 @@ Mar 20, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="project,data-science,python,webscraping,report" data-listing-date-sort="1676131200000" data-listing-file-modified-sort="1679204466050" data-listing-reading-time-sort="24.58">
+<div class="g-col-1" data-index="1" data-categories="project,data-science,python,webscraping,report" data-listing-date-sort="1676156400000" data-listing-file-modified-sort="1679204466050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25">
 <a href="./posts/006-easy-report-machine-learning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
+<p class="card-img-top"><img src="posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Easy Report: Malaysia Property Pricing
 </h5>
 <div class="listing-reading-time card-text text-muted">
-24 min
+25 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -263,18 +264,16 @@ Feb 12, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="project,data-science,python,webscraping" data-listing-date-sort="1675958400000" data-listing-file-modified-sort="1679204466021" data-listing-reading-time-sort="26.735">
+<div class="g-col-1" data-index="2" data-categories="project,data-science,python,webscraping" data-listing-date-sort="1675983600000" data-listing-file-modified-sort="1679204466021" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27">
 <a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png" class="thumbnail-image card-img" style="height: 240px;">
-</p>
+<p class="card-img-top"><img src="posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png" alt="Website" style="height: 240px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Malaysia Property Pricing - Webscraping &amp; Machine Learning Model
 </h5>
 <div class="listing-reading-time card-text text-muted">
-26 min
+27 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -302,18 +301,16 @@ Feb 10, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="project,webscraping,data-science,python" data-listing-date-sort="1675094400000" data-listing-file-modified-sort="1679204466011" data-listing-reading-time-sort="5.875">
+<div class="g-col-1" data-index="3" data-categories="project,webscraping,data-science,python" data-listing-date-sort="1675119600000" data-listing-file-modified-sort="1679204466011" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/004-webscraping-indonesia-national-exam/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/004-webscraping-indonesia-national-exam/publications.jpeg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
+<p class="card-img-top"><img src="posts/004-webscraping-indonesia-national-exam/publications.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Webscraping National Exams of Indonesia
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -341,18 +338,16 @@ Jan 31, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="project,data-science,python" data-listing-date-sort="1666800000000" data-listing-file-modified-sort="1679204466005" data-listing-reading-time-sort="13.635">
+<div class="g-col-1" data-index="4" data-categories="project,data-science,python" data-listing-date-sort="1666821600000" data-listing-file-modified-sort="1679204466005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14">
 <a href="./posts/003-project-insurance-cost-part-1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/003-project-insurance-cost-part-1/image.jpeg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
+<p class="card-img-top"><img src="posts/003-project-insurance-cost-part-1/image.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Medical Insurance Cost [Part-1]
 </h5>
 <div class="listing-reading-time card-text text-muted">
-13 min
+14 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -377,18 +372,16 @@ Oct 27, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="blog,quarto" data-listing-date-sort="1666281600000" data-listing-file-modified-sort="1679204465987" data-listing-reading-time-sort="4.605">
+<div class="g-col-1" data-index="5" data-categories="blog,quarto" data-listing-date-sort="1666303200000" data-listing-file-modified-sort="1679204465987" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <a href="./posts/002-migrating-to-quarto/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/002-migrating-to-quarto/image.jpeg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
+<p class="card-img-top"><img src="posts/002-migrating-to-quarto/image.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Migrating My Personal Blog to Quarto
 </h5>
 <div class="listing-reading-time card-text text-muted">
-4 min
+5 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
@@ -410,18 +403,16 @@ Oct 21, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="career" data-listing-date-sort="1661702400000" data-listing-file-modified-sort="1679204465982" data-listing-reading-time-sort="2.5">
+<div class="g-col-1" data-index="6" data-categories="career" data-listing-date-sort="1661724000000" data-listing-file-modified-sort="1679204465982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <a href="./posts/001-my-first-gig/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/001-my-first-gig/preview.jpeg" class="thumbnail-image card-img" style="height: 240px;">
-</p>
+<p class="card-img-top"><img src="posts/001-my-first-gig/preview.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 My First Interview in 500 Fortune Company
 </h5>
 <div class="listing-reading-time card-text text-muted">
-2 min
+3 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('career'); return false;">
@@ -472,9 +463,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -539,6 +544,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -588,6 +679,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
