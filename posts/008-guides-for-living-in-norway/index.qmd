@@ -1,7 +1,7 @@
 ---
 title: 'Petunjuk Hidup dan Menetap di Stavanger, Norway'
 description: |
-  Petunjuk untuk beradaptasi ketika pindah dan menetap di Stavanger, Norway.
+  Hal-hal yang saya harapkan saya tahu dan pahami sebelum saya pindah ke Norway [Bahasa Indonesia]
 title-block-banner: true
 date: '2023-06-26'
 categories:
@@ -201,7 +201,7 @@ Sewaktu cari tempat tinggal, saya juga pakai website ini untuk cari apartemen ya
 
 Ini mungkin topik yang cukup sensitif, tapi saya ada excel sheet nya sebelum datang ke Norway, dan ternyata mirip seperti yang saya tanya ke rekan-rekan saya yang sudah bertempat tinggal di Norway. Sekitar 27-30k NOK a month, rinciannya dari excel sheet saya sbb:
 
-![](images/paste-9.png)
+![](images/paste-9.png){width="538"}
 
 # Penutup
 
