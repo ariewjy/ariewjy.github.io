@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
@@ -597,7 +598,7 @@ Important
 <h3 class="anchored" data-anchor-id="overall-mean-age-of-insurance-member">Overall Mean age of insurance member</h3>
 <div class="cell" data-execution_count="6">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>(sns</span>
 <span id="cb8-2"><a href="#cb8-2"></a> .displot(</span>
 <span id="cb8-3"><a href="#cb8-3"></a>     data<span class="op">=</span>insurance, </span>
@@ -624,7 +625,7 @@ Important
 <h3 class="anchored" data-anchor-id="mean-age-bmi-and-charges-of-smoker-at-different-sex">Mean <code>age</code>, <code>bmi</code> and <code>charges</code> of <code>smoker</code> at different <code>sex</code></h3>
 <div class="cell" data-execution_count="7">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>(insurance</span>
 <span id="cb9-2"><a href="#cb9-2"></a> .groupby([</span>
 <span id="cb9-3"><a href="#cb9-3"></a>     <span class="st">'smoker'</span>,</span>
@@ -729,7 +730,7 @@ Important
 <p>Calculating the <strong>ratio</strong> of smoker to non-smoker group</p>
 <div class="cell" data-execution_count="8">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>(insurance</span>
 <span id="cb10-2"><a href="#cb10-2"></a> .groupby(<span class="st">'smoker'</span>)</span>
 <span id="cb10-3"><a href="#cb10-3"></a> [[<span class="st">'charges'</span>]]</span>
@@ -794,7 +795,7 @@ Important
 <p>As indicated by <a href="#tbl-ratio-smoker">Table&nbsp;3</a>, the medical charges for is much higher in the smoker member, compared to non-smoker member, with up to <code>4 times higher for smoker</code></p>
 <div class="cell" data-execution_count="9">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>(insurance</span>
 <span id="cb11-2"><a href="#cb11-2"></a> .groupby(<span class="st">'sex'</span>)</span>
 <span id="cb11-3"><a href="#cb11-3"></a> [[<span class="st">'charges'</span>]]</span>
@@ -859,7 +860,7 @@ Important
 <h4 class="anchored" data-anchor-id="distribution-of-age-categorized-based-on-sex-smoker-and-bmi_class">Distribution of <code>age</code> categorized based on <code>sex</code>, <code>smoker</code>, and <code>bmi_class</code></h4>
 <div class="cell" data-execution_count="10">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>(sns</span>
 <span id="cb12-2"><a href="#cb12-2"></a> .catplot</span>
 <span id="cb12-3"><a href="#cb12-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -893,7 +894,7 @@ Important
 <h3 class="anchored" data-anchor-id="does-region-affecting-the-age-distribution">Does <code>region</code> affecting the <code>age</code> distribution?</h3>
 <div class="cell" data-execution_count="11">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>(sns</span>
 <span id="cb13-2"><a href="#cb13-2"></a> .catplot</span>
 <span id="cb13-3"><a href="#cb13-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -924,7 +925,7 @@ Important
 <h4 class="anchored" data-anchor-id="inspecting-the-age-vs-charges-based-on-smoker-sex-and-bmi_class-profile">Inspecting the <code>age</code> vs <code>charges</code> based on <code>smoker</code>, <code>sex</code>, and <code>bmi_class</code> profile</h4>
 <div class="cell" data-execution_count="12">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>g<span class="op">=</span>(sns</span>
 <span id="cb14-2"><a href="#cb14-2"></a>.relplot</span>
 <span id="cb14-3"><a href="#cb14-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -983,7 +984,7 @@ Important
 <h3 class="anchored" data-anchor-id="does-sex-affects-age-vs-charges-distributiontrend">Does <code>sex</code> affects <code>age</code> vs <code>charges</code> distribution/trend?</h3>
 <div class="cell" data-execution_count="13">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>(sns</span>
 <span id="cb15-2"><a href="#cb15-2"></a>.relplot</span>
 <span id="cb15-3"><a href="#cb15-3"></a> (data<span class="op">=</span>insurance</span>
@@ -1036,7 +1037,7 @@ Important
 <h3 class="anchored" data-anchor-id="some-observed-outlier-group-i-a-between-group-i-and-ii">Some observed <code>outlier (group I-a)</code> between group I and II?</h3>
 <div class="cell" data-execution_count="14">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>g <span class="op">=</span> (sns</span>
 <span id="cb16-2"><a href="#cb16-2"></a>.relplot</span>
 <span id="cb16-3"><a href="#cb16-3"></a> (data<span class="op">=</span>insurance,</span>
@@ -1095,7 +1096,7 @@ Important
 <h3 class="anchored" data-anchor-id="what-affects-the-outlier-i-a-group">What affects the <code>outlier/ I-a</code> group?</h3>
 <div class="cell" data-execution_count="15">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>(sns</span>
 <span id="cb17-2"><a href="#cb17-2"></a>.relplot</span>
 <span id="cb17-3"><a href="#cb17-3"></a> (data<span class="op">=</span>insurance.query(<span class="st">'smoker == "no"'</span>),</span>
@@ -1143,7 +1144,7 @@ Important
 </div>
 <div class="cell" data-execution_count="16">
 <details>
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>g <span class="op">=</span> (sns</span>
 <span id="cb18-2"><a href="#cb18-2"></a>.relplot</span>
 <span id="cb18-3"><a href="#cb18-3"></a> (data<span class="op">=</span>insurance,</span>

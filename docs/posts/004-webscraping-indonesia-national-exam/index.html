@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
@@ -253,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For this use we will need to scrape the data from the website, but the catch is–we are using just pandas library!</p>
 <div class="cell" data-execution_count="1">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -263,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Enter pandas.read_html()</p>
 <div class="cell" data-execution_count="2">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>un_2019<span class="op">=</span> <span class="op">\</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>(pd</span>
 <span id="cb2-3"><a href="#cb2-3"></a> .read_html(<span class="st">'https://npd.kemdikbud.go.id/?appid=hasilun&amp;tahun=2019'</span>)</span>
@@ -397,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s see what features do we have, and which one do we really <strong>care</strong> about in this project.</p>
 <div class="cell" data-execution_count="3">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>un_2019.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -411,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will leave some columns and just using region information (‘Nama Wilayah’, ‘Propinsi’), and national exams score (‘UN SMP’,‘UN SMA IPA’, ‘UN SMA IPS’)</p>
 <div class="cell" data-execution_count="4">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>un_2019 <span class="op">=</span> un_2019[[<span class="st">'Nama Wilayah'</span>, <span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>,<span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]]</span>
 <span id="cb5-2"><a href="#cb5-2"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -480,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s also check if the dtypes is already correct e.g.&nbsp;digit would be float64 or int64 dtype.</p>
 <div class="cell" data-execution_count="5">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>un_2019.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -501,7 +502,7 @@ memory usage: 21.5+ KB</code></pre>
 <p>Let’s make some amendments on dtypes, to allow plotting.</p>
 <div class="cell" data-execution_count="6">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>un_2019 <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>un_2019.astype({</span>
 <span id="cb8-3"><a href="#cb8-3"></a>    <span class="st">'UN SMP'</span>: <span class="bu">float</span>,</span>
@@ -522,7 +523,7 @@ dtype: object</code></pre>
 <p>Just me, but I dont like redundant information, so let’s remove some of the words in the column.</p>
 <div class="cell" data-execution_count="7">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>un_2019 <span class="op">=</span> un_2019.rename(columns<span class="op">=</span>{</span>
 <span id="cb10-2"><a href="#cb10-2"></a>    <span class="st">'Nama Wilayah'</span>: <span class="st">'Wilayah'</span>})</span>
 <span id="cb10-3"><a href="#cb10-3"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -592,7 +593,7 @@ dtype: object</code></pre>
 <p>Similarly, let’s remove ‘Prov’ from each data in ‘Propinsi’ column.</p>
 <div class="cell" data-execution_count="8">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>un_2019[<span class="st">'Propinsi'</span>] <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>un_2019[<span class="st">'Propinsi'</span>].<span class="bu">str</span>.replace(<span class="st">'Prov. '</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb11-3"><a href="#cb11-3"></a></span>
@@ -666,7 +667,7 @@ dtype: object</code></pre>
 <p>Let’s plot senior high school (SMA) data:</p>
 <div class="cell" data-execution_count="9">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#making the barchart</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
 <span id="cb12-3"><a href="#cb12-3"></a></span>
@@ -701,7 +702,7 @@ dtype: object</code></pre>
 <p>Let’s all be human, not abusive towards our notebook, and create a function to scrape our data-change the dtypes-change the column name etc.</p>
 <div class="cell" data-execution_count="10">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">def</span> webscrap(tahun):</span>
 <span id="cb13-2"><a href="#cb13-2"></a>    df <span class="op">=</span> pd.read_html(<span class="ss">f'https://npd.kemdikbud.go.id/?appid=hasilun&amp;tahun=</span><span class="sc">{</span>tahun<span class="sc">}</span><span class="ss">'</span>)[<span class="dv">1</span>][<span class="dv">0</span>:<span class="dv">547</span>] <span class="co">#ambil data dari web</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a>    df <span class="op">=</span> df[[<span class="st">'Nama Wilayah'</span>, <span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>,<span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]] <span class="co">#extract kolom</span></span>
@@ -715,7 +716,7 @@ dtype: object</code></pre>
 <p>Then let’s scrap all years data from 2015-2019.</p>
 <div class="cell" data-execution_count="11">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>un_2015 <span class="op">=</span> webscrap(<span class="dv">2015</span>)</span>
 <span id="cb14-2"><a href="#cb14-2"></a>un_2016 <span class="op">=</span> webscrap(<span class="dv">2016</span>)</span>
 <span id="cb14-3"><a href="#cb14-3"></a>un_2017 <span class="op">=</span> webscrap(<span class="dv">2017</span>)</span>
@@ -726,7 +727,7 @@ dtype: object</code></pre>
 <p>Let’s do quick sanity check:</p>
 <div class="cell" data-execution_count="12">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>un_2015.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -799,7 +800,7 @@ dtype: object</code></pre>
 </div>
 <div class="cell" data-execution_count="13">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -873,7 +874,7 @@ dtype: object</code></pre>
 <p>Even better, let’s combine all of the data into one big data:</p>
 <div class="cell" data-execution_count="14">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">#merge data</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>list_df <span class="op">=</span> [un_2015, un_2016, un_2017, un_2018, un_2019]</span>
 <span id="cb17-3"><a href="#cb17-3"></a>un_2015_2019 <span class="op">=</span> pd.concat(list_df, axis<span class="op">=</span><span class="st">'rows'</span>)</span>
@@ -893,7 +894,7 @@ Name: Tahun, dtype: int64</code></pre>
 <p>Data looks good, but just to be safe, let’s save it before we do anything stupid.</p>
 <div class="cell" data-execution_count="15">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>un_2015_2019.to_csv(<span class="st">"un_2015_2019.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -903,7 +904,7 @@ Name: Tahun, dtype: int64</code></pre>
 <p>Let’s see which 10 regions have the highest mean national exams.</p>
 <div class="cell" data-execution_count="16">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>order_new <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>(un_2019</span>
 <span id="cb20-3"><a href="#cb20-3"></a> [[<span class="st">'Propinsi'</span>, <span class="st">'UN SMA IPA'</span>]]</span>
@@ -987,7 +988,7 @@ Name: Tahun, dtype: int64</code></pre>
 <p>Let’s do some plotting for all years.</p>
 <div class="cell" data-execution_count="17">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">12</span>))</span>
 <span id="cb21-2"><a href="#cb21-2"></a></span>
 <span id="cb21-3"><a href="#cb21-3"></a>(sns</span>
@@ -1011,7 +1012,7 @@ Name: Tahun, dtype: int64</code></pre>
 <p>But, let’s exclude year 2015 and 2016, as I think it is a bit an outlier in terms of value here.</p>
 <div class="cell" data-execution_count="18">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">12</span>))</span>
 <span id="cb22-2"><a href="#cb22-2"></a></span>
 <span id="cb22-3"><a href="#cb22-3"></a>(sns</span>
@@ -1035,7 +1036,7 @@ Name: Tahun, dtype: int64</code></pre>
 <p>Now let’s see if our thinking is right, by getting a top region on each national exams from junior to senior high schools.</p>
 <div class="cell" data-execution_count="19">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">def</span> get_max_prop(df):</span>
 <span id="cb23-2"><a href="#cb23-2"></a>    max_un_smp <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMP'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
 <span id="cb23-3"><a href="#cb23-3"></a>    max_un_sma_ipa <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMA IPA'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
@@ -1046,7 +1047,7 @@ Name: Tahun, dtype: int64</code></pre>
 <p>Let’s do a loop over years;</p>
 <div class="cell" data-execution_count="20">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>years <span class="op">=</span> [un_2015, un_2016, un_2017, un_2018, un_2019]</span>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="cf">for</span> year <span class="kw">in</span> years:</span>
 <span id="cb24-3"><a href="#cb24-3"></a>    <span class="bu">print</span>(get_max_prop(year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1068,7 +1069,7 @@ Name: Tahun, dtype: int64</code></pre>
 <p>My theory is even if Kalimantan Timur was up there at rank 8, it was not from Tenggarong.</p>
 <div class="cell" data-execution_count="21">
 <details open="">
-<summary>Show Code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>(un_2015_2019.query(<span class="st">"Propinsi == 'Kalimantan Timur'"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2"></a> .sort_values(by<span class="op">=</span><span class="st">'UN SMA IPA'</span>, ascending<span class="op">=</span><span class="va">False</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb26-3"><a href="#cb26-3"></a> .head(<span class="dv">10</span>)</span>
