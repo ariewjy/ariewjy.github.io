@@ -61,7 +61,7 @@ format:
       # dark: darkly
     css: styles.scss
     highlight-style: eiffel
-
+    embed-resources: true
     # toc: true
     # toc-location: right
     fontsize: 1.2em
