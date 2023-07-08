@@ -18,10 +18,10 @@ website:
   #   location: navbar
   #   type: overlay
   favicon: img/logo_rounded.png
-  twitter-card:
-    image: img/profile.jpg
-    creator: "@Adtarie"
-    card-style: summary
+  # twitter-card:
+  #   image: img/profile.jpg
+  #   creator: "@Adtarie"
+  #   card-style: summary
   open-graph: true
 
   navbar:
