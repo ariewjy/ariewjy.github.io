@@ -2,33 +2,32 @@ project:
   type: website
   output-dir: docs
   preview:
-    port: 3600
+    port: 7777
+# metadata-files:
+#   - _website.yml
+#   - _format.yml
+
+execute:
+  freeze: auto
 
 website:
   title: "Geoscientist Codes"
   # description: "Personal Website"
   site-url: ariewjy.github.io
-  # reader-mode: true
-  # cookie-consent:
-  # type: express
-  # style: headline
-  # palette: light
-  search:
-    location: navbar
-    type: overlay
+  # search:
+  #   location: navbar
+  #   type: overlay
   favicon: img/logo_rounded.png
   twitter-card:
     image: img/profile.jpg
     creator: "@Adtarie"
-    card-style: summary_large_image
+    card-style: summary
   open-graph: true
-  sidebar:
-    style: docked
+
   navbar:
     type: light
-    # logo: logo_rounded.png
-    background: "#F6F0ED"
-    # foreground: "#0B2027"
+    background: "#2D2D36"
+    search: false
     pinned: false
     right:
       - text: "About"
@@ -37,15 +36,8 @@ website:
         file: index.qmd
       - text: "Publications"
         file: publications.qmd
-      # - icon: github
-      #   href: https://github.com/ariewjy
-      # - icon: twitter
-      #   href: https://twitter.com/Adtarie
-      # - icon: linkedin
-      #   href: https://www.linkedin.com/in/adityaariewijaya/
   page-footer:
     right:
-      # - text: "Copyright, Aditya Arie Wijaya"
       - href: license.qmd
         text: License
     left:
@@ -53,6 +45,7 @@ website:
         text: Built w/ Quarto
 
   page-navigation: true
+
 format:
   html:
     theme:
@@ -61,28 +54,22 @@ format:
       # dark: darkly
     css: styles.scss
     highlight-style: eiffel
-    # embed-resources: true
-    # toc: true
-    # toc-location: right
+    smooth-scroll: true
     fontsize: 1.2em
     code-link: true
     anchor-sections: true
 
-    #table and figure setting
+    # table and figure setting
     tbl-cap-location: top
     fig-cap-location: top
     fig-align: center
     fig-responsive: true
-    # fig-height: 2
-    # fig-asp: 1
-    # fig-dpi: 96
+
     reference-location: document
     code-line-numbers: true
     code-copy: true
     code-summary: Show Code
-    # max-width: 2em
-    # mainfont: "system-ui"
-    # monofont: "system-ui"
+
     footnotes-hover: true
     citation: true
     appendix-style: default
@@ -90,5 +77,3 @@ format:
     comments:
       utterances:
         repo: ariewjy/ariewjy.github.io
-execute:
-  freeze: auto
