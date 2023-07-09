@@ -19,9 +19,9 @@ website:
   #   type: overlay
   favicon: img/logo_rounded.png
   twitter-card:
-    image: img/profile.jpg
+    # image: img/profile.jpg
     creator: "@Adtarie"
-    card-style: summary
+    # card-style: summary
   open-graph: true
 
   navbar:
