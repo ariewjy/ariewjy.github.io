@@ -1,5 +1,5 @@
 ---
-title: "Aditya Arie Wijaya"
+title: "About"
 subtitle: |
   Petrophysicist, Geoscientist, and Coding in between.
 image: img/profile.jpg

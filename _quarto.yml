@@ -11,17 +11,18 @@ execute:
   freeze: auto
 
 website:
-  title: "Geoscientist Codes"
-  # description: "Personal Website"
+  title: "A2W"
+  # description: "Geoscientist Codes"
   site-url: ariewjy.github.io
+  site-path: "https://ariewjy.github.io/"
   # search:
   #   location: navbar
   #   type: overlay
   favicon: img/logo_rounded.png
   twitter-card:
-    # image: img/profile.jpg
+    image: img/profile.jpg
     creator: "@Adtarie"
-    # card-style: summary
+    card-style: summary
   open-graph: true
 
   navbar:
