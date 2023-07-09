@@ -36,7 +36,9 @@ I have developed a web application to load well-log data in LAS file format and 
 
 In my spare time, I also enjoy sitting in silence, reading a book, or just let my mind wandering around the universe of thoughts.
 
-Have a look at my [data science resume](./assets/data_scientist_resume.pdf).
+Have a look at my resumes:
+- [data science resume](./assets/data_scientist_resume.pdf)
+- [geoscientist resume](./assets/geoscientist_resume.pdf)
 
 :::: {.grid}
 
