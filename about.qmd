@@ -1,7 +1,7 @@
 ---
 title: "About"
 subtitle: |
-  Petrophysicist, Geoscientist, and Coding in between.
+  Energy-policy, geoscience, and coding in between.
 image: img/profile.jpg
 about:
   id: edu-exp
@@ -30,39 +30,33 @@ citation: false
 
 Hi there 👋 I am **Arie**!
 
-I am currently working as a Geoscientist in the Multi-national Service company in the field of Energy, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Kuala Lumpur, Malaysia.  
+I am currently working as a Geoscientist in the Multi-national Service company in the field of Energy, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Kuala Lumpur, Malaysia.
 
-I have developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/), and particularly interested in finding an **intersection between geoscience/ subsurface with data analytics/ science**. 
+I have developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/), and particularly interested in finding an **intersection between geoscience/ subsurface with data analytics/ science**.
 
 In my spare time, I also enjoy sitting in silence, reading a book, or just let my mind wandering around the universe of thoughts.
 
-Have a look at my resumes:
-- [data science resume](./assets/data_scientist_resume.pdf)
-- [geoscientist resume](./assets/geoscientist_resume.pdf)
+Have a look at my resume:
 
-:::: {.grid}
+\- [data science resume](./assets/data_scientist_resume.pdf)
 
+\- [geoscientist resume](./assets/geoscientist_resume.pdf)
+
+::: grid
 ::: {.g-col-12 .g-col-md-8 style="text-align: left;"}
-
 ## Education
 
-- **_B.Eng._ in Geological Engineering** (*Specialised in Energy, and Reservoir Analysis*), **2012**  
-  *University Gadjah Mada, Indonesia*
+-   ***B.Eng.*** **in Geological Engineering** (*Specialised in Energy, and Reservoir Analysis*), **2012**\
+    *University Gadjah Mada, Indonesia*
 :::
 
 ::: {.g-col-12 .g-col-md-4 style="text-align: left;"}
 ## Interests
 
-- Cooking
-- Rudimental Drums
-- Data Visualisation
-- Hiking
-- Fishing
+-   Cooking
+-   Rudimental Drums
+-   Data Visualisation
+-   Hiking
+-   Fishing
 :::
-
-::::
-
-
-
-
-
+:::
