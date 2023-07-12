@@ -13,8 +13,8 @@ execute:
 website:
   title: "A2W"
   # description: "Geoscientist Codes"
-  site-url: ariewjy.github.io
-  site-path: "https://ariewjy.github.io/"
+  site-url: https://ariewjy.github.io
+  # site-path: "https://ariewjy.github.io/"
   # search:
   #   location: navbar
   #   type: overlay
