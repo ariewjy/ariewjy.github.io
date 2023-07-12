@@ -22,7 +22,7 @@ website:
   twitter-card:
     image: img/profile.jpg
     creator: "@Adtarie"
-    card-style: summary
+    card-style: summary_large_image
   open-graph: true
 
   navbar:
