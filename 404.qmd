@@ -6,7 +6,7 @@ citation: false
 page-layout: article
 ---
 
-Maybe visit [main site](ariewjy.quarto.pub ) to see if you can find it?
+Maybe visit [main site](ariewjy.github.io ) to see if you can find it?
 
 **OR** you can always mention me in [Twitter](https://twitter.com/Adtarie)
 
