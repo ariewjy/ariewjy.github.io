@@ -16,6 +16,8 @@ draft: false
 citation-location: document
 bibliography: references.bib
 jupyter: minids
+execute: 
+  freeze: true
 ---
 
 ## Background

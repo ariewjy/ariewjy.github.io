@@ -1,0 +1,63 @@
+---
+title: 'Plotpetrophysics '
+description: |
+  A web-application to do petrophysical analysis using LAS file well-log data
+author: Aditya Arie Wijaya
+title-block-banner: true
+date: '2023-07-15'
+categories:
+  - streamlit
+  - geoscience
+  - project
+draft: false
+image: images/image-1.png
+fig-cap-location: margin
+---
+
+# Web App for Geoscience
+
+![Welcome Page](images/image-0.png)
+
+This app was built to answer the need for a quicklook petrophysical analysis for well-log data. So far, author found no web application that was available for **FREE** to students and enthusiast-alike.
+
+Like of the website can be found here [plotpetrophysics](https://plotpetrophysics.streamlit.app)
+
+## Features are as follows:
+
+### Upload Your Own/ Use Pre-loaded Data
+
+If you don't have any other dataset to play with, you can use the preloaded file to see what the app can offer. Otherwise, feel free to load your own LAS file data to it (just make sure it is LAS 2.0).
+
+![File Selection](images/image-2.gif)
+
+### Displays Well Information
+
+Information about the well, like a well-name, the top and bottom depth, company, etc. can be displayed.
+
+![Well Information](images/image-3.png)
+
+### See Missing Data
+
+All the curves available in the data will be displayed as a bar chart from top to bottom of the log (scaled by number of rows depending on the depth step), any missing data would be displayed here as shorter than others.
+
+![](images/image-5.png)
+
+### Plots Well Log data in Triple Combo Format
+
+![Triple Combo Log](images/image-1.png){fig-align="center"} The plot can be adjusted based on `depths`, `scales`, `number of grids`, and the `shadings` between curves (plot settings on the left)
+
+### Plots in Formation Evaluation Format
+
+One can also turned-on Formaton Evaluation mode and then displayed as shale volume, bulk volume of water, and water saturation as follows.
+
+![Curves Overview](images/image-6.png)
+
+### And Many More...
+
+-   You can download all plot as PDF files
+
+-   You can download final result as CSV
+
+-   There is histogram view of a curve
+
+-   There is a scatter-plot view of the curves

@@ -37,6 +37,7 @@ website:
         file: index.qmd
       - text: "Publications"
         file: publications.qmd
+
   page-footer:
     right:
       - href: license.qmd

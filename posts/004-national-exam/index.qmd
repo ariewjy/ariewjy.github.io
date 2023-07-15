@@ -7,11 +7,13 @@ date: '2023-01-31'
 code-fold: show
 categories:
   - project
-  - webscraping
+  - webscraping d
   - data-science
   - python
 draft: false
 jupyter: minids
+execute: 
+  freeze: true
 ---
 
 ![Photo by <a href="https://unsplash.com/@isengrapher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ed Us</a> on <a href="https://unsplash.com/photos/td71Lq7uAhA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](./publications.jpeg){width="100%"}

@@ -1,0 +1,11 @@
+{
+  "hash": "6bfd8c5bd83ec5124df1b4bf9cb4044d",
+  "result": {
+    "markdown": "---\ntitle: 'Plotpetrophysics '\ndescription: |\n  A web-application to do petrophysical analysis using LAS file well-log data\nauthor: Aditya Arie Wijaya\ntitle-block-banner: true\ndate: '2022-10-27'\ncategories:\n  - project\n  - data-science\n  - python\ndraft: false\n---\n\ntest\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
