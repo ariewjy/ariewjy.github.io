@@ -1,0 +1,11 @@
+{
+  "hash": "c05098406ec3818734d7779fa392cc5d",
+  "result": {
+    "markdown": "---\ntitle: Low CO2 Emission and High Economic Growth - Can they Really Exist\ndescription: |\n  Exploring the reason why some countries managed to decouple their economic growth from CO2 emission.\nauthor: Aditya Arie Wijaya\ntitle-block-banner: true\ndate: '2023-07-17'\ncategories:\n  - energy\n  - CO2\n  - economy\ndraft: false\nfig-cap-location: margin\n---\n\n# Decoupled Economic Growth from CO2 Emission\n\nThe premise is simple enough to understand, country needs energy to grow their economy, the higher the energy consumption the higher the CO2 emission would be, assuming the predominantly fossil-fuel source of energy. At least that is true for most of the countries in the world until 2018 as shown below, and likely to be the case today.\n\n<!-- <iframe src=\"https://ourworldindata.org/grapher/co2-emissions-vs-gdp\" loading=\"lazy\" style=\"width: 100%; height: 600px; border: 0px none;\"></iframe> -->\n\n``` python\nimport pandas as pd\n\nco2=pd.read_csv('https://github.com/ariewjy/energy-data/blob/master/owid-energy-data.csv')\nco2.head()\n```\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
