@@ -1,10 +1,10 @@
 ---
-title: 'Low CO2 Emission and High Economic Growth - Can they Really Exist'
+title: 'Low CO2 Emission and High Economic Growth - Can they Really Exist?'
 description: |
-  Exploring the reason why some countries managed to decouple their economic growth from CO2 emission.
+  Exploring why some countries managed to decouple their economic growth from CO2 emission. Factors affecting the likelihood, and what can really be done.
 author: Aditya Arie Wijaya
 title-block-banner: true
-date: '2023-07-17'
+date: '2023-07-20'
 categories:
   - energy
   - CO2
@@ -15,15 +15,469 @@ fig-cap-location: margin
 jupyter: minids
 ---
 
-# Decoupled Economic Growth from CO2 Emission
+## CO2 Emission vs GDP
 
-The premise is simple enough to understand, country needs energy to grow their economy, the higher the energy consumption the higher the CO2 emission would be, assuming the predominantly fossil-fuel source of energy. At least that is true for most of the countries in the world until 2018 as shown below, and likely to be the case today.
+> "Historically, CO~2~ emissions have been [strongly correlated with](https://ourworldindata.org/grapher/co2-emissions-vs-gdp) how much money we have. This is particularly true at low-to-middle incomes. The richer we are, the more CO~2~ we emit. This is because we use more energy -- which often comes from burning fossil fuels." (source: Our World in Data, see @fig-co2-gdp)
 
-<!-- <iframe src="https://ourworldindata.org/grapher/co2-emissions-vs-gdp" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe> -->
+I would first asking if above one-way conclusion can be made. I am convinced, using the same relationship, the opposite conclusion can also be made possible.
 
-``` python
+[**A country is richer because they are emitting more CO2**]{.underline}**.**
+
+The premise is simple, country needs energy to grow their economy, the higher the energy consumption the higher the CO2 emission would be. The following is the chart from [Our World in Data](https://ourworldindata.org/grapher/co2-emissions-vs-gdp), displaying the relationship between CO~2~ Emission per Capita vs GDP per Capita of each country from 1990-2018. A simple glance would give an impression that in order for a country to grow their economy (e.g. increase their GDP), one needs to emit more CO~2~ emissions.
+
+> So not because **we are rich we emit more CO2**, but **we are rich because we emit more CO2**. This is completely different narrative to the above from the first paragraph.
+
+![CO2 Emission per Capita vs GDP per Capita](images/co2-emissions-vs-gdp.svg){#fig-co2-gdp style="color:gray;" width="799"}
+
+This is of course no to undermine the impact of CO2 emission to our global temperature (*this isn't that*), but rather to manage our expectations and understandings on what can really be done. Some questions about "*can we reduce our CO2 emission but still maintaining economy growth*"? Or "*do we have to increase our CO2 to raise our economic growth?*" are some fair questions to be asked.
+
+But like any good lawyer would answer those questions-- **it depends**.
+
+Despite the fact that some [articles](https://ourworldindata.org/co2-gdp-decoupling) point out the fact that some countries were able to decoupled their economy from CO2 emission as shown in @fig-co2-gdp-uk, example as shown from below, **one may wonder -- how so, and how come**? At least for me, it goes against my logic.
+
+So I hope I can answer some of that questions at the end of this article - if you stay long enough.
+
+![United Kingdom Decoupled CO2 Emission vs Economic Growth](images/co2-emissions-and-gdp-per-capita.svg){#fig-co2-gdp-uk style="color:gray;" width="802"}
+
+## Importing Dataset
+
+### CO2 Dataset
+Let's use some of the provided dataset from OWD, I first have to admit their chart is beautifully displayed and designed, and their database is excellent.
+
+Here I am importing directly from their Github repository, where I took CO2 data and CO2 remark (contains remark for each columns).
+Selecting only few columns that I need for this post, and show some rows with no missing data at random.
+
+```{python}
+#importing dataset
+
 import pandas as pd
+import warnings
 
-co2=pd.read_csv('https://github.com/ariewjy/energy-data/blob/master/owid-energy-data.csv')
-co2.head()
+# Ignore future warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+#quarto setting
+#| label: tbl-co2
+#| tbl-cap: CO2 Dataset
+
+
+co2_raw = pd.read_csv('https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv')
+co2_remark = pd.read_csv('https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-codebook.csv')
+
+#selecting dataset
+
+co2 = co2_raw[[
+ 'country',
+ 'year',
+#  'iso_code',
+ 'population',
+ 'gdp',
+#  'cement_co2',
+#  'cement_co2_per_capita',
+ # 'co2',
+#  'co2_growth_abs',
+#  'co2_growth_prct',
+#  'co2_including_luc',
+#  'co2_including_luc_growth_abs',
+#  'co2_including_luc_growth_prct',
+#  'co2_including_luc_per_capita',
+#  'co2_including_luc_per_gdp',
+#  'co2_including_luc_per_unit_energy',
+ 'co2_per_capita',
+ # 'co2_per_gdp',
+#  'co2_per_unit_energy',
+#  'coal_co2',
+#  'coal_co2_per_capita',
+ # 'consumption_co2',
+#  'consumption_co2_per_capita',
+ # 'consumption_co2_per_gdp',
+#  'cumulative_cement_co2',
+#  'cumulative_co2',
+#  'cumulative_co2_including_luc',
+#  'cumulative_coal_co2',
+#  'cumulative_flaring_co2',
+#  'cumulative_gas_co2',
+#  'cumulative_luc_co2',
+#  'cumulative_oil_co2',
+#  'cumulative_other_co2',
+ # 'energy_per_capita',
+ # 'energy_per_gdp',
+#  'flaring_co2',
+#  'flaring_co2_per_capita',
+#  'gas_co2',
+#  'gas_co2_per_capita',
+#  'ghg_excluding_lucf_per_capita',
+#  'ghg_per_capita',
+#  'land_use_change_co2',
+#  'land_use_change_co2_per_capita',
+#  'methane',
+#  'methane_per_capita',
+#  'nitrous_oxide',
+#  'nitrous_oxide_per_capita',
+#  'oil_co2',
+#  'oil_co2_per_capita',
+#  'other_co2_per_capita',
+#  'other_industry_co2',
+#  'primary_energy_consumption',
+#  'share_global_cement_co2',
+#  'share_global_co2',
+#  'share_global_co2_including_luc',
+#  'share_global_coal_co2',
+#  'share_global_cumulative_cement_co2',
+#  'share_global_cumulative_co2',
+#  'share_global_cumulative_co2_including_luc',
+#  'share_global_cumulative_coal_co2',
+#  'share_global_cumulative_flaring_co2',
+#  'share_global_cumulative_gas_co2',
+#  'share_global_cumulative_luc_co2',
+#  'share_global_cumulative_oil_co2',
+#  'share_global_cumulative_other_co2',
+#  'share_global_flaring_co2',
+#  'share_global_gas_co2',
+#  'share_global_luc_co2',
+#  'share_global_oil_co2',
+#  'share_global_other_co2',
+#  'share_of_temperature_change_from_ghg',
+#  'temperature_change_from_ch4',
+#  'temperature_change_from_co2',
+#  'temperature_change_from_ghg',
+#  'temperature_change_from_n2o',
+#  'total_ghg',
+#  'total_ghg_excluding_lucf',
+#  'trade_co2',
+#  'trade_co2_share'
+ ]]
+
+co2.dropna().sample(5)
+```
+
+I figured they don't provide us with GDP per Capita column, so we need to create and add that column too.
+
+```{python}
+#adding gdp per capita column
+co2['gdp_per_capita'] = co2['gdp']/ co2['population']
+
+#dropping any rows with null GDP Per Capita
+co2 = co2[~co2.gdp_per_capita.isnull()]
+
+#dropping any rows with null consumption_co2_per_capita
+# co2 = co2[~co2.consumption_co2_per_capita.isnull()].reset_index(drop=True)
+
+#sanity check
+co2 = co2.query(" gdp_per_capita>0 & co2_per_capita>0")
+co2
+```
+
+### Gapminder Dataset
+We need one more column (conintent), and can get that from gapminder dataset as follows.
+
+```{python}
+#importing gapminder
+gapminder=pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv')
+gapminder = gapminder[['country', 'continent']]
+gapminder = gapminder.drop_duplicates().reset_index(drop=True)
+
+#merging with original co2 dataset
+co2 = pd.merge(co2, gapminder, on='country', how='inner')
+
+#sanity check
+co2.dropna().sample(10)
+```
+
+## Feature Engineering
+In order to display bubble map, in certain libraries like hvplot and matplotlib, one needs to create a column for size, based on population as follows.
+
+```{python}
+#make size for pop
+import numpy as np
+co2['size']=np.sqrt(co2['population']*2.66e-04*6)
+
+#sanity check
+co2[['country', 'population', 'size']].dropna().sample(5)
+```
+
+```{python}
+#creating class
+
+bins= [0.00001,1000,4000,12000,100000] #setting up the group based on bmi bins 
+labels = [
+         'lower',
+         'lower-middle',
+         'upper-middle',
+         'upper'
+         ] #setting up the label on each group
+
+co2['income_class']= pd.cut(
+   co2['gdp_per_capita'], 
+   bins=bins, 
+   labels=labels,
+   include_lowest=False
+   )
+
+co2
+```
+
+```{python}
+#| label: fig-2
+
+import matplotlib.pyplot as plt
+
+source = co2
+
+x=source.co2_per_capita
+y=source.gdp_per_capita
+z=source.country
+
+plt.scatter(x=x, y=y, marker='o', c='r', edgecolor='b')
+plt.yscale('log')
+plt.xscale('log')
+plt.show()
+```
+
+```{python}
+import hvplot.pandas
+import panel as pn
+
+source = co2
+
+year_widget=pn.widgets.IntSlider(name='year', start=source.year.min(), end=source.year.max())
+
+idf = source.interactive()
+idf = idf[(idf['year'] == year_widget)]
+
+idf.hvplot.scatter(
+    x='co2_per_capita', 
+    y='gdp_per_capita',
+    by='continent',
+    s='size',
+    logx=True,
+    logy=True,
+    legend='top',
+    height=600,
+    width=800,
+    hover_cols=["country", "population"],
+)
+```
+
+```{python}
+import plotly.express as px
+
+source = co2
+
+highlighted_countries = ['United States', 'China', 'India', 'Indonesia', 'United Kingdom', 'Germany']
+
+# Create a new column for text values based on the condition
+source['text_value'] = source['country'].apply(lambda country: country if country in highlighted_countries else '')
+
+fig = px.scatter(data_frame=source, 
+           x="co2_per_capita", 
+           y="gdp_per_capita", 
+           animation_frame="year", 
+           animation_group="country",
+           size="population", 
+           color="continent", 
+           hover_name="country", 
+           log_x = True, log_y=True,
+           size_max=80,
+           width=800,
+           height=800,
+           # text_baseline='bottom',
+           range_x=[0.01,100], 
+           range_y=[400,90000],
+           text='text_value'
+          )
+
+
+fig.update_layout(
+    title='CO2 Emission vs GDP of Countries',
+    xaxis_title='CO2 Emission per Capita',
+    yaxis_title='GDP per Capita'
+)
+
+fig.show()
+```
+
+```{python}
+import matplotlib.pyplot as plt
+
+source = co2.query("gdp_per_capita >= 20_000 ")
+
+x=source.co2_per_capita
+y=source.gdp_per_capita
+z=source.country
+
+plt.scatter(x=x, y=y, marker='o', c='r', edgecolor='b')
+plt.yscale('log')
+plt.xscale('log')
+plt.show()
+```
+
+```{python}
+highlighted_countries = ['United States', 'China', 'India', 'Indonesia', 'United Kingdom', 'Germany','Norway', 'Vietnam']
+
+source=co2[co2['country'].isin(highlighted_countries)]
+
+source.hvplot.scatter(
+    x='co2_per_capita', 
+    y='gdp_per_capita',
+    by='country',
+    logx=True,
+    logy=True,
+    legend='top',
+    height=600,
+    width=800,
+    hover_cols=['year']
+)
+```
+
+```{python}
+co2.query(" year==1990 or year==2018")
+```
+
+```{python}
+# create a column for gdp changes between 1990-2018
+
+# Pivot the DataFrame to have years as columns
+gdp_df = co2.pivot(index='country', columns='year', values='gdp_per_capita')
+# pivoted_df
+
+# Calculate the difference between GDP values for years 1980 and 2018
+gdp_df['gdp_diff'] = gdp_df[2018] - gdp_df[1990]
+
+# Reset the index to convert the DataFrame back to the original format
+gdp_df.reset_index(inplace=True)
+
+# Merge the calculated difference back to the original DataFrame
+merged_df = pd.merge(co2, gdp_df[['country', 'gdp_diff']], on='country', how='left')
+
+merged_df
+
+```
+
+```{python}
+# create a column for co2 changes between 1990-2018
+
+# Pivot the DataFrame to have years as columns
+co2_df = co2.pivot(index='country', columns='year', values='co2_per_capita')
+# pivoted_df
+
+# Calculate the difference between GDP values for years 1980 and 2018
+co2_df['co2_diff'] = co2_df[2018] - co2_df[1990]
+
+# Reset the index to convert the DataFrame back to the original format
+co2_df.reset_index(inplace=True)
+
+# Merge the calculated difference back to the original DataFrame
+merged_df = pd.merge(merged_df, co2_df[['country', 'co2_diff']], on='country', how='left')
+merged_df
+
+```
+
+```{python}
+merged_df['gdp_per_co2_rate'] = merged_df['gdp_diff']/merged_df['co2_diff']
+merged_df
+```
+
+```{python}
+#negara dengan gdp yg NAIK dan EMISI turun --- very good country
+merged_df.query(" gdp_diff>0 & co2_diff<0")
+```
+
+```{python}
+source=merged_df.query(" gdp_diff>0 & co2_diff<0")
+
+source.hvplot.scatter(
+    x='co2_per_capita', 
+    y='gdp_per_capita',
+    by='country',
+    logx=True,
+    xlim=[0.01,100], 
+    ylim=[400,90000],
+    logy=True,
+    legend='top',
+    height=600,
+    width=800,
+    hover_cols=['year']
+)
+```
+
+```{python}
+source =merged_df.query(" gdp_diff>0 & co2_diff<0")
+
+year_widget=pn.widgets.IntSlider(name='year', start=source.year.min(), end=source.year.max())
+
+idf = source.interactive()
+idf = idf[(idf['year'] == year_widget)]
+
+idf.hvplot.scatter(
+    x='co2_per_capita', 
+    y='gdp_per_capita',
+    by='income_class',
+    s='size',
+    logx=True,
+    logy=True,
+    xlim=[0.01,100], 
+    ylim=[400,90000],
+    legend='top',
+    height=600,
+    width=800,
+    hover_cols=["country", "population"],
+)
+```
+
+```{python}
+#negara dengan gdp yg TURUN dan EMISI turun
+merged_df.query(" gdp_diff<0 & co2_diff<0")
+```
+
+```{python}
+source =merged_df.query(" gdp_diff<0 & co2_diff<0")
+year_widget=pn.widgets.IntSlider(name='year', start=source.year.min(), end=source.year.max())
+
+idf = source.interactive()
+idf = idf[(idf['year'] == year_widget)]
+
+idf.hvplot.scatter(
+    x='co2_per_capita', 
+    y='gdp_per_capita',
+    by='country',
+    s='size',
+    logx=True,
+    logy=True,
+    xlim=[0.01,100], 
+    ylim=[400,90000],
+    legend='top',
+    height=600,
+    width=800,
+    hover_cols=["country", "population"],
+)
+```
+
+```{python}
+#negara dengan gdp yg NAIK dan EMISI naik
+merged_df.query(" gdp_diff>0 & co2_diff>0")
+```
+
+```{python}
+source =merged_df.query(" gdp_diff>0 & co2_diff>0")
+
+year_widget=pn.widgets.IntSlider(name='year', start=source.year.min(), end=source.year.max())
+
+idf = source.interactive()
+idf = idf[(idf['year'] == year_widget)]
+
+idf.hvplot.scatter(
+    x='co2_per_capita', 
+    y='gdp_per_capita',
+    by='income_class',
+    s='size',
+    logx=True,
+    logy=True,
+    xlim=[0.01,100], 
+    ylim=[400,90000],
+    legend='top',
+    height=600,
+    width=800,
+    hover_cols=["country", "population"],
+)
 ```
