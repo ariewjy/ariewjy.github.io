@@ -1,5 +1,5 @@
 ---
-title: 'Medical Insurance Cost [Part-1] '
+title: 'Medical Insurance Cost - Exploratory Analysis'
 description: |
   Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.
 author: Aditya Arie Wijaya
@@ -11,6 +11,7 @@ categories:
   - python
 jupyter: minids
 draft: false
+format: html
 ---
 
 ![Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](image.jpeg)
