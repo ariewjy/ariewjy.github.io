@@ -1,7 +1,7 @@
 ---
-title: Targetting Low CO2 Emission and High Economic Growth - How Realistic Can It Be?
+title: Decoupling Economic Growth from CO2 Emission - Only If You Are Rich Enough?
 description: |
-  Exploring why some countries managed to decouple their economic growth from CO2 emission. Factors affecting the likelihood, and what can really be done, "realistically".
+  Some countries were seen to be able to decoupled their economic growth from CO2 emissions. However, the reality for most countries with developing economy, their CO2 emissions is the effect of their economic growth. I am exploring the fact behind data, whether the decoupling can really be done, realistically to the developing countries. 
 author: Aditya Arie Wijaya
 title-block-banner: true
 date: '2023-07-23'
@@ -12,6 +12,7 @@ categories:
 draft: false
 fig-cap-location: bottom
 image: images/gdpco2visualization.png
+fig-align: left
 # linkcolor: 'green'
 # monobackgroundcolor: grey
 jupyter: minids
@@ -177,8 +178,8 @@ fig = px.scatter(data_frame=source,
            color="continent", 
            hover_name="country", 
            log_x = True, log_y=True,
-           size_max=70,
-           width=800,
+           size_max=80,
+           width=600,
            height=800,
            # text_baseline='bottom',
            range_x=[0.01,100], 
@@ -220,7 +221,7 @@ The narrative that a country can really keep increasing their GDP per Capita wit
 
 import altair as alt
 
-highlighted_countries = ['India', 'Indonesia', 'United Kingdom', 'Germany', 'United States', 'Singapore']
+highlighted_countries = ['India', 'Indonesia', 'United Kingdom', 'Germany', 'United States']
 
 source=co2[co2['country'].isin(highlighted_countries)]
 
@@ -228,7 +229,9 @@ alt.Chart(
     source,
     title=alt.Title(
         "GDP per Capita vs CO2 Emission",
-        subtitle=["Different CO2 vs GDP rate in different Countries", " "]
+        subtitle=["Different CO2 vs GDP rate in different Countries"],
+        anchor='middle',
+        offset=10, fontSize=16, 
     )
     ).mark_point(size=90, filled=True, opacity=0.7).encode(
     x=alt.X(
@@ -240,12 +243,14 @@ alt.Chart(
         scale=alt.Scale(type="log")
         ),
     color=alt.Color('year', title='Year'),
-    shape='country',
+    shape=alt.Shape('country', title='Country'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=500,
-    height=500,
+    width=450,
+    height=400,
 ).interactive()
+
+
 ```
 
 A country needs to be rich first, at around 20,000 USD GDP per Capita before they can decouple their CO~2~ emission from GDP. To be rich, a country will have to use more energy, and likely to produce more CO~2~ emissions because of that. *Even using a modest estimation of 5% GDP growth, and 2% inflation rate, it will take **7 years**, before Indonesia can reach 20,000 USD per Capita level.*
@@ -301,7 +306,7 @@ merged_df
 
 ------------------------------------------------------------------------
 
-With this new dataset, we can confirm our exploratory analysis before, ***what countries that can decoupled their*** **CO~2~ *emission from economic growth (GDP)***?
+With this new dataset, we can confirm our exploratory analysis before, ***what countries that can decoupled their*** **CO~2~*emission from economic growth (GDP)***?
 
 @fig-co2down-gdpup shows a distribution of countries where the their GDP per Capita increases between 1990-2018, while their CO~2~ emissions were decreased. One interesting fact is **all countries were sitting above upper-middle income class** at around 4,500 USD GDP per Capita, and some are still on the increasing trend (GDP and CO~2~ emission increase) for the past 10 years e.g. Columbia.
 
@@ -322,7 +327,8 @@ alt.Chart(
     title=alt.Title(
         "GDP per Capita vs CO2 Emission for Countries",
         subtitle=["Countries with minimum 2 Million population,", 
-                  "increased GDP and reduced CO2 Emissions", " "]
+                  "increased GDP and reduced CO2 Emissions"],
+        fontSize=16, offset=10
     )
     ).mark_point(size=90, filled=True, opacity=0.6).encode(
     x=alt.X(
@@ -333,12 +339,12 @@ alt.Chart(
         'gdp_per_capita:Q', title='GDP per Capita',
         scale=alt.Scale(type="log")
         ),
-    color='country',
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020])),
+    color=alt.Color('country', title='Country'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=500,
-    height=500,
+    width=400,
+    height=400,
 ).interactive()
 ```
 
@@ -364,7 +370,8 @@ alt.Chart(
     source,
     title=alt.Title(
         "GDP per Capita vs CO2 Emission for Countries",
-        subtitle=["Countries with decreased GDP and CO2 Emission", " "]
+        subtitle=["Countries with decreased GDP and CO2 Emission"],
+        fontSize=16, offset=10
     )
     ).mark_point(size=90, filled=True, opacity=0.6).encode(
     x=alt.X(
@@ -375,12 +382,12 @@ alt.Chart(
         'gdp_per_capita:Q', title='GDP per Capita',
         scale=alt.Scale(type="log")
         ),
-    color='country',
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020])),
+    color=alt.Color('country', title='Country'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=500,
-    height=500,
+    width=450,
+    height=400,
 ).interactive()
 ```
 
@@ -404,7 +411,8 @@ alt.Chart(
     source,
     title=alt.Title(
         "GDP per Capita vs CO2 Emission for Countries",
-        subtitle=["Countries with Increased GDP and CO2 Emission", " "]
+        subtitle=["Countries with Increased GDP and CO2 Emission"],
+        fontSize=16, offset=10
     )
     ).mark_point(size=90, filled=True, opacity=0.6).encode(
     x=alt.X(
@@ -415,11 +423,11 @@ alt.Chart(
         'gdp_per_capita:Q', title='GDP per Capita',
         scale=alt.Scale(type="log")
         ),
-    color='country',
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020])),
+    color=alt.Color('country', title='Country'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=500,
+    width=400,
     height=500,
 ).interactive()
 ```
@@ -442,7 +450,8 @@ alt.Chart(
     source,
     title=alt.Title(
         "GDP per Capita vs CO2 Emission for Countries",
-        subtitle=["Countries with Increased GDP and CO2 Emission", " with population more than 50 Million "]
+        subtitle=["Countries with Increased GDP and CO2 Emission", " with population more than 50 Million "],
+        fontSize=16, offset=10
     )
     ).mark_point(size=90, filled=True, opacity=0.6).encode(
     x=alt.X(
@@ -453,12 +462,12 @@ alt.Chart(
         'gdp_per_capita:Q', title='GDP per Capita',
         scale=alt.Scale(type="log")
         ),
-    color='country',
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020])),
+    color=alt.Color('country', title='Country'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=500,
-    height=500,
+    width=450,
+    height=400,
 ).interactive()
 ```
 
@@ -474,10 +483,18 @@ On the other hand, some developing countries like India, Indonesia, Pakistan, an
 
 I need to emphasize again, *that I am not against active efforts to reach the net-zero scenario, but it is clear that there are more nuances to it than just a go/no-go, good/bad practice.* Some **developed countries are at a better position to afford moving towards decreasing CO2** emission while still flourishing in their economic growth. Some d**eveloping countries are still trying to go to the level of those developed countries**, while at the same time emitting CO2 emission, which in some conditions could still be **within their rights** (relative to their fair share on carbon budget) to do so.
 
-Indonesia, keep doing what you are doing. Spent the next 7 years to flourish the economy, grow the infrastructure to support the future, education for a young generation to be able to adapt and thriving in the future market. Then slowly adopting a better environmental practices, use natural gas whenever can, educating people to be aware of the global warming impact by minimizing the exposure to the risks. **At the end of the day, I stand by my premise, no one cares about environment if they are still struggling to make the ends met.**
+> *Indonesia, keep doing what you are doing. Use your fair share of carbon (*@fig-indonesia-cumco2)*, and spend the next 7 years to flourish the economy, grow the infrastructure to support the future, education for a young generation to be able to adapt and thriving in the future market. Then slowly adopting a better environmental practices, use natural gas whenever possible, raising awareness to the global warming impact by minimizing the exposure - mitigating the risks.*
+
+![Indonesia Carbon Budget vs The Cummulative Emission [@fanning2023]](images/CleanShot 2023-07-23 at 19.09.33.png){#fig-indonesia-cumco2 width="500"}
+
+------------------------------------------------------------------------
+
+**At the end of the day, I stand by my premise, no one cares about environment if they are still struggling to make the ends met.**
+
+------------------------------------------------------------------------
 
 ::: callout-note
 ## Disclaimer
 
-This post may be triggering for many people, so I will say again that this is all my own views, and cannot be associated to anyone other than me, including organization, company to whom I worked with in the past, now, and in the future. Read it, take your own views, be skeptic and respectful, and if we still disagree - be respectful too.
+This post may be triggering for many people, so I will say again - **that this is all my own views**, and **cannot be associated to anyone other than me**, including organization, company to whom I worked with in the past, now, and in the future. Read it, take your own views, be skeptic and respectful, and if we still disagree - be respectful too.
 :::
