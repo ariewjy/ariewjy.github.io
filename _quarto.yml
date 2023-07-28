@@ -11,7 +11,7 @@ execute:
   freeze: auto
 
 website:
-  title: "A2W"
+  # title: "A2W"
   # description: "Geoscientist Codes"
   site-url: https://ariewjy.github.io
   # site-path: "https://ariewjy.github.io/"
