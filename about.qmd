@@ -1,12 +1,12 @@
 ---
 title: "About"
 subtitle: |
-  Geoscience, energy-policy, and coding in between.
+  Geoscience, energy, policy, and coding in between.
 image: img/profile.jpg
 about:
   id: edu-exp
   template: jolla
-  image-shape: rectangle
+  # image-shape: rounded 
   links:
     # - icon: file-text-fill
     #   text: CV
@@ -30,13 +30,13 @@ citation: false
 
 Hi there 👋 I am **Arie**!
 
-I am currently working as a Geoscientist in the Multi-national Service company in the field of Energy, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Nordic Country of Norway!
+I am currently working as a Geoscientist in the Multi-national company in the field of Energy, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Nordic Country of Norway! 
 
-I developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/), and particularly interested in finding an **intersection between geoscience/ subsurface with data analytics/ science**.
+My experience in coding started out in 2020, where I have a need to help students learn about petrophysics online. Problem is I could not find a good solution that is free and OS-agnositc. So I developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/).
 
-I enjoy sitting in silence, reading a book, or just let my mind wandering around the universe of thoughts.
+I am interested in learning about public policy and its intersection with energy in tackling climate change. I think subsurface analytics will play a role in helping the world navigate around climate challenges. I have a unique skillsets that intersects between energy and data. Personally, I am also interested to learn about policy making, to make more impact - by using data. 
 
-If needed, you can have a look at my resumes:
+Full detail is available in my resumes:
 
 \- [data science resume](./assets/data_scientist_resume.pdf)
 
