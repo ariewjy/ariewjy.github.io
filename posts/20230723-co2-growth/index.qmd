@@ -1,7 +1,7 @@
 ---
 title: Decoupling Economic Growth from CO2 Emission - Only If You Are Rich Enough?
 description: |
-  Some countries were seen to be able to decoupled their economic growth from CO2 emissions. However, the reality for most countries with developing economy, their CO2 emissions is the effect of their economic growth. I am exploring the fact behind data, whether the decoupling can really be done, realistically to the developing countries. 
+  Some countries were seen to be able to decoupled their economic growth from CO2 emissions. However, the reality for most countries with developing economy, their CO2 emissions is a inevitable consequences of their economic growth. Can developing countries decouple their economy from CO2? 
 author: Aditya Arie Wijaya
 title-block-banner: true
 date: '2023-07-23'
@@ -11,7 +11,7 @@ categories:
   - economy
 draft: false
 fig-cap-location: bottom
-image: images/gdpco2visualization.png
+image: images/co2-emissions-and-gdp-per-capita.svg
 fig-align: left
 # linkcolor: 'green'
 # monobackgroundcolor: grey
@@ -19,39 +19,45 @@ jupyter: minids
 bibliography: references.bib
 ---
 
-## CO~2~ Emission vs GDP - Historical View
+## CO~2~ Emission vs GDP
 
-> "Historically, CO~2~ emissions have been [strongly correlated with](https://ourworldindata.org/grapher/co2-emissions-vs-gdp) how much money we have. This is particularly true at low-to-middle incomes. The richer we are, the more CO~2~ we emit. This is because we use more energy -- which often comes from burning fossil fuels." (source: Our World in Data, see @fig-co2-gdp)
-
-I would argue the above [statements/ conclusions](https://ourworldindata.org/co2-gdp-decoupling) was quite an `oversimplification` and can be `misleading`. Though there are some truths about it, e.g. the richer we are, the more we want to buy something, own something, travel somewhere far that more likely to emit CO~2~ emission in the process, but the majority of the poor usually emits more CO~2~ because their selection of energy is limited to low power density e.g. burning woods (@fig-burning-woods).
-
-![Photo by <a href="https://unsplash.com/@bayusyaits?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bayu Syaits</a> on <a href="https://unsplash.com/photos/46uMI0PDQFI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](images/traditional-stove.jpeg){#fig-burning-woods width="800"}
-
-They use woods instead of gas, gasoline motorcycles instead of electric, burn the garbage rather than doing recycling. Electricity is coming mainly from coal-source power plants instead of gas-source power plant because that is the cheapest and most abundant commodity we came across[^1]. Those are the conditions, the reality that many are experiencing in the low-middle income country like Indonesia.
-
-[^1]: Indonesia's gas production in terms of TWh sits at [600 TWh in 2022](https://ourworldindata.org/grapher/gas-production-by-country?country=~IDN) after declining from 800 TWh in 2010, whereas the coal production supplies a colossal [3,500 TWh in 2022](https://ourworldindata.org/grapher/coal-production-by-country?country=~IDN), even higher from the previous years. Even though the gas reserves is equivalent to 87.5 billion tones equivalent, while coal **is only** at 35 billion tonnes, the production of the gas is maybe hindered by the coal ease of production and distribution (e.g. land mining vs offshore rig).
-
-## CO~2~ Emission vs GDP - Which Comes First?
-
-Another angle of the above statement is a strong relationship can always mean two ways of causality. If the conclusion from previous section is saying that because of getting rich - a country is emitting more CO~2~, can we say the opposite causal statement?
-
-> A country is **richer** because they are **emitting more CO~2~**.
-
-The premise is simple, country needs energy to grow their economy, the higher the energy consumption the higher the CO2 emission would be. The following is the chart from [Our World in Data](https://ourworldindata.org/grapher/co2-emissions-vs-gdp), displaying the relationship between CO~2~ Emission per Capita vs GDP per Capita of each country from 1990-2018 (28 years). A simple glance would give an impression that in order for a country to grow their economy (e.g. increase their GDP), one needs to emit more CO~2~ emissions.
-
-> So not because **we are rich we emit more CO~2~**, but **we are rich because we emit more CO~2~** used for energy, to grow the economy. This is a completely different narrative to referred statements in the first section.
-
-![CO~2~ Emission per Capita vs GDP per Capita](images/co2-emissions-vs-gdp.svg){#fig-co2-gdp style="color:gray;" width="800"}
-
-This is of course no to undermine the impact of CO~2~ emission to our global temperature (*this isn't that*), but rather to manage our expectations and understandings or **a reality check** on what can really be done. Some questions about "*can we reduce our* CO~2~ *emission but still maintaining economy growth*"? Or "*do we have to increase our* CO~2~ *to raise our economic growth?*" are some fair questions to be addressed in more detail.
-
-Despite some [articles](https://ourworldindata.org/co2-gdp-decoupling) pointed out the fact that some countries were able to decoupled their economy from CO~2~ emission as shown in @fig-co2-gdp-uk, it is important to understand the context, in which these countries were positioned compared to rest of the world.
+I came across the chart from Our World in Data (OWID) about a country that was able to decoupled their economy from CO2 emission. Meaning that they still able to increase their GDP while at the same time reducing CO2 emission. UK is the example used in @fig-co2-gdp-uk.
 
 ![United Kingdom Decoupled CO~2~ Emission vs Economic Growth](images/co2-emissions-and-gdp-per-capita.svg){#fig-co2-gdp-uk style="color:gray;" width="800"}
 
+You can read the full [article](https://ourworldindata.org/co2-gdp-decoupling), but I am going to quote paragraph that interest me to write this article. 
+
+> "These countries show that **economic growth is not incompatible with reducing emissions**."
+
+This narrative means that you can grow your economy without emitting more emission - a bold statement considering the other chart from @fig-co2-gdp showed the opposite, where the GDP of a country is strongly related to the CO~2~ emission.
+
+Even OWID themselves explained:
+
+> "Historically, CO~2~ emissions have been [strongly correlated with](https://ourworldindata.org/grapher/co2-emissions-vs-gdp) how much money we have. This is particularly true at low-to-middle incomes. The richer we are, the more CO~2~ we emit. This is because we use more energy -- which often comes from burning fossil fuels." (source: [Our World in Data](https://ourworldindata.org/co2-gdp-decoupling))
+
+![CO~2~ Emission per Capita vs GDP per Capita](images/co2-emissions-vs-gdp.svg){#fig-co2-gdp style="color:gray;" width="800"}
+
+---
+
+Here is where It got me concerned. There should be a __big asterix__ on a narrative that countries can grow their economy while also reducing emission - Only when they are **rich**.
+
+The premise is simple, country needs **energy to grow** their economy, the higher the energy consumption the higher the CO~2~ emission would be. I think the narrative that a country emits more CO~2~ because they are rich can be **misleading**. I think it is the **other way around**.
+
+> So not because **we are rich we emit more CO~2~**, but **we are rich because we emit more CO~2~** used for energy, to grow the economy. 
+
+This is of course no to undermine the impact of CO~2~ emission to our global temperature, but rather to manage our expectations and **a reality check** on what can really be done. Some questions about "*can we reduce our* CO~2~ *emission but still maintaining economy growth*"? Or "*do we have to increase our* CO~2~ *to raise our economic growth?*" are some fair questions to be addressed in more detail.
+
+Despite some [articles](https://ourworldindata.org/co2-gdp-decoupling) pointed out the fact that some countries were able to decoupled their economy from CO~2~ emission as shown in @fig-co2-gdp-uk, it is important to understand the context, in which these countries were positioned compared to rest of the world.
+
+---
+
+This article will explore that question. 
+
+> __What allows these countries to decouple their economy from their emissions?__
+
 ## Data Importing and Cleaning
 
-I explore the [CO~2~ emission dataset](https://github.com/owid/co2-data "Github of Our World in Data") provided by the **OWID** (Our World in Data). I will be focusing mainly on the CO~2~ emission and it's impact to GDP of a country. My premise stays the same, that a country must burn the energy to grow their economy, and to do that they will have to emit CO2, since more than 80% of energy (see @fig-world-energysource) in the world still comes from fossil-fuels (oil, gas, coal).
+I explored the [CO~2~ emission dataset](https://github.com/owid/co2-data "Github of Our World in Data") provided by the **OWID** (Our World in Data). I will be focusing mainly on the CO~2~ emission and it's impact to GDP of a country. My premise stays the same, that a country must burn the energy to grow their economy, and to do that they will have to emit CO2, since more than 80% of energy (see @fig-world-energysource) in the world still comes from fossil-fuels (oil, gas, coal).
 
 ![Global Energy Consumption](images/global-energy-substitution.png){#fig-world-energysource width="800"}
 
@@ -254,12 +260,6 @@ alt.Chart(
 ```
 
 A country needs to be rich first, at around 20,000 USD GDP per Capita before they can decouple their CO~2~ emission from GDP. To be rich, a country will have to use more energy, and likely to produce more CO~2~ emissions because of that. *Even using a modest estimation of 5% GDP growth, and 2% inflation rate, it will take **7 years**, before Indonesia can reach 20,000 USD per Capita level.*
-
-So the question to: "can a country decrease their CO~2~ emission but increase their GDP?"
-
-> **Would be, once they get rich.**
-
-------------------------------------------------------------------------
 
 Another view is to see if there is country where the CO~2~ emission is reduced, but at the same time, their economy halted, and their GDP per Capite is reduced as well. To do that, let's create a new sets of columns, of the difference in GDP per Capita per country.
 
@@ -479,22 +479,8 @@ On the other hand, some developing countries like India, Indonesia, Pakistan, an
 
 ![Top 5 Overemitting and Underemitting Countries with respect to Net Zero scenario [@fanning2023]](images/paste-2.png){#fig-fanning width="800"}
 
-## Closing Words - Where do We Stand?
+## Closing Words
 
-I need to emphasize again, *that I am not against active efforts to reach the net-zero scenario, but it is clear that there are more nuances to it than just a go/no-go, good/bad practice.* Some **developed countries are at a better position to afford moving towards decreasing CO2** emission while still flourishing in their economic growth. Some d**eveloping countries are still trying to go to the level of those developed countries**, while at the same time emitting CO2 emission, which in some conditions could still be **within their rights** (relative to their fair share on carbon budget) to do so.
+Some **developed countries are at a better position to afford moving towards decreasing CO2** emission while still flourishing in their economic growth. Some **developing countries are still trying to go to the level of those developed countries**, while at the same time emitting CO2 emission, which in some conditions could still be **within their carbon budget** (@fig-indonesia-cumco2 and @fig-cumco2emission-uk-zimbabwe) to do so.
 
-> *Indonesia, keep doing what you are doing. Use your fair share of carbon (*@fig-indonesia-cumco2)*, and spend the next 7 years to flourish the economy, grow the infrastructure to support the future, education for a young generation to be able to adapt and thriving in the future market. Then slowly adopting a better environmental practices, use natural gas whenever possible, raising awareness to the global warming impact by minimizing the exposure - mitigating the risks.*
-
-![Indonesia Carbon Budget vs The Cummulative Emission [@fanning2023]](images/CleanShot 2023-07-23 at 19.09.33.png){#fig-indonesia-cumco2 width="500"}
-
-------------------------------------------------------------------------
-
-**At the end of the day, I stand by my premise, no one cares about environment if they are still struggling to make the ends met.**
-
-------------------------------------------------------------------------
-
-::: callout-note
-## Disclaimer
-
-This post may be triggering for many people, so I will say again - **that this is all my own views**, and **cannot be associated to anyone other than me**, including organization, company to whom I worked with in the past, now, and in the future. Read it, take your own views, be skeptic and respectful, and if we still disagree - be respectful too.
-:::
+![Indonesia Carbon Budget vs The Cummulative Emission [@fanning2023]](images/CleanShot%202023-07-23%20at%2019.09.33.png){#fig-indonesia-cumco2 width="500"}
