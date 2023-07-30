@@ -11,7 +11,7 @@ execute:
   freeze: auto
 
 website:
-  title: ""
+  # title: ""
   # description: "Geoscientist Codes"
   site-url: https://ariewjy.github.io
   # site-path: "https://ariewjy.github.io/"
@@ -21,7 +21,7 @@ website:
   favicon: img/logo_rounded.png
   twitter-card:
     image: img/profile.jpg
-    creator: "@Adtarie"
+    creator: "@adtarie"
     card-style: summary_large_image
   open-graph: true
 
