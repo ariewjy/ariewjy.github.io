@@ -19,11 +19,11 @@ website:
   #   location: navbar
   #   type: overlay
   favicon: img/logo_rounded.png
-  twitter-card: true
-  # twitter-card:
-  # image: img/profile.jpg
-  # creator: "@adtarie"
-  # card-style: summary_large_image
+  # twitter-card: true
+  twitter-card:
+    image: img/profile.jpg
+    creator: "@adtarie"
+    card-style: summary_large_image
   open-graph: true
 
   navbar:
