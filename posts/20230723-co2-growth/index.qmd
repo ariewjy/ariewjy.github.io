@@ -21,7 +21,7 @@ bibliography: references.bib
 
 ## CO~2~ Emission vs GDP
 
-I came across the chart from Our World in Data (OWID) about a country that was able to decoupled their economy from CO2 emission. Meaning that they still able to increase their GDP while at the same time reducing CO2 emission. UK is the example used in @fig-co2-gdp-uk.
+Our World in Data (OWID) shows some examples from a country that was able to decoupled their economy from CO2 emission. Meaning that they still able to increase their GDP while at the same time reducing CO2 emission. UK is the example used in @fig-co2-gdp-uk.
 
 ![United Kingdom Decoupled CO~2~ Emission vs Economic Growth](images/co2-emissions-and-gdp-per-capita.svg){#fig-co2-gdp-uk style="color:gray;" width="800"}
 
