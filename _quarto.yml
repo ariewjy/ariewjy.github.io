@@ -11,9 +11,9 @@ execute:
   freeze: auto
 
 website:
-  # title: ""
+  # title: "Aditya AW"
   # description: "Geoscientist Codes"
-  site-url: https://ariewjy.github.io
+  site-url: https://adtarie.net
   # site-path: "https://ariewjy.github.io/"
   # search:
   #   location: navbar
