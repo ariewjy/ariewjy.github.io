@@ -1,7 +1,7 @@
 ---
 title: Decoupling Economic Growth from CO2 Emission - Only If You Are Rich Enough?
 description: |
-  Some countries were seen to be able to decoupled their economic growth from CO2 emissions. However, the reality for most countries with developing economy, their CO2 emissions is a inevitable consequences of their economic growth. Can developing countries decouple their economy from CO2? 
+  Some countries were seen to be able to decoupled their economic growth from CO2 emissions. However, most countries with developing economy, their CO2 emissions is a inevitable consequences of their economic growth. Can developing countries decouple their economy from CO2? 
 author: Aditya Arie Wijaya
 title-block-banner: true
 date: '2023-07-23'
@@ -13,8 +13,8 @@ draft: false
 fig-cap-location: bottom
 image: images/co2-emissions-and-gdp-per-capita.svg
 fig-align: left
-# linkcolor: 'green'
-# monobackgroundcolor: grey
+linkcolor: 'green'
+monobackgroundcolor: grey
 jupyter: minids
 bibliography: references.bib
 ---
