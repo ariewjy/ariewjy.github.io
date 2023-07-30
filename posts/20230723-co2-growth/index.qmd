@@ -13,6 +13,7 @@ draft: false
 fig-cap-location: bottom
 fig-align: left
 linkcolor: 'green'
+image: images/co2-emissions-and-gdp-per-capita.svg
 # monobackgroundcolor: grey
 jupyter: minids
 bibliography: references.bib
