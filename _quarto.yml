@@ -7,8 +7,8 @@ project:
 #   - _website.yml
 #   - _format.yml
 
-execute:
-  freeze: auto
+# execute:
+#   freeze: auto
 
 website:
   # title: "Aditya AW"
@@ -19,10 +19,11 @@ website:
   #   location: navbar
   #   type: overlay
   favicon: img/logo_rounded.png
-  twitter-card:
-    image: img/profile.jpg
-    creator: "@adtarie"
-    card-style: summary_large_image
+  twitter-card: true
+  # twitter-card:
+  # image: img/profile.jpg
+  # creator: "@adtarie"
+  # card-style: summary_large_image
   open-graph: true
 
   navbar:
