@@ -1,0 +1,11 @@
+{
+  "hash": "e543358662005b7839d8f2c2a4389628",
+  "result": {
+    "markdown": "---\ntitle: Jupyterlite For Everyone\ndescription: |\n  Do you know Jupyterlite? It is a web-based version of jupyterlab, where everything runs on browser. The good thing is, we can create our own jupyterlite server to be used as we wish, anytime, anyplace.\nauthor: Aditya Arie Wijaya\ntitle-block-banner: true\ndate: '2023-08-02'\ncategories:\n  - jupyter\n  - python\n  - data-science\ndraft: true\nfig-cap-location: bottom\nfig-align: left\nlinkcolor: green\nimage: featured.png\n---\n\n## What is Jupyter-lite?\n\n\nJupyter-lite is a project by none other than the creator of Jupyter, the infamous IDE for most data-science and enthusiast, in a form of a \"notebook\" - hence the name: Jupyter Notebook (.ipynb).\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

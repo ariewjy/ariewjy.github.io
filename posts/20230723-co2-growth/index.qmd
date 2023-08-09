@@ -25,7 +25,7 @@ Our World in Data (OWID) shows some examples from a country that was able to dec
 
 ![United Kingdom Decoupled CO~2~ Emission vs Economic Growth](images/co2-emissions-and-gdp-per-capita.png){#fig-co2-gdp-uk style="color:gray;" width="800"}
 
-You can read the full [article](https://ourworldindata.org/co2-gdp-decoupling), but I am going to quote paragraph that interest me to write this article. 
+You can read the full [article](https://ourworldindata.org/co2-gdp-decoupling), but I am going to quote paragraph that interest me to write this article.
 
 > "These countries show that **economic growth is not incompatible with reducing emissions**."
 
@@ -37,23 +37,23 @@ Even OWID themselves explained:
 
 ![CO~2~ Emission per Capita vs GDP per Capita](images/co2-emissions-vs-gdp.png){#fig-co2-gdp style="color:gray;" width="800"}
 
----
+------------------------------------------------------------------------
 
-Here is where It got me concerned. There should be a __big asterix__ on a narrative that countries can grow their economy while also reducing emission - Only when they are **rich**.
+Here is where It got me concerned. There should be a **big asterix** on a narrative that countries can grow their economy while also reducing emission - Only when they are **rich**.
 
 The premise is simple, country needs **energy to grow** their economy, the higher the energy consumption the higher the CO~2~ emission would be. I think the narrative that a country emits more CO~2~ because they are rich can be **misleading**. I think it is the **other way around**.
 
-> So not because **we are rich we emit more CO~2~**, but **we are rich because we emit more CO~2~** used for energy, to grow the economy. 
+> So not because **we are rich we emit more CO~2~**, but **we are rich because we emit more CO~2~** used for energy, to grow the economy.
 
 This is of course no to undermine the impact of CO~2~ emission to our global temperature, but rather to manage our expectations and **a reality check** on what can really be done. Some questions about "*can we reduce our* CO~2~ *emission but still maintaining economy growth*"? Or "*do we have to increase our* CO~2~ *to raise our economic growth?*" are some fair questions to be addressed in more detail.
 
 Despite some [articles](https://ourworldindata.org/co2-gdp-decoupling) pointed out the fact that some countries were able to decoupled their economy from CO~2~ emission as shown in @fig-co2-gdp-uk, it is important to understand the context, in which these countries were positioned compared to rest of the world.
 
----
+------------------------------------------------------------------------
 
-This article will explore that question. 
+This article will explore that question.
 
-> __What allows these countries to decouple their economy from their emissions?__
+> **What allows these countries to decouple their economy from their emissions?**
 
 ## Data Importing and Cleaning
 
@@ -102,9 +102,9 @@ co2.dropna().sample(5)
 
 ------------------------------------------------------------------------
 
-I would like to make graphic where I can **colored a country based on its continent**, just for an additional context to the data. We took that from Gapminder dataset[^2], and combine it with the previously curated CO~2~ dataset we just created.
+I would like to make graphic where I can **colored a country based on its continent**, just for an additional context to the data. We took that from Gapminder dataset[^1], and combine it with the previously curated CO~2~ dataset we just created.
 
-[^2]: Gapminder is an independent educational non-proﬁt ﬁghting global misconceptions. Complete website is available [here](https://www.gapminder.org)
+[^1]: Gapminder is an independent educational non-proﬁt ﬁghting global misconceptions. Complete website is available [here](https://www.gapminder.org)
 
 ```{python}
 #importing gapminder
@@ -124,9 +124,9 @@ co2
 
 ------------------------------------------------------------------------
 
-I would like to also see depending on the GDP per Capita, from which income class is a certain country belongs to. I am using a rough [classification by world-bank](https://blogs.worldbank.org/opendata/new-world-bank-country-classifications-income-level-2022-2023). I know this may not be the best representation as income class is not the same every year[^3], and I am not exactly using exact number here, but I think this is good enough to put some contexts for data illustration.
+I would like to also see depending on the GDP per Capita, from which income class is a certain country belongs to. I am using a rough [classification by world-bank](https://blogs.worldbank.org/opendata/new-world-bank-country-classifications-income-level-2022-2023). I know this may not be the best representation as income class is not the same every year[^2], and I am not exactly using exact number here, but I think this is good enough to put some contexts for data illustration.
 
-[^3]: The low income countries is classified as country with income about 1,000 USD or lower, middle is divided to two: lower-middle income is roughly between 1,000 USD - 4,000 USD, upper middle income is between 4,000 USD and 13,000 USD, and high income countries is any country with more than 13,000 USD income.
+[^2]: The low income countries is classified as country with income about 1,000 USD or lower, middle is divided to two: lower-middle income is roughly between 1,000 USD - 4,000 USD, upper middle income is between 4,000 USD and 13,000 USD, and high income countries is any country with more than 13,000 USD income.
 
 ```{python}
 #creating income class category based on gdp per capita. 
@@ -350,9 +350,9 @@ alt.Chart(
 
 ### Country with Decreased CO~2~ Emission & Decreased GDP
 
-This is part where we should expect some of the poorest country in the world, where their CO~2~ emission should not be halted because it is directly related to the their economic growth. @fig-co2down-gdpdown shows country with worse condition in 2018 than they are in 1990, Zimbabwe. This country needs help, and if that means emitting more CO~2~ emission, so be it. In fact their carbon budget is still below their fair share, as shown in @fig-cumco2emission-uk-zimbabwe, a night and day difference compared to UK carbon share[^4].
+This is part where we should expect some of the poorest country in the world, where their CO~2~ emission should not be halted because it is directly related to the their economic growth. @fig-co2down-gdpdown shows country with worse condition in 2018 than they are in 1990, Zimbabwe. This country needs help, and if that means emitting more CO~2~ emission, so be it. In fact their carbon budget is still below their fair share, as shown in @fig-cumco2emission-uk-zimbabwe, a night and day difference compared to UK carbon share[^3].
 
-[^4]: Website to display the cumulative emission with respect to their fair shares on carbon budgets. Link can be found [here](https://goodlife.leeds.ac.uk/atmospheric-appropriation/#IDN)
+[^3]: Website to display the cumulative emission with respect to their fair shares on carbon budgets. Link can be found [here](https://goodlife.leeds.ac.uk/atmospheric-appropriation/#IDN)
 
 ![Cumulative emission on UK and Zimbabwe compared to their respective Carbon Budget [@fanning2023]](images/paste-1.png){#fig-cumco2emission-uk-zimbabwe width="800"}
 

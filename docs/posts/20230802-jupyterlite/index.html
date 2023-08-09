@@ -2,12 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aditya Arie Wijaya">
+<meta name="dcterms.date" content="2023-08-02">
+<meta name="description" content="Do you know Jupyterlite? It is a web-based version of jupyterlab, where everything runs on browser. The good thing is, we can create our own jupyterlite server to be used as we wish, anytime, anyplace.">
 
-<title>About</title>
+<title>Jupyterlite For Everyone</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./img/logo_rounded.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/logo_rounded.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,18 +65,20 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.scss">
-<meta property="og:title" content="About">
-<meta property="og:description" content="Geoscience, energy, policy, and coding in between.">
-<meta property="og:image" content="https://adtarie.net/img/profile.jpg">
-<meta name="twitter:title" content="About">
-<meta name="twitter:description" content="Geoscience, energy, policy, and coding in between.">
-<meta name="twitter:image" content="https://adtarie.net/img/profile.jpg">
+<link rel="stylesheet" href="../../styles.scss">
+<meta property="og:title" content="Jupyterlite For Everyone">
+<meta property="og:description" content="Do you know Jupyterlite? It is a web-based version of jupyterlab, where everything runs on browser. The good thing is, we can create our own jupyterlite server to be used as we wish, anytime, anyplace.">
+<meta property="og:image" content="https://adtarie.net/posts/20230802-jupyterlite/featured.png">
+<meta property="og:image:height" content="205">
+<meta property="og:image:width" content="612">
+<meta name="twitter:title" content="Jupyterlite For Everyone">
+<meta name="twitter:description" content="Do you know Jupyterlite? It is a web-based version of jupyterlab, where everything runs on browser. The good thing is, we can create our own jupyterlite server to be used as we wish, anytime, anyplace.">
+<meta name="twitter:image" content="https://adtarie.net/posts/20230802-jupyterlite/img/profile.jpg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -85,15 +91,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html" rel="" target="">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
@@ -104,79 +110,83 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-
-<div class="quarto-about-jolla">
-  <img src="img/profile.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-<p class="subtitle lead"></p><p>Geoscience, energy, policy, and coding in between.</p><p></p>
-</div>
-<div class="quarto-title-meta">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Jupyterlite For Everyone</h1>
+                  <div>
+        <div class="description">
+          <p>Do you know Jupyterlite? It is a web-based version of jupyterlab, where everything runs on browser. The good thing is, we can create our own jupyterlite server to be used as we wish, anytime, anyplace.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">jupyter</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">data-science</div>
+              </div>
+                  </div>
   </div>
-</header><div id="edu-exp">
-</div> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/adityaariewijaya/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/ariewjy" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://twitter.com/Adtarie" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-  <a href="https://medium.com/@ariewjy" class="about-link" rel="" target="">
-    <i class="bi bi-medium"></i>
-     <span class="about-link-text">Medium</span>
-  </a>
-</div>
-</div>
+    
+  
+  <div class="quarto-title-meta">
 
-<p>Hi there 👋 I am <strong>Arie</strong>!</p>
-<p>I am currently working as a Geoscientist in the Multi-national company in the field of Energy, i.e.&nbsp;subsurface analytics, energy exploration, and geoscience analytics, in Nordic Country of Norway!</p>
-<p>My experience in coding started out in 2020, where I have a need to help students learn about petrophysics online. Problem is I could not find a good solution that is free and OS-agnositc. So I developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at <a href="https://plotpetrophysics.streamlit.app/"><strong>plotpetrophysics.streamlit.app</strong></a>.</p>
-<p>I am interested in learning about public policy and its intersection with energy in tackling climate change. I think subsurface analytics will play a role in helping the world navigate around climate challenges. I have a unique skillsets that intersects between energy and data. Personally, I am also interested to learn about policy making, to make more impact - by using data.</p>
-<p>Full detail is available in my resumes:</p>
-<p>- <a href="./assets/data_scientist_resume.pdf">data science resume</a></p>
-<p>- <a href="./assets/geoscientist_resume.pdf">geoscientist resume</a></p>
-<div class="grid">
-<section id="education" class="level2 g-col-12 g-col-md-8" style="text-align: left;">
-<h2 data-anchor-id="education">Education</h2>
-<ul>
-<li><strong><em>B.Eng.</em></strong> <strong>in Geological Engineering</strong> (<em>Specialised in Energy, and Reservoir Analysis</em>), <strong>2012</strong><br>
-<em>University Gadjah Mada, Indonesia</em></li>
-</ul>
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Aditya Arie Wijaya </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 2, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-jupyter-lite" id="toc-what-is-jupyter-lite" class="nav-link active" data-scroll-target="#what-is-jupyter-lite">What is Jupyter-lite?</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="what-is-jupyter-lite" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-jupyter-lite">What is Jupyter-lite?</h2>
+<p>Jupyter-lite is a project by none other than the creator of Jupyter, the infamous IDE for most data-science and enthusiast, in a form of a “notebook” - hence the name: Jupyter Notebook (.ipynb).</p>
+
+
 </section>
-<section id="interests" class="level2 g-col-12 g-col-md-4" style="text-align: left;">
-<h2 data-anchor-id="interests">Interests</h2>
-<ul>
-<li>Cooking</li>
-<li>Rudimental Drums</li>
-<li>Data Visualisation</li>
-<li>Hiking</li>
-<li>Fishing</li>
-</ul>
-</section>
-</div>
 
-
-
-
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+  author = {Arie Wijaya, Aditya and Arie Wijaya, Aditya},
+  title = {Jupyterlite {For} {Everyone}},
+  date = {2023-08-02},
+  url = {https://adtarie.net/posts/20230802-jupyterlite},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Arie Wijaya, Aditya, and Aditya Arie Wijaya. 2023. <span>“Jupyterlite
+For Everyone.”</span> August 2, 2023. <a href="https://adtarie.net/posts/20230802-jupyterlite">https://adtarie.net/posts/20230802-jupyterlite</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -197,6 +207,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -403,6 +420,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -419,7 +438,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./license.html">License</a>
+    <a class="nav-link" href="../../license.html">License</a>
   </li>  
 </ul>
     </div>
@@ -428,5 +447,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

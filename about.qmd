@@ -20,6 +20,9 @@ about:
     - icon: twitter
       text: Twitter
       href: https://twitter.com/Adtarie
+    - icon: medium
+      text: Medium
+      href: https://medium.com/@ariewjy
 # page-progression-direction: ltr
 comments: false
 citation: false
