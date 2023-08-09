@@ -2,7 +2,6 @@
 title: Decoupling GDP from CO2 Emission -  Only If You're Rich Enough?
 description: |
   Developed countries were able to decoupled their GDP from CO2 emissions, while in developing countries, CO2 emissions is an inevitable consequences of their economic growth.
-author: Aditya Arie Wijaya
 title-block-banner: true
 date: '2023-07-23'
 categories:
