@@ -2,7 +2,6 @@
 title: 'Plotpetrophysics '
 description: |
   A web-application to do petrophysical analysis using LAS file well-log data
-author: Aditya Arie Wijaya
 title-block-banner: true
 date: '2023-07-15'
 categories:

@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -116,8 +82,6 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.scss">
@@ -131,7 +95,7 @@ div.csl-indent {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="floating nav-fixed">
+<body class="floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -208,7 +172,6 @@ div.csl-indent {
    
   <ul>
   <li><a href="#indonesia---overview" id="toc-indonesia---overview" class="nav-link active" data-scroll-target="#indonesia---overview">Indonesia - Overview</a></li>
-  <li><a href="#seattle-precipitation-by-day-2012-to-2016" id="toc-seattle-precipitation-by-day-2012-to-2016" class="nav-link" data-scroll-target="#seattle-precipitation-by-day-2012-to-2016">Seattle Precipitation by Day (2012 to 2016)</a></li>
   </ul>
 </nav>
 </nav>
@@ -217,72 +180,31 @@ div.csl-indent {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
-<section id="indonesia---overview" class="level2">
+<section id="indonesia---overview" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="indonesia---overview">Indonesia - Overview</h2>
 <p>Indonesia is many things. The most populous moslem country in the world, fourth most populous country in the world, country with more than 17,000 islands, a country with largest living lizard on earth named <a href="whc.unesco.org/en/documents/125037" title="Source of Featured Image">Komodo</a>, and among one of the most biodiverse ecology in the sea, land, and in between.</p>
 <p>Interestingly, Indonesia is also one of some countries where it produce CO2 emission less than its fair carbon share, as I shown in my previous blogpost <span class="citation" data-cites="ariewijaya2023">Arie Wijaya (<a href="#ref-ariewijaya2023" role="doc-biblioref">2023</a>)</span> , taken from research done by <span class="citation" data-cites="fanning2023">Fanning and Hickel (<a href="#ref-fanning2023" role="doc-biblioref">2023</a>)</span>. <a href="#fig-top5-over-under-emit">Figure&nbsp;1</a> shows that Indonesia is among the smallest in terms of total share of appropriated emissions.</p>
-<div id="fig-top5-over-under-emit" class="quarto-figure quarto-figure-left anchored">
+<div class="no-row-height column-margin column-container"><div id="ref-ariewijaya2023" class="csl-entry" role="listitem">
+Arie Wijaya, Aditya. 2023. <span>“Decoupling <span>GDP</span> from <span>CO2</span> <span>Emission</span> - <span>Only</span> <span>If</span> <span>You’re</span> <span>Rich</span> <span>Enough?</span>”</span> July 23, 2023. <a href="https://adtarie.net/posts/20230723-co2-growth">https://adtarie.net/posts/20230723-co2-growth</a>.
+</div><div id="ref-fanning2023" class="csl-entry" role="listitem">
+Fanning, Andrew L., and Jason Hickel. 2023. <span>“Compensation for Atmospheric Appropriation.”</span> <em>Nature Sustainability</em>, June. <a href="https://doi.org/10.1038/s41893-023-01130-8">https://doi.org/10.1038/s41893-023-01130-8</a>.
+</div></div><div id="fig-top5-over-under-emit" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="images/top5_overemitting_underemitting_countries.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;1: Top 5 Over and Under-emitting Countries with respect to their Carbon Budget</figcaption>
 </figure>
 </div>
-</section>
-<section id="seattle-precipitation-by-day-2012-to-2016" class="level2">
-<h2 class="anchored" data-anchor-id="seattle-precipitation-by-day-2012-to-2016">Seattle Precipitation by Day (2012 to 2016)</h2>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1" data-startfrom="0" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb1-0"><a href="#cb1-0"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"seattle-weather.csv"</span>)</span>
-<span id="cb1-1"><a href="#cb1-1"></a>  <span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  </span>
-<span id="cb1-3"><a href="#cb1-3"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> <span class="dt">padding</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="dt">color</span><span class="op">:</span> { <span class="dt">scheme</span><span class="op">:</span> <span class="st">"blues"</span><span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">"sqrt"</span>}<span class="op">,</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">tickFormat</span><span class="op">:</span> i <span class="kw">=&gt;</span> <span class="st">"JFMAMJJASOND"</span>[i] }<span class="op">,</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb1-8"><a href="#cb1-8"></a>    Plot<span class="op">.</span><span class="fu">cell</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">group</span>({<span class="dt">fill</span><span class="op">:</span> <span class="st">"mean"</span>}<span class="op">,</span> {</span>
-<span id="cb1-9"><a href="#cb1-9"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="bu">Date</span>(d<span class="op">.</span><span class="at">date</span>)<span class="op">.</span><span class="fu">getDate</span>()<span class="op">,</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="bu">Date</span>(d<span class="op">.</span><span class="at">date</span>)<span class="op">.</span><span class="fu">getMonth</span>()<span class="op">,</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"precipitation"</span><span class="op">,</span> </span>
-<span id="cb1-12"><a href="#cb1-12"></a>      <span class="dt">inset</span><span class="op">:</span> <span class="fl">0.5</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>    }))</span>
-<span id="cb1-14"><a href="#cb1-14"></a>  ]</span>
-<span id="cb1-15"><a href="#cb1-15"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
 
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-ariewijaya2023" class="csl-entry" role="listitem">
-Arie Wijaya, Aditya. 2023. <span>“Decoupling <span>GDP</span> from <span>CO2</span> <span>Emission</span> - <span>Only</span> <span>If</span> <span>You’re</span> <span>Rich</span> <span>Enough?</span>”</span> July 23, 2023. <a href="https://adtarie.net/posts/20230723-co2-growth">https://adtarie.net/posts/20230723-co2-growth</a>.
-</div>
-<div id="ref-fanning2023" class="csl-entry" role="listitem">
-Fanning, Andrew L., and Jason Hickel. 2023. <span>“Compensation for Atmospheric Appropriation.”</span> <em>Nature Sustainability</em>, June. <a href="https://doi.org/10.1038/s41893-023-01130-8">https://doi.org/10.1038/s41893-023-01130-8</a>.
-</div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
   author = {Arie Wijaya, Aditya and Arie Wijaya, Aditya},
   title = {Indonesia and {CO2} {Emissions} - {Where} Are {We?}},
   date = {2023-08-03},
@@ -293,17 +215,6 @@ Fanning, Andrew L., and Jason Hickel. 2023. <span>“Compensation for Atmospheri
 Arie Wijaya, Aditya, and Aditya Arie Wijaya. 2023. <span>“Indonesia and
 CO2 Emissions - Where Are We?”</span> August 3, 2023. <a href="https://adtarie.net/posts/20230803-co2emission-ina">https://adtarie.net/posts/20230803-co2emission-ina</a>.
 </div></div></section></div></main> <!-- /main -->
-<script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"data = FileAttachment(\"seattle-weather.csv\")\n  .csv({typed: true})\n  \nPlot.plot({\n  width: 800, height: 500, padding: 0,\n  color: { scheme: \"blues\", type: \"sqrt\"},\n  y: { tickFormat: i => \"JFMAMJJASOND\"[i] },\n  marks: [\n    Plot.cell(data, Plot.group({fill: \"mean\"}, {\n      x: d => new Date(d.date).getDate(),\n      y: d => new Date(d.date).getMonth(),\n      fill: \"precipitation\", \n      inset: 0.5\n    }))\n  ]\n})\n"}]}
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../posts/20230803-co2emission-ina";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "../..";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

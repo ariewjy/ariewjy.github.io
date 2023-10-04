@@ -16,6 +16,7 @@ image: featured1.png
 # monobackgroundcolor: grey
 jupyter: minids
 bibliography: references.bib
+citation-location: document
 ---
 
 ## CO~2~ Emission vs GDP

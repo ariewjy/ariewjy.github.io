@@ -13,7 +13,7 @@ fig-cap-location: bottom
 fig-align: left
 linkcolor: 'purple'
 image: featured.jpeg
-citation-location: document
+citation-location: margin
 monobackgroundcolor: grey
 jupyter: python3
 bibliography: references.bib
