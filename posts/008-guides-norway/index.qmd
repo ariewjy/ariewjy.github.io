@@ -51,7 +51,7 @@ P number ini tidak usah dihapal semua, cukup 5 digit terakhir saja, karena 6 dig
 Proses membuat akun bank lokal membutuhkan kurang lebih 2-4 minggu, ditambah dengan proses menunggu hingga P-num anda tersedia, selama maksimal 2 bulan anda tidak akan memiliki akun pembayaran untuk kebutuhan sehari-hari di Norway. Disarankan untuk membawa minimal 2 jenis kartu kredit untuk pembayaran sehari-hari, bisa menggunakan VISA ataupun mastercard. Tidak disarakan menggunakan cash, karena di sini sangat jarang transaksi menggunakan cash, dan untuk menghindari sebaran virus seperti Covid-19. Saya sendiri menggunakan Wise dan tidak pernah ada masalah.
 :::
 
-## Transportasi Publik 
+## Transportasi Publik
 
 Transportasi di sini kebanyakan berupa bis, dan beberapa area tersedia kereta.
 
@@ -63,25 +63,25 @@ Untuk transportasi dari Bandara ke Kota Stavanger (Stavanger Sentrum) dapat meng
 
 Website-nya sekarang cukup intuitif dan mudah digunakan, terlampir contoh penggunaan aplikasi website Flybussen untuk tiket dari bandara ke statens hus (sebelahnya SUA).
 
-![](images/CleanShot 2023-10-15 at 14.24.19@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2014.24.19@2x.png){width="720"}
 
-Biaya per orang dewasa sebesar NOK 158,00 (koma di sini bermakna koma, seperti di indonesia, jadi ini sebesar seratus lima puluh delapan Norwegian Kroner). Per tanggal artikel ini ditulis, 1 NOK = 1450 rupiah. Pembayaran dapat menggunakan kartu kredit VISA ataupun mastercard. [Aplikasi Vipps] seperti yang disebutkan sebelumnya, adalah digital wallet khusus Norway (akan dibahas mendetail di bab selanjutnya).
+Biaya per orang dewasa sebesar NOK 158,00 (koma di sini bermakna koma, seperti di indonesia, jadi ini sebesar seratus lima puluh delapan Norwegian Kroner). Per tanggal artikel ini ditulis, 1 NOK = 1450 rupiah. Pembayaran dapat menggunakan kartu kredit VISA ataupun mastercard. [Aplikasi Vipps](#vipps) seperti yang disebutkan sebelumnya, adalah digital wallet khusus Norway (akan dibahas mendetail di bab selanjutnya).
 
-![](images/CleanShot 2023-10-15 at 14.28.53@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2014.28.53@2x.png){width="720"}
 
 ## Dalam Kota
 
 Untuk transportasi di Kota, bisa menggunakan Kolumbus. Ini semacam penyedia jasa bis dalam kota stavanger. Tiket bisa beli offline di stasiun bis, atau (seperti saya) beli online di aplikasinya. Ada dua aplikasi Kolumbus, ada yg untuk beli tiket (Kolumbus Billet).
 
-![](images/CleanShot 2023-10-15 at 14.39.00@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2014.39.00@2x.png){width="720"}
 
 Ada untuk bus tracking, bernama Kolumbus. Aplikasi ini cukup intuitif dan akurat dalam menentukan posisi bis secara hampir real-time.
 
-![](images/CleanShot 2023-10-15 at 14.40.16@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2014.40.16@2x.png){width="720"}
 
 Ketika pertamakali tiba di Stavanger, saya langsung membeli tiket via aplikasi dan melakukan pembayaran menggunakan kartu kredit. Anda bisa membeli tiket harian, mingguan, dan bulanan tergantung kebutuhan. Saya pribadi membeli tiket bulanan senilai NOK 650/ zone, untuk harga orang dewasa (anak dibawah umur tidak perlu membeli tiket). Setelah membeli anda akan mendapatkan akses ke real-time barcode di aplikasi Billet. Untuk region Stavanger-Sentrum-Madla-Tananger-Sola, masih masuk satu zonasi yang sama, sehingga cukup bayar untuk satu zona. Tiket ini juga sudah termasuk akses kereta lokal yang menghubungkan Stavanger sampai Egersund, dan juga kapal feri.
 
-![](images/CleanShot 2023-10-15 at 14.52.05@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2014.52.05@2x.png){width="720"}
 
 Harap diwaspadai, kalau sejauh ini memang tidak ada kewajiban untuk memindai barcode sebelum naik bis, namun secara rutin dan acak akan ada pengecekan penumpang oleh polisi setempat. Jika ditemukan anda menaiki bis tanpa mempunyai tiket yang valid, **denda per orang adalah senilai NOK 950 (data valid per Oktober 2023)**.
 
@@ -105,7 +105,7 @@ Kartu apa yg bisa dipakai? Semua kartu yg ada logo Visa atau Mastercardnya. Saya
 
 Vipps merupakan aplikasi digital wallet seperti Gopay di Indonesia. Aplikasi inii cukup simpel karena memang hanya untuk bayar dan terima uang berdasarkan akun Vipps yang terhubung ke nomor handphone anda. Dibutuhkan Digital ID berupa BankID untuk membuat akun Vipps, karena termasuk ke dalam aplikasi keuangan.
 
-![](images/CleanShot 2023-10-15 at 15.04.24@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2015.04.24@2x.png){width="720"}
 
 ## Nomor HP Lokal dan Paket Data
 
@@ -217,7 +217,11 @@ Untuk yang tidak ada mailbox (seperti saya), ada opsi untuk pengambilan kartu de
 
 Helsenorge ([Helsenorge -- din helse på nett - Helsenorge](https://tjenester.helsenorge.no/velg-person)) adalah website untuk akses informasi kesehatan pribadi. Di website inilah kita buat temujanji dengan dokter (GP) kita yang sudah didaftarkan atas nama kita. Kita bisa cek kita terdaftar dengan GP siapa di [Bytte fastlege - Helsenorge](https://tjenester.helsenorge.no/bytte-fastlege). Pastikan nomor hp anda terdaftar di helsenorge, sehingga setiap kali ada notifikasi maka anda akan dapat pesan teks. Selalu cek pesan di hp anda, dan email anda untuk setiap notifikasi terkait jadwal cek dokter, vaksin, temu janji dll.
 
-![](images/CleanShot 2023-10-15 at 16.25.02@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2016.25.02@2x.png){width="720"}
+
+Yang patut diwaspadai ketika ke klinik, atau ke pengobatan/ pengecekan yang melibatkan klinik apapun, pastikan anda bertanya dengan perawat apakah yang anda dapatkan berbayar atau gratis. Bila berbayar, PASTIKAN anda membayar segera setelah perawatan/ pengecekan. Misalnya untuk cek ke klinik GP, setelah bertemu dokter, pastikan anda membayar di mesin bayar. Karena jika tidak, akan ada ekstra invoice sebesar NOK 100 yang harus anda bayarkan di atas biaya dokter tadi. Mesin bayarnya seperti berikut, anda tinggal masukkan P-num, dan bayar menggunakan kredit kard/ debit.
+
+![](images/5B4F8705-2FFF-44F3-A443-1995CFC69990_1_105_c.jpeg){width="720"}
 
 ### Emergency/ Legevakten
 
@@ -248,17 +252,17 @@ Salah satu hal favorit saya adalah mendaftarkan anak saya sehingga saya dapat ke
 
 Di Norway, anak di bawah 7 tahun wajib masuk Barnehage (daycare + playgroup). Pendidikan wajib di Norway, dan merupakan hak anak dan kewajiban orangtua untuk mendaftarkan. Minimal e-ID adalah MinID untuk masuk ke website pendaftaran [Vigilo](https://vigilo.no/).
 
-![](images/CleanShot 2023-10-15 at 16.27.32@2x.png){width="720"}
+![](images/CleanShot%202023-10-15%20at%2016.27.32@2x.png){width="720"}
 
 Setelah masuk, anda bisa memulai aplikasi baru dan mendaftar lebih dari satu barnehage. Biasanya akan dipilihkan lokasi yang paling dekat ke lokasi rumah/ tempat tinggal anda yang terdaftar di national registry, sehingga pastikan data anda valid dan up-to-date.
 
-![](images/CleanShot 2023-10-15 at 16.33.25@2x.png)
+![](images/CleanShot%202023-10-15%20at%2016.33.25@2x.png)
 
 Saran saya ambil saja mana yang paling awal menerima anak anda, dan jangan khawatir ketika anda menerima satu barnehage, maka barnehage lain tidak akan terhapus dan prosesnya tetap berjalan. Sebagai contoh, dalam kasus saya, anak saya mendaftar di dua barnehage yang berbeda dekat rumah. Barnehage yang menerima pertamakali adalah barnehage yg letaknya 5-10min berjalan kaki dari rumah, sehingga kami langsung terima.
 
 Namun, setelah kurang lebih satu bulan, barnehage prioritas kami yang berjarak paling dekat ke rumah akhirnya kosong dan menerima. Sehingga, pada bulan kedua, kami pindah ke barnehage baru.
 
-![](images/CleanShot 2023-10-15 at 16.34.51@2x-2.png)
+![](images/CleanShot%202023-10-15%20at%2016.34.51@2x-2.png)
 
 ## Belanja Bahan Makanan
 
@@ -274,7 +278,7 @@ Untuk keseharian, pilihan ada di antara CoopMega, Extra, Joker, dan Rema1000. Ex
 
 Supermarket muslim, yang maksudnya menjual daging-dagingan yang halal, ada beberapa. Utamanya ada IMS Internasjonal Matsenter yang lokasinya ada di beberapa di area Stavanger (bisa cari di google maps). Selain itu ada juga rumah daging Turki di area Pedersgata (Istanbul Import).
 
-![IMS](images/CleanShot 2023-10-15 at 16.43.27@2x.png){fig-alt="Foto dari Google Maps" width="720"}
+![IMS](images/CleanShot%202023-10-15%20at%2016.43.27@2x.png){fig-alt="Foto dari Google Maps" width="720"}
 
 ![Istanbul Import](images/paste-13.png){width="720"}
 
