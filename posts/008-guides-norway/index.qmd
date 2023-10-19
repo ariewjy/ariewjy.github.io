@@ -37,6 +37,8 @@ Tanpa adanya nomor ini, anda tidak akan bisa membuat digital ID seperti MinID, B
 
 D-num umumnya diberikan sebagai nomor identifikasi sementara untuk orang asing di Norway yang berencana tinggal kurang dari 6 bulan, atau lebih dari 6 bulan namun tidak memenuhi syarat untuk mendapatkan P-num. Pengalaman rekan kerja di kantor, ada yang langsung diberikan P-num (seperti saya), ada juga yang diberikan D-num terlebih dahulu kemudian diberikan P-num.
 
+> Salah satu kekurangan D-num adalah tidak ada akses ke fasilitas kesehatan publik atau [Public Health (Helsenorge)]. Untuk bisa mendapatkan fasilitas kesehatan publik, minimal P-num harus ada.
+
 ### P-num
 
 ![](images/paste-10.png){width="480"}
@@ -44,6 +46,8 @@ D-num umumnya diberikan sebagai nomor identifikasi sementara untuk orang asing d
 P-num ini umumnya diberikan untuk warga negara Norway, atau orang asing yang bertempat tinggal lebih dari 6 bulan di Norway dan memenuhi syarat mendapatkan P-num. Detil syaratnya saya tidak tahu, namun dari beberapa orang yang saya kenal dan baru-baru ini pindah ke Norway, hampir semua mendapatkan P-num langsung.
 
 > Sayangnya proses mendapatkan P-num ini bervariasi dari 0 minggu, sampai 4-6 minggu setibanya di Norway. Saya pribadi mendapatkan P-number pada hari pertama datang ke SUA (kantor imigrasi Stavanger). Namun beberapa teman saya mendapatkannya setelah 2 minggu. Durasi ini bergantung pada banyaknya aplikasi pada saat itu, dan akhir-akhir ini banyak refugee yang datang ke Norway, sehingga bisa saja menjadi lebih lama dari biasanya.
+>
+> Pengamatan saya pribadi, lebih besar kemungkinan dapat P-num jika anda membawa serta keluarga anda ketika datang ke SUA (Imigrasi), dan tidak ada ruginya bertanya, meminta apakah anda bisa mendapatkan P-num, karena sebab-sebab di atas (akses ke kesehatan, buat akun bank, dll).
 
 P number ini tidak usah dihapal semua, cukup 5 digit terakhir saja, karena 6 digit pertama berkaitan dengan tanggal-bulan-tahun lahir anda.
 
