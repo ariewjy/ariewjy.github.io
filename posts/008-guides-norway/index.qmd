@@ -37,7 +37,7 @@ Tanpa adanya nomor ini, anda tidak akan bisa membuat digital ID seperti MinID, B
 
 D-num umumnya diberikan sebagai nomor identifikasi sementara untuk orang asing di Norway yang berencana tinggal kurang dari 6 bulan, atau lebih dari 6 bulan namun tidak memenuhi syarat untuk mendapatkan P-num. Pengalaman rekan kerja di kantor, ada yang langsung diberikan P-num (seperti saya), ada juga yang diberikan D-num terlebih dahulu kemudian diberikan P-num.
 
-> Salah satu kekurangan D-num adalah tidak ada akses ke fasilitas kesehatan publik atau [Public Health (Helsenorge)]. Untuk bisa mendapatkan fasilitas kesehatan publik, minimal P-num harus ada.
+> Salah satu kekurangan D-num adalah tidak ada akses ke fasilitas kesehatan publik atau [Public Health (Helsenorge)](#public-health-helsenorge). Untuk bisa mendapatkan fasilitas kesehatan publik, minimal P-num harus ada.
 
 ### P-num
 
@@ -215,7 +215,7 @@ Untuk yang tidak ada mailbox (seperti saya), ada opsi untuk pengambilan kartu de
 
 ![](images/paste-5.png){width="720"}
 
-## Public Health (Helsenorge)
+## Public Health (Helsenorge) {#public-health-helsenorge}
 
 ### GP (Personal Doctor/ Clinic)
 
@@ -292,17 +292,51 @@ Di Norway, ada website sapujagat. Isinya dari jualan barang second-hand, baru, l
 
 ![Finn No](images/CleanShot%202023-06-27%20at%2021.46.24.gif)
 
-## Biaya Hiup di Norway?
-
-Pengeluaran tiap orang bervariasi, namun angka sekitar 27-30k NOK a month saya anggap dalam rentang yang masuk akal untuk keluarga dengan tiga anggota keluarga. Rinciannya sebagai berikut:
+## Berapa Biaya Hidup di Norway?
 
 ![](images/paste-9.png){width="538"}
+
+Biaya hidup sangat bergantung terhadap status anda (single/ family), lokasi tempat tinggal anda (Oslo/Stavanger, Tromso, Trondheim, etc), dan gaya hidup anda (masak/ beli). Di atas adalah tabel yang saya pakai untuk estimasi pengeluaran per bulan. Rincian saya jabarkan di bawah.
+
+#### 1. Tempat tinggal
+
+Dalam kasus saya, tempat tinggal memakan pengeluaran paling besar. Untuk lokasi yg masih dalam jarak tempuh 15-20min dari sentrum (pusat kota stavanger), harga sewa bervariasi antara 12,000 NOK hingga 16,000 NOK. Patut diingat kalau ketika mencari rumah, usahakan kunjungi rumahnya (visiting), dan kalau bisa punya kontak yg bisa rekomendasikan anda pertamakali (biasanya landlord/owner akan telpon nomor tersebut untuk memastikan anda memang **legit**).
+
+::: callout-tip
+Jika anda bertempat tinggal di Stavanger, anda akan berhak akan bus gratis senilai 650 NOK per bulan, sehingga, anggap saja jika anda menyewa tempat tinggal di area stavanger -- maka anda akan mendapatkan diskon minimal 650 NOK.
+:::
+
+#### 2. Groceries
+
+Pada umumnya biaya makan bergantung dengan jumlah anggota keluarga anda (single/ family), dan gaya hidup/makan anda. Kalau anda masak, dan mau berkompromi dengan bahan makanan (tidak melulu beli barang impor), maka biaya makan anda akan relatif rendah (5000 NOK jika single, 7000 jika family).
+
+Namun jika sering beli barang impor (makanan asia misalnya), maka mungkin kisaran 8000-10,000 NOK lebih masuk akal.
+
+#### 3. Electricity
+
+Listrik bergantung pemakaian, namun umumnya tinggi di musim dingin (2000-3000 NOK) dan rendah di bulan-bulan lain (1000 NOK), sehingga reratanya anggap saja 1500-2000 NOK per bulan.
+
+#### 4. Wifi dan Prepaid
+
+Wifi ini tergantung dengan deal tempat tinggal anda. Pada banyak kasus, wifi sudah termasuk ke dalam uang sewa, namun jika memang tidak, biaya yg diperlukan bergantung pada kecepatan internet, dan provider yg tersedia di lokasi tempat tinggal. Untuk prepaid sudah saya bahas di bab sebelumnya ([Nomor HP Lokal dan Paket Data]).
+
+#### 4. Transportasi
+
+Hampir di semua region di Norway, transportasi publik sangat baik. Di stavanger, terdapat dua transportasi publik, bis dan kereta. Providernya adalah kolumbus (baca bab [Transportasi Publik]). Bis nya sangat reliable dan menjangkau hampir semua area, bahkan sampai ke area perumahan. Biayanya untuk warga yang bertempat tinggal di Stavanger-- gratis. Namun jika di luar area stavanger, biayanya 650 NOK per bulan per orang. Region lain seperti Trondheim, biaya tiket senilai 950 NOK per bulan per orang.
 
 ::: callout-note
 Untuk Bus, bila bertempat di Stavanger, bisa mendapatkannya dengan gratis. Cek [Khusus Penduduk Stavanger]
 :::
 
-# Penutup
+## Pajak Pendapatan di Norway
+
+Di Norway, pajak untuk pendapatan yang per tahun tidak lebih besar dari 650,000 NOK adalah sebesar 25%. Sedangkan untuk pendapatan di atas 650,000 NOK akan dihitung berdasarkan bracket tax yang ditentukan, lebih mudahnya bisa menuju link ini: [Tax Calculator](https://skattekalkulator.app.skatteetaten.no/#/). Contoh seperti di bawah;
+
+![](images/CleanShot 2023-10-29 at 11.40.52@2x.png)Patut dipahami, bahwa pajak di Norway dihitung per tahun, namun diambil sebanyak 10.5 bulan, karena pajak di bulan May-Jun adalah 0%, sedangkan di bulan-bulan masuk Winter senilai 50% dari nilai aslinya, sehingga 12-1.5=10.5. Kenapa ini penting? Karena nilai pajak anda per bulan akan menjadi lebih besar dari hitungan per tahun dibagi 12 bulan.
+
+> Sebagai contoh, jika pajak anda adalah senilai 280,000 NOK per tahun dari total pendapatan senilai 800,000 NOK, maka pajak anda adalah 35% dari total pendapatan. Namun karena pajak hanya ditagih sebanyak 10.5x dalam setahun, maka di bulan-bulan yg ditagih pajak, setiap penagihan, nilainya dalah 35%\*12/10.5=40%. Itulah sebabnya pajak di Norway "**terlihat**" tinggi.
+
+## Penutup
 
 Terimakasih sudah membaca sampai sini. Jika ada yang ingin ditanyakan, langsung saja DM atau Mention saya di Twitter. Saya sudah rangkumkan pula beberapa hal sehari-hari di thread di bawah. Enjoy!
 
