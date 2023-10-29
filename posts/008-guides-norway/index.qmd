@@ -336,6 +336,16 @@ Di Norway, pajak untuk pendapatan yang per tahun tidak lebih besar dari 650,000 
 
 > Sebagai contoh, jika pajak anda adalah senilai 280,000 NOK per tahun dari total pendapatan senilai 800,000 NOK, maka pajak anda adalah 35% dari total pendapatan. Namun karena pajak hanya ditagih sebanyak 10.5x dalam setahun, maka di bulan-bulan yg ditagih pajak, setiap penagihan, nilainya dalah 35%\*12/10.5=40%. Itulah sebabnya pajak di Norway "**terlihat**" tinggi.
 
+## Holiday Pay
+
+Di Norway, ada satu hal yang tidak ada di banyak negara lain, yakni holiday pay.
+
+Pada banyak perusahaan di Norway, kita biasanya diberikan kurang lebih 21-25 hari libur (vacation), yang kalau dhitung kurang lebih 1 bulan. Sehingga, ada mekanisme, supaya di bulan kita tidak bekerja selama kurang lebih 1 bulan ini, kita tetap menerima gaji -- inilah Holiday Pay.
+
+Besarnya kurang lebih 12% dari income tahunan (tergantung umur dan lain-lain, baca lebih lanjut di [sini](https://www.skatteetaten.no/en/person/taxes/get-the-taxes-right/employment-benefits-and-pensions/holiday-pay/) ), namun hanya bisa didapatkan ketika kita sudah bekerja selama 1 tahun di Norway. Holiday pay ini diberikan di bulan-bulan memasuki musim panas (summertime), sekitar bulan May-Jun, sehingga jika anda seperti saya yang datang di bulan April, anda tidak akan mendapatkan gaji di bulan May-Jun, karena belum genap 1 tahun di Norway. Baru di tahun berikutnyalah anda akan mendapatkan gaji full di bulan May-Jun.
+
+> Dalam beberapa kasus, ada situasi di mana anda bisa MENJUAL jatah cuti anda demi mendapatkan gaji di bulan May-Jun, ketika anda belum genap 1 tahun di Norway.
+
 ## Penutup
 
 Terimakasih sudah membaca sampai sini. Jika ada yang ingin ditanyakan, langsung saja DM atau Mention saya di Twitter. Saya sudah rangkumkan pula beberapa hal sehari-hari di thread di bawah. Enjoy!
