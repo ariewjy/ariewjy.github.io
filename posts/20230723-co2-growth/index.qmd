@@ -12,7 +12,7 @@ draft: false
 fig-cap-location: bottom
 fig-align: left
 linkcolor: 'green'
-image: featured1.png
+image: preview.png
 # monobackgroundcolor: grey
 jupyter: minids
 bibliography: references.bib
