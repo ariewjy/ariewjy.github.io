@@ -15,7 +15,7 @@ citation-location: margin
 jupyter: minids
 ---
 
-![Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](./images/image0.jpg)
+![Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](./images/image0.jpg){.preview-image}
 
 # Introduction
 
