@@ -65,17 +65,19 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Jupyterlite For Everyone">
 <meta property="og:description" content="Do you know Jupyterlite? It is a web-based version of jupyterlab, where everything runs on browser. The good thing is, we can create our own jupyterlite server to be used as we wish, anytime, anyplace.">
 <meta property="og:image" content="https://adtarie.net/posts/20230802-jupyterlite/featured.png">
+<meta property="og:locale" content="en_EN">
 <meta property="og:image:height" content="205">
 <meta property="og:image:width" content="612">
 <meta name="twitter:title" content="Jupyterlite For Everyone">
 <meta name="twitter:description" content="Do you know Jupyterlite? It is a web-based version of jupyterlab, where everything runs on browser. The good thing is, we can create our own jupyterlite server to be used as we wish, anytime, anyplace.">
-<meta name="twitter:image" content="https://adtarie.net/posts/20230802-jupyterlite/img/profile.jpg">
+<meta name="twitter:image" content="https://adtarie.net/posts/20230802-jupyterlite/featured.png">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="205">
+<meta name="twitter:image-width" content="612">
 </head>
 
 <body class="floating nav-fixed">
@@ -157,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#what-is-jupyter-lite" id="toc-what-is-jupyter-lite" class="nav-link active" data-scroll-target="#what-is-jupyter-lite">What is Jupyter-lite?</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/20230802-jupyterlite/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -418,6 +420,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">

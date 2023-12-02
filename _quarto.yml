@@ -3,32 +3,40 @@ project:
   output-dir: docs
   preview:
     port: 7777
-# metadata-files:
-#   - _website.yml
-#   - _format.yml
+    # browser: false
+    # watch-inputs: true
+    # timeout: 3600
 
-# execute:
-#   freeze: auto
+execute:
+  freeze: auto
 
 website:
   # title: "Aditya AW"
   # description: "Geoscientist Codes"
   site-url: https://adtarie.net
-  # site-path: "https://ariewjy.github.io/"
-  # search:
-  #   location: navbar
-  #   type: overlay
+  repo-url: https://github.com/ariewjy/ariewjy.github.io
+  repo-actions:
+    - source
+    - issue
   favicon: img/logo_rounded.png
-  # twitter-card: true
   twitter-card:
-    image: img/profile.jpg
     creator: "@adtarie"
     card-style: summary_large_image
-  open-graph: true
+  open-graph:
+    locale: en_EN
+  page-navigation: true
+  # google-analytics:
+  # cookie-consent:
+  #   type: express
+  #   prefs-text: "Change Cookies 🍪"
+
+  # search:
+  #   location: navbar
+  #   type: textbox
 
   navbar:
-    type: light
-    background: "#2D2D36"
+    # type: light
+    # background: "#2D2D36"
     search: false
     pinned: false
     right:
@@ -47,18 +55,21 @@ website:
       - href: https://www.quarto.org
         text: Built w/ Quarto
 
-  page-navigation: true
-
 format:
   html:
-    theme:
-      [styles.scss]
-      # light: litera
-      # dark: darkly
-    css: styles.scss
+    theme: [flatly, jadey.scss] #theme inspired by https://github.com/myominnoo/myominnoo.github.io
+    # theme:
+    #   [styles.scss]
+    # light: litera
+    # dark: darkly
+    # css: styles.scss
+    toc: true
+    toc-depth: 4
     highlight-style: eiffel
     smooth-scroll: true
-    fontsize: 1.2em
+    page-layout: article
+    # fontsize: 1.2em
+    link-external-newwindow: true
     code-link: true
     anchor-sections: true
 

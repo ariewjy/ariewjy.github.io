@@ -137,17 +137,19 @@ require(['plotly'], function(Plotly) {
 
 
 
-<link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Decoupling GDP from CO2 Emission - Only If You’re Rich Enough?">
 <meta property="og:description" content="Developed countries were able to decoupled their GDP from CO2 emissions, while in developing countries, CO2 emissions is an inevitable consequences of their economic growth.">
 <meta property="og:image" content="https://adtarie.net/posts/20230723-co2-growth/featured1.png">
+<meta property="og:locale" content="en_EN">
 <meta property="og:image:height" content="582">
 <meta property="og:image:width" content="923">
 <meta name="twitter:title" content="Decoupling GDP from CO2 Emission - Only If You’re Rich Enough?">
 <meta name="twitter:description" content="Developed countries were able to decoupled their GDP from CO2 emissions, while in developing countries, CO2 emissions is an inevitable consequences of their economic growth.">
-<meta name="twitter:image" content="https://adtarie.net/posts/20230723-co2-growth/img/profile.jpg">
+<meta name="twitter:image" content="https://adtarie.net/posts/20230723-co2-growth/featured1.png">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="582">
+<meta name="twitter:image-width" content="923">
 </head>
 
 <body class="floating nav-fixed">
@@ -230,14 +232,14 @@ require(['plotly'], function(Plotly) {
   <li><a href="#co2-emission-vs-gdp" id="toc-co2-emission-vs-gdp" class="nav-link active" data-scroll-target="#co2-emission-vs-gdp">CO<sub>2</sub> Emission vs GDP</a></li>
   <li><a href="#data-importing-and-cleaning" id="toc-data-importing-and-cleaning" class="nav-link" data-scroll-target="#data-importing-and-cleaning">Data Importing and Cleaning</a></li>
   <li><a href="#data-exploration-and-illustration" id="toc-data-exploration-and-illustration" class="nav-link" data-scroll-target="#data-exploration-and-illustration">Data Exploration and Illustration</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#country-with-decreased-co2-emission-increased-gdp" id="toc-country-with-decreased-co2-emission-increased-gdp" class="nav-link" data-scroll-target="#country-with-decreased-co2-emission-increased-gdp">Country with Decreased CO<sub>2</sub> Emission &amp; Increased GDP</a></li>
   <li><a href="#country-with-decreased-co2-emission-decreased-gdp" id="toc-country-with-decreased-co2-emission-decreased-gdp" class="nav-link" data-scroll-target="#country-with-decreased-co2-emission-decreased-gdp">Country with Decreased CO<sub>2</sub> Emission &amp; Decreased GDP</a></li>
   <li><a href="#country-with-increased-co2-emission-increased-gdp" id="toc-country-with-increased-co2-emission-increased-gdp" class="nav-link" data-scroll-target="#country-with-increased-co2-emission-increased-gdp">Country with Increased CO2 Emission &amp; Increased GDP</a></li>
   </ul></li>
   <li><a href="#closing-words" id="toc-closing-words" class="nav-link" data-scroll-target="#closing-words">Closing Words</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/20230723-co2-growth/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -2303,6 +2305,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">

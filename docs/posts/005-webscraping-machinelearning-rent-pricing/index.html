@@ -122,17 +122,19 @@ div.csl-indent {
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Malaysia Property Pricing - Webscraping &amp; Machine Learning Model">
 <meta property="og:description" content="Full details on creating property dataset using webscraping, and building machine learning model to predict the rent price">
 <meta property="og:image" content="https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png">
+<meta property="og:locale" content="en_EN">
 <meta property="og:image:height" content="1071">
 <meta property="og:image:width" content="1522">
 <meta name="twitter:title" content="Malaysia Property Pricing - Webscraping &amp; Machine Learning Model">
 <meta name="twitter:description" content="Full details on creating property dataset using webscraping, and building machine learning model to predict the rent price">
-<meta name="twitter:image" content="https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/img/profile.jpg">
+<meta name="twitter:image" content="https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="1071">
+<meta name="twitter:image-width" content="1522">
 </head>
 
 <body class="floating nav-fixed">
@@ -214,26 +216,65 @@ div.csl-indent {
    
   <ul>
   <li><a href="#machine-learning-project" id="toc-machine-learning-project" class="nav-link active" data-scroll-target="#machine-learning-project">Machine Learning Project</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#data-gathering" id="toc-data-gathering" class="nav-link" data-scroll-target="#data-gathering">Data Gathering</a></li>
+  <li><a href="#data-gathering" id="toc-data-gathering" class="nav-link" data-scroll-target="#data-gathering">Data Gathering</a>
+  <ul class="collapse">
+  <li><a href="#web-scraping-process" id="toc-web-scraping-process" class="nav-link" data-scroll-target="#web-scraping-process">Web-Scraping Process</a></li>
+  </ul></li>
   <li><a href="#data-understanding" id="toc-data-understanding" class="nav-link" data-scroll-target="#data-understanding">Data Understanding</a></li>
-  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
-  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a></li>
-  <li><a href="#training-data-imputation" id="toc-training-data-imputation" class="nav-link" data-scroll-target="#training-data-imputation">Training Data Imputation</a></li>
-  <li><a href="#training-machine-learning" id="toc-training-machine-learning" class="nav-link" data-scroll-target="#training-machine-learning">Training Machine Learning</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a>
+  <ul class="collapse">
+  <li><a href="#drop-duplicate" id="toc-drop-duplicate" class="nav-link" data-scroll-target="#drop-duplicate">Drop Duplicate</a></li>
+  <li><a href="#extracting-number-and-keyword" id="toc-extracting-number-and-keyword" class="nav-link" data-scroll-target="#extracting-number-and-keyword">Extracting Number and Keyword</a></li>
+  <li><a href="#extracting-near-ktmlrt" id="toc-extracting-near-ktmlrt" class="nav-link" data-scroll-target="#extracting-near-ktmlrt">Extracting Near KTM/LRT</a></li>
+  <li><a href="#drop-missing-values-in-facilities-and-additional-facilities" id="toc-drop-missing-values-in-facilities-and-additional-facilities" class="nav-link" data-scroll-target="#drop-missing-values-in-facilities-and-additional-facilities">Drop Missing Values in Facilities and Additional Facilities</a></li>
+  <li><a href="#outlier-removal" id="toc-outlier-removal" class="nav-link" data-scroll-target="#outlier-removal">Outlier Removal</a></li>
+  <li><a href="#size" id="toc-size" class="nav-link" data-scroll-target="#size">Size</a></li>
+  </ul></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#input-output" id="toc-input-output" class="nav-link" data-scroll-target="#input-output">Input-Output</a></li>
+  <li><a href="#train-test-split-data" id="toc-train-test-split-data" class="nav-link" data-scroll-target="#train-test-split-data">Train-Test Split Data</a></li>
+  </ul></li>
+  <li><a href="#training-data-imputation" id="toc-training-data-imputation" class="nav-link" data-scroll-target="#training-data-imputation">Training Data Imputation</a>
+  <ul class="collapse">
+  <li><a href="#numerical-data" id="toc-numerical-data" class="nav-link" data-scroll-target="#numerical-data">Numerical Data</a></li>
+  <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a></li>
+  <li><a href="#preprocessing-categorical-variable" id="toc-preprocessing-categorical-variable" class="nav-link" data-scroll-target="#preprocessing-categorical-variable">Preprocessing Categorical Variable</a></li>
+  <li><a href="#penggabungan-numerical-dan-categorical-data" id="toc-penggabungan-numerical-dan-categorical-data" class="nav-link" data-scroll-target="#penggabungan-numerical-dan-categorical-data">Penggabungan Numerical dan Categorical data</a></li>
+  <li><a href="#standarisasi" id="toc-standarisasi" class="nav-link" data-scroll-target="#standarisasi">Standarisasi</a></li>
+  </ul></li>
+  <li><a href="#training-machine-learning" id="toc-training-machine-learning" class="nav-link" data-scroll-target="#training-machine-learning">Training Machine Learning</a>
+  <ul class="collapse">
+  <li><a href="#baseline-average-value" id="toc-baseline-average-value" class="nav-link" data-scroll-target="#baseline-average-value">Baseline-Average Value</a></li>
+  <li><a href="#baseline-linear-regression" id="toc-baseline-linear-regression" class="nav-link" data-scroll-target="#baseline-linear-regression">Baseline-Linear Regression</a></li>
+  <li><a href="#gradientboosting" id="toc-gradientboosting" class="nav-link" data-scroll-target="#gradientboosting">GradientBoosting</a></li>
+  <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest">Random Forest</a></li>
+  </ul></li>
   <li><a href="#best-model" id="toc-best-model" class="nav-link" data-scroll-target="#best-model">Best Model</a></li>
   </ul></li>
   <li><a href="#data-prediction" id="toc-data-prediction" class="nav-link" data-scroll-target="#data-prediction">Data Prediction</a>
+  <ul>
+  <li><a href="#test-data-preprocessing" id="toc-test-data-preprocessing" class="nav-link" data-scroll-target="#test-data-preprocessing">Test Data Preprocessing</a>
   <ul class="collapse">
-  <li><a href="#test-data-preprocessing" id="toc-test-data-preprocessing" class="nav-link" data-scroll-target="#test-data-preprocessing">Test Data Preprocessing</a></li>
-  <li><a href="#penggabungan-numerical-dan-categorical-data-1" id="toc-penggabungan-numerical-dan-categorical-data-1" class="nav-link" data-scroll-target="#penggabungan-numerical-dan-categorical-data-1">Penggabungan Numerical dan Categorical data</a></li>
-  <li><a href="#test-data-result" id="toc-test-data-result" class="nav-link" data-scroll-target="#test-data-result">Test Data Result</a></li>
+  <li><a href="#numerical-data-1" id="toc-numerical-data-1" class="nav-link" data-scroll-target="#numerical-data-1">Numerical Data</a></li>
+  <li><a href="#categorical-data-1" id="toc-categorical-data-1" class="nav-link" data-scroll-target="#categorical-data-1">Categorical Data</a></li>
+  <li><a href="#categorical-ohe" id="toc-categorical-ohe" class="nav-link" data-scroll-target="#categorical-ohe">Categorical OHE</a></li>
+  </ul></li>
+  <li><a href="#penggabungan-numerical-dan-categorical-data-1" id="toc-penggabungan-numerical-dan-categorical-data-1" class="nav-link" data-scroll-target="#penggabungan-numerical-dan-categorical-data-1">Penggabungan Numerical dan Categorical data</a>
+  <ul class="collapse">
+  <li><a href="#standarisasi-1" id="toc-standarisasi-1" class="nav-link" data-scroll-target="#standarisasi-1">Standarisasi</a></li>
+  </ul></li>
+  <li><a href="#test-data-result" id="toc-test-data-result" class="nav-link" data-scroll-target="#test-data-result">Test Data Result</a>
+  <ul class="collapse">
+  <li><a href="#feature-importance" id="toc-feature-importance" class="nav-link" data-scroll-target="#feature-importance">Feature Importance</a></li>
+  </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#discussions" id="toc-discussions" class="nav-link" data-scroll-target="#discussions">Discussions</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/005-webscraping-machinelearning-rent-pricing/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -5689,6 +5730,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">

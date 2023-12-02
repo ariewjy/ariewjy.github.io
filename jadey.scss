@@ -1,0 +1,369 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Code&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap");
+
+// Colors
+
+// Most colors adopted from https://palx.jxnblk.com/
+// with base color #0b7366
+
+$white: #fff;
+$gray-0: #f9f9f9;
+$gray-1: #eceeee;
+$gray-2: #dfe1e1;
+$gray-3: #d0d4d3;
+$gray-4: #c0c5c4;
+$gray-5: #aeb4b3;
+$gray-6: #99a1a0;
+$gray-7: #818b8a;
+$gray-8: #626f6d;
+$gray-9: #334240;
+$black: #000;
+
+// colors
+$teal: #333333;
+$teal-light: #fff;
+$teal-dark: #333333;
+$orange: #0b7366;
+$orange-light: #f6fafa;
+$orange-dark: #07483f;
+
+$primary: $teal;
+$secondary: $orange-dark;
+$light: $teal-light;
+$light-accent: $gray-3;
+$dark: $gray-9;
+
+// Base document colors
+$navbar-bg: $primary; // navbar
+$navbar-fg: $teal-light; // navbar foreground elements
+$navbar-hl: $white; // highlight color when hovering over navbar links
+$link-color: $orange-dark; // hyperlinks
+
+// Inline code
+$code-bg: $orange-light; // inline code background color
+$code-color: $orange-dark; // inline code text color
+
+// Contrast
+$min-contrast-ratio: 7;
+
+/*-- scss:rules --*/
+
+.navbar-title {
+  font-family: Domine, serif;
+  font-weight: 700;
+}
+
+// h1,
+h2 {
+  font-size: 1.3em;
+  font-weight: 900;
+  font-family: Domine, serif;
+  color: $teal-dark;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+// h3,
+h4 {
+  font-weight: 700;
+  font-family: Domine, serif;
+  color: $teal;
+}
+
+h3 {
+  font-size: 1.15em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+// h5,
+h6 {
+  font-size: 1.05em;
+  font-weight: 600;
+  font-family: Domine, serif;
+  color: $secondary;
+}
+
+p.subtitle.lead {
+  font-size: 1em;
+  text-align: center;
+}
+
+#title-block-header.quarto-title-block.default .description {
+  margin-top: 1em;
+}
+
+body {
+  font-family: Atkinson Hyperlegible, Nunito, sans-serif;
+  background-color: $light;
+}
+
+// code
+
+code {
+  font-family: Fira Code, monospace;
+}
+
+pre.sourceCode {
+  font-size: 1em;
+}
+
+.sourceCode pre code {
+  padding: 1.2em;
+}
+
+// about section
+
+// remove about separator
+div.quarto-about-jolla .about-sep {
+  height: 0;
+  margin: 0;
+}
+
+div.quarto-about-jolla .about-link {
+  color: $secondary;
+  font-size: 1em;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+div.quarto-about-jolla .about-link:hover {
+  background-color: $secondary;
+  color: $white;
+}
+
+// nav footer
+
+body .nav-footer {
+  border-top: 1px solid $gray-4;
+}
+
+.nav-footer {
+  background-color: $light;
+  color: $dark;
+}
+
+.nav-footer a {
+  color: $dark;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 991.98px) {
+  // make nice footer rows
+  // from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
+
+  .nav-footer {
+    flex-direction: row;
+  }
+
+  .nav-footer-center {
+    order: 3 !important;
+    flex-basis: 100%;
+    margin-top: -0.5em;
+  }
+
+  .nav-footer-right {
+    order: 2 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .nav-footer-left {
+    order: 1 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .navbar .quarto-navbar-tools {
+    text-align: left;
+  }
+
+  div.cookie-consent-footer {
+    margin-top: -0.5em;
+  }
+}
+
+// nav toc actions
+
+.nav-footer .toc-actions {
+  padding-top: 0;
+}
+
+// cookies
+
+div.cookie-consent-footer {
+  font-family: Atkinson Hyperlegible, Nunito, sans-serif;
+  font-size: 1em;
+}
+
+.termsfeed-com---nb .cc-nb-main-container {
+  padding: 1rem;
+  background: $orange-light;
+  border-radius: 6px;
+}
+
+.termsfeed-com---nb .cc-nb-title,
+#cc-pc-head-title-headline,
+.cc-cp-body-content-entry .cc-cp-body-content-entry-title {
+  font-family: Domine, serif;
+}
+
+.termsfeed-com---reset {
+  font-family: Atkinson Hyperlegible, Nunito, sans-serif;
+}
+
+.termsfeed-com---palette-light .cc-nb-okagree,
+.termsfeed-com---palette-light .cc-nb-reject,
+.cc-pc-container .cc-cp-foot-save {
+  background-color: $teal;
+  border-radius: 6px;
+}
+
+.termsfeed-com---palette-light .cc-nb-changep {
+  background-color: $teal-light;
+  border-radius: 6px;
+}
+
+.cc-cp-body .cc-cp-body-tabs-item-link,
+.cc-cp-body .cc-cp-body-tabs {
+  background-color: $orange-light;
+}
+
+.termsfeed-com---palette-light .cc-cp-body-tabs-item[active="true"] button {
+  background-color: $orange-dark;
+  color: white;
+}
+
+.termsfeed-com---pc-dialog input[type="checkbox"].cc-custom-checkbox:checked + label:before {
+  background: #18bc9c;
+}
+
+// appendix
+
+#quarto-appendix.default {
+  background-color: $light;
+  padding-top: 1em;
+  margin-top: 1em;
+  z-index: 998;
+}
+
+// images
+
+.figure-img {
+  margin-bottom: 0;
+  line-height: 0;
+  border-radius: 5px;
+}
+
+// specific classes
+
+.center-text {
+  text-align: center;
+}
+
+.img-va-bottom {
+  vertical-align: bottom;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cv-date {
+  float: right;
+  color: $gray-8;
+}
+
+// listing buttons
+
+div.quarto-post .listing-categories .listing-category,
+.quarto-category,
+.btn {
+  opacity: 0.8 !important;
+  // color: $secondary;
+  // border-color: $secondary;
+  text-align: center;
+  border-style: solid;
+  text-decoration: none;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.btn {
+  opacity: 1 !important;
+  padding: 0.5em;
+  border-radius: 6px;
+}
+div.quarto-post .listing-categories .listing-category:hover,
+.quarto-category:hover,
+.btn:hover {
+  background-color: $secondary;
+  color: $white;
+}
+
+.listing-btn-group {
+  display: inline-flex;
+  gap: 1em;
+}
+
+// page buttons
+
+.page-link {
+  background-color: $orange-light;
+  color: $secondary;
+}
+
+.page-link:hover {
+  background-color: $secondary;
+  color: white;
+}
+
+.page-item.active .page-link {
+  background-color: $secondary;
+}
+
+// slide iframes
+
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-style: solid;
+  border-width: 1px;
+}
+
+// buy me coffee
+
+.bmcoffee {
+  margin-bottom: 1.5em;
+}
+
+.bmc-btn-text {
+  font-size: 0.8em;
+  font-family: Domine, serif;
+}
+
+.bmc-btn:hover,
+.bmc-btn:active,
+.bmc-btn:focus {
+  color: white;
+}
+
+// blog subscribe section
+
+@media screen and (max-width: 991.98px) {
+  #subscribe-thumbnail,
+  #subscribe-iframe {
+    width: 100%;
+  }
+}

@@ -105,13 +105,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Medical Insurance Cost - Exploratory Analysis">
 <meta property="og:description" content="Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.">
 <meta property="og:image" content="https://adtarie.net/posts/003-medical-insurance/image.jpeg">
+<meta property="og:locale" content="en_EN">
 <meta name="twitter:title" content="Medical Insurance Cost - Exploratory Analysis">
 <meta name="twitter:description" content="Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.">
-<meta name="twitter:image" content="https://adtarie.net/posts/003-medical-insurance/img/profile.jpg">
+<meta name="twitter:image" content="https://adtarie.net/posts/003-medical-insurance/image.jpeg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -199,17 +199,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#feature-engineering" id="toc-feature-engineering" class="nav-link" data-scroll-target="#feature-engineering">Feature Engineering</a></li>
   <li><a href="#quicklook" id="toc-quicklook" class="nav-link" data-scroll-target="#quicklook">Quicklook</a></li>
   <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#overall-mean-age-of-insurance-member" id="toc-overall-mean-age-of-insurance-member" class="nav-link" data-scroll-target="#overall-mean-age-of-insurance-member">Overall Mean age of insurance member</a></li>
-  <li><a href="#mean-age-bmi-and-charges-of-smoker-at-different-sex" id="toc-mean-age-bmi-and-charges-of-smoker-at-different-sex" class="nav-link" data-scroll-target="#mean-age-bmi-and-charges-of-smoker-at-different-sex">Mean <code>age</code>, <code>bmi</code> and <code>charges</code> of <code>smoker</code> at different <code>sex</code></a></li>
-  <li><a href="#does-region-affecting-the-age-distribution" id="toc-does-region-affecting-the-age-distribution" class="nav-link" data-scroll-target="#does-region-affecting-the-age-distribution">Does <code>region</code> affecting the <code>age</code> distribution?</a></li>
+  <li><a href="#mean-age-bmi-and-charges-of-smoker-at-different-sex" id="toc-mean-age-bmi-and-charges-of-smoker-at-different-sex" class="nav-link" data-scroll-target="#mean-age-bmi-and-charges-of-smoker-at-different-sex">Mean <code>age</code>, <code>bmi</code> and <code>charges</code> of <code>smoker</code> at different <code>sex</code></a>
+  <ul class="collapse">
+  <li><a href="#distribution-of-age-categorized-based-on-sex-smoker-and-bmi_class" id="toc-distribution-of-age-categorized-based-on-sex-smoker-and-bmi_class" class="nav-link" data-scroll-target="#distribution-of-age-categorized-based-on-sex-smoker-and-bmi_class">Distribution of <code>age</code> categorized based on <code>sex</code>, <code>smoker</code>, and <code>bmi_class</code></a></li>
+  </ul></li>
+  <li><a href="#does-region-affecting-the-age-distribution" id="toc-does-region-affecting-the-age-distribution" class="nav-link" data-scroll-target="#does-region-affecting-the-age-distribution">Does <code>region</code> affecting the <code>age</code> distribution?</a>
+  <ul class="collapse">
+  <li><a href="#inspecting-the-age-vs-charges-based-on-smoker-sex-and-bmi_class-profile" id="toc-inspecting-the-age-vs-charges-based-on-smoker-sex-and-bmi_class-profile" class="nav-link" data-scroll-target="#inspecting-the-age-vs-charges-based-on-smoker-sex-and-bmi_class-profile">Inspecting the <code>age</code> vs <code>charges</code> based on <code>smoker</code>, <code>sex</code>, and <code>bmi_class</code> profile</a></li>
+  </ul></li>
   <li><a href="#does-sex-affects-age-vs-charges-distributiontrend" id="toc-does-sex-affects-age-vs-charges-distributiontrend" class="nav-link" data-scroll-target="#does-sex-affects-age-vs-charges-distributiontrend">Does <code>sex</code> affects <code>age</code> vs <code>charges</code> distribution/trend?</a></li>
   <li><a href="#some-observed-outlier-group-i-a-between-group-i-and-ii" id="toc-some-observed-outlier-group-i-a-between-group-i-and-ii" class="nav-link" data-scroll-target="#some-observed-outlier-group-i-a-between-group-i-and-ii">Some observed <code>outlier (group I-a)</code> between group I and II?</a></li>
   <li><a href="#what-affects-the-outlier-i-a-group" id="toc-what-affects-the-outlier-i-a-group" class="nav-link" data-scroll-target="#what-affects-the-outlier-i-a-group">What affects the <code>outlier/ I-a</code> group?</a></li>
   </ul></li>
   <li><a href="#conclusions-and-outcomes" id="toc-conclusions-and-outcomes" class="nav-link" data-scroll-target="#conclusions-and-outcomes">Conclusions and Outcomes</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/003-medical-insurance/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -1542,6 +1548,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">

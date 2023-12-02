@@ -102,13 +102,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Personal Website using Jupyter Notebook and Quarto">
 <meta property="og:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
 <meta property="og:image" content="https://adtarie.net/posts/007-quarto-python-tutorial/images/image0.jpg">
+<meta property="og:locale" content="en_EN">
 <meta name="twitter:title" content="Personal Website using Jupyter Notebook and Quarto">
 <meta name="twitter:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
-<meta name="twitter:image" content="https://adtarie.net/posts/007-quarto-python-tutorial/img/profile.jpg">
+<meta name="twitter:image" content="https://adtarie.net/posts/007-quarto-python-tutorial/images/image0.jpg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -193,13 +193,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#why-creating-a-personal-website" id="toc-why-creating-a-personal-website" class="nav-link" data-scroll-target="#why-creating-a-personal-website">Why Creating A Personal Website</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#pay-gate-wall" id="toc-pay-gate-wall" class="nav-link" data-scroll-target="#pay-gate-wall">Pay Gate Wall</a></li>
   <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
   <li><a href="#contents-ownership" id="toc-contents-ownership" class="nav-link" data-scroll-target="#contents-ownership">3. Contents Ownership</a></li>
   </ul></li>
   <li><a href="#building-the-website" id="toc-building-the-website" class="nav-link" data-scroll-target="#building-the-website">Building The Website</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#creating-a-repo" id="toc-creating-a-repo" class="nav-link" data-scroll-target="#creating-a-repo">Creating a Repo</a></li>
   <li><a href="#starting-from-a-notebook" id="toc-starting-from-a-notebook" class="nav-link" data-scroll-target="#starting-from-a-notebook">Starting from a Notebook</a></li>
   <li><a href="#create-a-project" id="toc-create-a-project" class="nav-link" data-scroll-target="#create-a-project">Create a Project</a></li>
@@ -209,13 +209,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#deploying-the-website" id="toc-deploying-the-website" class="nav-link" data-scroll-target="#deploying-the-website">Deploying the Website</a></li>
   </ul></li>
   <li><a href="#pro-tips" id="toc-pro-tips" class="nav-link" data-scroll-target="#pro-tips">Pro Tips</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#make-a-homepage" id="toc-make-a-homepage" class="nav-link" data-scroll-target="#make-a-homepage">1. Make A Homepage</a></li>
   <li><a href="#use-quarto-in-vscode" id="toc-use-quarto-in-vscode" class="nav-link" data-scroll-target="#use-quarto-in-vscode">2. Use Quarto in VSCode</a></li>
   <li><a href="#craving-for-more" id="toc-craving-for-more" class="nav-link" data-scroll-target="#craving-for-more">3. Craving for More?</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/007-quarto-python-tutorial/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -987,6 +987,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">

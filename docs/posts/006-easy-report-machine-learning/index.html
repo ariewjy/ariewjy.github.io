@@ -121,13 +121,13 @@ div.csl-indent {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Easy Report: Malaysia Property Pricing">
 <meta property="og:description" content="TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.">
 <meta property="og:image" content="https://adtarie.net/posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg">
+<meta property="og:locale" content="en_EN">
 <meta name="twitter:title" content="Easy Report: Malaysia Property Pricing">
 <meta name="twitter:description" content="TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.">
-<meta name="twitter:image" content="https://adtarie.net/posts/006-easy-report-machine-learning/img/profile.jpg">
+<meta name="twitter:image" content="https://adtarie.net/posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -215,20 +215,31 @@ div.csl-indent {
   <li><a href="#who-is-this-for" id="toc-who-is-this-for" class="nav-link" data-scroll-target="#who-is-this-for">Who is this for?</a></li>
   <li><a href="#related-work" id="toc-related-work" class="nav-link" data-scroll-target="#related-work">Related work</a></li>
   <li><a href="#dataset-features" id="toc-dataset-features" class="nav-link" data-scroll-target="#dataset-features">Dataset &amp; features</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
   <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
   </ul></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
   <li><a href="#experiments" id="toc-experiments" class="nav-link" data-scroll-target="#experiments">Experiments</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#extracting-near-ktmlrt" id="toc-extracting-near-ktmlrt" class="nav-link" data-scroll-target="#extracting-near-ktmlrt">Extracting Near KTM/LRT</a></li>
   <li><a href="#drop-unnecessary-missing-values" id="toc-drop-unnecessary-missing-values" class="nav-link" data-scroll-target="#drop-unnecessary-missing-values">Drop Unnecessary Missing Values</a></li>
-  <li><a href="#outlier-removal" id="toc-outlier-removal" class="nav-link" data-scroll-target="#outlier-removal">Outlier Removal</a></li>
-  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
+  <li><a href="#outlier-removal" id="toc-outlier-removal" class="nav-link" data-scroll-target="#outlier-removal">Outlier Removal</a>
+  <ul class="collapse">
+  <li><a href="#monthly-rent" id="toc-monthly-rent" class="nav-link" data-scroll-target="#monthly-rent">Monthly Rent</a></li>
+  <li><a href="#size" id="toc-size" class="nav-link" data-scroll-target="#size">Size</a></li>
+  </ul></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a>
+  <ul class="collapse">
+  <li><a href="#preprocessing-original-data-for-categorical-dtypes" id="toc-preprocessing-original-data-for-categorical-dtypes" class="nav-link" data-scroll-target="#preprocessing-original-data-for-categorical-dtypes">Preprocessing Original Data for Categorical Dtypes</a></li>
+  <li><a href="#input-output" id="toc-input-output" class="nav-link" data-scroll-target="#input-output">Input-Output</a></li>
+  <li><a href="#train-test-split-data" id="toc-train-test-split-data" class="nav-link" data-scroll-target="#train-test-split-data">Train-Test Split Data</a></li>
+  <li><a href="#training-data-imputation" id="toc-training-data-imputation" class="nav-link" data-scroll-target="#training-data-imputation">Training Data Imputation</a></li>
+  <li><a href="#training-machine-learning" id="toc-training-machine-learning" class="nav-link" data-scroll-target="#training-machine-learning">Training Machine Learning</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#best-model-from-train-dataset" id="toc-best-model-from-train-dataset" class="nav-link" data-scroll-target="#best-model-from-train-dataset">Best Model from Train Dataset</a></li>
   <li><a href="#applied-model-on-test-dataset" id="toc-applied-model-on-test-dataset" class="nav-link" data-scroll-target="#applied-model-on-test-dataset">Applied Model on Test Dataset</a></li>
   <li><a href="#feature-importance" id="toc-feature-importance" class="nav-link" data-scroll-target="#feature-importance">Feature Importance</a></li>
@@ -236,7 +247,7 @@ div.csl-indent {
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   <li><a href="#future-works" id="toc-future-works" class="nav-link" data-scroll-target="#future-works">Future works</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/006-easy-report-machine-learning/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -1833,6 +1844,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
