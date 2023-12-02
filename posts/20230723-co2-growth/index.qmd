@@ -12,8 +12,7 @@ draft: false
 fig-cap-location: bottom
 fig-align: left
 linkcolor: 'green'
-twitter-card:
-    image: preview.png
+image: preview.png
 # monobackgroundcolor: grey
 jupyter: minids
 bibliography: references.bib
