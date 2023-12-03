@@ -252,7 +252,7 @@ alt.Chart(
     shape=alt.Shape('country', title='Country'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=450,
+    width='container',
     height=400,
 ).interactive()
 
@@ -343,7 +343,7 @@ alt.Chart(
     size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=400,
+    width='container',
     height=400,
 ).interactive()
 ```
@@ -386,7 +386,7 @@ alt.Chart(
     size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=450,
+    width='container',
     height=400,
 ).interactive()
 ```
@@ -427,7 +427,7 @@ alt.Chart(
     size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=400,
+    width='container',
     height=500,
 ).interactive()
 ```
@@ -466,7 +466,7 @@ alt.Chart(
     size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
-    width=450,
+    width='container',
     height=400,
 ).interactive()
 ```
