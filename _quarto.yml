@@ -35,8 +35,8 @@ website:
   #   type: textbox
 
   navbar:
-    # type: light
-    # background: "#2D2D36"
+    type: light
+    background: "#2D2D36"
     search: false
     pinned: false
     right:
@@ -57,15 +57,14 @@ website:
 
 format:
   html:
-    theme: [flatly, jadey.scss] #theme inspired by https://github.com/myominnoo/myominnoo.github.io
-    # theme:
-    #   [styles.scss]
+    # theme: [flatly, jadey.scss] #theme inspired by https://github.com/myominnoo/myominnoo.github.io
+    theme: [styles.scss]
     # light: litera
     # dark: darkly
-    # css: styles.scss
+    css: styles.scss
     toc: true
     toc-depth: 4
-    highlight-style: eiffel
+    highlight-style: nord
     smooth-scroll: true
     page-layout: article
     # fontsize: 1.2em
