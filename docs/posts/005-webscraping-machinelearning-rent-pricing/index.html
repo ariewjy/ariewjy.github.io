@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -61,6 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -102,7 +103,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -111,6 +118,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -126,24 +134,18 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Malaysia Property Pricing - Webscraping &amp; Machine Learning Model">
 <meta property="og:description" content="Full details on creating property dataset using webscraping, and building machine learning model to predict the rent price">
-<meta property="og:image" content="https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png">
 <meta property="og:locale" content="en_EN">
-<meta property="og:image:height" content="1071">
-<meta property="og:image:width" content="1522">
 <meta name="twitter:title" content="Malaysia Property Pricing - Webscraping &amp; Machine Learning Model">
 <meta name="twitter:description" content="Full details on creating property dataset using webscraping, and building machine learning model to predict the rent price">
-<meta name="twitter:image" content="https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image-height" content="1071">
-<meta name="twitter:image-width" content="1522">
 </head>
 
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -152,21 +154,21 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -212,7 +214,7 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -276,14 +278,15 @@ div.csl-indent {
   <li><a href="#discussions" id="toc-discussions" class="nav-link" data-scroll-target="#discussions">Discussions</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/005-webscraping-machinelearning-rent-pricing/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/005-webscraping-machinelearning-rent-pricing/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -302,8 +305,8 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="data-gathering">Data Gathering</h3>
 <p>The data will use a scraped data from the website mentioned before, focusing on property-to-rent surrounding Kuala Lumpur, Malaysia. <img src="mudah_my.png" class="img-fluid" alt="Website"></p>
 <div class="cell" data-execution_count="1">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#importing libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -332,8 +335,8 @@ div.csl-indent {
 <h4 class="anchored" data-anchor-id="web-scraping-process">Web-Scraping Process</h4>
 <p>The process started out by gathering data from the website. We are using python library for web-scraping: BeautifulSoup as depicted below. The first process is generating a list of webpage address for a given page number.</p>
 <div class="cell" data-execution_count="2">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#generate list address of n_page</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="kw">def</span> page_number(start, end):</span>
 <span id="cb3-3"><a href="#cb3-3"></a>    <span class="co">"""</span></span>
@@ -363,8 +366,8 @@ div.csl-indent {
 </div>
 <p>Then generate a list of ads listing on a single page.</p>
 <div class="cell" data-execution_count="3">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#setting up list of page from </span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="kw">def</span> get_list_html(page_url):</span>
 <span id="cb5-3"><a href="#cb5-3"></a>    <span class="co">"""</span></span>
@@ -409,8 +412,8 @@ div.csl-indent {
 </div>
 <p>Combining the previous two functions, generate a list of url for all pages.</p>
 <div class="cell" data-execution_count="4">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#generate listing property from each page of n_page</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="kw">def</span> get_list_url(n_page):</span>
 <span id="cb7-3"><a href="#cb7-3"></a>    <span class="co">"""</span></span>
@@ -451,8 +454,8 @@ div.csl-indent {
 </div>
 <p>Then extract the attributes inside the listing ads in a form of nested dictionary.</p>
 <div class="cell" data-execution_count="5">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">#extract data from url</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="kw">def</span> get_list_dict(n_page):</span>
 <span id="cb9-3"><a href="#cb9-3"></a>    <span class="co">"""</span></span>
@@ -573,8 +576,8 @@ div.csl-indent {
 </div>
 <p>Extracting the values inside the dictionary for each attributes.</p>
 <div class="cell" data-execution_count="6">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">#getting values out of dictionary</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="kw">def</span> get_values(list_dict):</span>
 <span id="cb11-3"><a href="#cb11-3"></a>    <span class="co">"""</span></span>
@@ -648,8 +651,8 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell" data-execution_count="7">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#get df from list</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="kw">def</span> get_df_final(n_page):</span>
 <span id="cb13-3"><a href="#cb13-3"></a>    <span class="co">"""</span></span>
@@ -675,8 +678,8 @@ div.csl-indent {
 </div>
 <p>Of course we won’t scrape 250 pages at first, let’s extract 1 page only:</p>
 <div class="cell" data-execution_count="8">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">#sanity check</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>get_df_final(<span class="dv">1</span>).head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -776,8 +779,8 @@ div.csl-indent {
 </div>
 <p>Finally, let’s extract dataset from 250 pages. File is then saved into a csv, to be reloaded again.</p>
 <div class="cell" data-execution_count="9">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># df_=get_df_final(250)</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="co"># df_.to_csv('mudah-apartment-raw.csv', index=False)</span></span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="co">## already run, and file is saved</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -790,8 +793,8 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="data-understanding">Data Understanding</h3>
 <p>Reload the original dataset.</p>
 <div class="cell" data-execution_count="10">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">#read it back</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'./mudah-apartment-raw.csv'</span>)</span>
 <span id="cb16-3"><a href="#cb16-3"></a>df.head(<span class="dv">3</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -898,8 +901,8 @@ div.csl-indent {
 <section id="data-description" class="level3">
 <h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
 <div class="cell" data-execution_count="11">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -944,8 +947,8 @@ memory usage: 1015.8+ KB</code></pre>
 <section id="drop-duplicate" class="level4">
 <h4 class="anchored" data-anchor-id="drop-duplicate">Drop Duplicate</h4>
 <div class="cell" data-execution_count="12">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">#cek duplikat</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>df.duplicated().<span class="bu">sum</span>()</span>
 <span id="cb19-3"><a href="#cb19-3"></a></span>
@@ -955,8 +958,8 @@ memory usage: 1015.8+ KB</code></pre>
 </div>
 <p>Saving the file to csv after remove duplicated values.</p>
 <div class="cell" data-execution_count="13">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># #saving to csv</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="co"># df1.to_csv("mudah-apartment-clean.csv", index=False)</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="co"># #saved already</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -964,15 +967,15 @@ memory usage: 1015.8+ KB</code></pre>
 </div>
 <p>Reload the data after drop duplicates</p>
 <div class="cell" data-execution_count="14">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="co">#reload the data</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./mudah-apartment-clean.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="15">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#sanity check</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>df.duplicated().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -984,8 +987,8 @@ memory usage: 1015.8+ KB</code></pre>
 <section id="extracting-number-and-keyword" class="level4">
 <h4 class="anchored" data-anchor-id="extracting-number-and-keyword">Extracting Number and Keyword</h4>
 <div class="cell" data-execution_count="16">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">#removing RM from monthly rent</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>df[<span class="st">'monthly_rent'</span>] <span class="op">=</span> df[<span class="st">'monthly_rent'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">int</span>(re.search(<span class="vs">r'RM (.*?) per'</span>, x).group(<span class="dv">1</span>).replace(<span class="st">' '</span>, <span class="st">''</span>)))</span>
 <span id="cb24-3"><a href="#cb24-3"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'monthly_rent'</span>: <span class="st">'monthly_rent_rm'</span>})</span>
@@ -1115,8 +1118,8 @@ memory usage: 1015.8+ KB</code></pre>
 <h4 class="anchored" data-anchor-id="extracting-near-ktmlrt">Extracting Near KTM/LRT</h4>
 <p>Hypotheses: closer access to KTM/LRT = higher monthly rent</p>
 <div class="cell" data-execution_count="17">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">#extracting near KTM/LRT from the additional facilities</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="kw">def</span> extract_near_ktm_lrt(text):</span>
 <span id="cb25-3"><a href="#cb25-3"></a>    pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\bNear KTM/LRT\b'</span>)</span>
@@ -1131,8 +1134,8 @@ memory usage: 1015.8+ KB</code></pre>
 </div>
 <p>Extracting “near KTM/LRT” into its own column.</p>
 <div class="cell" data-execution_count="18">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>df[<span class="st">'nearby_railways'</span>] <span class="op">=</span> df.additional_facilities.<span class="bu">apply</span>(<span class="kw">lambda</span> x: extract_near_ktm_lrt(x))</span>
 <span id="cb26-2"><a href="#cb26-2"></a>df.head(<span class="dv">4</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1257,8 +1260,8 @@ memory usage: 1015.8+ KB</code></pre>
 </div>
 <p>Plotting the difference between nearby KTM/LRT or not:</p>
 <div class="cell" data-execution_count="19">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>, y<span class="op">=</span><span class="st">'nearby_railways'</span>)</span>
 <span id="cb27-2"><a href="#cb27-2"></a>plt.xlim(<span class="dv">0</span>,<span class="dv">4000</span>)<span class="op">;</span></span>
 <span id="cb27-3"><a href="#cb27-3"></a></span>
@@ -1279,18 +1282,22 @@ Not nearby KTM/LRT: 1600RM
       </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-nearbyktm" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;1: Boxplot between Nearby KTM/LRT or Not</figcaption>
-<p><img src="index_files/figure-html/fig-nearbyktm-output-2.png" width="608" height="429" class="figure-img"></p>
+<div id="fig-nearbyktm" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-nearbyktm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Boxplot between Nearby KTM/LRT or Not
+</figcaption>
+<div aria-describedby="fig-nearbyktm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-nearbyktm-output-2.png" width="608" height="429" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
 </div>
 <p>Sanity check:</p>
 <div class="cell" data-execution_count="20">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>df[df[<span class="st">'prop_name'</span>] <span class="op">==</span> <span class="st">'Majestic Maxim'</span>][[<span class="st">'nearby_railways'</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="20">
@@ -1300,14 +1307,14 @@ no                  24
 dtype: int64</code></pre>
 </div>
 </div>
-<p>As seen above, <a href="#fig-nearbyktm">Figure&nbsp;1</a> shows that it sligthly increases the median monthly rent by 50RM. However, near KTM/LRT is not appearing in all row even though the property is the same</p>
+<p>As seen above, <a href="#fig-nearbyktm" class="quarto-xref">Figure&nbsp;1</a> shows that it sligthly increases the median monthly rent by 50RM. However, near KTM/LRT is not appearing in all row even though the property is the same</p>
 <p><strong>Conclusion: Near KTM/LRT may be used, but it can be improved as the listing is inconsistent</strong></p>
 </section>
 <section id="drop-missing-values-in-facilities-and-additional-facilities" class="level4">
 <h4 class="anchored" data-anchor-id="drop-missing-values-in-facilities-and-additional-facilities">Drop Missing Values in Facilities and Additional Facilities</h4>
 <div class="cell" data-execution_count="21">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="21">
@@ -1329,8 +1336,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="22">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">#dropping some columns</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[</span>
 <span id="cb33-3"><a href="#cb33-3"></a>    <span class="st">'ads_id'</span>, </span>
@@ -1514,8 +1521,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="23">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">#checking dtypes from all columns</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1540,8 +1547,8 @@ memory usage: 780.7+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="24">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="co">#converting rooms from object to int64</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>df[<span class="st">'rooms'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'rooms'</span>], downcast<span class="op">=</span><span class="st">'integer'</span>, errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
 <span id="cb36-3"><a href="#cb36-3"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1571,18 +1578,22 @@ memory usage: 780.7+ KB</code></pre>
 <h4 class="anchored" data-anchor-id="outlier-removal">Outlier Removal</h4>
 <p>To remove some unexplainable data such as 0 monthly rent, 0 size, the rent that is way too old (1970), including the monthly rent that is way too high and/or size too big.</p>
 <div class="cell" data-execution_count="25">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>df[[<span class="st">'size_sqft'</span>, <span class="st">'monthly_rent_rm'</span>]].plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'size_sqft'</span>, y<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)<span class="op">;</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>plt.ylim(<span class="dv">100</span>,<span class="dv">5500</span>) <span class="co">#batas harga rent</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>plt.xlim(<span class="dv">50</span>,<span class="dv">3000</span>)  <span class="co">#batas size</span></span>
 <span id="cb38-4"><a href="#cb38-4"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-size-rent" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;2: Monthly Rent</figcaption>
-<p><img src="index_files/figure-html/fig-size-rent-output-1.png" width="619" height="429" class="figure-img"></p>
+<div id="fig-size-rent" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-size-rent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Monthly Rent
+</figcaption>
+<div aria-describedby="fig-size-rent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-size-rent-output-1.png" width="619" height="429" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
@@ -1590,8 +1601,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="monthly-rent" class="level5">
 <h5 class="anchored" data-anchor-id="monthly-rent">Monthly Rent</h5>
 <div class="cell" data-execution_count="26">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>)</span>
 <span id="cb39-2"><a href="#cb39-2"></a>axs[<span class="dv">0</span>].boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span>
 <span id="cb39-3"><a href="#cb39-3"></a>axs[<span class="dv">0</span>].set_ylim(<span class="dv">0</span>,<span class="dv">20000</span>)</span>
@@ -1605,18 +1616,22 @@ memory usage: 780.7+ KB</code></pre>
 <span id="cb39-11"><a href="#cb39-11"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-compare-rent" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;3: Comparison between Different Scale</figcaption>
-<p><img src="index_files/figure-html/fig-compare-rent-output-1.png" width="662" height="469" class="figure-img"></p>
+<div id="fig-compare-rent" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-compare-rent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Comparison between Different Scale
+</figcaption>
+<div aria-describedby="fig-compare-rent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-compare-rent-output-1.png" width="662" height="469" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
 </div>
-<p>Based on EDA on <a href="#fig-size-rent">Figure&nbsp;2</a> and <a href="#fig-compare-rent">Figure&nbsp;3</a>, author decided to filter the data between 100-5500 RM as follows:</p>
+<p>Based on EDA on <a href="#fig-size-rent" class="quarto-xref">Figure&nbsp;2</a> and <a href="#fig-compare-rent" class="quarto-xref">Figure&nbsp;3</a>, author decided to filter the data between 100-5500 RM as follows:</p>
 <div class="cell" data-execution_count="27">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="co">#removing all rows with monthly rent above 5500 RM and below 100RM</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a>dfx <span class="op">=</span> df.query(<span class="st">" monthly_rent_rm &gt; 100 &amp; monthly_rent_rm &lt; 5500 "</span>)</span>
 <span id="cb40-3"><a href="#cb40-3"></a>dfx.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1716,17 +1731,21 @@ memory usage: 780.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<p>Sanity check after removal as shown in <a href="#fig-rent-final">Figure&nbsp;4</a> belo:</p>
+<p>Sanity check after removal as shown in <a href="#fig-rent-final" class="quarto-xref">Figure&nbsp;4</a> belo:</p>
 <div class="cell" data-execution_count="28">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>dfx.monthly_rent_rm.plot(kind<span class="op">=</span><span class="st">'box'</span>, x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-rent-final" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;4: Data after Outlier Removal</figcaption>
-<p><img src="index_files/figure-html/fig-rent-final-output-1.png" width="583" height="411" class="figure-img"></p>
+<div id="fig-rent-final" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-rent-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Data after Outlier Removal
+</figcaption>
+<div aria-describedby="fig-rent-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-rent-final-output-1.png" width="583" height="411" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
@@ -1737,8 +1756,8 @@ memory usage: 780.7+ KB</code></pre>
 <h4 class="anchored" data-anchor-id="size">Size</h4>
 <p>Checking the dataset in terms of size.</p>
 <div class="cell" data-execution_count="29">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>)</span>
 <span id="cb42-2"><a href="#cb42-2"></a>axs[<span class="dv">0</span>].boxplot(data<span class="op">=</span>dfx, x<span class="op">=</span><span class="st">'size_sqft'</span>)</span>
 <span id="cb42-3"><a href="#cb42-3"></a>axs[<span class="dv">0</span>].set_ylim(<span class="dv">0</span>,<span class="dv">20000</span>)</span>
@@ -1752,18 +1771,22 @@ memory usage: 780.7+ KB</code></pre>
 <span id="cb42-11"><a href="#cb42-11"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-size-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;5: Raw Data Size sq.ft</figcaption>
-<p><img src="index_files/figure-html/fig-size-comparison-output-1.png" width="662" height="469" class="figure-img"></p>
+<div id="fig-size-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-size-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Raw Data Size sq.ft
+</figcaption>
+<div aria-describedby="fig-size-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-size-comparison-output-1.png" width="662" height="469" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
 </div>
-<p>Still based on <a href="#fig-size-rent">Figure&nbsp;2</a>, outliers are removed.</p>
+<p>Still based on <a href="#fig-size-rent" class="quarto-xref">Figure&nbsp;2</a>, outliers are removed.</p>
 <div class="cell" data-execution_count="30">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="co">#removing outliers below 500, and higher than 3000 sqft and below 50 sqft</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a>dfx <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb43-3"><a href="#cb43-3"></a>(dfx.query(<span class="st">" size_sqft &gt; 50 &amp; size_sqft &lt; 3000 "</span>)</span>
@@ -1945,17 +1968,21 @@ memory usage: 780.7+ KB</code></pre>
 </div>
 <p>Sanity check:</p>
 <div class="cell" data-execution_count="31">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>dfx.size_sqft.plot(kind<span class="op">=</span><span class="st">'box'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-32-output-1.png" width="583" height="413"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-32-output-1.png" width="583" height="413" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">4</span>))</span>
 <span id="cb45-2"><a href="#cb45-2"></a>axs[<span class="dv">0</span>].boxplot(data<span class="op">=</span>dfx.dropna(), x<span class="op">=</span><span class="st">'size_sqft'</span>)</span>
 <span id="cb45-3"><a href="#cb45-3"></a>axs[<span class="dv">1</span>].boxplot(data<span class="op">=</span>dfx.dropna(), x<span class="op">=</span><span class="st">'rooms'</span>)</span>
@@ -1973,10 +2000,14 @@ memory usage: 780.7+ KB</code></pre>
 <span id="cb45-15"><a href="#cb45-15"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-complete-outliers" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;6: Final Data after Outlier Removal</figcaption>
-<p><img src="index_files/figure-html/fig-complete-outliers-output-1.png" width="1147" height="373" class="figure-img"></p>
+<div id="fig-complete-outliers" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-complete-outliers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Final Data after Outlier Removal
+</figcaption>
+<div aria-describedby="fig-complete-outliers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-complete-outliers-output-1.png" width="1147" height="373" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
@@ -1988,8 +2019,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="input-output" class="level4">
 <h4 class="anchored" data-anchor-id="input-output">Input-Output</h4>
 <div class="cell" data-execution_count="33">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">def</span> extractInputOutput(data,</span>
 <span id="cb46-2"><a href="#cb46-2"></a>                       output_column_name):</span>
 <span id="cb46-3"><a href="#cb46-3"></a>    <span class="co">"""</span></span>
@@ -2007,14 +2038,14 @@ memory usage: 780.7+ KB</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="34">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>X, y <span class="op">=</span> extractInputOutput(data<span class="op">=</span>dfx, output_column_name<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="35">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="35">
@@ -2177,8 +2208,8 @@ memory usage: 780.7+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="36">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="36">
@@ -2200,15 +2231,15 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 <section id="train-test-split-data" class="level4">
 <h4 class="anchored" data-anchor-id="train-test-split-data">Train-Test Split Data</h4>
 <div class="cell" data-execution_count="37">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="co">#import libraries</span></span>
 <span id="cb51-2"><a href="#cb51-2"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="38">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># Train test split</span></span>
 <span id="cb52-2"><a href="#cb52-2"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y,</span>
 <span id="cb52-3"><a href="#cb52-3"></a>                                                    test_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
@@ -2216,8 +2247,8 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="39">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="co">#sanity check</span></span>
 <span id="cb53-2"><a href="#cb53-2"></a><span class="bu">len</span>(X_test)<span class="op">/</span><span class="bu">len</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -2226,8 +2257,8 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="40">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a><span class="co">#sanity check</span></span>
 <span id="cb55-2"><a href="#cb55-2"></a>X_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -2393,8 +2424,8 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 <p><strong>Preprocessing Original Data for Categorical Dtypes</strong></p>
 <p>One must paying attention to the number of categorical observation in the original data, with respect to the sampling train-test value. If, the test_size = 0.3, that means any categorical observation with a total of 3 and less, would not be distributed evenly among train and test data.</p>
 <div class="cell" data-execution_count="41">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="bu">print</span>(dfx.location.nunique())</span>
 <span id="cb56-2"><a href="#cb56-2"></a><span class="bu">print</span>(X_train.location.nunique())</span>
 <span id="cb56-3"><a href="#cb56-3"></a><span class="bu">print</span>(X_test.location.nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2406,8 +2437,8 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="42">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a><span class="bu">print</span>(dfx.property_type.nunique())</span>
 <span id="cb58-2"><a href="#cb58-2"></a><span class="bu">print</span>(X_train.property_type.nunique())</span>
 <span id="cb58-3"><a href="#cb58-3"></a><span class="bu">print</span>(X_test.property_type.nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2419,8 +2450,8 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="43">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.furnished.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.furnished.to_list()))</span>
 <span id="cb60-2"><a href="#cb60-2"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.location.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.location.to_list()))</span>
 <span id="cb60-3"><a href="#cb60-3"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.property_type.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.property_type.to_list()))</span>
@@ -2437,8 +2468,8 @@ set()</code></pre>
 <p>Dropping Data</p>
 </blockquote>
 <div class="cell" data-execution_count="44">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>dfx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="44">
@@ -2613,8 +2644,8 @@ set()</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="45">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>dfx.location.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="45">
@@ -2675,8 +2706,8 @@ Name: location, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="46">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a>dfx.property_type.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="46">
@@ -2693,8 +2724,8 @@ Name: property_type, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="47">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>dfx_new <span class="op">=</span> dfx[</span>
 <span id="cb67-2"><a href="#cb67-2"></a>    (dfx.location <span class="op">!=</span> <span class="st">'Jinjang'</span>) </span>
 <span id="cb67-3"><a href="#cb67-3"></a>    <span class="op">&amp;</span> (dfx.location <span class="op">!=</span> <span class="st">'Serdang'</span>) <span class="op">&amp;</span> </span>
@@ -2710,8 +2741,8 @@ Name: property_type, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="48">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>dfx_new.property_type.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="48">
@@ -2729,21 +2760,21 @@ Name: property_type, dtype: int64</code></pre>
 <p>Re-split Training-Test</p>
 </blockquote>
 <div class="cell" data-execution_count="49">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>X, y <span class="op">=</span> extractInputOutput(data<span class="op">=</span>dfx_new, output_column_name<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="50">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="co">#import libraries</span></span>
 <span id="cb71-2"><a href="#cb71-2"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="51">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a><span class="co"># Train test split</span></span>
 <span id="cb72-2"><a href="#cb72-2"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y,</span>
 <span id="cb72-3"><a href="#cb72-3"></a>                                                    test_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
@@ -2751,8 +2782,8 @@ Name: property_type, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="52">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a><span class="co">#sanity check</span></span>
 <span id="cb73-2"><a href="#cb73-2"></a><span class="bu">len</span>(X_test)<span class="op">/</span><span class="bu">len</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -2761,8 +2792,8 @@ Name: property_type, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="53">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>X_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="53">
@@ -2925,8 +2956,8 @@ Name: property_type, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="54">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.furnished.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.furnished.to_list()))</span>
 <span id="cb76-2"><a href="#cb76-2"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.location.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.location.to_list()))</span>
 <span id="cb76-3"><a href="#cb76-3"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.property_type.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.property_type.to_list()))</span>
@@ -2939,8 +2970,8 @@ set()</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="55">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a><span class="bu">print</span>(dfx_new.location.nunique())</span>
 <span id="cb78-2"><a href="#cb78-2"></a><span class="bu">print</span>(X_train.location.nunique())</span>
 <span id="cb78-3"><a href="#cb78-3"></a><span class="bu">print</span>(X_test.location.nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2952,8 +2983,8 @@ set()</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="56">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a><span class="co">#sanity check</span></span>
 <span id="cb80-2"><a href="#cb80-2"></a>X_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3117,16 +3148,16 @@ set()</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="57">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1"></a><span class="co">#export data training</span></span>
 <span id="cb81-2"><a href="#cb81-2"></a>X_train.to_csv(<span class="st">'X_train.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb81-3"><a href="#cb81-3"></a>y_train.to_csv(<span class="st">'y_train.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="58">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a><span class="co">#export data testing</span></span>
 <span id="cb82-2"><a href="#cb82-2"></a>X_test.to_csv(<span class="st">'X_test.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb82-3"><a href="#cb82-3"></a>y_test.to_csv(<span class="st">'y_test.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3137,8 +3168,8 @@ set()</code></pre>
 <section id="training-data-imputation" class="level3">
 <h3 class="anchored" data-anchor-id="training-data-imputation">Training Data Imputation</h3>
 <div class="cell" data-execution_count="59">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a><span class="co">#checking null data</span></span>
 <span id="cb83-2"><a href="#cb83-2"></a>X_train.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3158,8 +3189,8 @@ dtype: int64</code></pre>
 <section id="numerical-data" class="level4">
 <h4 class="anchored" data-anchor-id="numerical-data">Numerical Data</h4>
 <div class="cell" data-execution_count="60">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1"></a>X_train_num <span class="op">=</span>  X_train.select_dtypes(exclude<span class="op">=</span><span class="st">'object'</span>)</span>
 <span id="cb85-2"><a href="#cb85-2"></a>X_train_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3275,8 +3306,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="61">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1"></a>X_train_num.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="61">
@@ -3292,8 +3323,8 @@ dtype: int64</code></pre>
 <li>We can fill completion year, rooms, parking and bathroom with mode</li>
 </ul>
 <div class="cell" data-execution_count="62">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
 <span id="cb88-2"><a href="#cb88-2"></a></span>
 <span id="cb88-3"><a href="#cb88-3"></a><span class="kw">def</span> numericalImputation(X_train_num, strategy <span class="op">=</span> <span class="st">'most_frequent'</span>):</span>
@@ -3322,8 +3353,8 @@ dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="63">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1"></a>X_train_num, imputer_num <span class="op">=</span> numericalImputation(X_train_num, strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span>
 <span id="cb89-2"><a href="#cb89-2"></a>X_train_num.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3337,8 +3368,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="64">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1"></a>imputer_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="64">
@@ -3349,8 +3380,8 @@ dtype: int64</code></pre>
 <section id="categorical-data" class="level4">
 <h4 class="anchored" data-anchor-id="categorical-data">Categorical Data</h4>
 <div class="cell" data-execution_count="65">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a>X_train_cat <span class="op">=</span> X_train.select_dtypes(include<span class="op">=</span><span class="st">'object'</span>)</span>
 <span id="cb92-2"><a href="#cb92-2"></a>X_train_cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3454,8 +3485,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="66">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1"></a>X_train_cat.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="66">
@@ -3470,8 +3501,8 @@ dtype: int64</code></pre>
 <li>Impute with mode</li>
 </ul>
 <div class="cell" data-execution_count="67">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1"></a>X_train_cat, imputer_num <span class="op">=</span> numericalImputation(X_train_cat, strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span>
 <span id="cb95-2"><a href="#cb95-2"></a>X_train_cat.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3487,8 +3518,8 @@ dtype: int64</code></pre>
 <section id="preprocessing-categorical-variable" class="level4">
 <h4 class="anchored" data-anchor-id="preprocessing-categorical-variable">Preprocessing Categorical Variable</h4>
 <div class="cell" data-execution_count="68">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1"></a>X_train_cat_ohe <span class="op">=</span>  pd.get_dummies(X_train_cat)</span>
 <span id="cb97-2"><a href="#cb97-2"></a>X_train_cat_ohe.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3580,8 +3611,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="69">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1"></a>ohe_columns <span class="op">=</span> X_train_cat_ohe.columns</span>
 <span id="cb98-2"><a href="#cb98-2"></a>ohe_columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3611,8 +3642,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="70">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1"></a>X_train_cat_ohe.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="70">
@@ -3678,8 +3709,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="71">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1"></a>X_train_num.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="71">
@@ -3695,16 +3726,16 @@ dtype: int64</code></pre>
 <section id="penggabungan-numerical-dan-categorical-data" class="level4">
 <h4 class="anchored" data-anchor-id="penggabungan-numerical-dan-categorical-data">Penggabungan Numerical dan Categorical data</h4>
 <div class="cell" data-execution_count="72">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1"></a>X_train_concat <span class="op">=</span> pd.concat([X_train_num,</span>
 <span id="cb104-2"><a href="#cb104-2"></a>                            X_train_cat_ohe],</span>
 <span id="cb104-3"><a href="#cb104-3"></a>                           axis <span class="op">=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="73">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1"></a>X_train_concat.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="73">
@@ -3795,8 +3826,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="74">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1"></a><span class="co">#sanity check</span></span>
 <span id="cb106-2"><a href="#cb106-2"></a>X_train_concat.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3819,8 +3850,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="standarisasi" class="level4">
 <h4 class="anchored" data-anchor-id="standarisasi">Standarisasi</h4>
 <div class="cell" data-execution_count="75">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb108-2"><a href="#cb108-2"></a></span>
 <span id="cb108-3"><a href="#cb108-3"></a><span class="co"># Buat fungsi</span></span>
@@ -3848,14 +3879,14 @@ Length: 63, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="76">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1"></a>X_train_clean, standardizer <span class="op">=</span> standardizerData(data <span class="op">=</span> X_train_concat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="77">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1"></a>X_train_clean.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="77">
@@ -4027,8 +4058,8 @@ Length: 63, dtype: int64</code></pre>
 <h4 class="anchored" data-anchor-id="baseline-average-value">Baseline-Average Value</h4>
 <p>The concept here is to use average value of the target as the easiest way to predict the monhtly rent of a unit.</p>
 <div class="cell" data-execution_count="78">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1"></a>y_baseline <span class="op">=</span> np.ones(<span class="bu">len</span>(y_train)) <span class="op">*</span> y_train.mean()</span>
 <span id="cb111-2"><a href="#cb111-2"></a>y_baseline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4038,8 +4069,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="79">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb113-2"><a href="#cb113-2"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score, mean_absolute_error</span>
 <span id="cb113-3"><a href="#cb113-3"></a></span>
@@ -4062,12 +4093,16 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="80">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1"></a>plt.scatter(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-81-output-1.png" width="583" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-81-output-1.png" width="583" height="411" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -4075,8 +4110,8 @@ Length: 63, dtype: int64</code></pre>
 <h4 class="anchored" data-anchor-id="baseline-linear-regression">Baseline-Linear Regression</h4>
 <p>The second method is using linear regression, which simply put is finding the minum total error (distance) between predicted value and the target value, using linear equation.</p>
 <div class="cell" data-execution_count="81">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb116-2"><a href="#cb116-2"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
 <span id="cb116-3"><a href="#cb116-3"></a></span>
@@ -4100,12 +4135,16 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="82">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1"></a>sns.jointplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-83-output-1.png" width="579" height="564"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-83-output-1.png" width="579" height="564" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -4113,16 +4152,16 @@ Length: 63, dtype: int64</code></pre>
 <h4 class="anchored" data-anchor-id="gradientboosting">GradientBoosting</h4>
 <p>The gradient boosting, is one of the recommendation from previous works, is a model where each sample would be given a different weights (boosts) depending on its performance in predicting the value/ target.</p>
 <div class="cell" data-execution_count="83">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> GradientBoostingRegressor</span>
 <span id="cb119-2"><a href="#cb119-2"></a><span class="co"># Build random forest</span></span>
 <span id="cb119-3"><a href="#cb119-3"></a>grad_tree <span class="op">=</span> GradientBoostingRegressor(random_state <span class="op">=</span> <span class="dv">123</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="84">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1"></a><span class="co"># Fit random forest</span></span>
 <span id="cb120-2"><a href="#cb120-2"></a>grad_tree.fit(X_train_clean, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4131,8 +4170,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="85">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href="#cb121-1"></a><span class="co"># Predict</span></span>
 <span id="cb121-2"><a href="#cb121-2"></a>y_pred_train <span class="op">=</span> grad_tree.predict(X_train_clean)</span>
 <span id="cb121-3"><a href="#cb121-3"></a><span class="co"># y_pred_test = grad_tree.predict(X_test_clean)</span></span>
@@ -4150,17 +4189,21 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="86">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1"></a>sns.jointplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-87-output-1.png" width="579" height="564"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-87-output-1.png" width="579" height="564" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="87">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb124-1"><a href="#cb124-1"></a><span class="co">#gridsearch</span></span>
 <span id="cb124-2"><a href="#cb124-2"></a></span>
 <span id="cb124-3"><a href="#cb124-3"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV </span>
@@ -4179,8 +4222,8 @@ Length: 63, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="88">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb125-1"><a href="#cb125-1"></a><span class="co"># Fit grid search cv</span></span>
 <span id="cb125-2"><a href="#cb125-2"></a>grad_tree_cv.fit(X_train_clean, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4195,8 +4238,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="89">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb126-1"><a href="#cb126-1"></a><span class="co"># Best params</span></span>
 <span id="cb126-2"><a href="#cb126-2"></a>grad_tree_cv.best_params_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4205,8 +4248,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="90">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1"></a><span class="co"># Refit the Adaboost</span></span>
 <span id="cb128-2"><a href="#cb128-2"></a>grad_tree <span class="op">=</span> GradientBoostingRegressor(n_estimators <span class="op">=</span> grad_tree_cv.best_params_[<span class="st">"n_estimators"</span>],</span>
 <span id="cb128-3"><a href="#cb128-3"></a>                                      random_state <span class="op">=</span> <span class="dv">123</span>)</span>
@@ -4218,8 +4261,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="91">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb129"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1"></a><span class="co"># Predict</span></span>
 <span id="cb129-2"><a href="#cb129-2"></a>y_pred_train <span class="op">=</span> grad_tree.predict(X_train_clean)</span>
 <span id="cb129-3"><a href="#cb129-3"></a></span>
@@ -4236,12 +4279,16 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="92">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb131"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb131-1"><a href="#cb131-1"></a>sns.jointplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-93-output-1.png" width="579" height="564"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-93-output-1.png" width="579" height="564" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -4249,14 +4296,14 @@ Length: 63, dtype: int64</code></pre>
 <h4 class="anchored" data-anchor-id="random-forest">Random Forest</h4>
 <p>The last model, which was also recommended by previous works, is a model where not only it has weights based on its performance, but the feature selection in which the sample is measured was done at <strong>random</strong>. Therefore, reduces not only the variance, but also the bias.</p>
 <div class="cell" data-execution_count="93">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb132-1"><a href="#cb132-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="94">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb133"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb133-1"><a href="#cb133-1"></a><span class="co"># Build random forest</span></span>
 <span id="cb133-2"><a href="#cb133-2"></a>rf_tree <span class="op">=</span> RandomForestRegressor(n_estimators <span class="op">=</span> <span class="dv">100</span>,</span>
 <span id="cb133-3"><a href="#cb133-3"></a>                                criterion <span class="op">=</span> <span class="st">"squared_error"</span>,</span>
@@ -4265,8 +4312,8 @@ Length: 63, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="95">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb134-1"><a href="#cb134-1"></a><span class="co"># Fit random forest</span></span>
 <span id="cb134-2"><a href="#cb134-2"></a>rf_tree.fit(X_train_clean, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4275,8 +4322,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="96">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1"></a><span class="co"># Predict</span></span>
 <span id="cb135-2"><a href="#cb135-2"></a>y_pred_train <span class="op">=</span> rf_tree.predict(X_train_clean)</span>
 <span id="cb135-3"><a href="#cb135-3"></a></span>
@@ -4293,17 +4340,21 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="97">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1"></a>sns.jointplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-98-output-1.png" width="579" height="564"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-98-output-1.png" width="579" height="564" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="98">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1"></a>params <span class="op">=</span> {<span class="st">"n_estimators"</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">500</span> ],</span>
 <span id="cb138-2"><a href="#cb138-2"></a>          <span class="st">"max_features"</span>: [<span class="st">"sqrt"</span>, <span class="st">"log2"</span>]}</span>
 <span id="cb138-3"><a href="#cb138-3"></a></span>
@@ -4318,8 +4369,8 @@ Length: 63, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="99">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb139"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb139-1"><a href="#cb139-1"></a><span class="co"># Fit grid search cv</span></span>
 <span id="cb139-2"><a href="#cb139-2"></a>rf_tree_cv.fit(X_train_clean, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4334,8 +4385,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="100">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb140-1"><a href="#cb140-1"></a><span class="co"># Best params</span></span>
 <span id="cb140-2"><a href="#cb140-2"></a>rf_tree_cv.best_params_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4344,8 +4395,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="101">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb142-1"><a href="#cb142-1"></a><span class="co"># Refit the Random Forest</span></span>
 <span id="cb142-2"><a href="#cb142-2"></a>rf_tree <span class="op">=</span> RandomForestRegressor(criterion <span class="op">=</span> <span class="st">"squared_error"</span>,</span>
 <span id="cb142-3"><a href="#cb142-3"></a>                                max_features <span class="op">=</span> rf_tree_cv.best_params_[<span class="st">"max_features"</span>],</span>
@@ -4359,8 +4410,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="102">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb143"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb143-1"><a href="#cb143-1"></a><span class="co"># Predict</span></span>
 <span id="cb143-2"><a href="#cb143-2"></a>y_pred_train <span class="op">=</span> rf_tree.predict(X_train_clean)</span>
 <span id="cb143-3"><a href="#cb143-3"></a></span>
@@ -4377,17 +4428,21 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="103">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb145-1"><a href="#cb145-1"></a>sns.jointplot(x<span class="op">=</span>y_train, y<span class="op">=</span>y_pred_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-104-output-1.png" width="579" height="564"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-104-output-1.png" width="579" height="564" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="104">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb146"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb146-1"><a href="#cb146-1"></a>mae_score <span class="op">=</span> [mae_baseline, mae_linreg, mae_gb, mae_gb_cv, mae_rf, mae_rf_cv]</span>
 <span id="cb146-2"><a href="#cb146-2"></a>r2_score <span class="op">=</span> [r2_baseline, r2_linreg, r2_gb, r2_gb_cv, r2_rf, r2_rf_cv]</span>
 <span id="cb146-3"><a href="#cb146-3"></a>indexes <span class="op">=</span> [<span class="st">"baseline"</span>, <span class="st">"linear regression"</span>, <span class="st">"gradient boosting"</span>, <span class="st">"gradient boosting with CV"</span>, <span class="st">"random forest"</span>,  <span class="st">"random forest with CV"</span>]</span>
@@ -4454,8 +4509,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="best-model" class="level3">
 <h3 class="anchored" data-anchor-id="best-model">Best Model</h3>
 <div class="cell" data-execution_count="105">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb147-1"><a href="#cb147-1"></a><span class="co"># libraries</span></span>
 <span id="cb147-2"><a href="#cb147-2"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
 <span id="cb147-3"><a href="#cb147-3"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
@@ -4494,7 +4549,11 @@ Length: 63, dtype: int64</code></pre>
 <pre><code>R2-score: 0.959 and MAE score: +/-99.80 RM</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-106-output-2.png" width="602" height="477"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-106-output-2.png" width="602" height="477" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -4505,8 +4564,8 @@ Length: 63, dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="test-data-preprocessing">Test Data Preprocessing</h3>
 <p>Simlar process done in train dataset need to be repeated on test dataset.</p>
 <div class="cell" data-execution_count="106">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb149-1"><a href="#cb149-1"></a><span class="co">#checking null data</span></span>
 <span id="cb149-2"><a href="#cb149-2"></a>X_test.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4526,8 +4585,8 @@ dtype: int64</code></pre>
 <section id="numerical-data-1" class="level4">
 <h4 class="anchored" data-anchor-id="numerical-data-1">Numerical Data</h4>
 <div class="cell" data-execution_count="107">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb151-1"><a href="#cb151-1"></a>X_test_num <span class="op">=</span>  X_test.select_dtypes(exclude<span class="op">=</span><span class="st">'object'</span>)</span>
 <span id="cb151-2"><a href="#cb151-2"></a>X_test_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4643,8 +4702,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="108">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb152"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb152-1"><a href="#cb152-1"></a>X_test_num.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="108">
@@ -4657,8 +4716,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="109">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb154-1"><a href="#cb154-1"></a>X_test_num, imputer_num <span class="op">=</span> numericalImputation(X_test_num, strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span>
 <span id="cb154-2"><a href="#cb154-2"></a>X_test_num.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4675,8 +4734,8 @@ dtype: int64</code></pre>
 <section id="categorical-data-1" class="level4">
 <h4 class="anchored" data-anchor-id="categorical-data-1">Categorical Data</h4>
 <div class="cell" data-execution_count="110">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb156-1"><a href="#cb156-1"></a>X_test_cat <span class="op">=</span> X_test.select_dtypes(include<span class="op">=</span><span class="st">'object'</span>)</span>
 <span id="cb156-2"><a href="#cb156-2"></a>X_test_cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4780,8 +4839,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="111">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb157-1"><a href="#cb157-1"></a>X_test_cat.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="111">
@@ -4793,8 +4852,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="112">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb159-1"><a href="#cb159-1"></a>X_test_cat, imputer_num <span class="op">=</span> numericalImputation(X_test_cat, strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span>
 <span id="cb159-2"><a href="#cb159-2"></a>X_test_cat.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4810,8 +4869,8 @@ dtype: int64</code></pre>
 <section id="categorical-ohe" class="level4">
 <h4 class="anchored" data-anchor-id="categorical-ohe">Categorical OHE</h4>
 <div class="cell" data-execution_count="113">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb161-1"><a href="#cb161-1"></a>X_test_cat_ohe <span class="op">=</span>  pd.get_dummies(X_test_cat)</span>
 <span id="cb161-2"><a href="#cb161-2"></a>X_test_cat_ohe.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4903,8 +4962,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="114">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb162-1"><a href="#cb162-1"></a>ohe_columns <span class="op">=</span> X_test_cat_ohe.columns</span>
 <span id="cb162-2"><a href="#cb162-2"></a>ohe_columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4938,16 +4997,16 @@ dtype: int64</code></pre>
 <section id="penggabungan-numerical-dan-categorical-data-1" class="level3">
 <h3 class="anchored" data-anchor-id="penggabungan-numerical-dan-categorical-data-1">Penggabungan Numerical dan Categorical data</h3>
 <div class="cell" data-execution_count="115">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb164-1"><a href="#cb164-1"></a>X_test_concat <span class="op">=</span> pd.concat([X_test_num,</span>
 <span id="cb164-2"><a href="#cb164-2"></a>                            X_test_cat_ohe],</span>
 <span id="cb164-3"><a href="#cb164-3"></a>                           axis <span class="op">=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="116">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb165-1"><a href="#cb165-1"></a>X_test_concat.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="116">
@@ -5038,8 +5097,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="117">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb166-1"><a href="#cb166-1"></a><span class="co">#sanity check</span></span>
 <span id="cb166-2"><a href="#cb166-2"></a>X_test_concat.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -5061,8 +5120,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="standarisasi-1" class="level4">
 <h4 class="anchored" data-anchor-id="standarisasi-1">Standarisasi</h4>
 <div class="cell" data-execution_count="118">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb168-1"><a href="#cb168-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb168-2"><a href="#cb168-2"></a></span>
 <span id="cb168-3"><a href="#cb168-3"></a><span class="co"># Buat fungsi</span></span>
@@ -5090,14 +5149,14 @@ Length: 63, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="119">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb169-1"><a href="#cb169-1"></a>X_test_clean, standardizer <span class="op">=</span> standardizerData(data <span class="op">=</span> X_test_concat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="120">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb170-1"><a href="#cb170-1"></a>X_test_clean.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="120">
@@ -5264,8 +5323,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="test-data-result" class="level3">
 <h3 class="anchored" data-anchor-id="test-data-result">Test Data Result</h3>
 <div class="cell" data-execution_count="121">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb171-1"><a href="#cb171-1"></a><span class="co"># libraries</span></span>
 <span id="cb171-2"><a href="#cb171-2"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
 <span id="cb171-3"><a href="#cb171-3"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
@@ -5304,12 +5363,16 @@ Length: 63, dtype: int64</code></pre>
 <pre><code>R2-score: 0.803 and MAE score: +/-214.08 RM</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-122-output-2.png" width="602" height="477"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-122-output-2.png" width="602" height="477" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="122">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb173-1"><a href="#cb173-1"></a>mae_score <span class="op">=</span> [mae_rf_cv_train, mae_rf_cv_test]</span>
 <span id="cb173-2"><a href="#cb173-2"></a>r2_score <span class="op">=</span> [r2_rf_cv_train, r2_rf_cv_test]</span>
 <span id="cb173-3"><a href="#cb173-3"></a>indexes <span class="op">=</span> [<span class="st">"train"</span>, <span class="st">"test"</span>]</span>
@@ -5353,8 +5416,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="feature-importance" class="level4">
 <h4 class="anchored" data-anchor-id="feature-importance">Feature Importance</h4>
 <div class="cell" data-execution_count="123">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href="#cb174-1"></a><span class="co"># calculate the feature importances</span></span>
 <span id="cb174-2"><a href="#cb174-2"></a>importances <span class="op">=</span> rf_tree.feature_importances_</span>
 <span id="cb174-3"><a href="#cb174-3"></a></span>
@@ -5476,7 +5539,7 @@ Length: 63, dtype: int64</code></pre>
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-madhuri2019" class="csl-entry" role="listitem">
 Madhuri, CH. Raga, G. Anuradha, and M. Vani Pujitha. 2019. <span>“House Price Prediction Using Regression Techniques: A Comparative Study.”</span> <em>2019 International Conference on Smart Structures and Systems (ICSSS)</em>, March. <a href="https://doi.org/10.1109/icsss.2019.8882834">https://doi.org/10.1109/icsss.2019.8882834</a>.
 </div>
@@ -5486,7 +5549,7 @@ Xu, Kevin, and Hieu Nguyen. 2022. <span>“Predicting Housing Prices and Analyzi
 <div id="ref-zhao2022" class="csl-entry" role="listitem">
 Zhao, Yaping, Ramgopal Ravi, Shuhui Shi, Zhongrui Wang, Edmund Y. Lam, and Jichang Zhao. 2022. <span>“PATE: Property, Amenities, Traffic and Emotions Coming Together for Real Estate Price Prediction.”</span> <a href="https://doi.org/10.48550/ARXIV.2209.05471">https://doi.org/10.48550/ARXIV.2209.05471</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
   author = {Arie Wijaya, Aditya},
   title = {{Malaysia} {Property} {Pricing} - {Webscraping} \&amp; {Machine}
     {Learning} {Model}},
@@ -5580,10 +5643,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -5593,8 +5673,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -5607,6 +5696,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -5650,6 +5858,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -5675,6 +5884,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -5732,20 +5967,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/adtarie\.net");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
@@ -5756,22 +5977,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="https://www.quarto.org">Built w/ Quarto</a>
+    <a class="nav-link" href="https://www.quarto.org">
+<p>Built w/ Quarto</p>
+</a>
   </li>  
 </ul>
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/005-webscraping-machinelearning-rent-pricing/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../license.html">License</a>
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 

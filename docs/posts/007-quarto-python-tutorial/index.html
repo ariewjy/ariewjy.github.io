@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -106,11 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Personal Website using Jupyter Notebook and Quarto">
 <meta property="og:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
-<meta property="og:image" content="https://adtarie.net/posts/007-quarto-python-tutorial/images/image0.jpg">
 <meta property="og:locale" content="en_EN">
 <meta name="twitter:title" content="Personal Website using Jupyter Notebook and Quarto">
 <meta name="twitter:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
-<meta name="twitter:image" content="https://adtarie.net/posts/007-quarto-python-tutorial/images/image0.jpg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -118,8 +123,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -128,21 +133,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -188,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -217,9 +222,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#craving-for-more" id="toc-craving-for-more" class="nav-link" data-scroll-target="#craving-for-more">3. Craving for More?</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/007-quarto-python-tutorial/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/007-quarto-python-tutorial/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -229,9 +234,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
+<figcaption>Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 <p><img src="./images/image0.jpg" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -244,11 +250,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A personal website is a great way to showcase our project to the world. Sure there is even a no-code platform like medium that you can use, but there are couple things I think it fall shorts on:</p>
 <section id="pay-gate-wall" class="level2">
 <h2 class="anchored" data-anchor-id="pay-gate-wall">Pay Gate Wall</h2>
-<p>It is good if you are getting paid for what you were sharing on, but if your main purpose is for branding yourself (like me), then a pay gate wall would not do you any good (<a href="#fig-paygate">Figure&nbsp;1</a>). Especially, when you have just started on. Though it is fairly cheap, it is just another stopper for your first audience. Worse, the paid-subscription is only available for certain countries, Indonesia for example is not supported.</p>
-<div id="fig-paygate" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;1: Pay Gate in medium.com</figcaption>
-<p><img src="images/image1.png" class="img-fluid figure-img"></p>
+<p>It is good if you are getting paid for what you were sharing on, but if your main purpose is for branding yourself (like me), then a pay gate wall would not do you any good (<a href="#fig-paygate" class="quarto-xref">Figure&nbsp;1</a>). Especially, when you have just started on. Though it is fairly cheap, it is just another stopper for your first audience. Worse, the paid-subscription is only available for certain countries, Indonesia for example is not supported.</p>
+<div id="fig-paygate" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-paygate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Pay Gate in medium.com
+</figcaption>
+<div aria-describedby="fig-paygate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image1.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
@@ -256,8 +266,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
 <p>When I do my first data-science project, I wanted to make sure that someone can just follow along and then get the same result as I was. Using platform like medium, I could not really do that, and I believe it was not meant for tutorial in details. Rather it was for an explanatory writing, rather than exploratory writing. Quarto with its rendered codes as an output, makes it easier to do just that. The below code cell is me importing libraries, importing a dataset, and displaying the table.</p>
 <div class="cell" data-execution_count="1">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#importing libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> hvplot.pandas</span>
@@ -342,8 +352,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>What if I want to show the last 6 rows? I can just change the code.</p>
 <div class="cell" data-execution_count="2">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#importing libraries</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> hvplot.pandas</span>
@@ -468,21 +478,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>With that out of the way, here are the following steps to create your first personal website:</p>
 <section id="creating-a-repo" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-repo">Creating a Repo</h2>
-<p>Make a new repository with the same name as your github account. For example, if your github account is <em>johndoe</em>, then make a new repository named john.github.io (see <a href="#fig-newrepo">Figure&nbsp;2</a>).</p>
-<div id="fig-newrepo" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;2: Creating a New Repo</figcaption>
-<p><img src="images/image2.png" class="img-fluid figure-img"></p>
+<p>Make a new repository with the same name as your github account. For example, if your github account is <em>johndoe</em>, then make a new repository named john.github.io (see <a href="#fig-newrepo" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<div id="fig-newrepo" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-newrepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Creating a New Repo
+</figcaption>
+<div aria-describedby="fig-newrepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image2.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <p>What’s cool about this repo is it will be accessible later on as a domain for your personal website, completely free, and secure (https). This of course can be customized with a domain of your choice, but for now, we want to make this as easy as possible.</p>
 </section>
 <section id="starting-from-a-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="starting-from-a-notebook">Starting from a Notebook</h2>
-<p>Let’s make a content, using jupyter notebook, with a combination of code cells and markdown cells. I am gonna use the content in this post, where I load a libraries, dataset from palmerpenguins, and then I will do some plotting using altair to spice things up, cause why not. See below <a href="#fig-notebook">Figure&nbsp;3</a> for example.</p>
+<p>Let’s make a content, using jupyter notebook, with a combination of code cells and markdown cells. I am gonna use the content in this post, where I load a libraries, dataset from palmerpenguins, and then I will do some plotting using altair to spice things up, cause why not. See below <a href="#fig-notebook" class="quarto-xref">Figure&nbsp;3</a> for example.</p>
 <div class="cell" data-execution_count="3">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#importing libraries</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> bokeh.sampledata.penguins <span class="im">import</span> data <span class="im">as</span> penguins</span>
@@ -567,10 +581,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </script>
 </div>
 </div>
-<div id="fig-notebook" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;3: Example Notebook</figcaption>
-<p><img src="images/image4.png" class="img-fluid figure-img"></p>
+<div id="fig-notebook" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-notebook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Example Notebook
+</figcaption>
+<div aria-describedby="fig-notebook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image4.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
@@ -579,11 +597,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The first step is to create a set of folders for website project, using quarto by executing the following command inside the project folder:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>mkdir posts</span>
 <span id="cb4-2"><a href="#cb4-2"></a>quarto create-project . --type website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>which will output the following <a href="#fig-output-project">Figure&nbsp;4</a>, essentially the <code>post</code> folder would be where we keep our blogpost files.</p>
-<div id="fig-output-project" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;4: Output Projects</figcaption>
-<p><img src="images/image5.png" class="img-fluid figure-img"></p>
+<p>which will output the following <a href="#fig-output-project" class="quarto-xref">Figure&nbsp;4</a>, essentially the <code>post</code> folder would be where we keep our blogpost files.</p>
+<div id="fig-output-project" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-output-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Output Projects
+</figcaption>
+<div aria-describedby="fig-output-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image5.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
@@ -591,22 +613,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="convert-notebook-to-quarto-markdown">Convert Notebook to Quarto Markdown</h2>
 <p>The second step is to convert the jupyter notebook file (example.ipynb) to quarto markdown file (example.qmd) by running the following command:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>quarto convert ./example.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>which will create an output of qmd file which is important, because this would then be rendered to html (as shown in <a href="#fig-output-render">Figure&nbsp;5</a>) by running the following command:</p>
+<p>which will create an output of qmd file which is important, because this would then be rendered to html (as shown in <a href="#fig-output-render" class="quarto-xref">Figure&nbsp;5</a>) by running the following command:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>quarto render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-output-render" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;5: Output Render</figcaption>
-<p><img src="./images/image6.png" class="img-fluid figure-img"></p>
+<div id="fig-output-render" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-output-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Output Render
+</figcaption>
+<div aria-describedby="fig-output-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image6.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
 <section id="setting-up-the-website" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-the-website">Setting-up the Website</h2>
-<p>YAML file is basically where we fine tune our website settings. For this case, we need to move the <code>example.qmd</code> file to <code>post</code> folder, and <em>add</em> the qmd file inside the navbar, below the <code>about.qmd</code> as shown in <a href="#fig-yaml">Figure&nbsp;6</a></p>
-<div id="fig-yaml" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;6: YAML setting</figcaption>
-<p><img src="./images/image7.png" class="img-fluid figure-img"></p>
+<p>YAML file is basically where we fine tune our website settings. For this case, we need to move the <code>example.qmd</code> file to <code>post</code> folder, and <em>add</em> the qmd file inside the navbar, below the <code>about.qmd</code> as shown in <a href="#fig-yaml" class="quarto-xref">Figure&nbsp;6</a></p>
+<div id="fig-yaml" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: YAML setting
+</figcaption>
+<div aria-describedby="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image7.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
@@ -614,11 +644,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="previewing-the-website">Previewing the Website</h2>
 <p>All things set, now all we need to do is preview our website by running the following command:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>quarto preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>which will output our new website inside a browser as shown in the following <a href="#fig-preview">Figure&nbsp;7</a>. This is a preview mode which means, any changes made to the website, it will be rendered and displayed real-time.</p>
-<div id="fig-preview" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;7: Website Preview</figcaption>
-<p><img src="./images/image8.png" class="img-fluid figure-img"></p>
+<p>which will output our new website inside a browser as shown in the following <a href="#fig-preview" class="quarto-xref">Figure&nbsp;7</a>. This is a preview mode which means, any changes made to the website, it will be rendered and displayed real-time.</p>
+<div id="fig-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Website Preview
+</figcaption>
+<div aria-describedby="fig-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image8.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <p>Voila! You got it done! Congrats!</p>
@@ -627,21 +661,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="deploying-the-website">Deploying the Website</h2>
 <p>There is a documentation on <a href="https://quarto.org/docs/publishing/github-pages.html">Quarto</a> to do this, but in layman terms, there are essentially three things to do:</p>
 <ul>
-<li>Create a <code>docs</code> folder and set the output to be that folder in _quarto.yml file as shown in <a href="#fig-docs">Figure&nbsp;8</a> below</li>
+<li>Create a <code>docs</code> folder and set the output to be that folder in _quarto.yml file as shown in <a href="#fig-docs" class="quarto-xref">Figure&nbsp;8</a> below</li>
 </ul>
-<div id="fig-docs" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;8: docs settting</figcaption>
-<p><img src="./images/image9.png" class="img-fluid figure-img"></p>
+<div id="fig-docs" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: docs settting
+</figcaption>
+<div aria-describedby="fig-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image9.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <ul>
-<li>Set the website repo setting to use the docs folder as the branch source as shown in <a href="#fig-reposettting">Figure&nbsp;9</a> below</li>
+<li>Set the website repo setting to use the docs folder as the branch source as shown in <a href="#fig-reposettting" class="quarto-xref">Figure&nbsp;9</a> below</li>
 </ul>
-<div id="fig-reposettting" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;9: repo settting</figcaption>
-<p><img src="./images/image10.png" class="img-fluid figure-img"></p>
+<div id="fig-reposettting" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-reposettting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: repo settting
+</figcaption>
+<div aria-describedby="fig-reposettting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image10.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <ul>
@@ -650,11 +692,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>git add .</span>
 <span id="cb8-2"><a href="#cb8-2"></a>git commit -m "my first website"</span>
 <span id="cb8-3"><a href="#cb8-3"></a>git push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and you should see your website is up and running after the builds and deployment as shown in <a href="#fig-builds">Figure&nbsp;10</a> finished!</p>
-<div id="fig-builds" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;10: Builds Up and Deployment</figcaption>
-<p><img src="./images/image11.png" class="img-fluid figure-img"></p>
+<p>and you should see your website is up and running after the builds and deployment as shown in <a href="#fig-builds" class="quarto-xref">Figure&nbsp;10</a> finished!</p>
+<div id="fig-builds" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-builds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Builds Up and Deployment
+</figcaption>
+<div aria-describedby="fig-builds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image11.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -677,11 +723,15 @@ Important
 <section id="make-a-homepage" class="level2">
 <h2 class="anchored" data-anchor-id="make-a-homepage">1. Make A Homepage</h2>
 <p>If you have your website deployed, congrats! However, if you stay, I can assure you that it will make your website much better.</p>
-<p>Some nicer things to do for your website is to render the index.qmd in the root folder as a listing, so any post in your post folder will be listed as a content, as shown in <a href="#fig-listing">Figure&nbsp;11</a> below:</p>
-<div id="fig-listing" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;11: Setting Up the Website</figcaption>
-<p><img src="./images/image12.png" class="img-fluid figure-img"></p>
+<p>Some nicer things to do for your website is to render the index.qmd in the root folder as a listing, so any post in your post folder will be listed as a content, as shown in <a href="#fig-listing" class="quarto-xref">Figure&nbsp;11</a> below:</p>
+<div id="fig-listing" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-listing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Setting Up the Website
+</figcaption>
+<div aria-describedby="fig-listing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image12.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <p>Here is what I did to the initial website:</p>
@@ -690,11 +740,15 @@ Important
 <li>Edit the <code>index.qmd</code> in the <code>root</code> folder to list the contents</li>
 <li>Edit the <code>_quarto.yml</code> file back to its original setting.</li>
 </ol>
-<p>With this setting, you will have a nicer homepage like <a href="#fig-homepage">Figure&nbsp;12</a> below:</p>
-<div id="fig-homepage" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;12: Homepage</figcaption>
-<p><img src="./images/image13.png" class="img-fluid figure-img"></p>
+<p>With this setting, you will have a nicer homepage like <a href="#fig-homepage" class="quarto-xref">Figure&nbsp;12</a> below:</p>
+<div id="fig-homepage" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-homepage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Homepage
+</figcaption>
+<div aria-describedby="fig-homepage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image13.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
@@ -705,11 +759,15 @@ Important
 <blockquote class="blockquote">
 <p>From there, we can change the heading-style, bold, italic, add numbers, lists, picture, callnote, a very powerful GUI for markdown! Loved it!</p>
 </blockquote>
-<p>Here is the comparison side-by-side in <a href="#fig-comparison">Figure&nbsp;13</a>:</p>
-<div id="fig-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;13: Source-mode vs Visual-mode</figcaption>
-<p><img src="./images/image14.png" class="img-fluid figure-img"></p>
+<p>Here is the comparison side-by-side in <a href="#fig-comparison" class="quarto-xref">Figure&nbsp;13</a>:</p>
+<div id="fig-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Source-mode vs Visual-mode
+</figcaption>
+<div aria-describedby="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image14.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -747,7 +805,7 @@ Tip
 <ol>
 <li id="fn1"><p>you <em>can</em> just use a notebook, but some of the autocompletion, visual-mode (a powerful mode to make blogging easier) won’t work.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
   author = {Arie Wijaya, Aditya},
   title = {Personal {Website} Using {Jupyter} {Notebook} and {Quarto}},
   date = {2023-03-20},
@@ -837,10 +895,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -850,8 +925,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -864,6 +948,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -907,6 +1110,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -932,6 +1136,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -989,20 +1219,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/adtarie\.net");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
@@ -1013,22 +1229,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="https://www.quarto.org">Built w/ Quarto</a>
+    <a class="nav-link" href="https://www.quarto.org">
+<p>Built w/ Quarto</p>
+</a>
   </li>  
 </ul>
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/007-quarto-python-tutorial/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../license.html">License</a>
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 

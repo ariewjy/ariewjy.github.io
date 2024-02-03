@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -61,6 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -102,7 +103,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -111,6 +118,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -125,11 +133,9 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Easy Report: Malaysia Property Pricing">
 <meta property="og:description" content="TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.">
-<meta property="og:image" content="https://adtarie.net/posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg">
 <meta property="og:locale" content="en_EN">
 <meta name="twitter:title" content="Easy Report: Malaysia Property Pricing">
 <meta name="twitter:description" content="TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.">
-<meta name="twitter:image" content="https://adtarie.net/posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -137,8 +143,8 @@ div.csl-indent {
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -147,21 +153,21 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -208,7 +214,7 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -249,9 +255,9 @@ div.csl-indent {
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   <li><a href="#future-works" id="toc-future-works" class="nav-link" data-scroll-target="#future-works">Future works</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/006-easy-report-machine-learning/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/006-easy-report-machine-learning/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -261,11 +267,12 @@ div.csl-indent {
 
 
 
+
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@esmonde?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Esmonde Yong</a> on <a href="https://unsplash.com/photos/-9B08uduMyY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
+<figcaption>Photo by <a href="https://unsplash.com/@esmonde?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Esmonde Yong</a> on <a href="https://unsplash.com/photos/-9B08uduMyY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 <p><img src="kuala_lumpur_twin_owers.jpg" class="img-fluid figure-img"></p>
 </figure>
 </div>
@@ -316,8 +323,8 @@ Why Webscraping?
 <section id="data-description" class="level3">
 <h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
 <div class="cell" data-execution_count="1">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#importing libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -435,8 +442,8 @@ Why Webscraping?
 <h3 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h3>
 <p>The cleaning process mainly related to extracting the value out of column. E.g. extracting monthly rent of 1400 from a string of “1400 RM”, etc.</p>
 <div class="cell" data-execution_count="2">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#removing RM from monthly rent</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>df[<span class="st">'monthly_rent'</span>] <span class="op">=</span> df[<span class="st">'monthly_rent'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">int</span>(re.search(<span class="vs">r'RM (.*?) per'</span>, x).group(<span class="dv">1</span>).replace(<span class="st">' '</span>, <span class="st">''</span>)))</span>
 <span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'monthly_rent'</span>: <span class="st">'monthly_rent_rm'</span>})</span>
@@ -551,8 +558,8 @@ Why Webscraping?
 <section id="extracting-near-ktmlrt" class="level3">
 <h3 class="anchored" data-anchor-id="extracting-near-ktmlrt">Extracting Near KTM/LRT</h3>
 <div class="cell" data-execution_count="3">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#extracting near KTM/LRT from the additional facilities</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="kw">def</span> extract_near_ktm_lrt(text):</span>
 <span id="cb3-3"><a href="#cb3-3"></a>    pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\bNear KTM/LRT\b'</span>)</span>
@@ -566,8 +573,8 @@ Why Webscraping?
 </details>
 </div>
 <div class="cell" data-execution_count="4">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>df[<span class="st">'nearby_railways'</span>] <span class="op">=</span> df.additional_facilities.<span class="bu">apply</span>(<span class="kw">lambda</span> x: extract_near_ktm_lrt(x))</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
@@ -591,12 +598,16 @@ Not nearby KTM/LRT: 1600RM
       </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-5-output-2.png" width="533" height="356"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-2.png" width="533" height="356" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="5">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>df[df[<span class="st">'prop_name'</span>] <span class="op">==</span> <span class="st">'Majestic Maxim'</span>][[<span class="st">'nearby_railways'</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -612,8 +623,8 @@ dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="drop-unnecessary-missing-values">Drop Unnecessary Missing Values</h3>
 <p>Some features such as <code>ads_id</code>, <code>prop_name</code>, <code>facilities</code> and <code>additional_facilities</code> would no longer needed after the previous process.</p>
 <div class="cell" data-execution_count="6">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[</span>
 <span id="cb8-2"><a href="#cb8-2"></a>    <span class="st">'ads_id'</span>, </span>
 <span id="cb8-3"><a href="#cb8-3"></a>    <span class="st">'prop_name'</span>, </span>
@@ -694,8 +705,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="7">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">#converting rooms from object to int64 for plotting</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>df[<span class="st">'rooms'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'rooms'</span>], downcast<span class="op">=</span><span class="st">'integer'</span>, errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -725,8 +736,8 @@ memory usage: 780.7+ KB</code></pre>
 <h3 class="anchored" data-anchor-id="outlier-removal">Outlier Removal</h3>
 <p>Removing the outlier is extremely important, as some of these observation e.g.&nbsp;monthly rent, have astronomical rent value, far exceeding the median. After multiple iteration, below is the most-ideal limit for <code>size_sqft</code> and <code>monthly_rent_rm</code>.</p>
 <div class="cell" data-execution_count="8">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>f, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
 <span id="cb11-2"><a href="#cb11-2"></a>df[[<span class="st">'size_sqft'</span>, <span class="st">'monthly_rent_rm'</span>]].plot(kind<span class="op">=</span><span class="st">'scatter'</span>, </span>
 <span id="cb11-3"><a href="#cb11-3"></a>                                          x<span class="op">=</span><span class="st">'size_sqft'</span>, </span>
@@ -737,14 +748,18 @@ memory usage: 780.7+ KB</code></pre>
 <span id="cb11-8"><a href="#cb11-8"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-9-output-1.png" width="544" height="356"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-1.png" width="544" height="356" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="monthly-rent" class="level4">
 <h4 class="anchored" data-anchor-id="monthly-rent">Monthly Rent</h4>
 <div class="cell" data-execution_count="9">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
 <span id="cb12-2"><a href="#cb12-2"></a>axs[<span class="dv">0</span>].boxplot(data<span class="op">=</span>df, </span>
 <span id="cb12-3"><a href="#cb12-3"></a>               x<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span>
@@ -760,12 +775,16 @@ memory usage: 780.7+ KB</code></pre>
 <span id="cb12-13"><a href="#cb12-13"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-10-output-1.png" width="566" height="373"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="566" height="373" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="10">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#removing all rows with monthly rent above 5500 RM and below 100RM</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>dfx <span class="op">=</span> df.query(<span class="st">" monthly_rent_rm &gt; 100 &amp; monthly_rent_rm &lt; 5500 "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -774,8 +793,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="size" class="level4">
 <h4 class="anchored" data-anchor-id="size">Size</h4>
 <div class="cell" data-execution_count="11">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">4</span>))</span>
 <span id="cb14-2"><a href="#cb14-2"></a>axs[<span class="dv">0</span>].boxplot(data<span class="op">=</span>dfx, x<span class="op">=</span><span class="st">'size_sqft'</span>)</span>
 <span id="cb14-3"><a href="#cb14-3"></a>axs[<span class="dv">0</span>].set_ylim(<span class="dv">0</span>,<span class="dv">20000</span>)</span>
@@ -789,12 +808,16 @@ memory usage: 780.7+ KB</code></pre>
 <span id="cb14-11"><a href="#cb14-11"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-12-output-1.png" width="470" height="373"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-12-output-1.png" width="470" height="373" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="12">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">#removing outliers below 500, and higher than 3000 sqft and below 50 sqft</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>dfx <span class="op">=</span> dfx.query(<span class="st">" size_sqft &gt; 50 &amp; size_sqft &lt; 3000 "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -807,8 +830,8 @@ memory usage: 780.7+ KB</code></pre>
 <h4 class="anchored" data-anchor-id="preprocessing-original-data-for-categorical-dtypes">Preprocessing Original Data for Categorical Dtypes</h4>
 <p>One must paying attention to the number of categorical observation in the original data, with respect to the sampling train-test value. If, the test_size = 0.3, that means any categorical observation with a total of 3 and less, would not be distributed evenly among train and test data. Below is the process of removing some observation in which appearing only in one of the dataset (train/ test).</p>
 <div class="cell" data-execution_count="13">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>dfx_new <span class="op">=</span> dfx[</span>
 <span id="cb16-2"><a href="#cb16-2"></a>    (dfx.location <span class="op">!=</span> <span class="st">'Jinjang'</span>) </span>
 <span id="cb16-3"><a href="#cb16-3"></a>    <span class="op">&amp;</span> (dfx.location <span class="op">!=</span> <span class="st">'Serdang'</span>) <span class="op">&amp;</span> </span>
@@ -827,8 +850,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="input-output" class="level4">
 <h4 class="anchored" data-anchor-id="input-output">Input-Output</h4>
 <div class="cell" data-execution_count="14">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">def</span> extractInputOutput(data,</span>
 <span id="cb17-2"><a href="#cb17-2"></a>                       output_column_name):</span>
 <span id="cb17-3"><a href="#cb17-3"></a>    <span class="co">"""</span></span>
@@ -846,8 +869,8 @@ memory usage: 780.7+ KB</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="15">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>X, y <span class="op">=</span> extractInputOutput(data<span class="op">=</span>dfx_new, </span>
 <span id="cb18-2"><a href="#cb18-2"></a>                          output_column_name<span class="op">=</span><span class="st">'monthly_rent_rm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -856,8 +879,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="train-test-split-data" class="level4">
 <h4 class="anchored" data-anchor-id="train-test-split-data">Train-Test Split Data</h4>
 <div class="cell" data-execution_count="16">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">#import libraries</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb19-3"><a href="#cb19-3"></a></span>
@@ -873,8 +896,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="numerical-data" class="level5">
 <h5 class="anchored" data-anchor-id="numerical-data">Numerical Data</h5>
 <div class="cell" data-execution_count="17">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
 <span id="cb20-2"><a href="#cb20-2"></a></span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="kw">def</span> numericalImputation(X_train_num, </span>
@@ -905,8 +928,8 @@ memory usage: 780.7+ KB</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="18">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>X_train_num <span class="op">=</span>  X_train.select_dtypes(exclude<span class="op">=</span><span class="st">'object'</span>)</span>
 <span id="cb21-2"><a href="#cb21-2"></a>X_train_num, imputer_num <span class="op">=</span> numericalImputation(X_train_num, </span>
 <span id="cb21-3"><a href="#cb21-3"></a>                                               strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -916,8 +939,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="categorical-data" class="level5">
 <h5 class="anchored" data-anchor-id="categorical-data">Categorical Data</h5>
 <div class="cell" data-execution_count="19">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>X_train_cat <span class="op">=</span> X_train.select_dtypes(include<span class="op">=</span><span class="st">'object'</span>)</span>
 <span id="cb22-2"><a href="#cb22-2"></a>X_train_cat, imputer_num <span class="op">=</span> numericalImputation(X_train_cat, </span>
 <span id="cb22-3"><a href="#cb22-3"></a>                                               strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -927,8 +950,8 @@ memory usage: 780.7+ KB</code></pre>
 <section id="ohe-categorical-data" class="level5">
 <h5 class="anchored" data-anchor-id="ohe-categorical-data">OHE Categorical Data</h5>
 <div class="cell" data-execution_count="20">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">def</span> get_dum_n_concat(df_num, df_cat):</span>
 <span id="cb23-2"><a href="#cb23-2"></a>    df_cat_ohe <span class="op">=</span> pd.get_dummies(df_cat)</span>
 <span id="cb23-3"><a href="#cb23-3"></a>    ohe_columns <span class="op">=</span> df_cat_ohe.columns</span>
@@ -938,8 +961,8 @@ memory usage: 780.7+ KB</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="21">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>ohe_col, X_train_concat <span class="op">=</span> get_dum_n_concat(X_train_num, </span>
 <span id="cb24-2"><a href="#cb24-2"></a>                                           X_train_cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -963,8 +986,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="standarisasi" class="level5">
 <h5 class="anchored" data-anchor-id="standarisasi">Standarisasi</h5>
 <div class="cell" data-execution_count="22">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
 <span id="cb26-3"><a href="#cb26-3"></a><span class="co"># Buat fungsi</span></span>
@@ -992,8 +1015,8 @@ Length: 63, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="23">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>X_train_clean, standardizer <span class="op">=</span> standardizerData(data <span class="op">=</span> X_train_concat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -1004,8 +1027,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="baseline-with-mean-value" class="level5">
 <h5 class="anchored" data-anchor-id="baseline-with-mean-value">Baseline with Mean value</h5>
 <div class="cell" data-execution_count="24">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb28-2"><a href="#cb28-2"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score, mean_absolute_error</span>
 <span id="cb28-3"><a href="#cb28-3"></a></span>
@@ -1028,8 +1051,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="linear-regression" class="level5">
 <h5 class="anchored" data-anchor-id="linear-regression">Linear Regression</h5>
 <div class="cell" data-execution_count="25">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb29-2"><a href="#cb29-2"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
 <span id="cb29-3"><a href="#cb29-3"></a></span>
@@ -1053,8 +1076,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="gradientboosting" class="level5">
 <h5 class="anchored" data-anchor-id="gradientboosting">GradientBoosting</h5>
 <div class="cell" data-execution_count="26">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> GradientBoostingRegressor</span>
 <span id="cb30-2"><a href="#cb30-2"></a><span class="co"># Build random forest</span></span>
 <span id="cb30-3"><a href="#cb30-3"></a>grad_tree <span class="op">=</span> GradientBoostingRegressor(random_state <span class="op">=</span> <span class="dv">123</span>)</span>
@@ -1075,8 +1098,8 @@ Length: 63, dtype: int64</code></pre>
 </details>
 </div>
 <div class="cell" data-execution_count="27">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="co">#gridsearch</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV </span>
 <span id="cb31-3"><a href="#cb31-3"></a></span>
@@ -1102,8 +1125,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="28">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Refit the GB</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>grad_tree <span class="op">=</span> GradientBoostingRegressor(n_estimators <span class="op">=</span> <span class="dv">500</span>,</span>
 <span id="cb33-3"><a href="#cb33-3"></a>                                      learning_rate<span class="op">=</span><span class="fl">0.1</span>,</span>
@@ -1117,8 +1140,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="29">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Predict</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>y_pred_train_gbcv <span class="op">=</span> grad_tree.predict(X_train_clean)</span>
 <span id="cb34-3"><a href="#cb34-3"></a></span>
@@ -1135,8 +1158,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="random-forest" class="level5">
 <h5 class="anchored" data-anchor-id="random-forest">Random Forest</h5>
 <div class="cell" data-execution_count="30">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Build random forest</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
 <span id="cb35-3"><a href="#cb35-3"></a>rf_tree <span class="op">=</span> RandomForestRegressor(n_estimators <span class="op">=</span> <span class="dv">100</span>,</span>
@@ -1153,8 +1176,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="31">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Predict</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>y_pred_train_rf <span class="op">=</span> rf_tree.predict(X_train_clean)</span>
 <span id="cb36-3"><a href="#cb36-3"></a></span>
@@ -1173,8 +1196,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="co">#gridsearch</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>params <span class="op">=</span> {<span class="st">"n_estimators"</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">500</span> ],</span>
 <span id="cb38-3"><a href="#cb38-3"></a>          <span class="st">"max_features"</span>: [<span class="st">"sqrt"</span>, <span class="st">"log2"</span>]}</span>
@@ -1199,8 +1222,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="33">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Refit the Random Forest</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a>rf_tree <span class="op">=</span> RandomForestRegressor(criterion <span class="op">=</span> <span class="st">"squared_error"</span>,</span>
 <span id="cb40-3"><a href="#cb40-3"></a>                                max_features <span class="op">=</span> <span class="st">'sqrt'</span>,</span>
@@ -1216,8 +1239,8 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="34">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Predict</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a>y_pred_train_rfcv <span class="op">=</span> rf_tree.predict(X_train_clean)</span>
 <span id="cb41-3"><a href="#cb41-3"></a></span>
@@ -1236,10 +1259,7 @@ Length: 63, dtype: int64</code></pre>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
-<p><a href="#fig-model-comparison">Figure&nbsp;6</a> shows the result of all model tested on train dataset.</p>
-<div>
-<details open="">
-<summary>Code</summary>
+<p><a href="#fig-model-comparison" class="quarto-xref">Figure&nbsp;6</a> shows the result of all model tested on train dataset.</p>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
 <span id="cb42-2"><a href="#cb42-2"></a>                y<span class="op">=</span>y_pred_train_mean)</span>
 <span id="cb42-3"><a href="#cb42-3"></a>plt.show()</span>
@@ -1258,60 +1278,87 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb42-16"><a href="#cb42-16"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
 <span id="cb42-17"><a href="#cb42-17"></a>                y<span class="op">=</span>y_pred_train_rfcv)</span>
 <span id="cb42-18"><a href="#cb42-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-execution_count="35" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 </details>
-<div class="cell quarto-layout-panel" data-execution_count="35">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;1: Mean</figcaption>
-<p><img src="index_files/figure-html/fig-model-comparison-output-1.png" class="img-fluid figure-img" width="583"></p>
-</figure>
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Mean
+</figcaption>
+<div aria-describedby="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-model-comparison-output-1.png" width="583" height="429" class="figure-img">
 </div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;2: Linear Regression</figcaption>
-<p><img src="index_files/figure-html/fig-model-comparison-output-2.png" class="img-fluid figure-img" width="583"></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;3: Gradient Boosting</figcaption>
-<p><img src="index_files/figure-html/fig-model-comparison-output-3.png" class="img-fluid figure-img" width="583"></p>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Linear Regression
+</figcaption>
+<div aria-describedby="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-model-comparison-output-2.png" width="583" height="429" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;4: Gradient Boosting with CV</figcaption>
-<p><img src="index_files/figure-html/fig-model-comparison-output-4.png" class="img-fluid figure-img" width="583"></p>
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Gradient Boosting
+</figcaption>
+<div aria-describedby="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-model-comparison-output-3.png" width="583" height="429" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;5: Random Forest</figcaption>
-<p><img src="index_files/figure-html/fig-model-comparison-output-5.png" class="img-fluid figure-img" width="583"></p>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Gradient Boosting with CV
+</figcaption>
+<div aria-describedby="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-model-comparison-output-4.png" width="583" height="429" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-model-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;6: Random Forest with CV</figcaption>
-<p><img src="index_files/figure-html/fig-model-comparison-output-6.png" class="img-fluid figure-img" width="583"></p>
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Random Forest
+</figcaption>
+<div aria-describedby="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-model-comparison-output-5.png" width="583" height="429" class="figure-img">
+</div>
 </figure>
 </div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Random Forest with CV
+</figcaption>
+<div aria-describedby="fig-model-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-model-comparison-output-6.png" width="583" height="429" class="figure-img">
+</div>
+</figure>
 </div>
 </div>
 </div>
@@ -1319,8 +1366,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="best-model-from-train-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="best-model-from-train-dataset">Best Model from Train Dataset</h3>
 <div class="cell" data-execution_count="36">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>mae_score <span class="op">=</span> [mae_baseline, mae_linreg, </span>
 <span id="cb43-2"><a href="#cb43-2"></a>             mae_gb, mae_gb_cv,</span>
 <span id="cb43-3"><a href="#cb43-3"></a>             mae_rf, mae_rf_cv]</span>
@@ -1356,17 +1403,21 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb43-33"><a href="#cb43-33"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-r2-mae" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models</figcaption>
-<p><img src="index_files/figure-html/fig-r2-mae-output-1.png" width="648" height="337" class="figure-img"></p>
+<div id="fig-r2-mae" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-r2-mae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models
+</figcaption>
+<div aria-describedby="fig-r2-mae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-r2-mae-output-1.png" width="648" height="337" class="figure-img">
+</div>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell" data-execution_count="37">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>summary_df.applymap(<span class="kw">lambda</span> x: <span class="bu">round</span>(x, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="37">
@@ -1418,10 +1469,10 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>After several model tested on the train dataset, Random Forest with Hyperparameter tuning has the best R2-score and MAE value as shown in the <a href="#fig-r2-mae">Figure&nbsp;7</a>. The best model plotted below as reference:</p>
+<p>After several model tested on the train dataset, Random Forest with Hyperparameter tuning has the best R2-score and MAE value as shown in the <a href="#fig-r2-mae" class="quarto-xref">Figure&nbsp;7</a>. The best model plotted below as reference:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figcaption class="figure-caption">Best Model - RF with CV</figcaption>
+<figcaption>Best Model - RF with CV</figcaption>
 <p><img src="best_model.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
@@ -1429,8 +1480,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="applied-model-on-test-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="applied-model-on-test-dataset">Applied Model on Test Dataset</h3>
 <div class="cell" data-execution_count="38">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># libraries</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
 <span id="cb45-3"><a href="#cb45-3"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
@@ -1475,12 +1526,16 @@ Length: 63, dtype: int64</code></pre>
 <pre><code>R2-score: 0.803 and MAE score: +/-214.08 RM</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-39-output-2.png" width="602" height="477"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-39-output-2.png" width="602" height="477" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="39">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>mae_score <span class="op">=</span> [mae_rf_cv,</span>
 <span id="cb47-2"><a href="#cb47-2"></a>             mae_rf_cv_test]</span>
 <span id="cb47-3"><a href="#cb47-3"></a></span>
@@ -1529,8 +1584,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="feature-importance" class="level3">
 <h3 class="anchored" data-anchor-id="feature-importance">Feature Importance</h3>
 <div class="cell" data-execution_count="40">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># calculate the feature importances</span></span>
 <span id="cb48-2"><a href="#cb48-2"></a>importances <span class="op">=</span> rf_tree.feature_importances_</span>
 <span id="cb48-3"><a href="#cb48-3"></a></span>
@@ -1565,7 +1620,11 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb48-32"><a href="#cb48-32"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-41-output-1.png" width="685" height="337"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-41-output-1.png" width="685" height="337" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1594,7 +1653,7 @@ Length: 63, dtype: int64</code></pre>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-madhuri2019" class="csl-entry" role="listitem">
 Madhuri, CH. Raga, G. Anuradha, and M. Vani Pujitha. 2019. <span>“House Price Prediction Using Regression Techniques: A Comparative Study.”</span> <em>2019 International Conference on Smart Structures and Systems (ICSSS)</em>, March. <a href="https://doi.org/10.1109/icsss.2019.8882834">https://doi.org/10.1109/icsss.2019.8882834</a>.
 </div>
@@ -1604,7 +1663,7 @@ Xu, Kevin, and Hieu Nguyen. 2022. <span>“Predicting Housing Prices and Analyzi
 <div id="ref-zhao2022" class="csl-entry" role="listitem">
 Zhao, Yaping, Ramgopal Ravi, Shuhui Shi, Zhongrui Wang, Edmund Y. Lam, and Jichang Zhao. 2022. <span>“PATE: Property, Amenities, Traffic and Emotions Coming Together for Real Estate Price Prediction.”</span> <a href="https://doi.org/10.48550/ARXIV.2209.05471">https://doi.org/10.48550/ARXIV.2209.05471</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
   author = {Arie Wijaya, Aditya},
   title = {{Easy} {Report:} {Malaysia} {Property} {Pricing}},
   date = {2023-02-12},
@@ -1694,10 +1753,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1707,8 +1783,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1721,6 +1806,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1764,6 +1968,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1789,6 +1994,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1846,20 +2077,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/adtarie\.net");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
@@ -1870,22 +2087,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="https://www.quarto.org">Built w/ Quarto</a>
+    <a class="nav-link" href="https://www.quarto.org">
+<p>Built w/ Quarto</p>
+</a>
   </li>  
 </ul>
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/006-easy-report-machine-learning/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../license.html">License</a>
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 

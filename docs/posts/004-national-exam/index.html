@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -106,11 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Webscraping National Exams of Indonesia">
 <meta property="og:description" content="National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?">
-<meta property="og:image" content="https://adtarie.net/posts/004-national-exam/publications.jpeg">
 <meta property="og:locale" content="en_EN">
 <meta name="twitter:title" content="Webscraping National Exams of Indonesia">
 <meta name="twitter:description" content="National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?">
-<meta name="twitter:image" content="https://adtarie.net/posts/004-national-exam/publications.jpeg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -118,8 +123,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -128,21 +133,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -188,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -204,9 +209,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#lets-talk-about-kalimantan-timur" id="toc-lets-talk-about-kalimantan-timur" class="nav-link" data-scroll-target="#lets-talk-about-kalimantan-timur">Let’s Talk about Kalimantan Timur</a></li>
   <li><a href="#what-do-we-get" id="toc-what-do-we-get" class="nav-link" data-scroll-target="#what-do-we-get">What do We Get?</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/004-national-exam/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/004-national-exam/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -216,9 +221,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@isengrapher?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ed Us</a> on <a href="https://unsplash.com/photos/td71Lq7uAhA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
+<figcaption>Photo by <a href="https://unsplash.com/@isengrapher?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ed Us</a> on <a href="https://unsplash.com/photos/td71Lq7uAhA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 <p><img src="./publications.jpeg" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
@@ -227,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For the longest time, national exam, like many other countries in the world is used as one of the metric to measure how well our future would be (re: children). The concept is simple, each and every children in the country will be given a set of questions/ tasks, that has to be completed for a given time, on different subjects (likely to be Math, Language, Science).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figcaption class="figure-caption">Indonesia Minister of Education</figcaption>
+<figcaption>Indonesia Minister of Education</figcaption>
 <p><img src="./Nadiem_Makarim.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
 </figure>
 </div>
@@ -240,8 +246,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’re taking a look on the data from Ministry of Education (Kemendikbud), from 2019 on national exams as follows.</p>
 <p>For this use we will need to scrape the data from the website, but the catch is–we are using just pandas library!</p>
 <div class="cell" data-execution_count="1">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -250,8 +256,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Enter pandas.read_html()</p>
 <div class="cell" data-execution_count="2">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>un_2019<span class="op">=</span> <span class="op">\</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>(pd</span>
 <span id="cb2-3"><a href="#cb2-3"></a> .read_html(<span class="st">'https://npd.kemdikbud.go.id/?appid=hasilun&amp;tahun=2019'</span>)</span>
@@ -384,8 +390,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Let’s see what features do we have, and which one do we really <strong>care</strong> about in this project.</p>
 <div class="cell" data-execution_count="3">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>un_2019.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -398,8 +404,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We will leave some columns and just using region information (‘Nama Wilayah’, ‘Propinsi’), and national exams score (‘UN SMP’,‘UN SMA IPA’, ‘UN SMA IPS’)</p>
 <div class="cell" data-execution_count="4">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>un_2019 <span class="op">=</span> un_2019[[<span class="st">'Nama Wilayah'</span>, <span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>,<span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]]</span>
 <span id="cb5-2"><a href="#cb5-2"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -467,8 +473,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Let’s also check if the dtypes is already correct e.g.&nbsp;digit would be float64 or int64 dtype.</p>
 <div class="cell" data-execution_count="5">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>un_2019.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -488,8 +494,8 @@ memory usage: 21.5+ KB</code></pre>
 </div>
 <p>Let’s make some amendments on dtypes, to allow plotting.</p>
 <div class="cell" data-execution_count="6">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>un_2019 <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>un_2019.astype({</span>
 <span id="cb8-3"><a href="#cb8-3"></a>    <span class="st">'UN SMP'</span>: <span class="bu">float</span>,</span>
@@ -509,8 +515,8 @@ dtype: object</code></pre>
 </div>
 <p>Just me, but I dont like redundant information, so let’s remove some of the words in the column.</p>
 <div class="cell" data-execution_count="7">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>un_2019 <span class="op">=</span> un_2019.rename(columns<span class="op">=</span>{</span>
 <span id="cb10-2"><a href="#cb10-2"></a>    <span class="st">'Nama Wilayah'</span>: <span class="st">'Wilayah'</span>})</span>
 <span id="cb10-3"><a href="#cb10-3"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -579,8 +585,8 @@ dtype: object</code></pre>
 </div>
 <p>Similarly, let’s remove ‘Prov’ from each data in ‘Propinsi’ column.</p>
 <div class="cell" data-execution_count="8">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>un_2019[<span class="st">'Propinsi'</span>] <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>un_2019[<span class="st">'Propinsi'</span>].<span class="bu">str</span>.replace(<span class="st">'Prov. '</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb11-3"><a href="#cb11-3"></a></span>
@@ -653,8 +659,8 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="quick-dataviz">Quick DataViz…</h3>
 <p>Let’s plot senior high school (SMA) data:</p>
 <div class="cell" data-execution_count="9">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#making the barchart</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
 <span id="cb12-3"><a href="#cb12-3"></a></span>
@@ -677,7 +683,11 @@ dtype: object</code></pre>
 <span id="cb12-20"><a href="#cb12-20"></a> ))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-10-output-1.png" width="637" height="781"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="637" height="781" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>So, from the look of it, 2019 seems to be the year of our capital city: D.K.I. Jakarta, followed by Yogyakarta, Jawa Tengah, Timur, Bali etc. Excluding Bangka Belitung, the big five is all from Java and Bali.</p>
@@ -688,8 +698,8 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="scrape-more-data">Scrape More Data</h3>
 <p>Let’s all be human, not abusive towards our notebook, and create a function to scrape our data-change the dtypes-change the column name etc.</p>
 <div class="cell" data-execution_count="10">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">def</span> webscrap(tahun):</span>
 <span id="cb13-2"><a href="#cb13-2"></a>    df <span class="op">=</span> pd.read_html(<span class="ss">f'https://npd.kemdikbud.go.id/?appid=hasilun&amp;tahun=</span><span class="sc">{</span>tahun<span class="sc">}</span><span class="ss">'</span>)[<span class="dv">1</span>][<span class="dv">0</span>:<span class="dv">547</span>] <span class="co">#ambil data dari web</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a>    df <span class="op">=</span> df[[<span class="st">'Nama Wilayah'</span>, <span class="st">'Propinsi'</span>, <span class="st">'UN SMP'</span>,<span class="st">'UN SMA IPA'</span>, <span class="st">'UN SMA IPS'</span>]] <span class="co">#extract kolom</span></span>
@@ -702,8 +712,8 @@ dtype: object</code></pre>
 </div>
 <p>Then let’s scrap all years data from 2015-2019.</p>
 <div class="cell" data-execution_count="11">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>un_2015 <span class="op">=</span> webscrap(<span class="dv">2015</span>)</span>
 <span id="cb14-2"><a href="#cb14-2"></a>un_2016 <span class="op">=</span> webscrap(<span class="dv">2016</span>)</span>
 <span id="cb14-3"><a href="#cb14-3"></a>un_2017 <span class="op">=</span> webscrap(<span class="dv">2017</span>)</span>
@@ -713,8 +723,8 @@ dtype: object</code></pre>
 </div>
 <p>Let’s do quick sanity check:</p>
 <div class="cell" data-execution_count="12">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>un_2015.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -786,8 +796,8 @@ dtype: object</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="13">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>un_2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -860,8 +870,8 @@ dtype: object</code></pre>
 </div>
 <p>Even better, let’s combine all of the data into one big data:</p>
 <div class="cell" data-execution_count="14">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">#merge data</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>list_df <span class="op">=</span> [un_2015, un_2016, un_2017, un_2018, un_2019]</span>
 <span id="cb17-3"><a href="#cb17-3"></a>un_2015_2019 <span class="op">=</span> pd.concat(list_df, axis<span class="op">=</span><span class="st">'rows'</span>)</span>
@@ -880,8 +890,8 @@ Name: Tahun, dtype: int64</code></pre>
 </div>
 <p>Data looks good, but just to be safe, let’s save it before we do anything stupid.</p>
 <div class="cell" data-execution_count="15">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>un_2015_2019.to_csv(<span class="st">"un_2015_2019.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -890,8 +900,8 @@ Name: Tahun, dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="more-dataviz">More DataViz…</h3>
 <p>Let’s see which 10 regions have the highest mean national exams.</p>
 <div class="cell" data-execution_count="16">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>order_new <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>(un_2019</span>
 <span id="cb20-3"><a href="#cb20-3"></a> [[<span class="st">'Propinsi'</span>, <span class="st">'UN SMA IPA'</span>]]</span>
@@ -974,8 +984,8 @@ Name: Tahun, dtype: int64</code></pre>
 </div>
 <p>Let’s do some plotting for all years.</p>
 <div class="cell" data-execution_count="17">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">12</span>))</span>
 <span id="cb21-2"><a href="#cb21-2"></a></span>
 <span id="cb21-3"><a href="#cb21-3"></a>(sns</span>
@@ -992,14 +1002,18 @@ Name: Tahun, dtype: int64</code></pre>
 <span id="cb21-14"><a href="#cb21-14"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-18-output-1.png" width="935" height="949"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-18-output-1.png" width="935" height="949" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>From the above figure, it looks like the Bali, D.I. Yogyakarta, similar to 2019 dataset is indeed appearing at the top-5.</p>
 <p>But, let’s exclude year 2015 and 2016, as I think it is a bit an outlier in terms of value here.</p>
 <div class="cell" data-execution_count="18">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>fig, axs <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">12</span>))</span>
 <span id="cb22-2"><a href="#cb22-2"></a></span>
 <span id="cb22-3"><a href="#cb22-3"></a>(sns</span>
@@ -1016,14 +1030,18 @@ Name: Tahun, dtype: int64</code></pre>
 <span id="cb22-14"><a href="#cb22-14"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-19-output-1.png" width="935" height="949"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-19-output-1.png" width="935" height="949" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Just by looking at it, the big-five are from Java and Bali. Not until we reach rank 6 and below we see Bangka Belitung, Sumatera, and Kalimantan. Region outside Java and Bali.</p>
 <p>Now let’s see if our thinking is right, by getting a top region on each national exams from junior to senior high schools.</p>
 <div class="cell" data-execution_count="19">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">def</span> get_max_prop(df):</span>
 <span id="cb23-2"><a href="#cb23-2"></a>    max_un_smp <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMP'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
 <span id="cb23-3"><a href="#cb23-3"></a>    max_un_sma_ipa <span class="op">=</span> df.groupby([<span class="st">'Propinsi'</span>])[<span class="st">'UN SMA IPA'</span>].mean().nlargest(<span class="dv">1</span>).index[<span class="dv">0</span>]</span>
@@ -1033,8 +1051,8 @@ Name: Tahun, dtype: int64</code></pre>
 </div>
 <p>Let’s do a loop over years;</p>
 <div class="cell" data-execution_count="20">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>years <span class="op">=</span> [un_2015, un_2016, un_2017, un_2018, un_2019]</span>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="cf">for</span> year <span class="kw">in</span> years:</span>
 <span id="cb24-3"><a href="#cb24-3"></a>    <span class="bu">print</span>(get_max_prop(year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1055,8 +1073,8 @@ Name: Tahun, dtype: int64</code></pre>
 <p>Why? Cause I was raised in Tenggarong, Kutai Kartanegara region, Kalimantan Timur Province. I spent my senior high school here, so I have my own thinking here.</p>
 <p>My theory is even if Kalimantan Timur was up there at rank 8, it was not from Tenggarong.</p>
 <div class="cell" data-execution_count="21">
-<details open="">
-<summary>Code</summary>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>(un_2015_2019.query(<span class="st">"Propinsi == 'Kalimantan Timur'"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2"></a> .sort_values(by<span class="op">=</span><span class="st">'UN SMA IPA'</span>, ascending<span class="op">=</span><span class="va">False</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb26-3"><a href="#cb26-3"></a> .head(<span class="dv">10</span>)</span>
@@ -1198,7 +1216,7 @@ Why Bontang and Balikpapan?
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
   author = {Arie Wijaya, Aditya},
   title = {Webscraping {National} {Exams} of {Indonesia}},
   date = {2023-01-31},
@@ -1288,10 +1306,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/adtarie\.net");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1301,8 +1336,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1315,6 +1359,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1358,6 +1521,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1383,6 +1547,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1440,20 +1630,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/adtarie\.net");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="ariewjy/ariewjy.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
@@ -1464,22 +1640,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="https://www.quarto.org">Built w/ Quarto</a>
+    <a class="nav-link" href="https://www.quarto.org">
+<p>Built w/ Quarto</p>
+</a>
   </li>  
 </ul>
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/004-national-exam/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../license.html">License</a>
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 

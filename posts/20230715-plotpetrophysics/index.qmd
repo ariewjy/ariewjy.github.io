@@ -17,7 +17,7 @@ fig-cap-location: margin
 
 ![Welcome Page](images/image-0.png)
 
-This app was built to answer the need for a quicklook petrophysical analysis for well-log data. So far, author found no web application that was available for **FREE** to students and enthusiast-alike.
+This app was built to answer the need for a quicklook petrophysical analysis for well-log data. Up to the time of this article published, author found no web application that was available for **FREE** to students and enthusiast-alike.
 
 Like of the website can be found here [plotpetrophysics](https://plotpetrophysics.streamlit.app)
 
