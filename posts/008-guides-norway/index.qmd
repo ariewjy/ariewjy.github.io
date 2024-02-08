@@ -16,7 +16,7 @@ cap-location: bottom
 ![Foto Dermaga. Rogaland adalah nama Provinsi dari Stavanger (bagian dari Provinsi).](images/D6F2022F-4E88-47B4-9573-9CA582227D38_1_102_o-2.jpeg){width="720"}
 
 ::: callout-note
--   Artikel ini diperbaharui secara berkala. Perbaharuan terakhir dilakukan pada tanggal 15 Oktober 2023. Artikel merupakan pengalaman pribadi penulis/ interaksi penulis dengan rekan kerja dan/ teman, dan bisa saja berbeda dengan pengalaman anda. Harap melakukan pengecekan sendiri terlebih dahulu, karena penulis tidak bertanggungjawab atas ketidaksesuaian isi artikel terhadap pengalaman yang anda dapatkan.
+-   Artikel ini diperbaharui secara berkala. Perbaharuan terakhir dilakukan pada tanggal 08 Februari 2024. Artikel merupakan pengalaman pribadi penulis/ interaksi penulis dengan rekan kerja dan/ teman, dan bisa saja berbeda dengan pengalaman anda. Harap melakukan pengecekan sendiri terlebih dahulu, karena penulis tidak bertanggungjawab atas ketidaksesuaian isi artikel terhadap pengalaman yang anda dapatkan.
 
 -   Penulis akan merujuk Stavanger (kota) sebagai Norway (negara), kecuali disebutkan secara spesifik. Hal ini dikarenakan banyak hal yang merupakan peraturan negara (Norway), namun ada beberapa hal spesifik (lokal) yang hanya ada di Stavanger.
 :::
@@ -93,6 +93,12 @@ Harap diwaspadai, kalau sejauh ini memang tidak ada kewajiban untuk memindai bar
 ## Khusus Penduduk Stavanger
 
 Mulai dari 3 juli 2023, untuk warga yang bertempat tinggal di Stavanger, transportasi via Kolumbus (bis, kereta, ferry) digratiskan. Untuk bisa mendapatkan tiket harus mendaftar ke stavanger kommune [Registrasi Tiket Kolumbus Gratis](https://www.stavanger.kommune.no/vei-og-trafikk/gratis-kollektivreiser/). Anda membutuhkan D-num/ personal number dan nomor handphone lokal (untuk sms verifikasi).
+:::
+
+::: callout-note
+## Per 1 Jan 2024
+
+Sayangnya kebijakan tiket gratis ini tidak lagi diberlakukan, karena partai pengusungnya kalah dalam pemilu terakhir di Stavanger. Tiket tidak lagi gratis, dan tiap pengguna wajib membeli tiket untuk mengakses bis.
 :::
 
 ## Alat Pembayaran
@@ -332,7 +338,7 @@ Untuk Bus, bila bertempat di Stavanger, bisa mendapatkannya dengan gratis. Cek [
 
 Di Norway, pajak untuk pendapatan yang per tahun tidak lebih besar dari 650,000 NOK adalah sebesar 25%. Sedangkan untuk pendapatan di atas 650,000 NOK akan dihitung berdasarkan bracket tax yang ditentukan, lebih mudahnya bisa menuju link ini: [Tax Calculator](https://skattekalkulator.app.skatteetaten.no/#/). Contoh seperti di bawah;
 
-![](images/CleanShot 2023-10-29 at 11.40.52@2x.png)Patut dipahami, bahwa pajak di Norway dihitung per tahun, namun diambil sebanyak 10.5 bulan, karena pajak di bulan May-Jun adalah 0%, sedangkan di bulan-bulan masuk Winter senilai 50% dari nilai aslinya, sehingga 12-1.5=10.5. Kenapa ini penting? Karena nilai pajak anda per bulan akan menjadi lebih besar dari hitungan per tahun dibagi 12 bulan.
+![](images/CleanShot%202023-10-29%20at%2011.40.52@2x.png)Patut dipahami, bahwa pajak di Norway dihitung per tahun, namun diambil sebanyak 10.5 bulan, karena pajak di bulan May-Jun adalah 0%, sedangkan di bulan-bulan masuk Winter senilai 50% dari nilai aslinya, sehingga 12-1.5=10.5. Kenapa ini penting? Karena nilai pajak anda per bulan akan menjadi lebih besar dari hitungan per tahun dibagi 12 bulan.
 
 > Sebagai contoh, jika pajak anda adalah senilai 280,000 NOK per tahun dari total pendapatan senilai 800,000 NOK, maka pajak anda adalah 35% dari total pendapatan. Namun karena pajak hanya ditagih sebanyak 10.5x dalam setahun, maka di bulan-bulan yg ditagih pajak, setiap penagihan, nilainya dalah 35%\*12/10.5=40%. Itulah sebabnya pajak di Norway "**terlihat**" tinggi.
 
