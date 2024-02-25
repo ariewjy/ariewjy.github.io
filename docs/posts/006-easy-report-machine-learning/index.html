@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -339,6 +339,7 @@ Why Webscraping?
 </details>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -421,6 +422,7 @@ Why Webscraping?
 </div>
 </div>
 </div>
+</div>
 <p>There are 13 features with one unique ids (<code>ads_id</code>) and one target feature (<code>monthly_rent</code>)</p>
 <ul>
 <li><code>ads_id</code>: the listing ids (unique)</li>
@@ -457,6 +459,7 @@ Why Webscraping?
 <span id="cb2-11"><a href="#cb2-11"></a>df.head(<span class="dv">2</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
+<div>
 <div>
 
 
@@ -537,6 +540,7 @@ Why Webscraping?
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -637,6 +641,7 @@ dtype: int64</code></pre>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -701,6 +706,7 @@ dtype: int64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1260,6 +1266,8 @@ Length: 63, dtype: int64</code></pre>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
 <p><a href="#fig-model-comparison" class="quarto-xref">Figure&nbsp;6</a> shows the result of all model tested on train dataset.</p>
+<details open="" class="code-fold">
+<summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
 <span id="cb42-2"><a href="#cb42-2"></a>                y<span class="op">=</span>y_pred_train_mean)</span>
 <span id="cb42-3"><a href="#cb42-3"></a>plt.show()</span>
@@ -1278,11 +1286,9 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb42-16"><a href="#cb42-16"></a>sns.scatterplot(x<span class="op">=</span>y_train, </span>
 <span id="cb42-17"><a href="#cb42-17"></a>                y<span class="op">=</span>y_pred_train_rfcv)</span>
 <span id="cb42-18"><a href="#cb42-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell quarto-layout-panel" data-execution_count="35" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<details open="" class="code-fold">
-<summary>Show Code</summary>
-</details>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1295,8 +1301,6 @@ Figure&nbsp;1: Mean
 </figure>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1309,6 +1313,8 @@ Figure&nbsp;2: Linear Regression
 </figure>
 </div>
 </div>
+</div>
+<div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1321,8 +1327,6 @@ Figure&nbsp;3: Gradient Boosting
 </figure>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1335,6 +1339,8 @@ Figure&nbsp;4: Gradient Boosting with CV
 </figure>
 </div>
 </div>
+</div>
+<div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1347,8 +1353,6 @@ Figure&nbsp;5: Random Forest
 </figure>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1422,6 +1426,7 @@ Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models
 </details>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1466,6 +1471,7 @@ Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1553,6 +1559,7 @@ Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models
 </details>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1577,6 +1584,7 @@ Figure&nbsp;7: Comparison Chart of R2 and MAE for all Models
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>

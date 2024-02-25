@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -340,6 +340,7 @@ Figure&nbsp;3: Global Energy Consumption
 </details>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -641,6 +642,7 @@ Figure&nbsp;3: Global Energy Consumption
 </div>
 </div>
 </div>
+</div>
 <hr>
 <p>There are <strong>over 70 columns</strong> in the original dataset, so we will only use columns that we are interested in, mainly related to <strong><code>GDP and CO2 emission of a country, referenced by year.</code></strong> Some data cleaning (<em>removing any null rows in GDP per Capita, or CO<sub>2</sub> consumption per Capita, etc.</em>).</p>
 <div class="cell" data-execution_count="2">
@@ -663,6 +665,7 @@ Figure&nbsp;3: Global Energy Consumption
 <span id="cb2-15"><a href="#cb2-15"></a>co2.dropna().sample(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
+<div>
 <div>
 
 
@@ -730,6 +733,7 @@ Figure&nbsp;3: Global Energy Consumption
 </div>
 </div>
 </div>
+</div>
 <hr>
 <p>I would like to make graphic where I can <strong>colored a country based on its continent</strong>, just for an additional context to the data. We took that from Gapminder dataset<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and combine it with the previously curated CO<sub>2</sub> dataset we just created.</p>
 <div class="cell" data-execution_count="3">
@@ -750,6 +754,7 @@ Figure&nbsp;3: Global Energy Consumption
 <span id="cb3-13"><a href="#cb3-13"></a>co2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
+<div>
 <div>
 
 
@@ -872,6 +877,7 @@ Figure&nbsp;3: Global Energy Consumption
 </div>
 </div>
 </div>
+</div>
 <hr>
 <p>I would like to also see depending on the GDP per Capita, from which income class is a certain country belongs to. I am using a rough <a href="https://blogs.worldbank.org/opendata/new-world-bank-country-classifications-income-level-2022-2023">classification by world-bank</a>. I know this may not be the best representation as income class is not the same every year<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and I am not exactly using exact number here, but I think this is good enough to put some contexts for data illustration.</p>
 <div class="cell" data-execution_count="4">
@@ -897,6 +903,7 @@ Figure&nbsp;3: Global Energy Consumption
 <span id="cb4-18"><a href="#cb4-18"></a>co2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="4">
+<div>
 <div>
 
 
@@ -1028,6 +1035,7 @@ Figure&nbsp;3: Global Energy Consumption
 </table>
 
 <p>2791 rows × 7 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -1268,6 +1276,7 @@ Figure&nbsp;5: CO2 vs GDP per Capita for some countries with different trend
 </details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1425,6 +1434,7 @@ Figure&nbsp;5: CO2 vs GDP per Capita for some countries with different trend
 </div>
 </div>
 </div>
+</div>
 <hr>
 <p>Do the same for CO<sub>2</sub> Emissions between 1990-2018.</p>
 <div class="cell" data-execution_count="8">
@@ -1447,6 +1457,7 @@ Figure&nbsp;5: CO2 vs GDP per Capita for some countries with different trend
 <span id="cb8-15"><a href="#cb8-15"></a>merged_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
+<div>
 <div>
 
 
@@ -1614,6 +1625,7 @@ Figure&nbsp;5: CO2 vs GDP per Capita for some countries with different trend
 </table>
 
 <p>2791 rows × 10 columns</p>
+</div>
 </div>
 </div>
 </div>

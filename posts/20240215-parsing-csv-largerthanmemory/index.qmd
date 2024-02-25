@@ -1,0 +1,35 @@
+---
+title: Parsing 10++ GB CSV file in Python -- Larger than Memory
+description: |
+  A personal quest to find the most effective solution to parse more than ten gigabytes of a single CSV file in python. TLDR; pandas is still reliable (with some adjustment), polars is similar (as expected), dask is surprisingly good despite limited API. 
+title-block-banner: true
+date: '2024-02-15'
+categories:
+  - python
+  - data
+  - csv
+draft: true
+fig-cap-location: bottom
+fig-align: left
+linkcolor: 'green'
+image: preview.png
+jupyter: minids
+citation-location: document
+---
+
+## Context
+
+For a bit of background, this comes as my personal side-project from work, to optimize a query done in every single job. The query was started with parsing multiple CSV files, which one of them being more than 10 Gigabytes in size. 
+
+Currently the script was run completely by -- you guess it -- pandas, so my first instict was to try different library such as the infamous polars, the subtle dask, and the dark horse duckdb. The result might surprise you, at least it was for me. As pandas, is actually performs better compared to polars for example, in parsing this CSV file. 
+
+Full disclosure, I am a software engineer, nor a data scientist, so my principle is simple: I use what I have to get the job done. TLDR; I tried to set different parameters in polars as best as I could, but the result still off by at least 20s compared to a faster pandas with chunking/ dask. How about duckdb? Stay tune till the end to see the complete comparison.
+
+```{python}
+
+#| label: fig-co2up-gdpup
+#| fig-cap: Countries with increased CO2 Emission and GDP
+
+
+```
+

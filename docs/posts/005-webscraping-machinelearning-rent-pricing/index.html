@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -695,6 +695,7 @@ div.csl-indent {
 </div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -777,6 +778,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</div>
 <p>Finally, let’s extract dataset from 250 pages. File is then saved into a csv, to be reloaded again.</p>
 <div class="cell" data-execution_count="9">
 <details open="" class="code-fold">
@@ -800,6 +802,7 @@ div.csl-indent {
 <span id="cb16-3"><a href="#cb16-3"></a>df.head(<span class="dv">3</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="10">
+<div>
 <div>
 
 
@@ -894,6 +897,7 @@ div.csl-indent {
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1002,6 +1006,7 @@ memory usage: 1015.8+ KB</code></pre>
 <span id="cb24-11"><a href="#cb24-11"></a>df.head(<span class="dv">4</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="16">
+<div>
 <div>
 
 
@@ -1113,6 +1118,7 @@ memory usage: 1015.8+ KB</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="extracting-near-ktmlrt" class="level4">
 <h4 class="anchored" data-anchor-id="extracting-near-ktmlrt">Extracting Near KTM/LRT</h4>
@@ -1140,6 +1146,7 @@ memory usage: 1015.8+ KB</code></pre>
 <span id="cb26-2"><a href="#cb26-2"></a>df.head(<span class="dv">4</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="18">
+<div>
 <div>
 
 
@@ -1258,6 +1265,7 @@ memory usage: 1015.8+ KB</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p>Plotting the difference between nearby KTM/LRT or not:</p>
 <div class="cell" data-execution_count="19">
 <details open="" class="code-fold">
@@ -1350,6 +1358,7 @@ dtype: int64</code></pre>
 <span id="cb33-10"><a href="#cb33-10"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="22">
+<div>
 <div>
 
 
@@ -1520,6 +1529,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -1638,6 +1648,7 @@ Figure&nbsp;3: Comparison between Different Scale
 </details>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1731,6 +1742,7 @@ Figure&nbsp;3: Comparison between Different Scale
 </div>
 </div>
 </div>
+</div>
 <p>Sanity check after removal as shown in <a href="#fig-rent-final" class="quarto-xref">Figure&nbsp;4</a> belo:</p>
 <div class="cell" data-execution_count="28">
 <details open="" class="code-fold">
@@ -1796,6 +1808,7 @@ Figure&nbsp;5: Raw Data Size sq.ft
 <span id="cb43-7"><a href="#cb43-7"></a>dfx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="30">
+<div>
 <div>
 
 
@@ -1966,6 +1979,7 @@ Figure&nbsp;5: Raw Data Size sq.ft
 </div>
 </div>
 </div>
+</div>
 <p>Sanity check:</p>
 <div class="cell" data-execution_count="31">
 <details open="" class="code-fold">
@@ -2049,6 +2063,7 @@ Figure&nbsp;6: Final Data after Outlier Removal
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="35">
+<div>
 <div>
 
 
@@ -2207,6 +2222,7 @@ Figure&nbsp;6: Final Data after Outlier Removal
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="36">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -2263,6 +2279,7 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 <span id="cb55-2"><a href="#cb55-2"></a>X_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="40">
+<div>
 <div>
 
 
@@ -2421,6 +2438,7 @@ Name: monthly_rent_rm, Length: 9822, dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p><strong>Preprocessing Original Data for Categorical Dtypes</strong></p>
 <p>One must paying attention to the number of categorical observation in the original data, with respect to the sampling train-test value. If, the test_size = 0.3, that means any categorical observation with a total of 3 and less, would not be distributed evenly among train and test data.</p>
 <div class="cell" data-execution_count="41">
@@ -2473,6 +2491,7 @@ set()</code></pre>
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>dfx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="44">
+<div>
 <div>
 
 
@@ -2643,6 +2662,7 @@ set()</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="45">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -2798,197 +2818,6 @@ Name: property_type, dtype: int64</code></pre>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="53">
 <div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">completion_year</th>
-<th data-quarto-table-cell-role="th">location</th>
-<th data-quarto-table-cell-role="th">property_type</th>
-<th data-quarto-table-cell-role="th">rooms</th>
-<th data-quarto-table-cell-role="th">parking</th>
-<th data-quarto-table-cell-role="th">bathroom</th>
-<th data-quarto-table-cell-role="th">size_sqft</th>
-<th data-quarto-table-cell-role="th">furnished</th>
-<th data-quarto-table-cell-role="th">nearby_railways</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8649</td>
-<td>NaN</td>
-<td>Maju</td>
-<td>Condominium</td>
-<td>2.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>800</td>
-<td>Fully Furnished</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9112</td>
-<td>1993.0</td>
-<td>Bangsar</td>
-<td>Condominium</td>
-<td>2.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>890</td>
-<td>Fully Furnished</td>
-<td>yes</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1472</td>
-<td>NaN</td>
-<td>Jalil</td>
-<td>Condominium</td>
-<td>1.0</td>
-<td>NaN</td>
-<td>1.0</td>
-<td>1200</td>
-<td>Fully Furnished</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5536</td>
-<td>NaN</td>
-<td>Cheras</td>
-<td>Condominium</td>
-<td>3.0</td>
-<td>2.0</td>
-<td>2.0</td>
-<td>893</td>
-<td>Fully Furnished</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8152</td>
-<td>NaN</td>
-<td>Pudu</td>
-<td>Apartment</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>2.0</td>
-<td>980</td>
-<td>Partially Furnished</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">7541</td>
-<td>2001.0</td>
-<td>Ampang</td>
-<td>Apartment</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>2.0</td>
-<td>828</td>
-<td>Partially Furnished</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7927</td>
-<td>NaN</td>
-<td>South</td>
-<td>Flat</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>2.0</td>
-<td>750</td>
-<td>Not Furnished</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5340</td>
-<td>2023.0</td>
-<td>Cheras</td>
-<td>Condominium</td>
-<td>4.0</td>
-<td>2.0</td>
-<td>2.0</td>
-<td>1000</td>
-<td>Partially Furnished</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1369</td>
-<td>NaN</td>
-<td>KLCC</td>
-<td>Condominium</td>
-<td>1.0</td>
-<td>NaN</td>
-<td>1.0</td>
-<td>473</td>
-<td>Fully Furnished</td>
-<td>yes</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3659</td>
-<td>2017.0</td>
-<td>Road</td>
-<td>Service Residence</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>2.0</td>
-<td>953</td>
-<td>Partially Furnished</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-<p>7825 rows × 9 columns</p>
-</div>
-</div>
-</div>
-<div class="cell" data-execution_count="54">
-<details open="" class="code-fold">
-<summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.furnished.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.furnished.to_list()))</span>
-<span id="cb76-2"><a href="#cb76-2"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.location.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.location.to_list()))</span>
-<span id="cb76-3"><a href="#cb76-3"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.property_type.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.property_type.to_list()))</span>
-<span id="cb76-4"><a href="#cb76-4"></a><span class="co"># print(set(X_train.nearby_railways.to_list()) - set(X_test.nearby_railways.to_list()))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>set()
-set()
-set()</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="55">
-<details open="" class="code-fold">
-<summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a><span class="bu">print</span>(dfx_new.location.nunique())</span>
-<span id="cb78-2"><a href="#cb78-2"></a><span class="bu">print</span>(X_train.location.nunique())</span>
-<span id="cb78-3"><a href="#cb78-3"></a><span class="bu">print</span>(X_test.location.nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>46
-46
-46</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="56">
-<details open="" class="code-fold">
-<summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a><span class="co">#sanity check</span></span>
-<span id="cb80-2"><a href="#cb80-2"></a>X_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="56">
 <div>
 
 
@@ -3147,6 +2976,201 @@ set()</code></pre>
 </div>
 </div>
 </div>
+</div>
+<div class="cell" data-execution_count="54">
+<details open="" class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.furnished.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.furnished.to_list()))</span>
+<span id="cb76-2"><a href="#cb76-2"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.location.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.location.to_list()))</span>
+<span id="cb76-3"><a href="#cb76-3"></a><span class="bu">print</span>(<span class="bu">set</span>(X_train.property_type.to_list()) <span class="op">-</span> <span class="bu">set</span>(X_test.property_type.to_list()))</span>
+<span id="cb76-4"><a href="#cb76-4"></a><span class="co"># print(set(X_train.nearby_railways.to_list()) - set(X_test.nearby_railways.to_list()))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>set()
+set()
+set()</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="55">
+<details open="" class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a><span class="bu">print</span>(dfx_new.location.nunique())</span>
+<span id="cb78-2"><a href="#cb78-2"></a><span class="bu">print</span>(X_train.location.nunique())</span>
+<span id="cb78-3"><a href="#cb78-3"></a><span class="bu">print</span>(X_test.location.nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>46
+46
+46</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="56">
+<details open="" class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a><span class="co">#sanity check</span></span>
+<span id="cb80-2"><a href="#cb80-2"></a>X_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">completion_year</th>
+<th data-quarto-table-cell-role="th">location</th>
+<th data-quarto-table-cell-role="th">property_type</th>
+<th data-quarto-table-cell-role="th">rooms</th>
+<th data-quarto-table-cell-role="th">parking</th>
+<th data-quarto-table-cell-role="th">bathroom</th>
+<th data-quarto-table-cell-role="th">size_sqft</th>
+<th data-quarto-table-cell-role="th">furnished</th>
+<th data-quarto-table-cell-role="th">nearby_railways</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8649</td>
+<td>NaN</td>
+<td>Maju</td>
+<td>Condominium</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>800</td>
+<td>Fully Furnished</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9112</td>
+<td>1993.0</td>
+<td>Bangsar</td>
+<td>Condominium</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>890</td>
+<td>Fully Furnished</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1472</td>
+<td>NaN</td>
+<td>Jalil</td>
+<td>Condominium</td>
+<td>1.0</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>1200</td>
+<td>Fully Furnished</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5536</td>
+<td>NaN</td>
+<td>Cheras</td>
+<td>Condominium</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>893</td>
+<td>Fully Furnished</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8152</td>
+<td>NaN</td>
+<td>Pudu</td>
+<td>Apartment</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>980</td>
+<td>Partially Furnished</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7541</td>
+<td>2001.0</td>
+<td>Ampang</td>
+<td>Apartment</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>828</td>
+<td>Partially Furnished</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7927</td>
+<td>NaN</td>
+<td>South</td>
+<td>Flat</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>750</td>
+<td>Not Furnished</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5340</td>
+<td>2023.0</td>
+<td>Cheras</td>
+<td>Condominium</td>
+<td>4.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>1000</td>
+<td>Partially Furnished</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1369</td>
+<td>NaN</td>
+<td>KLCC</td>
+<td>Condominium</td>
+<td>1.0</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>473</td>
+<td>Fully Furnished</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3659</td>
+<td>2017.0</td>
+<td>Road</td>
+<td>Service Residence</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>953</td>
+<td>Partially Furnished</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>7825 rows × 9 columns</p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" data-execution_count="57">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -3195,6 +3219,7 @@ dtype: int64</code></pre>
 <span id="cb85-2"><a href="#cb85-2"></a>X_train_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="60">
+<div>
 <div>
 
 
@@ -3305,6 +3330,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="61">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -3386,6 +3412,7 @@ dtype: int64</code></pre>
 <span id="cb92-2"><a href="#cb92-2"></a>X_train_cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="65">
+<div>
 <div>
 
 
@@ -3484,6 +3511,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="66">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -3524,6 +3552,7 @@ dtype: int64</code></pre>
 <span id="cb97-2"><a href="#cb97-2"></a>X_train_cat_ohe.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="68">
+<div>
 <div>
 
 
@@ -3607,6 +3636,7 @@ dtype: int64</code></pre>
 </table>
 
 <p>2 rows × 58 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -3740,6 +3770,7 @@ dtype: int64</code></pre>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="73">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -3825,6 +3856,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="74">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -3890,6 +3922,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1"></a>X_train_clean.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="77">
+<div>
 <div>
 
 
@@ -4045,6 +4078,7 @@ Length: 63, dtype: int64</code></pre>
 </table>
 
 <p>5 rows × 63 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -4456,6 +4490,7 @@ Length: 63, dtype: int64</code></pre>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="104">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -4500,6 +4535,7 @@ Length: 63, dtype: int64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -4591,6 +4627,7 @@ dtype: int64</code></pre>
 <span id="cb151-2"><a href="#cb151-2"></a>X_test_num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="107">
+<div>
 <div>
 
 
@@ -4701,6 +4738,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="108">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -4740,6 +4778,7 @@ dtype: int64</code></pre>
 <span id="cb156-2"><a href="#cb156-2"></a>X_test_cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="110">
+<div>
 <div>
 
 
@@ -4838,6 +4877,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="111">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -4875,6 +4915,7 @@ dtype: int64</code></pre>
 <span id="cb161-2"><a href="#cb161-2"></a>X_test_cat_ohe.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="113">
+<div>
 <div>
 
 
@@ -4961,6 +5002,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="114">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -5010,6 +5052,7 @@ dtype: int64</code></pre>
 <div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb165-1"><a href="#cb165-1"></a>X_test_concat.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="116">
+<div>
 <div>
 
 
@@ -5096,6 +5139,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="cell" data-execution_count="117">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
@@ -5160,6 +5204,7 @@ Length: 63, dtype: int64</code></pre>
 <div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb170-1"><a href="#cb170-1"></a>X_test_clean.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="120">
+<div>
 <div>
 
 
@@ -5318,6 +5363,7 @@ Length: 63, dtype: int64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="test-data-result" class="level3">
@@ -5386,6 +5432,7 @@ Length: 63, dtype: int64</code></pre>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="122">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -5410,6 +5457,7 @@ Length: 63, dtype: int64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -5445,6 +5493,7 @@ Length: 63, dtype: int64</code></pre>
 <span id="cb174-25"><a href="#cb174-25"></a>df.sort_values(by<span class="op">=</span><span class="st">'importance_value'</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="123">
+<div>
 <div>
 
 
@@ -5510,6 +5559,7 @@ Length: 63, dtype: int64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
