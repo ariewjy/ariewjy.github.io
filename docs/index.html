@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -81,9 +81,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-image','listing-title','listing-description','listing-date','listing-reading-time','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 5,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -183,7 +182,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="CO2">CO2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bahasa-indonesia">bahasa-indonesia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="camera">camera <span class="quarto-category-count">(1)</span></div><div class="category" data-category="career">career <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data-science">data-science <span class="quarto-category-count">(4)</span></div><div class="category" data-category="economy">economy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="energy">energy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="geoscience">geoscience <span class="quarto-category-count">(1)</span></div><div class="category" data-category="life">life <span class="quarto-category-count">(1)</span></div><div class="category" data-category="norway">norway <span class="quarto-category-count">(1)</span></div><div class="category" data-category="project">project <span class="quarto-category-count">(5)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(5)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="report">report <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ricohgr">ricohgr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="stavanger">stavanger <span class="quarto-category-count">(1)</span></div><div class="category" data-category="streamlit">streamlit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tutorial">tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="vscode">vscode <span class="quarto-category-count">(1)</span></div><div class="category" data-category="webscraping">webscraping <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="CO2">CO2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bahasa-indonesia">bahasa-indonesia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="camera">camera <span class="quarto-category-count">(1)</span></div><div class="category" data-category="career">career <span class="quarto-category-count">(1)</span></div><div class="category" data-category="csv">csv <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data">data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data-science">data-science <span class="quarto-category-count">(4)</span></div><div class="category" data-category="economy">economy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="energy">energy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="geoscience">geoscience <span class="quarto-category-count">(1)</span></div><div class="category" data-category="life">life <span class="quarto-category-count">(1)</span></div><div class="category" data-category="norway">norway <span class="quarto-category-count">(1)</span></div><div class="category" data-category="project">project <span class="quarto-category-count">(5)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(6)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="report">report <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ricohgr">ricohgr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="stavanger">stavanger <span class="quarto-category-count">(1)</span></div><div class="category" data-category="streamlit">streamlit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tutorial">tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="vscode">vscode <span class="quarto-category-count">(1)</span></div><div class="category" data-category="webscraping">webscraping <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -210,7 +209,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
@@ -229,19 +228,55 @@ window.Quarto = {
      </select>
   </div>
 </div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-left" data-index="0" data-categories="ricohgr,camera" data-listing-date-sort="1708815600000" data-listing-file-modified-sort="1708861679142" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1390">
-<div class="thumbnail">
-<p><a href="./posts/20240225-ricohgriii-short-term/index.html" class="no-external"></a></p><a href="./posts/20240225-ricohgriii-short-term/index.html" class="no-external">
-<p><img src="./posts/20240225-ricohgriii-short-term/images/camera-front.jpeg" class="thumbnail-image"></p>
-</a><p><a href="./posts/20240225-ricohgriii-short-term/index.html" class="no-external"></a></p>
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-categories="python,data,csv" data-listing-date-sort="1716073200000" data-listing-file-modified-sort="1716138574985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2783">
+<a href="./posts/20240215-parsing-csv-largerthanmemory/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/20240215-parsing-csv-largerthanmemory/images/plot.png" class="thumbnail-image card-img" style="height: 240px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Parsing 10+ GB CSV file in Python - Larger than Memory
+</h5>
+<div class="listing-reading-time card-text text-muted">
+14 min
 </div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/20240225-ricohgriii-short-term/index.html" class="no-external">Ricoh GR III - Not Quite Just Yet</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/20240225-ricohgriii-short-term/index.html" class="no-external"></a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
+python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data'); return false;">
+data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('csv'); return false;">
+csv
+</div>
+</div>
+<div class="card-text listing-description">
+<p>A personal quest to find the most effective solution to parse more than tens gigabytes of CSV file in python. Filezie is a poor metric to predict the performance</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 19, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="ricohgr,camera" data-listing-date-sort="1708819200000" data-listing-file-modified-sort="1708861679142" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1390">
+<a href="./posts/20240225-ricohgriii-short-term/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/20240225-ricohgriii-short-term/images/camera-front.jpeg" class="thumbnail-image card-img" style="height: 240px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Ricoh GR III - Not Quite Just Yet
+</h5>
+<div class="listing-reading-time card-text text-muted">
+7 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('ricohgr'); return false;">
@@ -251,33 +286,30 @@ ricohgr
 camera
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/20240225-ricohgriii-short-term/index.html" class="no-external">Ricoh GR III offers compact design, faster and reliable focus, unique film simulations that everyone adores. How does it translates in real-world use? </a>
+<div class="card-text listing-description">
+<p>Ricoh GR III offers compact design, faster and reliable focus, unique film simulations that everyone adores. How does it translates in real-world use?</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/20240225-ricohgriii-short-term/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 25, 2024
 </div>
-<div class="listing-reading-time">
-7 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="1" data-categories="energy,CO2,economy" data-listing-date-sort="1690063200000" data-listing-file-modified-sort="1701632080837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3201">
-<div class="thumbnail">
-<p><a href="./posts/20230723-co2-growth/index.html" class="no-external"></a></p><a href="./posts/20230723-co2-growth/index.html" class="no-external">
-<p><img src="./posts/20230723-co2-growth/preview.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/20230723-co2-growth/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/20230723-co2-growth/index.html" class="no-external">Decoupling GDP from CO2 Emission - Only If You’re Rich Enough?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/20230723-co2-growth/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="2" data-categories="energy,CO2,economy" data-listing-date-sort="1690066800000" data-listing-file-modified-sort="1701632080837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3201">
+<a href="./posts/20230723-co2-growth/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/20230723-co2-growth/preview.png" class="thumbnail-image card-img" style="height: 240px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Decoupling GDP from CO2 Emission - Only If You’re Rich Enough?
+</h5>
+<div class="listing-reading-time card-text text-muted">
+17 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('energy'); return false;">
@@ -290,33 +322,30 @@ CO2
 economy
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/20230723-co2-growth/index.html" class="no-external">Developed countries were able to decoupled their GDP from CO2 emissions, while in developing countries, CO2 emissions is an inevitable consequences of their economic growth. </a>
+<div class="card-text listing-description">
+<p>Developed countries were able to decoupled their GDP from CO2 emissions, while in developing countries, CO2 emissions is an inevitable consequences of their economic growth.</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/20230723-co2-growth/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jul 23, 2023
 </div>
-<div class="listing-reading-time">
-17 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="2" data-categories="streamlit,geoscience,project" data-listing-date-sort="1689372000000" data-listing-file-modified-sort="1707363920673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="263">
-<div class="thumbnail">
-<p><a href="./posts/20230715-plotpetrophysics/index.html" class="no-external"></a></p><a href="./posts/20230715-plotpetrophysics/index.html" class="no-external">
-<p><img src="./posts/20230715-plotpetrophysics/images/image-1.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/20230715-plotpetrophysics/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/20230715-plotpetrophysics/index.html" class="no-external">Plotpetrophysics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/20230715-plotpetrophysics/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="3" data-categories="streamlit,geoscience,project" data-listing-date-sort="1689375600000" data-listing-file-modified-sort="1707363920673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="263">
+<a href="./posts/20230715-plotpetrophysics/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/20230715-plotpetrophysics/images/image-1.png" class="thumbnail-image card-img" style="height: 240px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Plotpetrophysics
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('streamlit'); return false;">
@@ -329,33 +358,28 @@ geoscience
 project
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/20230715-plotpetrophysics/index.html" class="no-external">A web-application to do petrophysical analysis using LAS file well-log data </a>
+<div class="card-text listing-description">
+<p>A web-application to do petrophysical analysis using LAS file well-log data</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/20230715-plotpetrophysics/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jul 15, 2023
 </div>
-<div class="listing-reading-time">
-2 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="3" data-categories="norway,stavanger,life,bahasa-indonesia" data-listing-date-sort="1687730400000" data-listing-file-modified-sort="1707363278833" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3766">
-<div class="thumbnail">
-<p><a href="./posts/008-guides-norway/index.html" class="no-external"></a></p><a href="./posts/008-guides-norway/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/008-guides-norway/images/D6F2022F-4E88-47B4-9573-9CA582227D38_1_102_o-2.jpeg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/008-guides-norway/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/008-guides-norway/index.html" class="no-external">Petunjuk Hidup dan Menetap di Stavanger, Norway</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/008-guides-norway/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="4" data-categories="norway,stavanger,life,bahasa-indonesia" data-listing-date-sort="1687734000000" data-listing-file-modified-sort="1707363278833" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3766">
+<a href="./posts/008-guides-norway/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/008-guides-norway/images/D6F2022F-4E88-47B4-9573-9CA582227D38_1_102_o-2.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Petunjuk Hidup dan Menetap di Stavanger, Norway
+</h5>
+<div class="listing-reading-time card-text text-muted">
+19 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('norway'); return false;">
@@ -371,33 +395,28 @@ life
 bahasa-indonesia
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/008-guides-norway/index.html" class="no-external">Hal-hal yang saya harapkan saya tahu dan pahami sebelum saya pindah ke Norway [Bahasa Indonesia] </a>
+<div class="card-text listing-description">
+<p>Hal-hal yang saya harapkan saya tahu dan pahami sebelum saya pindah ke Norway [Bahasa Indonesia]</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/008-guides-norway/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jun 26, 2023
 </div>
-<div class="listing-reading-time">
-19 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="4" data-categories="tutorial,quarto,python,vscode" data-listing-date-sort="1679266800000" data-listing-file-modified-sort="1701558259047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1518">
-<div class="thumbnail">
-<p><a href="./posts/007-quarto-python-tutorial/index.html" class="no-external"></a></p><a href="./posts/007-quarto-python-tutorial/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/007-quarto-python-tutorial/images/image0.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/007-quarto-python-tutorial/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/007-quarto-python-tutorial/index.html" class="no-external">Personal Website using Jupyter Notebook and Quarto</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/007-quarto-python-tutorial/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="5" data-categories="tutorial,quarto,python,vscode" data-listing-date-sort="1679270400000" data-listing-file-modified-sort="1701558259047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1518">
+<a href="./posts/007-quarto-python-tutorial/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/007-quarto-python-tutorial/images/image0.jpg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Personal Website using Jupyter Notebook and Quarto
+</h5>
+<div class="listing-reading-time card-text text-muted">
+8 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
@@ -413,33 +432,28 @@ python
 vscode
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/007-quarto-python-tutorial/index.html" class="no-external">A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto. </a>
+<div class="card-text listing-description">
+<p>A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/007-quarto-python-tutorial/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 20, 2023
 </div>
-<div class="listing-reading-time">
-8 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="5" data-categories="project,data-science,python,webscraping,report" data-listing-date-sort="1676156400000" data-listing-file-modified-sort="1710453159168" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4916">
-<div class="thumbnail">
-<p><a href="./posts/006-easy-report-machine-learning/index.html" class="no-external"></a></p><a href="./posts/006-easy-report-machine-learning/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/006-easy-report-machine-learning/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006-easy-report-machine-learning/index.html" class="no-external">Easy Report: Malaysia Property Pricing</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/006-easy-report-machine-learning/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="6" data-categories="project,data-science,python,webscraping,report" data-listing-date-sort="1676160000000" data-listing-file-modified-sort="1710453159168" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4916">
+<a href="./posts/006-easy-report-machine-learning/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/006-easy-report-machine-learning/kuala_lumpur_twin_owers.jpg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Easy Report: Malaysia Property Pricing
+</h5>
+<div class="listing-reading-time card-text text-muted">
+25 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -458,33 +472,28 @@ webscraping
 report
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/006-easy-report-machine-learning/index.html" class="no-external">TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price. </a>
+<div class="card-text listing-description">
+<p>TLDR version of web-scraping property ads listing in Kuala Lumpur, Malaysia, and built a machine learning model to predict the rent price.</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/006-easy-report-machine-learning/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 12, 2023
 </div>
-<div class="listing-reading-time">
-25 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="6" data-categories="project,data-science,python,webscraping" data-listing-date-sort="1675983600000" data-listing-file-modified-sort="1690564161867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5347">
-<div class="thumbnail">
-<p><a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="no-external"></a></p><a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png" alt="Website"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="no-external">Malaysia Property Pricing - Webscraping &amp; Machine Learning Model</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="7" data-categories="project,data-science,python,webscraping" data-listing-date-sort="1675987200000" data-listing-file-modified-sort="1690564161867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5347">
+<a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/005-webscraping-machinelearning-rent-pricing/mudah_my.png" alt="Website" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Malaysia Property Pricing - Webscraping &amp; Machine Learning Model
+</h5>
+<div class="listing-reading-time card-text text-muted">
+27 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -500,33 +509,28 @@ python
 webscraping
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="no-external">Full details on creating property dataset using webscraping, and building machine learning model to predict the rent price </a>
+<div class="card-text listing-description">
+<p>Full details on creating property dataset using webscraping, and building machine learning model to predict the rent price</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/005-webscraping-machinelearning-rent-pricing/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 10, 2023
 </div>
-<div class="listing-reading-time">
-27 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="7" data-categories="project,webscraping,data-science,python" data-listing-date-sort="1675119600000" data-listing-file-modified-sort="1690564161857" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1175">
-<div class="thumbnail">
-<p><a href="./posts/004-national-exam/index.html" class="no-external"></a></p><a href="./posts/004-national-exam/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/004-national-exam/publications.jpeg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/004-national-exam/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004-national-exam/index.html" class="no-external">Webscraping National Exams of Indonesia</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/004-national-exam/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="8" data-categories="project,webscraping,data-science,python" data-listing-date-sort="1675123200000" data-listing-file-modified-sort="1690564161857" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1175">
+<a href="./posts/004-national-exam/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/004-national-exam/publications.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Webscraping National Exams of Indonesia
+</h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -542,33 +546,28 @@ data-science
 python
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/004-national-exam/index.html" class="no-external">National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings? </a>
+<div class="card-text listing-description">
+<p>National Exams 2015-2019. Is Education still decentralized in Java island and its surroundings?</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/004-national-exam/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jan 31, 2023
 </div>
-<div class="listing-reading-time">
-6 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="8" data-categories="project,data-science,python" data-listing-date-sort="1666821600000" data-listing-file-modified-sort="1696453659787" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2727">
-<div class="thumbnail">
-<p><a href="./posts/003-medical-insurance/index.html" class="no-external"></a></p><a href="./posts/003-medical-insurance/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/003-medical-insurance/image.jpeg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/003-medical-insurance/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003-medical-insurance/index.html" class="no-external">Medical Insurance Cost - Exploratory Analysis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/003-medical-insurance/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="9" data-categories="project,data-science,python" data-listing-date-sort="1666825200000" data-listing-file-modified-sort="1696453659787" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2727">
+<a href="./posts/003-medical-insurance/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/003-medical-insurance/image.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Medical Insurance Cost - Exploratory Analysis
+</h5>
+<div class="listing-reading-time card-text text-muted">
+14 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project'); return false;">
@@ -581,33 +580,28 @@ data-science
 python
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/003-medical-insurance/index.html" class="no-external">Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges. </a>
+<div class="card-text listing-description">
+<p>Understanding Insurance Medical dataset to answer if smoking, sex, body mass index (BMI) affects the medical charges.</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/003-medical-insurance/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Oct 27, 2022
 </div>
-<div class="listing-reading-time">
-14 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="9" data-categories="blog,quarto" data-listing-date-sort="1666303200000" data-listing-file-modified-sort="1690564161844" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="921">
-<div class="thumbnail">
-<p><a href="./posts/002-migrating-to-quarto/index.html" class="no-external"></a></p><a href="./posts/002-migrating-to-quarto/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/002-migrating-to-quarto/image.jpeg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/002-migrating-to-quarto/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002-migrating-to-quarto/index.html" class="no-external">Migrating My Personal Blog to Quarto</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/002-migrating-to-quarto/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="10" data-categories="blog,quarto" data-listing-date-sort="1666306800000" data-listing-file-modified-sort="1690564161844" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="921">
+<a href="./posts/002-migrating-to-quarto/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/002-migrating-to-quarto/image.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Migrating My Personal Blog to Quarto
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
@@ -617,61 +611,50 @@ blog
 quarto
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/002-migrating-to-quarto/index.html" class="no-external">Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto. </a>
+<div class="card-text listing-description">
+<p>Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.</p>
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/002-migrating-to-quarto/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Oct 21, 2022
 </div>
-<div class="listing-reading-time">
-5 min
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-left" data-index="10" data-categories="career" data-listing-date-sort="1661724000000" data-listing-file-modified-sort="1690564161840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="500">
-<div class="thumbnail">
-<p><a href="./posts/001-my-first-gig/index.html" class="no-external"></a></p><a href="./posts/001-my-first-gig/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/001-my-first-gig/preview.jpeg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/001-my-first-gig/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001-my-first-gig/index.html" class="no-external">My First Interview in 500 Fortune Company</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/001-my-first-gig/index.html" class="no-external"></a>
+<div class="g-col-1" data-index="11" data-categories="career" data-listing-date-sort="1661727600000" data-listing-file-modified-sort="1690564161840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="500">
+<a href="./posts/001-my-first-gig/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/001-my-first-gig/preview.jpeg" style="height: 240px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+My First Interview in 500 Fortune Company
+</h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('career'); return false;">
 career
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/001-my-first-gig/index.html" class="no-external">During the interview, the user asked me a question that was attempted to test my honesty. I said I don’t know, so I got the job.</a>
+<div class="card-text listing-description">
+During the interview, the user asked me a question that was attempted to test my honesty. I said I don’t know, so I got the job.
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/001-my-first-gig/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Aug 29, 2022
 </div>
-<div class="listing-reading-time">
-3 min
+</div>
+</div>
 </div>
 </a>
-</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
-  <ul class="pagination"></ul>
-</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

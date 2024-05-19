@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Aditya Arie Wijaya">
-<meta name="dcterms.date" content="2024-02-15">
-<meta name="description" content="A personal quest to find the most effective solution to parse more than ten gigabytes of a single CSV file in python. TLDR; pandas is still reliable (with some adjustment), polars is similar (as expected), dask is surprisingly good despite limited API.">
+<meta name="dcterms.date" content="2024-05-02">
+<meta name="description" content="A personal quest to find the most effective solution to parse more than tens gigabytes of CSV file in python. Filezie is a poor metric to predict the performance">
 
-<title>Parsing 10++ GB CSV file in Python – Larger than Memory</title>
+<title>Parsing 10+ GB CSV file in Python - Larger than Memory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,18 +105,25 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.scss">
-<meta property="og:title" content="Parsing 10++ GB CSV file in Python – Larger than Memory">
-<meta property="og:description" content="A personal quest to find the most effective solution to parse more than ten gigabytes of a single CSV file in python. TLDR; pandas is still reliable (with some adjustment), polars is similar (as expected), dask is surprisingly good despite limited API.">
-<meta property="og:image" content="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/preview.png">
+<meta property="og:title" content="Parsing 10+ GB CSV file in Python - Larger than Memory">
+<meta property="og:description" content="A personal quest to find the most effective solution to parse more than tens gigabytes of CSV file in python. Filezie is a poor metric to predict the performance">
+<meta property="og:image" content="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/images/plot.png">
 <meta property="og:locale" content="en_EN">
-<meta name="twitter:title" content="Parsing 10++ GB CSV file in Python – Larger than Memory">
-<meta name="twitter:description" content="A personal quest to find the most effective solution to parse more than ten gigabytes of a single CSV file in python. TLDR; pandas is still reliable (with some adjustment), polars is similar (as expected), dask is surprisingly good despite limited API.">
-<meta name="twitter:image" content="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/preview.png">
+<meta property="og:image:height" content="642">
+<meta property="og:image:width" content="981">
+<meta name="twitter:title" content="Parsing 10+ GB CSV file in Python - Larger than Memory">
+<meta name="twitter:description" content="A personal quest to find the most effective solution to parse more than tens gigabytes of CSV file in python. Filezie is a poor metric to predict the performance">
+<meta name="twitter:image" content="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/images/plot.png">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="642">
+<meta name="twitter:image-width" content="981">
 </head>
 
 <body class="floating nav-fixed">
@@ -120,10 +161,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Parsing 10++ GB CSV file in Python – Larger than Memory</h1>
+      <h1 class="title">Parsing 10+ GB CSV file in Python - Larger than Memory</h1>
                   <div>
         <div class="description">
-          <p>A personal quest to find the most effective solution to parse more than ten gigabytes of a single CSV file in python. TLDR; pandas is still reliable (with some adjustment), polars is similar (as expected), dask is surprisingly good despite limited API.</p>
+          <p>A personal quest to find the most effective solution to parse more than tens gigabytes of CSV file in python. Filezie is a poor metric to predict the performance</p>
         </div>
       </div>
                           <div class="quarto-categories">
@@ -147,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 15, 2024</p>
+        <p class="date">May 2, 2024</p>
       </div>
     </div>
     
@@ -162,7 +203,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#context" id="toc-context" class="nav-link active" data-scroll-target="#context">Context</a></li>
+  <li><a href="#where-am-i-coming-from" id="toc-where-am-i-coming-from" class="nav-link active" data-scroll-target="#where-am-i-coming-from">Where Am I Coming From</a></li>
+  <li><a href="#larger-than-memory" id="toc-larger-than-memory" class="nav-link" data-scroll-target="#larger-than-memory">Larger Than Memory</a></li>
+  <li><a href="#dummy-data-first" id="toc-dummy-data-first" class="nav-link" data-scroll-target="#dummy-data-first">Dummy Data First</a></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas">1. Pandas</a>
+  <ul>
+  <li><a href="#pandas-with-pyarrow" id="toc-pandas-with-pyarrow" class="nav-link" data-scroll-target="#pandas-with-pyarrow">1.1. Pandas with Pyarrow</a></li>
+  <li><a href="#pandas-with-chunks" id="toc-pandas-with-chunks" class="nav-link" data-scroll-target="#pandas-with-chunks">1.2. Pandas with Chunks</a></li>
+  </ul></li>
+  <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb">2. Duckdb</a></li>
+  <li><a href="#polars" id="toc-polars" class="nav-link" data-scroll-target="#polars">3. Polars</a>
+  <ul>
+  <li><a href="#eager-evaluation" id="toc-eager-evaluation" class="nav-link" data-scroll-target="#eager-evaluation">3.1. Eager Evaluation</a></li>
+  <li><a href="#lazy-evaluation" id="toc-lazy-evaluation" class="nav-link" data-scroll-target="#lazy-evaluation">3.2. Lazy Evaluation</a></li>
+  </ul></li>
+  <li><a href="#dask" id="toc-dask" class="nav-link" data-scroll-target="#dask">4. Dask</a></li>
+  <li><a href="#verdict" id="toc-verdict" class="nav-link" data-scroll-target="#verdict">Verdict</a>
+  <ul>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link" data-scroll-target="#tldr">TLDR;</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ariewjy/ariewjy.github.io/blob/main/posts/20240215-parsing-csv-largerthanmemory/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ariewjy/ariewjy.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
@@ -177,26 +236,452 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="context" class="level2">
-<h2 class="anchored" data-anchor-id="context">Context</h2>
-<p>For a bit of background, this comes as my personal side-project from work, to optimize a query done in every single job. The query was started with parsing multiple CSV files, which one of them being more than 10 Gigabytes in size.</p>
-<p>Currently the script was run completely by – you guess it – pandas, so my first instict was to try different library such as the infamous polars, the subtle dask, and the dark horse duckdb. The result might surprise you, at least it was for me. As pandas, is actually performs better compared to polars for example, in parsing this CSV file.</p>
-<p>Full disclosure, I am a software engineer, nor a data scientist, so my principle is simple: I use what I have to get the job done. TLDR; I tried to set different parameters in polars as best as I could, but the result still off by at least 20s compared to a faster pandas with chunking/ dask. How about duckdb? Stay tune till the end to see the complete comparison.</p>
+<section id="where-am-i-coming-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-am-i-coming-from">Where Am I Coming From</h2>
+<p>For context, this comes as my personal side-project from work. The query was started with parsing multiple CSV files, which one of them being more than 10 Gigabytes in size. If you ask why such a huge file size - there are two reasons.</p>
+<div id="fig-bh-img" class="quarto-figure quarto-figure-left quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bh-img-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/bh_image.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bh-img-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Borehole Image example - Wikipedia
+</figcaption>
+</figure>
+</div>
+<p>For one, a subsurface data comes in many type, one of them is image data <a href="#fig-bh-img" class="quarto-xref">Figure&nbsp;1</a>. Image data is basically a list of array, for high resolution data like in subsurface, this list of array can be a thousands values in a single row - hence the huge file size. Secondly, saving it into the most ineffective file format (csv) is not really helping either. These two reasons make the csv file (<a href="#fig-csv-file" class="quarto-xref">Figure&nbsp;2</a>) becomes huge.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Disclaimer: probably not a proper benchmarking from software engineering POV (I am not - but mostly related to my use case.</p>
+</div>
+</div>
+</section>
+<section id="larger-than-memory" class="level2">
+<h2 class="anchored" data-anchor-id="larger-than-memory">Larger Than Memory</h2>
+<p>Without getting into too much details, about 40-50% of RAM size usually the spare of RAM one can use (as we can’t really use the whole RAM otherwise, our laptop would freeze). Larger than memory just means the data we try to keep in the RAM is way bigger than the RAM can handle. A 10GB csv file is definitely larger than 8GB RAM, not to mention not all the 8GB can be used.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a swapped memory concept here (since we use fast SSD nowadays), but we would not go there for the purpose of this writing.</p>
+</div>
+</div>
+<p>Ideally for 10GB csv file, I should have at least 50GB worth of RAM<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. So clearly this is something we cannot really handle easily.</p>
+<p>Currently the script was run with the <em>de-facto</em> library a.k.a. <strong>pandas</strong>, so my first instinct was to try different library such as pandas with <strong>pyarrow engine,</strong> <strong>polars</strong>, <strong>dask</strong>, and <strong>duckdb</strong>. At first one might think one library will rule them all - but that will be a mistake, because just a file size is a <strong>poor metric</strong> to evaluate how good the library may performs - we will soon see why.</p>
+<blockquote class="blockquote">
+<p>I am running all of these tests offline, in my macbook air M1 8GB RAM, 256GB SSD.</p>
+</blockquote>
+<div id="fig-csv-file" class="quarto-figure quarto-figure-left quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-csv-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CSVfiles.png" class="img-fluid figure-img" width="800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-csv-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The CSV files with varying Sizes
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="dummy-data-first" class="level2">
+<h2 class="anchored" data-anchor-id="dummy-data-first">Dummy Data First</h2>
+<p>Since I can’t really use “actual” data in this writing, I try to simulate as best as I can by creating a dataset consist of three columns, time, and two columns of list array consist of 10,000 values. The file ends up to be 12GB instead of 10GB, but this would do still, so don’t worry.</p>
+<div id="48f758a2" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#create dummy dataset</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> generate_columns_of_random_numbers(length, total_numbers, rows):</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    start_date <span class="op">=</span> pd.to_datetime(<span class="st">'2020-01-01'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    date_columns <span class="op">=</span> start_date <span class="op">+</span> pd.to_timedelta(np.arange(rows), unit<span class="op">=</span><span class="st">'s'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>    horizontal_lists_1 <span class="op">=</span> np.apply_along_axis(</span>
+<span id="cb1-10"><a href="#cb1-10"></a>        <span class="kw">lambda</span> _: <span class="st">', '</span>.join(<span class="st">''</span>.join(np.random.choice(</span>
+<span id="cb1-11"><a href="#cb1-11"></a>          <span class="bu">list</span>(<span class="st">'0123456789'</span>), length)) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(total_numbers)),</span>
+<span id="cb1-12"><a href="#cb1-12"></a>        axis<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb1-13"><a href="#cb1-13"></a>        arr<span class="op">=</span>np.empty((rows, <span class="dv">1</span>))</span>
+<span id="cb1-14"><a href="#cb1-14"></a>    )</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    horizontal_lists_2 <span class="op">=</span> np.apply_along_axis(</span>
+<span id="cb1-16"><a href="#cb1-16"></a>        <span class="kw">lambda</span> _: <span class="st">', '</span>.join(<span class="st">''</span>.join(np.random.choice(</span>
+<span id="cb1-17"><a href="#cb1-17"></a>          <span class="bu">list</span>(<span class="st">'0123456789'</span>), length)) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(total_numbers)),</span>
+<span id="cb1-18"><a href="#cb1-18"></a>        axis<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb1-19"><a href="#cb1-19"></a>        arr<span class="op">=</span>np.empty((rows, <span class="dv">1</span>))</span>
+<span id="cb1-20"><a href="#cb1-20"></a>    )</span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a>    <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">zip</span>(date_columns, horizontal_lists_1, horizontal_lists_2))</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co">#columns each row consists of a horizontal string of random 5-digit numbers</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>columns <span class="op">=</span> generate_columns_of_random_numbers(<span class="dv">4</span>, <span class="dv">10_000</span>, <span class="dv">100_000</span>)</span>
+<span id="cb1-26"><a href="#cb1-26"></a></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># DataFrame from the columns</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a>df <span class="op">=</span> pd.DataFrame(columns, columns<span class="op">=</span>[<span class="st">'Time'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>])</span>
+<span id="cb1-29"><a href="#cb1-29"></a>df.to_csv(<span class="st">"test.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The above code will generate exactly the csv file I have, 1GB and 12GB file sizes (we can play around with the number of rows to change the file size). The additional 10GB csv on <a href="https://www.kaggle.com/datasets/microize/newyork-yellow-taxi-trip-data-2020-2019">NYC taxi from Kaggle</a> that I put as a baseline/ additional data point cause it has similar file size.</p>
+<p>Need to remember that the dummy dataset contains A and B columns where it has array of <em>strings</em> even though the values are in numbers. <strong>This is a crucial information and we will back referring this again in the later finding</strong>.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/CSVfiles.png" class="img-fluid figure-img"></p>
+<figcaption>Creating Dummy Dataset</figcaption>
+</figure>
+</div>
+<p><u><strong>So, with everything set up, let the fun begins!</strong></u></p>
+</section>
+<section id="pandas" class="level2">
+<h2 class="anchored" data-anchor-id="pandas">1. Pandas</h2>
+<p>The original script from my work used pandas as is, without chunks at all, and without using pyarrow as a backend. In the following test, we will try to use both, to see if there is any limitation in handling large dataset.</p>
+<section id="pandas-with-pyarrow" class="level3">
+<h3 class="anchored" data-anchor-id="pandas-with-pyarrow">1.1. Pandas with Pyarrow</h3>
+<p>The new version of pandas allows us to use pyarrow instead of numpy as a backend, with a promise that it will imporove the parsing speed. Below code was used to do just that, as I am parsing three different files (two dummy files, and one kaggle file). Do beware that after every parsing, I cleanup the memory by deleting the dataframe: <code>del dff</code>.</p>
+<div id="3701db50" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#using pandas pyarrow</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> time</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#defining file</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>nyc <span class="op">=</span> <span class="st">"2018_Yellow_Taxi_Trip_Data.csv"</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>csv_10gb <span class="op">=</span> <span class="st">"10GB_file.csv"</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>csv_1gb <span class="op">=</span> <span class="st">"1GB_file.csv"</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">def</span> pandas_arrow(url):</span>
+<span id="cb2-11"><a href="#cb2-11"></a>  start <span class="op">=</span> time.time()</span>
+<span id="cb2-12"><a href="#cb2-12"></a>  dff <span class="op">=</span> pd.read_csv(url, </span>
+<span id="cb2-13"><a href="#cb2-13"></a>                    engine<span class="op">=</span><span class="st">'pyarrow'</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>                  )</span>
+<span id="cb2-15"><a href="#cb2-15"></a>  memory_use <span class="op">=</span> dff.memory_usage(deep<span class="op">=</span><span class="va">True</span>).<span class="bu">sum</span>()<span class="op">/</span><span class="dv">1_000_000_000</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>dff<span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span><span class="dv">20</span><span class="op">*</span><span class="st">'--'</span><span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17"></a>  <span class="bu">print</span>(<span class="ss">f"memory use = </span><span class="sc">{</span>memory_use<span class="sc">:.3f}</span><span class="ss"> Gb"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18"></a>  <span class="bu">print</span>(<span class="ss">f"processing time = </span><span class="sc">{</span>time<span class="sc">.</span>time() <span class="op">-</span> start<span class="sc">:.3f}</span><span class="ss">s</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19"></a>  <span class="kw">del</span> dff <span class="co">#cleanup RAM</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="co">#running in three csv</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>pandas_arrow(csv_1gb)</span>
+<span id="cb2-23"><a href="#cb2-23"></a>pandas_arrow(csv_10gb)</span>
+<span id="cb2-24"><a href="#cb2-24"></a>pandas_arrow(nyc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The result shows both dummy csv with more than 10GB of data parsed successfully, while the nyc csv is failed - likely because out of memory. Using pandas with pyarrow, the 1GB dummy data parsed within 4s, 12GB within 379s (almost 100x longer than 1GB).</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/python_pyarrow.png" class="img-fluid figure-img"></p>
+<figcaption>Using Pandas with Pyarrow Backend</figcaption>
+</figure>
+</div>
+</section>
+<section id="pandas-with-chunks" class="level3">
+<h3 class="anchored" data-anchor-id="pandas-with-chunks">1.2. Pandas with Chunks</h3>
+<p>Pandas with numpy backend, although not as fast as pyarrow, offers a benefit of using chunksize in the parameters, to load the data into memory in “chunks” of the total data, portion not the entire thing. This helps effective parsing, and avoid killing the RAM early.</p>
+<div id="6e832227" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> time</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#defining file</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>nyc <span class="op">=</span> <span class="st">"2018_Yellow_Taxi_Trip_Data.csv"</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>csv_10gb <span class="op">=</span> <span class="st">"10GB_file.csv"</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>csv_1gb <span class="op">=</span> <span class="st">"1GB_file.csv"</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="kw">def</span> parsing_pandas(url):</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    start <span class="op">=</span> time.time()</span>
+<span id="cb3-11"><a href="#cb3-11"></a>    chunksize <span class="op">=</span> <span class="dv">10_000</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>    dff <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb3-13"><a href="#cb3-13"></a>    <span class="cf">for</span> chunk <span class="kw">in</span> pd.read_csv(url, </span>
+<span id="cb3-14"><a href="#cb3-14"></a>                                chunksize<span class="op">=</span>chunksize, </span>
+<span id="cb3-15"><a href="#cb3-15"></a>                                low_memory<span class="op">=</span><span class="va">False</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>                                ):</span>
+<span id="cb3-17"><a href="#cb3-17"></a>        dfx <span class="op">=</span> chunk</span>
+<span id="cb3-18"><a href="#cb3-18"></a>        dff <span class="op">=</span> pd.concat([dff, dfx])</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    <span class="kw">del</span> dfx</span>
+<span id="cb3-20"><a href="#cb3-20"></a>    memory_use <span class="op">=</span> dff.memory_usage(deep<span class="op">=</span><span class="va">True</span>).<span class="bu">sum</span>()<span class="op">/</span><span class="dv">1_000_000_000</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a></span>
+<span id="cb3-22"><a href="#cb3-22"></a>    <span class="bu">print</span>(<span class="ss">f"memory use = </span><span class="sc">{</span>memory_use<span class="sc">:.2f}</span><span class="ss"> Gb"</span>)</span>
+<span id="cb3-23"><a href="#cb3-23"></a>    <span class="cf">return</span> dff, <span class="bu">print</span>(dff), <span class="bu">print</span>(<span class="ss">f"processing </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss"> time took </span><span class="sc">{</span>time<span class="sc">.</span>time() <span class="op">-</span> start<span class="sc">}</span><span class="ss">s"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24"></a>    </span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="co">#running in three csv files</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>parsing_pandas(csv_1gb)</span>
+<span id="cb3-27"><a href="#cb3-27"></a>parsing_pandas(csv_10gb)</span>
+<span id="cb3-28"><a href="#cb3-28"></a>parsing_pandas(nyc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Works on my dummy dataset, however - there is no autodetection on datatype, unlike the next two libraries. This means, each of column will be treated as they were a string object - highly ineffecient.</p>
+<p>It also failed in parsing nyc dataset. Ended up killing the process. I don’t have the answer why - but I would argue that the number of columns also affect the pandas performance quite a bit, and the memory just failed even after using chunks.</p>
+<blockquote class="blockquote">
+<p>It may works, but you really have to pay attention to the memory, and making sure we were using the best balanced chunks size parameter - doable, but tricky.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/python_pandas_chunks.png" class="img-fluid figure-img"></p>
+<figcaption>Using Pandas with Chunks</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="duckdb" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb">2. Duckdb</h2>
+<p>These last two are the best library I have seen so far in handling large dataset. The first library is Duckdb, a library based on SQL, a language optimized for query. Duckdb, unlike any other SQL library, it does not need a defnitive database- until we told it to.</p>
+<div id="6a1e4b92" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> duckdb</span>
+<span id="cb4-2"><a href="#cb4-2"></a>conn <span class="op">=</span> duckdb.<span class="ex">connect</span>()</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> time</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>nyc <span class="op">=</span> <span class="st">"2018_Yellow_Taxi_Trip_Data.csv"</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>csv_10gb <span class="op">=</span> <span class="st">"10GB_file.csv"</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>csv_1gb <span class="op">=</span> <span class="st">"1GB_file.csv"</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#defining function to parse csv</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="kw">def</span> parsing_csv_duckdb(csv_dir):</span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="co"># Define the query dynamically</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>    start <span class="op">=</span> time.time()</span>
+<span id="cb4-15"><a href="#cb4-15"></a>    query <span class="op">=</span> <span class="ss">f"""</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="ss">    SELECT *</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="ss">    FROM read_csv_auto('</span><span class="sc">{</span>csv_dir<span class="sc">}</span><span class="ss">')</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="ss">    ;</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="ss">    """</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>    <span class="co"># Execute the query</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a>    result <span class="op">=</span> duckdb.sql(query)</span>
+<span id="cb4-22"><a href="#cb4-22"></a>    <span class="cf">return</span> result.show(), <span class="bu">print</span>(<span class="ss">f"Processing </span><span class="sc">{</span>csv_dir<span class="sc">}</span><span class="ss"> time is </span><span class="sc">{</span>time<span class="sc">.</span>time() <span class="op">-</span> start<span class="sc">:.2f}</span><span class="ss">s"</span>)</span>
+<span id="cb4-23"><a href="#cb4-23"></a></span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="co"># Call the function with the provided variables</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a>parsing_csv_duckdb(csv_dir<span class="op">=</span>nyc)</span>
+<span id="cb4-26"><a href="#cb4-26"></a>parsing_csv_duckdb(csv_dir<span class="op">=</span>csv_10gb)</span>
+<span id="cb4-27"><a href="#cb4-27"></a>parsing_csv_duckdb(csv_dir<span class="op">=</span>csv_1gb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, my first instinct is saying that it will be able to load the nyc taxi dataset - which it did, at some speed too! However, the most interesting part is, <strong>it was parsing the dummy dataset at slower speed than pandas!</strong> This is more significant (<strong>up to 5x slower than pandas</strong>) on the 10GB csv file! See below:</p>
+<ul>
+<li>Duckdb 1GB CSV file -&gt; 128s, whereas Pandas is 105s -&gt; 20% faster</li>
+<li>Duckdb 10GB CSV file -&gt; 53s, whereas Pandas is 10s -&gt; 500% faster</li>
+</ul>
+<p>Another important observations are:</p>
+<ul>
+<li>Duckdb autocsv detection succeed to detect columns dtype with good accuracy (varchar, double, int64). <em>Spoiler alert, this will be a recurring theme from this point onwards</em>.</li>
+<li>While it succeed detecting the Time column to be timestamp dtype, it is also classify the A and B columns as string (varchar) as expected. <em>This maybe the reason why duckb is parsing CSV from dummy dataset slower than pandas with chunk setting</em>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/python_duckdb.png" class="img-fluid figure-img"></p>
+<figcaption>Using Duckdb</figcaption>
+</figure>
+</div>
+</section>
+<section id="polars" class="level2">
+<h2 class="anchored" data-anchor-id="polars">3. Polars</h2>
+<p>Polars is another dataframe library just like pandas, unlike duckdb that was based on SQL language, Polars is pretty much the distant brother of Pandas. Although the syntax are not exactly the same, but you will not feel out of place using Polars once we get a grip on its philosophy (expressive language).</p>
+<p>There are four things I valued in Polars:</p>
+<ol type="1">
+<li>It was built on Rust language with python binding - <strong>zero dependencies</strong>.</li>
+<li>It was built on Rust language - a low level language - <strong>faster</strong> runtime compared to pandas.</li>
+<li>It uses <strong>no index!</strong> I like index when trying to slicing stuffs, but this concept is more of a hassle than a helper.</li>
+<li>It encourage the use of <strong>expressive method</strong> naming, e.g.&nbsp;it encourage user to use <code>.ge</code> as opposed to <code>&gt;=</code>, <code>select</code> to select multuple columns rather than using double square-bracket <code>[["some list of columns"]]</code> to filter a columns.</li>
+</ol>
+<section id="eager-evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="eager-evaluation">3.1. Eager Evaluation</h3>
+<p>Polars has two mode when it comes to processing, one is eager mode where everything will be run in one go - as instructed by the user (based on code sequence). Or, using lazy mode where the query will then be optimized in the background - and will not be returned until user decided to do so (collect).</p>
+<p>I have a feeling that since the code is fairly simple - I do not think it will give much of a difference to choose one over another.</p>
+<p>Below is the eager evaluation where we need to be careful and make sure that either we put <code>ignore_errors=True</code>, or increase the <code>infer schema length</code>. Polars error message <a href="#fig-polars-largedata-error" class="quarto-xref">Figure&nbsp;3</a> is the best I have seen - provides a real practical solution to the error. In this case, the error is caused by one value where the number is decimal, inside a <strong>column 12</strong> where most of them are integer - so polars think it should not be <code>int64</code>. I chose to use <code>ignore_errors=True</code>.</p>
+<div id="fig-polars-largedata-error" class="quarto-figure quarto-figure-left quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polars-largedata-error-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/polars_error.png" class="img-fluid figure-img" style="width:600.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polars-largedata-error-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Errors when Parsing Large CSV with Polars
+</figcaption>
+</figure>
+</div>
+<p>Another suggestion from the offical docs is - whenever we need to use polars for benchamarking, we need to set <code>rechunk=False</code>, I tried both (with and without), and surprisingly it runs faster without <code>rechunk</code> set as <code>False</code>, especially on the 10GB csv file - by about 1-4ms faster (e.g., 111ms vs 114ms). TBH, It does not really matter in this case, so I leave it at <code>False</code>.</p>
+<div id="8c244684" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> time</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#defining file</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>nyctaxi_10gb <span class="op">=</span> <span class="st">'2018_Yellow_Taxi_Trip_Data.csv'</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>csvFile_10gb <span class="op">=</span> <span class="st">'10GB_file.csv'</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>csvFile_1gb <span class="op">=</span> <span class="st">'1GB_file.csv'</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="kw">def</span> parsing_polars(url):</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  start <span class="op">=</span> time.time()</span>
+<span id="cb5-11"><a href="#cb5-11"></a>  dff <span class="op">=</span> (pl.read_csv(url, rechunk<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb5-12"><a href="#cb5-12"></a>              ignore_errors<span class="op">=</span><span class="va">True</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>              ))</span>
+<span id="cb5-14"><a href="#cb5-14"></a>  <span class="bu">print</span>(dff)</span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="bu">print</span>(<span class="ss">f"processing time took </span><span class="sc">{</span>time<span class="sc">.</span>time() <span class="op">-</span> start<span class="sc">:.3f}</span><span class="ss">s"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16"></a></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="co">#running in three csv</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a>parsing_polars(nyctaxi_10gb)</span>
+<span id="cb5-19"><a href="#cb5-19"></a>parsing_polars(csvFile_10gb)</span>
+<span id="cb5-20"><a href="#cb5-20"></a>parsing_polars(csvFile_1gb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fig-polars-eagers" class="quarto-figure quarto-figure-left quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polars-eagers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/polars_eager.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polars-eagers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Using Polars with Eager Evaluation
+</figcaption>
+</figure>
+</div>
+<p>Observations:</p>
+<ul>
+<li><p>So the polars library can handle three csv as expected, just like duckdb. However, as I mentioned earlier, the duckdb is the best at identifying a time-format automatically from a csv file. This time around, polars has to give it to duckdb, because even polars still detecting the <code>tpep_pickup_datetime</code> in nyc dataset as <code>string</code>.</p></li>
+<li><p>Another worthy mention is, it took polars close to 50s to what duckdb 0.26s, it is not even a comparison. Parsing nyc dataset, duckdb is just trashed polars in simple parsing test.</p></li>
+</ul>
+</section>
+<section id="lazy-evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="lazy-evaluation">3.2. Lazy Evaluation</h3>
+<p>As mentioned before, the second mode that polars offers is lazy evaluation - where the query will be optimized in the background before users decided to collect the query at the end using ‘collect()’ method. To optimize this, I also set the streaming=True. The code is similar to before, but now with ‘scan_csv’ instead of ‘read_csv’.</p>
+<div id="5dcfa144" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> time</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#defining file</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>nyctaxi_10gb <span class="op">=</span> <span class="st">'2018_Yellow_Taxi_Trip_Data.csv'</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>csvFile_10gb <span class="op">=</span> <span class="st">'10GB_file.csv'</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>csvFile_1gb <span class="op">=</span> <span class="st">'1GB_file.csv'</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="kw">def</span> parsing_polars(url):</span>
+<span id="cb6-10"><a href="#cb6-10"></a>  start <span class="op">=</span> time.time()</span>
+<span id="cb6-11"><a href="#cb6-11"></a>  dff <span class="op">=</span> (pl.scan_csv(url, rechunk<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb6-12"><a href="#cb6-12"></a>              ignore_errors<span class="op">=</span><span class="va">True</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>              ))</span>
+<span id="cb6-14"><a href="#cb6-14"></a>  <span class="bu">print</span>(dff)</span>
+<span id="cb6-15"><a href="#cb6-15"></a>  <span class="bu">print</span>(<span class="ss">f"processing time took </span><span class="sc">{</span>time<span class="sc">.</span>time() <span class="op">-</span> start<span class="sc">:.3f}</span><span class="ss">s"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#running in three csv</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a>parsing_polars(nyctaxi_10gb)</span>
+<span id="cb6-19"><a href="#cb6-19"></a>parsing_polars(csvFile_10gb)</span>
+<span id="cb6-20"><a href="#cb6-20"></a>parsing_polars(csvFile_1gb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fig-polars-lazy" class="quarto-figure quarto-figure-left quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polars-lazy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/polars_lazy.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polars-lazy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Using Polars with Lazy Evaluation
+</figcaption>
+</figure>
+</div>
+<p>My experience, if the query is simple - it tends to same/slower down the runtime, so just run <code>read_csv</code> is better as you don’t have to think about collecting the result at the end. See <a href="#fig-polars-lazy" class="quarto-xref">Figure&nbsp;5</a>, it runs faster on the nyc dataset by a slight amount (48s eager vs 42s lazy) - call it a tie.</p>
+</section>
+</section>
+<section id="dask" class="level2">
+<h2 class="anchored" data-anchor-id="dask">4. Dask</h2>
+<p>Dask is another dataframe library, but it is basically pandas in steroid. Instead of using a single-threaded core in computation, dask uses paralel computation. By default it uses lazy evaluation - and <code>compute()</code> method to finally query the result. The idea sound simple - pandas in multi-threaded cores, but that means whatever things we see in pandas will appear again e.g., indexes, dependencies to name a few.</p>
+<p>The runtime is fast, as we can see in <a href="#fig-dask" class="quarto-xref">Figure&nbsp;6</a>, dask parsed 10GB csv file in 12s, and 1GB file in 8s - a comparable performance to polars and duckdb. However,there is also errors related to dtypes when trying to parse nyc dataset - so, pick your poison.</p>
+<div id="fig-dask" class="quarto-figure quarto-figure-left quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dask-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/dask.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dask-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Dask Dataframe
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="verdict" class="level2">
+<h2 class="anchored" data-anchor-id="verdict">Verdict</h2>
+<p>Compiling all the performance runtime on each individual test as follows:</p>
+<div id="9e2ad33a" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>result <span class="op">=</span> {</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="st">'Method'</span> : [<span class="st">'Pandas with Pyarrow'</span>,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>                 <span class="st">'Pandas with Chunk'</span>,</span>
+<span id="cb7-8"><a href="#cb7-8"></a>                 <span class="st">'Duckdb'</span>, </span>
+<span id="cb7-9"><a href="#cb7-9"></a>                 <span class="st">'Polars Eager'</span>,</span>
+<span id="cb7-10"><a href="#cb7-10"></a>                  <span class="st">'Polars Lazy'</span>,</span>
+<span id="cb7-11"><a href="#cb7-11"></a>                  <span class="st">'Dask'</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>                  ],</span>
+<span id="cb7-13"><a href="#cb7-13"></a>    <span class="st">'1GB(s)'</span> : [<span class="dv">4</span>, <span class="fl">10.3</span>, <span class="dv">53</span>, <span class="fl">7.4</span>, <span class="fl">7.96</span>, <span class="dv">8</span>],</span>
+<span id="cb7-14"><a href="#cb7-14"></a>    <span class="st">'10GB(s)'</span> : [<span class="fl">378.5</span>, <span class="fl">105.6</span>, <span class="fl">128.4</span>, <span class="fl">116.7</span>, <span class="dv">171</span>, <span class="fl">12.7</span>],</span>
+<span id="cb7-15"><a href="#cb7-15"></a>    <span class="st">'NYC(s)'</span> : [np.nan, np.nan, <span class="fl">0.26</span>, <span class="fl">48.6</span>, <span class="dv">42</span>, np.nan],</span>
+<span id="cb7-16"><a href="#cb7-16"></a>    <span class="st">'Library'</span>: [<span class="st">'pandas'</span>, <span class="st">'pandas'</span>, <span class="st">'duckdb'</span>, <span class="st">'polars'</span>, <span class="st">'polars'</span>, <span class="st">'dask'</span>]</span>
+<span id="cb7-17"><a href="#cb7-17"></a>}</span>
+<span id="cb7-18"><a href="#cb7-18"></a></span>
+<span id="cb7-19"><a href="#cb7-19"></a>df_result <span class="op">=</span> pd.DataFrame(result)</span>
+<span id="cb7-20"><a href="#cb7-20"></a>df_result</span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a></span>
+<span id="cb7-23"><a href="#cb7-23"></a>df_result.plot(kind<span class="op">=</span><span class="st">'barh'</span>, x<span class="op">=</span><span class="st">'Method'</span>)</span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="co"># plt.xscale('log')</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Based on the <a href="#fig-conclusion" class="quarto-xref">Figure&nbsp;7</a> below, and considering all the csv files, take it as you want, but my thoughts are:</p>
+<div id="fig-conclusion" class="quarto-figure quarto-figure-left quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-conclusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/plot_nonlog.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conclusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Comparison Speed
+</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><strong>DuckDB and Poilars</strong> are the only two libraries that perform very well in all csv file sizes (1GB to 10GB).</li>
+<li>For <strong>well-formatted CSV with large size (10GB), duckdb</strong> will be the best library.</li>
+<li>For <strong>everything else, polars</strong> is good enough - especially for a smaller file size (1GB range).</li>
+<li>For relatively low number of columns, and file size around 1GB, use pandas with chunksize or dask.</li>
+<li><strong><em>Don’t use pandas with pyarrow. LOL</em></strong></li>
+</ol>
+<section id="tldr" class="level4">
+<h4 class="anchored" data-anchor-id="tldr">TLDR;</h4>
+<div class="cell" data-eval="true" data-layout-align="left">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[CSV Filesize] --&gt; B{Around 10GB}
+    B --&gt; |No, Around 1GB| C[Polars, Pandas with Chunksize]
+    B --&gt; |Yes| D{Well-formatted CSV}
+    D --&gt; |Yes| E[DuckDB]
+    D --&gt; |No| F[Polars]
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2024,
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>“Have 5 to 10 times as much RAM as the size of your dataset” (Wes Mckinney)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2024,
   author = {Arie Wijaya, Aditya},
-  title = {Parsing 10++ {GB} {CSV} File in {Python} -\/- {Larger} Than
+  title = {Parsing 10+ {GB} {CSV} File in {Python} - {Larger} Than
     {Memory}},
-  date = {2024-02-15},
+  date = {2024-05-19},
   url = {https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Arie Wijaya, Aditya. 2024. <span>“Parsing 10++ GB CSV File in Python --
-Larger Than Memory.”</span> February 15, 2024. <a href="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory">https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory</a>.
+Arie Wijaya, Aditya. 2024. <span>“Parsing 10+ GB CSV File in Python -
+Larger Than Memory.”</span> May 19, 2024. <a href="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory">https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
