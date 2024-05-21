@@ -215,8 +215,8 @@ parsing_csv_duckdb(csv_dir=csv_1gb)
 
 Now, my first instinct is saying that it will be able to load the nyc taxi dataset - which it did, at some speed too! However, the most interesting part is, **it was parsing the dummy dataset at slower speed than pandas!** This is more significant (**up to 5x slower than pandas**) on the 10GB csv file! See below:
 
--   Duckdb 1GB CSV file -\> 128s, whereas Pandas is 105s -\> 20% faster
--   Duckdb 10GB CSV file -\> 53s, whereas Pandas is 10s -\> 500% faster
+-   Duckdb 10GB CSV file -\> 128s, whereas Pandas is 105s -\> 20% faster
+-   Duckdb 1GB CSV file -\> 53s, whereas Pandas is 10s -\> 500% faster
 
 Another important observations are:
 
