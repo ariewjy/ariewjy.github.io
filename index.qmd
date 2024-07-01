@@ -5,14 +5,14 @@ listing:
   fields: [image, title, description, date, reading-time, categories]
   contents: posts
   sort: "date desc"
-  type: grid
-  # type: default
-  grid-columns: 2
-  image-height: 240px
-  image-align: left
+  # type: grid
+  type: default
+  # grid-columns: 2
+  # image-height: 240px
+  # image-align: left
   # page-size: 5
   categories: true
-  sort-ui: true
+  # sort-ui: true
   # filter-ui: true
 # page-layout: full
 title-block-banner: false
