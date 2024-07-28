@@ -5,10 +5,11 @@ description: |
   Filezie is a poor metric to predict the performance 
 title-block-banner: true
 date: '2024-05-19'
+date-meta: last-modified
+date-modified: last-modified
 categories:
   - python
   - data
-  - csv
 draft: false
 fig-cap-location: bottom
 fig-align: left

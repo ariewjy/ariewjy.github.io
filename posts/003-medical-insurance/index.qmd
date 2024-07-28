@@ -5,8 +5,8 @@ description: |
 title-block-banner: true
 date: '2022-10-27'
 categories:
-  - project
-  - data-science
+  - data
+  - portfolio
   - python
 jupyter: minids
 draft: false

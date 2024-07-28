@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.557">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Aditya Arie Wijaya">
-<meta name="dcterms.date" content="2024-05-02">
+<meta name="dcterms.date" content="last-modified">
 <meta name="description" content="A personal quest to find the most effective solution to parse more than tens gigabytes of CSV file in python. Filezie is a poor metric to predict the performance">
 
 <title>Parsing 10+ GB CSV file in Python - Larger than Memory</title>
@@ -133,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -152,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -170,7 +170,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                           <div class="quarto-categories">
                 <div class="quarto-category">python</div>
                 <div class="quarto-category">data</div>
-                <div class="quarto-category">csv</div>
               </div>
                   </div>
   </div>
@@ -188,10 +187,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 2, 2024</p>
+        <p class="date">May 19, 2024</p>
       </div>
     </div>
     
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">July 28, 2024</p>
+      </div>
+    </div>
       
     </div>
     
@@ -227,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -239,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="where-am-i-coming-from" class="level2">
 <h2 class="anchored" data-anchor-id="where-am-i-coming-from">Where Am I Coming From</h2>
 <p>For context, this comes as my personal side-project from work. The query was started with parsing multiple CSV files, which one of them being more than 10 Gigabytes in size. If you ask why such a huge file size - there are two reasons.</p>
-<div id="fig-bh-img" class="quarto-figure quarto-figure-left quarto-float anchored">
+<div id="fig-bh-img" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bh-img-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/bh_image.png" class="img-fluid figure-img" style="width:50.0%">
@@ -285,7 +290,7 @@ Note
 <blockquote class="blockquote">
 <p>I am running all of these tests offline, in my macbook air M1 8GB RAM, 256GB SSD.</p>
 </blockquote>
-<div id="fig-csv-file" class="quarto-figure quarto-figure-left quarto-float anchored">
+<div id="fig-csv-file" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-csv-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CSVfiles.png" class="img-fluid figure-img" width="800">
@@ -299,7 +304,7 @@ Figure&nbsp;2: The CSV files with varying Sizes
 <section id="dummy-data-first" class="level2">
 <h2 class="anchored" data-anchor-id="dummy-data-first">Dummy Data First</h2>
 <p>Since I can’t really use “actual” data in this writing, I try to simulate as best as I can by creating a dataset consist of three columns, time, and two columns of list array consist of 10,000 values. The file ends up to be 12GB instead of 10GB, but this would do still, so don’t worry.</p>
-<div id="48f758a2" class="cell" data-execution_count="1">
+<div id="f7fcc148" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#create dummy dataset</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -346,7 +351,7 @@ Figure&nbsp;2: The CSV files with varying Sizes
 <section id="pandas-with-pyarrow" class="level3">
 <h3 class="anchored" data-anchor-id="pandas-with-pyarrow">1.1. Pandas with Pyarrow</h3>
 <p>The new version of pandas allows us to use pyarrow instead of numpy as a backend, with a promise that it will imporove the parsing speed. Below code was used to do just that, as I am parsing three different files (two dummy files, and one kaggle file). Do beware that after every parsing, I cleanup the memory by deleting the dataframe: <code>del dff</code>.</p>
-<div id="3701db50" class="cell" data-execution_count="2">
+<div id="1ce00b1c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#using pandas pyarrow</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> time</span>
@@ -383,7 +388,7 @@ Figure&nbsp;2: The CSV files with varying Sizes
 <section id="pandas-with-chunks" class="level3">
 <h3 class="anchored" data-anchor-id="pandas-with-chunks">1.2. Pandas with Chunks</h3>
 <p>Pandas with numpy backend, although not as fast as pyarrow, offers a benefit of using chunksize in the parameters, to load the data into memory in “chunks” of the total data, portion not the entire thing. This helps effective parsing, and avoid killing the RAM early.</p>
-<div id="6e832227" class="cell" data-execution_count="3">
+<div id="17822052" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> time</span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
@@ -429,7 +434,7 @@ Figure&nbsp;2: The CSV files with varying Sizes
 <section id="duckdb" class="level2">
 <h2 class="anchored" data-anchor-id="duckdb">2. Duckdb</h2>
 <p>These last two are the best library I have seen so far in handling large dataset. The first library is Duckdb, a library based on SQL, a language optimized for query. Duckdb, unlike any other SQL library, it does not need a defnitive database- until we told it to.</p>
-<div id="6a1e4b92" class="cell" data-execution_count="4">
+<div id="0e649c1d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> duckdb</span>
 <span id="cb4-2"><a href="#cb4-2"></a>conn <span class="op">=</span> duckdb.<span class="ex">connect</span>()</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> time</span>
@@ -460,8 +465,8 @@ Figure&nbsp;2: The CSV files with varying Sizes
 </div>
 <p>Now, my first instinct is saying that it will be able to load the nyc taxi dataset - which it did, at some speed too! However, the most interesting part is, <strong>it was parsing the dummy dataset at slower speed than pandas!</strong> This is more significant (<strong>up to 5x slower than pandas</strong>) on the 10GB csv file! See below:</p>
 <ul>
-<li>Duckdb 1GB CSV file -&gt; 128s, whereas Pandas is 105s -&gt; 20% faster</li>
-<li>Duckdb 10GB CSV file -&gt; 53s, whereas Pandas is 10s -&gt; 500% faster</li>
+<li>Duckdb 10GB CSV file -&gt; 128s, whereas Pandas is 105s -&gt; 20% faster</li>
+<li>Duckdb 1GB CSV file -&gt; 53s, whereas Pandas is 10s -&gt; 500% faster</li>
 </ul>
 <p>Another important observations are:</p>
 <ul>
@@ -490,7 +495,7 @@ Figure&nbsp;2: The CSV files with varying Sizes
 <p>Polars has two mode when it comes to processing, one is eager mode where everything will be run in one go - as instructed by the user (based on code sequence). Or, using lazy mode where the query will then be optimized in the background - and will not be returned until user decided to do so (collect).</p>
 <p>I have a feeling that since the code is fairly simple - I do not think it will give much of a difference to choose one over another.</p>
 <p>Below is the eager evaluation where we need to be careful and make sure that either we put <code>ignore_errors=True</code>, or increase the <code>infer schema length</code>. Polars error message <a href="#fig-polars-largedata-error" class="quarto-xref">Figure&nbsp;3</a> is the best I have seen - provides a real practical solution to the error. In this case, the error is caused by one value where the number is decimal, inside a <strong>column 12</strong> where most of them are integer - so polars think it should not be <code>int64</code>. I chose to use <code>ignore_errors=True</code>.</p>
-<div id="fig-polars-largedata-error" class="quarto-figure quarto-figure-left quarto-float anchored">
+<div id="fig-polars-largedata-error" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-polars-largedata-error-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/polars_error.png" class="img-fluid figure-img" style="width:600.0%">
@@ -501,7 +506,7 @@ Figure&nbsp;3: Errors when Parsing Large CSV with Polars
 </figure>
 </div>
 <p>Another suggestion from the offical docs is - whenever we need to use polars for benchamarking, we need to set <code>rechunk=False</code>, I tried both (with and without), and surprisingly it runs faster without <code>rechunk</code> set as <code>False</code>, especially on the 10GB csv file - by about 1-4ms faster (e.g., 111ms vs 114ms). TBH, It does not really matter in this case, so I leave it at <code>False</code>.</p>
-<div id="8c244684" class="cell" data-execution_count="5">
+<div id="c566ce4c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> time</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
@@ -523,7 +528,7 @@ Figure&nbsp;3: Errors when Parsing Large CSV with Polars
 <span id="cb5-19"><a href="#cb5-19"></a>parsing_polars(csvFile_10gb)</span>
 <span id="cb5-20"><a href="#cb5-20"></a>parsing_polars(csvFile_1gb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-polars-eagers" class="quarto-figure quarto-figure-left quarto-float anchored">
+<div id="fig-polars-eagers" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-polars-eagers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/polars_eager.png" class="img-fluid figure-img">
@@ -542,7 +547,7 @@ Figure&nbsp;4: Using Polars with Eager Evaluation
 <section id="lazy-evaluation" class="level3">
 <h3 class="anchored" data-anchor-id="lazy-evaluation">3.2. Lazy Evaluation</h3>
 <p>As mentioned before, the second mode that polars offers is lazy evaluation - where the query will be optimized in the background before users decided to collect the query at the end using ‘collect()’ method. To optimize this, I also set the streaming=True. The code is similar to before, but now with ‘scan_csv’ instead of ‘read_csv’.</p>
-<div id="5dcfa144" class="cell" data-execution_count="6">
+<div id="ef255c1b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> time</span>
 <span id="cb6-3"><a href="#cb6-3"></a></span>
@@ -564,7 +569,7 @@ Figure&nbsp;4: Using Polars with Eager Evaluation
 <span id="cb6-19"><a href="#cb6-19"></a>parsing_polars(csvFile_10gb)</span>
 <span id="cb6-20"><a href="#cb6-20"></a>parsing_polars(csvFile_1gb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-polars-lazy" class="quarto-figure quarto-figure-left quarto-float anchored">
+<div id="fig-polars-lazy" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-polars-lazy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/polars_lazy.png" class="img-fluid figure-img">
@@ -581,7 +586,7 @@ Figure&nbsp;5: Using Polars with Lazy Evaluation
 <h2 class="anchored" data-anchor-id="dask">4. Dask</h2>
 <p>Dask is another dataframe library, but it is basically pandas in steroid. Instead of using a single-threaded core in computation, dask uses paralel computation. By default it uses lazy evaluation - and <code>compute()</code> method to finally query the result. The idea sound simple - pandas in multi-threaded cores, but that means whatever things we see in pandas will appear again e.g., indexes, dependencies to name a few.</p>
 <p>The runtime is fast, as we can see in <a href="#fig-dask" class="quarto-xref">Figure&nbsp;6</a>, dask parsed 10GB csv file in 12s, and 1GB file in 8s - a comparable performance to polars and duckdb. However,there is also errors related to dtypes when trying to parse nyc dataset - so, pick your poison.</p>
-<div id="fig-dask" class="quarto-figure quarto-figure-left quarto-float anchored">
+<div id="fig-dask" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dask-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/dask.png" class="img-fluid figure-img">
@@ -595,7 +600,7 @@ Figure&nbsp;6: Dask Dataframe
 <section id="verdict" class="level2">
 <h2 class="anchored" data-anchor-id="verdict">Verdict</h2>
 <p>Compiling all the performance runtime on each individual test as follows:</p>
-<div id="9e2ad33a" class="cell" data-execution_count="7">
+<div id="aa7fe025" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -623,7 +628,7 @@ Figure&nbsp;6: Dask Dataframe
 <span id="cb7-25"><a href="#cb7-25"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Based on the <a href="#fig-conclusion" class="quarto-xref">Figure&nbsp;7</a> below, and considering all the csv files, take it as you want, but my thoughts are:</p>
-<div id="fig-conclusion" class="quarto-figure quarto-figure-left quarto-float anchored">
+<div id="fig-conclusion" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-conclusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/plot_nonlog.png" class="img-fluid figure-img">
@@ -671,17 +676,17 @@ Figure&nbsp;7: Comparison Speed
 <ol>
 <li id="fn1"><p>“Have 5 to 10 times as much RAM as the size of your dataset” (Wes Mckinney)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2024,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2024,
   author = {Arie Wijaya, Aditya},
   title = {Parsing 10+ {GB} {CSV} File in {Python} - {Larger} Than
     {Memory}},
   date = {2024-05-19},
-  url = {https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory},
+  url = {https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Arie Wijaya, Aditya. 2024. <span>“Parsing 10+ GB CSV File in Python -
-Larger Than Memory.”</span> May 19, 2024. <a href="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory">https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory</a>.
+Larger Than Memory.”</span> May 19, 2024. <a href="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/">https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -718,18 +723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -761,7 +755,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/adtarie\.net");
@@ -769,7 +785,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

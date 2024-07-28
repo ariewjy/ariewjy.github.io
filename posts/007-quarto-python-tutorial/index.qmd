@@ -8,7 +8,6 @@ categories:
   - tutorial
   - quarto
   - python
-  - vscode
 code-fold: show
 draft: false
 citation-location: margin

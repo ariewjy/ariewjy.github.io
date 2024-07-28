@@ -5,8 +5,7 @@ description: |
 title-block-banner: true
 date: '2024-02-25'
 categories:
-  - ricohgr
-  - camera
+  - photography
 draft: false
 fig-cap-location: top
 fig-align: left

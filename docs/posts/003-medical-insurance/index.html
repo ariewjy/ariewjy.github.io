@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.557">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -60,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -165,8 +165,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">project</div>
-                <div class="quarto-category">data-science</div>
+                <div class="quarto-category">data</div>
+                <div class="quarto-category">portfolio</div>
                 <div class="quarto-category">python</div>
               </div>
                   </div>
@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="importing-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="importing-dataset">Importing Dataset</h2>
-<div class="cell" data-execution_count="2">
+<div id="f69c82db" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>insurance <span class="op">=</span> pd.read_csv(<span class="st">'insurance.zip'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>insurance.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -426,7 +426,7 @@ For more granular grouping, the [classification](https://www.calculator.net/bmi-
 <span id="cb3-22"><a href="#cb3-22"></a> <span class="co"># .style.text_gradient()</span></span>
 <span id="cb3-23"><a href="#cb3-23"></a><span class="co">#  .T</span></span>
 <span id="cb3-24"><a href="#cb3-24"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-bmi-class" class="cell quarto-float anchored" data-execution_count="3">
+<div id="tbl-bmi-class" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bmi-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: BMI Class
@@ -512,7 +512,7 @@ Table&nbsp;1: BMI Class
 </section>
 <section id="quicklook" class="level2">
 <h2 class="anchored" data-anchor-id="quicklook">Quicklook</h2>
-<div class="cell" data-execution_count="4">
+<div id="203e9443" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>insurance.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -533,7 +533,7 @@ memory usage: 74.8+ KB</code></pre>
 </div>
 </div>
 <p>The data appears to be clean, with no null row, and dftypes appear to be correct. However, the format appears to be a non-tidy format.</p>
-<div class="cell" data-execution_count="5">
+<div id="1c8afa4f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>(insurance</span>
 <span id="cb6-2"><a href="#cb6-2"></a> .select_dtypes(include<span class="op">=</span><span class="bu">object</span>) <span class="co">#includes all column with object dtypes</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a> .value_counts() <span class="co">#counting unique value</span></span>
@@ -585,7 +585,7 @@ Important
 <p>As many people know, smoking is highly linked to clinical disease such as <em>TBC, lung cancer, hypertension</em>, etc. People with <code>smoking</code> history, may be considered a <strong>high risk profile</strong>, and as the likely outcome the <strong>medical charges may be higher</strong> than a non-smoker people.</p>
 <section id="overall-mean-age-of-insurance-member" class="level3">
 <h3 class="anchored" data-anchor-id="overall-mean-age-of-insurance-member">Overall Mean age of insurance member</h3>
-<div class="cell" data-execution_count="6">
+<div id="cell-fig-mean-age" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>(sns</span>
@@ -606,7 +606,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-mean-age" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-mean-age" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-mean-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Overall Mean Age
@@ -646,7 +646,7 @@ Figure&nbsp;1: Overall Mean Age
 <span id="cb10-19"><a href="#cb10-19"></a><span class="co">#  )</span></span>
 <span id="cb10-20"><a href="#cb10-20"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-smoker-based-on-sex" class="cell quarto-float anchored" data-execution_count="7">
+<div id="tbl-smoker-based-on-sex" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="7">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-smoker-based-on-sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Statistic of Age, BMI, and Charges by Smoker and Sex
@@ -726,7 +726,7 @@ Table&nbsp;2: Statistic of Age, BMI, and Charges by Smoker and Sex
 <span id="cb11-4"><a href="#cb11-4"></a> .agg([np.mean])<span class="op">/</span><span class="fl">8434.268298</span> <span class="co">#to calculate how high the smoker medical charges</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-ratio-smoker" class="cell quarto-float anchored" data-execution_count="8">
+<div id="tbl-ratio-smoker" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="8">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ratio-smoker-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Ratio of Charges based on Smoker profile
@@ -781,7 +781,7 @@ Table&nbsp;3: Ratio of Charges based on Smoker profile
 <span id="cb12-4"><a href="#cb12-4"></a> .agg([np.mean])<span class="op">/</span><span class="fl">12569.578844</span> <span class="co">#to calculate how high the smoker medical charges</span></span>
 <span id="cb12-5"><a href="#cb12-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-ratio-sex" class="cell quarto-float anchored" data-execution_count="9">
+<div id="tbl-ratio-sex" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="9">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ratio-sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Ratio of Charges based on Sex profile
@@ -827,7 +827,7 @@ Table&nbsp;4: Ratio of Charges based on Sex profile
 <p>Furthermore, <a href="#tbl-ratio-sex" class="quarto-xref">Table&nbsp;4</a> shows that male has 10% higher medical charges compared to female counterpart.</p>
 <section id="distribution-of-age-categorized-based-on-sex-smoker-and-bmi_class" class="level4">
 <h4 class="anchored" data-anchor-id="distribution-of-age-categorized-based-on-sex-smoker-and-bmi_class">Distribution of <code>age</code> categorized based on <code>sex</code>, <code>smoker</code>, and <code>bmi_class</code></h4>
-<div class="cell" data-execution_count="10">
+<div id="cell-fig-boxplot-age" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>(sns</span>
@@ -853,7 +853,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-boxplot-age" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-boxplot-age" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-boxplot-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Age distribution based on Categorical values
@@ -871,7 +871,7 @@ Figure&nbsp;2: Age distribution based on Categorical values
 </section>
 <section id="does-region-affecting-the-age-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="does-region-affecting-the-age-distribution">Does <code>region</code> affecting the <code>age</code> distribution?</h3>
-<div class="cell" data-execution_count="11">
+<div id="cell-fig-boxplot-region" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>(sns</span>
@@ -897,7 +897,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-boxplot-region" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-boxplot-region" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-boxplot-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Age distribution based on region
@@ -912,7 +912,7 @@ Figure&nbsp;3: Age distribution based on region
 <p>As can be seen in <a href="#fig-boxplot-region" class="quarto-xref">Figure&nbsp;3</a>, the region category does not seem to bring any value to the analysis, as the pattern with/ without region data is unclear. <strong>May need further check</strong>.</p>
 <section id="inspecting-the-age-vs-charges-based-on-smoker-sex-and-bmi_class-profile" class="level4">
 <h4 class="anchored" data-anchor-id="inspecting-the-age-vs-charges-based-on-smoker-sex-and-bmi_class-profile">Inspecting the <code>age</code> vs <code>charges</code> based on <code>smoker</code>, <code>sex</code>, and <code>bmi_class</code> profile</h4>
-<div class="cell" data-execution_count="12">
+<div id="cell-fig-age-charges-1" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>g<span class="op">=</span>(sns</span>
@@ -957,7 +957,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-age-charges-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-age-charges-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-age-charges-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Age vs Charges
@@ -981,7 +981,7 @@ Figure&nbsp;4: Age vs Charges
 </section>
 <section id="does-sex-affects-age-vs-charges-distributiontrend" class="level3">
 <h3 class="anchored" data-anchor-id="does-sex-affects-age-vs-charges-distributiontrend">Does <code>sex</code> affects <code>age</code> vs <code>charges</code> distribution/trend?</h3>
-<div class="cell" data-execution_count="13">
+<div id="cell-fig-age-charges-2" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>(sns</span>
@@ -1018,7 +1018,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-age-charges-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-age-charges-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-age-charges-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Age vs Charges based on Sex
@@ -1044,7 +1044,7 @@ Figure&nbsp;5: Age vs Charges based on Sex
 </section>
 <section id="some-observed-outlier-group-i-a-between-group-i-and-ii" class="level3">
 <h3 class="anchored" data-anchor-id="some-observed-outlier-group-i-a-between-group-i-and-ii">Some observed <code>outlier (group I-a)</code> between group I and II?</h3>
-<div class="cell" data-execution_count="14">
+<div id="cell-fig-outlier" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>g <span class="op">=</span> (sns</span>
@@ -1097,7 +1097,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-outlier" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-outlier" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-outlier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Outliers?
@@ -1113,7 +1113,7 @@ Figure&nbsp;6: Outliers?
 </section>
 <section id="what-affects-the-outlier-i-a-group" class="level3">
 <h3 class="anchored" data-anchor-id="what-affects-the-outlier-i-a-group">What affects the <code>outlier/ I-a</code> group?</h3>
-<div class="cell" data-execution_count="15">
+<div id="cell-fig-outlier-eda" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>(sns</span>
@@ -1145,7 +1145,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-outlier-eda" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-outlier-eda" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-outlier-eda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Outliers vs number of Children
@@ -1171,7 +1171,7 @@ Important
 <p>It is unclear as to why this is happening. Perhaps other factors plays a role. At the time of this writing, author decided to categorized the group <code>I-a</code> as the outlier.</p>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div id="cell-fig-bmi-charges" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>g <span class="op">=</span> (sns</span>
@@ -1219,7 +1219,7 @@ The figure layout has changed to tight
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-bmi-charges" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-bmi-charges" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-bmi-charges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: BMI vs Charges
@@ -1308,16 +1308,16 @@ Important
 <li id="fn3"><p>around 10% higher in male, compared to female counterpart (see <a href="#tbl-ratio-sex" class="quarto-xref">Table&nbsp;4</a>)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>the BMI class shows a mix of all classes (from underweight to obese)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2022,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2022,
   author = {Arie Wijaya, Aditya},
   title = {Medical {Insurance} {Cost} - {Exploratory} {Analysis}},
   date = {2022-10-27},
-  url = {https://adtarie.net/posts/003-medical-insurance},
+  url = {https://adtarie.net/posts/003-medical-insurance/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2022" class="csl-entry quarto-appendix-citeas" role="listitem">
 Arie Wijaya, Aditya. 2022. <span>“Medical Insurance Cost - Exploratory
-Analysis.”</span> October 27, 2022. <a href="https://adtarie.net/posts/003-medical-insurance">https://adtarie.net/posts/003-medical-insurance</a>.
+Analysis.”</span> October 27, 2022. <a href="https://adtarie.net/posts/003-medical-insurance/">https://adtarie.net/posts/003-medical-insurance/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1354,18 +1354,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1397,7 +1386,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/adtarie\.net");
@@ -1405,7 +1416,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

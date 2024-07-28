@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.557">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -60,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -106,16 +106,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.scss">
 <meta property="og:title" content="Personal Website using Jupyter Notebook and Quarto">
 <meta property="og:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
+<meta property="og:image" content="https://adtarie.net/posts/007-quarto-python-tutorial/images/image0.jpg">
 <meta property="og:locale" content="en_EN">
 <meta name="twitter:title" content="Personal Website using Jupyter Notebook and Quarto">
 <meta name="twitter:description" content="A Long But Worth It, tutorial on how to make a personal website out of a jupyter notebook, github account, and quarto.">
+<meta name="twitter:image" content="https://adtarie.net/posts/007-quarto-python-tutorial/images/image0.jpg">
 <meta name="twitter:creator" content="@adtarie">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -127,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -146,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -165,7 +167,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 <div class="quarto-category">tutorial</div>
                 <div class="quarto-category">quarto</div>
                 <div class="quarto-category">python</div>
-                <div class="quarto-category">vscode</div>
               </div>
                   </div>
   </div>
@@ -226,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -238,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figcaption>Photo by <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/backgrounds/apps/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
-<p><img src="./images/image0.jpg" class="img-fluid figure-img"></p>
+<p><img src="./images/image0.jpg" class="preview-image img-fluid figure-img"></p>
 </figure>
 </div>
 <section id="introduction" class="level1">
@@ -251,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pay-gate-wall" class="level2">
 <h2 class="anchored" data-anchor-id="pay-gate-wall">Pay Gate Wall</h2>
 <p>It is good if you are getting paid for what you were sharing on, but if your main purpose is for branding yourself (like me), then a pay gate wall would not do you any good (<a href="#fig-paygate" class="quarto-xref">Figure&nbsp;1</a>). Especially, when you have just started on. Though it is fairly cheap, it is just another stopper for your first audience. Worse, the paid-subscription is only available for certain countries, Indonesia for example is not supported.</p>
-<div id="fig-paygate" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-paygate" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-paygate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Pay Gate in medium.com
@@ -265,7 +266,7 @@ Figure&nbsp;1: Pay Gate in medium.com
 <section id="reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
 <p>When I do my first data-science project, I wanted to make sure that someone can just follow along and then get the same result as I was. Using platform like medium, I could not really do that, and I believe it was not meant for tutorial in details. Rather it was for an explanatory writing, rather than exploratory writing. Quarto with its rendered codes as an output, makes it easier to do just that. The below code cell is me importing libraries, importing a dataset, and displaying the table.</p>
-<div class="cell" data-execution_count="1">
+<div id="4fa528b1" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#importing libraries</span></span>
@@ -276,7 +277,618 @@ Figure&nbsp;1: Pay Gate in medium.com
 <span id="cb1-6"><a href="#cb1-6"></a><span class="co">#displaying first 5 rows</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a>penguins.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+  var py_version = '3.2.1'.replace('rc', '-rc.').replace('.dev', '-dev.');
+  var reloading = false;
+  var Bokeh = root.Bokeh;
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks;
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, js_exports, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+    if (js_exports == null) js_exports = {};
+
+    root._bokeh_onload_callbacks.push(callback);
+
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0 && Object.keys(js_exports).length === 0) {
+      run_callbacks();
+      return null;
+    }
+    if (!reloading) {
+      console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    }
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+    window._bokeh_on_load = on_load
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {'jspanel': 'https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel', 'jspanel-modal': 'https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/modal/jspanel.modal', 'jspanel-tooltip': 'https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/tooltip/jspanel.tooltip', 'jspanel-hint': 'https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/hint/jspanel.hint', 'jspanel-layout': 'https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/layout/jspanel.layout', 'jspanel-contextmenu': 'https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/contextmenu/jspanel.contextmenu', 'jspanel-dock': 'https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/dock/jspanel.dock', 'gridstack': 'https://cdn.jsdelivr.net/npm/gridstack@7.2.3/dist/gridstack-all', 'notyf': 'https://cdn.jsdelivr.net/npm/notyf@3/notyf.min'}, 'shim': {'jspanel': {'exports': 'jsPanel'}, 'gridstack': {'exports': 'GridStack'}}});
+      require(["jspanel"], function(jsPanel) {
+    window.jsPanel = jsPanel
+    on_load()
+      })
+      require(["jspanel-modal"], function() {
+    on_load()
+      })
+      require(["jspanel-tooltip"], function() {
+    on_load()
+      })
+      require(["jspanel-hint"], function() {
+    on_load()
+      })
+      require(["jspanel-layout"], function() {
+    on_load()
+      })
+      require(["jspanel-contextmenu"], function() {
+    on_load()
+      })
+      require(["jspanel-dock"], function() {
+    on_load()
+      })
+      require(["gridstack"], function(GridStack) {
+    window.GridStack = GridStack
+    on_load()
+      })
+      require(["notyf"], function() {
+    on_load()
+      })
+      root._bokeh_is_loading = css_urls.length + 9;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length + Object.keys(js_exports).length;
+    }
+
+    var existing_stylesheets = []
+    var links = document.getElementsByTagName('link')
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i]
+      if (link.href != null) {
+    existing_stylesheets.push(link.href)
+      }
+    }
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      if (existing_stylesheets.indexOf(url) !== -1) {
+    on_load()
+    continue;
+      }
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }    if (((window['jsPanel'] !== undefined) && (!(window['jsPanel'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdn.holoviz.org/panel/1.3.8/dist/bundled/floatpanel/jspanel4@4.12.0/dist/jspanel.js', 'https://cdn.holoviz.org/panel/1.3.8/dist/bundled/floatpanel/jspanel4@4.12.0/dist/extensions/modal/jspanel.modal.js', 'https://cdn.holoviz.org/panel/1.3.8/dist/bundled/floatpanel/jspanel4@4.12.0/dist/extensions/tooltip/jspanel.tooltip.js', 'https://cdn.holoviz.org/panel/1.3.8/dist/bundled/floatpanel/jspanel4@4.12.0/dist/extensions/hint/jspanel.hint.js', 'https://cdn.holoviz.org/panel/1.3.8/dist/bundled/floatpanel/jspanel4@4.12.0/dist/extensions/layout/jspanel.layout.js', 'https://cdn.holoviz.org/panel/1.3.8/dist/bundled/floatpanel/jspanel4@4.12.0/dist/extensions/contextmenu/jspanel.contextmenu.js', 'https://cdn.holoviz.org/panel/1.3.8/dist/bundled/floatpanel/jspanel4@4.12.0/dist/extensions/dock/jspanel.dock.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }    if (((window['GridStack'] !== undefined) && (!(window['GridStack'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdn.holoviz.org/panel/1.3.8/dist/bundled/gridstack/gridstack@7.2.3/dist/gridstack-all.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }    if (((window['Notyf'] !== undefined) && (!(window['Notyf'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdn.holoviz.org/panel/1.3.8/dist/bundled/notificationarea/notyf@3/notyf.min.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }    var existing_scripts = []
+    var scripts = document.getElementsByTagName('script')
+    for (var i = 0; i < scripts.length; i++) {
+      var script = scripts[i]
+      if (script.src != null) {
+    existing_scripts.push(script.src)
+      }
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) !== -1 || existing_scripts.indexOf(url) !== -1) {
+    if (!window.requirejs) {
+      on_load();
+    }
+    continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) !== -1 || existing_scripts.indexOf(url) !== -1) {
+    if (!window.requirejs) {
+      on_load();
+    }
+    continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (const name in js_exports) {
+      var url = js_exports[name];
+      if (skip.indexOf(url) >= 0 || root[name] != null) {
+    if (!window.requirejs) {
+      on_load();
+    }
+    continue;
+      }
+      var element = document.createElement('script');
+      element.onerror = on_error;
+      element.async = false;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      element.textContent = `
+      import ${name} from "${url}"
+      window.${name} = ${name}
+      window._bokeh_on_load()
+      `
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.2.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.2.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.1.min.js", "https://cdn.holoviz.org/panel/1.3.8/dist/panel.min.js"];
+  var js_modules = [];
+  var js_exports = {};
+  var css_urls = [];
+  var inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+    try {
+          inline_js[i].call(root, root.Bokeh);
+    } catch(e) {
+      if (!reloading) {
+        throw e;
+      }
+    }
+      }
+      // Cache old bokeh versions
+      if (Bokeh != undefined && !reloading) {
+    var NewBokeh = root.Bokeh;
+    if (Bokeh.versions === undefined) {
+      Bokeh.versions = new Map();
+    }
+    if (NewBokeh.version !== Bokeh.version) {
+      Bokeh.versions.set(NewBokeh.version, NewBokeh)
+    }
+    root.Bokeh = Bokeh;
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+    root._bokeh_is_initializing = false
+  }
+
+  function load_or_wait() {
+    // Implement a backoff loop that tries to ensure we do not load multiple
+    // versions of Bokeh and its dependencies at the same time.
+    // In recent versions we use the root._bokeh_is_initializing flag
+    // to determine whether there is an ongoing attempt to initialize
+    // bokeh, however for backward compatibility we also try to ensure
+    // that we do not start loading a newer (Panel>=1.0 and Bokeh>3) version
+    // before older versions are fully initialized.
+    if (root._bokeh_is_initializing && Date.now() > root._bokeh_timeout) {
+      root._bokeh_is_initializing = false;
+      root._bokeh_onload_callbacks = undefined;
+      console.log("Bokeh: BokehJS was loaded multiple times but one version failed to initialize.");
+      load_or_wait();
+    } else if (root._bokeh_is_initializing || (typeof root._bokeh_is_initializing === "undefined" && root._bokeh_onload_callbacks !== undefined)) {
+      setTimeout(load_or_wait, 100);
+    } else {
+      root._bokeh_is_initializing = true
+      root._bokeh_onload_callbacks = []
+      var bokeh_loaded = Bokeh != null && (Bokeh.version === py_version || (Bokeh.versions !== undefined && Bokeh.versions.has(py_version)));
+      if (!reloading && !bokeh_loaded) {
+    root.Bokeh = undefined;
+      }
+      load_libs(css_urls, js_urls, js_modules, js_exports, function() {
+    console.debug("Bokeh: BokehJS plotting callback run at", now());
+    run_inline_js();
+      });
+    }
+  }
+  // Give older versions of the autoload script a head-start to ensure
+  // they initialize before we start loading newer version.
+  setTimeout(load_or_wait, 100)
+}(window));
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<style>*[data-root-id],
+*[data-root-id] > * {
+  box-sizing: border-box;
+  font-family: var(--jp-ui-font-family);
+  font-size: var(--jp-ui-font-size1);
+  color: var(--vscode-editor-foreground, var(--jp-ui-font-color1));
+}
+
+/* Override VSCode background color */
+.cell-output-ipywidget-background:has(
+    > .cell-output-ipywidget-background > .lm-Widget > *[data-root-id]
+  ),
+.cell-output-ipywidget-background:has(> .lm-Widget > *[data-root-id]) {
+  background-color: transparent !important;
+}
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<div id="p1002">
+  <div id="ef5c80d8-cef3-47ea-9fde-28d4ed8cab20" data-root-id="p1002" style="display: contents;"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  var docs_json = {"f3ccc43b-10f1-45d0-b79c-93eeabcdca34":{"version":"3.2.1","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"p1002"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"p1003","attributes":{"plot_id":"p1002","comm_id":"2ca581b2bce545ec9bc24fcad0f23f43","client_comm_id":"2238c70ffbcb456eaca6d2509c6ee958"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"copy_to_clipboard1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"value","kind":"Any","default":null}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]}]}};
+  var render_items = [{"docid":"f3ccc43b-10f1-45d0-b79c-93eeabcdca34","roots":{"p1002":"ef5c80d8-cef3-47ea-9fde-28d4ed8cab20"},"root_ids":["p1002"]}];
+  var docs = Object.values(docs_json)
+  if (!docs) {
+    return
+  }
+  const py_version = docs[0].version.replace('rc', '-rc.').replace('.dev', '-dev.')
+  function embed_document(root) {
+    var Bokeh = get_bokeh(root)
+    Bokeh.embed.embed_items_notebook(docs_json, render_items);
+    for (const render_item of render_items) {
+      for (const root_id of render_item.root_ids) {
+    const id_el = document.getElementById(root_id)
+    if (id_el.children.length && (id_el.children[0].className === 'bk-root')) {
+      const root_el = id_el.children[0]
+      root_el.id = root_el.id + '-rendered'
+    }
+      }
+    }
+  }
+  function get_bokeh(root) {
+    if (root.Bokeh === undefined) {
+      return null
+    } else if (root.Bokeh.version !== py_version) {
+      if (root.Bokeh.versions === undefined || !root.Bokeh.versions.has(py_version)) {
+    return null
+      }
+      return root.Bokeh.versions.get(py_version);
+    } else if (root.Bokeh.version === py_version) {
+      return root.Bokeh
+    }
+    return null
+  }
+  function is_loaded(root) {
+    var Bokeh = get_bokeh(root)
+    return (Bokeh != null && Bokeh.Panel !== undefined)
+  }
+  if (is_loaded(root)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (is_loaded(root)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+      var Bokeh = get_bokeh(root)
+      if (Bokeh == null || Bokeh.Panel == null) {
+            console.warn("Panel: ERROR: Unable to run Panel code because Bokeh or Panel library is missing");
+      } else {
+        console.warn("Panel: WARNING: Attempting to render but not all required libraries could be resolved.")
+        embed_document(root)
+      }
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -351,7 +963,7 @@ Figure&nbsp;1: Pay Gate in medium.com
 </div>
 </div>
 <p>What if I want to show the last 6 rows? I can just change the code.</p>
-<div class="cell" data-execution_count="2">
+<div id="d9a42ac4" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#importing libraries</span></span>
@@ -362,7 +974,7 @@ Figure&nbsp;1: Pay Gate in medium.com
 <span id="cb2-6"><a href="#cb2-6"></a><span class="co">#displaying first 5 rows</span></span>
 <span id="cb2-7"><a href="#cb2-7"></a>penguins.tail(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -479,7 +1091,7 @@ Figure&nbsp;1: Pay Gate in medium.com
 <section id="creating-a-repo" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-repo">Creating a Repo</h2>
 <p>Make a new repository with the same name as your github account. For example, if your github account is <em>johndoe</em>, then make a new repository named john.github.io (see <a href="#fig-newrepo" class="quarto-xref">Figure&nbsp;2</a>).</p>
-<div id="fig-newrepo" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-newrepo" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-newrepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Creating a New Repo
@@ -494,7 +1106,7 @@ Figure&nbsp;2: Creating a New Repo
 <section id="starting-from-a-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="starting-from-a-notebook">Starting from a Notebook</h2>
 <p>Let’s make a content, using jupyter notebook, with a combination of code cells and markdown cells. I am gonna use the content in this post, where I load a libraries, dataset from palmerpenguins, and then I will do some plotting using altair to spice things up, cause why not. See below <a href="#fig-notebook" class="quarto-xref">Figure&nbsp;3</a> for example.</p>
-<div class="cell" data-execution_count="3">
+<div id="e2b772d9" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#importing libraries</span></span>
@@ -528,31 +1140,60 @@ Figure&nbsp;2: Creating a New Repo
 <span id="cb3-29"><a href="#cb3-29"></a></span>
 <span id="cb3-30"><a href="#cb3-30"></a>points <span class="op">&amp;</span> bars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-stderr">
+<pre><code>/Users/ariewijaya/miniconda3/envs/minids/lib/python3.9/site-packages/altair/utils/deprecation.py:65: AltairDeprecationWarning:
 
-<div id="altair-viz-e1ac4c30df6a474eb629c5211a0dcb9a"></div>
+'selection' is deprecated.
+   Use 'selection_point()' or 'selection_interval()' instead; these functions also include more helpful docstrings.
+
+/Users/ariewijaya/miniconda3/envs/minids/lib/python3.9/site-packages/altair/utils/deprecation.py:65: AltairDeprecationWarning:
+
+'add_selection' is deprecated. Use 'add_params' instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<style>
+  #altair-viz-e2989b5fd9174ff896c7c32ca3d0b3db.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-e2989b5fd9174ff896c7c32ca3d0b3db.vega-embed details,
+  #altair-viz-e2989b5fd9174ff896c7c32ca3d0b3db.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-e2989b5fd9174ff896c7c32ca3d0b3db"></div>
 <script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e1ac4c30df6a474eb629c5211a0dcb9a") {
-      outputDiv = document.getElementById("altair-viz-e1ac4c30df6a474eb629c5211a0dcb9a");
+    if (outputDiv.id !== "altair-viz-e2989b5fd9174ff896c7c32ca3d0b3db") {
+      outputDiv = document.getElementById("altair-viz-e2989b5fd9174ff896c7c32ca3d0b3db");
     }
     const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.8.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
     };
 
-    function loadScript(lib) {
-      return new Promise(function(resolve, reject) {
-        var s = document.createElement('script');
-        s.src = paths[lib];
-        s.async = true;
-        s.onload = () => resolve(paths[lib]);
-        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-        document.getElementsByTagName("head")[0].appendChild(s);
-      });
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
     }
 
     function showError(err) {
@@ -568,20 +1209,18 @@ Figure&nbsp;2: Creating a New Repo
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
       require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else if (typeof vegaEmbed === "function") {
-      displayChart(vegaEmbed);
     } else {
-      loadScript("vega")
-        .then(() => loadScript("vega-lite"))
-        .then(() => loadScript("vega-embed"))
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.8.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": {"type": "circle", "size": 60}, "encoding": {"color": {"type": "nominal", "field": "species"}, "x": {"type": "quantitative", "field": "bill_length_mm", "scale": {"domain": [30, 60]}}, "y": {"type": "quantitative", "field": "bill_depth_mm", "scale": {"domain": [12, 22]}}}, "selection": {"selector003": {"type": "interval"}}, "title": "Palmer Penguins Dataset"}, {"mark": "bar", "encoding": {"color": {"type": "nominal", "field": "island"}, "x": {"type": "nominal", "aggregate": "count", "field": "island"}, "y": {"type": "nominal", "field": "island"}}, "transform": [{"filter": {"selection": "selector003"}}]}], "data": {"name": "data-7b1c3d376dc1f878f7c4c69deb3a1e79"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-7b1c3d376dc1f878f7c4c69deb3a1e79": [{"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.5, "bill_depth_mm": 17.4, "flipper_length_mm": 186.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.3, "bill_depth_mm": 18.0, "flipper_length_mm": 195.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": null, "bill_depth_mm": null, "flipper_length_mm": null, "body_mass_g": null, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 19.3, "flipper_length_mm": 193.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.3, "bill_depth_mm": 20.6, "flipper_length_mm": 190.0, "body_mass_g": 3650.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.9, "bill_depth_mm": 17.8, "flipper_length_mm": 181.0, "body_mass_g": 3625.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.2, "bill_depth_mm": 19.6, "flipper_length_mm": 195.0, "body_mass_g": 4675.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.1, "bill_depth_mm": 18.1, "flipper_length_mm": 193.0, "body_mass_g": 3475.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.0, "bill_depth_mm": 20.2, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.8, "bill_depth_mm": 17.1, "flipper_length_mm": 186.0, "body_mass_g": 3300.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.8, "bill_depth_mm": 17.3, "flipper_length_mm": 180.0, "body_mass_g": 3700.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.1, "bill_depth_mm": 17.6, "flipper_length_mm": 182.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.6, "bill_depth_mm": 21.2, "flipper_length_mm": 191.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.6, "bill_depth_mm": 21.1, "flipper_length_mm": 198.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.6, "bill_depth_mm": 17.8, "flipper_length_mm": 185.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.7, "bill_depth_mm": 19.0, "flipper_length_mm": 195.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.5, "bill_depth_mm": 20.7, "flipper_length_mm": 197.0, "body_mass_g": 4500.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.4, "bill_depth_mm": 18.4, "flipper_length_mm": 184.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 46.0, "bill_depth_mm": 21.5, "flipper_length_mm": 194.0, "body_mass_g": 4200.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.8, "bill_depth_mm": 18.3, "flipper_length_mm": 174.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.7, "bill_depth_mm": 18.7, "flipper_length_mm": 180.0, "body_mass_g": 3600.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.9, "bill_depth_mm": 19.2, "flipper_length_mm": 189.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.2, "bill_depth_mm": 18.1, "flipper_length_mm": 185.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.8, "bill_depth_mm": 17.2, "flipper_length_mm": 180.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.3, "bill_depth_mm": 18.9, "flipper_length_mm": 187.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.6, "bill_depth_mm": 18.6, "flipper_length_mm": 183.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.5, "bill_depth_mm": 17.9, "flipper_length_mm": 187.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.9, "bill_depth_mm": 18.6, "flipper_length_mm": 172.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.5, "bill_depth_mm": 18.9, "flipper_length_mm": 180.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.5, "bill_depth_mm": 16.7, "flipper_length_mm": 178.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.2, "bill_depth_mm": 18.1, "flipper_length_mm": 178.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.5, "bill_depth_mm": 17.8, "flipper_length_mm": 188.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.9, "bill_depth_mm": 18.9, "flipper_length_mm": 184.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.4, "bill_depth_mm": 17.0, "flipper_length_mm": 195.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 21.1, "flipper_length_mm": 196.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.8, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 42.2, "bill_depth_mm": 18.5, "flipper_length_mm": 180.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.6, "bill_depth_mm": 19.3, "flipper_length_mm": 181.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.8, "bill_depth_mm": 19.1, "flipper_length_mm": 184.0, "body_mass_g": 4650.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.5, "bill_depth_mm": 18.0, "flipper_length_mm": 182.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.8, "bill_depth_mm": 18.4, "flipper_length_mm": 195.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 18.5, "flipper_length_mm": 186.0, "body_mass_g": 3100.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 44.1, "bill_depth_mm": 19.7, "flipper_length_mm": 196.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.0, "bill_depth_mm": 16.9, "flipper_length_mm": 185.0, "body_mass_g": 3000.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.6, "bill_depth_mm": 18.8, "flipper_length_mm": 190.0, "body_mass_g": 4600.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 19.0, "flipper_length_mm": 182.0, "body_mass_g": 3425.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.5, "bill_depth_mm": 18.9, "flipper_length_mm": 179.0, "body_mass_g": 2975.0, "sex": null}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 42.3, "bill_depth_mm": 21.2, "flipper_length_mm": 191.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.6, "bill_depth_mm": 17.7, "flipper_length_mm": 186.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.1, "bill_depth_mm": 18.9, "flipper_length_mm": 188.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.0, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.0, "bill_depth_mm": 19.5, "flipper_length_mm": 200.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 34.5, "bill_depth_mm": 18.1, "flipper_length_mm": 187.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.4, "bill_depth_mm": 18.6, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.0, "bill_depth_mm": 17.5, "flipper_length_mm": 186.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.6, "bill_depth_mm": 18.8, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 36.5, "bill_depth_mm": 16.6, "flipper_length_mm": 181.0, "body_mass_g": 2850.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.6, "bill_depth_mm": 19.1, "flipper_length_mm": 194.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.7, "bill_depth_mm": 16.9, "flipper_length_mm": 185.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.3, "bill_depth_mm": 21.1, "flipper_length_mm": 195.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.6, "bill_depth_mm": 17.0, "flipper_length_mm": 185.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.1, "bill_depth_mm": 18.2, "flipper_length_mm": 192.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 36.4, "bill_depth_mm": 17.1, "flipper_length_mm": 184.0, "body_mass_g": 2850.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.6, "bill_depth_mm": 18.0, "flipper_length_mm": 192.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.5, "bill_depth_mm": 16.2, "flipper_length_mm": 195.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.1, "bill_depth_mm": 19.1, "flipper_length_mm": 188.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.9, "bill_depth_mm": 16.6, "flipper_length_mm": 190.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.8, "bill_depth_mm": 19.4, "flipper_length_mm": 198.0, "body_mass_g": 4450.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 33.5, "bill_depth_mm": 19.0, "flipper_length_mm": 190.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.7, "bill_depth_mm": 18.4, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.6, "bill_depth_mm": 17.2, "flipper_length_mm": 196.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 45.8, "bill_depth_mm": 18.9, "flipper_length_mm": 197.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.5, "bill_depth_mm": 17.5, "flipper_length_mm": 190.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.8, "bill_depth_mm": 18.5, "flipper_length_mm": 195.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.9, "bill_depth_mm": 16.8, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.2, "bill_depth_mm": 19.4, "flipper_length_mm": 184.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.2, "bill_depth_mm": 16.1, "flipper_length_mm": 187.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.1, "bill_depth_mm": 19.1, "flipper_length_mm": 195.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.6, "bill_depth_mm": 17.2, "flipper_length_mm": 189.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.9, "bill_depth_mm": 17.6, "flipper_length_mm": 196.0, "body_mass_g": 4700.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 18.8, "flipper_length_mm": 187.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.1, "bill_depth_mm": 19.4, "flipper_length_mm": 193.0, "body_mass_g": 4200.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.3, "bill_depth_mm": 17.8, "flipper_length_mm": 191.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.3, "bill_depth_mm": 20.3, "flipper_length_mm": 194.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.3, "bill_depth_mm": 19.5, "flipper_length_mm": 190.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.9, "bill_depth_mm": 18.6, "flipper_length_mm": 189.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.3, "bill_depth_mm": 19.2, "flipper_length_mm": 189.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.9, "bill_depth_mm": 18.8, "flipper_length_mm": 190.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 35.7, "bill_depth_mm": 18.0, "flipper_length_mm": 202.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 18.1, "flipper_length_mm": 205.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 34.0, "bill_depth_mm": 17.1, "flipper_length_mm": 185.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.6, "bill_depth_mm": 18.1, "flipper_length_mm": 186.0, "body_mass_g": 4450.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.2, "bill_depth_mm": 17.3, "flipper_length_mm": 187.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.8, "bill_depth_mm": 18.9, "flipper_length_mm": 208.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.1, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.3, "bill_depth_mm": 18.5, "flipper_length_mm": 196.0, "body_mass_g": 4350.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 33.1, "bill_depth_mm": 16.1, "flipper_length_mm": 178.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 43.2, "bill_depth_mm": 18.5, "flipper_length_mm": 192.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.0, "bill_depth_mm": 17.9, "flipper_length_mm": 192.0, "body_mass_g": 3725.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.0, "bill_depth_mm": 20.0, "flipper_length_mm": 203.0, "body_mass_g": 4725.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.7, "bill_depth_mm": 16.0, "flipper_length_mm": 183.0, "body_mass_g": 3075.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.8, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.9, "bill_depth_mm": 18.6, "flipper_length_mm": 193.0, "body_mass_g": 2925.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.7, "bill_depth_mm": 18.9, "flipper_length_mm": 184.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.6, "bill_depth_mm": 17.2, "flipper_length_mm": 199.0, "body_mass_g": 3750.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.2, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 17.0, "flipper_length_mm": 181.0, "body_mass_g": 3175.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 43.2, "bill_depth_mm": 19.0, "flipper_length_mm": 197.0, "body_mass_g": 4775.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 16.5, "flipper_length_mm": 198.0, "body_mass_g": 3825.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 45.6, "bill_depth_mm": 20.3, "flipper_length_mm": 191.0, "body_mass_g": 4600.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.7, "bill_depth_mm": 17.7, "flipper_length_mm": 193.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.2, "bill_depth_mm": 19.5, "flipper_length_mm": 197.0, "body_mass_g": 4275.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.6, "bill_depth_mm": 20.7, "flipper_length_mm": 191.0, "body_mass_g": 3900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.7, "bill_depth_mm": 18.3, "flipper_length_mm": 196.0, "body_mass_g": 4075.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.6, "bill_depth_mm": 17.0, "flipper_length_mm": 188.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.3, "bill_depth_mm": 20.5, "flipper_length_mm": 199.0, "body_mass_g": 3775.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.7, "bill_depth_mm": 17.0, "flipper_length_mm": 189.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.1, "bill_depth_mm": 18.6, "flipper_length_mm": 189.0, "body_mass_g": 3325.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.2, "bill_depth_mm": 17.2, "flipper_length_mm": 187.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.7, "bill_depth_mm": 19.8, "flipper_length_mm": 198.0, "body_mass_g": 3500.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.2, "bill_depth_mm": 17.0, "flipper_length_mm": 176.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.4, "bill_depth_mm": 18.5, "flipper_length_mm": 202.0, "body_mass_g": 3875.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.2, "bill_depth_mm": 15.9, "flipper_length_mm": 186.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.6, "bill_depth_mm": 19.0, "flipper_length_mm": 199.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.8, "bill_depth_mm": 17.6, "flipper_length_mm": 191.0, "body_mass_g": 3275.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.5, "bill_depth_mm": 18.3, "flipper_length_mm": 195.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.0, "bill_depth_mm": 17.1, "flipper_length_mm": 191.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 44.1, "bill_depth_mm": 18.0, "flipper_length_mm": 210.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.5, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 43.1, "bill_depth_mm": 19.2, "flipper_length_mm": 197.0, "body_mass_g": 3500.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.8, "bill_depth_mm": 18.5, "flipper_length_mm": 193.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.5, "bill_depth_mm": 18.5, "flipper_length_mm": 199.0, "body_mass_g": 4475.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.1, "bill_depth_mm": 17.6, "flipper_length_mm": 187.0, "body_mass_g": 3425.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 17.5, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 35.6, "bill_depth_mm": 17.5, "flipper_length_mm": 191.0, "body_mass_g": 3175.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.2, "bill_depth_mm": 20.1, "flipper_length_mm": 200.0, "body_mass_g": 3975.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.0, "bill_depth_mm": 16.5, "flipper_length_mm": 185.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.7, "bill_depth_mm": 17.9, "flipper_length_mm": 193.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.2, "bill_depth_mm": 17.1, "flipper_length_mm": 193.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.6, "bill_depth_mm": 17.2, "flipper_length_mm": 187.0, "body_mass_g": 3475.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 32.1, "bill_depth_mm": 15.5, "flipper_length_mm": 188.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.7, "bill_depth_mm": 17.0, "flipper_length_mm": 190.0, "body_mass_g": 3725.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.3, "bill_depth_mm": 16.8, "flipper_length_mm": 192.0, "body_mass_g": 3000.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.0, "bill_depth_mm": 18.7, "flipper_length_mm": 185.0, "body_mass_g": 3650.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.6, "bill_depth_mm": 18.4, "flipper_length_mm": 184.0, "body_mass_g": 3475.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.8, "flipper_length_mm": 195.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.8, "bill_depth_mm": 18.1, "flipper_length_mm": 193.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.1, "flipper_length_mm": 187.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.5, "bill_depth_mm": 18.5, "flipper_length_mm": 201.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.5, "bill_depth_mm": 17.9, "flipper_length_mm": 192.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.0, "bill_depth_mm": 19.5, "flipper_length_mm": 196.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 19.2, "flipper_length_mm": 193.0, "body_mass_g": 3650.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.4, "bill_depth_mm": 18.7, "flipper_length_mm": 188.0, "body_mass_g": 3525.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.7, "bill_depth_mm": 19.8, "flipper_length_mm": 197.0, "body_mass_g": 3725.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.2, "bill_depth_mm": 17.8, "flipper_length_mm": 198.0, "body_mass_g": 3950.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.1, "bill_depth_mm": 18.2, "flipper_length_mm": 178.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 18.2, "flipper_length_mm": 197.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.0, "bill_depth_mm": 18.9, "flipper_length_mm": 195.0, "body_mass_g": 4150.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 19.9, "flipper_length_mm": 198.0, "body_mass_g": 3700.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.6, "bill_depth_mm": 17.8, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.7, "bill_depth_mm": 20.3, "flipper_length_mm": 194.0, "body_mass_g": 3775.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.0, "bill_depth_mm": 17.3, "flipper_length_mm": 185.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 18.1, "flipper_length_mm": 201.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.9, "bill_depth_mm": 17.1, "flipper_length_mm": 190.0, "body_mass_g": 3575.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.5, "bill_depth_mm": 19.6, "flipper_length_mm": 201.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.3, "bill_depth_mm": 20.0, "flipper_length_mm": 197.0, "body_mass_g": 3300.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 58.0, "bill_depth_mm": 17.8, "flipper_length_mm": 181.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.4, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.2, "bill_depth_mm": 18.2, "flipper_length_mm": 195.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.4, "bill_depth_mm": 17.3, "flipper_length_mm": 181.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 48.5, "bill_depth_mm": 17.5, "flipper_length_mm": 191.0, "body_mass_g": 3400.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 43.2, "bill_depth_mm": 16.6, "flipper_length_mm": 187.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.6, "bill_depth_mm": 19.4, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.7, "bill_depth_mm": 17.9, "flipper_length_mm": 195.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 19.0, "flipper_length_mm": 197.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.5, "bill_depth_mm": 18.4, "flipper_length_mm": 200.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.5, "bill_depth_mm": 19.0, "flipper_length_mm": 200.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.4, "bill_depth_mm": 17.8, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.8, "bill_depth_mm": 20.0, "flipper_length_mm": 205.0, "body_mass_g": 4550.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 40.9, "bill_depth_mm": 16.6, "flipper_length_mm": 187.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 54.2, "bill_depth_mm": 20.8, "flipper_length_mm": 201.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.5, "bill_depth_mm": 16.7, "flipper_length_mm": 187.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.0, "bill_depth_mm": 18.8, "flipper_length_mm": 203.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.7, "bill_depth_mm": 18.6, "flipper_length_mm": 195.0, "body_mass_g": 3600.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.5, "bill_depth_mm": 16.8, "flipper_length_mm": 199.0, "body_mass_g": 3900.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.6, "bill_depth_mm": 18.3, "flipper_length_mm": 195.0, "body_mass_g": 3850.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 20.7, "flipper_length_mm": 210.0, "body_mass_g": 4800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.9, "bill_depth_mm": 16.6, "flipper_length_mm": 192.0, "body_mass_g": 2700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 53.5, "bill_depth_mm": 19.9, "flipper_length_mm": 205.0, "body_mass_g": 4500.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.0, "bill_depth_mm": 19.5, "flipper_length_mm": 210.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.2, "bill_depth_mm": 17.5, "flipper_length_mm": 187.0, "body_mass_g": 3650.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.9, "bill_depth_mm": 19.1, "flipper_length_mm": 196.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.5, "bill_depth_mm": 17.0, "flipper_length_mm": 196.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.9, "bill_depth_mm": 17.9, "flipper_length_mm": 196.0, "body_mass_g": 3675.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.8, "bill_depth_mm": 18.5, "flipper_length_mm": 201.0, "body_mass_g": 4450.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.1, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.0, "bill_depth_mm": 19.6, "flipper_length_mm": 212.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.5, "bill_depth_mm": 18.7, "flipper_length_mm": 187.0, "body_mass_g": 3250.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.8, "bill_depth_mm": 17.3, "flipper_length_mm": 198.0, "body_mass_g": 3675.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 48.1, "bill_depth_mm": 16.4, "flipper_length_mm": 199.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.4, "bill_depth_mm": 19.0, "flipper_length_mm": 201.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.7, "bill_depth_mm": 17.3, "flipper_length_mm": 193.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.7, "bill_depth_mm": 19.7, "flipper_length_mm": 203.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.5, "bill_depth_mm": 17.3, "flipper_length_mm": 187.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.2, "bill_depth_mm": 18.8, "flipper_length_mm": 197.0, "body_mass_g": 3450.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.2, "bill_depth_mm": 16.6, "flipper_length_mm": 191.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.3, "bill_depth_mm": 19.9, "flipper_length_mm": 203.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.2, "bill_depth_mm": 18.8, "flipper_length_mm": 202.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.6, "bill_depth_mm": 19.4, "flipper_length_mm": 194.0, "body_mass_g": 3525.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.9, "bill_depth_mm": 19.5, "flipper_length_mm": 206.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.8, "bill_depth_mm": 16.5, "flipper_length_mm": 189.0, "body_mass_g": 3650.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.7, "bill_depth_mm": 17.0, "flipper_length_mm": 195.0, "body_mass_g": 3650.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 55.8, "bill_depth_mm": 19.8, "flipper_length_mm": 207.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 43.5, "bill_depth_mm": 18.1, "flipper_length_mm": 202.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.6, "bill_depth_mm": 18.2, "flipper_length_mm": 193.0, "body_mass_g": 3775.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.8, "bill_depth_mm": 19.0, "flipper_length_mm": 210.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.2, "bill_depth_mm": 18.7, "flipper_length_mm": 198.0, "body_mass_g": 3775.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 13.2, "flipper_length_mm": 211.0, "body_mass_g": 4500.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 16.3, "flipper_length_mm": 230.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 14.1, "flipper_length_mm": 210.0, "body_mass_g": 4450.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.2, "flipper_length_mm": 218.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.6, "bill_depth_mm": 14.5, "flipper_length_mm": 215.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 13.5, "flipper_length_mm": 210.0, "body_mass_g": 4550.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.4, "bill_depth_mm": 14.6, "flipper_length_mm": 211.0, "body_mass_g": 4800.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.7, "bill_depth_mm": 15.3, "flipper_length_mm": 219.0, "body_mass_g": 5200.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 13.4, "flipper_length_mm": 209.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 15.4, "flipper_length_mm": 215.0, "body_mass_g": 5150.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 40.9, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.0, "bill_depth_mm": 16.1, "flipper_length_mm": 216.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 14.6, "flipper_length_mm": 213.0, "body_mass_g": 5850.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.8, "bill_depth_mm": 14.6, "flipper_length_mm": 210.0, "body_mass_g": 4200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.3, "bill_depth_mm": 15.7, "flipper_length_mm": 217.0, "body_mass_g": 5850.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.0, "bill_depth_mm": 13.5, "flipper_length_mm": 210.0, "body_mass_g": 4150.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.2, "bill_depth_mm": 15.2, "flipper_length_mm": 221.0, "body_mass_g": 6300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.5, "flipper_length_mm": 209.0, "body_mass_g": 4800.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 15.1, "flipper_length_mm": 222.0, "body_mass_g": 5350.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.2, "bill_depth_mm": 14.3, "flipper_length_mm": 218.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.5, "flipper_length_mm": 215.0, "body_mass_g": 5000.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.5, "flipper_length_mm": 213.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.3, "bill_depth_mm": 15.8, "flipper_length_mm": 215.0, "body_mass_g": 5050.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.9, "bill_depth_mm": 13.1, "flipper_length_mm": 215.0, "body_mass_g": 5000.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 15.1, "flipper_length_mm": 215.0, "body_mass_g": 5100.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.5, "bill_depth_mm": 14.3, "flipper_length_mm": 216.0, "body_mass_g": 4100.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.8, "bill_depth_mm": 15.0, "flipper_length_mm": 215.0, "body_mass_g": 5650.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.2, "bill_depth_mm": 14.3, "flipper_length_mm": 210.0, "body_mass_g": 4600.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.3, "flipper_length_mm": 220.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.3, "bill_depth_mm": 15.3, "flipper_length_mm": 222.0, "body_mass_g": 5250.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.8, "bill_depth_mm": 14.2, "flipper_length_mm": 209.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.5, "flipper_length_mm": 207.0, "body_mass_g": 5050.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 59.6, "bill_depth_mm": 17.0, "flipper_length_mm": 230.0, "body_mass_g": 6050.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.8, "flipper_length_mm": 220.0, "body_mass_g": 5150.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 16.3, "flipper_length_mm": 220.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.6, "bill_depth_mm": 13.7, "flipper_length_mm": 213.0, "body_mass_g": 4950.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.4, "bill_depth_mm": 17.3, "flipper_length_mm": 219.0, "body_mass_g": 5250.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.0, "bill_depth_mm": 13.6, "flipper_length_mm": 208.0, "body_mass_g": 4350.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 15.7, "flipper_length_mm": 208.0, "body_mass_g": 5350.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.7, "bill_depth_mm": 13.7, "flipper_length_mm": 208.0, "body_mass_g": 3950.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.6, "bill_depth_mm": 16.0, "flipper_length_mm": 225.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.3, "bill_depth_mm": 13.7, "flipper_length_mm": 210.0, "body_mass_g": 4300.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.6, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4750.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.9, "flipper_length_mm": 222.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.6, "bill_depth_mm": 13.9, "flipper_length_mm": 217.0, "body_mass_g": 4900.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 13.9, "flipper_length_mm": 210.0, "body_mass_g": 4200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.9, "flipper_length_mm": 225.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.9, "bill_depth_mm": 13.3, "flipper_length_mm": 213.0, "body_mass_g": 5100.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 15.8, "flipper_length_mm": 215.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.6, "bill_depth_mm": 14.2, "flipper_length_mm": 210.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.5, "bill_depth_mm": 14.1, "flipper_length_mm": 220.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.4, "flipper_length_mm": 210.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.1, "bill_depth_mm": 15.0, "flipper_length_mm": 225.0, "body_mass_g": 5000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.4, "flipper_length_mm": 217.0, "body_mass_g": 4900.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.0, "bill_depth_mm": 15.4, "flipper_length_mm": 220.0, "body_mass_g": 5050.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.8, "bill_depth_mm": 13.9, "flipper_length_mm": 208.0, "body_mass_g": 4300.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 15.0, "flipper_length_mm": 220.0, "body_mass_g": 5000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.2, "bill_depth_mm": 14.5, "flipper_length_mm": 208.0, "body_mass_g": 4450.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.4, "bill_depth_mm": 15.3, "flipper_length_mm": 224.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.3, "bill_depth_mm": 13.8, "flipper_length_mm": 208.0, "body_mass_g": 4200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.9, "flipper_length_mm": 221.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.7, "bill_depth_mm": 13.9, "flipper_length_mm": 214.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 54.3, "bill_depth_mm": 15.7, "flipper_length_mm": 231.0, "body_mass_g": 5650.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.8, "bill_depth_mm": 14.2, "flipper_length_mm": 219.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.8, "bill_depth_mm": 16.8, "flipper_length_mm": 230.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.4, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.5, "bill_depth_mm": 16.2, "flipper_length_mm": 229.0, "body_mass_g": 5800.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.5, "bill_depth_mm": 14.2, "flipper_length_mm": 220.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.7, "bill_depth_mm": 15.0, "flipper_length_mm": 223.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.7, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.4, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.2, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5100.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.8, "flipper_length_mm": 217.0, "body_mass_g": 5200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.4, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.6, "bill_depth_mm": 16.0, "flipper_length_mm": 230.0, "body_mass_g": 5800.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 14.2, "flipper_length_mm": 209.0, "body_mass_g": 4600.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.1, "bill_depth_mm": 16.3, "flipper_length_mm": 220.0, "body_mass_g": 6000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 13.8, "flipper_length_mm": 215.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 16.4, "flipper_length_mm": 223.0, "body_mass_g": 5950.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.5, "flipper_length_mm": 212.0, "body_mass_g": 4625.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.5, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5450.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.4, "bill_depth_mm": 14.6, "flipper_length_mm": 212.0, "body_mass_g": 4725.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.9, "flipper_length_mm": 224.0, "body_mass_g": 5350.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.9, "bill_depth_mm": 13.8, "flipper_length_mm": 212.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.8, "bill_depth_mm": 17.3, "flipper_length_mm": 228.0, "body_mass_g": 5600.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.4, "bill_depth_mm": 14.4, "flipper_length_mm": 218.0, "body_mass_g": 4600.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.3, "bill_depth_mm": 14.2, "flipper_length_mm": 218.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 14.0, "flipper_length_mm": 212.0, "body_mass_g": 4875.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.1, "bill_depth_mm": 17.0, "flipper_length_mm": 230.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 15.0, "flipper_length_mm": 218.0, "body_mass_g": 4950.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.2, "bill_depth_mm": 17.1, "flipper_length_mm": 228.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 14.5, "flipper_length_mm": 212.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.5, "bill_depth_mm": 16.1, "flipper_length_mm": 224.0, "body_mass_g": 5650.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.5, "bill_depth_mm": 14.7, "flipper_length_mm": 214.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.8, "bill_depth_mm": 15.7, "flipper_length_mm": 226.0, "body_mass_g": 5200.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.4, "bill_depth_mm": 15.8, "flipper_length_mm": 216.0, "body_mass_g": 4925.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.9, "bill_depth_mm": 14.6, "flipper_length_mm": 222.0, "body_mass_g": 4875.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 14.4, "flipper_length_mm": 203.0, "body_mass_g": 4625.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.1, "bill_depth_mm": 16.5, "flipper_length_mm": 225.0, "body_mass_g": 5250.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.5, "bill_depth_mm": 15.0, "flipper_length_mm": 219.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 55.9, "bill_depth_mm": 17.0, "flipper_length_mm": 228.0, "body_mass_g": 5600.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.2, "bill_depth_mm": 15.5, "flipper_length_mm": 215.0, "body_mass_g": 4975.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 15.0, "flipper_length_mm": 228.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.3, "bill_depth_mm": 13.8, "flipper_length_mm": 216.0, "body_mass_g": 4725.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 16.1, "flipper_length_mm": 215.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 41.7, "bill_depth_mm": 14.7, "flipper_length_mm": 210.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 53.4, "bill_depth_mm": 15.8, "flipper_length_mm": 219.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 14.0, "flipper_length_mm": 208.0, "body_mass_g": 4575.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.1, "bill_depth_mm": 15.1, "flipper_length_mm": 209.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.2, "flipper_length_mm": 216.0, "body_mass_g": 5000.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.8, "bill_depth_mm": 15.9, "flipper_length_mm": 229.0, "body_mass_g": 5950.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.5, "bill_depth_mm": 15.2, "flipper_length_mm": 213.0, "body_mass_g": 4650.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.5, "bill_depth_mm": 16.3, "flipper_length_mm": 230.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.1, "flipper_length_mm": 217.0, "body_mass_g": 4375.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 55.1, "bill_depth_mm": 16.0, "flipper_length_mm": 230.0, "body_mass_g": 5850.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.5, "bill_depth_mm": 15.7, "flipper_length_mm": 217.0, "body_mass_g": 4875.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.8, "bill_depth_mm": 16.2, "flipper_length_mm": 222.0, "body_mass_g": 6000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.2, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4925.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": null, "bill_depth_mm": null, "flipper_length_mm": null, "body_mass_g": null, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 14.3, "flipper_length_mm": 215.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.4, "bill_depth_mm": 15.7, "flipper_length_mm": 222.0, "body_mass_g": 5750.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 14.8, "flipper_length_mm": 212.0, "body_mass_g": 5200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.9, "bill_depth_mm": 16.1, "flipper_length_mm": 213.0, "body_mass_g": 5400.0, "sex": "MALE"}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "vconcat": [{"mark": {"type": "circle", "size": 60}, "encoding": {"color": {"field": "species", "type": "nominal"}, "x": {"field": "bill_length_mm", "scale": {"domain": [30, 60]}, "type": "quantitative"}, "y": {"field": "bill_depth_mm", "scale": {"domain": [12, 22]}, "type": "quantitative"}}, "name": "view_1", "title": "Palmer Penguins Dataset"}, {"mark": {"type": "bar"}, "encoding": {"color": {"field": "island", "type": "nominal"}, "x": {"aggregate": "count", "field": "island", "type": "nominal"}, "y": {"field": "island", "type": "nominal"}}, "transform": [{"filter": {"param": "param_1"}}]}], "data": {"name": "data-7b1c3d376dc1f878f7c4c69deb3a1e79"}, "params": [{"name": "param_1", "select": {"type": "interval"}, "views": ["view_1"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7b1c3d376dc1f878f7c4c69deb3a1e79": [{"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.5, "bill_depth_mm": 17.4, "flipper_length_mm": 186.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.3, "bill_depth_mm": 18.0, "flipper_length_mm": 195.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": null, "bill_depth_mm": null, "flipper_length_mm": null, "body_mass_g": null, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 19.3, "flipper_length_mm": 193.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.3, "bill_depth_mm": 20.6, "flipper_length_mm": 190.0, "body_mass_g": 3650.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.9, "bill_depth_mm": 17.8, "flipper_length_mm": 181.0, "body_mass_g": 3625.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.2, "bill_depth_mm": 19.6, "flipper_length_mm": 195.0, "body_mass_g": 4675.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.1, "bill_depth_mm": 18.1, "flipper_length_mm": 193.0, "body_mass_g": 3475.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.0, "bill_depth_mm": 20.2, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.8, "bill_depth_mm": 17.1, "flipper_length_mm": 186.0, "body_mass_g": 3300.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.8, "bill_depth_mm": 17.3, "flipper_length_mm": 180.0, "body_mass_g": 3700.0, "sex": null}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.1, "bill_depth_mm": 17.6, "flipper_length_mm": 182.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.6, "bill_depth_mm": 21.2, "flipper_length_mm": 191.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.6, "bill_depth_mm": 21.1, "flipper_length_mm": 198.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.6, "bill_depth_mm": 17.8, "flipper_length_mm": 185.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.7, "bill_depth_mm": 19.0, "flipper_length_mm": 195.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.5, "bill_depth_mm": 20.7, "flipper_length_mm": 197.0, "body_mass_g": 4500.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.4, "bill_depth_mm": 18.4, "flipper_length_mm": 184.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 46.0, "bill_depth_mm": 21.5, "flipper_length_mm": 194.0, "body_mass_g": 4200.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.8, "bill_depth_mm": 18.3, "flipper_length_mm": 174.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.7, "bill_depth_mm": 18.7, "flipper_length_mm": 180.0, "body_mass_g": 3600.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.9, "bill_depth_mm": 19.2, "flipper_length_mm": 189.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.2, "bill_depth_mm": 18.1, "flipper_length_mm": 185.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.8, "bill_depth_mm": 17.2, "flipper_length_mm": 180.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.3, "bill_depth_mm": 18.9, "flipper_length_mm": 187.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.6, "bill_depth_mm": 18.6, "flipper_length_mm": 183.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.5, "bill_depth_mm": 17.9, "flipper_length_mm": 187.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.9, "bill_depth_mm": 18.6, "flipper_length_mm": 172.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.5, "bill_depth_mm": 18.9, "flipper_length_mm": 180.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.5, "bill_depth_mm": 16.7, "flipper_length_mm": 178.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.2, "bill_depth_mm": 18.1, "flipper_length_mm": 178.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.5, "bill_depth_mm": 17.8, "flipper_length_mm": 188.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.9, "bill_depth_mm": 18.9, "flipper_length_mm": 184.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.4, "bill_depth_mm": 17.0, "flipper_length_mm": 195.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 21.1, "flipper_length_mm": 196.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.8, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 42.2, "bill_depth_mm": 18.5, "flipper_length_mm": 180.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.6, "bill_depth_mm": 19.3, "flipper_length_mm": 181.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.8, "bill_depth_mm": 19.1, "flipper_length_mm": 184.0, "body_mass_g": 4650.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.5, "bill_depth_mm": 18.0, "flipper_length_mm": 182.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.8, "bill_depth_mm": 18.4, "flipper_length_mm": 195.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 18.5, "flipper_length_mm": 186.0, "body_mass_g": 3100.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 44.1, "bill_depth_mm": 19.7, "flipper_length_mm": 196.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.0, "bill_depth_mm": 16.9, "flipper_length_mm": 185.0, "body_mass_g": 3000.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.6, "bill_depth_mm": 18.8, "flipper_length_mm": 190.0, "body_mass_g": 4600.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 19.0, "flipper_length_mm": 182.0, "body_mass_g": 3425.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.5, "bill_depth_mm": 18.9, "flipper_length_mm": 179.0, "body_mass_g": 2975.0, "sex": null}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 42.3, "bill_depth_mm": 21.2, "flipper_length_mm": 191.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.6, "bill_depth_mm": 17.7, "flipper_length_mm": 186.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.1, "bill_depth_mm": 18.9, "flipper_length_mm": 188.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.0, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.0, "bill_depth_mm": 19.5, "flipper_length_mm": 200.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 34.5, "bill_depth_mm": 18.1, "flipper_length_mm": 187.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.4, "bill_depth_mm": 18.6, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.0, "bill_depth_mm": 17.5, "flipper_length_mm": 186.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.6, "bill_depth_mm": 18.8, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 36.5, "bill_depth_mm": 16.6, "flipper_length_mm": 181.0, "body_mass_g": 2850.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.6, "bill_depth_mm": 19.1, "flipper_length_mm": 194.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.7, "bill_depth_mm": 16.9, "flipper_length_mm": 185.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.3, "bill_depth_mm": 21.1, "flipper_length_mm": 195.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.6, "bill_depth_mm": 17.0, "flipper_length_mm": 185.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.1, "bill_depth_mm": 18.2, "flipper_length_mm": 192.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 36.4, "bill_depth_mm": 17.1, "flipper_length_mm": 184.0, "body_mass_g": 2850.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.6, "bill_depth_mm": 18.0, "flipper_length_mm": 192.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.5, "bill_depth_mm": 16.2, "flipper_length_mm": 195.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.1, "bill_depth_mm": 19.1, "flipper_length_mm": 188.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.9, "bill_depth_mm": 16.6, "flipper_length_mm": 190.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.8, "bill_depth_mm": 19.4, "flipper_length_mm": 198.0, "body_mass_g": 4450.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 33.5, "bill_depth_mm": 19.0, "flipper_length_mm": 190.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.7, "bill_depth_mm": 18.4, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.6, "bill_depth_mm": 17.2, "flipper_length_mm": 196.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 45.8, "bill_depth_mm": 18.9, "flipper_length_mm": 197.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.5, "bill_depth_mm": 17.5, "flipper_length_mm": 190.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.8, "bill_depth_mm": 18.5, "flipper_length_mm": 195.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.9, "bill_depth_mm": 16.8, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.2, "bill_depth_mm": 19.4, "flipper_length_mm": 184.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.2, "bill_depth_mm": 16.1, "flipper_length_mm": 187.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.1, "bill_depth_mm": 19.1, "flipper_length_mm": 195.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.6, "bill_depth_mm": 17.2, "flipper_length_mm": 189.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.9, "bill_depth_mm": 17.6, "flipper_length_mm": 196.0, "body_mass_g": 4700.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 18.8, "flipper_length_mm": 187.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.1, "bill_depth_mm": 19.4, "flipper_length_mm": 193.0, "body_mass_g": 4200.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.3, "bill_depth_mm": 17.8, "flipper_length_mm": 191.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.3, "bill_depth_mm": 20.3, "flipper_length_mm": 194.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.3, "bill_depth_mm": 19.5, "flipper_length_mm": 190.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.9, "bill_depth_mm": 18.6, "flipper_length_mm": 189.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.3, "bill_depth_mm": 19.2, "flipper_length_mm": 189.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.9, "bill_depth_mm": 18.8, "flipper_length_mm": 190.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 35.7, "bill_depth_mm": 18.0, "flipper_length_mm": 202.0, "body_mass_g": 3550.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 18.1, "flipper_length_mm": 205.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 34.0, "bill_depth_mm": 17.1, "flipper_length_mm": 185.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.6, "bill_depth_mm": 18.1, "flipper_length_mm": 186.0, "body_mass_g": 4450.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.2, "bill_depth_mm": 17.3, "flipper_length_mm": 187.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.8, "bill_depth_mm": 18.9, "flipper_length_mm": 208.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.1, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.3, "bill_depth_mm": 18.5, "flipper_length_mm": 196.0, "body_mass_g": 4350.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 33.1, "bill_depth_mm": 16.1, "flipper_length_mm": 178.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 43.2, "bill_depth_mm": 18.5, "flipper_length_mm": 192.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.0, "bill_depth_mm": 17.9, "flipper_length_mm": 192.0, "body_mass_g": 3725.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.0, "bill_depth_mm": 20.0, "flipper_length_mm": 203.0, "body_mass_g": 4725.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.7, "bill_depth_mm": 16.0, "flipper_length_mm": 183.0, "body_mass_g": 3075.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.8, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.9, "bill_depth_mm": 18.6, "flipper_length_mm": 193.0, "body_mass_g": 2925.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.7, "bill_depth_mm": 18.9, "flipper_length_mm": 184.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.6, "bill_depth_mm": 17.2, "flipper_length_mm": 199.0, "body_mass_g": 3750.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.2, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 17.0, "flipper_length_mm": 181.0, "body_mass_g": 3175.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 43.2, "bill_depth_mm": 19.0, "flipper_length_mm": 197.0, "body_mass_g": 4775.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 16.5, "flipper_length_mm": 198.0, "body_mass_g": 3825.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 45.6, "bill_depth_mm": 20.3, "flipper_length_mm": 191.0, "body_mass_g": 4600.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.7, "bill_depth_mm": 17.7, "flipper_length_mm": 193.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.2, "bill_depth_mm": 19.5, "flipper_length_mm": 197.0, "body_mass_g": 4275.0, "sex": "MALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.6, "bill_depth_mm": 20.7, "flipper_length_mm": 191.0, "body_mass_g": 3900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.7, "bill_depth_mm": 18.3, "flipper_length_mm": 196.0, "body_mass_g": 4075.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.6, "bill_depth_mm": 17.0, "flipper_length_mm": 188.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.3, "bill_depth_mm": 20.5, "flipper_length_mm": 199.0, "body_mass_g": 3775.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.7, "bill_depth_mm": 17.0, "flipper_length_mm": 189.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.1, "bill_depth_mm": 18.6, "flipper_length_mm": 189.0, "body_mass_g": 3325.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.2, "bill_depth_mm": 17.2, "flipper_length_mm": 187.0, "body_mass_g": 3150.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.7, "bill_depth_mm": 19.8, "flipper_length_mm": 198.0, "body_mass_g": 3500.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.2, "bill_depth_mm": 17.0, "flipper_length_mm": 176.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.4, "bill_depth_mm": 18.5, "flipper_length_mm": 202.0, "body_mass_g": 3875.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.2, "bill_depth_mm": 15.9, "flipper_length_mm": 186.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.6, "bill_depth_mm": 19.0, "flipper_length_mm": 199.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.8, "bill_depth_mm": 17.6, "flipper_length_mm": 191.0, "body_mass_g": 3275.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.5, "bill_depth_mm": 18.3, "flipper_length_mm": 195.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.0, "bill_depth_mm": 17.1, "flipper_length_mm": 191.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 44.1, "bill_depth_mm": 18.0, "flipper_length_mm": 210.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.5, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 43.1, "bill_depth_mm": 19.2, "flipper_length_mm": 197.0, "body_mass_g": 3500.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.8, "bill_depth_mm": 18.5, "flipper_length_mm": 193.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.5, "bill_depth_mm": 18.5, "flipper_length_mm": 199.0, "body_mass_g": 4475.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.1, "bill_depth_mm": 17.6, "flipper_length_mm": 187.0, "body_mass_g": 3425.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 17.5, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 35.6, "bill_depth_mm": 17.5, "flipper_length_mm": 191.0, "body_mass_g": 3175.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.2, "bill_depth_mm": 20.1, "flipper_length_mm": 200.0, "body_mass_g": 3975.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.0, "bill_depth_mm": 16.5, "flipper_length_mm": 185.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.7, "bill_depth_mm": 17.9, "flipper_length_mm": 193.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.2, "bill_depth_mm": 17.1, "flipper_length_mm": 193.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.6, "bill_depth_mm": 17.2, "flipper_length_mm": 187.0, "body_mass_g": 3475.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 32.1, "bill_depth_mm": 15.5, "flipper_length_mm": 188.0, "body_mass_g": 3050.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.7, "bill_depth_mm": 17.0, "flipper_length_mm": 190.0, "body_mass_g": 3725.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.3, "bill_depth_mm": 16.8, "flipper_length_mm": 192.0, "body_mass_g": 3000.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.0, "bill_depth_mm": 18.7, "flipper_length_mm": 185.0, "body_mass_g": 3650.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.6, "bill_depth_mm": 18.4, "flipper_length_mm": 184.0, "body_mass_g": 3475.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.8, "flipper_length_mm": 195.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.8, "bill_depth_mm": 18.1, "flipper_length_mm": 193.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.1, "flipper_length_mm": 187.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.5, "bill_depth_mm": 18.5, "flipper_length_mm": 201.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.5, "bill_depth_mm": 17.9, "flipper_length_mm": 192.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.0, "bill_depth_mm": 19.5, "flipper_length_mm": 196.0, "body_mass_g": 3900.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 19.2, "flipper_length_mm": 193.0, "body_mass_g": 3650.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.4, "bill_depth_mm": 18.7, "flipper_length_mm": 188.0, "body_mass_g": 3525.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.7, "bill_depth_mm": 19.8, "flipper_length_mm": 197.0, "body_mass_g": 3725.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.2, "bill_depth_mm": 17.8, "flipper_length_mm": 198.0, "body_mass_g": 3950.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.1, "bill_depth_mm": 18.2, "flipper_length_mm": 178.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 18.2, "flipper_length_mm": 197.0, "body_mass_g": 3750.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.0, "bill_depth_mm": 18.9, "flipper_length_mm": 195.0, "body_mass_g": 4150.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 19.9, "flipper_length_mm": 198.0, "body_mass_g": 3700.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.6, "bill_depth_mm": 17.8, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.7, "bill_depth_mm": 20.3, "flipper_length_mm": 194.0, "body_mass_g": 3775.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.0, "bill_depth_mm": 17.3, "flipper_length_mm": 185.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 18.1, "flipper_length_mm": 201.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.9, "bill_depth_mm": 17.1, "flipper_length_mm": 190.0, "body_mass_g": 3575.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.5, "bill_depth_mm": 19.6, "flipper_length_mm": 201.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.3, "bill_depth_mm": 20.0, "flipper_length_mm": 197.0, "body_mass_g": 3300.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 58.0, "bill_depth_mm": 17.8, "flipper_length_mm": 181.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.4, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.2, "bill_depth_mm": 18.2, "flipper_length_mm": 195.0, "body_mass_g": 4400.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.4, "bill_depth_mm": 17.3, "flipper_length_mm": 181.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 48.5, "bill_depth_mm": 17.5, "flipper_length_mm": 191.0, "body_mass_g": 3400.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 43.2, "bill_depth_mm": 16.6, "flipper_length_mm": 187.0, "body_mass_g": 2900.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.6, "bill_depth_mm": 19.4, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.7, "bill_depth_mm": 17.9, "flipper_length_mm": 195.0, "body_mass_g": 3300.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 19.0, "flipper_length_mm": 197.0, "body_mass_g": 4150.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.5, "bill_depth_mm": 18.4, "flipper_length_mm": 200.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.5, "bill_depth_mm": 19.0, "flipper_length_mm": 200.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.4, "bill_depth_mm": 17.8, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.8, "bill_depth_mm": 20.0, "flipper_length_mm": 205.0, "body_mass_g": 4550.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 40.9, "bill_depth_mm": 16.6, "flipper_length_mm": 187.0, "body_mass_g": 3200.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 54.2, "bill_depth_mm": 20.8, "flipper_length_mm": 201.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.5, "bill_depth_mm": 16.7, "flipper_length_mm": 187.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.0, "bill_depth_mm": 18.8, "flipper_length_mm": 203.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.7, "bill_depth_mm": 18.6, "flipper_length_mm": 195.0, "body_mass_g": 3600.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.5, "bill_depth_mm": 16.8, "flipper_length_mm": 199.0, "body_mass_g": 3900.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.6, "bill_depth_mm": 18.3, "flipper_length_mm": 195.0, "body_mass_g": 3850.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 20.7, "flipper_length_mm": 210.0, "body_mass_g": 4800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.9, "bill_depth_mm": 16.6, "flipper_length_mm": 192.0, "body_mass_g": 2700.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 53.5, "bill_depth_mm": 19.9, "flipper_length_mm": 205.0, "body_mass_g": 4500.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.0, "bill_depth_mm": 19.5, "flipper_length_mm": 210.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.2, "bill_depth_mm": 17.5, "flipper_length_mm": 187.0, "body_mass_g": 3650.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.9, "bill_depth_mm": 19.1, "flipper_length_mm": 196.0, "body_mass_g": 3550.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.5, "bill_depth_mm": 17.0, "flipper_length_mm": 196.0, "body_mass_g": 3500.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.9, "bill_depth_mm": 17.9, "flipper_length_mm": 196.0, "body_mass_g": 3675.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.8, "bill_depth_mm": 18.5, "flipper_length_mm": 201.0, "body_mass_g": 4450.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.1, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.0, "bill_depth_mm": 19.6, "flipper_length_mm": 212.0, "body_mass_g": 4300.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.5, "bill_depth_mm": 18.7, "flipper_length_mm": 187.0, "body_mass_g": 3250.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.8, "bill_depth_mm": 17.3, "flipper_length_mm": 198.0, "body_mass_g": 3675.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 48.1, "bill_depth_mm": 16.4, "flipper_length_mm": 199.0, "body_mass_g": 3325.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.4, "bill_depth_mm": 19.0, "flipper_length_mm": 201.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.7, "bill_depth_mm": 17.3, "flipper_length_mm": 193.0, "body_mass_g": 3600.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.7, "bill_depth_mm": 19.7, "flipper_length_mm": 203.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.5, "bill_depth_mm": 17.3, "flipper_length_mm": 187.0, "body_mass_g": 3350.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.2, "bill_depth_mm": 18.8, "flipper_length_mm": 197.0, "body_mass_g": 3450.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.2, "bill_depth_mm": 16.6, "flipper_length_mm": 191.0, "body_mass_g": 3250.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.3, "bill_depth_mm": 19.9, "flipper_length_mm": 203.0, "body_mass_g": 4050.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.2, "bill_depth_mm": 18.8, "flipper_length_mm": 202.0, "body_mass_g": 3800.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.6, "bill_depth_mm": 19.4, "flipper_length_mm": 194.0, "body_mass_g": 3525.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.9, "bill_depth_mm": 19.5, "flipper_length_mm": 206.0, "body_mass_g": 3950.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.8, "bill_depth_mm": 16.5, "flipper_length_mm": 189.0, "body_mass_g": 3650.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.7, "bill_depth_mm": 17.0, "flipper_length_mm": 195.0, "body_mass_g": 3650.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 55.8, "bill_depth_mm": 19.8, "flipper_length_mm": 207.0, "body_mass_g": 4000.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 43.5, "bill_depth_mm": 18.1, "flipper_length_mm": 202.0, "body_mass_g": 3400.0, "sex": "FEMALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.6, "bill_depth_mm": 18.2, "flipper_length_mm": 193.0, "body_mass_g": 3775.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.8, "bill_depth_mm": 19.0, "flipper_length_mm": 210.0, "body_mass_g": 4100.0, "sex": "MALE"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.2, "bill_depth_mm": 18.7, "flipper_length_mm": 198.0, "body_mass_g": 3775.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 13.2, "flipper_length_mm": 211.0, "body_mass_g": 4500.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 16.3, "flipper_length_mm": 230.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 14.1, "flipper_length_mm": 210.0, "body_mass_g": 4450.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.2, "flipper_length_mm": 218.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.6, "bill_depth_mm": 14.5, "flipper_length_mm": 215.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 13.5, "flipper_length_mm": 210.0, "body_mass_g": 4550.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.4, "bill_depth_mm": 14.6, "flipper_length_mm": 211.0, "body_mass_g": 4800.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.7, "bill_depth_mm": 15.3, "flipper_length_mm": 219.0, "body_mass_g": 5200.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 13.4, "flipper_length_mm": 209.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 15.4, "flipper_length_mm": 215.0, "body_mass_g": 5150.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 40.9, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.0, "bill_depth_mm": 16.1, "flipper_length_mm": 216.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 14.6, "flipper_length_mm": 213.0, "body_mass_g": 5850.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.8, "bill_depth_mm": 14.6, "flipper_length_mm": 210.0, "body_mass_g": 4200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.3, "bill_depth_mm": 15.7, "flipper_length_mm": 217.0, "body_mass_g": 5850.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.0, "bill_depth_mm": 13.5, "flipper_length_mm": 210.0, "body_mass_g": 4150.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.2, "bill_depth_mm": 15.2, "flipper_length_mm": 221.0, "body_mass_g": 6300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.5, "flipper_length_mm": 209.0, "body_mass_g": 4800.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 15.1, "flipper_length_mm": 222.0, "body_mass_g": 5350.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.2, "bill_depth_mm": 14.3, "flipper_length_mm": 218.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.5, "flipper_length_mm": 215.0, "body_mass_g": 5000.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.5, "flipper_length_mm": 213.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.3, "bill_depth_mm": 15.8, "flipper_length_mm": 215.0, "body_mass_g": 5050.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.9, "bill_depth_mm": 13.1, "flipper_length_mm": 215.0, "body_mass_g": 5000.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 15.1, "flipper_length_mm": 215.0, "body_mass_g": 5100.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.5, "bill_depth_mm": 14.3, "flipper_length_mm": 216.0, "body_mass_g": 4100.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.8, "bill_depth_mm": 15.0, "flipper_length_mm": 215.0, "body_mass_g": 5650.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.2, "bill_depth_mm": 14.3, "flipper_length_mm": 210.0, "body_mass_g": 4600.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.3, "flipper_length_mm": 220.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.3, "bill_depth_mm": 15.3, "flipper_length_mm": 222.0, "body_mass_g": 5250.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.8, "bill_depth_mm": 14.2, "flipper_length_mm": 209.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.5, "flipper_length_mm": 207.0, "body_mass_g": 5050.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 59.6, "bill_depth_mm": 17.0, "flipper_length_mm": 230.0, "body_mass_g": 6050.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.8, "flipper_length_mm": 220.0, "body_mass_g": 5150.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 16.3, "flipper_length_mm": 220.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.6, "bill_depth_mm": 13.7, "flipper_length_mm": 213.0, "body_mass_g": 4950.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.4, "bill_depth_mm": 17.3, "flipper_length_mm": 219.0, "body_mass_g": 5250.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.0, "bill_depth_mm": 13.6, "flipper_length_mm": 208.0, "body_mass_g": 4350.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 15.7, "flipper_length_mm": 208.0, "body_mass_g": 5350.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.7, "bill_depth_mm": 13.7, "flipper_length_mm": 208.0, "body_mass_g": 3950.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.6, "bill_depth_mm": 16.0, "flipper_length_mm": 225.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.3, "bill_depth_mm": 13.7, "flipper_length_mm": 210.0, "body_mass_g": 4300.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.6, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4750.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.9, "flipper_length_mm": 222.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.6, "bill_depth_mm": 13.9, "flipper_length_mm": 217.0, "body_mass_g": 4900.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 13.9, "flipper_length_mm": 210.0, "body_mass_g": 4200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.9, "flipper_length_mm": 225.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.9, "bill_depth_mm": 13.3, "flipper_length_mm": 213.0, "body_mass_g": 5100.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 15.8, "flipper_length_mm": 215.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.6, "bill_depth_mm": 14.2, "flipper_length_mm": 210.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.5, "bill_depth_mm": 14.1, "flipper_length_mm": 220.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.4, "flipper_length_mm": 210.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.1, "bill_depth_mm": 15.0, "flipper_length_mm": 225.0, "body_mass_g": 5000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.4, "flipper_length_mm": 217.0, "body_mass_g": 4900.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.0, "bill_depth_mm": 15.4, "flipper_length_mm": 220.0, "body_mass_g": 5050.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.8, "bill_depth_mm": 13.9, "flipper_length_mm": 208.0, "body_mass_g": 4300.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 15.0, "flipper_length_mm": 220.0, "body_mass_g": 5000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.2, "bill_depth_mm": 14.5, "flipper_length_mm": 208.0, "body_mass_g": 4450.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.4, "bill_depth_mm": 15.3, "flipper_length_mm": 224.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.3, "bill_depth_mm": 13.8, "flipper_length_mm": 208.0, "body_mass_g": 4200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.9, "flipper_length_mm": 221.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.7, "bill_depth_mm": 13.9, "flipper_length_mm": 214.0, "body_mass_g": 4400.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 54.3, "bill_depth_mm": 15.7, "flipper_length_mm": 231.0, "body_mass_g": 5650.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.8, "bill_depth_mm": 14.2, "flipper_length_mm": 219.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.8, "bill_depth_mm": 16.8, "flipper_length_mm": 230.0, "body_mass_g": 5700.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.4, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.5, "bill_depth_mm": 16.2, "flipper_length_mm": 229.0, "body_mass_g": 5800.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.5, "bill_depth_mm": 14.2, "flipper_length_mm": 220.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.7, "bill_depth_mm": 15.0, "flipper_length_mm": 223.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.7, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.4, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.2, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5100.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.8, "flipper_length_mm": 217.0, "body_mass_g": 5200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.4, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.6, "bill_depth_mm": 16.0, "flipper_length_mm": 230.0, "body_mass_g": 5800.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 14.2, "flipper_length_mm": 209.0, "body_mass_g": 4600.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.1, "bill_depth_mm": 16.3, "flipper_length_mm": 220.0, "body_mass_g": 6000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 13.8, "flipper_length_mm": 215.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 16.4, "flipper_length_mm": 223.0, "body_mass_g": 5950.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.5, "flipper_length_mm": 212.0, "body_mass_g": 4625.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.5, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5450.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.4, "bill_depth_mm": 14.6, "flipper_length_mm": 212.0, "body_mass_g": 4725.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.9, "flipper_length_mm": 224.0, "body_mass_g": 5350.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.9, "bill_depth_mm": 13.8, "flipper_length_mm": 212.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.8, "bill_depth_mm": 17.3, "flipper_length_mm": 228.0, "body_mass_g": 5600.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.4, "bill_depth_mm": 14.4, "flipper_length_mm": 218.0, "body_mass_g": 4600.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.3, "bill_depth_mm": 14.2, "flipper_length_mm": 218.0, "body_mass_g": 5300.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 14.0, "flipper_length_mm": 212.0, "body_mass_g": 4875.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.1, "bill_depth_mm": 17.0, "flipper_length_mm": 230.0, "body_mass_g": 5550.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 15.0, "flipper_length_mm": 218.0, "body_mass_g": 4950.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.2, "bill_depth_mm": 17.1, "flipper_length_mm": 228.0, "body_mass_g": 5400.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 14.5, "flipper_length_mm": 212.0, "body_mass_g": 4750.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.5, "bill_depth_mm": 16.1, "flipper_length_mm": 224.0, "body_mass_g": 5650.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.5, "bill_depth_mm": 14.7, "flipper_length_mm": 214.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.8, "bill_depth_mm": 15.7, "flipper_length_mm": 226.0, "body_mass_g": 5200.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.4, "bill_depth_mm": 15.8, "flipper_length_mm": 216.0, "body_mass_g": 4925.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.9, "bill_depth_mm": 14.6, "flipper_length_mm": 222.0, "body_mass_g": 4875.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 14.4, "flipper_length_mm": 203.0, "body_mass_g": 4625.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.1, "bill_depth_mm": 16.5, "flipper_length_mm": 225.0, "body_mass_g": 5250.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.5, "bill_depth_mm": 15.0, "flipper_length_mm": 219.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 55.9, "bill_depth_mm": 17.0, "flipper_length_mm": 228.0, "body_mass_g": 5600.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.2, "bill_depth_mm": 15.5, "flipper_length_mm": 215.0, "body_mass_g": 4975.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 15.0, "flipper_length_mm": 228.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.3, "bill_depth_mm": 13.8, "flipper_length_mm": 216.0, "body_mass_g": 4725.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 16.1, "flipper_length_mm": 215.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 41.7, "bill_depth_mm": 14.7, "flipper_length_mm": 210.0, "body_mass_g": 4700.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 53.4, "bill_depth_mm": 15.8, "flipper_length_mm": 219.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 14.0, "flipper_length_mm": 208.0, "body_mass_g": 4575.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.1, "bill_depth_mm": 15.1, "flipper_length_mm": 209.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.2, "flipper_length_mm": 216.0, "body_mass_g": 5000.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.8, "bill_depth_mm": 15.9, "flipper_length_mm": 229.0, "body_mass_g": 5950.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.5, "bill_depth_mm": 15.2, "flipper_length_mm": 213.0, "body_mass_g": 4650.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.5, "bill_depth_mm": 16.3, "flipper_length_mm": 230.0, "body_mass_g": 5500.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.1, "flipper_length_mm": 217.0, "body_mass_g": 4375.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 55.1, "bill_depth_mm": 16.0, "flipper_length_mm": 230.0, "body_mass_g": 5850.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.5, "bill_depth_mm": 15.7, "flipper_length_mm": 217.0, "body_mass_g": 4875.0, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.8, "bill_depth_mm": 16.2, "flipper_length_mm": 222.0, "body_mass_g": 6000.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.2, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4925.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": null, "bill_depth_mm": null, "flipper_length_mm": null, "body_mass_g": null, "sex": null}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 14.3, "flipper_length_mm": 215.0, "body_mass_g": 4850.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.4, "bill_depth_mm": 15.7, "flipper_length_mm": 222.0, "body_mass_g": 5750.0, "sex": "MALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 14.8, "flipper_length_mm": 212.0, "body_mass_g": 5200.0, "sex": "FEMALE"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.9, "bill_depth_mm": 16.1, "flipper_length_mm": 213.0, "body_mass_g": 5400.0, "sex": "MALE"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
-<div id="fig-notebook" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-notebook" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-notebook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Example Notebook
@@ -595,10 +1234,10 @@ Figure&nbsp;3: Example Notebook
 <section id="create-a-project" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-project">Create a Project</h2>
 <p>The first step is to create a set of folders for website project, using quarto by executing the following command inside the project folder:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>mkdir posts</span>
-<span id="cb4-2"><a href="#cb4-2"></a>quarto create-project . --type website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>mkdir posts</span>
+<span id="cb5-2"><a href="#cb5-2"></a>quarto create-project . --type website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which will output the following <a href="#fig-output-project" class="quarto-xref">Figure&nbsp;4</a>, essentially the <code>post</code> folder would be where we keep our blogpost files.</p>
-<div id="fig-output-project" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-output-project" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-output-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Output Projects
@@ -612,10 +1251,10 @@ Figure&nbsp;4: Output Projects
 <section id="convert-notebook-to-quarto-markdown" class="level2">
 <h2 class="anchored" data-anchor-id="convert-notebook-to-quarto-markdown">Convert Notebook to Quarto Markdown</h2>
 <p>The second step is to convert the jupyter notebook file (example.ipynb) to quarto markdown file (example.qmd) by running the following command:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>quarto convert ./example.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>quarto convert ./example.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which will create an output of qmd file which is important, because this would then be rendered to html (as shown in <a href="#fig-output-render" class="quarto-xref">Figure&nbsp;5</a>) by running the following command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>quarto render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-output-render" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>quarto render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-output-render" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-output-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Output Render
@@ -629,7 +1268,7 @@ Figure&nbsp;5: Output Render
 <section id="setting-up-the-website" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-the-website">Setting-up the Website</h2>
 <p>YAML file is basically where we fine tune our website settings. For this case, we need to move the <code>example.qmd</code> file to <code>post</code> folder, and <em>add</em> the qmd file inside the navbar, below the <code>about.qmd</code> as shown in <a href="#fig-yaml" class="quarto-xref">Figure&nbsp;6</a></p>
-<div id="fig-yaml" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-yaml" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: YAML setting
@@ -643,9 +1282,9 @@ Figure&nbsp;6: YAML setting
 <section id="previewing-the-website" class="level2">
 <h2 class="anchored" data-anchor-id="previewing-the-website">Previewing the Website</h2>
 <p>All things set, now all we need to do is preview our website by running the following command:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>quarto preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>quarto preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which will output our new website inside a browser as shown in the following <a href="#fig-preview" class="quarto-xref">Figure&nbsp;7</a>. This is a preview mode which means, any changes made to the website, it will be rendered and displayed real-time.</p>
-<div id="fig-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-preview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Website Preview
@@ -663,7 +1302,7 @@ Figure&nbsp;7: Website Preview
 <ul>
 <li>Create a <code>docs</code> folder and set the output to be that folder in _quarto.yml file as shown in <a href="#fig-docs" class="quarto-xref">Figure&nbsp;8</a> below</li>
 </ul>
-<div id="fig-docs" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-docs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: docs settting
@@ -676,7 +1315,7 @@ Figure&nbsp;8: docs settting
 <ul>
 <li>Set the website repo setting to use the docs folder as the branch source as shown in <a href="#fig-reposettting" class="quarto-xref">Figure&nbsp;9</a> below</li>
 </ul>
-<div id="fig-reposettting" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-reposettting" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-reposettting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9: repo settting
@@ -689,11 +1328,11 @@ Figure&nbsp;9: repo settting
 <ul>
 <li>Push your local Repo to the Github!</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>git add .</span>
-<span id="cb8-2"><a href="#cb8-2"></a>git commit -m "my first website"</span>
-<span id="cb8-3"><a href="#cb8-3"></a>git push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>git add .</span>
+<span id="cb9-2"><a href="#cb9-2"></a>git commit -m "my first website"</span>
+<span id="cb9-3"><a href="#cb9-3"></a>git push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>and you should see your website is up and running after the builds and deployment as shown in <a href="#fig-builds" class="quarto-xref">Figure&nbsp;10</a> finished!</p>
-<div id="fig-builds" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-builds" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-builds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10: Builds Up and Deployment
@@ -724,7 +1363,7 @@ Important
 <h2 class="anchored" data-anchor-id="make-a-homepage">1. Make A Homepage</h2>
 <p>If you have your website deployed, congrats! However, if you stay, I can assure you that it will make your website much better.</p>
 <p>Some nicer things to do for your website is to render the index.qmd in the root folder as a listing, so any post in your post folder will be listed as a content, as shown in <a href="#fig-listing" class="quarto-xref">Figure&nbsp;11</a> below:</p>
-<div id="fig-listing" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-listing" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-listing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11: Setting Up the Website
@@ -741,7 +1380,7 @@ Figure&nbsp;11: Setting Up the Website
 <li>Edit the <code>_quarto.yml</code> file back to its original setting.</li>
 </ol>
 <p>With this setting, you will have a nicer homepage like <a href="#fig-homepage" class="quarto-xref">Figure&nbsp;12</a> below:</p>
-<div id="fig-homepage" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-homepage" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-homepage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;12: Homepage
@@ -760,7 +1399,7 @@ Figure&nbsp;12: Homepage
 <p>From there, we can change the heading-style, bold, italic, add numbers, lists, picture, callnote, a very powerful GUI for markdown! Loved it!</p>
 </blockquote>
 <p>Here is the comparison side-by-side in <a href="#fig-comparison" class="quarto-xref">Figure&nbsp;13</a>:</p>
-<div id="fig-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;13: Source-mode vs Visual-mode
@@ -805,16 +1444,16 @@ Tip
 <ol>
 <li id="fn1"><p>you <em>can</em> just use a notebook, but some of the autocompletion, visual-mode (a powerful mode to make blogging easier) won’t work.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie wijaya2023,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
   author = {Arie Wijaya, Aditya},
   title = {Personal {Website} Using {Jupyter} {Notebook} and {Quarto}},
   date = {2023-03-20},
-  url = {https://adtarie.net/posts/007-quarto-python-tutorial},
+  url = {https://adtarie.net/posts/007-quarto-python-tutorial/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie wijaya2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas" role="listitem">
 Arie Wijaya, Aditya. 2023. <span>“Personal Website Using Jupyter
-Notebook and Quarto.”</span> March 20, 2023. <a href="https://adtarie.net/posts/007-quarto-python-tutorial">https://adtarie.net/posts/007-quarto-python-tutorial</a>.
+Notebook and Quarto.”</span> March 20, 2023. <a href="https://adtarie.net/posts/007-quarto-python-tutorial/">https://adtarie.net/posts/007-quarto-python-tutorial/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -851,18 +1490,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -894,7 +1522,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/adtarie\.net");
@@ -902,7 +1552,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

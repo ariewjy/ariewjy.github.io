@@ -6,9 +6,9 @@ title-block-banner: true
 date: '2023-01-31'
 code-fold: show
 categories:
-  - project
+  - portfolio
   - webscraping
-  - data-science
+  - data
   - python
 draft: false
 jupyter: minids

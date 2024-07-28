@@ -5,9 +5,8 @@ description: |
 title-block-banner: true
 date: '2023-07-15'
 categories:
-  - streamlit
   - geoscience
-  - project
+  - portfolio
 draft: false
 image: images/image-1.png
 fig-cap-location: margin

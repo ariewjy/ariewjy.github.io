@@ -5,8 +5,8 @@ description: |
 title-block-banner: true
 date: '2023-02-10'
 categories:
-  - project
-  - data-science
+  - portfolio
+  - data
   - python
   - webscraping
 code-fold: show

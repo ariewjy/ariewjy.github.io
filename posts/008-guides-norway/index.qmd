@@ -4,11 +4,10 @@ description: |
   Hal-hal yang saya harapkan saya tahu dan pahami sebelum saya pindah ke Norway [Bahasa Indonesia]
 title-block-banner: true
 date: '2023-06-26'
+date-modified: last-modified
 categories:
   - norway
-  - stavanger
   - life
-  - bahasa-indonesia
 citation-location: margin
 cap-location: bottom
 ---

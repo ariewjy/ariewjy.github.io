@@ -4,7 +4,8 @@ description: |
   Some pros and cons that I learnt when I moved my personal website to Quarto from Jekyll-based theme. Difficulties along the way, and what I hoped to be the future of Quarto.
 title-block-banner: true
 date: "2022-10-21"
-categories: [blog, quarto]
+categories: 
+  - quarto
 jupyter: minids
 draft: false
 ---

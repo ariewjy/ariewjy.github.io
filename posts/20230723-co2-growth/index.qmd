@@ -6,8 +6,7 @@ title-block-banner: true
 date: '2023-07-23'
 categories:
   - energy
-  - CO2
-  - economy
+  - carbon
 draft: false
 fig-cap-location: bottom
 fig-align: left
