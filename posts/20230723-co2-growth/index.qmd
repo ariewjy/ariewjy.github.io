@@ -4,9 +4,10 @@ description: |
   Developed countries were able to decoupled their GDP from CO2 emissions, while in developing countries, CO2 emissions is an inevitable consequences of their economic growth.
 title-block-banner: true
 date: '2023-07-23'
+date-modified: last-modified
 categories:
   - energy
-  - carbon
+  - emission
 draft: false
 fig-cap-location: bottom
 fig-align: left
@@ -319,14 +320,14 @@ As shown, not every country created equally, as different country has different 
 import altair as alt
 
 #country with increase gdp, but decreased co2
-source=merged_df.query(" gdp_diff>0 & co2_diff<0 & population >= 2_000_000")
+source=merged_df.query(" gdp_diff>0 & co2_diff<0 & population >= 5_000_000")
 
 alt.Chart(
     source,
     title=alt.Title(
-        "GDP per Capita vs CO2 Emission for Countries",
-        subtitle=["Countries with minimum 2 Million population,", 
-                  "increased GDP and reduced CO2 Emissions"],
+        "Decoupling Countries",
+        subtitle=["At least 5 Million population,", 
+                  "Increased GDP while Reducing CO2 Emissions"],
         fontSize=16, offset=10
     )
     ).mark_point(size=90, filled=True, opacity=0.6).encode(
@@ -346,6 +347,49 @@ alt.Chart(
     height=400,
 ).interactive()
 ```
+
+To prove a point that was alluded before, that __only rich countries was able to decoupled__ - let's see if there is a country, with large population (above 100mil), that are not categorized as rich country (above 4500 GDP per capita), that was able to Decoupled?
+
+See below.
+
+``` {python}
+
+#| label: fig-co2down-gdpup-50
+#| fig-cap: Countries with low CO2 Emission and increase GDP (countries with minimum 100 Million population)
+
+import altair as alt
+
+#country with increase gdp, but decreased co2
+source=merged_df.query(" gdp_diff>0 & co2_diff<0 & population >= 100_000_000")
+
+alt.Chart(
+    source,
+    title=alt.Title(
+        "Decoupling Countries",
+        subtitle=["At least 100 Million population,", 
+                  "Increased GDP while Reducing CO2 Emissions"],
+        fontSize=16, offset=10
+    )
+    ).mark_point(size=90, filled=True, opacity=0.6).encode(
+    x=alt.X(
+        'co2_per_capita:Q', title='CO2 per Capita',
+        scale=alt.Scale(type="log", domain=[3,30])
+        ),
+    y=alt.Y(
+        'gdp_per_capita:Q', title='GDP per Capita',
+        scale=alt.Scale(type="log",domain=[1000, 100_000])
+        ),
+    color=alt.Color('country', title='Country'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
+    tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
+).properties(
+    width='container',
+    height=400,
+).interactive()
+```
+
+Only three countries, in the entire world - that was able to decoupled, when the population is at least 100 million. 
+Furthermore, __there is No Country that was below the upper-middle income class was able to decoupled__. 
 
 ### Country with Decreased CO~2~ Emission & Decreased GDP
 
