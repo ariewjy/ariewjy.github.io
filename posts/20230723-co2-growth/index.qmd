@@ -316,7 +316,7 @@ As shown, not every country created equally, as different country has different 
 
 #| label: fig-co2down-gdpup
 #| fig-cap: Countries with low CO2 Emission and increase GDP (countries with minimum 2 Million population)
-
+import numpy as np
 import altair as alt
 
 #country with increase gdp, but decreased co2
@@ -340,12 +340,12 @@ alt.Chart(
         scale=alt.Scale(type="log")
         ),
     color=alt.Color('country', title='Country'),
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
     width='container',
-    height=400,
-).interactive()
+    height=500,
+)#.interactive()
 ```
 
 To prove a point that was alluded before, that __only rich countries was able to decoupled__ - let's see if there is a country, with large population (above 100mil), that are not categorized as rich country (above 4500 GDP per capita), that was able to Decoupled?
@@ -380,16 +380,15 @@ alt.Chart(
         scale=alt.Scale(type="log",domain=[1000, 100_000])
         ),
     color=alt.Color('country', title='Country'),
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
     width='container',
-    height=400,
+    height=500,
 ).interactive()
 ```
 
-Only three countries, in the entire world - that was able to decoupled, when the population is at least 100 million. 
-Furthermore, __there is No Country that was below the upper-middle income class was able to decoupled__. 
+Only three countries, in the entire world - that was able to decoupled, when the population is at least 100 million. __None of them__ is below the upper-middle income class was able to decoupled. 
 
 ### Country with Decreased CO~2~ Emission & Decreased GDP
 
@@ -426,11 +425,11 @@ alt.Chart(
         scale=alt.Scale(type="log")
         ),
     color=alt.Color('country', title='Country'),
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
     width='container',
-    height=400,
+    height=500,
 ).interactive()
 ```
 
@@ -467,7 +466,7 @@ alt.Chart(
         scale=alt.Scale(type="log")
         ),
     color=alt.Color('country', title='Country'),
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
     width='container',
@@ -506,11 +505,11 @@ alt.Chart(
         scale=alt.Scale(type="log")
         ),
     color=alt.Color('country', title='Country'),
-    size=alt.Size('year:O', scale=alt.Scale(domain=[1990,1995,2000,2005,2010,2015,2020]), title='Year'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
     tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
 ).properties(
     width='container',
-    height=400,
+    height=480,
 ).interactive()
 ```
 
