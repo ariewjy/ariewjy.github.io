@@ -39,21 +39,21 @@ Even OWID themselves explained:
 
 ------------------------------------------------------------------------
 
-There should be an **asterisk** on a narrative that countries can grow their economy while also reducing emission - **Only when they are rich**.
-
-A country needs **energy to grow** their economy, the higher the energy consumption the higher the CO~2~ emission would be. The narrative that a country emits more CO~2~ because they are rich can be **misleading**. It is the **other way around**.
+A country needs **energy to grow** their economy, the higher the energy consumption the higher the CO~2~ emission would be. The narrative that a country emits more CO~2~ because they are rich can be **misleading**.
 
 > It is not because **we are rich we emit more CO~2~**, but **we are rich because we emit more CO~2~** used for energy, to grow the economy.
 
-This is of course no to undermine the impact of CO~2~ emission to our global temperature, but rather to manage our expectations and **a reality check** on what can really be done. Some questions about "*can we reduce our* CO~2~ *emission but still maintaining economy growth*"? Or "*do we have to increase our* CO~2~ *to raise our economic growth?*" are some fair questions to be addressed in more detail.
+This is not to undermine the impact of CO~2~ emission to our global temperature, rather a proposal – to manage our expectations and **a reality check** on what can **really** be done. Some questions about "*can we reduce our* CO~2~ *emission but still maintaining economy growth*"? Or "*do we have to increase our* CO~2~ *to raise our economic growth?*" are some fair questions to be addressed in more detail.
 
 Despite some [articles](https://ourworldindata.org/co2-gdp-decoupling) pointed out the fact that some countries were able to decoupled their economy from CO~2~ emission as shown in @fig-co2-gdp-uk, it is important to understand the context, in which these countries were positioned compared to rest of the world.
 
 ------------------------------------------------------------------------
 
-### **This article will explore that question.**
+This article will explore a dataset, contains emission from different countries, and to see correlation and infer some causality (if any) between economic growth and emissions. Hopefull would shed some lights on the final question:
 
 > **What allows these countries to decouple their economy from emissions?**
+
+------------------------------------------------------------------------
 
 ## Data Importing and Cleaning
 
@@ -210,13 +210,13 @@ fig.update_layout(
 fig.show()
 ```
 
-### Country with Decreased CO~2~ Emission & Increased GDP
+### Country with Decreased CO~2~ Emission & Increased GDP - Decoupling Countries
 
 Recalling some [articles](https://ourworldindata.org/co2-gdp-decoupling) from OWID, where they pointed out some countries such as United Kingdom, where the economic growth still happening while at the same time, reducing the CO~2~ emission as shown in @fig-co2-gdp-uk. It sounds impressive, but from the @fig-co2-gdp-cluster below, it is quite clear on **why some countries like United Kingdom, Germany or USA were able to decoupled** their economy from their CO~2~ emissions.
 
 > Because **they are already rich**.
 
-It is easy to ignore the fact that those countries were sitting on top of other countries in terms of income level, with GDP per Capita at the high-income class countries, **consistently above 20,000 USD ever since 1990**.
+Decoupling concept itself is based on a premise of decreased from the previous data point. The low-income countries, cannot possibly have lower data point - it is already low! Meanwhile, for rich countries, fonce it gets saturated - their only way is to go down. It is easy to ignore the fact that those countries were sitting on top of other countries in terms of income level, with GDP per Capita at the high-income class countries, **consistently above 20,000 USD ever since 1990**!
 
 The narrative that a country can really keep increasing their GDP per Capita without producing more CO~2~ emission is an **oversimplification** of the whole set of conditions that allow a country to do so.
 
@@ -259,9 +259,9 @@ alt.Chart(
 
 ```
 
-A country needs to be rich first, above 10,000 USD GDP per Capita before they can decouple their CO~2~ emission from GDP. To be rich, a country will have to use more energy, and likely to produce more CO~2~ emissions because of that. *Even using a modest estimation of 5% GDP growth, and 2% inflation rate, it will take **7 years**, before Indonesia can reach 20,000 USD per Capita level.*
+The @fig-co2-gdp-cluster shows that 20,000 is a tipping point - where some affluent countries started to be able to decoupling their CO~2~ emission from GDP. To be rich, a country will have to use more energy, and likely to produce more CO~2~ emissions because of that. As context, *a modest estimation of 5% GDP growth, and 2% inflation rate, it will take **7 years**, before Indonesia can reach 20,000 USD per Capita level.*
 
-Another view is to see **if there is country where the CO~2~ emission is reduced, but at the same time, their economy halted, and their GDP per Capite is reduced as well**. To do that, let's create a new sets of columns, of the difference in GDP per Capita per country.
+These are affluent countries, what about the rest of the countries with less GDP per capita. Do we see similar tipping point? To answer that, we need to do some tinkering with the data as below.
 
 ```{python}
 # create a column for gdp changes between 1990-2018
@@ -306,11 +306,13 @@ merged_df
 
 ------------------------------------------------------------------------
 
-With this new dataset, we can confirm our exploratory analysis before, ***what countries that can decoupled their*** **CO~2~*emission from economic growth (GDP)***?
+With this new dataset, we can confirm our exploratory analysis before,
 
-@fig-co2down-gdpup shows a distribution of countries where the their GDP per Capita increases between 1990-2018, while their CO~2~ emissions were decreased. One interesting fact is **all countries were sitting above upper-middle income class** at around 4,500 USD GDP per Capita, and some are still on the increasing trend (GDP and CO~2~ emission increase) for the past 10 years e.g. Columbia.
+> ***Are there decoupling countries with less than 20,000 USD GDP Per Capita***?
 
-As shown, not every country created equally, as different country has different tipping point when they started to be on decreasing trend on CO~2~ emission while still increasing their GDP per Capita.
+@fig-co2down-gdpup shows a distribution of countries where the their GDP per Capita increases between 1990-2018, while their CO~2~ emissions were decreased (decoupling countries). As shown, not every country created equally, as different country has different tipping point.
+
+However, as can be seen all countries were sitting above **upper-middle income class** at around **4,500 USD GDP per Capita**.
 
 ```{python}
 
@@ -348,7 +350,13 @@ alt.Chart(
 )#.interactive()
 ```
 
-Furthermore, as a counter to "**only rich countries was able to decoupled**" - let's see if there is a country, with large population (above 100mil), that are not categorized as rich country (above 4500 GDP per capita), that was able to decoupled their economy from emissions?
+One of the factor to differentiate between these countries in tipping point is population among other things. [Kaya identity](https://en.wikipedia.org/wiki/Kaya_identity), listed four factors affecting the emission of a country. One of them is population.
+
+In addition, cumulatively-speaking, emission from populous countries are important to be considered. My country Indonesia, has roughly 280 Million people, and I would imagine it as Youtuber CEO used to say with a hint of aforementioned context;
+
+> Problem at Youtube (populous countries) is problem at Scale
+
+**Are there any country that was able to decouple their economy, while having high population (at least 100 Million)?**
 
 ```{python}
 
@@ -387,11 +395,107 @@ alt.Chart(
 
 ```
 
-Only three countries, in the **entire world** - that was able to decoupled, when the population is at least 100 million. **None of them** is below the upper-middle income class. Their GDP is already above 10,000 USD before they can start to decoupled their economy from emissions.
+There are, three countries, in the **entire world** - that was able to decoupled, when the population is at least 100 million.
+
+The interesting part is, all of them is way above the previous tipping point of upper-middle income class (4,500 USD GDP per Capita). These countries tipping point is about 10,000 USD before they can start to decoupled their economy from emissions.
+
+To conclude.
+
+> **No Countries in the last decades was able to decouple without being rich at least above 4500 USD GDP per Capita for less populous countries (5 Million), and at least 10,000 USD GDP per capita for populous countries (100 Million).**
+
+### Country with Increased CO2 Emission & Increased GDP
+
+This is probably the category where it gets tricky. These countries, not only among the fastest growing countries in the world, biggest emitter in the last decades, but also among the most populous countries in the world. Critical to asses their approach to emissions, relative to their carbon budget, historical aspect, and their tipping point (income level). As shown in @fig-co2up-gdpup, these countries are all on the increasing trend, their GDP per capita is increasing but at the same time they were emitting CO~2~.
+
+```{python}
+
+#| label: fig-co2up-gdpup
+#| fig-cap: Countries with increased CO2 Emission and GDP
+
+import altair as alt
+
+#country with increased CO2 and GDP
+source=merged_df.query(" gdp_diff>0 & co2_diff>0 ")
+
+alt.Chart(
+    source,
+    title=alt.Title(
+        "GDP per Capita vs CO2 Emission for Countries",
+        subtitle=["Countries with Increased GDP and CO2 Emission"],
+        fontSize=16, offset=10
+    )
+    ).mark_point(size=90, filled=True, opacity=0.6).encode(
+    x=alt.X(
+        'co2_per_capita:Q', title='CO2 per Capita',
+        scale=alt.Scale(type="log",)
+        ),
+    y=alt.Y(
+        'gdp_per_capita:Q', title='GDP per Capita',
+        scale=alt.Scale(type="log")
+        ),
+    color=alt.Color('country', title='Country'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
+    tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
+).properties(
+    width='container',
+    height=480,
+)#.interactive()
+```
+
+------------------------------------------------------------------------
+
+Looking at some countries such as Indonesia, Vietnam, India, it is clear that these countries are trying to grow their economy from below 4,000 USD GDP per Capita in 1990, to hopefully near 20,000 USD GDP per Capita (just like any other rich countries in @fig-co2-gdp-cluster), in the foreseeable future.
+
+The better question to ask is - how much tipping point a country should reach, before they can decoupled?
+
+Take example Kuwait, sitting around 60,000 USD GDP per capita, should it decoupling now? How about Turkey? It depends - depends on the Kaya identity (topic for another blog post).
+
+```{python}
+
+#| label: fig-co2gdp-america
+#| fig-cap: Countries with increased CO2 Emission and GDP
+
+import altair as alt
+
+#country with increased CO2 and GDP
+source=merged_df.query(" gdp_diff>0 & co2_diff>0 & population > 50_000_000 ")
+
+alt.Chart(
+    source,
+    title=alt.Title(
+        "GDP per Capita vs CO2 Emission for Countries",
+        subtitle=["Countries with Increased GDP and CO2 Emission", " with population more than 50 Million "],
+        fontSize=16, offset=10
+    )
+    ).mark_point(size=90, filled=True, opacity=0.6).encode(
+    x=alt.X(
+        'co2_per_capita:Q', title='CO2 per Capita',
+        scale=alt.Scale(type="log",)
+        ),
+    y=alt.Y(
+        'gdp_per_capita:Q', title='GDP per Capita',
+        scale=alt.Scale(type="log")
+        ),
+    color=alt.Color('country', title='Country'),
+    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
+    tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
+).properties(
+    width='container',
+    height=480,
+)#.interactive()
+```
+
+------------------------------------------------------------------------
+
+From carbon-budget POV, some affluent countries that successfully decoupled their CO2 emission from their economic growth are proved to be still overemitting. In fact, the top 5 countries such as United States, Germany and United Kingdom are still in the excess shares with respect to the net-zero scenario [@fanning2023].
+
+On the other hand, some developing countries like India, Indonesia, Pakistan, and even China still have their carbon share to be used, as they are sacrificing their fair shares with respect to the net-zero scenario. See @fig-fanning for more details.
+
+![Top 5 Overemitting and Underemitting Countries with respect to Net Zero scenario [@fanning2023]](images/paste-2.png){#fig-fanning width="800"}
 
 ### Country with Decreased CO~2~ Emission & Decreased GDP
 
-This is part where we should expect some of the poorest country in the world, where their CO~2~ emission should not be halted because it is directly related to the their economic growth. @fig-co2down-gdpdown shows country with worse condition in 2018 than they are in 1990, Zimbabwe. This country needs help, and if that means emitting more CO~2~ emission, so be it. In fact their carbon budget is still below their fair share, as shown in @fig-cumco2emission-uk-zimbabwe, a night and day difference compared to UK carbon share[^3].
+This is part where we should allow their CO~2~ emission to grow because it is directly related to the their economic growth. @fig-co2down-gdpdown shows country with worse condition in 2018 than they are in 1990, Zimbabwe. Another important concept is carbon budget, where each country, depending on their population should have quota / "budget" of CO~2~ they were allowed to use. And in this case, **Zimbabwe carbon budget is still below their fair share**, as shown in @fig-cumco2emission-uk-zimbabwe, a night and day difference compared to UK carbon share[^3].
 
 [^3]: Website to display the cumulative emission with respect to their fair shares on carbon budgets. Link can be found [here](https://goodlife.leeds.ac.uk/atmospheric-appropriation/#IDN)
 
@@ -433,92 +537,6 @@ alt.Chart(
 ```
 
 ------------------------------------------------------------------------
-
-### Country with Increased CO2 Emission & Increased GDP
-
-This is probably the category where everyone is trying to judge on, country that is trying to grow their economy and in doing so- increase their CO~2~ emission. As shown inf @fig-co2up-gdpup, these countries are all on the increasing trend, their GDP per Capita is increasing but at the same time they were emitting CO~2~, which is understandable.
-
-```{python}
-
-#| label: fig-co2up-gdpup
-#| fig-cap: Countries with increased CO2 Emission and GDP
-
-import altair as alt
-
-#country with increased CO2 and GDP
-source=merged_df.query(" gdp_diff>0 & co2_diff>0 ")
-
-alt.Chart(
-    source,
-    title=alt.Title(
-        "GDP per Capita vs CO2 Emission for Countries",
-        subtitle=["Countries with Increased GDP and CO2 Emission"],
-        fontSize=16, offset=10
-    )
-    ).mark_point(size=90, filled=True, opacity=0.6).encode(
-    x=alt.X(
-        'co2_per_capita:Q', title='CO2 per Capita',
-        scale=alt.Scale(type="log",)
-        ),
-    y=alt.Y(
-        'gdp_per_capita:Q', title='GDP per Capita',
-        scale=alt.Scale(type="log")
-        ),
-    color=alt.Color('country', title='Country'),
-    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
-    tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
-).properties(
-    width='container',
-    height=480,
-)#.interactive()
-```
-
-------------------------------------------------------------------------
-
-If we are looking at some countries such as Indonesia, Vietnam, India, it is clear that these countries are trying to grow their economy from below 4,000 USD GDP per Capita in 1990, to hopefully near 20,000 USD GDP per Capita (just like any other rich countries in @fig-co2-gdp-cluster), in the foreseeable future.
-
-```{python}
-
-#| label: fig-co2gdp-america
-#| fig-cap: Countries with increased CO2 Emission and GDP
-
-import altair as alt
-
-#country with increased CO2 and GDP
-source=merged_df.query(" gdp_diff>0 & co2_diff>0 & population > 50_000_000 ")
-
-alt.Chart(
-    source,
-    title=alt.Title(
-        "GDP per Capita vs CO2 Emission for Countries",
-        subtitle=["Countries with Increased GDP and CO2 Emission", " with population more than 50 Million "],
-        fontSize=16, offset=10
-    )
-    ).mark_point(size=90, filled=True, opacity=0.6).encode(
-    x=alt.X(
-        'co2_per_capita:Q', title='CO2 per Capita',
-        scale=alt.Scale(type="log",)
-        ),
-    y=alt.Y(
-        'gdp_per_capita:Q', title='GDP per Capita',
-        scale=alt.Scale(type="log")
-        ),
-    color=alt.Color('country', title='Country'),
-    size=alt.Size('year:O', scale=alt.Scale(domain=list(np.linspace(1990,2020,10, dtype=int))), title='Year'),
-    tooltip=['country', 'population', 'co2_per_capita', 'gdp_per_capita', 'year']
-).properties(
-    width='container',
-    height=480,
-)#.interactive()
-```
-
-------------------------------------------------------------------------
-
-On the one hand, some developed countries, the one that were referred as an example for a country that successfully decoupled their CO2 emission from their economic growth are proved to be still overemitting. In fact, the top 5 countries such as United States, Germany and United Kingdom are still in the excess shares with respect to the net-zero scenario [@fanning2023].
-
-On the other hand, some developing countries like India, Indonesia, Pakistan, and even China still have their carbon share to be used, as they are sacrificing their fair shares with respect to the net-zero scenario. See @fig-fanning for more details.
-
-![Top 5 Overemitting and Underemitting Countries with respect to Net Zero scenario [@fanning2023]](images/paste-2.png){#fig-fanning width="800"}
 
 ## Closing Words
 
