@@ -15,6 +15,7 @@ fig-cap-location: bottom
 fig-align: left
 linkcolor: 'green'
 image: images/plot.png
+jupyter: minids
 execute: 
   eval: false
 code-fold: false
