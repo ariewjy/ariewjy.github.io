@@ -11,8 +11,8 @@ execute:
   freeze: auto
 
 website:
-  # title: "Aditya AW"
-  # description: "Geoscientist Codes"
+  title: "Foreland of Thoughts"
+  description: "Foreland of Thoughts"
   site-url: https://adtarie.net
   repo-url: https://github.com/ariewjy/ariewjy.github.io
   repo-actions:
@@ -25,6 +25,7 @@ website:
   open-graph:
     locale: en_EN
   page-navigation: true
+  # margin-footer: subscribe.html
   # google-analytics:
   # cookie-consent:
   #   type: express

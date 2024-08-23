@@ -13,6 +13,8 @@ listing:
   # page-size: 5
   categories: true
   sort-ui: true
+  feed: true
+  
   # filter-ui: true
 # page-layout: full
 title-block-banner: false
