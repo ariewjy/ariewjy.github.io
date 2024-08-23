@@ -13,7 +13,7 @@ draft: false
 format: html
 ---
 
-![Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](image.jpeg)
+![Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/medical-care?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](image.jpg)
 
 ## Introduction & Objectives
 
@@ -46,6 +46,8 @@ Objectives:
 #| label: test
 
 #importing libraries
+import warnings
+warnings.filterwarnings('ignore')
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt

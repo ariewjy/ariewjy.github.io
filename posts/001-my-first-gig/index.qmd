@@ -6,7 +6,7 @@ categories: [career]
 draft: false
 ---
 
-![Image by Unsplash](preview.jpeg)
+![Image by Unsplash](preview.jpg)
 
 In the early 2013, around March, I was getting an interview on the 500 Fortune company, where my interviewer asked me a difficult question and I said I don't know, but somehow I got the Job.
 
