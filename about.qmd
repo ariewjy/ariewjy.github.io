@@ -33,7 +33,7 @@ citation: false
 
 Hi there 👋 I am **Arie**!
 
-I am currently working as a Geoscientist in the Multi-national company in the field of Energy, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Nordic Country of Norway! 
+I am currently working as a Geoscientist in the Multi-national company in the Energy Industry, i.e. subsurface analytics, energy exploration, and geoscience analytics, in Scotland, UK! 
 
 My experience in coding started out in 2020, where I have a need to help students learn about petrophysics online. Problem is I could not find a good solution that is free and OS-agnositc. So I developed a web application to load well-log data in LAS file format and do basic petrophysical analysis at [**plotpetrophysics.streamlit.app**](https://plotpetrophysics.streamlit.app/).
 
