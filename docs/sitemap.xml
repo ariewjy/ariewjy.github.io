@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://adtarie.net/license.html</loc>
-    <lastmod>2023-07-28T17:09:21.790Z</lastmod>
-  </url>
-  <url>
     <loc>https://adtarie.net/publications.html</loc>
-    <lastmod>2024-08-25T00:46:56.477Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/006-easy-report-machine-learning/index.html</loc>
-    <lastmod>2024-07-27T23:01:48.789Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/003-medical-insurance/index.html</loc>
-    <lastmod>2024-08-23T20:08:48.956Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/index.html</loc>
-    <lastmod>2024-08-23T19:44:03.289Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/002-migrating-to-quarto/index.html</loc>
-    <lastmod>2024-07-28T10:05:19.534Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/index.html</loc>
-    <lastmod>2024-07-27T22:56:32.439Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/index.html</loc>
-    <lastmod>2024-07-28T23:47:22.963Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/008-guides-norway/index.html</loc>
-    <lastmod>2024-07-27T23:12:14.564Z</lastmod>
+    <lastmod>2024-08-30T00:17:01.100Z</lastmod>
   </url>
   <url>
     <loc>https://adtarie.net/posts/20240225-ricohgriii-short-term/index.html</loc>
-    <lastmod>2024-07-27T22:58:32.375Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/004-national-exam/index.html</loc>
-    <lastmod>2024-08-23T20:22:34.857Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/20230715-plotpetrophysics/index.html</loc>
-    <lastmod>2024-07-27T22:57:34.472Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/001-my-first-gig/index.html</loc>
-    <lastmod>2024-08-23T20:06:39.084Z</lastmod>
-  </url>
-  <url>
-    <loc>https://adtarie.net/posts/007-quarto-python-tutorial/index.html</loc>
-    <lastmod>2024-07-27T22:56:56.634Z</lastmod>
+    <lastmod>2024-08-30T00:17:00.888Z</lastmod>
   </url>
   <url>
     <loc>https://adtarie.net/posts/20230723-co2-growth/index.html</loc>
-    <lastmod>2024-08-23T17:22:42.971Z</lastmod>
+    <lastmod>2024-08-30T00:17:00.336Z</lastmod>
   </url>
   <url>
-    <loc>https://adtarie.net/index.html</loc>
-    <lastmod>2024-08-23T17:24:24.634Z</lastmod>
+    <loc>https://adtarie.net/posts/008-guides-norway/index.html</loc>
+    <lastmod>2024-08-30T00:16:59.438Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/006-easy-report-machine-learning/index.html</loc>
+    <lastmod>2024-08-30T00:16:57.295Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/004-national-exam/index.html</loc>
+    <lastmod>2024-08-30T00:16:56.857Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/002-migrating-to-quarto/index.html</loc>
+    <lastmod>2024-08-30T00:16:56.708Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/license.html</loc>
+    <lastmod>2024-08-30T00:16:56.283Z</lastmod>
   </url>
   <url>
     <loc>https://adtarie.net/about.html</loc>
-    <lastmod>2024-08-25T00:52:40.562Z</lastmod>
+    <lastmod>2024-08-30T00:16:49.312Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/index.html</loc>
+    <lastmod>2024-08-30T00:16:56.269Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/001-my-first-gig/index.html</loc>
+    <lastmod>2024-08-30T00:16:56.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/003-medical-insurance/index.html</loc>
+    <lastmod>2024-08-30T19:18:28.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/index.html</loc>
+    <lastmod>2024-08-30T00:16:56.959Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/007-quarto-python-tutorial/index.html</loc>
+    <lastmod>2024-08-30T00:16:57.720Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/20230715-plotpetrophysics/index.html</loc>
+    <lastmod>2024-08-30T00:16:59.550Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/index.html</loc>
+    <lastmod>2024-08-30T00:17:00.580Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/index.html</loc>
+    <lastmod>2024-08-30T00:17:01.091Z</lastmod>
   </url>
 </urlset>

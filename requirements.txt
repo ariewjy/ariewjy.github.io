@@ -1,0 +1,6 @@
+pandas
+plotly
+polars
+matplotlib
+seaborn
+altair

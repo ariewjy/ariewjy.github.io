@@ -9,7 +9,7 @@
 <link>https://adtarie.net/</link>
 <atom:link href="https://adtarie.net/index.xml" rel="self" type="application/rss+xml"/>
 <description>Foreland of Thoughts</description>
-<generator>quarto-1.5.56</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Mon, 29 Jul 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>A Wee U-Turn of Life to Scotland, UK.</title>
@@ -5173,7 +5173,7 @@ Note
 <section id="penutup" class="level2">
 <h2 class="anchored" data-anchor-id="penutup">Penutup</h2>
 <p>Terimakasih sudah membaca sampai sini. Jika ada yang ingin ditanyakan, langsung saja DM atau Mention saya di Twitter. Saya sudah rangkumkan pula beberapa hal sehari-hari di thread di bawah. Enjoy!</p>
-<p></p><div id="tweet-62890"></div><script>tweet={"url":"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433","author_name":"Arie","author_url":"https:\/\/twitter.com\/Adtarie","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EUdh sampe di Norway, ada bbrp hal yg bikin bingung, dan bikin amazed. \u003Cbr\u003E\u003Cbr\u003EA thread that will be updated as I live here. \u003Ca href=\"https:\/\/t.co\/XtKQW74ZXG\"\u003Epic.twitter.com\/XtKQW74ZXG\u003C\/a\u003E\u003C\/p\u003E&mdash; Arie (@Adtarie) \u003Ca href=\"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433?ref_src=twsrc%5Etfw\"\u003EApril 25, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-62890").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-31537"></div><script>tweet={"url":"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433","author_name":"Arie","author_url":"https:\/\/twitter.com\/Adtarie","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EUdh sampe di Norway, ada bbrp hal yg bikin bingung, dan bikin amazed. \u003Cbr\u003E\u003Cbr\u003EA thread that will be updated as I live here. \u003Ca href=\"https:\/\/t.co\/XtKQW74ZXG\"\u003Epic.twitter.com\/XtKQW74ZXG\u003C\/a\u003E\u003C\/p\u003E&mdash; Arie (@Adtarie) \u003Ca href=\"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433?ref_src=twsrc%5Etfw\"\u003EApril 25, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-31537").innerHTML = tweet["html"];</script><p></p>
 
 
 </section>
@@ -8598,7 +8598,7 @@ background-color: null;
 font-style: inherit;">=</span>y_pred_train_rfcv)</span>
 <span id="cb42-18">plt.show()</span></code></pre></div>
 </details>
-<div id="cell-fig-model-comparison" class="cell quarto-layout-panel" data-execution_count="35" data-layout-ncol="2">
+<div id="cell-fig-model-comparison" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="35">
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -18367,7 +18367,7 @@ font-style: inherit;">as</span> sns</span>
 background-color: null;
 font-style: inherit;">import</span> altair <span class="im" style="color: #00769E;
 background-color: null;
-font-style: inherit;">as</span> alt</span>
+font-style: inherit;">as</span> alt </span>
 <span id="cb1-9"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># import hvplot.pandas</span></span>
@@ -18388,14 +18388,14 @@ font-style: inherit;">'tab20'</span>) </span></code></pre></div>
 </section>
 <section id="importing-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="importing-dataset">Importing Dataset</h2>
-<div id="d16def07" class="cell" data-execution_count="2">
+<div id="a97c6c25" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1">insurance <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'insurance.zip'</span>)</span>
 <span id="cb2-2">insurance.head()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -18607,7 +18607,7 @@ font-style: inherit;">#  .T</span></span>
 Table&nbsp;1: BMI Class
 </figcaption>
 <div aria-describedby="tbl-bmi-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -18687,7 +18687,7 @@ Table&nbsp;1: BMI Class
 </section>
 <section id="quicklook" class="level2">
 <h2 class="anchored" data-anchor-id="quicklook">Quicklook</h2>
-<div id="f29a4f32" class="cell" data-execution_count="4">
+<div id="c3e4f541" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">insurance.info()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -18708,7 +18708,7 @@ memory usage: 74.8+ KB</code></pre>
 </div>
 </div>
 <p>The data appears to be clean, with no null row, and dftypes appear to be correct. However, the format appears to be a non-tidy format.</p>
-<div id="f1174577" class="cell" data-execution_count="5">
+<div id="3f4ac468" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">(insurance</span>
 <span id="cb6-2"> .select_dtypes(include<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -18721,15 +18721,15 @@ font-style: inherit;">#includes all column with object dtypes</span></span>
 background-color: null;
 font-style: inherit;">#counting unique value</span></span>
 <span id="cb6-4">)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>sex     smoker  region   
 female  no      southwest    141
                 southeast    139
                 northwest    135
 male    no      southeast    134
+                northwest    132
 female  no      northeast    132
-male    no      northwest    132
-                southwest    126
+male    no      southwest    126
                 northeast    125
         yes     southeast     55
                 northeast     38
@@ -18813,7 +18813,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;1: Overall Mean Age
 </figcaption>
 <div aria-describedby="fig-mean-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-mean-age-output-1.png" width="416" height="272" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-mean-age-output-1.png" width="419" height="272" class="figure-img">
 </div>
 </figure>
 </div>
@@ -18873,7 +18873,7 @@ font-style: inherit;">#  )</span></span>
 Table&nbsp;2: Statistic of Age, BMI, and Charges by Smoker and Sex
 </figcaption>
 <div aria-describedby="tbl-smoker-based-on-sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
@@ -18963,7 +18963,7 @@ font-style: inherit;">#to calculate how high the smoker medical charges</span></
 Table&nbsp;3: Ratio of Charges based on Smoker profile
 </figcaption>
 <div aria-describedby="tbl-ratio-smoker-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -19028,7 +19028,7 @@ font-style: inherit;">#to calculate how high the smoker medical charges</span></
 Table&nbsp;4: Ratio of Charges based on Sex profile
 </figcaption>
 <div aria-describedby="tbl-ratio-sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -19134,7 +19134,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;2: Age distribution based on Categorical values
 </figcaption>
 <div aria-describedby="fig-boxplot-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-boxplot-age-output-1.png" width="647" height="368" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-boxplot-age-output-1.png" width="658" height="368" class="figure-img">
 </div>
 </figure>
 </div>
@@ -19216,7 +19216,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;3: Age distribution based on region
 </figcaption>
 <div aria-describedby="fig-boxplot-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-boxplot-region-output-1.png" width="647" height="752" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-boxplot-region-output-1.png" width="658" height="752" class="figure-img">
 </div>
 </figure>
 </div>
@@ -19406,7 +19406,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;4: Age vs Charges
 </figcaption>
 <div aria-describedby="fig-age-charges-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-age-charges-1-output-1.png" width="501" height="354" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-age-charges-1-output-1.png" width="508" height="354" class="figure-img">
 </div>
 </figure>
 </div>
@@ -19539,7 +19539,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;5: Age vs Charges based on Sex
 </figcaption>
 <div aria-describedby="fig-age-charges-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-age-charges-2-output-1.png" width="643" height="405" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-age-charges-2-output-1.png" width="652" height="405" class="figure-img">
 </div>
 </figure>
 </div>
@@ -19782,7 +19782,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;6: Outliers?
 </figcaption>
 <div aria-describedby="fig-outlier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-outlier-output-1.png" width="643" height="405" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-outlier-output-1.png" width="652" height="405" class="figure-img">
 </div>
 </figure>
 </div>
@@ -19884,7 +19884,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;7: Outliers vs number of Children
 </figcaption>
 <div aria-describedby="fig-outlier-eda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-outlier-eda-output-1.png" width="682" height="848" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-outlier-eda-output-1.png" width="692" height="848" class="figure-img">
 </div>
 </figure>
 </div>
@@ -20110,7 +20110,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 Figure&nbsp;8: BMI vs Charges
 </figcaption>
 <div aria-describedby="fig-bmi-charges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-bmi-charges-output-1.png" width="388" height="354" class="figure-img">
+<img src="https://adtarie.net/posts/003-medical-insurance/index_files/figure-html/fig-bmi-charges-output-1.png" width="410" height="354" class="figure-img">
 </div>
 </figure>
 </div>
