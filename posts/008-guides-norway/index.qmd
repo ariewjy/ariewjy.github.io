@@ -12,7 +12,7 @@ citation-location: margin
 cap-location: bottom
 ---
 
-![Foto Dermaga. Rogaland adalah nama Provinsi dari Stavanger (bagian dari Provinsi).](images/D6F2022F-4E88-47B4-9573-9CA582227D38_1_102_o-2.jpeg){width="720"}
+![Foto Dermaga. Rogaland adalah nama Provinsi dari Stavanger (bagian dari Provinsi)](images/rogaland_ship.jpeg){width="720"}
 
 ::: callout-note
 -   Artikel ini diperbaharui secara berkala. Perbaharuan terakhir dilakukan pada tanggal 08 Februari 2024. Artikel merupakan pengalaman pribadi penulis/ interaksi penulis dengan rekan kerja dan/ teman, dan bisa saja berbeda dengan pengalaman anda. Harap melakukan pengecekan sendiri terlebih dahulu, karena penulis tidak bertanggungjawab atas ketidaksesuaian isi artikel terhadap pengalaman yang anda dapatkan.
@@ -32,7 +32,7 @@ Tanpa adanya nomor ini, anda tidak akan bisa membuat digital ID seperti MinID, B
 
 ### D-num
 
-![](images/paste-11.png){width="480"}
+![D-Num](images/D-num.png){width="480"}
 
 D-num umumnya diberikan sebagai nomor identifikasi sementara untuk orang asing di Norway yang berencana tinggal kurang dari 6 bulan, atau lebih dari 6 bulan namun tidak memenuhi syarat untuk mendapatkan P-num. Pengalaman rekan kerja di kantor, ada yang langsung diberikan P-num (seperti saya), ada juga yang diberikan D-num terlebih dahulu kemudian diberikan P-num.
 
@@ -40,7 +40,7 @@ D-num umumnya diberikan sebagai nomor identifikasi sementara untuk orang asing d
 
 ### P-num
 
-![](images/paste-10.png){width="480"}
+![P-num](images/P-num.png){width="480"}
 
 P-num ini umumnya diberikan untuk warga negara Norway, atau orang asing yang bertempat tinggal lebih dari 6 bulan di Norway dan memenuhi syarat mendapatkan P-num. Detil syaratnya saya tidak tahu, namun dari beberapa orang yang saya kenal dan baru-baru ini pindah ke Norway, hampir semua mendapatkan P-num langsung.
 
@@ -62,29 +62,29 @@ Transportasi di sini kebanyakan berupa bis, dan beberapa area tersedia kereta.
 
 Untuk transportasi dari Bandara ke Kota Stavanger (Stavanger Sentrum) dapat menggunakan Bis antar Bandara bernama [Flybussen](https://www.flybussen.no/en). Seperti terlampir di bawah, ada banyak pemberhentian bis ini dari dan ke bandara (Stavanger Lufthavn Sola/ SVG).
 
-![](images/paste-1.png){width="680"}
+![Halte Bus Bandara](images/flybussen.png){width="680"}
 
 Website-nya sekarang cukup intuitif dan mudah digunakan, terlampir contoh penggunaan aplikasi website Flybussen untuk tiket dari bandara ke statens hus (sebelahnya SUA).
 
-![](images/CleanShot%202023-10-15%20at%2014.24.19@2x.png){width="720"}
+![Jadwal Bus Bandara](images/flybussen_time.png){width="720"}
 
 Biaya per orang dewasa sebesar NOK 158,00 (koma di sini bermakna koma, seperti di indonesia, jadi ini sebesar seratus lima puluh delapan Norwegian Kroner). Per tanggal artikel ini ditulis, 1 NOK = 1450 rupiah. Pembayaran dapat menggunakan kartu kredit VISA ataupun mastercard. [Aplikasi Vipps](#vipps) seperti yang disebutkan sebelumnya, adalah digital wallet khusus Norway (akan dibahas mendetail di bab selanjutnya).
 
-![](images/CleanShot%202023-10-15%20at%2014.28.53@2x.png){width="720"}
+![Bus Bandara](images/flybussen_payment.png){width="720"}
 
 ## Dalam Kota
 
 Untuk transportasi di Kota, bisa menggunakan Kolumbus. Ini semacam penyedia jasa bis dalam kota stavanger. Tiket bisa beli offline di stasiun bis, atau (seperti saya) beli online di aplikasinya. Ada dua aplikasi Kolumbus, ada yg untuk beli tiket (Kolumbus Billet).
 
-![](images/CleanShot%202023-10-15%20at%2014.39.00@2x.png){width="720"}
+![Aplikasi Tiket Bis](images/kolumbus_billet.png){width="720"}
 
 Ada untuk bus tracking, bernama Kolumbus. Aplikasi ini cukup intuitif dan akurat dalam menentukan posisi bis secara hampir real-time.
 
-![](images/CleanShot%202023-10-15%20at%2014.40.16@2x.png){width="720"}
+![Aplikasi Bis](images/kolumbus_app.png){width="720"}
 
 Ketika pertamakali tiba di Stavanger, saya langsung membeli tiket via aplikasi dan melakukan pembayaran menggunakan kartu kredit. Anda bisa membeli tiket harian, mingguan, dan bulanan tergantung kebutuhan. Saya pribadi membeli tiket bulanan senilai NOK 650/ zone, untuk harga orang dewasa (anak dibawah umur tidak perlu membeli tiket). Setelah membeli anda akan mendapatkan akses ke real-time barcode di aplikasi Billet. Untuk region Stavanger-Sentrum-Madla-Tananger-Sola, masih masuk satu zonasi yang sama, sehingga cukup bayar untuk satu zona. Tiket ini juga sudah termasuk akses kereta lokal yang menghubungkan Stavanger sampai Egersund, dan juga kapal feri.
 
-![](images/CleanShot%202023-10-15%20at%2014.52.05@2x.png){width="720"}
+![Rute](images/gmap.png){width="720"}
 
 Harap diwaspadai, kalau sejauh ini memang tidak ada kewajiban untuk memindai barcode sebelum naik bis, namun secara rutin dan acak akan ada pengecekan penumpang oleh polisi setempat. Jika ditemukan anda menaiki bis tanpa mempunyai tiket yang valid, **denda per orang adalah senilai NOK 950 (data valid per Oktober 2023)**.
 
@@ -108,19 +108,19 @@ Kebanyakan pembayaran dilakukan via kartu, atau apps (Vipps yg kita bahas nanti)
 
 Kartu apa yg bisa dipakai? Semua kartu yg ada logo Visa atau Mastercardnya. Saya sendiri pakai Wise card, dan Bigpay card. Keduanya berfungsi sama baiknya, kendati seringkali saya pakai Wise card, karena preferensi pribadi saja. Wise lebih luas jangkauannya, karena Bigpay ini sebarannya terkhusus di Asia saja, sedangkan untuk Wise, Eropa (termasuk Norway), UK jg masuk.
 
-![](images/Untitled.png){width="480"}
+![Wise](images/wise_card.png){width="480"}
 
 ### Aplikasi Vipps {#vipps}
 
 Vipps merupakan aplikasi digital wallet seperti Gopay di Indonesia. Aplikasi inii cukup simpel karena memang hanya untuk bayar dan terima uang berdasarkan akun Vipps yang terhubung ke nomor handphone anda. Dibutuhkan Digital ID berupa BankID untuk membuat akun Vipps, karena termasuk ke dalam aplikasi keuangan.
 
-![](images/CleanShot%202023-10-15%20at%2015.04.24@2x.png){width="720"}
+![Vipps](images/vipps.png){width="720"}
 
 ## Nomor HP Lokal dan Paket Data
 
 Sebagai *disclaimer* dulu, ini tidak urgen untuk awal-awal. Karena pertimbangan pribadi saya putuskan untuk beli nomor lokal. Klo tidak butuh sekali, bisa pakai paket roaming, yang saya yakin akan masih lebih murah daripada beli nomor dan paket data lokal. Saya pakai mycall, provider yg harga paketnya paling murah di angka 1GB (79 NOK), sampai 10GB (299 NOK), dan paket telpon unlimited di Norway saja (99 NOK), hingga untuk telpon ke Asia-Middle East-Africa, yang harganya tentu saja lebih mahal.
 
-![](images/CleanShot%202023-06-27%20at%2020.48.02.png)
+![](images/local_mobile_package.png)
 
 Cara belinya tinggal ke 7-11 terdekat, bilang saja mau beli nomor hape. Nanti tinggal bawa pasport, dan berkas residence permit dari UDI (jaga-jaga kalau ditanya), nanti ketika ditanya mau isi berapa, bilang saja unlimited call di Norway + paket data 3GB. Pengalaman saya 3GB cukup, asalkan pakai Wifi klo di rumah. Kalau sering browsing atau nonton youtube 6 jaman sehari, tidak akan cukup. Nanti bisa download aplikasinya yg wujudnya seperti terlampir, ini bisa didownload tanpa ganti region terlebih dahulu (saya jelasin di paragraf selanjutnya).
 
@@ -138,7 +138,7 @@ Namun demikian, untungnya beberapa aplikasi yg krusial bisa didonlod tanpa ganti
 
 Untuk kalian pemakai iphone, pasti default nya akan pakai safari, sedangkan klo android biasanya pakai Chrome. Untuk mempermudah hidup anda, pakailah Edge (browser microsoft) ketika browsing di Norway. Alasannya, adalah Edge punya fiture built-in translator yg bisa dipakai untuk translate apapun yg tampil di browser kita dari Norwegian ke English/Indonesia. Saya belum nemu alternatif yg se-*smooth* Edge dari sisi implementasi dan user experience. Edge tersedia dalam browser windows, macos, ios dan android.
 
-![](images/CleanShot%202023-06-27%20at%2020.48.31.png)
+![](images/edge_browser.png)
 
 ## Mailbox/ Kotak Surat adalah Keharusan
 
@@ -150,19 +150,19 @@ Di Norway, meskipun negaranya menurut saya sangat terintegrasi sistemnya, masih 
 Kalau anda bertempat tinggal sementara di tempat yang tidak menyediakan mailbox tersendiri seperti hotel, anda bisa meminta mereka untuk meminjamkan mailbox hotel mereka untuk dikirimi berkas anda. Caranya bisa dengan meminta ijin terlebih dahulu ke pihak hotel (biasanya mereka paham), dan menempel nama lengkap anda, istri, pada mailbox (jika tidak ada nama lengkap/ salah, surat/ berkas akan dikirimkan kembali ke pengirim).
 :::
 
-![](images/paste-2.png){width="480"}
+![Mailbox](images/mailbox.png){width="480"}
 
 ## Residence Card
 
 Residence card ini prinsipnya sama seperti KTP. Biasanya akan terpakai ketika kita butuh verifikasi diri, seperti ketika mengambil obat di apotik. Daripada membawa paspor kemana-mana, residence card sudah cukup. Tidak ada informasi mengenai P-num di dalam residence card, kecuali tentu 6 digit tanggal-bulan-tahun lahir anda, sehingga pastikan anda ingat 5 digit terakhir anda, karena akan diminta juga ketika verifikasi diri.
 
-![](images/CleanShot%202023-06-27%20at%2020.48.56.png)
+![Contoh Residence Card](images/residence_card.png)
 
 ## Digital IDs
 
 Ketika kita mencoba mengakses website, akan ada langkah verifikasi diri online. Biasanya pilihan verifikasinya hanya terbatas dari salah dua atau salah tiga dari e-ID di bawah, tergantung pada tipe website yang anda akses. Pada website [pajak](https://www.skatteetaten.no/en/person/) misalnya, tampilannya seperti di bawah (ada tiga pilihan). Namun pada website [kesehatan](https://www.helsenorge.no/) tampilan di bawah berganti menjadi BankID dan BuypassID saja.
 
-![](images/CleanShot%202023-06-27%20at%2020.53.07.png){width="535"}
+![Beragam Digital ID](images/digital_id.png){width="535"}
 
 Digital ID atau Electronic ID ini terbagi jadi 4 jenis, namun jenis keempat saya *skip* saja karena gak relevan untuk tulisan ini. Saya hanya bahas tiga teratas. Fungsinya adalah untuk identifikasi/ autentifikasi identitas kita pada situs-situs penting seperti tax, kesehatan, national registry etc. **Hanya bisa dipesan, jika kita sudah punya personal number (11 digit).**
 
@@ -170,13 +170,13 @@ Digital ID atau Electronic ID ini terbagi jadi 4 jenis, namun jenis keempat saya
 
 [MinID](https://minid.no/en/) ini adalah e-ID paling BASIC dan gratis. Jadi bisa digunakan di hampir semua akses, kecuali kesehatan. Jadi untuk bisa akses situs kesehatan, untuk bikin janji sama dokter kita (GP), harus pakai e-ID di atas minID, yakni BankID atau BuypassID.
 
-![](images/paste-3.png){width="320"}
+![MinID](images/minID.png){width="320"}
 
 ### BuypassID
 
 [Buypass](https://www.buypass.com/products/buypass-id-mobile) ID, ini e-ID yg medium, artinya dia bisa akses apa yg minID bisa akses + beberapa situs tambahan, seperti website kesehatan untuk bikin janji temu dengan dokter. Kekurangannya, ini berbayar, sebesar 998 NOK, atau sekitar 1,2 juta IDR. Namun menurut saya pribadi *worth it* karena bisa ambil di Posten, semacam Pos Indonesia-nya Norway, dan tidak dikirm ke mailbox seperti MinID, jadi di kasus saya yang tidak ada mailbox pribadi, memudahkan. Namun patut dipahami, buypassID ini gak bisa dipesan tanpa P-num dan personal data. Semacam dokumen dari national registry, yg menyatakan nama kita, tempat tanggal lahir, dan bertempat tinggal di mana di Norway. Intinya, memastikan kita memang berdomisili dan legal di Norway.
 
-![](images/CleanShot%202023-06-27%20at%2020.54.56.png){width="480"}
+![Buypass](images/buypass.png){width="480"}
 
 ::: callout-note
 Yang *counter-intuitive* adalah, personal data ini bisa dipesan via skatten (tax website), yang cuma bisa diakses via e-ID seperti minID. Jadi saran saya, segera pesan minID segera setelah dapat P-num. Namun kalau tidak bisa menunggu, bisa telpon CS dari kantor pajak, dan minta dikirim ke mailbox.
@@ -186,7 +186,7 @@ Yang *counter-intuitive* adalah, personal data ini bisa dipesan via skatten (tax
 
 [BankID](https://www.bankid.no/en/private/) ini adalah e-ID paling powerful dari semuanya. Bisa akses semua, dan satu-satunya yang diterima oleh bank, sehingga e-ID ini saja yang bisa dipakai untuk registrasi Vipps. Semacam e-wallet orang Norway. Hampir semua merchant menerima Vipps, dan hampir di banyak tempat yg tidak terlalu besar tokonya, cuma nerima Vipps. Seperti bazaar pasar makanan Indonesia.
 
-![](images/paste-4.png){width="480"}
+![](images/bankID.png){width="480"}
 
 Tapi, bankID ini buatnya paling susah. Disamping karena paspor saya bukan e-paspor, juga memang ada banyak dokumen yang disiapkan. Yang cukup lama buat saya adalah residence card yang baru jadi sekitar 6 minggu pasca dapat P-num. Itupun, harus kirim dokumen lagi ke Oslo, untuk verifikasi bahwa paspor kita valid (karena gak ada chipnya).
 
@@ -204,7 +204,7 @@ dapat residence card → daftar DNB → bikin BankID
 
 [Sparebank-1](https://www.sparebank1.no/en/sr-bank/personal.html) ini adalah bank pertama saya, karena tidak butuh residence card, bankID. Jadi hanya perlu personel num, dan paspor. Tinggal daftar online, nanti jika sudah ready akan dipanggil ke bank terdekat untuk verifikasi dan pembuatan akun bank. 1-2minggu setelahnya akan dikirimkan kartu debit ke mailbox.
 
-![](images/CleanShot%202023-06-27%20at%2020.55.37.png){width="901"}
+![Sparebank1 Website](images/sparebank1sr.png){width="901"}
 
 ::: callout-caution
 Patut dicatat untuk ganti region sesuaikan sama postcode ketika mendaftar, karena nanti akan diarahkan ke website yang berbeda.
@@ -218,7 +218,7 @@ Untuk yang tidak ada mailbox (seperti saya), ada opsi untuk pengambilan kartu de
 
 [Altin](https://www.altinn.no/) ini pada dasarnya seperti mailbox digital semua hal terkait informasi kita di Norway. Hanya bisa login ke sini kalau kita ada buypassID atau bankID. **MinID gak bisa**. Kalau kita melakukan perubahan alamat misalnya, akan ada email beserta dokumen pdf di Altinn, kalau kita ajukan tax card etc. Contoh inbox di bawah:
 
-![](images/paste-5.png){width="720"}
+![Altinn Website](images/altinn.png){width="720"}
 
 ## Public Health (Helsenorge) {#public-health-helsenorge}
 
@@ -226,11 +226,15 @@ Untuk yang tidak ada mailbox (seperti saya), ada opsi untuk pengambilan kartu de
 
 Helsenorge ([Helsenorge -- din helse på nett - Helsenorge](https://tjenester.helsenorge.no/velg-person)) adalah website untuk akses informasi kesehatan pribadi. Di website inilah kita buat temujanji dengan dokter (GP) kita yang sudah didaftarkan atas nama kita. Kita bisa cek kita terdaftar dengan GP siapa di [Bytte fastlege - Helsenorge](https://tjenester.helsenorge.no/bytte-fastlege). Pastikan nomor hp anda terdaftar di helsenorge, sehingga setiap kali ada notifikasi maka anda akan dapat pesan teks. Selalu cek pesan di hp anda, dan email anda untuk setiap notifikasi terkait jadwal cek dokter, vaksin, temu janji dll.
 
-![](images/CleanShot%202023-10-15%20at%2016.25.02@2x.png){width="720"}
+![Helsenorge Website](images/helsenorge.png){width="720"}
 
-Yang patut diwaspadai ketika ke klinik, atau ke pengobatan/ pengecekan yang melibatkan klinik apapun, pastikan anda bertanya dengan perawat apakah yang anda dapatkan berbayar atau gratis. Bila berbayar, PASTIKAN anda membayar segera setelah perawatan/ pengecekan. Misalnya untuk cek ke klinik GP, setelah bertemu dokter, pastikan anda membayar di mesin bayar. Karena jika tidak, akan ada ekstra invoice sebesar NOK 100 yang harus anda bayarkan di atas biaya dokter tadi. Mesin bayarnya seperti berikut, anda tinggal masukkan P-num, dan bayar menggunakan kredit kard/ debit.
+Yang patut diwaspadai ketika ke klinik, atau ke pengobatan/ pengecekan yang melibatkan klinik apapun, pastikan anda bertanya dengan perawat apakah yang anda dapatkan berbayar atau gratis. Bila berbayar, **pastikan anda membayar segera setelah perawatan/ pengecekan (maksimal 24jam)**. Misalnya untuk cek ke klinik GP, setelah bertemu dokter, pastikan anda membayar di mesin bayar. Karena jika tidak, akan ada **ekstra invoice sebesar NOK 100** yang harus anda bayarkan di atas biaya dokter tadi. Mesin bayarnya seperti berikut, anda tinggal masukkan P-num, dan bayar menggunakan kredit kard/ debit.
 
-![](images/5B4F8705-2FFF-44F3-A443-1995CFC69990_1_105_c.jpeg){width="720"}
+![Pay Machine](images/pay_machine.jpeg){width="720"}
+
+::: callout-note
+Per 2024, mesin di atas sudah digantikan dengan digital sistem by text. Pasien akan dikirimkan link untuk melakukan pembayaran, via Vipps, atau CC, segera setelah selesai dari klinik. 24 jam setelahnya akan dikenakan "ekstra" 100NOK.
+:::
 
 ### Emergency/ Legevakten
 
@@ -245,7 +249,7 @@ Disarankan telpon dulu, namun jangan kaget, karena kalau belum benar-benar emerg
 
 Kalau hanya panas dan batuk? Biasanya disuruh istirahat saja. 🙂
 
-![](images/CleanShot%202023-06-27%20at%2020.59.05.png){width="720"}
+![Emergency](images/legevakt){width="720"}
 
 ## Nav
 
@@ -253,25 +257,33 @@ Kalau hanya panas dan batuk? Biasanya disuruh istirahat saja. 🙂
 
 Salah satu hal favorit saya adalah mendaftarkan anak saya sehingga saya dapat keringanan dalam wujud suport finansial berupa uang ditransfer ke rekening ayah/ ibu senilai kurang lebih NOK 1700 (2,4 Juta IDR) per bulannya. Terus terang ini cukup membantu, paling tidak meringankan biaya sekolah anak (Barnehage).
 
-![](images/paste-6.png){width="670"}
+::: callout-note
+Per 2024, tunjangan anak dinaikkan menjadi sekitar 1900 NOK!
+:::
+
+![](images/nav.png){width="670"}
 
 ## Sekolah Anak
 
 ### Barnehage (Daycare+Playgroup)
 
-Di Norway, anak di bawah 7 tahun wajib masuk Barnehage (daycare + playgroup). Pendidikan wajib di Norway, dan merupakan hak anak dan kewajiban orangtua untuk mendaftarkan. Minimal e-ID adalah MinID untuk masuk ke website pendaftaran [Vigilo](https://vigilo.no/).
+Di Norway, anak di bawah 7 tahun wajib masuk Barnehage (daycare + playgroup). Pendidikan wajib di Norway, dan merupakan hak anak dan kewajiban orangtua untuk mendaftarkan. Biaya barnehage ini sekitar 3,000 NOK per bulannya, belum termasuk uang makan siang (sekitar 300-500NOK). Minimal e-ID adalah MinID untuk masuk ke website pendaftaran [Vigilo](https://vigilo.no/).
 
-![](images/CleanShot%202023-10-15%20at%2016.27.32@2x.png){width="720"}
+::: callout-note
+Per 2024, biaya barnehage turun menjadi 2,000 NOK!
+:::
+
+![Halaman Utama](images/vigiilo.png){width="720"}
 
 Setelah masuk, anda bisa memulai aplikasi baru dan mendaftar lebih dari satu barnehage. Biasanya akan dipilihkan lokasi yang paling dekat ke lokasi rumah/ tempat tinggal anda yang terdaftar di national registry, sehingga pastikan data anda valid dan up-to-date.
 
-![](images/CleanShot%202023-10-15%20at%2016.33.25@2x.png)
+![Pendaftaran](images/vigilo-applications.png)
 
 Saran saya ambil saja mana yang paling awal menerima anak anda, dan jangan khawatir ketika anda menerima satu barnehage, maka barnehage lain tidak akan terhapus dan prosesnya tetap berjalan. Sebagai contoh, dalam kasus saya, anak saya mendaftar di dua barnehage yang berbeda dekat rumah. Barnehage yang menerima pertamakali adalah barnehage yg letaknya 5-10min berjalan kaki dari rumah, sehingga kami langsung terima.
 
 Namun, setelah kurang lebih satu bulan, barnehage prioritas kami yang berjarak paling dekat ke rumah akhirnya kosong dan menerima. Sehingga, pada bulan kedua, kami pindah ke barnehage baru.
 
-![](images/CleanShot%202023-10-15%20at%2016.34.51@2x-2.png)
+![Nominasi](images/vigilo-childcare-places.png)
 
 ## Belanja Bahan Makanan
 
@@ -279,27 +291,27 @@ Namun, setelah kurang lebih satu bulan, barnehage prioritas kami yang berjarak p
 
 Untuk keseharian, pilihan ada di antara CoopMega, Extra, Joker, dan Rema1000. Extra dan Rema1000 ini mirip seperti Alfamart dan Indomaret, di mana-mana ADA. Sedangkan CoopMega ini seperti Giant. Baik Extra, Joker dan Rema buka setiap hari senin-sabtu, dari jam 8-23, kecuali sabtu (tutup/ buka lebih awal). Untuk hari minggu, kebanyakan tutup, ada beberapa yang buka seperti di hari minggu seperti Extra di Sandness sentrum, dan Joker di sampik Vaktapotek Stavanger sentrum. Selebihnya, sebaiknya belanja sebelum di hari minggu.
 
-![Extra](images/paste-7.png){width="720"}
+![Extra](images/extra.png){width="720"}
 
-![REMA1000](images/paste-8.png){width="720"}
+![REMA1000](images/rema1000.png){width="720"}
 
 ### Supermarket Muslim
 
 Supermarket muslim, yang maksudnya menjual daging-dagingan yang halal, ada beberapa. Utamanya ada IMS Internasjonal Matsenter yang lokasinya ada di beberapa di area Stavanger (bisa cari di google maps). Selain itu ada juga rumah daging Turki di area Pedersgata (Istanbul Import).
 
-![IMS](images/CleanShot%202023-10-15%20at%2016.43.27@2x.png){fig-alt="Foto dari Google Maps" width="720"}
+![IMS](images/IMS.png){fig-alt="Foto dari Google Maps" width="720"}
 
-![Istanbul Import](images/paste-13.png){width="720"}
+![Istanbul Import](images/istanbul_import.png){width="720"}
 
 ## Online Marketplace
 
 Di Norway, ada website sapujagat. Isinya dari jualan barang second-hand, baru, lowongan pekerjaan, sampai pada penyewaan apartemen. Namanya [Finn.no](https://www.finn.no). Lagi-lagi, website ini tidak berbahasa inggris, sehingga gunakan Edge browser ya, jadi langsung auto translate. Saya pribadi belum pernah beli di sini sampai sekarang, tapi cerita dari teman-teman, cukup OK terutama untuk pakaian anak-anak yang cepat sekali ganti.
 
-![Finn No](images/CleanShot%202023-06-27%20at%2021.46.24.gif)
+![Finn No](images/finn_no.gif)
 
 ## Berapa Biaya Hidup di Norway?
 
-![](images/paste-9.png){width="538"}
+![](images/biayahidup.png){width="538"}
 
 Biaya hidup sangat bergantung terhadap status anda (single/ family), lokasi tempat tinggal anda (Oslo/Stavanger, Tromso, Trondheim, etc), dan gaya hidup anda (masak/ beli). Di atas adalah tabel yang saya pakai untuk estimasi pengeluaran per bulan. Rincian saya jabarkan di bawah.
 
@@ -337,7 +349,7 @@ Untuk Bus, bila bertempat di Stavanger, bisa mendapatkannya dengan gratis. Cek [
 
 Di Norway, pajak untuk pendapatan yang per tahun tidak lebih besar dari 650,000 NOK adalah sebesar 25%. Sedangkan untuk pendapatan di atas 650,000 NOK akan dihitung berdasarkan bracket tax yang ditentukan, lebih mudahnya bisa menuju link ini: [Tax Calculator](https://skattekalkulator.app.skatteetaten.no/#/). Contoh seperti di bawah;
 
-![](images/CleanShot%202023-10-29%20at%2011.40.52@2x.png)Patut dipahami, bahwa pajak di Norway dihitung per tahun, namun diambil sebanyak 10.5 bulan, karena pajak di bulan May-Jun adalah 0%, sedangkan di bulan-bulan masuk Winter senilai 50% dari nilai aslinya, sehingga 12-1.5=10.5. Kenapa ini penting? Karena nilai pajak anda per bulan akan menjadi lebih besar dari hitungan per tahun dibagi 12 bulan.
+![](images/norway_tax.png)Patut dipahami, bahwa pajak di Norway dihitung per tahun, namun diambil sebanyak 10.5 bulan, karena pajak di bulan May-Jun adalah 0%, sedangkan di bulan-bulan masuk Winter senilai 50% dari nilai aslinya, sehingga 12-1.5=10.5. Kenapa ini penting? Karena nilai pajak anda per bulan akan menjadi lebih besar dari hitungan per tahun dibagi 12 bulan.
 
 > Sebagai contoh, jika pajak anda adalah senilai 280,000 NOK per tahun dari total pendapatan senilai 800,000 NOK, maka pajak anda adalah 35% dari total pendapatan. Namun karena pajak hanya ditagih sebanyak 10.5x dalam setahun, maka di bulan-bulan yg ditagih pajak, setiap penagihan, nilainya dalah 35%\*12/10.5=40%. Itulah sebabnya pajak di Norway "**terlihat**" tinggi.
 
