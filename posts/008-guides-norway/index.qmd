@@ -82,6 +82,18 @@ Ada untuk bus tracking, bernama Kolumbus. Aplikasi ini cukup intuitif dan akurat
 
 ![Aplikasi Bis](images/kolumbus_app.png){width="720"}
 
+Per tahun 2024, Kolumbus mulai menerapkan sistem pas-as-you-go, dimana kita ditagih per trip, yang biaya totalnya di akhir bulan tidak akan melebih biaya tiket bulanan/ mingguan (tergantung nanti pemakaian kita). Semakin sering kita melakukan perjalanan via bis, diskon yang diterapkan akan semakin besar. Pada awal-awal trip, maka diskon mungkin kecil (cuma beberapa persen, seperti foto dibawah, cuma 1%).
+
+![](images/trip_bus.jpeg){width="50%"}
+
+Seperti contoh di bawah, pemakaian saya di bulan April 2024 dibatasi di angka 680Kr (harga tiket bulanan), karena saya full pemakaian, dan ada trip ampai tanggal terakhir di bulan April. Sedangkan di bulai berikutnya (May), karena saya cuma memakai aplikasi, dan trip terakhir cuma sampai minggu pertama bulan May - maka maksimal di angka tiket mingguan (270Kr). Dapat dilihat juga, kalau ketika trip kita sudah cukup banyak, sehingga biayanya sudah mendekati/ sama dengan harga tiket bulanan/mingguan, maka diskon perjalanan bisa sampai 100%, cuma membayar 0Kr. 
+
+::: {layout-ncol="2"}
+![Apr](images/trip_april.PNG){width="100%"}
+
+![May](images/trip_may.PNG){width="100%"}
+:::
+
 Ketika pertamakali tiba di Stavanger, saya langsung membeli tiket via aplikasi dan melakukan pembayaran menggunakan kartu kredit. Anda bisa membeli tiket harian, mingguan, dan bulanan tergantung kebutuhan. Saya pribadi membeli tiket bulanan senilai NOK 650/ zone, untuk harga orang dewasa (anak dibawah umur tidak perlu membeli tiket). Setelah membeli anda akan mendapatkan akses ke real-time barcode di aplikasi Billet. Untuk region Stavanger-Sentrum-Madla-Tananger-Sola, masih masuk satu zonasi yang sama, sehingga cukup bayar untuk satu zona. Tiket ini juga sudah termasuk akses kereta lokal yang menghubungkan Stavanger sampai Egersund, dan juga kapal feri.
 
 ![Rute](images/gmap.png){width="720"}
