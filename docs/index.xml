@@ -13,7 +13,7 @@
 <lastBuildDate>Mon, 29 Jul 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>A Wee U-Turn of Life to Scotland, UK.</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/</link>
   <description><![CDATA[ 
 
@@ -86,16 +86,16 @@
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2024,
-  author = {Arie Wijaya, Aditya},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2024,
+  author = {Wijaya, A.A.},
   title = {A {Wee} {U-Turn} of {Life} to {Scotland,} {UK.}},
   date = {2024-07-30},
   url = {https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2024" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2024. <span>“A Wee U-Turn of Life to Scotland,
-UK.”</span> July 30, 2024. <a href="https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/">https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2024" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2024. <span>“A Wee U-Turn of Life to Scotland, UK.”</span>
+July 30, 2024. <a href="https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/">https://adtarie.net/posts/20240730-wee-u-turn-as-aberdonian/</a>.
 </div></div></section></div> ]]></description>
   <category>uk</category>
   <category>life</category>
@@ -105,7 +105,7 @@ UK.”</span> July 30, 2024. <a href="https://adtarie.net/posts/20240730-wee-u-t
 </item>
 <item>
   <title>Parsing 10+ GB CSV file in Python - Larger than Memory</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/</link>
   <description><![CDATA[ 
 
@@ -1149,17 +1149,17 @@ Figure&nbsp;7: Comparison Speed
 <ol>
 <li id="fn1"><p>“Have 5 to 10 times as much RAM as the size of your dataset” (Wes Mckinney)↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2024,
-  author = {Arie Wijaya, Aditya},
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2024,
+  author = {Wijaya, A.A.},
   title = {Parsing 10+ {GB} {CSV} File in {Python} - {Larger} Than
     {Memory}},
   date = {2024-05-19},
   url = {https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2024" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2024. <span>“Parsing 10+ GB CSV File in Python -
-Larger Than Memory.”</span> May 19, 2024. <a href="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/">https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2024" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2024. <span>“Parsing 10+ GB CSV File in Python - Larger
+Than Memory.”</span> May 19, 2024. <a href="https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/">https://adtarie.net/posts/20240215-parsing-csv-largerthanmemory/</a>.
 </div></div></section></div> ]]></description>
   <category>python</category>
   <category>data</category>
@@ -1169,7 +1169,7 @@ Larger Than Memory.”</span> May 19, 2024. <a href="https://adtarie.net/posts/2
 </item>
 <item>
   <title>Ricoh GR III - Not Quite Just Yet</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/20240225-ricohgriii-short-term/</link>
   <description><![CDATA[ 
 
@@ -1420,16 +1420,16 @@ Larger Than Memory.”</span> May 19, 2024. <a href="https://adtarie.net/posts/2
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2024,
-  author = {Arie Wijaya, Aditya},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2024,
+  author = {Wijaya, A.A.},
   title = {Ricoh {GR} {III} - {Not} {Quite} {Just} {Yet}},
   date = {2024-02-25},
   url = {https://adtarie.net/posts/20240225-ricohgriii-short-term/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2024" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2024. <span>“Ricoh GR III - Not Quite Just
-Yet.”</span> February 25, 2024. <a href="https://adtarie.net/posts/20240225-ricohgriii-short-term/">https://adtarie.net/posts/20240225-ricohgriii-short-term/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2024" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2024. <span>“Ricoh GR III - Not Quite Just Yet.”</span>
+February 25, 2024. <a href="https://adtarie.net/posts/20240225-ricohgriii-short-term/">https://adtarie.net/posts/20240225-ricohgriii-short-term/</a>.
 </div></div></section></div> ]]></description>
   <category>photography</category>
   <guid>https://adtarie.net/posts/20240225-ricohgriii-short-term/</guid>
@@ -1438,7 +1438,7 @@ Yet.”</span> February 25, 2024. <a href="https://adtarie.net/posts/20240225-ri
 </item>
 <item>
   <title>Decoupling GDP from CO2 Emission - Only If You’re Rich Enough?</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/20230723-co2-growth/</link>
   <description><![CDATA[ 
 
@@ -4649,17 +4649,17 @@ Fanning, Andrew L., and Jason Hickel. 2023. <span>“Compensation for Atmospheri
 <li id="fn2"><p>The low income countries is classified as country with income about 1,000 USD or lower, middle is divided to two: lower-middle income is roughly between 1,000 USD - 4,000 USD, upper middle income is between 4,000 USD and 13,000 USD, and high income countries is any country with more than 13,000 USD income.↩︎</p></li>
 <li id="fn3"><p>Website to display the cumulative emission with respect to their fair shares on carbon budgets. Link can be found <a href="https://goodlife.leeds.ac.uk/atmospheric-appropriation/#IDN">here</a>↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
-  author = {Arie Wijaya, Aditya},
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2023,
+  author = {Wijaya, A.A.},
   title = {Decoupling {GDP} from {CO2} {Emission} - {Only} {If} {You’re}
     {Rich} {Enough?}},
   date = {2023-07-23},
   url = {https://adtarie.net/posts/20230723-co2-growth/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2023. <span>“Decoupling GDP from CO2 Emission -
-Only If You’re Rich Enough?”</span> July 23, 2023. <a href="https://adtarie.net/posts/20230723-co2-growth/">https://adtarie.net/posts/20230723-co2-growth/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2023" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2023. <span>“Decoupling GDP from CO2 Emission - Only If
+You’re Rich Enough?”</span> July 23, 2023. <a href="https://adtarie.net/posts/20230723-co2-growth/">https://adtarie.net/posts/20230723-co2-growth/</a>.
 </div></div></section></div> ]]></description>
   <category>energy</category>
   <category>emission</category>
@@ -4669,7 +4669,7 @@ Only If You’re Rich Enough?”</span> July 23, 2023. <a href="https://adtarie.
 </item>
 <item>
   <title>Plotpetrophysics</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/20230715-plotpetrophysics/</link>
   <description><![CDATA[ 
 
@@ -4742,16 +4742,15 @@ Only If You’re Rich Enough?”</span> July 23, 2023. <a href="https://adtarie.
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
-  author = {Arie Wijaya, Aditya},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2023,
+  author = {Wijaya, A.A.},
   title = {Plotpetrophysics},
   date = {2023-07-15},
   url = {https://adtarie.net/posts/20230715-plotpetrophysics/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2023. <span>“Plotpetrophysics .”</span> July 15,
-2023. <a href="https://adtarie.net/posts/20230715-plotpetrophysics/">https://adtarie.net/posts/20230715-plotpetrophysics/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2023" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2023. <span>“Plotpetrophysics .”</span> July 15, 2023. <a href="https://adtarie.net/posts/20230715-plotpetrophysics/">https://adtarie.net/posts/20230715-plotpetrophysics/</a>.
 </div></div></section></div> ]]></description>
   <category>geoscience</category>
   <category>portfolio</category>
@@ -4761,7 +4760,7 @@ Arie Wijaya, Aditya. 2023. <span>“Plotpetrophysics .”</span> July 15,
 </item>
 <item>
   <title>Petunjuk Hidup dan Menetap di Stavanger, Norway</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/008-guides-norway/</link>
   <description><![CDATA[ 
 
@@ -5353,7 +5352,7 @@ Note
 <section id="penutup" class="level2">
 <h2 class="anchored" data-anchor-id="penutup">Penutup</h2>
 <p>Terimakasih sudah membaca sampai sini. Jika ada yang ingin ditanyakan, langsung saja DM atau Mention saya di Twitter. Saya sudah rangkumkan pula beberapa hal sehari-hari di thread di bawah. Enjoy!</p>
-<p></p><div id="tweet-71683"></div><script>tweet={"url":"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433","author_name":"Arie","author_url":"https:\/\/twitter.com\/Adtarie","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EUdh sampe di Norway, ada bbrp hal yg bikin bingung, dan bikin amazed. \u003Cbr\u003E\u003Cbr\u003EA thread that will be updated as I live here. \u003Ca href=\"https:\/\/t.co\/XtKQW74ZXG\"\u003Epic.twitter.com\/XtKQW74ZXG\u003C\/a\u003E\u003C\/p\u003E&mdash; Arie (@Adtarie) \u003Ca href=\"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433?ref_src=twsrc%5Etfw\"\u003EApril 25, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-71683").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-32558"></div><script>tweet={"url":"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433","author_name":"Arie","author_url":"https:\/\/twitter.com\/Adtarie","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EUdh sampe di Norway, ada bbrp hal yg bikin bingung, dan bikin amazed. \u003Cbr\u003E\u003Cbr\u003EA thread that will be updated as I live here. \u003Ca href=\"https:\/\/t.co\/XtKQW74ZXG\"\u003Epic.twitter.com\/XtKQW74ZXG\u003C\/a\u003E\u003C\/p\u003E&mdash; Arie (@Adtarie) \u003Ca href=\"https:\/\/twitter.com\/Adtarie\/status\/1650744049920274433?ref_src=twsrc%5Etfw\"\u003EApril 25, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-32558").innerHTML = tweet["html"];</script><p></p>
 
 
 </section>
@@ -5365,16 +5364,16 @@ Note
 <li id="fn1"><p>DUF-num adalah nomor pendaftaran ketika mendaftarkan diri anda/ anggota keluarga di UDI (website imigrasi Norway). Nomor ini terhubung dengan nomor antrian aplikasi anda di sistem.↩︎</p></li>
 <li id="fn2"><p>Digital ID atau e-ID ini memiliki tingkat akses yang berbeda. MinID adalah e-ID paling dasar, bisa digunakan untuk membuat akun bank, dan akses pajak. Untuk akses ke kesehatan anda butuh minimal BuypassID. Sedangkan untuk aplikasi keuangan seperti Vipps anda butuh BankID.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
-  author = {Arie Wijaya, Aditya},
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2023,
+  author = {Wijaya, A.A.},
   title = {Petunjuk {Hidup} Dan {Menetap} Di {Stavanger,} {Norway}},
   date = {2023-06-26},
   url = {https://adtarie.net/posts/008-guides-norway/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2023. <span>“Petunjuk Hidup Dan Menetap Di
-Stavanger, Norway.”</span> June 26, 2023. <a href="https://adtarie.net/posts/008-guides-norway/">https://adtarie.net/posts/008-guides-norway/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2023" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2023. <span>“Petunjuk Hidup Dan Menetap Di Stavanger,
+Norway.”</span> June 26, 2023. <a href="https://adtarie.net/posts/008-guides-norway/">https://adtarie.net/posts/008-guides-norway/</a>.
 </div></div></section></div> ]]></description>
   <category>norway</category>
   <category>life</category>
@@ -5383,7 +5382,7 @@ Stavanger, Norway.”</span> June 26, 2023. <a href="https://adtarie.net/posts/0
 </item>
 <item>
   <title>Personal Website using Jupyter Notebook and Quarto</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/007-quarto-python-tutorial/</link>
   <description><![CDATA[ 
 
@@ -6717,16 +6716,16 @@ Tip
 <ol>
 <li id="fn1"><p>you <em>can</em> just use a notebook, but some of the autocompletion, visual-mode (a powerful mode to make blogging easier) won’t work.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
-  author = {Arie Wijaya, Aditya},
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2023,
+  author = {Wijaya, A.A.},
   title = {Personal {Website} Using {Jupyter} {Notebook} and {Quarto}},
   date = {2023-03-20},
   url = {https://adtarie.net/posts/007-quarto-python-tutorial/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2023. <span>“Personal Website Using Jupyter
-Notebook and Quarto.”</span> March 20, 2023. <a href="https://adtarie.net/posts/007-quarto-python-tutorial/">https://adtarie.net/posts/007-quarto-python-tutorial/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2023" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2023. <span>“Personal Website Using Jupyter Notebook and
+Quarto.”</span> March 20, 2023. <a href="https://adtarie.net/posts/007-quarto-python-tutorial/">https://adtarie.net/posts/007-quarto-python-tutorial/</a>.
 </div></div></section></div> ]]></description>
   <category>tutorial</category>
   <category>quarto</category>
@@ -6736,7 +6735,7 @@ Notebook and Quarto.”</span> March 20, 2023. <a href="https://adtarie.net/post
 </item>
 <item>
   <title>Easy Report: Malaysia Property Pricing</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/006-easy-report-machine-learning/</link>
   <description><![CDATA[ 
 
@@ -9462,15 +9461,15 @@ Xu, Kevin, and Hieu Nguyen. 2022. <span>“Predicting Housing Prices and Analyzi
 <div id="ref-zhao2022" class="csl-entry">
 Zhao, Yaping, Ramgopal Ravi, Shuhui Shi, Zhongrui Wang, Edmund Y. Lam, and Jichang Zhao. 2022. <span>“PATE: Property, Amenities, Traffic and Emotions Coming Together for Real Estate Price Prediction.”</span> <a href="https://doi.org/10.48550/ARXIV.2209.05471">https://doi.org/10.48550/ARXIV.2209.05471</a>.
 </div>
-</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
-  author = {Arie Wijaya, Aditya},
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2023,
+  author = {Wijaya, A.A.},
   title = {{Easy} {Report:} {Malaysia} {Property} {Pricing}},
   date = {2023-02-12},
   url = {https://adtarie.net/posts/006-easy-report-machine-learning/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2023.<span>“ Easy Report: Malaysia Property
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2023" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2023.<span>“ Easy Report: Malaysia Property
 Pricing.”</span> February 12, 2023. <a href="https://adtarie.net/posts/006-easy-report-machine-learning/">https://adtarie.net/posts/006-easy-report-machine-learning/</a>.
 </div></div></section></div> ]]></description>
   <category>portfolio</category>
@@ -9481,7 +9480,7 @@ Pricing.”</span> February 12, 2023. <a href="https://adtarie.net/posts/006-eas
 </item>
 <item>
   <title>Malaysia Property Pricing - Webscraping &amp; Machine Learning Model</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/</link>
   <description><![CDATA[ 
 
@@ -17025,17 +17024,17 @@ Xu, Kevin, and Hieu Nguyen. 2022. <span>“Predicting Housing Prices and Analyzi
 <div id="ref-zhao2022" class="csl-entry">
 Zhao, Yaping, Ramgopal Ravi, Shuhui Shi, Zhongrui Wang, Edmund Y. Lam, and Jichang Zhao. 2022. <span>“PATE: Property, Amenities, Traffic and Emotions Coming Together for Real Estate Price Prediction.”</span> <a href="https://doi.org/10.48550/ARXIV.2209.05471">https://doi.org/10.48550/ARXIV.2209.05471</a>.
 </div>
-</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
-  author = {Arie Wijaya, Aditya},
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2023,
+  author = {Wijaya, A.A.},
   title = {{Malaysia} {Property} {Pricing} - {Webscraping} \&amp; {Machine}
     {Learning} {Model}},
   date = {2023-02-10},
   url = {https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2023.<span>“ Malaysia Property Pricing -
-Webscraping &amp; Machine Learning Model.”</span> February 10, 2023. <a href="https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/">https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2023" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2023.<span>“ Malaysia Property Pricing - Webscraping &amp;
+Machine Learning Model.”</span> February 10, 2023. <a href="https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/">https://adtarie.net/posts/005-webscraping-machinelearning-rent-pricing/</a>.
 </div></div></section></div> ]]></description>
   <category>portfolio</category>
   <category>data</category>
@@ -17046,7 +17045,7 @@ Webscraping &amp; Machine Learning Model.”</span> February 10, 2023. <a href="
 </item>
 <item>
   <title>Webscraping National Exams of Indonesia</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/004-national-exam/</link>
   <description><![CDATA[ 
 
@@ -18456,16 +18455,16 @@ Why Bontang and Balikpapan?
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2023,
-  author = {Arie Wijaya, Aditya},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2023,
+  author = {Wijaya, A.A.},
   title = {Webscraping {National} {Exams} of {Indonesia}},
   date = {2023-01-31},
   url = {https://adtarie.net/posts/004-national-exam/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2023" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2023. <span>“Webscraping National Exams of
-Indonesia .”</span> January 31, 2023. <a href="https://adtarie.net/posts/004-national-exam/">https://adtarie.net/posts/004-national-exam/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2023" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2023. <span>“Webscraping National Exams of Indonesia
+.”</span> January 31, 2023. <a href="https://adtarie.net/posts/004-national-exam/">https://adtarie.net/posts/004-national-exam/</a>.
 </div></div></section></div> ]]></description>
   <category>portfolio</category>
   <category>webscraping</category>
@@ -18476,7 +18475,7 @@ Indonesia .”</span> January 31, 2023. <a href="https://adtarie.net/posts/004-n
 </item>
 <item>
   <title>Medical Insurance Cost - Exploratory Analysis</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/003-medical-insurance/</link>
   <description><![CDATA[ 
 
@@ -20373,15 +20372,15 @@ Important
 <li id="fn3"><p>around 10% higher in male, compared to female counterpart (see Table&nbsp;4)↩︎</p></li>
 <li id="fn4"><p>the BMI class shows a mix of all classes (from underweight to obese)↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2022,
-  author = {Arie Wijaya, Aditya},
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2022,
+  author = {Wijaya, A.A.},
   title = {Medical {Insurance} {Cost} - {Exploratory} {Analysis}},
   date = {2022-10-27},
   url = {https://adtarie.net/posts/003-medical-insurance/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2022" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2022. <span>“Medical Insurance Cost - Exploratory
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2022" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2022. <span>“Medical Insurance Cost - Exploratory
 Analysis.”</span> October 27, 2022. <a href="https://adtarie.net/posts/003-medical-insurance/">https://adtarie.net/posts/003-medical-insurance/</a>.
 </div></div></section></div> ]]></description>
   <category>data</category>
@@ -20392,7 +20391,7 @@ Analysis.”</span> October 27, 2022. <a href="https://adtarie.net/posts/003-med
 </item>
 <item>
   <title>Migrating My Personal Blog to Quarto</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/002-migrating-to-quarto/</link>
   <description><![CDATA[ 
 
@@ -20539,16 +20538,16 @@ Tip
 <li id="fn3"><p><a href="https://quarto.org/docs/download/prerelease.html">Quarto 1.2</a> pre-released version supports embedding video from Youtube.↩︎</p></li>
 <li id="fn4"><p>Issue in Quarto 1.1↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2022,
-  author = {Arie Wijaya, Aditya},
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2022,
+  author = {Wijaya, A.A.},
   title = {Migrating {My} {Personal} {Blog} to {Quarto}},
   date = {2022-10-21},
   url = {https://adtarie.net/posts/002-migrating-to-quarto/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2022" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2022. <span>“Migrating My Personal Blog to
-Quarto.”</span> October 21, 2022. <a href="https://adtarie.net/posts/002-migrating-to-quarto/">https://adtarie.net/posts/002-migrating-to-quarto/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2022" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2022. <span>“Migrating My Personal Blog to Quarto.”</span>
+October 21, 2022. <a href="https://adtarie.net/posts/002-migrating-to-quarto/">https://adtarie.net/posts/002-migrating-to-quarto/</a>.
 </div></div></section></div> ]]></description>
   <category>quarto</category>
   <guid>https://adtarie.net/posts/002-migrating-to-quarto/</guid>
@@ -20556,7 +20555,7 @@ Quarto.”</span> October 21, 2022. <a href="https://adtarie.net/posts/002-migra
 </item>
 <item>
   <title>My First Interview in 500 Fortune Company</title>
-  <dc:creator>Aditya Arie Wijaya</dc:creator>
+  <dc:creator>A.A. Wijaya</dc:creator>
   <link>https://adtarie.net/posts/001-my-first-gig/</link>
   <description><![CDATA[ 
 
@@ -20590,15 +20589,15 @@ Quarto.”</span> October 21, 2022. <a href="https://adtarie.net/posts/002-migra
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{arie_wijaya2022,
-  author = {Arie Wijaya, Aditya},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wijaya2022,
+  author = {Wijaya, A.A.},
   title = {My {First} {Interview} in 500 {Fortune} {Company}},
   date = {2022-08-29},
   url = {https://adtarie.net/posts/001-my-first-gig/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-arie_wijaya2022" class="csl-entry quarto-appendix-citeas">
-Arie Wijaya, Aditya. 2022. <span>“My First Interview in 500 Fortune
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wijaya2022" class="csl-entry quarto-appendix-citeas">
+Wijaya, A.A. 2022. <span>“My First Interview in 500 Fortune
 Company.”</span> August 29, 2022. <a href="https://adtarie.net/posts/001-my-first-gig/">https://adtarie.net/posts/001-my-first-gig/</a>.
 </div></div></section></div> ]]></description>
   <category>career</category>
