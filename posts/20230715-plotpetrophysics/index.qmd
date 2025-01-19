@@ -34,11 +34,11 @@ Information about the well, like a well-name, the top and bottom depth, company,
 
 ![Well Information](images/image-3.png)
 
-### See Missing Data
+<!-- ### See Missing Data
 
 All the curves available in the data will be displayed as a bar chart from top to bottom of the log (scaled by number of rows depending on the depth step), any missing data would be displayed here as shorter than others.
 
-![](images/image-5.png)
+![](images/image-5.png) -->
 
 ### Plots Well Log data in Triple Combo Format
 
