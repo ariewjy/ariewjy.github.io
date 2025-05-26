@@ -1,0 +1,99 @@
+---
+title: Siccar Point Trip - The Birth of Unconformity
+description: |
+  A late post visiting one of the bucketlist as geologist, place where it was all started. James Hutton, one of the founding father of geology, took his inspiration from the unconformity formed in this location - Siccar Point.
+title-block-banner: true
+date: '2025-05-25'
+# date-modified: last-modified
+categories:
+  - uk
+  - geoscience
+draft: false
+fig-cap-location: top
+fig-align: left
+image: ./images/siccarpoint_view9.jpeg
+citation-location: document
+---
+
+## Edinburgh Trip
+
+Early summer 2024, I visited one of the finest part Scotland can offer - Edinburgh and Glasgow. Especially Edinburgh, where I visited National Museum of Scotland. It was a blast to say the least. For a geologist, this place was a "gem" - and you can really found ones. Few photos here just to show how good their collection are.
+
+::: {layout-ncol="2"}
+![](./images/edinburgh_1.JPG)
+
+![](./images/edinburgh_2.JPG)
+
+![](./images/edinburgh_3.JPG)
+
+![](./images/edinburgh_4.JPG)
+:::
+
+One of the coolest collection they have was this photo featuring the founding father of modern geology - James Hutton. Highlighting the inspiration on his theory of earth - and outcrop that famously featured in any geological textbook, Siccar Point. My first thought was - Siccar Point is in Scotland?
+
+Knowing how good of an opportunity this is - not everyday I can visit Edinburgh, and with the nice weather too. I quickly scan the google map and plan the visit right away. It was not as smooth as I would like.
+
+![James Hutton and Siccar Point](./images/jameshutton_scotlandmuseum.JPG)  
+
+## Siccar Point Quest
+
+So of we went, on our way we saw some unique places like this thermal nuclear site, and just some small village - would be nice to spend the evening someday.
+
+::: {layout-ncol="2"}
+![Thermal Nuclear Site](./images/tornessnuclear.jpeg)
+
+![View on our way to Siccar Point](./images/way_to_siccar.JPG)
+
+:::
+
+The Siccar Point is located near Cockburnspath beach, but the map is not the easiest to navigate, and the pathway is unclear - at least when I visited. We passed the entrance multiple times, without knowing where to stop our vehicle. Stop (1) is where the trucks filled with quarry typically stopped - as there was a quarry nearby. Once passed this stop, we should stop around parking area (where the red arrow is), but instead we mistakenly stopped at (3). You might want to not repeat our mistake here.
+
+![Map of Siccar Point](images/siccarpoint_map.JPG)
+
+Across the parking area, you will be welcomed by a small gate, with a wayfinder on Siccar Point. This is actually the first gate to Siccar Point, as you will be seeing another gate before getting down the cliff. 
+
+![Siccar Point First Gate](images/siccarpoint_entrance.jpeg)
+
+Just follow the stone fence surrounding the hill, as shown here, and enjoy the magnificent view of Scotland towards North Sea. Just an amazing scenery... I would come here just for the view alone.
+
+::: {layout-ncol="1"}
+![View after the Entrance Gate, St. Helen Church can be seen on the left ](./images/siccarpoint_view.JPG)
+
+![View of Siccar Point and its Cliff](./images/siccarpoint_view2.JPG)
+
+![View before the Second Siccar Point Gate along with Stones Fence](./images/siccarpoint_view3.JPG)
+:::
+
+The second photo above is where you could see the glimpse of Siccar Point, right next to a shore (sort of like a cape). Once passing this area, you will have to turn left, and jumpover a small goat/sheep gateway to get into the second stop before the cliff. 
+
+::: {layout-ncol="1"}
+![View Before Passing the Goat Gateway](./images/siccarpoint_view4.jpeg)
+
+![View After Passing the Gate, Just Before the Second Wayfinder of Siccar Point](./images/siccarpoint_view5.jpeg)
+
+![The Second Siccar Point Wayfinder](./images/siccarpoint_view6.jpeg)
+:::
+
+The second wayfinder would be the last one before getting down the steep cliff. It is cool to see the wayfinder is ilustrating how the unconformity looks like (photo), and how does it form geologically (structurally). 
+
+I have to remind you, the way down is not as easy as one thinks. The cliff is steep one, and there is only a rope and some man-made mud stairs going down the cliff. You really have to climb your way down, by hanging by the rope- carefully. I have only got one picture as I am catching my breath when going up the rope. 
+
+![Not the Easiest Trail](./images/siccarpoint_view10.jpeg)
+
+## The Siccar Point!
+
+After all the effort, I finally managed to climb down safely, it was around 7pm when I arrived at the spot - so I cant spend too much time. I managed to take some photos of the infamous Siccar Point itself, although I must say the surrounding is as cool as the Siccar Point itself.
+
+![Cliff and Cave in front of Siccar Point](./images/siccarpoint_view8.jpeg)
+
+![The Infamous Siccar Point!](./images/siccarpoint_view9.jpeg)
+
+![To the left of Siccar Point](./images/siccarpoint_view11.jpeg)
+
+If I can redo it again, I would probably pick summer time and earlier timing in the morning to enjoy the sun and view. It was definitely worth a revisit - sometimes, as I only managed to take few pictures. Would love to snap more view and perhaps just sitting down the shore looking at the sea and eating some sandwich on top of the unconformity!
+
+Finally, exhibit A - evidence that I visited the place. A selfie.
+
+![me and Siccar Point](./images/siccarpoint_selfie.jpeg)
+
+As geologist - this has been a wholesome experience. I am forever grateful!!!
