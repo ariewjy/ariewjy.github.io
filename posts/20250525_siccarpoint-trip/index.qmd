@@ -17,7 +17,7 @@ citation-location: document
 
 ## Edinburgh Trip
 
-Early summer 2024, I visited one of the finest part Scotland can offer - Edinburgh and Glasgow. Especially Edinburgh, where I visited National Museum of Scotland. It was a blast to say the least. For a geologist, this place was a "gem" - and you can really found ones. Few photos here just to show how good their collection are.
+Early summer 2024, I visited one of the finest part Scotland can offer - Edinburgh and Glasgow. Especially Edinburgh, where I visited National Museum of Scotland. It was a blast to say the least. For a geologist, this place was a "gem" - and you can really found ones. Few photos here just to show how good their collection are. 
 
 ::: {layout-ncol="2"}
 ![](./images/edinburgh_1.JPG)
@@ -66,7 +66,7 @@ Just follow the stone fence surrounding the hill, as shown here, and enjoy the m
 
 The second photo above is where you could see the glimpse of Siccar Point, right next to a shore (sort of like a cape). Once passing this area, you will have to turn left, and jumpover a small goat/sheep gateway to get into the second stop before the cliff. 
 
-::: {layout-ncol="1"}
+::: {layout-ncol="1"} 
 ![View Before Passing the Goat Gateway](./images/siccarpoint_view4.jpeg)
 
 ![View After Passing the Gate, Just Before the Second Wayfinder of Siccar Point](./images/siccarpoint_view5.jpeg)
