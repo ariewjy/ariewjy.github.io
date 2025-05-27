@@ -10,8 +10,8 @@ categories:
   - geoscience
 draft: false
 fig-cap-location: top
-fig-align: left
-image: ./images/siccarpoint_view9.jpeg
+fig-align: left 
+image: ./images/siccarpoint_view9.jpg
 citation-location: document
 ---
 
@@ -40,7 +40,7 @@ Knowing how good of an opportunity this is - not everyday I can visit Edinburgh,
 So of we went, on our way we saw some unique places like this thermal nuclear site, and just some small village - would be nice to spend the evening someday.
 
 ::: {layout-ncol="2"}
-![Thermal Nuclear Site](./images/tornessnuclear.jpeg)
+![Thermal Nuclear Site](./images/tornessnuclear.jpg)
 
 ![View on our way to Siccar Point](./images/way_to_siccar.JPG)
 
@@ -52,7 +52,7 @@ The Siccar Point is located near Cockburnspath beach, but the map is not the eas
 
 Across the parking area, you will be welcomed by a small gate, with a wayfinder on Siccar Point. This is actually the first gate to Siccar Point, as you will be seeing another gate before getting down the cliff. 
 
-![Siccar Point First Gate](images/siccarpoint_entrance.jpeg)
+![Siccar Point First Gate](images/siccarpoint_entrance.jpg)
 
 Just follow the stone fence surrounding the hill, as shown here, and enjoy the magnificent view of Scotland towards North Sea. Just an amazing scenery... I would come here just for the view alone.
 
@@ -71,22 +71,22 @@ The second photo above is where you could see the glimpse of Siccar Point, right
 
 ![View After Passing the Gate, Just Before the Second Wayfinder of Siccar Point](./images/siccarpoint_view5.jpeg)
 
-![The Second Siccar Point Wayfinder](./images/siccarpoint_view6.jpeg)
+![The Second Siccar Point Wayfinder](./images/siccarpoint_view6.jpg)
 :::
 
 The second wayfinder would be the last one before getting down the steep cliff. It is cool to see the wayfinder is ilustrating how the unconformity looks like (photo), and how does it form geologically (structurally). 
 
 I have to remind you, the way down is not as easy as one thinks. The cliff is steep one, and there is only a rope and some man-made mud stairs going down the cliff. You really have to climb your way down, by hanging by the rope- carefully. I have only got one picture as I am catching my breath when going up the rope. 
 
-![Not the Easiest Trail](./images/siccarpoint_view10.jpeg)
+![Not the Easiest Trail](./images/siccarpoint_view10.jpeg) 
 
 ## The Siccar Point!
 
 After all the effort, I finally managed to climb down safely, it was around 7pm when I arrived at the spot - so I cant spend too much time. I managed to take some photos of the infamous Siccar Point itself, although I must say the surrounding is as cool as the Siccar Point itself.
 
-![Cliff and Cave in front of Siccar Point](./images/siccarpoint_view8.jpeg)
+![Cliff and Cave in front of Siccar Point](./images/siccarpoint_view8.jpg)
 
-![The Infamous Siccar Point!](./images/siccarpoint_view9.jpeg)
+![The Infamous Siccar Point!](./images/siccarpoint_view9.jpg)
 
 ![To the left of Siccar Point](./images/siccarpoint_view11.jpeg)
 
